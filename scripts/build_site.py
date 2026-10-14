@@ -24,13 +24,16 @@ from project import project, edition, LICENCE_CLASS  # noqa: E402
 UI = {   # interface strings by school language; the content stays as written
     "English": {"projects": "Projects", "status": "Status", "memory": "Language memory", "credits": "Credits",
                 "chapters": "chapters", "draft": "draft", "review": "in review", "published": "published",
-                "built": "Built from commit", "all": "All projects", "mode": "Model knowledge"},
+                "built": "Built from commit", "all": "All projects", "mode": "Model knowledge",
+                "read": "Read", "language": "Language", "book": "Book", "chapter": "Chapter", "prev": "Previous", "next": "Next", "notes": "Notes", "nodrafts": "no drafts yet", "choose": "Choose a language", "status_word": "Status"},
     "Standard German": {"projects": "Projekte", "status": "Stand", "memory": "Sprachgedächtnis", "credits": "Nachweise",
                         "chapters": "Kapitel", "draft": "Entwurf", "review": "in Prüfung", "published": "veröffentlicht",
-                        "built": "Erstellt aus Commit", "all": "Alle Projekte", "mode": "Sprachkenntnis des Modells"},
+                        "built": "Erstellt aus Commit", "all": "Alle Projekte", "mode": "Sprachkenntnis des Modells",
+                "read": "Lesen", "language": "Sprache", "book": "Buch", "chapter": "Kapitel", "prev": "Zurück", "next": "Weiter", "notes": "Anmerkungen", "nodrafts": "noch keine Entwürfe", "choose": "Sprache wählen", "status_word": "Stand"},
     "Danish": {"projects": "Projekter", "status": "Status", "memory": "Sproghukommelse", "credits": "Kilder",
                "chapters": "kapitler", "draft": "udkast", "review": "til gennemsyn", "published": "udgivet",
-               "built": "Bygget fra commit", "all": "Alle projekter", "mode": "Modellens kendskab"},
+               "built": "Bygget fra commit", "all": "Alle projekter", "mode": "Modellens kendskab",
+                "read": "Læs", "language": "Sprog", "book": "Bog", "chapter": "Kapitel", "prev": "Forrige", "next": "Næste", "notes": "Noter", "nodrafts": "ingen udkast endnu", "choose": "Vælg sprog", "status_word": "Status"},
 }
 FAMILIARITY = {"known": "known", "partial": "partial", "unknown": "unknown"}
 
@@ -63,6 +66,18 @@ blockquote { margin:12px 0; padding:8px 14px; background:var(--q); border-left:4
 .muted { color:var(--muted); font-size:14px; }
 footer { max-width:960px; margin:0 auto; padding:0 16px 30px; color:var(--muted); font-size:13px; }
 code { font-size:90%; } .path { font-family:ui-monospace,monospace; font-size:90%; }
+.pick { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:4px 0 14px; }
+.pick select { font:inherit; font-size:15px; padding:5px 8px; border:1px solid var(--line); border-radius:6px; background:var(--panel); color:var(--ink); max-width:100%; }
+.text { font-size:18px; line-height:1.7; max-width:42em; }
+.text h2 { font-size:17px; margin:22px 0 6px; color:var(--muted); }
+.text sup.v { font-size:11px; color:var(--muted); font-weight:600; margin:0 2px 0 4px; }
+.text sup.n a, .notes .k { font-size:11px; text-decoration:none; color:var(--accent); font-weight:600; }
+.notes { font-size:14px; color:var(--muted); border-top:1px solid var(--line); margin-top:26px; padding-top:8px; max-width:42em; }
+.notes p { margin:4px 0; } .notes .k { margin-right:6px; }
+.pager { display:flex; justify-content:space-between; gap:12px; margin:26px 0 0; max-width:42em; }
+.books { list-style:none; padding:0; } .books li { margin:10px 0; }
+.books .chs { display:flex; flex-wrap:wrap; gap:6px; margin-top:4px; }
+.books .chs a { min-width:2.4em; text-align:center; padding:3px 6px; border:1px solid var(--line); border-radius:6px; text-decoration:none; background:var(--panel); }
 """
 
 
@@ -102,7 +117,7 @@ def build(out, built):
         shutil.rmtree(out)
     os.makedirs(out)
     open(os.path.join(out, "style.css"), "w", encoding="utf-8").write(CSS.strip() + "\n")
-    cards = []
+    cards, readers = [], {}
     for pname in projects:
         pdir = os.path.join(ROOT, "export", pname)
         p = project(pname)
@@ -117,7 +132,9 @@ def build(out, built):
         name = p.get("language_name") or pname
         od = os.path.join(out, pname)
         os.makedirs(od)
-        nav = lambda on: [(ui["status"], f"{pname}/index.html", on == "s"), (ui["memory"], f"{pname}/memory.html", on == "m"),
+        has_drafts = any(os.path.relpath(f, ROOT) in tracked for _, f, _ in rows)
+        nav = lambda on: [(ui["read"], f"{pname}/read/index.html", on == "r")] * has_drafts + [
+                          (ui["status"], f"{pname}/index.html", on == "s"), (ui["memory"], f"{pname}/memory.html", on == "m"),
                           (ui["credits"], f"{pname}/credits.html", on == "c"), (ui["all"], "index.html", False)]
         first = re.match(r"([^\s.]+)\.\s*", draft_st)       # the statement's first word ("Draft.", "Udkast.")
         rest = draft_st[first.end():] if first and first[1].lower() in ("draft", ui["draft"].lower()) else draft_st
@@ -164,22 +181,184 @@ def build(out, built):
                    f'<a href="{up}{pname}/index.html">{H.escape(name)}</a> · {banner}</div>')
             h = h.replace("<body>", "<body>" + bar, 1).replace('<html lang="en">', f'<html lang="{lc}">', 1)
             open(mem, "w", encoding="utf-8").write(h)
+        rd = reader(pname, p, tracked, od, ui, banner, built, nav, lc, rows)
+        if rd:
+            readers[pname] = rd
         counts = ", ".join(f"{n[k]} {ui[l]}" for k, l in (("draft", "draft"), ("in-review", "review"), ("published", "published")) if n[k])
         lic = sorted({LICENCE_CLASS.get(edition(e)["licence_folder"], "non-free") for e in p.get("style_from") or []})
         cards.append(f'<li><h2><a href="{pname}/index.html">{H.escape(name)}</a></h2>'
                      f'<div class="muted">{len(rows)} {H.escape(ui["chapters"])}: {H.escape(counts or "—")}</div>'
                      f'<div class="muted">{H.escape(fam or "")}{" · " if fam else ""}{H.escape(", ".join(lic))} · '
-                     f'<a href="{pname}/memory.html">{H.escape(ui["memory"])}</a></div></li>')
+                     f'<a href="{pname}/memory.html">{H.escape(ui["memory"])}</a>'
+                     + (f' · <a href="{pname}/read/index.html">{H.escape(ui["read"])}</a>' if rd else f' · {H.escape(ui["nodrafts"])}')
+                     + '</div></li>')
+    open(os.path.join(out, "nav.js"), "w", encoding="utf-8").write("window.NAV = " + json.dumps(readers, ensure_ascii=False) + ";\n" + NAV_JS)
     en = UI["English"]
+    langs = "".join(f'<li><a href="{p_}/read/index.html">{H.escape(r_["name"])}</a> <span class="muted">'
+                    f'({sum(len(b[2]) for b in r_["books"])} {H.escape(en["chapters"])})</span></li>' for p_, r_ in readers.items())
+    open(os.path.join(out, "read.html"), "w", encoding="utf-8").write(page("bsb-add-books: read", f"<h1>{en['choose']}</h1><ul class=books>{langs}</ul>",
+        [(en["read"], "read.html", True), (en["projects"], "index.html", False)], "", built, 0, en))
     intro = ("<p>Bible translations drafted chapter by chapter from the Hebrew and Greek, with the Berean Standard Bible as "
              "the only assisting translation. Everything here is a <strong>draft</strong> until a language team publishes it; "
              "each chapter's status is on its project page.</p>")
     body = f"<h1>{en['projects']}</h1>{intro}<ul class=cards>{''.join(cards)}</ul>"
-    open(os.path.join(out, "index.html"), "w", encoding="utf-8").write(page("bsb-add-books: draft translations", body, [], "", built, 0, en))
+    open(os.path.join(out, "index.html"), "w", encoding="utf-8").write(page("bsb-add-books: draft translations", body,
+        [(en["read"], "read.html", False), (en["projects"], "index.html", True)], "", built, 0, en))
     open(os.path.join(out, "BUILT_FROM"), "w").write(built + "\n")
     open(os.path.join(out, "netlify.toml"), "w").write(NETLIFY)
     leak_test(out)
     print(f"{os.path.relpath(out, ROOT)}/: {len(cards)} projects, built from {built}")
+
+
+NOTE = re.compile(r"\{([A-Z]):\s*(.*?)\}", re.S)
+VERSE = re.compile(r"(?<![\w>.\x00])v(\d+(?:-\d+)?)(?=\s)")
+
+
+def quotes_of(p, t):
+    """Den Frie Bibel's own markup >>…<< (nested >…<) as the printed »…« / ›…‹."""
+    if ">>" in (p.get("quotes") or ""):
+        t = t.replace(">>", "»").replace("<<", "«")
+        t = re.sub(r"(?<![\w])>", "›", t)
+        t = t.replace("<", "‹").replace(">", "›")
+    return t
+
+
+def inline_md(t):
+    t = H.escape(t, quote=False)
+    return re.sub(r"(?<![\w*])\*(?!\s)(.+?)(?<!\s)\*(?![\w*])", r"<em>\1</em>", t)
+
+
+def parse_chapter(p, text, footnotes):
+    """-> (title, [blocks], [notes]): blocks are ('h', html) or ('p', html); notes [html]. Inline notes {T: …} and the
+    footnote file's entries become numbered notes; verse markers become superscripts."""
+    lines = [l for l in text.splitlines() if not l.startswith("!!<")]
+    title, body = "", []
+    for l in lines:
+        m = re.match(r"^===(.*)===\s*$", l)
+        if m and not title:
+            title = m[1].strip()
+        else:
+            body.append(l)
+    notes = []
+    fn = {}
+    for l in footnotes.splitlines():
+        m = re.match(r"^v(\d+)\s+(.+?):\s*(.+)$", l)
+        if m:
+            fn.setdefault(m[1], []).append((m[2].strip(), m[3].strip()))
+    blocks = []
+    for blk in re.split(r"\n\s*\n", "\n".join(body)):
+        blk = blk.strip()
+        if not blk:
+            continue
+        m = re.match(r"^==(.*)==$", blk)
+        if m:
+            blocks.append(("h", inline_md(quotes_of(p, m[1].strip()))))
+            continue
+        t = re.sub(r"\s*\n\s*", " ", blk)
+        # footnotes: a marker after the keyword in its verse (or after the verse number)
+        for v, items in fn.items():
+            mv = re.search(rf"(?<![\w>.])v{v}(?=\s)", t)
+            if not mv:
+                continue
+            nxt = VERSE.search(t, mv.end())
+            seg_end = nxt.start() if nxt else len(t)
+            for kw, note in items:
+                i = t.find(kw, mv.end(), seg_end)
+                at = i + len(kw) if i >= 0 else mv.end()
+                t = t[:at] + "{F: " + note + "}" + t[at:]
+                seg_end += len(note) + 5
+        def note(m):
+            notes.append(inline_md(quotes_of(p, m[2].strip())))
+            return f"\x00{len(notes)}\x00"
+        t = NOTE.sub(note, t)
+        t = inline_md(quotes_of(p, t))
+        t = VERSE.sub(lambda m: f'<sup class="v" id="v{m[1].split("-")[0]}">{m[1]}</sup>', t)
+        t = re.sub(r"\x00(\d+)\x00", lambda m: f'<sup class="n"><a href="#n{m[1]}" id="r{m[1]}">{m[1]}</a></sup>', t)
+        blocks.append(("p", t))
+    return title, blocks, notes
+
+
+def book_title(p, code, title):
+    bt = (p.get("book_titles") or {}).get(code)
+    if bt:
+        return bt
+    m = re.match(r"^(.*?),\s*\S+\s+\d+$", title)
+    return m[1] if m else title or code
+
+
+def reader(pname, p, tracked, od, ui, banner, built, nav, lc, rows):
+    """The project's reader: a page of books and chapters, and one page per chapter."""
+    from books import BY_CODE
+    depth = pname.count("/") + 2
+    chapters = [(ch, f, r) for ch, f, r in rows if os.path.relpath(f, ROOT) in tracked]
+    if not chapters:
+        return None
+    books, pages = {}, []
+    for ch, f, r in chapters:
+        code, n = ch[:3], int(ch[3:])
+        fnf = f[:-4] + "_footnotes.txt"
+        foot = open(fnf, encoding="utf-8").read() if os.path.relpath(fnf, ROOT) in tracked else ""
+        title, blocks, notes = parse_chapter(p, open(f, encoding="utf-8").read(), foot)
+        books.setdefault(code, {"title": book_title(p, code, title), "chs": []})["chs"].append(n)
+        pages.append((code, n, title, blocks, notes, r))
+    rd = os.path.join(od, "read")
+    os.makedirs(rd, exist_ok=True)
+    order = [c for c in BY_CODE if c in books]
+    # the book list
+    items = []
+    for c in order:
+        b = books[c]
+        chs = "".join(f'<a href="{c}/{n:03d}.html">{n}</a>' for n in b["chs"])
+        items.append(f'<li><strong>{H.escape(b["title"])}</strong><div class="chs">{chs}</div></li>')
+    body = f'<h1>{H.escape(p.get("language_name") or pname)}: {H.escape(ui["read"])}</h1><ul class="books">{"".join(items)}</ul>'
+    open(os.path.join(rd, "index.html"), "w", encoding="utf-8").write(page(f"{p.get('language_name')}: {ui['read']}", body, nav("r"), banner, built, depth, ui, lc))
+    # one page per chapter
+    seq = [(c, n) for c in order for n in books[c]["chs"]]
+    for code, n, title, blocks, notes, r in pages:
+        i = seq.index((code, n))
+        prev = seq[i - 1] if i else None
+        nxt = seq[i + 1] if i + 1 < len(seq) else None
+        rel = lambda c, k: f"../{c}/{k:03d}.html"
+        pick = (f'<form class="pick" onsubmit="return false">'
+                f'<select aria-label="{H.escape(ui["language"])}" data-pick="lang"></select>'
+                f'<select aria-label="{H.escape(ui["book"])}" data-pick="book"></select>'
+                f'<select aria-label="{H.escape(ui["chapter"])}" data-pick="ch"></select></form>')
+        text = "".join(f"<h2>{h}</h2>" if k == "h" else f"<p>{h}</p>" for k, h in blocks)
+        nt = "".join(f'<p id="n{j}"><a class="k" href="#r{j}">{j}</a>{h}</p>' for j, h in enumerate(notes, 1))
+        link = lambda x, arrow_first: (f'<a href="{rel(*x)}">' + (f"← {H.escape(books[x[0]]['title'])} {x[1]}" if arrow_first
+                                       else f"{H.escape(books[x[0]]['title'])} {x[1]} →") + "</a>") if x else ""
+        pager = f'<nav class="pager"><span>{link(prev, True)}</span><span>{link(nxt, False)}</span></nav>'
+        if r.get("status") == "published":
+            bn = f"<strong>{H.escape(ui['published'].capitalize())}.</strong> {H.escape(r.get('statement', ''))}"
+        else:
+            bn = banner + (f" <em>({H.escape(ui['review'])})</em>" if r.get("status") == "in-review" else "")
+        body = (pick + f'<h1>{H.escape(title or books[code]["title"] + " " + str(n))}</h1><div class="text">{text}</div>'
+                + (f'<div class="notes"><strong>{H.escape(ui["notes"])}</strong>{nt}</div>' if notes else "") + pager
+                + f'<script>window.HERE={json.dumps({"p": pname, "b": code, "c": n})}</script>'
+                + f'<script src="{"../" * (depth + 1)}nav.js"></script>')
+        os.makedirs(os.path.join(rd, code), exist_ok=True)
+        open(os.path.join(rd, code, f"{n:03d}.html"), "w", encoding="utf-8").write(
+            page(f"{title} · {p.get('language_name')}", body, nav("r"), bn, built, depth + 1, ui, lc))
+    return {"name": p.get("language_name") or pname, "books": [[c, books[c]["title"], books[c]["chs"]] for c in order]}
+
+
+NAV_JS = """// The reader's selectors: language, book, chapter (scripts/build_site.py writes window.NAV below).
+(function () {
+  var N = window.NAV, H = window.HERE, root = document.currentScript.src.replace(/nav\\.js.*$/, "");
+  function opt(sel, v, t, on) { var o = document.createElement("option"); o.value = v; o.textContent = t; o.selected = on; sel.appendChild(o); }
+  var L = document.querySelector('[data-pick="lang"]'), B = document.querySelector('[data-pick="book"]'), C = document.querySelector('[data-pick="ch"]');
+  if (!L) return;
+  Object.keys(N).forEach(function (p) { opt(L, p, N[p].name, p === H.p); });
+  N[H.p].books.forEach(function (b) { opt(B, b[0], b[1], b[0] === H.b); });
+  function chs() { C.innerHTML = ""; var b = N[H.p].books.filter(function (x) { return x[0] === B.value; })[0];
+    b[2].forEach(function (n) { opt(C, n, n, B.value === H.b && n === H.c); }); }
+  chs();
+  function go(p, b, c) { location.href = root + p + "/read/" + (b ? b + "/" + String(c).padStart(3, "0") + ".html" : "index.html"); }
+  L.onchange = function () { var b = N[L.value].books[0]; go(L.value, b[0], b[2][0]); };
+  B.onchange = function () { chs(); go(H.p, B.value, C.value); };
+  C.onchange = function () { go(H.p, B.value, C.value); };
+})();
+"""
 
 
 NETLIFY = """# The `site` branch is the finished site (scripts/build_site.py, staged by scripts/deploy_site.py on the
