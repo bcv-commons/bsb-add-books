@@ -26,3 +26,15 @@ blockquote { margin:12px 0; padding:8px 14px; background:var(--q); border-left:4
 .muted { color:var(--muted); font-size:14px; }
 footer { max-width:960px; margin:0 auto; padding:0 16px 30px; color:var(--muted); font-size:13px; }
 code { font-size:90%; } .path { font-family:ui-monospace,monospace; font-size:90%; }
+.pick { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:4px 0 14px; }
+.pick select { font:inherit; font-size:15px; padding:5px 8px; border:1px solid var(--line); border-radius:6px; background:var(--panel); color:var(--ink); max-width:100%; }
+.text { font-size:18px; line-height:1.7; max-width:42em; }
+.text h2 { font-size:17px; margin:22px 0 6px; color:var(--muted); }
+.text sup.v { font-size:11px; color:var(--muted); font-weight:600; margin:0 2px 0 4px; }
+.text sup.n a, .notes .k { font-size:11px; text-decoration:none; color:var(--accent); font-weight:600; }
+.notes { font-size:14px; color:var(--muted); border-top:1px solid var(--line); margin-top:26px; padding-top:8px; max-width:42em; }
+.notes p { margin:4px 0; } .notes .k { margin-right:6px; }
+.pager { display:flex; justify-content:space-between; gap:12px; margin:26px 0 0; max-width:42em; }
+.books { list-style:none; padding:0; } .books li { margin:10px 0; }
+.books .chs { display:flex; flex-wrap:wrap; gap:6px; margin-top:4px; }
+.books .chs a { min-width:2.4em; text-align:center; padding:3px 6px; border:1px solid var(--line); border-radius:6px; text-decoration:none; background:var(--panel); }
