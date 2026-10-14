@@ -15,3 +15,19 @@ window.NAV = {"ch-de-be/ch-de-be_BSB": {"name": "Bern German (Berndeutsch)", "bo
   B.onchange = function () { chs(); go(H.p, B.value, C.value); };
   C.onchange = function () { go(H.p, B.value, C.value); };
 })();
+// The view switch: text, BHSA clauses, MACULA/UHB clauses; no reload, the choice remembered across pages.
+(function () {
+  var bs = document.querySelectorAll(".modes button"), vs = document.querySelectorAll(".view");
+  if (!bs.length) return;
+  function get() { try { return localStorage.getItem("view") || "std"; } catch (e) { return "std"; } }
+  function set(m) { try { localStorage.setItem("view", m); } catch (e) {} }
+  function show(m, keep) {
+    var b = document.querySelector('.modes button[data-mode="' + m + '"]');
+    if (!b || b.disabled) m = "std";
+    bs.forEach(function (x) { x.classList.toggle("on", x.dataset.mode === m); x.setAttribute("aria-selected", x.dataset.mode === m); });
+    vs.forEach(function (v) { v.hidden = v.dataset.view !== m; });
+    if (!keep) set(m);
+  }
+  bs.forEach(function (b) { b.onclick = function () { show(b.dataset.mode); }; });
+  show(get(), true);
+})();

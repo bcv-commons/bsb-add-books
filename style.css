@@ -34,6 +34,14 @@ code { font-size:90%; } .path { font-family:ui-monospace,monospace; font-size:90
 .text sup.n a, .notes .k { font-size:11px; text-decoration:none; color:var(--accent); font-weight:600; }
 .notes { font-size:14px; color:var(--muted); border-top:1px solid var(--line); margin-top:26px; padding-top:8px; max-width:42em; }
 .notes p { margin:4px 0; } .notes .k { margin-right:6px; }
+.modes { display:flex; flex-wrap:wrap; gap:4px; margin:0 0 12px; }
+.modes button { font:inherit; font-size:14px; padding:4px 12px; border:1px solid var(--line); border-radius:6px; background:transparent; color:var(--ink); cursor:pointer; }
+.modes button.on { background:var(--accent-soft); border-color:var(--accent); color:var(--accent); }
+.modes button:disabled { opacity:.45; cursor:default; }
+.view[hidden] { display:none; }
+.lic { background:var(--q); border:2px solid var(--q-line); border-radius:6px; padding:10px 14px; margin:0 0 14px; font-size:14px; font-weight:600; }
+.cls .l { padding-left:min(calc(var(--lv) * 1.6em), calc(var(--lv) * 3.5vw)); text-indent:-0.6em; margin:0 0 2px 0.6em; }
+.cls h2 { font-size:17px; margin:22px 0 6px; color:var(--muted); }
 .pager { display:flex; justify-content:space-between; gap:12px; margin:26px 0 0; max-width:42em; }
 .books { list-style:none; padding:0; } .books li { margin:10px 0; }
 .books .chs { display:flex; flex-wrap:wrap; gap:6px; margin-top:4px; }
