@@ -1,0 +1,68 @@
+# Bern German drafts, from the Hebrew/Greek with the BSB as the only assisting translation, in the
+# style of Bietenhard's NT. Drafts go to
+# export/ch-de-be/ch-de-be_BSB/<code>/. Everything in export/ is public domain (CC0); see export/README.md.
+# Project id for the scripts: ch-de-be/ch-de-be_BSB
+
+language: gsw-BE
+language_name: Bern German (Berndeutsch)
+# The model knows Standard German better than Bernese: the 'partial' mode (scripts/modes.py, docs/onboarding.md).
+familiarity: partial
+corpus_name: Bietenhard's Bern German NT             # how the prompts name the style corpus
+close_to: Standard German
+notes_language: Standard German
+school_language: Standard German        # the team's working language: wiki, store notes, analysis; quotations stay in the language
+
+# Bietenhard's NT (import/non-free/ch-de-be/bietenhard/, private): style and vocabulary corpus only;
+# these drafts don't continue or revise it.
+based_on: null
+style_from: [bietenhard]
+nt_basis: critical
+
+# Books to keep from the drafting agents (none: the temporary quarantine of John and Ephesians has ended).
+quarantine: []
+
+# Files or folders the agents must not open.
+do_not_open: [export/dan/]
+
+# Style guides read for every book, besides the book's own <code>/<code>_style_guide.md.
+style_guides: [rut/rut_style_guide.md]
+
+# Presentation, as in the drafts so far.
+quotes: "„“"
+chapter_word: Kapitel
+book_titles:
+  gen: Ds erschte Buech Mose
+  rut: Ds Buech Rut
+  jon: Ds Buech Jona
+  jhn: Ds Johannes-Evangelium
+  eph: D Brief a d Epheser
+
+# The prompt's own parts (scripts/make_prompt.py).
+header:
+  ot:
+    - "!!<Reifegrad: Entwurf>!!"
+    - "!!<Übersetzung: Maschinenentwurf aus dem Grundtext ({file}), abgeglichen mit der Berean Standard Bible>!!"
+    - "!!<Exegetische Bearbeitung: Noch nicht erfolgt>!!"
+    - "!!<Literarische Prüfung: Noch nicht erfolgt>!!"
+    - "!!<Datum dieser Version: {date}>!!"
+  nt:
+    - "!!<Reifegrad: Entwurf>!!"
+    - "!!<Übersetzung: Maschinenentwurf aus dem griechischen Grundtext ({file}, Berean Greek Bible), abgeglichen mit der Berean Standard Bible>!!"
+    - "!!<Exegetische Bearbeitung: Noch nicht erfolgt>!!"
+    - "!!<Literarische Prüfung: Noch nicht erfolgt>!!"
+    - "!!<Datum dieser Version: {date}>!!"
+footnotes_header:
+  - "!!<Fuessnote zu {file}>!!"
+  - "!!<Datum dieser Version: {date}>!!"
+notes_structure: "what the draft is; a table Vers · Hebräisch/Griechisch · Berndeutsch · BSB · Kommentar; exegetical observations; Mundart und Stil (with corpus counts); Neue Namensformen; Offene Fragen. Don't quote the style corpus in the notes: give your rendering and, if needed, the count, not the corpus's wording."
+book_title_rule: "No title for this book yet: make one in the pattern of the drafts (Ds erschte Buech Mose, Ds Buech Rut, Ds Johannes-Evangelium) and list it under Offene Fragen."
+
+# Project rules, added to every chapter prompt.
+rules:
+  - "**Divine names:** der HERR for YHWH; Herr, HERR for *ʔădōnāy YHWH*."
+  - "**Numbers and measures:** numbers written out in words as in the style corpus, also large ones; measures as the hebrew unit plus metres in brackets (see the book's style guide)."
+  - "**Poetry:** `//1` / `//2` lines where the style guide or the BSB has poetry."
+  - "**Headings** `==Überschrift==` in the style of the corpus; quotes „…“."
+
+# Free-text addition to the style section of the prompt.
+style_notes: "Synoptic and other parallels in the style corpus may be used for vocabulary only, never copied."

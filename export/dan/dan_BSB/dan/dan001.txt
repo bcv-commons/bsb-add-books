@@ -1,0 +1,82 @@
+!!<Modenhed: Udkast>!!
+!!<Oversættelse: Maskinudkast fra grundteksten (orig/heb/dan001.txt), sammenholdt med Berean Standard Bible>!!
+!!<Eksegetisk bearbejdning: Endnu ikke sket>!!
+!!<Litterært tjek: Endnu ikke sket>!!
+!!<Dato for denne version: 09.10.2026>!!
+
+===Daniels Bog, kapitel 1===
+
+
+==Daniel og hans venner føres til Babylon==
+
+v1 I Judas konge Jojakims tredje regeringsår kom Babylons konge Nebukadnesar til Jerusalem og
+belejrede den.{E: Jer 25,1 sætter Nebukadnesars første år lig med Jojakims fjerde år (605 f.Kr.).
+Forskellen kan bero på at man i Babylon ikke talte kongens første, ufuldstændige år med, mens man i
+Juda gjorde det. En belejring af Jerusalem i dette år nævnes ikke andre steder; jf. 2 Kong 24,1 og 2
+Krøn 36,6-7.} v2 Og Herren gav Judas konge Jojakim i hans hånd sammen med en del af karrene fra Guds
+hus. Dem førte han til landet Sinear, til sin guds hus; karrene bragte han ind i sin guds
+skatkammer.{E: Karrene dukker op igen ved Belshassars gæstebud (5,2-4). At Herrens kar stod i en
+fremmed guds skatkammer, kunne se ud som om Babylons gud havde sejret; men verset slår fast at det
+var Herren der >>gav<< Jojakim i Nebukadnesars hånd.}
+
+v3 Kongen sagde til Ashpenaz, sin overhofmand,{T: Ordret: >>øverste for sine hofmænd<<. *sārîs*
+>>hofmand<< kan også betyde >>eunuk<<; jf. Es 39,7, hvor det forudsiges at nogle af kongeslægten
+skal være hofmænd i Babylons konges palads.} at han skulle hente nogle af israelitterne, både af
+kongeslægten og af de fornemme, v4 unge mænd uden nogen lyde, smukke at se på, kyndige i al visdom,
+med kundskab og hurtige til at forstå, og som havde evne til at gøre tjeneste i kongens palads; og
+han skulle lære dem kaldæernes skrift og sprog. v5 Kongen tildelte dem en daglig ration af kongens
+fine mad og af den vin han selv drak. De skulle opdrages i tre år, og når de var gået, skulle de
+gøre tjeneste hos kongen.
+
+v6 Blandt dem var der nogle fra Juda: Daniel, Hananja, Mishael og Azarja. v7 Overhofmanden gav dem
+nye navne: Daniel kaldte han Beltshassar,{T: Daniel betyder >>Gud er min dommer<<. Beltshassar er
+formentlig babylonisk *Balaṭ-šarri-uṣur*, >>beskyt kongens liv<<; jf. 4,5, hvor navnet forbindes med
+Nebukadnesars gud.} Hananja kaldte han Shadrak,{T: Hananja betyder >>HERREN er nådig<<. Betydningen
+af Shadrak er usikker.} Mishael kaldte han Meshak{T: Mishael betyder formentlig >>Hvem er som Gud?<<
+Betydningen af Meshak er usikker.} og Azarja kaldte han Abed-Nego.{T: Azarja betyder >>HERREN
+hjælper<<. Abed-Nego betyder >>Negos tjener<<, formentlig en bevidst forvanskning af >>Nebos
+tjener<<, efter den babylonske gud Nebo (Es 46,1).}
+
+==Daniel vil ikke gøre sig uren==
+
+v8 Men Daniel besluttede i sit hjerte{T: Ordret: >>satte på sit hjerte<<. Samme verbum som >>gav<<
+navne (ordret >>satte<< navne) i v. 7: Overhofmanden giver dem navne, men Daniel bestemmer selv hvad
+han vil.} at han ikke ville gøre sig uren med kongens fine mad og med den vin han drak; og han bad
+overhofmanden om lov til ikke at gøre sig uren.{E: Grunden nævnes ikke. Kødet kunne være urent efter
+loven (3 Mos 11) eller ikke slagtet på rette måde, og mad og vin fra kongens bord var måske helliget
+guderne. Men Daniel afviser ikke alt babylonisk; navn, sprog og uddannelse tager han imod. Måske
+ville han heller ikke gøre sig afhængig af kongens gaver, så det kunne ses at det var Gud der gav
+dem fremgang (v. 9.17).} v9 Og Gud lod overhofmanden vise Daniel velvilje{N: nåde} og
+barmhjertighed.
+
+v10 Men overhofmanden sagde til Daniel: >>Jeg er bange for min herre kongen, som har fastsat hvad I
+skal spise og drikke. Hvorfor skulle han se jeres ansigter mere forkomne end de unge mænds der er på
+jeres alder? Så ville I gøre mit hoved skyldigt{T: Dvs. bringe mit liv i fare.} over for kongen.<<
+
+v11 Så sagde Daniel til opsynsmanden som overhofmanden havde sat over Daniel, Hananja, Mishael og
+Azarja: v12 >>Sæt dog dine tjenere på prøve i ti dage. Lad os få grøntsager{T: Ordret: >>noget af
+det der er sået<< (*zērōʕîm*), dvs. planteføde.} at spise og vand at drikke. v13 Se så på vores
+udseende og på udseendet hos de unge mænd der spiser af kongens fine mad, og gør med dine tjenere
+efter det du ser.<<
+
+v14 Han hørte på dem i denne sag og satte dem på prøve i ti dage. v15 Da de ti dage var gået, så de
+bedre og mere velnærede ud end alle de unge mænd der spiste af kongens fine mad. v16 Så fjernede
+opsynsmanden deres fine mad og den vin de skulle drikke, og gav dem grøntsager.
+
+==Gud giver de fire unge mænd visdom==
+
+v17 Disse fire unge mænd gav Gud kundskab og indsigt i al skrift og visdom; og Daniel forstod sig på
+alle slags syner og drømme.
+
+v18 Da den tid var gået som kongen havde fastsat for at de skulle føres frem, førte overhofmanden
+dem frem for Nebukadnesar. v19 Kongen talte med dem, og blandt dem alle fandtes der ingen som
+Daniel, Hananja, Mishael og Azarja. Så kom de til at gøre tjeneste hos kongen. v20 I enhver sag der
+krævede visdom og indsigt, og som kongen spurgte dem om, fandt han dem ti gange{T: Ordret: >>ti
+hænder<<.} dygtigere end alle mirakelmagerne{T: Betydningen af det hebraiske *ḥarṭōm* er
+omdiskuteret. Andre oversætter det: >>sandsiger<< eller >>drømmetyder<<. Samme ord som om Egyptens
+mirakelmagere i 1 Mos 41,8 og 2 Mos 7,11.} og besværgerne i hele hans rige.
+
+v21 Og Daniel blev der indtil kong Kyros' første år.{E: Kyros erobrede Babylon i 539 f.Kr.; Daniel
+oplevede altså hele landflygtigheden, fra de første bortførte til Kyros' første år, da jøderne fik
+lov at vende hjem (Ezra 1,1). Ifølge 10,1 fik han endnu et syn i Kyros' tredje år; verset siger ikke
+at han døde, men at han blev ved hoffet så længe.}

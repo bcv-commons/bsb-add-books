@@ -1,0 +1,47 @@
+# Copied from Den Frie Bibel's repository, github.com/EzerIT/DFB, tekst/ at commit
+# 9c44026e060b9a6c29c4c25d5dafd9a9d46f7296 (2026-10-08); see README.md in this folder. Files renamed
+# from the Danish book stems (1mos001.txt, matt001.txt …) to the BSB codes (exo001.txt, mat001.txt …).
+# One edition = one existing translation (a whole Bible, an NT, or single books).
+
+name: "Den Frie Bibel"
+language: da                    # Danish
+role: continue                  # new drafts continue this edition (fill its missing books)
+text_dir: text
+format: >-
+  one .txt file per chapter (<code>NNN.txt, Hebrew chapter and verse numbering as in orig/heb):
+  '!!<…>!!' header lines (translator, exegetical and literary check, version date),
+  '===Bog, kapitel N===' and '==heading==' lines, inline 'vN' verse markers, '>>…<<' quotes,
+  and inline notes {T: …} (translation), {E: …} (exegesis), {H: …} (cross references)
+
+# Mt 17:21 and 18:11 are absent, Mt 6:13 has no doxology and 1 Jn 5:7 no Comma: critical text.
+nt_basis: critical
+
+# Present in part: 726 chapters of 55 books (at the commit above).
+# Missing books: Josh, 1 Sam, 1 Chr, 2 Chr, Ezra, Neh, Esth, Song, Dan, Hos, Mal.
+# Partial: Gen 20/50, Lev 1/27, Deut 6/34, 2 Sam 2/24, 1 Kgs 11/22, 2 Kgs 1/25, Prov 1/31,
+# Eccl 2/12, Ezek 4/48, Joel 1/4, Amos 1/9, Mic 2/7, Luke 15/24, Acts 5/28.
+# From sfm/ (USFM, converted into text/; only the chapters Den Frie Bibel publishes, see README.md):
+# Gen 1–19, 28 (text in 1–25, 28); 1 Kgs 1–11 (text in 1–11).
+books: [gen, exo, lev, num, deu, jdg, rut, 2sa, 1ki, 2ki, job, psa, pro, ecc, isa, jer, lam, ezk,
+        jol, amo, oba, jon, mic, nam, hab, zep, hag, zec, mat, mrk, luk, jhn, act, rom, 1co, 2co,
+        gal, eph, php, col, 1th, 2th, 1ti, 2ti, tit, phm, heb, jas, 1pe, 2pe, 1jn, 2jn, 3jn, jud,
+        rev]
+quarantine: []
+
+quote_hint: "It marks direct speech with `>>…<<` and OT quotations with a note like `{H: Es 7,14}`; where it quotes the chapter being translated, take over its wording."
+
+# How a clone gets the text, which is not in git (scripts/project.py missing_text)
+get_text: python3 import/CC0/dan/den-frie-bibel/sync_from_upstream.py   # the pinned commit
+source: >-
+  Den Frie Bibel (https://denfriebibel.dk), from its repository github.com/EzerIT/DFB, tekst/ at
+  commit 9c44026e060b9a6c29c4c25d5dafd9a9d46f7296 (2026-10-08); versions dated in each file's
+  header. Translators named in the files: Trine Tøndering, Torben Kjær, Christian Canu Højgaard,
+  Jørgen Bækgaard Thomsen, Lydia Nørrelykke Gad, Nicolai Winther-Nielsen, Jens Bruun Kofoed.
+licence: >-
+  public domain: "Intet dansk indhold i Den Frie Bibel er belagt med ophavsret" (denfriebibel.dk,
+  section Ophavsret, checked 2026-10-13); anyone may copy, print, quote and sell it. The
+  repository's LICENSE: "The Danish Bible text in the tekst folder is in the public domain." The name
+  "Den Frie Bibel" is a trademark and may not be used for modified texts. (The site's Hebrew and
+  Aramaic text is CC BY-NC 4.0; it is not part of this import.)
+attribution: ""
+credit: "Den Frie Bibel (https://denfriebibel.dk), public domain"

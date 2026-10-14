@@ -1,0 +1,67 @@
+code	name	testament	chapters	rp_code
+gen	Genesis	ot	50	
+exo	Exodus	ot	40	
+lev	Leviticus	ot	27	
+num	Numbers	ot	36	
+deu	Deuteronomy	ot	34	
+jos	Joshua	ot	24	
+jdg	Judges	ot	21	
+rut	Ruth	ot	4	
+1sa	1 Samuel	ot	31	
+2sa	2 Samuel	ot	24	
+1ki	1 Kings	ot	22	
+2ki	2 Kings	ot	25	
+1ch	1 Chronicles	ot	29	
+2ch	2 Chronicles	ot	36	
+ezr	Ezra	ot	10	
+neh	Nehemiah	ot	13	
+est	Esther	ot	10	
+job	Job	ot	42	
+psa	Psalms	ot	150	
+pro	Proverbs	ot	31	
+ecc	Ecclesiastes	ot	12	
+sng	Song of Songs	ot	8	
+isa	Isaiah	ot	66	
+jer	Jeremiah	ot	52	
+lam	Lamentations	ot	5	
+ezk	Ezekiel	ot	48	
+dan	Daniel	ot	12	
+hos	Hosea	ot	14	
+jol	Joel	ot	3	
+amo	Amos	ot	9	
+oba	Obadiah	ot	1	
+jon	Jonah	ot	4	
+mic	Micah	ot	7	
+nam	Nahum	ot	3	
+hab	Habakkuk	ot	3	
+zep	Zephaniah	ot	3	
+hag	Haggai	ot	2	
+zec	Zechariah	ot	14	
+mal	Malachi	ot	4	
+mat	Matthew	nt	28	MAT
+mrk	Mark	nt	16	MAR
+luk	Luke	nt	24	LUK
+jhn	John	nt	21	JOH
+act	Acts	nt	28	ACT
+rom	Romans	nt	16	ROM
+1co	1 Corinthians	nt	16	1CO
+2co	2 Corinthians	nt	13	2CO
+gal	Galatians	nt	6	GAL
+eph	Ephesians	nt	6	EPH
+php	Philippians	nt	4	PHP
+col	Colossians	nt	4	COL
+1th	1 Thessalonians	nt	5	1TH
+2th	2 Thessalonians	nt	3	2TH
+1ti	1 Timothy	nt	6	1TI
+2ti	2 Timothy	nt	4	2TI
+tit	Titus	nt	3	TIT
+phm	Philemon	nt	1	PHM
+heb	Hebrews	nt	13	HEB
+jas	James	nt	5	JAM
+1pe	1 Peter	nt	5	1PE
+2pe	2 Peter	nt	3	2PE
+1jn	1 John	nt	5	1JO
+2jn	2 John	nt	1	2JO
+3jn	3 John	nt	1	3JO
+jud	Jude	nt	1	JUD
+rev	Revelation	nt	22	REV

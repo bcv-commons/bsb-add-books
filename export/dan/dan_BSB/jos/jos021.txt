@@ -1,0 +1,76 @@
+!!<Modenhed: Udkast>!!
+!!<Oversættelse: Maskinudkast fra grundteksten (orig/heb/jos021.txt), sammenholdt med Berean Standard Bible>!!
+!!<Eksegetisk bearbejdning: Endnu ikke sket>!!
+!!<Litterært tjek: Endnu ikke sket>!!
+!!<Dato for denne version: 17.08.2026>!!
+
+===Josvabogen, kapitel 21===
+
+
+==48 byer til levitterne==
+
+v1 Overhovederne for fædrenehusene blandt levitterne trådte frem for præsten Eleazar, Josva, Nuns
+søn, og overhovederne for fædrenehusene i Israels stammer v2 og sagde til dem i Shilo i Kana'ans
+land: >>HERREN befalede gennem Moses at vi skulle have byer at bo i, med tilhørende marker til vores
+kvæg.<<{H: 4 Mos 35,1-8} v3 Så gav israelitterne efter HERRENS befaling levitterne disse byer med
+tilhørende marker{E: *miḡrāš* er det åbne areal uden for bymuren, som i 4 Mos 35,2-5 er afmålt til
+levitternes dyr og ejendele; »marker« følger gengivelsen dér.} af deres arvelod:
+
+v4 Loddet faldt for kehatitternes slægter. Blandt levitterne fik præsten Arons efterkommere ved
+lodkastning 13 byer fra Judas stamme, fra simeonitternes stamme og fra Benjamins stamme. v5 Kehats
+øvrige efterkommere fik ved lodkastning ti byer fra slægterne i Efraims stamme, fra Dans stamme og
+fra halvdelen af Manasses stamme. v6 Gershons efterkommere fik ved lodkastning 13 byer fra slægterne
+i Issakars stamme, fra Ashers stamme, fra Naftalis stamme og fra halvdelen af Manasses stamme i
+Bashan. v7 Meraris efterkommere fik efter deres slægter 12 byer fra Rubens stamme, fra Gads stamme
+og fra Zebulons stamme. v8 Israelitterne gav levitterne disse byer med tilhørende marker ved
+lodkastning, sådan som HERREN havde befalet gennem Moses.{H: 1 Krøn 6,39-66} v9 Fra Judas stamme og
+fra Simeons stamme gav de de byer som her nævnes ved navn, v10 og de tilfaldt Arons efterkommere af
+kehatitternes slægter blandt Levis efterkommere, for loddet faldt først for dem.
+
+v11 De gav dem Kirjat-Arba, det er Hebron, i Judas bjergland, med de omliggende marker; Arba var
+Anaks stamfar.{T: Ordret: >>Anaks far<<.} v12 Men byens agerjord{T: Ordret: >>byens mark<<.} og
+landsbyer gav de til Kaleb, Jefunnes søn, som hans ejendom.{H: Jos 14,13-14; 15,13} v13 Præsten
+Arons efterkommere gav de altså disse byer med tilhørende marker:{T: Hebraisk gentager >>med
+tilhørende marker<< efter hvert bynavn i v. 13-39; det er her og i det følgende samlet én gang for
+hver gruppe.} Hebron, tilflugtsbyen for drabsmanden, Libna, v14 Jattir, Eshtemoa,{T: I 15,50 hedder
+byen Eshtemo.} v15 Holon, Debir, v16 Ajin, Jutta og Bet-Shemesh – ni byer fra disse to stammer. v17
+Og fra Benjamins stamme: Gibeon, Geba, v18 Anatot og Almon – fire byer med tilhørende marker. v19
+Alle byerne til præsterne, Arons efterkommere, var 13 byer med tilhørende marker.
+
+v20 Slægterne af Kehats efterkommere, de øvrige levitter af Kehats slægt, fik ved lodkastning byer
+fra Efraims stamme. v21 De gav dem Sikem i Efraims bjergland, tilflugtsbyen for drabsmanden, Gezer,
+v22 Kibsajim og Bet-Horon – fire byer med tilhørende marker. v23 Og fra Dans stamme: Elteke,
+Gibbeton, v24 Ajjalon og Gat-Rimmon – fire byer med tilhørende marker. v25 Og fra halvdelen af
+Manasses stamme: Ta'anak og Gat-Rimmon{E: Gat-Rimmon står allerede i v. 24 blandt Dans byer;
+parallellen 1 Krøn 6,55 har her *Bilʿām* (= Jibleam, jf. 17,11), hvilket mange anser for den
+oprindelige læsning.} – to byer med tilhørende marker. v26 I alt ti byer med tilhørende marker til
+slægterne af Kehats øvrige efterkommere.
+
+v27 Gershons efterkommere af levitternes slægter fik fra halvdelen af Manasses stamme: Golan i
+Bashan, tilflugtsbyen for drabsmanden, og Be'eshtera{T: Dvs. Ashtarot, jf. 9,10; 12,4; 13,12.31 og 1
+Krøn 6,56.} – to byer med tilhørende marker. v28 Og fra Issakars stamme: Kishjon, Daberat, v29
+Jarmut{T: I 19,21 hedder byen Remet.} og En-Gannim – fire byer med tilhørende marker. v30 Og fra
+Ashers stamme: Mishal, Abdon, v31 Helkat og Rehob – fire byer med tilhørende marker. v32 Og fra
+Naftalis stamme: Kedesh i Galilæa, tilflugtsbyen for drabsmanden, Hammot-Dor{T: I 19,35 hedder byen
+Hammat.} og Kartan – tre byer med tilhørende marker. v33 Alle gershonitternes byer efter deres
+slægter var 13 byer med tilhørende marker.
+
+v34 Slægterne af Meraris efterkommere, de øvrige levitter, fik fra Zebulons stamme: Jokneam, Karta,
+v35 Dimna og Nahalal – fire byer med tilhørende marker. v36 Og fra Rubens stamme: Beser,{E: V. 36-37
+mangler i flere hebraiske håndskrifter, deriblandt det håndskrift der ligger til grund for de trykte
+udgaver; de står i Septuaginta, i mange andre håndskrifter og i 1 Krøn 6,63-64 og medtages her.
+Nogle håndskrifter tilføjer også »tilflugtsbyen for drabsmanden« ved Beser, jf. 20,8.} Jahas, v37
+Kedemot og Mefa'at – fire byer med tilhørende marker. v38 Og fra Gads stamme: Ramot i Gilead,
+tilflugtsbyen for drabsmanden, Mahanajim, v39 Heshbon og Jazer – i alt fire byer med tilhørende
+marker. v40 Alle byerne til Meraris efterkommere efter deres slægter, de øvrige af levitternes
+slægter, var ved lodkastning 12 byer.
+
+v41 Levitternes byer midt i israelitternes ejendom var i alt 48 byer med tilhørende marker.{H: 4 Mos
+35,7} v42 Hver enkelt af disse byer havde sine marker rundt om sig; sådan var det med alle disse
+byer. v43 Sådan gav HERREN Israel hele det land som han havde svoret at give deres fædre. De tog det
+i besiddelse og bosatte sig i det. v44 HERREN gav dem hvile til alle sider, ganske som han havde
+svoret deres fædre. Ingen af alle deres fjender kunne holde stand mod dem; HERREN gav alle deres
+fjender i deres hånd.{H: Jos 1,5} v45 Ikke ét ord af alt det gode som HERREN havde lovet Israels
+hus, slog fejl;{T: Ordret: >>Ikke ét ord faldt af alt det gode ord som HERREN havde talt til Israels
+hus<<.}{E: Udtrykket *lōʾ-nāfal dāḇār* (»intet ord faldt«) bruges om løfter der ikke går tabt, jf.
+23,14; 1 Sam 3,19; 1 Kong 8,56.} det gik alt sammen i opfyldelse.

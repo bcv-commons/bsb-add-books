@@ -1,0 +1,6 @@
+#!/bin/sh
+# Runs scripts/check_project.py for every project with staged files (docs/licensing.md, docs/workflow.md).
+# Enable once per clone:  git config core.hooksPath .githooks      Skip once: git commit --no-verify
+projects=$(git diff --cached --name-only --diff-filter=ACM | sed -n 's|^export/\([^/_][^/]*/[^/]*\)/.*|\1|p' | sort -u)
+[ -z "$projects" ] && exit 0
+exec python3 scripts/check_project.py $projects

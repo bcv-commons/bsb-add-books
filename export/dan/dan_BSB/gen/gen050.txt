@@ -1,0 +1,83 @@
+!!<Modenhed: Udkast>!!
+!!<Oversættelse: Maskinudkast fra grundteksten (orig/heb/gen050.txt), sammenholdt med Berean Standard Bible>!!
+!!<Eksegetisk bearbejdning: Endnu ikke sket>!!
+!!<Litterært tjek: Endnu ikke sket>!!
+!!<Dato for denne version: 09.10.2026>!!
+
+===1 Mosebog, kapitel 50===
+
+
+==Josef sørger over sin far og lader ham balsamere==
+
+v1 Josef kastede sig over sin far,{T: Ordret: >>faldt på sin fars ansigt<<, jf. løftet i 46,4:
+>>Josef skal lukke dine øjne<<.} græd over ham og kyssede ham. v2 Josef befalede sine tjenere,
+lægerne, at balsamere hans far, og lægerne balsamerede Israel.{E: Balsamering (*ḥānaṭ*) var en
+egyptisk skik og nævnes i Det Gamle Testamente kun om Jakob og Josef (v. 26). At den udføres af
+>>lægerne<< og ikke af præster, kan forsigtigt forstås sådan at Josef lader sin far behandle med
+egyptisk kunnen, men uden egyptisk dødekult. Formålet var her at gøre den lange rejse til graven i
+Kana'an mulig.} v3 Det tog 40 dage, for så lang tid tager balsameringen, og egypterne græd over ham i
+70 dage.
+
+==Jakob bliver begravet i Makpela-hulen==
+
+v4 Da dagene med gråd over ham var forbi, talte Josef til Faraos hof:
+>>Hvis jeg har fundet nåde for jeres øjne, så sig dog til Farao v5 at min far har ladet mig sværge
+og sagt: >Nu skal jeg dø. I min grav, som jeg har gravet{T: *kārîtî* kan også betyde >>som jeg har
+købt<< (jf. 5 Mos 2,6; Hos 3,2), hvilket passer til købet af Makpela (kap. 23).} mig i landet
+Kana'an, dér skal du begrave mig.< Lad mig nu dog drage op og begrave min far; så kommer jeg
+tilbage.<< v6 Farao sagde: >>Drag op og begrav din far, sådan som han lod dig sværge.<<
+
+v7 Så drog Josef op for at begrave sin far, og med ham drog alle Faraos tjenere, de ældste i hans
+hus og alle de ældste i Egyptens land, v8 og hele Josefs hus, hans brødre og hans fars hus. Kun
+deres små børn, deres småkvæg og deres kvæg lod de blive tilbage i Goshens land. v9 Også vogne og
+ryttere drog op med ham, og det blev et meget stort følge.
+
+v10 Da de kom til Goren-Atad,{T: Ordret: >>Tornebuskens tærskeplads<< (*gōræn hāʔāṭād*). Stedet
+kendes ikke.} som ligger på den anden side af Jordan, holdt de dér en stor og meget højtidelig
+dødeklage, og Josef holdt sorg over sin far i syv dage. v11 Da landets indbyggere, kana'anæerne, så
+sorgen ved Goren-Atad, sagde de: >>Dette er en stor sorg for egypterne.<< Derfor fik stedet navnet
+Abel-Misrajim;{T: Ordspil: kana'anæerne taler om en *ʔēbæl* (>>sorg<<), og navnet *ʔābēl
+miṣrayim* lyder som >>Egyptens sorg<<, men *ʔābēl* betyder ellers >>eng, vandløb<< (som i
+Abel-Mehola, Abel-Shittim).} det ligger på den anden side af Jordan.{E: >>På den anden side af
+Jordan<< betyder normalt øst for Jordan, set fra landet vest for floden. Det er overraskende, da
+den direkte vej fra Egypten til Hebron ikke går dér. Måske har følget taget en omvej, ligesom
+Israel senere drager ind i landet fra øst; men teksten forklarer det ikke.}
+
+v12 Hans sønner gjorde med ham sådan som han havde befalet dem. v13 Hans sønner bar ham til landet
+Kana'an og begravede ham i hulen på Makpela-marken over for Mamre, den mark som Abraham havde købt
+af hittitten Efron som gravsted i eje. v14 Efter at Josef havde begravet sin far, vendte han
+tilbage til Egypten, han og hans brødre og alle der var draget op med ham for at begrave hans far.
+
+==Josef beroliger sine brødre==
+
+v15 Da Josefs brødre så at deres far var død, sagde de: >>Hvad nu hvis Josef bærer nag til os og
+gengælder os alt det onde vi gjorde mod ham?<< v16 Så sendte de bud til Josef og sagde: >>Før din
+far døde, befalede han: v17 >Sådan skal I sige til Josef: Åh, tilgiv dog{T: Ordret: >>løft<<
+(*śāʔ*), dvs. bær skylden bort; sådan også senere i verset.} dine brødres overtrædelse og deres
+synd, at de gjorde ondt mod dig.< Så tilgiv nu overtrædelsen hos os, din fars Guds tjenere.<< Josef
+græd da de talte til ham.
+
+v18 Så kom hans brødre også selv, kastede sig ned for ham og sagde: >>Se, vi er dine trælle.<<
+v19 Men Josef sagde til dem: >>Vær ikke bange! Er jeg i Guds sted? v20 I tænkte ondt mod mig, men
+Gud tænkte det til det gode{T: Samme verbum begge gange (*ḥāšab*, >>tænke, planlægge<<): brødrene
+og Gud har hver deres plan med de samme begivenheder.} for at gøre det der sker i dag: at holde
+et stort folk i live. v21 Så vær nu ikke bange. Jeg vil sørge for jer og jeres små børn.<< Sådan
+trøstede han dem og talte venligt til dem.{T: Ordret: >>talte til deres hjerte<<.}
+
+==Josef dør==
+
+v22 Josef blev boende i Egypten, han og hans fars hus, og Josef levede 110 år. v23 Josef så
+Efraims børn i tredje led; også Makirs børn, Manasses søns, blev født på Josefs knæ.{T: Ordret:
+>>født på Josefs knæ<<, dvs. regnet som hans egne, jf. 30,3; 48,12.}
+
+v24 Josef sagde til sine brødre: >>Nu skal jeg dø. Men Gud vil i sandhed tage sig af jer{T: Den
+hebraiske tekst har fordoblet verbet (*pāqōd yifqōd*); det bruges til at understrege at noget
+virkelig skal ske. Samme udtryk i v. 25; 2 Mos 3,16; 13,19.} og føre jer op fra dette land til det
+land som han har svoret Abraham, Isak og Jakob.<< v25 Så lod Josef Israels sønner sværge og sagde:
+>>Gud vil i sandhed tage sig af jer, og så skal I bringe mine ben op herfra.<<{E: Løftet bliver
+holdt: Moses tager Josefs ben med ved udvandringen (2 Mos 13,19), og de bliver begravet i Sikem
+(Jos 24,32). Hebr 11,22 regner Josefs befaling om sine ben for et udtryk for tro på Guds løfte.}
+
+v26 Josef døde, 110 år gammel. De balsamerede ham, og han blev lagt i en kiste i Egypten.{T:
+*ʔārôn*, samme ord som for pagtens ark. Bogen slutter med Josef i en kiste i Egypten, men med
+løftet om at han skal bæres op til landet (v. 24-25).}

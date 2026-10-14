@@ -1,0 +1,110 @@
+#!/usr/bin/env python3
+"""Print the prompt for a fresh agent that builds or extends a project's language memory (store + wiki),
+focused by the project's familiarity (scripts/modes.py; docs/onboarding.md, step 4). Template:
+docs/prompts/memory_prompt.md.
+
+Usage: python3 scripts/memory_prompt.py <project> [--init]
+       --init: first create an empty store (profile/observations.json, decisions.json) and wiki (index.md,
+               log.md) where they don't exist yet
+"""
+import datetime, glob, os, sys
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(ROOT, "scripts"))
+from project import project, edition  # noqa: E402
+import modes, quotes  # noqa: E402
+
+FOCUS = {
+    "known": """You know this language well; the memory is not a grammar for you but the project's **decisions**, so that
+every agent, book and wave renders the same things the same way. Collect them from the style guides and review
+overviews (decided items are binding) and from the drafts: renderings of recurring Hebrew and Greek terms,
+formulas (speech frames, "and it came to pass", oaths, genealogies), name forms, the divine names, numbers and
+measures, headings, quotation and poetry layout. Add the corpus's house style where it bears on drafting
+(features with counts: word order in narrative, connectives, how dialogue is introduced). Record a decision
+that is still open as `status: open`.""",
+    "partial": """You know {close_to} better than {label}. The memory must hold **{label} as the corpus writes it**, above all
+where it differs from {close_to}, so that a drafting agent never falls back on the standard language:
+- grammar features with counts and references: tenses (what replaces the preterite), the subjunctive,
+  cases and their marking (dative, possession), articles and pronouns (clitic forms), relative clauses,
+  word order in verb clusters, infinitive constructions, negation, diminutives, verb doubling, the
+  particles that carry the narrative; each with the counter-cases;
+- orthography: how the corpus spells (vowels, diphthongs, long and short, doubled consonants), as
+  `letter`-style rules where they are regular;
+- vocabulary that differs from {close_to} (`term` entries: the corpus word for an English concept, with
+  counts against the standard form if the corpus has it);
+- the project's decisions from the style guides and review overviews (terms, formulas, name forms, divine
+  names, numbers), as `project-decision` entries;
+- `gap` entries for what the corpus has no model for (OT concepts in an NT corpus) and how the drafts solved it.""",
+    "unknown": """You don't know this language. Build the memory from the corpus alone, as the first study of it: a grammar
+sketch (verbs, pronouns, possession, postpositions, connectors, questions, speech framing, word order),
+orthography and name transliteration (`letter` entries), frequent formulas, a term base for the concepts the
+drafts will need, and `gap` entries for what the corpus has no model for. Never assume a form you haven't seen.""",
+}
+PAGES = {"known": " (decisions by topic: terms, formulas, names, style)",
+         "partial": " (grammar by topic under `grammar/`, orthography, vocabulary, names, the project's decisions, gaps)",
+         "unknown": " (grammar by topic under `grammar/`, orthography, vocabulary, names, gaps)"}
+
+
+def init(pname, p):
+    import json
+    pdir = os.path.join(ROOT, "export", pname)
+    os.makedirs(os.path.join(pdir, "profile"), exist_ok=True)
+    os.makedirs(os.path.join(pdir, "wiki"), exist_ok=True)
+    lic = {"observations": "CC0-1.0 (feature values and references; quotations credited in ../CREDITS.md)",
+           "decisions": "CC0-1.0 (single words and short phrases with references; quotations credited in ../CREDITS.md)"}
+    for part in ("observations", "decisions"):
+        f = os.path.join(pdir, "profile", f"{part}.json")
+        if not os.path.exists(f):
+            json.dump({"iso": p["language"].split("-")[0], "edition": os.path.basename(pname), "partition": part,
+                       "licence": lic[part], "orthography": {"normalization": "NFC", "ignore_marks": []}, "entries": []},
+                      open(f, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    today = datetime.date.today().isoformat()
+    for name, body in (("index.md", f"---\ntitle: {p.get('language_name')}: wiki\n---\n# {p.get('language_name')}: wiki\n\n"
+                                    f"(To be written in {modes.school_language(p)} by the memory set-up agent.)\n"),
+                       ("log.md", f"---\ntitle: Log\n---\n# Log\n\n- {today}, scripts/memory_prompt.py --init: empty store and wiki\n")):
+        f = os.path.join(pdir, "wiki", name)
+        if not os.path.exists(f):
+            open(f, "w", encoding="utf-8").write(body)
+    print(f"{os.path.relpath(pdir, ROOT)}: store and wiki ready", file=sys.stderr)
+
+
+def main():
+    if len(sys.argv) < 2:
+        raise SystemExit(__doc__)
+    pname = sys.argv[1]
+    p = project(pname)
+    if "--init" in sys.argv:
+        init(pname, p)
+    m = modes.mode(p)
+    pdir = os.path.join(ROOT, "export", pname)
+    label = (p.get("language_name") or p["language"]).split(" (")[0]
+    eds = [(e, edition(e)) for e in p.get("style_from") or []]
+    corpus = p.get("corpus_name") or ", ".join(ed.get("name", e) for e, ed in eds)
+    corpus_dirs = ", ".join(f"`{ed['dir']}/{ed.get('text_dir', 'text')}/`" for e, ed in eds)
+    drafted = sorted({os.path.basename(os.path.dirname(f)) for f in glob.glob(os.path.join(pdir, "*", "*[0-9][0-9][0-9].txt"))
+                      if os.path.basename(os.path.dirname(f)) not in ("quarantine", "_eval")})
+    guides = sorted(os.path.relpath(f, ROOT) for pat in ("*style_guide.md", "*review_overview.md")
+                    for f in glob.glob(os.path.join(pdir, "**", pat), recursive=True))
+    fill = {"close_to": p.get("close_to") or "the standard language", "label": label}
+    text = open(os.path.join(ROOT, "docs", "prompts", "memory_prompt.md"), encoding="utf-8").read().split("\n---\n", 1)[1]
+    qr = quotes.rule_text(pname)
+    out = text.format(
+        root=ROOT, project=pname, language_name=p.get("language_name"), school_language=modes.school_language(p),
+        language_rule=(f"Write the wiki and the store's notes in **{modes.school_language(p)}**."
+                       if modes.school_language(p).split(" (")[0] == label else
+                       f"Write the wiki and the store's notes in **{modes.school_language(p)}**: all text and analysis; "
+                       f"only quotations and examples are in {label}."), label=label,
+        familiarity=m["familiarity"], focus=FOCUS[m["familiarity"]].format(**fill), corpus=corpus, corpus_dirs=corpus_dirs,
+        lang=p.get("language"), date=datetime.date.today().isoformat(),
+        drafts_line=(f"- The project's drafts in `export/{pname}/<code>/` ({', '.join(drafted)}) with their `_notes.md`: "
+                     "how the project has rendered things so far." if drafted else ""),
+        decisions_line=("- The project's style guides and review overviews (decided items are binding): "
+                        + ", ".join(f"`{g}`" for g in guides) if guides else ""),
+        do_not_open="".join(f", `{d}`" for d in (p.get("do_not_open") or []) if d not in ("download/", "scratch/")),
+        pages_hint=PAGES[m["familiarity"]],
+        quotation_rule=(f"- {qr}" if qr else "- The corpus is public domain: quote it as you need, with references."))
+    print(out.strip())
+
+
+if __name__ == "__main__":
+    main()

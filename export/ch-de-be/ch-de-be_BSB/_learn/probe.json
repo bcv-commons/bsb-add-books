@@ -1,0 +1,51 @@
+{
+ "write": {
+  "chrf": 56.7,
+  "chrf_by_verse": 47.4,
+  "floor": 21.5,
+  "answered": 16,
+  "n": 16,
+  "route": "claude-code",
+  "model": "claude-code default",
+  "date": "2026-10-14"
+ },
+ "read": {
+  "chrf": 55.8,
+  "floor": 20.0,
+  "answered": 16,
+  "n": 16,
+  "route": "claude-code",
+  "model": "claude-code default",
+  "date": "2026-10-14"
+ },
+ "tell": {
+  "right": 23,
+  "n": 24,
+  "by_kind": {
+   "order": [
+    10,
+    10
+   ],
+   "ending": [
+    8,
+    8
+   ],
+   "slip": [
+    5,
+    6
+   ]
+  },
+  "route": "claude-code",
+  "model": "claude-code default",
+  "date": "2026-10-14"
+ },
+ "suggested": {
+  "familiarity": "partial",
+  "why": "the model understands it but writes it with slips (write 47.4 by verse; it recognises 5 of its 6 slips)",
+  "tokens": {
+   "input_tokens": 13241,
+   "output_tokens": 1921
+  },
+  "date": "2026-10-14"
+ }
+}

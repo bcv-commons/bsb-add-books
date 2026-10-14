@@ -1,0 +1,5478 @@
+{
+ "iso": "gsw",
+ "edition": "ch-de-be_BSB",
+ "partition": "decisions",
+ "licence": "CC0-1.0 (single words and short phrases with references; quotations credited in ../CREDITS.md)",
+ "orthography": {
+  "normalization": "NFC",
+  "ignore_marks": []
+ },
+ "entries": [
+  {
+   "id": "term:H3068",
+   "kind": "term",
+   "value": "der HERR",
+   "source": "יהוה",
+   "attested": "attested",
+   "words": [
+    "lord"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 24:1",
+     "form": "der HERR",
+     "n": 100
+    },
+    {
+     "ref": "GEN 24:21",
+     "form": "der HERR"
+    },
+    {
+     "ref": "GEN 24:52",
+     "form": "em HERR",
+     "n": 19
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Entscheid 02.10.2026 (Stilblatt Rut): Grossbuchstaben machen den Gottesnamen sichtbar. Flektiert: vom HERR, em HERR. Das Korpus kennt nur »der Herr« (643×) für κύριος, auch in AT-Zitaten; HERR ist eine Projektform."
+  },
+  {
+   "id": "term:adonai_yhwh",
+   "kind": "term",
+   "value": "Herr, HERR",
+   "source": "אֲדֹנָי יְהוִה",
+   "attested": "attested",
+   "words": [
+    "lord god"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 15:2",
+     "form": "Herr, HERR",
+     "n": 2
+    },
+    {
+     "ref": "GEN 15:8",
+     "form": "Herr, HERR"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Entschieden 02.10.2026 für alle Bücher (gen_review_overview, Kap. 12-21 A 1)."
+  },
+  {
+   "id": "term:yhwh_elohim",
+   "kind": "term",
+   "value": "Gott, der HERR",
+   "source": "יְהוָה אֱלֹהִים",
+   "attested": "attested",
+   "words": [
+    "lord god"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 3:1",
+     "form": "Gott, der HERR",
+     "n": 20
+    },
+    {
+     "ref": "GEN 3:8",
+     "form": "Gott, der HERR"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Gen 2,4-3,23 und Jona 4,6 (Stilblatt Genesis)."
+  },
+  {
+   "id": "term:H430",
+   "kind": "term",
+   "value": "Gott",
+   "source": "אֱלֹהִים",
+   "attested": "attested",
+   "words": [
+    "god"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 24:3",
+     "form": "Gott",
+     "n": 251
+    },
+    {
+     "ref": "1CO 1:2",
+     "form": "Gott",
+     "n": 1368
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Ohne Artikel. Korpus: Gott 1367×."
+  },
+  {
+   "id": "term:H7706",
+   "kind": "term",
+   "value": "der Allmächtig",
+   "source": "שַׁדַּי",
+   "attested": "attested",
+   "words": [
+    "almighty"
+   ],
+   "evidence": [
+    {
+     "ref": "RUT 1:21",
+     "form": "der Allmächtig",
+     "n": 1
+    },
+    {
+     "ref": "2CO 6:18",
+     "form": "Allmächtig",
+     "n": 2
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Stilblatt Rut; mit אֵל: »der allmächtig Gott« (GEN 17:1; 28:3; 35:11; 43:14; 48:3)."
+  },
+  {
+   "id": "term:el_shaddai",
+   "kind": "term",
+   "value": "der allmächtig Gott",
+   "source": "אֵל שַׁדַּי",
+   "attested": "attested",
+   "words": [
+    "god almighty"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 35:11",
+     "form": "allmächtig Gott",
+     "n": 5
+    },
+    {
+     "ref": "GEN 43:14",
+     "form": "allmächtig Gott"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Einheitlich in GEN (gen_review_overview Kap. 22-50)."
+  },
+  {
+   "id": "term:el_elyon",
+   "kind": "term",
+   "value": "der höchscht Gott",
+   "source": "אֵל עֶלְיוֹן",
+   "attested": "attested",
+   "words": [
+    "god most high"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 14:20",
+     "form": "höchscht Gott",
+     "n": 1
+    },
+    {
+     "ref": "ACT 16:17",
+     "form": "höchschte",
+     "n": 3
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Stilblatt Genesis, nach Hebr 7,1; im Dativ »vom höchschte Gott«."
+  },
+  {
+   "id": "term:malak_yhwh",
+   "kind": "term",
+   "value": "der Ängel vom HERR",
+   "source": "מַלְאַךְ יְהוָה",
+   "attested": "attested",
+   "words": [
+    "angel of the lord"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 22:11",
+     "form": "Ängel vom HERR",
+     "n": 6
+    },
+    {
+     "ref": "GEN 22:15",
+     "form": "Ängel vom HERR"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Stilblatt Genesis; Ängel im Korpus 128×."
+  },
+  {
+   "id": "term:H2617",
+   "kind": "term",
+   "value": "Tröiji",
+   "source": "חֶסֶד",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "Güeti",
+     "note": "verworfen"
+    }
+   ],
+   "words": [
+    "loving devotion",
+    "kindness",
+    "loyalty"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 24:12",
+     "form": "Tröiji",
+     "n": 15
+    },
+    {
+     "ref": "GEN 24:14",
+     "form": "Tröiji"
+    },
+    {
+     "ref": "1TI 5:12",
+     "form": "Tröiji",
+     "n": 4
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Entscheid Rut A 2; überall gleich halten (»d Tröiji halte/erwyse«). Mit אֱמֶת: »Tröiji und Zueverlässigkeit« (GEN 24:27.49; 32:11; 47:29). Jona 4,2 »voll Geduld und Tröiji«."
+  },
+  {
+   "id": "term:H1350",
+   "kind": "term",
+   "value": "Löser",
+   "source": "גֹּאֵל / גאל",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "Erblöser"
+    },
+    {
+     "value": "Verwandte mit Lösrächt"
+    }
+   ],
+   "words": [
+    "kinsman-redeemer",
+    "redeemer",
+    "redeem"
+   ],
+   "evidence": [
+    {
+     "ref": "RUT 2:20",
+     "form": "Löser",
+     "n": 9
+    },
+    {
+     "ref": "RUT 3:9",
+     "form": "Löser"
+    },
+    {
+     "ref": "RUT 3:13",
+     "form": "uslöse",
+     "n": 10
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Entscheid Rut A 1: Löser / uslöse (Lösrächt). Keine Vorlage im NT-Korpus (»uslöse« nur 2× in anderem Sinn)."
+  },
+  {
+   "id": "term:H2205",
+   "kind": "term",
+   "value": "Ratsherre",
+   "source": "זִקְנֵי הָעִיר",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "Eltischte",
+     "note": "in GEN 50:7 u. a. noch im Entwurf"
+    }
+   ],
+   "words": [
+    "elders"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 50:7",
+     "form": "Ratsherre",
+     "n": 6
+    },
+    {
+     "ref": "RUT 4:2",
+     "form": "Ratsherre"
+    },
+    {
+     "ref": "ACT 3:17",
+     "form": "Ratsherre",
+     "n": 31
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Entscheid Rut A 9; Korpus Ratsherre 31× (für πρεσβύτεροι der Juden)."
+  },
+  {
+   "id": "term:H3618",
+   "kind": "term",
+   "value": "Schwigertochter",
+   "source": "כַּלָּה",
+   "attested": "attested",
+   "words": [
+    "daughter-in-law"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 11:31",
+     "form": "Schwigertochter",
+     "n": 8
+    },
+    {
+     "ref": "GEN 38:11",
+     "form": "Schwigertochter"
+    },
+    {
+     "ref": "LUK 12:53",
+     "form": "Schwigertochter",
+     "n": 3
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Plural »Schwigertöchtere« (RUT 1:6)."
+  },
+  {
+   "id": "term:H2545",
+   "kind": "term",
+   "value": "Schwigermueter",
+   "source": "חָמוֹת",
+   "attested": "attested",
+   "words": [
+    "mother-in-law"
+   ],
+   "evidence": [
+    {
+     "ref": "RUT 2:11",
+     "form": "Schwigermueter",
+     "n": 10
+    },
+    {
+     "ref": "RUT 2:18",
+     "form": "Schwigermueter"
+    },
+    {
+     "ref": "LUK 4:38",
+     "form": "Schwigermueter",
+     "n": 5
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided"
+  },
+  {
+   "id": "term:H8184",
+   "kind": "term",
+   "value": "Gärschte",
+   "source": "שְׂעֹרִים",
+   "attested": "attested",
+   "words": [
+    "barley"
+   ],
+   "evidence": [
+    {
+     "ref": "RUT 2:17",
+     "form": "Gärschte",
+     "n": 7
+    },
+    {
+     "ref": "RUT 2:23",
+     "form": "Gärschte"
+    },
+    {
+     "ref": "JHN 6:9",
+     "form": "Gärschtebrot",
+     "n": 2
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Korpus nur »Gärschtebrot« (JHN 6:9.13); Weize 9×."
+  },
+  {
+   "id": "term:H2406",
+   "kind": "term",
+   "value": "Weize",
+   "source": "חִטִּים",
+   "attested": "attested",
+   "words": [
+    "wheat"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 30:14",
+     "form": "Weize",
+     "n": 2
+    },
+    {
+     "ref": "1CO 15:37",
+     "form": "Weize",
+     "n": 9
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided"
+  },
+  {
+   "id": "term:H7105",
+   "kind": "term",
+   "value": "Ärn",
+   "source": "קָצִיר",
+   "attested": "attested",
+   "words": [
+    "harvest"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 8:22",
+     "form": "Ärn",
+     "n": 3
+    },
+    {
+     "ref": "GEN 47:24",
+     "form": "Ärn"
+    },
+    {
+     "ref": "2TI 2:6",
+     "form": "Ärn",
+     "n": 12
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided"
+  },
+  {
+   "id": "term:H7641",
+   "kind": "term",
+   "value": "Ähri",
+   "source": "שִׁבֳּלִים",
+   "attested": "attested",
+   "words": [
+    "heads of grain",
+    "ears of grain"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 41:5",
+     "form": "Ähri",
+     "n": 18
+    },
+    {
+     "ref": "GEN 41:6",
+     "form": "Ähri"
+    },
+    {
+     "ref": "LUK 6:1",
+     "form": "Ähri",
+     "n": 7
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided"
+  },
+  {
+   "id": "term:H1637",
+   "kind": "term",
+   "value": "Tenn",
+   "source": "גֹּרֶן",
+   "attested": "attested",
+   "words": [
+    "threshing floor"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 50:10",
+     "form": "Tenn",
+     "n": 6
+    },
+    {
+     "ref": "GEN 50:11",
+     "form": "Tenn"
+    },
+    {
+     "ref": "LUK 3:17",
+     "form": "Tenn",
+     "n": 2
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided"
+  },
+  {
+   "id": "term:H5401",
+   "kind": "term",
+   "value": "es Müntschi gä",
+   "source": "נשׁק",
+   "attested": "attested",
+   "words": [
+    "kiss",
+    "kissed"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 31:28",
+     "form": "Müntschi",
+     "n": 12
+    },
+    {
+     "ref": "GEN 33:4",
+     "form": "Müntschi"
+    },
+    {
+     "ref": "1CO 16:20",
+     "form": "Müntschi",
+     "n": 13
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Korpus: Müntschi 10× für ›kiss‹ (Anteil 0.91 im Lexikon)."
+  },
+  {
+   "id": "formula:weep_aloud",
+   "kind": "formula",
+   "value": "lut aafa briegge",
+   "source": "נשׂא קול ובכה",
+   "attested": "attested",
+   "words": [
+    "wept aloud",
+    "lifted up their voices and wept"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 27:38",
+     "form": "lut aafa briegge",
+     "n": 6
+    },
+    {
+     "ref": "GEN 21:16",
+     "form": "lut aafa briegge"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Stilblatt Rut; »briegge« ist im Korpus das Wort für weinen."
+  },
+  {
+   "id": "term:H2009",
+   "kind": "term",
+   "value": "lue / lueget",
+   "source": "הִנֵּה",
+   "attested": "by-rule",
+   "words": [
+    "behold",
+    "look"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 42:1",
+     "form": "lueget",
+     "n": 2
+    },
+    {
+     "ref": "1CO 11:22",
+     "form": "lueget",
+     "n": 34
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Stilblatt Rut. »Lueget« ist für ἰδού reserviert, nicht für ἀμήν (Entscheid Joh)."
+  },
+  {
+   "id": "term:H3247",
+   "kind": "term",
+   "value": "Toterych",
+   "source": "שְׁאוֹל",
+   "attested": "attested",
+   "words": [
+    "sheol",
+    "grave"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 37:35",
+     "form": "Toterych",
+     "n": 5
+    },
+    {
+     "ref": "GEN 44:29",
+     "form": "Toterych"
+    },
+    {
+     "ref": "ACT 2:27",
+     "form": "Toterych",
+     "n": 10
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Jona-Zusätze; GEN 37:35; 42:38; 44:29.31; Korpus Toterych 10× (ᾅδης)."
+  },
+  {
+   "id": "term:H4487",
+   "kind": "term",
+   "value": "la cho",
+   "source": "וַיְמַן",
+   "attested": "attested",
+   "words": [
+    "appointed",
+    "prepared"
+   ],
+   "evidence": [
+    {
+     "ref": "JON 2:1",
+     "form": "la cho",
+     "n": 3
+    },
+    {
+     "ref": "JON 4:7",
+     "form": "la cho"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Entschieden 02.10.2026, Jona 2,1; 4,7.8; 4,6 »la ufwachse«."
+  },
+  {
+   "id": "term:H2904",
+   "kind": "term",
+   "value": "schiesse",
+   "source": "הֵטִיל",
+   "attested": "attested",
+   "words": [
+    "hurled",
+    "threw"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 37:20",
+     "form": "schiesse",
+     "n": 2
+    },
+    {
+     "ref": "JON 1:12",
+     "form": "schiesse"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Leitwort Jona 1,4.5.12.15."
+  },
+  {
+   "id": "term:H7021",
+   "kind": "term",
+   "value": "Rizinusstude",
+   "source": "קִיקָיוֹן",
+   "attested": "attested",
+   "words": [
+    "plant",
+    "vine"
+   ],
+   "evidence": [
+    {
+     "ref": "JON 4:6",
+     "form": "Rizinusstude",
+     "n": 5
+    },
+    {
+     "ref": "JON 4:7",
+     "form": "Rizinusstude"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Entschieden (Jona 4,6). Kein Korpusbeleg."
+  },
+  {
+   "id": "term:royal_robe",
+   "kind": "term",
+   "value": "Chünigsmantel",
+   "source": "אַדֶּרֶת",
+   "attested": "attested",
+   "words": [
+    "royal robe",
+    "robe"
+   ],
+   "evidence": [
+    {
+     "ref": "JON 3:6",
+     "form": "Chünigsmantel",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Entschieden 02.10.2026 (Jona 3,6)."
+  },
+  {
+   "id": "term:H1254",
+   "kind": "term",
+   "value": "erschaffe",
+   "source": "בָּרָא",
+   "attested": "attested",
+   "words": [
+    "created",
+    "create"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 5:1",
+     "form": "erschaffe",
+     "n": 11
+    },
+    {
+     "ref": "GEN 5:2",
+     "form": "erschaffe"
+    },
+    {
+     "ref": "1TI 2:13",
+     "form": "erschaffe",
+     "n": 22
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Nur für bārāʾ; עָשָׂה = mache (Stilblatt Genesis)."
+  },
+  {
+   "id": "formula:in_the_beginning",
+   "kind": "formula",
+   "value": "Am Aafang",
+   "source": "בְּרֵאשִׁית",
+   "attested": "attested",
+   "words": [
+    "in the beginning"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 1:1",
+     "form": "Am Aafang",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided"
+  },
+  {
+   "id": "formula:tohu_wabohu",
+   "kind": "formula",
+   "value": "wüescht und läär",
+   "source": "תֹהוּ וָבֹהוּ",
+   "attested": "attested",
+   "words": [
+    "formless and void"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 1:2",
+     "form": "wüescht und läär",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Klang wie Luther »wüst und leer«."
+  },
+  {
+   "id": "term:H8415",
+   "kind": "term",
+   "value": "d Tiefi",
+   "source": "תְּהוֹם",
+   "attested": "by-rule",
+   "words": [
+    "deep"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 8:2",
+     "form": "Tiefi",
+     "n": 6
+    },
+    {
+     "ref": "GEN 49:25",
+     "form": "Tiefi"
+    },
+    {
+     "ref": "2CO 7:6",
+     "form": "Tiefi",
+     "n": 5
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Form im Text: »Tiefi« mit Artikel d. Jona 2,6 ebenso."
+  },
+  {
+   "id": "term:H7549",
+   "kind": "term",
+   "value": "ds Himelsgwölb",
+   "source": "רָקִיעַ",
+   "attested": "by-rule",
+   "words": [
+    "expanse"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 1:6",
+     "form": "Himelsgwölb",
+     "n": 9
+    },
+    {
+     "ref": "GEN 1:7",
+     "form": "Himelsgwölb"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Neubildung, im Korpus 0×."
+  },
+  {
+   "id": "formula:evening_morning",
+   "kind": "formula",
+   "value": "Es isch Aabe worde und Morge worde: der <n> Tag",
+   "source": "וַיְהִי־עֶרֶב וַיְהִי־בֹקֶר יוֹם <n>",
+   "attested": "by-rule",
+   "words": [
+    "evening",
+    "morning",
+    "day"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 1:5",
+     "form": "Aabe worde und Morge",
+     "n": 6
+    },
+    {
+     "ref": "GEN 1:8",
+     "form": "Aabe worde und Morge"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Gleiche Formel alle sechs Male (GEN 1:5.8.13.19.23.31)."
+  },
+  {
+   "id": "formula:and_it_was_so",
+   "kind": "formula",
+   "value": "Und so isch es gscheh",
+   "source": "וַיְהִי־כֵן",
+   "attested": "by-rule",
+   "words": [
+    "and it was so"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 1:7",
+     "form": "so isch es gscheh",
+     "n": 6
+    },
+    {
+     "ref": "GEN 1:9",
+     "form": "so isch es gscheh"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Gleich jedes Mal."
+  },
+  {
+   "id": "formula:that_it_was_good",
+   "kind": "formula",
+   "value": "dass es guet isch",
+   "source": "כִּי־טוֹב",
+   "attested": "attested",
+   "words": [
+    "that it was good"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 1:10",
+     "form": "dass es guet isch",
+     "n": 5
+    },
+    {
+     "ref": "GEN 1:12",
+     "form": "dass es guet isch"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided"
+  },
+  {
+   "id": "formula:after_its_kind",
+   "kind": "formula",
+   "value": "nach syr Art",
+   "source": "לְמִינוֹ",
+   "attested": "attested",
+   "words": [
+    "according to their kinds",
+    "after its kind"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 6:20",
+     "form": "nach syr Art",
+     "n": 4
+    },
+    {
+     "ref": "GEN 7:14",
+     "form": "nach syr Art"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided"
+  },
+  {
+   "id": "term:nefesh_chayah",
+   "kind": "term",
+   "value": "läbigi Wäse",
+   "source": "נֶפֶשׁ חַיָּה",
+   "attested": "attested",
+   "words": [
+    "living creatures"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 1:24",
+     "form": "läbigi Wäse",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided"
+  },
+  {
+   "id": "term:H120",
+   "kind": "term",
+   "value": "der Mönsch / Adam",
+   "source": "אָדָם",
+   "attested": "by-rule",
+   "words": [
+    "man",
+    "adam"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 9:6",
+     "form": "der Mönsch",
+     "n": 18
+    },
+    {
+     "ref": "GEN 5:1",
+     "form": "Adam",
+     "n": 8
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Entschieden 02.10.2026: »der Mönsch« mit Artikel (hā-ʾādām); »Adam« wo MT ohne Artikel punktiert (2,20b; 3,17.21; ab 4,25; 5,1-5); 4,1 bleibt »der Mönsch«."
+  },
+  {
+   "id": "term:H5175",
+   "kind": "term",
+   "value": "d Schlange",
+   "source": "נָחָשׁ",
+   "attested": "by-rule",
+   "words": [
+    "serpent"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 49:17",
+     "form": "Schlange",
+     "n": 6
+    },
+    {
+     "ref": "GEN 3:1",
+     "form": "Schlange"
+    },
+    {
+     "ref": "1CO 10:9",
+     "form": "Schlange",
+     "n": 13
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided"
+  },
+  {
+   "id": "term:H6174",
+   "kind": "term",
+   "value": "blutt / schlau",
+   "source": "עָרוּם / עֲרוּמִּים",
+   "attested": "by-rule",
+   "words": [
+    "naked",
+    "crafty"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 9:21",
+     "form": "blutt",
+     "n": 7
+    },
+    {
+     "ref": "GEN 9:22",
+     "form": "blutt"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Wortspiel nur im Notizfile erklären."
+  },
+  {
+   "id": "term:H779",
+   "kind": "term",
+   "value": "verfluecht",
+   "source": "אָרַר",
+   "attested": "attested",
+   "words": [
+    "cursed",
+    "curse"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 27:29",
+     "form": "verfluecht",
+     "n": 5
+    },
+    {
+     "ref": "GEN 5:29",
+     "form": "verfluecht"
+    },
+    {
+     "ref": "GAL 1:8",
+     "form": "verfluecht",
+     "n": 7
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided"
+  },
+  {
+   "id": "term:H1288",
+   "kind": "term",
+   "value": "sägne",
+   "source": "בֵּרַךְ",
+   "attested": "by-rule",
+   "words": [
+    "bless",
+    "blessed"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 24:1",
+     "form": "gsägnet",
+     "n": 36
+    },
+    {
+     "ref": "GEN 24:35",
+     "form": "gsägnet"
+    },
+    {
+     "ref": "1CO 4:13",
+     "form": "sägne",
+     "n": 3
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Partizip »gsägnet«. ›blessed‹ im NT-Makarismus dagegen »glücklech« (44×)."
+  },
+  {
+   "id": "term:H3999",
+   "kind": "term",
+   "value": "d Sintfluet",
+   "source": "מַבּוּל",
+   "attested": "by-rule",
+   "words": [
+    "flood"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 9:11",
+     "form": "Sintfluet",
+     "n": 12
+    },
+    {
+     "ref": "GEN 9:15",
+     "form": "Sintfluet"
+    },
+    {
+     "ref": "MAT 24:38",
+     "form": "Sintfluet",
+     "n": 2
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided"
+  },
+  {
+   "id": "term:H8392",
+   "kind": "term",
+   "value": "d Arche",
+   "source": "תֵּבָה",
+   "attested": "by-rule",
+   "words": [
+    "ark"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 9:10",
+     "form": "Arche",
+     "n": 26
+    },
+    {
+     "ref": "GEN 9:18",
+     "form": "Arche"
+    },
+    {
+     "ref": "1PE 3:20",
+     "form": "Arche",
+     "n": 4
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided"
+  },
+  {
+   "id": "term:H7198",
+   "kind": "term",
+   "value": "Rägeboge",
+   "source": "קֶשֶׁת",
+   "attested": "attested",
+   "words": [
+    "rainbow",
+    "bow"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 9:13",
+     "form": "Rägeboge",
+     "n": 3
+    },
+    {
+     "ref": "GEN 9:14",
+     "form": "Rägeboge"
+    },
+    {
+     "ref": "REV 4:3",
+     "form": "Rägeboge",
+     "n": 2
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Entschieden 02.10.2026."
+  },
+  {
+   "id": "term:H1285",
+   "kind": "term",
+   "value": "Bund",
+   "source": "בְּרִית",
+   "attested": "attested",
+   "words": [
+    "covenant"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 31:44",
+     "form": "Bund",
+     "n": 26
+    },
+    {
+     "ref": "GEN 26:28",
+     "form": "Bund"
+    },
+    {
+     "ref": "1CO 11:25",
+     "form": "Bund",
+     "n": 27
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "כָּרַת בְּרִית = e Bund schliesse; hēqîm = ufrichte (9,9)."
+  },
+  {
+   "id": "term:H2555",
+   "kind": "term",
+   "value": "Gwalt",
+   "source": "חָמָס",
+   "attested": "attested",
+   "words": [
+    "violence"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 30:8",
+     "form": "Gwalt",
+     "n": 9
+    },
+    {
+     "ref": "GEN 31:31",
+     "form": "Gwalt"
+    },
+    {
+     "ref": "1CO 14:32",
+     "form": "Gwalt",
+     "n": 18
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Wie Jona 3,8."
+  },
+  {
+   "id": "term:H4135",
+   "kind": "term",
+   "value": "beschnyde / Beschnydig / Vorhuut",
+   "source": "מוּל / מִילָה / עָרְלָה",
+   "attested": "by-rule",
+   "words": [
+    "circumcise",
+    "circumcision",
+    "foreskin"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 34:14",
+     "form": "Vorhuut",
+     "n": 6
+    },
+    {
+     "ref": "GEN 17:11",
+     "form": "Vorhuut"
+    },
+    {
+     "ref": "ACT 7:8",
+     "form": "Beschnydig",
+     "n": 14
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Beschnydig im Korpus 14×; »Vorhuut« 0× im Korpus."
+  },
+  {
+   "id": "term:H8198",
+   "kind": "term",
+   "value": "Magd",
+   "source": "שִׁפְחָה",
+   "attested": "attested",
+   "words": [
+    "maidservant",
+    "servant"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 30:3",
+     "form": "Magd",
+     "n": 24
+    },
+    {
+     "ref": "GEN 30:4",
+     "form": "Magd"
+    },
+    {
+     "ref": "ACT 12:13",
+     "form": "Magd",
+     "n": 4
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "אָמָה 21,10-13 »Sklavin«; Rut 2,13 / 3,9 beide »Magd«."
+  },
+  {
+   "id": "term:H1616",
+   "kind": "term",
+   "value": "Frömde / als Frömde wohne",
+   "source": "גֵּר / גּוּר",
+   "attested": "by-rule",
+   "words": [
+    "foreigner",
+    "sojourn",
+    "stranger"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 19:9",
+     "form": "Frömde",
+     "n": 14
+    },
+    {
+     "ref": "GEN 26:3",
+     "form": "Frömde"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided"
+  },
+  {
+   "id": "term:H2233",
+   "kind": "term",
+   "value": "Nachkomme",
+   "source": "זֶרַע",
+   "attested": "attested",
+   "words": [
+    "offspring",
+    "descendants",
+    "seed"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 24:7",
+     "form": "Nachkomme",
+     "n": 59
+    },
+    {
+     "ref": "GEN 24:60",
+     "form": "Nachkomme"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Durchgehend »Nachkomme« vorgeschlagen (gen_review_overview Kap. 22-50 A 10)."
+  },
+  {
+   "id": "term:H6666",
+   "kind": "term",
+   "value": "Grächtigkeit",
+   "source": "צְדָקָה",
+   "attested": "attested",
+   "words": [
+    "righteousness"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 15:6",
+     "form": "Grächtigkeit",
+     "n": 1
+    },
+    {
+     "ref": "1CO 1:30",
+     "form": "Grächtigkeit",
+     "n": 70
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided"
+  },
+  {
+   "id": "term:gebiret",
+   "kind": "term",
+   "value": "d Frou vom Huus",
+   "source": "גְּבֶרֶת",
+   "attested": "by-rule",
+   "words": [
+    "mistress"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 16:4",
+     "form": "Frou vom Huus",
+     "n": 3
+    },
+    {
+     "ref": "GEN 16:8",
+     "form": "Frou vom Huus"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Entschieden 02.10.2026 (GEN 16,4.8.9)."
+  },
+  {
+   "id": "term:H3045_sex",
+   "kind": "term",
+   "value": "zäme sy",
+   "source": "יָדַע (Geschlechtsverkehr)",
+   "attested": "by-rule",
+   "words": [
+    "knew",
+    "have relations",
+    "slept with"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 24:16",
+     "form": "zäme gsi",
+     "n": 6
+    },
+    {
+     "ref": "GEN 19:8",
+     "form": "zäme gsi"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "»isch mit syr Frou zäme gsi«; 19,5 »mir wei mit ne zäme sy« (entschieden 02.10.2026)."
+  },
+  {
+   "id": "term:H436",
+   "kind": "term",
+   "value": "Eich / Eiche",
+   "source": "אֵלוֹן",
+   "attested": "by-rule",
+   "words": [
+    "oak",
+    "oaks"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 18:1",
+     "form": "Eich",
+     "n": 6
+    },
+    {
+     "ref": "GEN 35:4",
+     "form": "Eich"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Entschieden 02.10.2026, wie BSB, mit Fussnote »Oder: Terebinthe oder grosse Boum«."
+  },
+  {
+   "id": "term:H520",
+   "kind": "term",
+   "value": "Elle (+ Meter in Klammern)",
+   "source": "אַמָּה",
+   "attested": "by-rule",
+   "words": [
+    "cubit",
+    "cubits"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 6:15",
+     "form": "Elle",
+     "n": 5
+    },
+    {
+     "ref": "GEN 6:16",
+     "form": "Elle"
+    },
+    {
+     "ref": "REV 21:17",
+     "form": "Elle",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Jedes Mal mit »(ungefähr … m)«; Korpus Elle 1× (REV 21:17)."
+  },
+  {
+   "id": "term:H8255",
+   "kind": "term",
+   "value": "Schekel",
+   "source": "שֶׁקֶל",
+   "attested": "attested",
+   "words": [
+    "shekel",
+    "shekels"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 24:22",
+     "form": "Schekel",
+     "n": 4
+    },
+    {
+     "ref": "GEN 23:15",
+     "form": "Schekel"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Mit Gramm-Angabe (GEN 24:22). Kein Korpusbeleg."
+  },
+  {
+   "id": "formula:gathered_to_people",
+   "kind": "formula",
+   "value": "isch zu syne Vorfahre heiggange",
+   "source": "וַיֵּאָסֶף אֶל־עַמָּיו",
+   "attested": "attested",
+   "words": [
+    "gathered to his people"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 25:8",
+     "form": "Vorfahre heiggange",
+     "n": 4
+    },
+    {
+     "ref": "GEN 25:17",
+     "form": "Vorfahre heiggange"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "GEN 25:8.17; 35:29; 49:29.33; Alternative »zu sym Volk« offen (gen_review_overview Kap. 22-50 A 8)."
+  },
+  {
+   "id": "formula:here_i_am",
+   "kind": "formula",
+   "value": "Da bin i",
+   "source": "הִנֵּנִי",
+   "attested": "attested",
+   "words": [
+    "here i am"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 31:11",
+     "form": "Da bin i",
+     "n": 9
+    },
+    {
+     "ref": "GEN 27:1",
+     "form": "Da bin i"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Mechanisch angeglichen (statt »Hie bin i«)."
+  },
+  {
+   "id": "formula:and_he_died",
+   "kind": "formula",
+   "value": "und de isch er gstorbe",
+   "source": "וַיָּמֹת",
+   "attested": "attested",
+   "words": [
+    "and then he died",
+    "and he died"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 9:29",
+     "form": "und de isch er",
+     "n": 9
+    },
+    {
+     "ref": "GEN 5:5",
+     "form": "und de isch er"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Genealogieformel Kap. 5, gleich jedes Mal."
+  },
+  {
+   "id": "term:H5631",
+   "kind": "term",
+   "value": "Hofmaa",
+   "source": "סָרִיס",
+   "attested": "attested",
+   "words": [
+    "officer",
+    "official"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 37:36",
+     "form": "Hofmaa",
+     "n": 2
+    },
+    {
+     "ref": "GEN 39:1",
+     "form": "Hofmaa"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "37,36; 39,1; 40,2.7 (Plural Hofmanne). Alternative »Hofbeamte« offen."
+  },
+  {
+   "id": "term:H953",
+   "kind": "term",
+   "value": "Zischtärne",
+   "source": "בּוֹר (Josef)",
+   "attested": "attested",
+   "words": [
+    "cistern",
+    "pit"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 37:20",
+     "form": "Zischtärne",
+     "n": 9
+    },
+    {
+     "ref": "GEN 37:22",
+     "form": "Zischtärne"
+    },
+    {
+     "ref": "LUK 14:5",
+     "form": "Zischtärne",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Angeglichen 40,15; 41,14."
+  },
+  {
+   "id": "term:captain_guard",
+   "kind": "term",
+   "value": "der Chef vo der Lybwach",
+   "source": "שַׂר הַטַּבָּחִים",
+   "attested": "by-rule",
+   "words": [
+    "captain of the guard"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 37:36",
+     "form": "Lybwach",
+     "n": 6
+    },
+    {
+     "ref": "GEN 41:10",
+     "form": "Lybwach"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided"
+  },
+  {
+   "id": "term:H4676",
+   "kind": "term",
+   "value": "Süüle",
+   "source": "מַצֵּבָה",
+   "attested": "attested",
+   "words": [
+    "pillar"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 35:14",
+     "form": "Süüle",
+     "n": 4
+    },
+    {
+     "ref": "GEN 35:20",
+     "form": "Süüle"
+    },
+    {
+     "ref": "1TI 3:15",
+     "form": "Süüle",
+     "n": 3
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "open",
+   "note": "Offen: »Süüle« / »Steisüüle« / »Grabsüüle« oder »Gedänkstei« (gen 22-50 A 2; 28,18.22; 31,13.45.51-52; 35,14.20)."
+  },
+  {
+   "id": "term:H2748",
+   "kind": "term",
+   "value": "Zouberer",
+   "source": "חַרְטֻמִּים",
+   "attested": "attested",
+   "words": [
+    "magicians"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 41:8",
+     "form": "Zouberer",
+     "n": 2
+    },
+    {
+     "ref": "GEN 41:24",
+     "form": "Zouberer"
+    },
+    {
+     "ref": "ACT 8:8",
+     "form": "Zouberer",
+     "n": 3
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "open",
+   "note": "Offen; wirkt bis 2Mo 7-9 und Dan 1-2 (Alternativen Wahrsäger, Tröimdüter)."
+  },
+  {
+   "id": "term:H8441",
+   "kind": "term",
+   "value": "Gröiel",
+   "source": "תּוֹעֵבָה",
+   "attested": "attested",
+   "words": [
+    "detestable",
+    "abomination"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 43:32",
+     "form": "Gröiel",
+     "n": 1
+    },
+    {
+     "ref": "MAT 24:15",
+     "form": "Gröiel",
+     "n": 2
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "open",
+   "note": "Offen (43,32): oder volkstümlich »es gruuset ne dervor«."
+  },
+  {
+   "id": "term:H6629",
+   "kind": "term",
+   "value": "Härde / Herde",
+   "source": "צֹאן",
+   "attested": "attested",
+   "words": [
+    "flock",
+    "flocks"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 31:4",
+     "form": "Härde",
+     "n": 17
+    },
+    {
+     "ref": "GEN 31:8",
+     "form": "Härde"
+    },
+    {
+     "ref": "GEN 30:31",
+     "form": "Herde",
+     "n": 12
+    },
+    {
+     "ref": "1CO 9:7",
+     "form": "Härde",
+     "n": 7
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "open",
+   "note": "Entwürfe uneinheitlich (Härde 15, Herde 11 Verse); das Korpus hat nur »Härde« (7×), »Herde« 0 – Empfehlung Härde."
+  },
+  {
+   "id": "term:H3701",
+   "kind": "term",
+   "value": "Gäld / Silber",
+   "source": "כֶּסֶף (Geld)",
+   "attested": "by-rule",
+   "words": [
+    "silver",
+    "money"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 31:15",
+     "form": "Gäld",
+     "n": 19
+    },
+    {
+     "ref": "GEN 47:14",
+     "form": "Gäld"
+    },
+    {
+     "ref": "GEN 24:35",
+     "form": "Silber",
+     "n": 19
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "open",
+   "note": "GEN 42-44; 47: »Gäld«, Kap. 43 »Silber« – offen (gen 22-50 A 3)."
+  },
+  {
+   "id": "term:H6485",
+   "kind": "term",
+   "value": "sech kümmere",
+   "source": "פָּקַד",
+   "attested": "by-rule",
+   "words": [
+    "visited",
+    "attend to"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 21:1",
+     "form": "kümmeret",
+     "n": 3
+    },
+    {
+     "ref": "GEN 39:8",
+     "form": "kümmeret"
+    },
+    {
+     "ref": "GEN 21:1",
+     "form": "kümmere",
+     "n": 5
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "open",
+   "note": "21,1; 50,24-25; Rut 1,6. Alternative »heisueche« (Fussnote 50,24) offen."
+  },
+  {
+   "id": "term:rech_nichoach",
+   "kind": "term",
+   "value": "der fein Duft",
+   "source": "רֵיחַ הַנִּיחֹחַ",
+   "attested": "attested",
+   "words": [
+    "pleasing aroma"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 8:21",
+     "form": "fein Duft",
+     "n": 1
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "open",
+   "note": "Offen, ob feste Opferformel für alle Bücher Mose."
+  },
+  {
+   "id": "formula:amen_amen",
+   "kind": "formula",
+   "value": "Würklech, würklech, i cha nech säge:",
+   "source": "ἀμὴν ἀμὴν λέγω ὑμῖν",
+   "attested": "by-rule",
+   "words": [
+    "truly, truly, i tell you"
+   ],
+   "evidence": [
+    {
+     "ref": "JHN 5:25",
+     "form": "Würklech, i cha nech",
+     "n": 4
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Entscheid 06.10.2026 für alle Stellen in Joh (draft JHN 1:51 u. a.; Singular »i cha der säge«). Die Verdopplung ist eine Bildung nach dem einfachen Korpusmodell."
+  },
+  {
+   "id": "term:G1111",
+   "kind": "term",
+   "value": "mule",
+   "source": "γογγύζω",
+   "attested": "attested",
+   "words": [
+    "grumble",
+    "grumbling"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 10:10",
+     "form": "gmulet",
+     "n": 2
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Entscheid 06.10.2026 (Joh); »gmulet« als Partizip."
+  },
+  {
+   "id": "term:G3875",
+   "kind": "term",
+   "value": "der Hälfer",
+   "source": "παράκλητος",
+   "attested": "attested",
+   "words": [
+    "advocate",
+    "helper"
+   ],
+   "evidence": [
+    {
+     "ref": "1JN 2:1",
+     "form": "Hälfer",
+     "n": 19
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Joh 14-16 einheitlich."
+  },
+  {
+   "id": "term:G2776",
+   "kind": "term",
+   "value": "ds Houpt",
+   "source": "κεφαλή (Christus)",
+   "attested": "attested",
+   "words": [
+    "head"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 11:3",
+     "form": "Houpt",
+     "n": 9
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Entscheid 06.10.2026 (Eph 1,22; 4,15; 5,23); »Chopf« nur für den wörtlichen Kopf."
+  },
+  {
+   "id": "term:G40",
+   "kind": "term",
+   "value": "d Chrischte",
+   "source": "ἅγιοι",
+   "attested": "by-rule",
+   "words": [
+    "saints"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 6:2",
+     "form": "Chrischte",
+     "n": 54
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Entscheid 06.10.2026: überall »d Chrischte«, auch Eph 1,18; 2,19."
+  },
+  {
+   "id": "term:G4983_corpse",
+   "kind": "term",
+   "value": "Lychnam",
+   "source": "σῶμα (Leiche)",
+   "attested": "attested",
+   "words": [
+    "body"
+   ],
+   "evidence": [
+    {
+     "ref": "JHN 19:38",
+     "form": "Lychnam",
+     "n": 12
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "open",
+   "note": "Joh 19,31.38.40; 20,12; als Regel ins Stilblatt? offen."
+  },
+  {
+   "id": "term:see",
+   "kind": "term",
+   "value": "gseh",
+   "source": "see",
+   "attested": "attested",
+   "words": [
+    "see"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 13:12",
+     "form": "gseh",
+     "n": 415
+    },
+    {
+     "ref": "1CO 16:7",
+     "form": "gseh"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Partizip und Infinitiv gleich (gseh); Präsens »gseht«. Für ›look/behold‹ dagegen luege/lue."
+  },
+  {
+   "id": "term:look",
+   "kind": "term",
+   "value": "luege / lue / lueget",
+   "source": "look",
+   "attested": "attested",
+   "words": [
+    "look",
+    "behold"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 5:9",
+     "form": "Lue",
+     "n": 267
+    },
+    {
+     "ref": "ACT 7:56",
+     "form": "Lueget"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Imperativ »Lue!«, »Lueget!« für ›look/behold‹ (Lexikon: lue 30 %, lueget 29 %)."
+  },
+  {
+   "id": "term:listen",
+   "kind": "term",
+   "value": "lose",
+   "source": "listen",
+   "attested": "attested",
+   "words": [
+    "listen"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 14:21",
+     "form": "lose",
+     "n": 80
+    },
+    {
+     "ref": "1JN 4:6",
+     "form": "lost"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "›zuhören‹ heisst lose (loset 17×); ›hören‹ ghöre."
+  },
+  {
+   "id": "term:weep",
+   "kind": "term",
+   "value": "briegge",
+   "source": "weep",
+   "attested": "attested",
+   "words": [
+    "weep",
+    "wept",
+    "weeping"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 7:30",
+     "form": "briegge",
+     "n": 25
+    },
+    {
+     "ref": "JAS 4:9",
+     "form": "Briegge"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "»weinen« kommt nicht vor; lut briegge = laut weinen."
+  },
+  {
+   "id": "term:marry",
+   "kind": "term",
+   "value": "hürate",
+   "source": "marry",
+   "attested": "attested",
+   "words": [
+    "marry",
+    "married"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 7:9",
+     "form": "hürate",
+     "n": 31
+    },
+    {
+     "ref": "1CO 7:28",
+     "form": "hüratisch"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "»heiraten« kommt nicht vor."
+  },
+  {
+   "id": "term:girl",
+   "kind": "term",
+   "value": "Meitschi",
+   "source": "girl",
+   "attested": "attested",
+   "words": [
+    "girl",
+    "young woman"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 9:24",
+     "form": "Meitschi",
+     "n": 18
+    },
+    {
+     "ref": "MAT 9:25",
+     "form": "Meitschi"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Meitschi 18× gegen Meitli 1×; die Entwürfe haben »Meitli« (GEN 24; 34) – offen (gen 22-50 A 11)."
+  },
+  {
+   "id": "term:boy",
+   "kind": "term",
+   "value": "Bueb",
+   "source": "boy",
+   "attested": "attested",
+   "words": [
+    "boy"
+   ],
+   "evidence": [
+    {
+     "ref": "JHN 4:51",
+     "form": "Bueb",
+     "n": 23
+    },
+    {
+     "ref": "JHN 6:9",
+     "form": "Bueb"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:brothers",
+   "kind": "term",
+   "value": "Gschwüschterti",
+   "source": "brothers",
+   "attested": "attested",
+   "words": [
+    "brothers"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 1:10",
+     "form": "Gschwüschterti",
+     "n": 133
+    },
+    {
+     "ref": "1CO 1:11",
+     "form": "Gschwüschterti"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Als Anrede an die Gemeinde (125×); leibliche Brüder »Brüeder«."
+  },
+  {
+   "id": "term:church",
+   "kind": "term",
+   "value": "Gmeind",
+   "source": "church",
+   "attested": "attested",
+   "words": [
+    "church"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 1:2",
+     "form": "Gmeind",
+     "n": 74
+    },
+    {
+     "ref": "1CO 5:12",
+     "form": "Gmeind"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:money",
+   "kind": "term",
+   "value": "Gäld",
+   "source": "money",
+   "attested": "attested",
+   "words": [
+    "money"
+   ],
+   "evidence": [
+    {
+     "ref": "1TI 3:3",
+     "form": "Gäld",
+     "n": 54
+    },
+    {
+     "ref": "1TI 3:8",
+     "form": "Gäld"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:always",
+   "kind": "term",
+   "value": "geng",
+   "source": "always",
+   "attested": "attested",
+   "words": [
+    "always"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 1:4",
+     "form": "geng",
+     "n": 166
+    },
+    {
+     "ref": "1CO 15:58",
+     "form": "geng"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "»immer« 0× im Korpus."
+  },
+  {
+   "id": "term:only",
+   "kind": "term",
+   "value": "nume",
+   "source": "only",
+   "attested": "attested",
+   "words": [
+    "only"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 3:7",
+     "form": "nume",
+     "n": 349
+    },
+    {
+     "ref": "1CO 3:15",
+     "form": "nume"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "»nur« 0×."
+  },
+  {
+   "id": "term:also",
+   "kind": "term",
+   "value": "o",
+   "source": "also",
+   "attested": "attested",
+   "words": [
+    "also"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 1:16",
+     "form": "o",
+     "n": 1084
+    },
+    {
+     "ref": "1CO 6:14",
+     "form": "o"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "»auch« 0×; nie »ou«."
+  },
+  {
+   "id": "term:now",
+   "kind": "term",
+   "value": "jitz",
+   "source": "now",
+   "attested": "attested",
+   "words": [
+    "now"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 5:11",
+     "form": "jitz",
+     "n": 522
+    },
+    {
+     "ref": "1CO 7:29",
+     "form": "jitz"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:nothing",
+   "kind": "term",
+   "value": "nüüt",
+   "source": "nothing",
+   "attested": "attested",
+   "words": [
+    "nothing"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 2:2",
+     "form": "nüüt",
+     "n": 291
+    },
+    {
+     "ref": "1CO 7:19",
+     "form": "nüüt"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:why",
+   "kind": "term",
+   "value": "wiso / warum",
+   "source": "why",
+   "attested": "attested",
+   "words": [
+    "why"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 4:7",
+     "form": "wiso",
+     "n": 81
+    },
+    {
+     "ref": "1CO 10:29",
+     "form": "Wiso"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:because",
+   "kind": "term",
+   "value": "wil",
+   "source": "because",
+   "attested": "attested",
+   "words": [
+    "because"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 10:17",
+     "form": "wil",
+     "n": 321
+    },
+    {
+     "ref": "1JN 2:11",
+     "form": "wil"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "»weil« 0×."
+  },
+  {
+   "id": "term:today",
+   "kind": "term",
+   "value": "hütt",
+   "source": "today",
+   "attested": "attested",
+   "words": [
+    "today"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 4:9",
+     "form": "hütt",
+     "n": 43
+    },
+    {
+     "ref": "ACT 13:33",
+     "form": "hütt"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:tomorrow",
+   "kind": "term",
+   "value": "morn",
+   "source": "tomorrow",
+   "attested": "attested",
+   "words": [
+    "tomorrow"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 15:32",
+     "form": "morn",
+     "n": 11
+    },
+    {
+     "ref": "ACT 23:20",
+     "form": "morn"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:evening",
+   "kind": "term",
+   "value": "Aabe",
+   "source": "evening",
+   "attested": "attested",
+   "words": [
+    "evening"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 4:3",
+     "form": "Aabe",
+     "n": 21
+    },
+    {
+     "ref": "ACT 28:23",
+     "form": "Aabe"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:king",
+   "kind": "term",
+   "value": "Chünig",
+   "source": "king",
+   "attested": "attested",
+   "words": [
+    "king"
+   ],
+   "evidence": [
+    {
+     "ref": "1TI 1:17",
+     "form": "Chünig",
+     "n": 97
+    },
+    {
+     "ref": "1TI 6:15",
+     "form": "Chünig"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:servant",
+   "kind": "term",
+   "value": "Chnächt",
+   "source": "servant",
+   "attested": "attested",
+   "words": [
+    "servant"
+   ],
+   "evidence": [
+    {
+     "ref": "2PE 1:1",
+     "form": "Chnächt",
+     "n": 50
+    },
+    {
+     "ref": "2TI 2:24",
+     "form": "Chnächt"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Diener und Aagstellte daneben."
+  },
+  {
+   "id": "term:heaven",
+   "kind": "term",
+   "value": "Himel",
+   "source": "heaven",
+   "attested": "attested",
+   "words": [
+    "heaven"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 8:5",
+     "form": "Himel",
+     "n": 229
+    },
+    {
+     "ref": "1CO 15:47",
+     "form": "Himel"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:earth",
+   "kind": "term",
+   "value": "Ärde",
+   "source": "earth",
+   "attested": "attested",
+   "words": [
+    "earth"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 8:5",
+     "form": "Ärde",
+     "n": 141
+    },
+    {
+     "ref": "1CO 10:26",
+     "form": "Ärde"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:world",
+   "kind": "term",
+   "value": "Wält",
+   "source": "world",
+   "attested": "attested",
+   "words": [
+    "world"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 1:20",
+     "form": "Wält",
+     "n": 246
+    },
+    {
+     "ref": "1CO 1:21",
+     "form": "Wält"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:blessed",
+   "kind": "term",
+   "value": "glücklech",
+   "source": "blessed",
+   "attested": "attested",
+   "words": [
+    "blessed"
+   ],
+   "evidence": [
+    {
+     "ref": "1PE 3:14",
+     "form": "glücklech",
+     "n": 49
+    },
+    {
+     "ref": "1PE 4:14",
+     "form": "glücklech"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Seligpreisungen: »Glücklech, wär …«; für Gottes Segen sägne/gsägnet."
+  },
+  {
+   "id": "term:glory",
+   "kind": "term",
+   "value": "Herrlechkeit",
+   "source": "glory",
+   "attested": "attested",
+   "words": [
+    "glory"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 2:7",
+     "form": "Herrlechkeit",
+     "n": 105
+    },
+    {
+     "ref": "1CO 2:8",
+     "form": "Herrlechkeit"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:love",
+   "kind": "term",
+   "value": "Liebi / lieb ha",
+   "source": "love",
+   "attested": "attested",
+   "words": [
+    "love"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 2:9",
+     "form": "lieb",
+     "n": 388
+    },
+    {
+     "ref": "1CO 4:21",
+     "form": "Liebi"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Verb: »lieb ha« (dä, wo Jesus lieb gha het)."
+  },
+  {
+   "id": "term:repent",
+   "kind": "term",
+   "value": "sech ändere",
+   "source": "repent",
+   "attested": "attested",
+   "words": [
+    "repent"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 2:38",
+     "form": "Änderet",
+     "n": 47
+    },
+    {
+     "ref": "ACT 3:19",
+     "form": "änderet"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Für μετανοέω: »Änderet nech!« (ACT 2:38)."
+  },
+  {
+   "id": "term:pray",
+   "kind": "term",
+   "value": "bätte",
+   "source": "pray",
+   "attested": "attested",
+   "words": [
+    "pray"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 11:13",
+     "form": "bättet",
+     "n": 132
+    },
+    {
+     "ref": "1CO 14:13",
+     "form": "bätte"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:faith",
+   "kind": "term",
+   "value": "Gloube",
+   "source": "faith",
+   "attested": "attested",
+   "words": [
+    "faith"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 2:5",
+     "form": "Gloube",
+     "n": 357
+    },
+    {
+     "ref": "1CO 12:9",
+     "form": "Gloube"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:field",
+   "kind": "term",
+   "value": "Acher / Fäld / Matte",
+   "source": "field",
+   "attested": "attested",
+   "words": [
+    "field"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 3:9",
+     "form": "Acher",
+     "n": 31
+    },
+    {
+     "ref": "ACT 4:37",
+     "form": "Acher"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Acher für den bebauten Acker (in GEN »Acherbode« für ʾădāmāh), Fäld für offenes Land."
+  },
+  {
+   "id": "term:wine",
+   "kind": "term",
+   "value": "Wy",
+   "source": "wine",
+   "attested": "attested",
+   "words": [
+    "wine"
+   ],
+   "evidence": [
+    {
+     "ref": "1TI 3:3",
+     "form": "Wy",
+     "n": 38
+    },
+    {
+     "ref": "1TI 3:8",
+     "form": "Wy"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:house",
+   "kind": "term",
+   "value": "Huus",
+   "source": "house",
+   "attested": "attested",
+   "words": [
+    "house"
+   ],
+   "evidence": [
+    {
+     "ref": "1PE 2:5",
+     "form": "Huus",
+     "n": 97
+    },
+    {
+     "ref": "2TI 2:20",
+     "form": "Huus"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:woman",
+   "kind": "term",
+   "value": "Frou",
+   "source": "woman",
+   "attested": "attested",
+   "words": [
+    "woman",
+    "wife"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 7:2",
+     "form": "Frou",
+     "n": 180
+    },
+    {
+     "ref": "1CO 7:13",
+     "form": "Frou"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Auch ›Ehefrau‹ (wife 96 %)."
+  },
+  {
+   "id": "term:husband",
+   "kind": "term",
+   "value": "Maa",
+   "source": "husband",
+   "attested": "attested",
+   "words": [
+    "husband",
+    "man"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 7:2",
+     "form": "Maa",
+     "n": 197
+    },
+    {
+     "ref": "1CO 7:3",
+     "form": "Maa"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Plural »Manne«."
+  },
+  {
+   "id": "term:child",
+   "kind": "term",
+   "value": "Chind",
+   "source": "child",
+   "attested": "attested",
+   "words": [
+    "child",
+    "children"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 4:17",
+     "form": "Chind",
+     "n": 72
+    },
+    {
+     "ref": "1CO 13:11",
+     "form": "Chind"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Plural Chinder; Chindli für ›little child‹."
+  },
+  {
+   "id": "term:eat",
+   "kind": "term",
+   "value": "ässe",
+   "source": "eat",
+   "attested": "attested",
+   "words": [
+    "eat"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 5:11",
+     "form": "Ässe",
+     "n": 177
+    },
+    {
+     "ref": "1CO 8:7",
+     "form": "ässe"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:give",
+   "kind": "term",
+   "value": "gä",
+   "source": "give",
+   "attested": "attested",
+   "words": [
+    "give",
+    "gave"
+   ],
+   "evidence": [
+    {
+     "ref": "1JN 5:16",
+     "form": "git",
+     "n": 607
+    },
+    {
+     "ref": "1PE 4:5",
+     "form": "gä"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Partizip »ggä«."
+  },
+  {
+   "id": "term:go",
+   "kind": "term",
+   "value": "ga",
+   "source": "go",
+   "attested": "attested",
+   "words": [
+    "go"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 4:6",
+     "form": "ganget",
+     "n": 408
+    },
+    {
+     "ref": "1CO 6:1",
+     "form": "ga"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Imperativ »Gang!«, »Ganget!«."
+  },
+  {
+   "id": "term:come",
+   "kind": "term",
+   "value": "cho",
+   "source": "come",
+   "attested": "attested",
+   "words": [
+    "come"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 2:1",
+     "form": "cho",
+     "n": 1174
+    },
+    {
+     "ref": "1CO 2:14",
+     "form": "chunt"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:know",
+   "kind": "term",
+   "value": "wüsse / gchenne",
+   "source": "know",
+   "attested": "attested",
+   "words": [
+    "know"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 2:2",
+     "form": "wüsse",
+     "n": 253
+    },
+    {
+     "ref": "1CO 3:16",
+     "form": "Wüsset"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Wissen: wüsse; jemanden kennen: (g)chenne."
+  },
+  {
+   "id": "term:speak",
+   "kind": "term",
+   "value": "rede",
+   "source": "speak",
+   "attested": "attested",
+   "words": [
+    "speak"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 2:6",
+     "form": "rede",
+     "n": 138
+    },
+    {
+     "ref": "1CO 2:7",
+     "form": "rede"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:heart",
+   "kind": "term",
+   "value": "Härz",
+   "source": "heart",
+   "attested": "attested",
+   "words": [
+    "heart"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 7:37",
+     "form": "Härz",
+     "n": 134
+    },
+    {
+     "ref": "1CO 14:25",
+     "form": "Härz"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:darkness",
+   "kind": "term",
+   "value": "Fyschteri",
+   "source": "darkness",
+   "attested": "attested",
+   "words": [
+    "darkness"
+   ],
+   "evidence": [
+    {
+     "ref": "1JN 1:5",
+     "form": "Fyschteri",
+     "n": 34
+    },
+    {
+     "ref": "1JN 2:8",
+     "form": "Fyschteri"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:light",
+   "kind": "term",
+   "value": "Liecht",
+   "source": "light",
+   "attested": "attested",
+   "words": [
+    "light"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 4:5",
+     "form": "Liecht",
+     "n": 86
+    },
+    {
+     "ref": "1JN 1:5",
+     "form": "Liecht"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:fire",
+   "kind": "term",
+   "value": "Füür",
+   "source": "fire",
+   "attested": "attested",
+   "words": [
+    "fire"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 3:13",
+     "form": "Füür",
+     "n": 56
+    },
+    {
+     "ref": "1PE 1:7",
+     "form": "Füür"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:time",
+   "kind": "term",
+   "value": "Zyt",
+   "source": "time",
+   "attested": "attested",
+   "words": [
+    "time"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 7:29",
+     "form": "Zyt",
+     "n": 123
+    },
+    {
+     "ref": "1PE 1:5",
+     "form": "Zyt"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:people",
+   "kind": "term",
+   "value": "Volk / Lüt",
+   "source": "people",
+   "attested": "attested",
+   "words": [
+    "people"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 10:7",
+     "form": "Volk",
+     "n": 492
+    },
+    {
+     "ref": "1CO 10:15",
+     "form": "Lüt"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Volk für ein Volk (λαός, עַם), Lüt für Menschen allgemein."
+  },
+  {
+   "id": "term:tomb",
+   "kind": "term",
+   "value": "Grab",
+   "source": "tomb",
+   "attested": "attested",
+   "words": [
+    "tomb",
+    "grave"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 7:16",
+     "form": "Grab",
+     "n": 44
+    },
+    {
+     "ref": "ACT 13:29",
+     "form": "Grab"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:father",
+   "kind": "term",
+   "value": "Vatter",
+   "source": "father",
+   "attested": "attested",
+   "words": [
+    "father"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 1:3",
+     "form": "Vatter",
+     "n": 353
+    },
+    {
+     "ref": "1CO 4:15",
+     "form": "Vatter"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Nicht »Vater« (nur MAT/MRK-Druck)."
+  },
+  {
+   "id": "term:mother",
+   "kind": "term",
+   "value": "Mueter",
+   "source": "mother",
+   "attested": "attested",
+   "words": [
+    "mother"
+   ],
+   "evidence": [
+    {
+     "ref": "1TH 2:7",
+     "form": "Mueter",
+     "n": 83
+    },
+    {
+     "ref": "2TI 1:5",
+     "form": "Mueter"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:sister",
+   "kind": "term",
+   "value": "Schwöschter",
+   "source": "sister",
+   "attested": "attested",
+   "words": [
+    "sister"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 7:15",
+     "form": "Schwöschter",
+     "n": 14
+    },
+    {
+     "ref": "2JN 1:13",
+     "form": "Schwöschter"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:son",
+   "kind": "term",
+   "value": "Suhn",
+   "source": "son",
+   "attested": "attested",
+   "words": [
+    "son",
+    "sons"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 1:9",
+     "form": "Suhn",
+     "n": 286
+    },
+    {
+     "ref": "1JN 1:3",
+     "form": "Suhn"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Plural Sühn."
+  },
+  {
+   "id": "term:eye",
+   "kind": "term",
+   "value": "Ouge",
+   "source": "eye",
+   "attested": "attested",
+   "words": [
+    "eye",
+    "eyes"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 18:9",
+     "form": "Ouge",
+     "n": 77
+    },
+    {
+     "ref": "REV 1:7",
+     "form": "Ouge"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:famine",
+   "kind": "term",
+   "value": "Hungersnot",
+   "source": "famine",
+   "attested": "attested",
+   "words": [
+    "famine"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 7:11",
+     "form": "Hungersnot",
+     "n": 5
+    },
+    {
+     "ref": "ACT 11:28",
+     "form": "Hungersnot"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:sheep",
+   "kind": "term",
+   "value": "Schaf",
+   "source": "sheep",
+   "attested": "attested",
+   "words": [
+    "sheep"
+   ],
+   "evidence": [
+    {
+     "ref": "1PE 2:25",
+     "form": "Schaf",
+     "n": 44
+    },
+    {
+     "ref": "ACT 8:32",
+     "form": "Schaf"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:priest",
+   "kind": "term",
+   "value": "Prieschter",
+   "source": "priest",
+   "attested": "attested",
+   "words": [
+    "priest",
+    "priests"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 14:13",
+     "form": "Prieschter",
+     "n": 32
+    },
+    {
+     "ref": "HEB 5:6",
+     "form": "Prieschter"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:temple",
+   "kind": "term",
+   "value": "Tämpel",
+   "source": "temple",
+   "attested": "attested",
+   "words": [
+    "temple"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 3:16",
+     "form": "Tämpel",
+     "n": 119
+    },
+    {
+     "ref": "1CO 3:17",
+     "form": "Tämpel"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:law",
+   "kind": "term",
+   "value": "Gsetz",
+   "source": "law",
+   "attested": "attested",
+   "words": [
+    "law"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 9:8",
+     "form": "Gsetz",
+     "n": 206
+    },
+    {
+     "ref": "1CO 9:9",
+     "form": "Gsetz"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:gospel",
+   "kind": "term",
+   "value": "di gueti Botschaft",
+   "source": "gospel",
+   "attested": "attested",
+   "words": [
+    "gospel",
+    "good news"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 1:17",
+     "form": "gueti Botschaft",
+     "n": 82
+    },
+    {
+     "ref": "1CO 4:15",
+     "form": "gueti Botschaft"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:sin",
+   "kind": "term",
+   "value": "Sünd",
+   "source": "sin",
+   "attested": "attested",
+   "words": [
+    "sin"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 6:18",
+     "form": "Sünd",
+     "n": 77
+    },
+    {
+     "ref": "1CO 15:56",
+     "form": "Sünd"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "term:wilderness",
+   "kind": "term",
+   "value": "Wüeschti / Einsamkeit",
+   "source": "wilderness",
+   "attested": "attested",
+   "words": [
+    "wilderness",
+    "desert"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 10:5",
+     "form": "Wüeschti",
+     "n": 26
+    },
+    {
+     "ref": "ACT 7:36",
+     "form": "Wüeschti"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Joh-Entwurf: »Einsamkeit« (Joh 1); Wüeschti v. a. Hebr."
+  },
+  {
+   "id": "name:naomi",
+   "kind": "name",
+   "value": "Noomi",
+   "source": "נָעֳמִי",
+   "attested": "attested",
+   "words": [
+    "naomi"
+   ],
+   "evidence": [
+    {
+     "ref": "RUT 2:1",
+     "form": "Noomi"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Luther/Zürcher; mit Artikel d Noomi. Nicht im Korpus; nach der Umschriftregel."
+  },
+  {
+   "id": "name:ruth",
+   "kind": "name",
+   "value": "Rut",
+   "source": "רוּת",
+   "attested": "attested",
+   "words": [
+    "ruth"
+   ],
+   "evidence": [
+    {
+     "ref": "RUT 2:2",
+     "form": "Rut"
+    },
+    {
+     "ref": "MAT 1:5",
+     "form": "Rut",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Mt 1,5. Im Korpus belegt."
+  },
+  {
+   "id": "name:boaz",
+   "kind": "name",
+   "value": "Boas",
+   "source": "בֹּעַז",
+   "attested": "attested",
+   "words": [
+    "boaz"
+   ],
+   "evidence": [
+    {
+     "ref": "RUT 2:1",
+     "form": "Boas"
+    },
+    {
+     "ref": "LUK 3:32",
+     "form": "Boas",
+     "n": 3
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Mt 1,5. Im Korpus belegt."
+  },
+  {
+   "id": "name:obed",
+   "kind": "name",
+   "value": "Obed",
+   "source": "עוֹבֵד",
+   "attested": "attested",
+   "words": [
+    "obed"
+   ],
+   "evidence": [
+    {
+     "ref": "RUT 4:17",
+     "form": "Obed"
+    },
+    {
+     "ref": "LUK 3:32",
+     "form": "Obed",
+     "n": 3
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Mt 1,5. Im Korpus belegt."
+  },
+  {
+   "id": "name:jesse",
+   "kind": "name",
+   "value": "Isai",
+   "source": "יִשַׁי",
+   "attested": "attested",
+   "words": [
+    "jesse"
+   ],
+   "evidence": [
+    {
+     "ref": "RUT 4:17",
+     "form": "Isai"
+    },
+    {
+     "ref": "ACT 13:22",
+     "form": "Isai",
+     "n": 5
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Mt 1,5 / Apg 13,22. Im Korpus belegt."
+  },
+  {
+   "id": "name:david",
+   "kind": "name",
+   "value": "David",
+   "source": "דָּוִד",
+   "attested": "attested",
+   "words": [
+    "david"
+   ],
+   "evidence": [
+    {
+     "ref": "RUT 4:17",
+     "form": "David"
+    },
+    {
+     "ref": "2TI 2:8",
+     "form": "David",
+     "n": 58
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Im Korpus belegt."
+  },
+  {
+   "id": "name:elimelech",
+   "kind": "name",
+   "value": "Elimelech",
+   "source": "אֱלִימֶלֶךְ",
+   "attested": "attested",
+   "words": [
+    "elimelech"
+   ],
+   "evidence": [
+    {
+     "ref": "RUT 2:1",
+     "form": "Elimelech"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Luther/Zürcher. Nicht im Korpus; nach der Umschriftregel."
+  },
+  {
+   "id": "name:mahlon",
+   "kind": "name",
+   "value": "Machlon",
+   "source": "מַחְלוֹן",
+   "attested": "attested",
+   "words": [
+    "mahlon"
+   ],
+   "evidence": [
+    {
+     "ref": "RUT 1:2",
+     "form": "Machlon"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "ḥ → ch. Nicht im Korpus; nach der Umschriftregel."
+  },
+  {
+   "id": "name:chilion",
+   "kind": "name",
+   "value": "Kiljon",
+   "source": "כִּלְיוֹן",
+   "attested": "attested",
+   "words": [
+    "chilion"
+   ],
+   "evidence": [
+    {
+     "ref": "RUT 1:2",
+     "form": "Kiljon"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Nicht im Korpus; nach der Umschriftregel."
+  },
+  {
+   "id": "name:orpah",
+   "kind": "name",
+   "value": "Orpa",
+   "source": "עָרְפָּה",
+   "attested": "attested",
+   "words": [
+    "orpah"
+   ],
+   "evidence": [
+    {
+     "ref": "RUT 1:4",
+     "form": "Orpa"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Nicht im Korpus; nach der Umschriftregel."
+  },
+  {
+   "id": "name:mara",
+   "kind": "name",
+   "value": "Mara",
+   "source": "מָרָא",
+   "attested": "attested",
+   "words": [
+    "mara"
+   ],
+   "evidence": [
+    {
+     "ref": "RUT 1:20",
+     "form": "Mara"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Namensdeutung als Fussnote (RUT 1:20). Nicht im Korpus; nach der Umschriftregel."
+  },
+  {
+   "id": "name:bethlehem",
+   "kind": "name",
+   "value": "Betlehem",
+   "source": "בֵּית לֶחֶם",
+   "attested": "attested",
+   "words": [
+    "bethlehem"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 35:19",
+     "form": "Betlehem"
+    },
+    {
+     "ref": "LUK 2:4",
+     "form": "Betlehem",
+     "n": 7
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "»Betlehem z Juda«. Im Korpus belegt."
+  },
+  {
+   "id": "name:ephrath",
+   "kind": "name",
+   "value": "Efrat",
+   "source": "אֶפְרָת",
+   "attested": "attested",
+   "words": [
+    "ephrath"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 35:16",
+     "form": "Efrat"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "GEN 35:16.19; 48:7; RUT 4:11 »Efrata« – Angleichung offen. Nicht im Korpus; nach der Umschriftregel."
+  },
+  {
+   "id": "name:moab",
+   "kind": "name",
+   "value": "Moab",
+   "source": "מוֹאָב",
+   "attested": "attested",
+   "words": [
+    "moab"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 19:37",
+     "form": "Moab"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "»ds Land Moab«; d Moabitere. Nicht im Korpus; nach der Umschriftregel."
+  },
+  {
+   "id": "name:abraham",
+   "kind": "name",
+   "value": "Abraham",
+   "source": "אַבְרָהָם",
+   "attested": "attested",
+   "words": [
+    "abraham"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 24:1",
+     "form": "Abraham"
+    },
+    {
+     "ref": "1PE 3:6",
+     "form": "Abraham",
+     "n": 76
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Abram bis 17,4, Abraham ab 17,5. Im Korpus belegt."
+  },
+  {
+   "id": "name:sarah",
+   "kind": "name",
+   "value": "Sara",
+   "source": "שָׂרָה",
+   "attested": "attested",
+   "words": [
+    "sarah"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 24:36",
+     "form": "Sara"
+    },
+    {
+     "ref": "1PE 3:6",
+     "form": "Sara",
+     "n": 5
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Sarai bis 17,14. Im Korpus belegt."
+  },
+  {
+   "id": "name:isaac",
+   "kind": "name",
+   "value": "Isaak",
+   "source": "יִצְחָק",
+   "attested": "attested",
+   "words": [
+    "isaac"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 24:4",
+     "form": "Isaak"
+    },
+    {
+     "ref": "ACT 3:13",
+     "form": "Isaak",
+     "n": 20
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Im Korpus belegt."
+  },
+  {
+   "id": "name:ishmael",
+   "kind": "name",
+   "value": "Ismael",
+   "source": "יִשְׁמָעֵאל",
+   "attested": "attested",
+   "words": [
+    "ishmael"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 25:9",
+     "form": "Ismael"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Nicht im Korpus; nach der Umschriftregel."
+  },
+  {
+   "id": "name:hagar",
+   "kind": "name",
+   "value": "Hagar",
+   "source": "הָגָר",
+   "attested": "attested",
+   "words": [
+    "hagar"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 25:12",
+     "form": "Hagar"
+    },
+    {
+     "ref": "GAL 4:24",
+     "form": "Hagar",
+     "n": 2
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Im Korpus belegt."
+  },
+  {
+   "id": "name:jacob",
+   "kind": "name",
+   "value": "Jakob",
+   "source": "יַעֲקֹב",
+   "attested": "attested",
+   "words": [
+    "jacob"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 30:1",
+     "form": "Jakob"
+    },
+    {
+     "ref": "ACT 3:13",
+     "form": "Jakob",
+     "n": 25
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Im Korpus belegt."
+  },
+  {
+   "id": "name:esau",
+   "kind": "name",
+   "value": "Esau",
+   "source": "עֵשָׂו",
+   "attested": "attested",
+   "words": [
+    "esau"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 25:25",
+     "form": "Esau"
+    },
+    {
+     "ref": "HEB 11:20",
+     "form": "Esau",
+     "n": 3
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Im Korpus belegt."
+  },
+  {
+   "id": "name:rebekah",
+   "kind": "name",
+   "value": "Rebekka",
+   "source": "רִבְקָה",
+   "attested": "attested",
+   "words": [
+    "rebekah"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 24:15",
+     "form": "Rebekka"
+    },
+    {
+     "ref": "ROM 9:10",
+     "form": "Rebekka",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Im Korpus belegt."
+  },
+  {
+   "id": "name:rachel",
+   "kind": "name",
+   "value": "Rahel",
+   "source": "רָחֵל",
+   "attested": "attested",
+   "words": [
+    "rachel"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 30:1",
+     "form": "Rahel"
+    },
+    {
+     "ref": "MAT 2:18",
+     "form": "Rahel",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Im Korpus belegt."
+  },
+  {
+   "id": "name:leah",
+   "kind": "name",
+   "value": "Lea",
+   "source": "לֵאָה",
+   "attested": "attested",
+   "words": [
+    "leah"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 30:9",
+     "form": "Lea"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Nicht im Korpus; nach der Umschriftregel."
+  },
+  {
+   "id": "name:joseph",
+   "kind": "name",
+   "value": "Josef",
+   "source": "יוֹסֵף",
+   "attested": "attested",
+   "words": [
+    "joseph"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 30:24",
+     "form": "Josef"
+    },
+    {
+     "ref": "ACT 1:23",
+     "form": "Josef",
+     "n": 33
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Im Korpus belegt."
+  },
+  {
+   "id": "name:judah",
+   "kind": "name",
+   "value": "Juda",
+   "source": "יְהוּדָה",
+   "attested": "attested",
+   "words": [
+    "judah"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 37:26",
+     "form": "Juda"
+    },
+    {
+     "ref": "HEB 7:14",
+     "form": "Juda",
+     "n": 11
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Im Korpus belegt."
+  },
+  {
+   "id": "name:tamar",
+   "kind": "name",
+   "value": "Tamar",
+   "source": "תָּמָר",
+   "attested": "attested",
+   "words": [
+    "tamar"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 38:6",
+     "form": "Tamar"
+    },
+    {
+     "ref": "MAT 1:3",
+     "form": "Tamar",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Mt 1,3. Im Korpus belegt."
+  },
+  {
+   "id": "name:perez",
+   "kind": "name",
+   "value": "Perez",
+   "source": "פֶּרֶץ",
+   "attested": "attested",
+   "words": [
+    "perez"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 46:12",
+     "form": "Perez"
+    },
+    {
+     "ref": "LUK 3:33",
+     "form": "Perez",
+     "n": 3
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Mt 1,3. Im Korpus belegt."
+  },
+  {
+   "id": "name:pharaoh",
+   "kind": "name",
+   "value": "Pharao",
+   "source": "פַּרְעֹה",
+   "attested": "attested",
+   "words": [
+    "pharaoh"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 37:36",
+     "form": "Pharao"
+    },
+    {
+     "ref": "ACT 7:10",
+     "form": "Pharao",
+     "n": 5
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Ohne Artikel, wie Apg 7. Im Korpus belegt."
+  },
+  {
+   "id": "name:egypt",
+   "kind": "name",
+   "value": "Ägypte",
+   "source": "מִצְרַיִם",
+   "attested": "attested",
+   "words": [
+    "egypt"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 25:18",
+     "form": "Ägypte"
+    },
+    {
+     "ref": "ACT 2:10",
+     "form": "Ägypte",
+     "n": 24
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "»z Ägypte«, d Ägypter. Im Korpus belegt."
+  },
+  {
+   "id": "name:canaan",
+   "kind": "name",
+   "value": "Kanaan",
+   "source": "כְּנַעַן",
+   "attested": "attested",
+   "words": [
+    "canaan"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 31:18",
+     "form": "Kanaan"
+    },
+    {
+     "ref": "ACT 7:11",
+     "form": "Kanaan",
+     "n": 2
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Im Korpus belegt."
+  },
+  {
+   "id": "name:noah",
+   "kind": "name",
+   "value": "Noach",
+   "source": "נֹחַ",
+   "attested": "attested",
+   "words": [
+    "noah"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 9:1",
+     "form": "Noach"
+    },
+    {
+     "ref": "1PE 3:20",
+     "form": "Noach",
+     "n": 8
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "ḥ → ch; Korpus 1Pe 3,20. Im Korpus belegt."
+  },
+  {
+   "id": "name:adam",
+   "kind": "name",
+   "value": "Adam",
+   "source": "אָדָם",
+   "attested": "attested",
+   "words": [
+    "adam"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 5:1",
+     "form": "Adam"
+    },
+    {
+     "ref": "1CO 15:22",
+     "form": "Adam",
+     "n": 11
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Siehe term:H120. Im Korpus belegt."
+  },
+  {
+   "id": "name:eve",
+   "kind": "name",
+   "value": "Eva",
+   "source": "חַוָּה",
+   "attested": "attested",
+   "words": [
+    "eve"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 4:1",
+     "form": "Eva"
+    },
+    {
+     "ref": "1TI 2:13",
+     "form": "Eva",
+     "n": 2
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Im Korpus belegt."
+  },
+  {
+   "id": "name:cain",
+   "kind": "name",
+   "value": "Kain",
+   "source": "קַיִן",
+   "attested": "attested",
+   "words": [
+    "cain"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 4:1",
+     "form": "Kain"
+    },
+    {
+     "ref": "1JN 3:12",
+     "form": "Kain",
+     "n": 3
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Im Korpus belegt."
+  },
+  {
+   "id": "name:abel",
+   "kind": "name",
+   "value": "Abel",
+   "source": "הֶבֶל",
+   "attested": "attested",
+   "words": [
+    "abel"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 50:11",
+     "form": "Abel"
+    },
+    {
+     "ref": "HEB 11:4",
+     "form": "Abel",
+     "n": 5
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Im Korpus belegt."
+  },
+  {
+   "id": "name:seth",
+   "kind": "name",
+   "value": "Set",
+   "source": "שֵׁת",
+   "attested": "attested",
+   "words": [
+    "seth"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 5:3",
+     "form": "Set"
+    },
+    {
+     "ref": "LUK 3:38",
+     "form": "Set",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Lk 3,38. Im Korpus belegt."
+  },
+  {
+   "id": "name:enoch",
+   "kind": "name",
+   "value": "Henoch",
+   "source": "חֲנוֹךְ",
+   "attested": "attested",
+   "words": [
+    "enoch"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 5:18",
+     "form": "Henoch"
+    },
+    {
+     "ref": "HEB 11:5",
+     "form": "Henoch",
+     "n": 3
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Im Korpus belegt."
+  },
+  {
+   "id": "name:methuselah",
+   "kind": "name",
+   "value": "Metuschelach",
+   "source": "מְתוּשֶׁלַח",
+   "attested": "attested",
+   "words": [
+    "methuselah"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 5:21",
+     "form": "Metuschelach"
+    },
+    {
+     "ref": "LUK 3:37",
+     "form": "Metuschelach",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Lk 3,37. Im Korpus belegt."
+  },
+  {
+   "id": "name:lamech",
+   "kind": "name",
+   "value": "Lamech",
+   "source": "לֶמֶךְ",
+   "attested": "attested",
+   "words": [
+    "lamech"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 5:25",
+     "form": "Lamech"
+    },
+    {
+     "ref": "LUK 3:36",
+     "form": "Lamech",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Im Korpus belegt."
+  },
+  {
+   "id": "name:ham",
+   "kind": "name",
+   "value": "Ham",
+   "source": "חָם",
+   "attested": "attested",
+   "words": [
+    "ham"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 9:18",
+     "form": "Ham"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "ḥ am Anfang → H. Nicht im Korpus; nach der Umschriftregel."
+  },
+  {
+   "id": "name:japheth",
+   "kind": "name",
+   "value": "Jafet",
+   "source": "יֶפֶת",
+   "attested": "attested",
+   "words": [
+    "japheth"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 9:18",
+     "form": "Jafet"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Nicht im Korpus; nach der Umschriftregel."
+  },
+  {
+   "id": "name:babel",
+   "kind": "name",
+   "value": "Babel",
+   "source": "בָּבֶל",
+   "attested": "attested",
+   "words": [
+    "babel"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 11:9",
+     "form": "Babel"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Nicht im Korpus; nach der Umschriftregel."
+  },
+  {
+   "id": "name:jonah",
+   "kind": "name",
+   "value": "Jona",
+   "source": "יוֹנָה",
+   "attested": "attested",
+   "words": [
+    "jonah"
+   ],
+   "evidence": [
+    {
+     "ref": "JON 1:1",
+     "form": "Jona"
+    },
+    {
+     "ref": "LUK 11:29",
+     "form": "Jona",
+     "n": 9
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Mt 12; Lk 11. Im Korpus belegt."
+  },
+  {
+   "id": "name:amittai",
+   "kind": "name",
+   "value": "Amittai",
+   "source": "אֲמִתַּי",
+   "attested": "attested",
+   "words": [
+    "amittai"
+   ],
+   "evidence": [
+    {
+     "ref": "JON 1:1",
+     "form": "Amittai"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Nicht im Korpus; nach der Umschriftregel."
+  },
+  {
+   "id": "name:nineveh",
+   "kind": "name",
+   "value": "Ninive",
+   "source": "נִינְוֵה",
+   "attested": "attested",
+   "words": [
+    "nineveh"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 10:11",
+     "form": "Ninive"
+    },
+    {
+     "ref": "LUK 11:30",
+     "form": "Ninive",
+     "n": 3
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Im Korpus belegt."
+  },
+  {
+   "id": "name:tarshish",
+   "kind": "name",
+   "value": "Tarsis",
+   "source": "תַּרְשִׁישׁ",
+   "attested": "attested",
+   "words": [
+    "tarshish"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 10:4",
+     "form": "Tarsis"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Entschieden 02.10.2026 (Luther-Form). Nicht im Korpus; nach der Umschriftregel."
+  },
+  {
+   "id": "name:joppa",
+   "kind": "name",
+   "value": "Jafo",
+   "source": "יָפוֹ",
+   "attested": "attested",
+   "words": [
+    "joppa"
+   ],
+   "evidence": [
+    {
+     "ref": "JON 1:3",
+     "form": "Jafo"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Entschieden 02.10.2026 (hebräische Form; das NT hat Joppe). Nicht im Korpus; nach der Umschriftregel."
+  },
+  {
+   "id": "name:melchizedek",
+   "kind": "name",
+   "value": "Melchisedek",
+   "source": "מַלְכִּי־צֶדֶק",
+   "attested": "attested",
+   "words": [
+    "melchizedek"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 14:18",
+     "form": "Melchisedek"
+    },
+    {
+     "ref": "HEB 5:6",
+     "form": "Melchisedek",
+     "n": 10
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Hebr 5-7. Im Korpus belegt."
+  },
+  {
+   "id": "name:sodom",
+   "kind": "name",
+   "value": "Sodom",
+   "source": "סְדֹם",
+   "attested": "attested",
+   "words": [
+    "sodom"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 18:16",
+     "form": "Sodom"
+    },
+    {
+     "ref": "2PE 2:6",
+     "form": "Sodom",
+     "n": 9
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Im Korpus belegt."
+  },
+  {
+   "id": "name:gomorrah",
+   "kind": "name",
+   "value": "Gomorra",
+   "source": "עֲמֹרָה",
+   "attested": "attested",
+   "words": [
+    "gomorrah"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 18:20",
+     "form": "Gomorra"
+    },
+    {
+     "ref": "2PE 2:6",
+     "form": "Gomorra",
+     "n": 4
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Im Korpus belegt."
+  },
+  {
+   "id": "name:lot",
+   "kind": "name",
+   "value": "Lot",
+   "source": "לוֹט",
+   "attested": "attested",
+   "words": [
+    "lot"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 19:1",
+     "form": "Lot"
+    },
+    {
+     "ref": "2PE 2:7",
+     "form": "Lot",
+     "n": 4
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Im Korpus belegt."
+  },
+  {
+   "id": "name:laban",
+   "kind": "name",
+   "value": "Laban",
+   "source": "לָבָן",
+   "attested": "attested",
+   "words": [
+    "laban"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 24:29",
+     "form": "Laban"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Nicht im Korpus; nach der Umschriftregel."
+  },
+  {
+   "id": "name:beersheba",
+   "kind": "name",
+   "value": "Beerscheba",
+   "source": "בְּאֵר שֶׁבַע",
+   "attested": "attested",
+   "words": [
+    "beersheba"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 26:23",
+     "form": "Beerscheba"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "š → sch. Nicht im Korpus; nach der Umschriftregel."
+  },
+  {
+   "id": "name:bethel",
+   "kind": "name",
+   "value": "Betel",
+   "source": "בֵּית־אֵל",
+   "attested": "attested",
+   "words": [
+    "bethel"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 31:13",
+     "form": "Betel"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Nicht im Korpus; nach der Umschriftregel."
+  },
+  {
+   "id": "name:hebron",
+   "kind": "name",
+   "value": "Hebron",
+   "source": "חֶבְרוֹן",
+   "attested": "attested",
+   "words": [
+    "hebron"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 23:2",
+     "form": "Hebron"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Nicht im Korpus; nach der Umschriftregel."
+  },
+  {
+   "id": "name:paddan-aram",
+   "kind": "name",
+   "value": "Paddan-Aram",
+   "source": "פַּדַּן אֲרָם",
+   "attested": "attested",
+   "words": [
+    "paddan-aram"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 31:18",
+     "form": "Paddan-Aram"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Nicht im Korpus; nach der Umschriftregel."
+  },
+  {
+   "id": "name:seir",
+   "kind": "name",
+   "value": "Se'ir",
+   "source": "שֵׂעִיר",
+   "attested": "attested",
+   "words": [
+    "seir"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 33:14",
+     "form": "Se'ir"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Angeglichen (statt Seïr). Nicht im Korpus; nach der Umschriftregel."
+  },
+  {
+   "id": "name:israel",
+   "kind": "name",
+   "value": "Israel",
+   "source": "יִשְׂרָאֵל",
+   "attested": "attested",
+   "words": [
+    "israel"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 33:20",
+     "form": "Israel"
+    },
+    {
+     "ref": "1CO 10:18",
+     "form": "Israel",
+     "n": 60
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Im Korpus belegt."
+  },
+  {
+   "id": "name:benjamin",
+   "kind": "name",
+   "value": "Benjamin",
+   "source": "בִּנְיָמִין",
+   "attested": "attested",
+   "words": [
+    "benjamin"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 35:18",
+     "form": "Benjamin"
+    },
+    {
+     "ref": "ACT 13:21",
+     "form": "Benjamin",
+     "n": 3
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Im Korpus belegt."
+  },
+  {
+   "id": "name:levi",
+   "kind": "name",
+   "value": "Levi",
+   "source": "לֵוִי",
+   "attested": "attested",
+   "words": [
+    "levi"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 35:23",
+     "form": "Levi"
+    },
+    {
+     "ref": "HEB 7:5",
+     "form": "Levi",
+     "n": 8
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Im Korpus belegt."
+  },
+  {
+   "id": "name:ephraim",
+   "kind": "name",
+   "value": "Efraim",
+   "source": "אֶפְרַיִם",
+   "attested": "attested",
+   "words": [
+    "ephraim"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 46:20",
+     "form": "Efraim"
+    },
+    {
+     "ref": "JHN 11:54",
+     "form": "Efraim",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Im Korpus belegt."
+  },
+  {
+   "id": "name:manasseh",
+   "kind": "name",
+   "value": "Manasse",
+   "source": "מְנַשֶּׁה",
+   "attested": "attested",
+   "words": [
+    "manasseh"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 46:20",
+     "form": "Manasse"
+    },
+    {
+     "ref": "MAT 1:10",
+     "form": "Manasse",
+     "n": 2
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Im Korpus belegt."
+  }
+ ]
+}

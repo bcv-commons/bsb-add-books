@@ -1,0 +1,44 @@
+# Outside source content is not kept in git: scripts/setup.py downloads it to download/
+# and builds reference/BSB/, reference/MSB/ and orig/ from it (see docs/sources.md).
+download/
+reference/BSB/
+reference/MSB/
+orig/
+
+# The clause-overlay examples carry BHSA levels (CC BY-NC 4.0): never published
+docs/proposals/clause-overlay/examples/
+
+# Imported editions are filed by licence (import/README.md): CC0/ and CC-BY/ are kept, non-free/ keeps
+# only its descriptions, and any other folder stays out until it is added here.
+import/*
+!import/README.md
+!import/_template/
+!import/CC0/
+!import/CC-BY/
+!import/CC-BY-SA/
+!import/non-free/
+# non-free/: only each edition's description (edition.yaml, README.md) and our build scripts are kept;
+# its texts (text/, source/, glossary, quarantined/) stay local
+import/non-free/*/*/*
+!import/non-free/*/*/edition.yaml
+!import/non-free/*/*/README.md
+!import/non-free/*/*/*.py
+!import/non-free/*/*/.gitignore
+!import/non-free/*/*/fetch.lock.json
+
+# Drafts of chapters that a published translation already covers: kept locally, never in git
+export/**/quarantine/
+# Generated files that print corpus verses (docs/licensing.md): local only, rebuilt at will
+export/**/_learn/packs/
+export/**/_learn/links_*.tsv
+export/**/_learn/nt-only/
+export/**/_learn/style_norms*.json
+export/**/*_style.md
+export/**/_eval/local/
+export/**/wiki-view.html
+
+# Local only (CLAUDE.local.md holds this working copy's private state)
+CLAUDE.local.md
+scratch/
+__pycache__/
+.DS_Store

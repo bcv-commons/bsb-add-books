@@ -1,0 +1,35 @@
+# Imported 2026-10-13: the publisher's .docx files (source/), converted to text/. Only this file is in
+# git; the texts stay local (import/non-free/).
+# One edition = one existing translation (a whole Bible, an NT, or single books).
+
+name: "Ds Nöie Teschtamänt bärndütsch (Hans und Ruth Bietenhard)"
+language: gsw-BE                # Bern German
+role: style                     # style and vocabulary corpus only
+text_dir: text
+format: >-
+  one .txt file per book, named by BSB code (mat.txt …): '== heading ==' lines,
+  'Chapter N' lines and 'C:V<TAB>text' lines; reader notes in brackets inside the text
+
+# Translated "diräkt us em Griechischen … nach em Tägscht vom Nestle-Aland, Novum
+# Testamentum Graece, Stuttgart 1981" (preface, source/…67 Produktinformation.docx).
+# Mt 17:21, 18:11 and 23:14 are absent or bracketed, as in NA.
+nt_basis: critical
+
+# The whole NT. John was kept out while the DFB project translated it independently; that
+# quarantine ended (2026-10-13) and John was copied back in.
+books: [mat, mrk, luk, jhn, act, rom, 1co, 2co, gal, eph, php, col, 1th, 2th, 1ti, 2ti, tit, phm,
+        heb, jas, 1pe, 2pe, 1jn, 2jn, 3jn, jud, rev]
+quarantine: []
+
+# Bietenhard marks OT quotations with Swiss German references like '(1Mo 22,18)'.
+quote_hint: "Where it quotes the chapter being translated (marked like `(1Mo 22,18)`), take over its wording."
+
+# How a clone gets the text, which is not in git (scripts/project.py missing_text)
+get_text: "not available here: the text is all rights reserved (Berchtold Haller Verlag); the project's files work without it, new drafts don't"
+source: >-
+  Hans und Ruth Bietenhard, Ds Nöie Teschtamänt bärndütsch, Berchtold Haller Verlag, Bern,
+  1984 (4. Uflag 1989); publisher's .docx files (Titus from an older file, "Textstand nicht
+  aktuell"), in source/
+licence: "private use only (all rights reserved, Berchtold Haller Verlag)"
+attribution: ""
+credit: "Hans und Ruth Bietenhard, Ds Nöie Teschtamänt bärndütsch, © Berchtold Haller Verlag, Bern 1984"

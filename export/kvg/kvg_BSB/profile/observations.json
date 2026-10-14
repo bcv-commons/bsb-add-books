@@ -1,0 +1,4463 @@
+{
+ "iso": "kvg",
+ "edition": "kvg_BSB",
+ "partition": "observations",
+ "licence": "CC0-1.0 (feature values and references; quotations credited in ../CREDITS.md)",
+ "orthography": {
+  "normalization": "NFC",
+  "ignore_marks": [
+   "U+0300",
+   "U+0301",
+   "U+0302",
+   "U+1DC4"
+  ]
+ },
+ "entries": [
+  {
+   "id": "constituent_order",
+   "kind": "feature",
+   "value": "verb-final (SOV); the verb closes the clause",
+   "codes": [
+    "WALS:81A",
+    "WALS:83A"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 2:1"
+    },
+    {
+     "ref": "LUK 15:11"
+    },
+    {
+     "ref": "ACT 7:4"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "adposition",
+   "kind": "feature",
+   "value": "after the noun: suffixed postpositions (-te in/at/to/from) and free postpositions (namba with, mokho-te inside, zita-te after)",
+   "codes": [
+    "WALS:85A"
+   ],
+   "pattern": "<noun>-te | <noun> namba | <noun> mokho-te",
+   "evidence": [
+    {
+     "ref": "LUK 2:6"
+    },
+    {
+     "ref": "LUK 1:56"
+    },
+    {
+     "ref": "LUK 2:22"
+    },
+    {
+     "ref": "LUK 1:15"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "possessor",
+   "kind": "feature",
+   "value": "possessor before the possessed; the possessive suffix agrees with the possessed noun: -qa (things), -ge (a man), -gu (a woman), -gi (plural)",
+   "pattern": "<possessor>-qa/-ge/-gu/-gi <possessed>",
+   "evidence": [
+    {
+     "ref": "LUK 2:4"
+    },
+    {
+     "ref": "LUK 4:38"
+    },
+    {
+     "ref": "JHN 19:25"
+    },
+    {
+     "ref": "LUK 1:33"
+    },
+    {
+     "ref": "MAT 8:14"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "possessive_pronouns",
+   "kind": "feature",
+   "value": "pronoun series by person and by class of the possessed: noqa/noge/nogu/nogi (my), qoqa/qoge/qogu/qogi (your sg), teqa/tege/tegu/tegi (his), tuqa/tuge/tugu/tugi (her), niqa/nigi (our), zoqa/zogi (your pl), tiqa/tigi (their); ekeza = own (reflexive)",
+   "evidence": [
+    {
+     "ref": "LUK 1:5"
+    },
+    {
+     "ref": "LUK 1:27"
+    },
+    {
+     "ref": "JHN 11:5"
+    },
+    {
+     "ref": "2CO 6:18"
+    },
+    {
+     "ref": "MAT 2:6"
+    },
+    {
+     "ref": "JHN 20:17"
+    },
+    {
+     "ref": "LUK 2:39"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "article",
+   "kind": "feature",
+   "value": "no article; demonstratives instead: ngenek (this man), ngunuk (this woman), nginik (these people), nqanek (this thing), 'ta X ndøgo' (that X)",
+   "evidence": [
+    {
+     "ref": "LUK 1:36"
+    },
+    {
+     "ref": "MAT 21:10"
+    },
+    {
+     "ref": "LUK 1:6"
+    },
+    {
+     "ref": "LUK 2:4"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "pronouns",
+   "kind": "feature",
+   "value": "no (I), qo (you sg), ndego (he), ndugu (she), ni (we), zo (you pl), ndigu (they)",
+   "evidence": [
+    {
+     "ref": "LUK 1:18"
+    },
+    {
+     "ref": "LUK 1:38"
+    },
+    {
+     "ref": "LUK 2:48"
+    },
+    {
+     "ref": "LUK 15:17"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "verb_subject_prefix",
+   "kind": "feature",
+   "value": "narrative-past subject prefixes on the verb: ge- (he), gu- (she), gi- (they), qa- (it); gu- also appears when the object is a woman and the subject a man; a plural subject wins over a feminine object",
+   "evidence": [
+    {
+     "ref": "LUK 2:4"
+    },
+    {
+     "ref": "LUK 1:41"
+    },
+    {
+     "ref": "LUK 2:22"
+    },
+    {
+     "ref": "LUK 2:2"
+    },
+    {
+     "ref": "LUK 1:30"
+    },
+    {
+     "ref": "LUK 1:61"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "The gender reading of gu- is the agent's hypothesis (notes, open question 10); a speaker should confirm."
+  },
+  {
+   "id": "verb_object_prefix",
+   "kind": "feature",
+   "value": "object prefixes inside the verb: mbo-/mbøe- (him/her), zø-/zømbe- (them, you pl), nø- (me), ni- (us), qa-/taqa- (you sg); a free noun object often takes no prefix",
+   "evidence": [
+    {
+     "ref": "LUK 1:30"
+    },
+    {
+     "ref": "LUK 2:10"
+    },
+    {
+     "ref": "LUK 2:15"
+    },
+    {
+     "ref": "1TI 5:10"
+    },
+    {
+     "ref": "LUK 9:57"
+    },
+    {
+     "ref": "JHN 20:17"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "verb_direction",
+   "kind": "feature",
+   "value": "directionals inside the verb: -nø- thither (away), -ndo-/-ndu- hither (towards the centre)",
+   "evidence": [
+    {
+     "ref": "LUK 2:4"
+    },
+    {
+     "ref": "LUK 15:30"
+    },
+    {
+     "ref": "LUK 1:38"
+    },
+    {
+     "ref": "ACT 7:40"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "narrative_tense",
+   "kind": "feature",
+   "value": "narrative past with ndø- (neutral), mø̀ndø- (perfective, 'has already'), gè- (completed), te-/tu-/ti- + ne/ni (emphatic past)",
+   "evidence": [
+    {
+     "ref": "LUK 1:56"
+    },
+    {
+     "ref": "LUK 18:3"
+    },
+    {
+     "ref": "LUK 2:4"
+    },
+    {
+     "ref": "ACT 7:60"
+    },
+    {
+     "ref": "LUK 2:37"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "future",
+   "kind": "feature",
+   "value": "future marked by a high tone on the stem; the same consonants as the past",
+   "evidence": [
+    {
+     "ref": "LUK 1:32"
+    },
+    {
+     "ref": "LUK 15:17"
+    },
+    {
+     "ref": "LUK 9:51"
+    },
+    {
+     "ref": "1PE 4:10"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "irrealis",
+   "kind": "feature",
+   "value": "subordinate / conditional / 'that' clauses take irrealis prefixes: tæ- (I), toqo-/toqote- (you), te- (he), tu- (she), ti- (they), tozo- (you pl), tizi- (we); 'even if' = 'Oskiá ndøgo, …'",
+   "evidence": [
+    {
+     "ref": "1CO 9:17"
+    },
+    {
+     "ref": "ACT 10:15"
+    },
+    {
+     "ref": "MRK 12:19"
+    },
+    {
+     "ref": "1CO 7:40"
+    },
+    {
+     "ref": "ACT 9:21"
+    },
+    {
+     "ref": "MAT 2:8"
+    },
+    {
+     "ref": "MAT 26:35"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "negation",
+   "kind": "feature",
+   "value": "negative suffix on the verb: -áv / -eáv / -teáv (past), -ák (future); 'there is none / without' = mbaín after the noun",
+   "codes": [
+    "WALS:143A"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 7:5"
+    },
+    {
+     "ref": "LUK 2:45"
+    },
+    {
+     "ref": "LUK 1:33"
+    },
+    {
+     "ref": "HEB 13:5"
+    },
+    {
+     "ref": "LUK 1:7"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "prohibitive",
+   "kind": "feature",
+   "value": "prohibition by a tone pattern on the verb: grave on the penult and the rising mark (U+1DC4) on the last vowel, object prefix kept",
+   "evidence": [
+    {
+     "ref": "LUK 1:13"
+    },
+    {
+     "ref": "LUK 2:10"
+    },
+    {
+     "ref": "LUK 7:13"
+    },
+    {
+     "ref": "MAT 23:9"
+    },
+    {
+     "ref": "JHN 20:17"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "imperative",
+   "kind": "feature",
+   "value": "commands: 2sg and 2pl forms with their own prefixes (mò-/qa- sg; tozo-/sozó-/zøtø- pl), 1pl hortative bizi-",
+   "evidence": [
+    {
+     "ref": "ACT 7:34"
+    },
+    {
+     "ref": "JHN 20:17"
+    },
+    {
+     "ref": "LUK 15:6"
+    },
+    {
+     "ref": "LUK 7:22"
+    },
+    {
+     "ref": "MRK 16:15"
+    },
+    {
+     "ref": "LUK 2:15"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "optative",
+   "kind": "feature",
+   "value": "wishes and blessings with the prefix be-/bezø- ('may he …', 'may it be for them')",
+   "evidence": [
+    {
+     "ref": "LUK 1:38"
+    },
+    {
+     "ref": "ACT 21:14"
+    },
+    {
+     "ref": "LUK 1:68"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "speech_frame",
+   "kind": "feature",
+   "value": "the frame precedes the quote: speaker, (addressee), 'said thus' with the subject prefix, then the quote in double quotes; a short frame is the verb with the object prefix alone",
+   "pattern": "<speaker> āv ge/gu/gi-ne-eín nqǽgo, “<quote>” | <speaker> gembo-ein/gumbo-ein/gezø-ein, “<quote>”",
+   "evidence": [
+    {
+     "ref": "LUK 1:13"
+    },
+    {
+     "ref": "LUK 1:25"
+    },
+    {
+     "ref": "LUK 2:15"
+    },
+    {
+     "ref": "MAT 26:49"
+    },
+    {
+     "ref": "LUK 2:34"
+    },
+    {
+     "ref": "ACT 12:15"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "indirect_speech",
+   "kind": "feature",
+   "value": "reported content and perception with 'av nqægo, …' and macron tones on the content verb",
+   "pattern": "<verb of saying/hearing/seeing>, av nqægo, <content with macron tones>",
+   "evidence": [
+    {
+     "ref": "LUK 1:58"
+    },
+    {
+     "ref": "MAT 2:16"
+    },
+    {
+     "ref": "ACT 20:3"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "quotation_marks",
+   "kind": "feature",
+   "value": "“ ” for direct speech, ‘ ’ inside a quote",
+   "evidence": [
+    {
+     "ref": "LUK 1:13"
+    },
+    {
+     "ref": "MAT 23:9"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "vocative",
+   "kind": "feature",
+   "value": "a vocative stands first as its own sentence with a full stop or exclamation mark",
+   "evidence": [
+    {
+     "ref": "LUK 1:30"
+    },
+    {
+     "ref": "LUK 15:12"
+    },
+    {
+     "ref": "1JN 3:18"
+    },
+    {
+     "ref": "ACT 2:29"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "question",
+   "kind": "feature",
+   "value": "polar questions open with 'Gê,' and carry a circumflex on the last word; 'why' = 'Gekha zapâ, …'; 'who' = gekha ezoqâm",
+   "evidence": [
+    {
+     "ref": "LUK 4:22"
+    },
+    {
+     "ref": "MAT 13:55"
+    },
+    {
+     "ref": "LUK 6:46"
+    },
+    {
+     "ref": "LUK 2:49"
+    },
+    {
+     "ref": "MAT 21:10"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "relative_clause",
+   "kind": "feature",
+   "value": "a locative relative is bracketed 'ma … ndøgo' (where …); the clause precedes its head",
+   "pattern": "ma <clause> ndøgo",
+   "evidence": [
+    {
+     "ref": "JHN 7:42"
+    },
+    {
+     "ref": "JHN 7:34"
+    },
+    {
+     "ref": "LUK 4:26"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "connective_sequence",
+   "kind": "feature",
+   "value": "'Yaq' opens most narrative sentences (then, and so); on the verb the prefix vø̄- chains a following action without subject marking; 'neka' joins nouns and clauses; 'Geté' = but; 'Zapa ndǿgo,' = because; 'Yaq nakémbá.' = therefore; 'atema' = until",
+   "evidence": [
+    {
+     "ref": "LUK 1:8"
+    },
+    {
+     "ref": "LUK 2:4"
+    },
+    {
+     "ref": "ACT 7:4"
+    },
+    {
+     "ref": "MRK 12:20"
+    },
+    {
+     "ref": "LUK 1:6"
+    },
+    {
+     "ref": "LUK 1:7"
+    },
+    {
+     "ref": "ACT 7:34"
+    },
+    {
+     "ref": "ACT 7:15"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "sentence_length",
+   "kind": "feature",
+   "value": "many short sentences: one BSB sentence often becomes two or three; a name or an attribute stands as its own sentence; a place phrase is often set off after the verb; a predicate noun or adjective ends in a high tone",
+   "evidence": [
+    {
+     "ref": "LUK 1:5"
+    },
+    {
+     "ref": "LUK 2:36"
+    },
+    {
+     "ref": "ACT 8:27"
+    },
+    {
+     "ref": "LUK 2:4"
+    },
+    {
+     "ref": "LUK 15:14"
+    },
+    {
+     "ref": "LUK 1:18"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "time_setting",
+   "kind": "feature",
+   "value": "a time setting opens the sentence: 'Ta khøuwa-te ndøgo, …' (in those days), 'Khøuwa nøme,' (one day), 'Taqa zita-te,' (afterwards)",
+   "evidence": [
+    {
+     "ref": "LUK 1:5"
+    },
+    {
+     "ref": "LUK 1:8"
+    },
+    {
+     "ref": "LUK 1:56"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "naming",
+   "kind": "feature",
+   "value": "'X's name was Y' as '<X>-qa iz, <Y>.' with a high tone on the name; 'their names' = tiqa iziz; naming = 'iz <Y> mbo-akhaém'; 'his name shall be Y' = 'Teqa iz <Y> ndǿgoát'",
+   "pattern": "<X>-qa iz, <Y>.",
+   "evidence": [
+    {
+     "ref": "LUK 1:5"
+    },
+    {
+     "ref": "LUK 1:27"
+    },
+    {
+     "ref": "LUK 2:4"
+    },
+    {
+     "ref": "ACT 8:27"
+    },
+    {
+     "ref": "LUK 2:21"
+    },
+    {
+     "ref": "LUK 1:60"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "existence",
+   "kind": "feature",
+   "value": "'there was' = mø̀ndøgoám; 'was' = ndøgoám; subordinate 'he was' = gegoam",
+   "evidence": [
+    {
+     "ref": "LUK 1:5"
+    },
+    {
+     "ref": "LUK 2:25"
+    },
+    {
+     "ref": "LUK 15:11"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "numerals",
+   "kind": "feature",
+   "value": "kopo 1, menas 2, misika 3, then English loans foa, faev, siks, seven, eit, nain, ten, tuelv; numeral after the noun ('ezoqa menas' two people); 'about N' = 'ande āv N ndi꞉gú'",
+   "evidence": [
+    {
+     "ref": "LUK 1:56"
+    },
+    {
+     "ref": "LUK 2:42"
+    },
+    {
+     "ref": "LUK 15:8"
+    },
+    {
+     "ref": "MRK 12:20"
+    },
+    {
+     "ref": "ACT 7:29"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "suffix_purpose",
+   "kind": "feature",
+   "value": "-qa after a verb stem = purpose ('in order to')",
+   "evidence": [
+    {
+     "ref": "LUK 15:15"
+    },
+    {
+     "ref": "LUK 15:1"
+    },
+    {
+     "ref": "ACT 7:39"
+    },
+    {
+     "ref": "1CO 16:11"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "suffix_origin",
+   "kind": "feature",
+   "value": "-ak on a place or group = person/people of (Izlael-ak; 'Itiopia manqei-ák' an Ethiopian; 'Asa khagua bawan-ák' of the tribe of Asher)",
+   "evidence": [
+    {
+     "ref": "MRK 1:33"
+    },
+    {
+     "ref": "ACT 8:27"
+    },
+    {
+     "ref": "LUK 2:36"
+    },
+    {
+     "ref": "ACT 19:29"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "also_even",
+   "kind": "feature",
+   "value": "'also / even X' = 'até <X>-a'; 'only' = mba after the word",
+   "evidence": [
+    {
+     "ref": "LUK 2:4"
+    },
+    {
+     "ref": "LUK 1:36"
+    },
+    {
+     "ref": "LUK 20:30"
+    },
+    {
+     "ref": "LUK 18:19"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "place_class_noun",
+   "kind": "feature",
+   "value": "a place name takes a class noun: <name> vemiav (village), <name> taon (town), <name> manqei (land), <name> plovins (province)",
+   "evidence": [
+    {
+     "ref": "LUK 2:4"
+    },
+    {
+     "ref": "MAT 2:6"
+    },
+    {
+     "ref": "ACT 7:4"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "tone_marks",
+   "kind": "feature",
+   "value": "acute, grave, macron, circumflex (questions) and U+1DC4 (prohibitives) mark tone and mood; headings carry no tone marks; U+A789 (꞉) is part of some prefixes",
+   "evidence": [
+    {
+     "ref": "LUK 1:13"
+    },
+    {
+     "ref": "LUK 4:22"
+    },
+    {
+     "ref": "LUK 1:46"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Copy tone marks from the model verse; forms built by analogy carry uncertain tones."
+  },
+  {
+   "id": "poetry_layout",
+   "kind": "feature",
+   "value": "poetry as //1 / //2 lines where the BSB has poetry (Magnificat)",
+   "evidence": [
+    {
+     "ref": "LUK 1:46"
+    },
+    {
+     "ref": "LUK 1:47"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "letter:r",
+   "kind": "letter",
+   "value": "r → l; r before a consonant drops",
+   "evidence": [
+    {
+     "ref": "LUK 1:27",
+     "form": "Meli"
+    },
+    {
+     "ref": "LUK 1:5",
+     "form": "Elod"
+    },
+    {
+     "ref": "MAT 1:5",
+     "form": "Lut"
+    },
+    {
+     "ref": "ACT 19:24",
+     "form": "Atemis"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "letter:j",
+   "kind": "letter",
+   "value": "j → z",
+   "evidence": [
+    {
+     "ref": "MAT 2:6",
+     "form": "Zuda"
+    },
+    {
+     "ref": "LUK 2:4",
+     "form": "Zosef"
+    },
+    {
+     "ref": "LUK 1:60",
+     "form": "Zion"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "letter:th",
+   "kind": "letter",
+   "value": "th → t",
+   "evidence": [
+    {
+     "ref": "LUK 2:4",
+     "form": "Betliem"
+    },
+    {
+     "ref": "LUK 1:5",
+     "form": "Elizabet"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "letter:h",
+   "kind": "letter",
+   "value": "initial h drops",
+   "evidence": [
+    {
+     "ref": "LUK 1:5",
+     "form": "Elod"
+    },
+    {
+     "ref": "ACT 7:4",
+     "form": "Elan"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "letter:ch",
+   "kind": "letter",
+   "value": "ch, k → k",
+   "evidence": [
+    {
+     "ref": "LUK 1:5",
+     "form": "Zekalaya"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "letter:vowels",
+   "kind": "letter",
+   "value": "vowels follow the English pronunciation of the name (Deivid, Eibleem, Aezek, Izip, Izlael)",
+   "evidence": [
+    {
+     "ref": "LUK 2:4",
+     "form": "Deivid"
+    },
+    {
+     "ref": "ACT 3:13",
+     "form": "Eibleem"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "gap:oath_formula",
+   "kind": "gap",
+   "value": "the oath 'thus may the LORD do to me and more' has no NT model; rendered as two plain sentences (only death shall part us; if anything else does, may the LORD punish me)",
+   "source": "RUT 1:17",
+   "evidence": [
+    {
+     "ref": "RUT 1:17"
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:sister_in_law",
+   "kind": "gap",
+   "value": "no NT word for sister-in-law (husband's brother's wife); 'qogu ezoqam' (your female relative) used",
+   "source": "RUT 1:15",
+   "evidence": [
+    {
+     "ref": "RUT 1:15"
+    },
+    {
+     "ref": "LUK 1:36"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:call_me",
+   "kind": "gap",
+   "value": "no 'call me X' imperative attested; rendered as 'my name shall be X' after the Luke 1:60 pattern",
+   "source": "RUT 1:20",
+   "evidence": [
+    {
+     "ref": "RUT 1:20"
+    },
+    {
+     "ref": "LUK 1:60"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:passive_bury",
+   "kind": "gap",
+   "value": "no passive 'I will be buried' with a 1sg patient; rendered nominally 'my grave will be there' (manqei ozu)",
+   "source": "RUT 1:17",
+   "evidence": [
+    {
+     "ref": "RUT 1:17"
+    },
+    {
+     "ref": "ACT 2:29"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:testify_against",
+   "kind": "gap",
+   "value": "'the LORD has testified against me' rendered as 'spoke about/against me' (Mat 12:32 frame); other readings (afflicted, humbled) possible",
+   "source": "RUT 1:21",
+   "evidence": [
+    {
+     "ref": "RUT 1:21"
+    },
+    {
+     "ref": "MAT 12:32"
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:full_person",
+   "kind": "gap",
+   "value": "'I went away full' has no NT word for 'full' of a person; rendered 'with my family'; 'empty' as khakha-mbá (empty-handed)",
+   "source": "RUT 1:21",
+   "evidence": [
+    {
+     "ref": "RUT 1:21"
+    },
+    {
+     "ref": "LUK 1:53"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:refrain_marrying",
+   "kind": "gap",
+   "value": "'would you refrain from having husbands' and 'wait for them to grow up' built from kewag (wait) and khouwev (grow) without a close model",
+   "source": "RUT 1:13",
+   "evidence": [
+    {
+     "ref": "RUT 1:13"
+    },
+    {
+     "ref": "LUK 1:21"
+    },
+    {
+     "ref": "LUK 2:40"
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:barley_harvest",
+   "kind": "gap",
+   "value": "'beginning of the barley harvest' paraphrased 'people began reaping the barley crops'; whether avøe alone means harvest is unknown",
+   "source": "RUT 1:22",
+   "evidence": [
+    {
+     "ref": "RUT 1:22"
+    },
+    {
+     "ref": "LUK 10:2"
+    },
+    {
+     "ref": "JHN 4:35"
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:prohibitive_built",
+   "kind": "gap",
+   "value": "the prohibitive 'do not urge me' was built on the stem pouwe by the tone pattern; tones unverified",
+   "source": "RUT 1:16",
+   "evidence": [
+    {
+     "ref": "RUT 1:16"
+    },
+    {
+     "ref": "JHN 20:17"
+    },
+    {
+     "ref": "ACT 21:14"
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:chesed",
+   "kind": "gap",
+   "value": "חֶסֶד: tanakh matev (mercy, compassion) chosen over kuku matev (love, grace); both frequent",
+   "source": "RUT 1:8",
+   "evidence": [
+    {
+     "ref": "RUT 1:8"
+    },
+    {
+     "ref": "LUK 1:58"
+    },
+    {
+     "ref": "LUK 15:20"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:ruth_name",
+   "kind": "gap",
+   "value": "the glossary spells the person Lut (Mat 1:5) but the project's book title is Rut; the text uses Lut",
+   "source": "RUT 1:4",
+   "evidence": [
+    {
+     "ref": "RUT 1:4"
+    },
+    {
+     "ref": "MAT 1:5"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:rut001",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "verb_subject_prefix.2",
+   "kind": "feature",
+   "supersedes": "verb_subject_prefix",
+   "value": "narrative-past subject prefixes on the verb: ge- (he), gu- (she), gi- (they), qa- (it); gu- also when a man acts on a woman; a plural subject wins. The forms with U+A789 (gu꞉-, gunu꞉-) are not feminine: they are a durative/locative 'be at, be in, be doing' used with any subject (Peter sitting, Jesus walking through the fields, God remaining in us)",
+   "evidence": [
+    {
+     "ref": "LUK 2:4"
+    },
+    {
+     "ref": "LUK 1:41"
+    },
+    {
+     "ref": "LUK 2:22"
+    },
+    {
+     "ref": "LUK 1:30"
+    },
+    {
+     "ref": "LUK 1:61"
+    },
+    {
+     "ref": "MAT 26:69"
+    },
+    {
+     "ref": "MAT 12:1"
+    },
+    {
+     "ref": "1JN 4:12"
+    },
+    {
+     "ref": "ACT 16:15"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:rut002",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Refines chapter 1's open question 10: the gender reading holds for plain gu- (gu-ewag, gui-ova, gunøwav), not for gu꞉-/gunu꞉-."
+  },
+  {
+   "id": "second_person_past",
+   "kind": "feature",
+   "value": "2sg past prefix qoqo- (you did, you came, you put, you were); qoqonø- = you (sg) acting on me; qoqombøe-/qoqombo- = you on him/her; qoqote- before some stems (you said)",
+   "evidence": [
+    {
+     "ref": "LUK 4:23"
+    },
+    {
+     "ref": "MAT 3:14"
+    },
+    {
+     "ref": "LUK 19:20"
+    },
+    {
+     "ref": "JHN 17:4"
+    },
+    {
+     "ref": "LUK 1:18"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:rut002",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "prohibitive.2",
+   "kind": "feature",
+   "supersedes": "prohibitive",
+   "value": "prohibition by a tone pattern on the verb: grave on the penult and the rising mark (U+1DC4) on the last vowel, object prefix kept. Attested 2sg forms: 'do not walk/go' (1Ti 5:21), 'do not leave her' (1Co 7:12); 2pl with a 3sg object: 'do not give him' (Eph 4:30), 'touch not' (2Co 6:17); negative wish with be- and the same marks: 'may it not happen to you' (Mat 16:22)",
+   "evidence": [
+    {
+     "ref": "LUK 1:13"
+    },
+    {
+     "ref": "JHN 20:17"
+    },
+    {
+     "ref": "1TI 5:21"
+    },
+    {
+     "ref": "1CO 7:12"
+    },
+    {
+     "ref": "EPH 4:30"
+    },
+    {
+     "ref": "2CO 6:17"
+    },
+    {
+     "ref": "MAT 16:22"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:rut002",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "299 distinct prohibitive forms in the NT; prefer an attested one over building."
+  },
+  {
+   "id": "optative.2",
+   "kind": "feature",
+   "supersedes": "optative",
+   "value": "wishes and blessings with be-: bezø- (for them), betaqa- (for you sg: 'may it be yours', 'may it not happen to you'), bè- plus an object-marked stem ('may this man be blessed'); 'continue to' = até be-",
+   "evidence": [
+    {
+     "ref": "LUK 1:38"
+    },
+    {
+     "ref": "ACT 21:14"
+    },
+    {
+     "ref": "LUK 10:27"
+    },
+    {
+     "ref": "MAT 16:22"
+    },
+    {
+     "ref": "JHN 12:13"
+    },
+    {
+     "ref": "1PE 4:19"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:rut002",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "order_frame",
+   "kind": "feature",
+   "value": "an order or command is framed with manqa/manqat + løvua carrying the subject and object prefixes, then quoted as direct speech (or as 'av nqægo' content)",
+   "pattern": "<giver> <receiver> manqa āv <subj-obj>-løvuá nqǽgo, “<order>”",
+   "evidence": [
+    {
+     "ref": "ACT 16:23"
+    },
+    {
+     "ref": "1TI 6:17"
+    },
+    {
+     "ref": "HEB 11:28"
+    },
+    {
+     "ref": "1CO 7:17"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut002",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "request_permission",
+   "kind": "feature",
+   "value": "a polite request opens with Ambá and its verb takes the suffix -ɨn; 'you may / you can' = 'qo kopømbaqapé, toqo-<verb>'",
+   "evidence": [
+    {
+     "ref": "JHN 4:7"
+    },
+    {
+     "ref": "ACT 7:46"
+    },
+    {
+     "ref": "LUK 5:12"
+    },
+    {
+     "ref": "HEB 9:10"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:rut002",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "question_where_whose",
+   "kind": "feature",
+   "value": "'where' = gekham-tē before the verb, which carries a macron; 'whose' = gekha ezoqam- with the possessive suffix of the possessed and a circumflex (-gû, -qâ); 'Gê,' also opens wh-questions",
+   "evidence": [
+    {
+     "ref": "JHN 11:34"
+    },
+    {
+     "ref": "JHN 4:11"
+    },
+    {
+     "ref": "LUK 20:33"
+    },
+    {
+     "ref": "MAT 22:20"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut002",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "agent_noun",
+   "kind": "feature",
+   "value": "an agent noun is a verb stem or nominal plus ezoqam: field-keeping person (tenant), water-giving person (waterer), sowing person (sower), word-speaking person (prophet), work person (servant, worker, harvester)",
+   "evidence": [
+    {
+     "ref": "LUK 20:10"
+    },
+    {
+     "ref": "1CO 3:8"
+    },
+    {
+     "ref": "MRK 4:29"
+    },
+    {
+     "ref": "LUK 13:34"
+    },
+    {
+     "ref": "MAT 13:30"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut002",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "time_of_day",
+   "kind": "feature",
+   "value": "qanaqanus (morning), khøuwa muin (noon), khagus (evening), lova (night), nqægo khaiya (today), atema ndakin (until now); 'from morning to evening' = qanaqanus atéma khagus",
+   "evidence": [
+    {
+     "ref": "ACT 28:23"
+    },
+    {
+     "ref": "LUK 14:12"
+    },
+    {
+     "ref": "JHN 13:30"
+    },
+    {
+     "ref": "ACT 19:40"
+    },
+    {
+     "ref": "1JN 2:13"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut002",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "imperative.2",
+   "kind": "feature",
+   "supersedes": "imperative",
+   "value": "commands: 2sg forms attested as such for the common verbs: go (Mòqoqáv, qanøqáv), come (Qotøndéqāv, vø̀ndoqáv), eat (mòqológ), sit/stay (qanøqóm), take off / pull out (vø̀khofoé, vø̀khæ-khofoém pl); 2pl tozo-/sozó-/zøtø-/mòzo-; 1pl hortative bizi-; future-as-command Soqóqaváq",
+   "evidence": [
+    {
+     "ref": "ACT 7:34"
+    },
+    {
+     "ref": "JHN 20:17"
+    },
+    {
+     "ref": "JHN 1:46"
+    },
+    {
+     "ref": "JHN 4:31"
+    },
+    {
+     "ref": "ACT 2:34"
+    },
+    {
+     "ref": "ACT 7:33"
+    },
+    {
+     "ref": "MAT 13:30"
+    },
+    {
+     "ref": "LUK 15:6"
+    },
+    {
+     "ref": "LUK 2:15"
+    },
+    {
+     "ref": "MAT 8:13"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:rut002",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "gap:glean",
+   "kind": "gap",
+   "value": "no NT word for gleaning (לקט) or for reapers; gleaning rendered as the NT's 'pick heads of grain' (bali nanga vingisam, after wit nanga ndøvingisømém) and harvesters as sasae ezoqam (workers), as Mat 13:30 does",
+   "source": "RUT 2:2",
+   "evidence": [
+    {
+     "ref": "RUT 2:2"
+    },
+    {
+     "ref": "MAT 12:1"
+    },
+    {
+     "ref": "MAT 13:30"
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:rut002",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:sheaves",
+   "kind": "gap",
+   "value": "no noun for a sheaf or bundle of cut grain; 'bali møvøyam' built from 'tie in bundles' and 'barn' (Mat 13:30)",
+   "source": "RUT 2:7",
+   "evidence": [
+    {
+     "ref": "RUT 2:7"
+    },
+    {
+     "ref": "RUT 2:15"
+    },
+    {
+     "ref": "MAT 13:30"
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:rut002",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:kinsman_redeemer",
+   "kind": "gap",
+   "value": "no term for the kinsman-redeemer (גֹּאֵל); described as 'one of our relatives who are there to redeem us' with the NT's redeem verb (nqovotaz)",
+   "source": "RUT 2:20",
+   "evidence": [
+    {
+     "ref": "RUT 2:20"
+    },
+    {
+     "ref": "ACT 7:35"
+    },
+    {
+     "ref": "LUK 1:68"
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:rut002",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:refuge_under_wings",
+   "kind": "gap",
+   "value": "no word for refuge; 'taken refuge under his wings' made concrete as 'you came to him and put yourself under his wings' (taf mokho-te, Luk 13:34; 'put into my hand', Luk 19:20)",
+   "source": "RUT 2:12",
+   "evidence": [
+    {
+     "ref": "RUT 2:12"
+    },
+    {
+     "ref": "LUK 13:34"
+    },
+    {
+     "ref": "LUK 19:20"
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:rut002",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:ephah",
+   "kind": "gap",
+   "value": "the ephah (about 22 litres) rendered 'about one yakhav' (basket, and the NT's unit for measures of oil); the NT also writes litres with digits (100 litás, Jhn 2:6)",
+   "source": "RUT 2:17",
+   "evidence": [
+    {
+     "ref": "RUT 2:17"
+    },
+    {
+     "ref": "LUK 16:6"
+    },
+    {
+     "ref": "JHN 6:13"
+    },
+    {
+     "ref": "JHN 2:6"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:rut002",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:roasted_grain",
+   "kind": "gap",
+   "value": "'roasted grain' as bali nanga vesu; vesu (broiled) is attested once, of fish",
+   "source": "RUT 2:14",
+   "evidence": [
+    {
+     "ref": "RUT 2:14"
+    },
+    {
+     "ref": "LUK 24:42"
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:rut002",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:foreman",
+   "kind": "gap",
+   "value": "no word for a foreman; 'the servant who was set over the harvesters' described as the servant who looked after the other workers (kewag)",
+   "source": "RUT 2:5",
+   "evidence": [
+    {
+     "ref": "RUT 2:5"
+    },
+    {
+     "ref": "1TI 5:10"
+    },
+    {
+     "ref": "LUK 20:10"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:rut002",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:satisfied",
+   "kind": "gap",
+   "value": "'she ate and was satisfied': ewez with a singular personal object (mbo-) is attested only as 'grew weary/aggravated' (Jhn 4:6, Act 16:18); the plural (zø-ewez) means 'were filled'; the singular 'filled' sense is assumed",
+   "source": "RUT 2:14",
+   "evidence": [
+    {
+     "ref": "RUT 2:14"
+    },
+    {
+     "ref": "LUK 9:17"
+    },
+    {
+     "ref": "JHN 4:6"
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:rut002",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:stay_close",
+   "kind": "gap",
+   "value": "'stay close to / keep with' (דבק) in the imperative rendered 'namba mba qanøqóm' (stay only with); narrative 'clung to' keeps chapter 1's built gùmu-tøkenøvém",
+   "source": "RUT 2:8",
+   "evidence": [
+    {
+     "ref": "RUT 2:8"
+    },
+    {
+     "ref": "RUT 2:21"
+    },
+    {
+     "ref": "ACT 2:34"
+    },
+    {
+     "ref": "ACT 3:11"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:rut002",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:chance",
+   "kind": "gap",
+   "value": "no word for chance ('she happened to come'); rendered 'it turned out thus:' (matev āv qanefakhán nqǽgo)",
+   "source": "RUT 2:3",
+   "evidence": [
+    {
+     "ref": "RUT 2:3"
+    },
+    {
+     "ref": "1CO 2:9"
+    },
+    {
+     "ref": "LUK 10:31"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:rut002",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:bless_you_2sg",
+   "kind": "gap",
+   "value": "'the LORD bless you' and 'blessed be he' use the NT's khakheinøv (bless, make well); the 2sg optative bèkhakheinøqavém is built from bèkhakheinøvém and tø̀khakheinøqavém",
+   "source": "RUT 2:4",
+   "evidence": [
+    {
+     "ref": "RUT 2:4"
+    },
+    {
+     "ref": "JHN 12:13"
+    },
+    {
+     "ref": "MRK 5:34"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:rut002",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:rebuke_prohibitive",
+   "kind": "gap",
+   "value": "'do not rebuke her' built on gugu (rebuke) by the prohibitive tone rule (mbogùgu᷄); not attested",
+   "source": "RUT 2:16",
+   "evidence": [
+    {
+     "ref": "RUT 2:16"
+    },
+    {
+     "ref": "LUK 23:40"
+    },
+    {
+     "ref": "3JN 1:11"
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:rut002",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "rhetorical_question",
+   "kind": "feature",
+   "value": "a rhetorical 'is it not / am I not' question is 'Gê, <statement with the negative verb (-eâv) or mbà>?' with the circumflex, usually followed by its own answer (Gê, no Yesu ometeâv? No mø̀e-omét.); a 'should not' question may become a plain statement (Luk 13:16)",
+   "evidence": [
+    {
+     "ref": "1CO 9:1"
+    },
+    {
+     "ref": "1CO 6:15"
+    },
+    {
+     "ref": "1CO 5:6"
+    },
+    {
+     "ref": "LUK 13:16"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:rut003",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Rut 3:1 'should I not seek a resting place for you' is rendered as a statement of intent"
+  },
+  {
+   "id": "imperative_chain",
+   "kind": "feature",
+   "value": "after a first command, further commands chain with vø̀-/vø̄- + stem without a subject prefix (Mòqo-itán, ibøkha iz vø̄ndap, neka Evezøza vømbō-akha; Mòqo-itán, neka venanqei nonqo vø̄løvøen); a sentence-initial vø̀-command carries a grave and a final acute (vø̀khofoé, vø̀takhaém)",
+   "pattern": "<command>, neka <object> vø̄-<stem>",
+   "evidence": [
+    {
+     "ref": "ACT 22:16"
+    },
+    {
+     "ref": "ACT 9:34"
+    },
+    {
+     "ref": "ACT 12:8"
+    },
+    {
+     "ref": "ACT 7:33"
+    },
+    {
+     "ref": "JHN 2:8"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:rut003",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Rut 3:3-4 and 3:13 build vø̀sungúz, vø̄qouz, vø̄sømbiam / vø̀sømbiám on this pattern; vø̄-uz and vø̀khofoé are attested as such"
+  },
+  {
+   "id": "negative_future",
+   "kind": "feature",
+   "value": "3sg negative future = ge-/gemǿ- (+ object prefix) + stem with a high tone + -ák (gétayák 'will not hold', gembótakák 'will not let', gemǿ-navøemák 'will never end'); 1pl zí-...-ák, 1sg nó-...-ák; a generic 'no one will / does know' = Ezoqa mè꞉-otevák",
+   "evidence": [
+    {
+     "ref": "MAT 23:16"
+    },
+    {
+     "ref": "1CO 10:13"
+    },
+    {
+     "ref": "LUK 1:33"
+    },
+    {
+     "ref": "ACT 23:12"
+    },
+    {
+     "ref": "1CO 2:11"
+    },
+    {
+     "ref": "HEB 13:5"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:rut003",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "conditional",
+   "kind": "feature",
+   "value": "'if X (does)' = irrealis verb + tøgoat / tegoat ('if he intends to leave' = ivøve-qa tegoat); 'if he does not X' = X-eav tøgoat (tøkeeav tøgoat, okɨeav tøgoat); 'if he wants (to X)' = (X-qa) poev tømbogoat; 'if not' = Mbain tøgoat; the apodosis follows with yaq; 'if so' = Av toqotegoat ndægo",
+   "pattern": "<protasis with te-/tu-/toqo- irrealis> tøgoat, yaq <apodosis>",
+   "evidence": [
+    {
+     "ref": "1CO 10:27"
+    },
+    {
+     "ref": "MAT 27:43"
+    },
+    {
+     "ref": "1CO 7:15"
+    },
+    {
+     "ref": "1TI 3:15"
+    },
+    {
+     "ref": "1CO 15:2"
+    },
+    {
+     "ref": "EPH 6:3"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:rut003",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "comparative",
+   "kind": "feature",
+   "value": "'A exceeds B' = A, B mø̀ndøløvú (A is greater than B: God is greater than our heart); 'he far surpasses me' = ndego no ùnime꞉-løvúmb; the respect compared is added as taqa yaq-te or noqa ... mø̀ndøløvú",
+   "evidence": [
+    {
+     "ref": "1JN 3:20"
+    },
+    {
+     "ref": "ACT 13:25"
+    },
+    {
+     "ref": "JHN 21:15"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:rut003",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "used in Rut 1:13 (more bitter), 3:10 (more kindness than before), 3:12 (a nearer redeemer)"
+  },
+  {
+   "id": "time_of_day.2",
+   "kind": "feature",
+   "value": "qanaqanus (morning), khøuwa muin (noon), khagus (evening), lova (night), nqægo lova (tonight), qamø-umba / lova u-mba (midnight), qanaqanus lovølova-ús (early morning while still dark), khøuwa qandopave (day broke), atema꞉ vøndōpave (until daybreak), nqægo khaiya (today), atema ndakin (until now); 'from morning to evening' = qanaqanus atéma khagus",
+   "supersedes": "time_of_day",
+   "evidence": [
+    {
+     "ref": "ACT 28:23"
+    },
+    {
+     "ref": "LUK 14:12"
+    },
+    {
+     "ref": "JHN 13:30"
+    },
+    {
+     "ref": "ACT 19:40"
+    },
+    {
+     "ref": "1JN 2:13"
+    },
+    {
+     "ref": "LUK 12:20"
+    },
+    {
+     "ref": "MAT 25:6"
+    },
+    {
+     "ref": "ACT 16:25"
+    },
+    {
+     "ref": "JHN 8:2"
+    },
+    {
+     "ref": "ACT 23:12"
+    },
+    {
+     "ref": "ACT 20:11"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut003",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "relative_clause.2",
+   "kind": "feature",
+   "value": "a locative relative is bracketed 'ma … ndøgo' (where …); with a head noun the head comes first and the ma-clause follows: 'ta manqei ndøgo, ma <clause>' (the place where …); a person is characterised by an appositive clause after the name, 'ndego <clause>,' (Jhn 18:26: the man whose ear Peter cut off)",
+   "pattern": "ta <head> ndøgo, ma <clause> | <Name>, ndego <clause>, …",
+   "supersedes": "relative_clause",
+   "evidence": [
+    {
+     "ref": "JHN 7:42"
+    },
+    {
+     "ref": "JHN 7:34"
+    },
+    {
+     "ref": "LUK 4:26"
+    },
+    {
+     "ref": "JHN 18:26"
+    },
+    {
+     "ref": "LUK 15:20"
+    },
+    {
+     "ref": "JHN 12:1"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:rut003",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Rut 1:7, 2:3, 3:4 (place), Rut 3:2 (Boaz, with whose girls you worked)"
+  },
+  {
+   "id": "gap:threshing_floor",
+   "kind": "gap",
+   "source": "RUT 3:2",
+   "value": "no NT word for a threshing floor; 'bali evem nonqo' (barley-winnowing place) built on the NT's 'wit evem nonqo' (Luk 3:17); winnow = evem",
+   "evidence": [
+    {
+     "ref": "RUT 3:2"
+    },
+    {
+     "ref": "LUK 3:17"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:rut003",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:heap_of_grain",
+   "kind": "gap",
+   "source": "RUT 3:7",
+   "value": "no word for a heap or pile of grain; 'bali nqeitam' (stored / piled barley) built from nqeit (put in, store: barn, fill baskets); 'at the end of the heap' = bali nqeitam-qa vaev-te",
+   "evidence": [
+    {
+     "ref": "RUT 3:7"
+    },
+    {
+     "ref": "LUK 3:17"
+    },
+    {
+     "ref": "JHN 6:13"
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:rut003",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:oath_as_the_lord_lives",
+   "kind": "gap",
+   "source": "RUT 3:13",
+   "value": "no 'as the LORD lives' formula; rendered with the NT's swearing frame 'I swear to the LORD thus:' (no Evezøza-te, āv qaté-unimanqatín nqǽgo:), which loses 'lives'",
+   "evidence": [
+    {
+     "ref": "RUT 3:13"
+    },
+    {
+     "ref": "ACT 23:14"
+    },
+    {
+     "ref": "MAT 10:32"
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:rut003",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:redeem_2sg_object",
+   "kind": "gap",
+   "source": "RUT 3:13",
+   "value": "'let him redeem you' (betaqá-nqovotáz) and 'I will redeem you' (søtaqá-nqovotáz) are built from the optative betaqa- and the 1sg-to-2sg future søtaqá- (Søtaqá-etoám) on the stem nqovotaz; the kinsman-redeemer himself stays a description (gap:kinsman_redeemer)",
+   "evidence": [
+    {
+     "ref": "RUT 3:13"
+    },
+    {
+     "ref": "MRK 6:23"
+    },
+    {
+     "ref": "MAT 16:22"
+    },
+    {
+     "ref": "ACT 7:34"
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:rut003",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:measures_seah",
+   "kind": "gap",
+   "source": "RUT 3:15",
+   "value": "'six measures (seahs) of barley' rendered 'bali yakhav siks' with the NT's unit yakhav (basket, measure), the same word used for the ephah in Rut 2:17; the real quantity (about 40 litres) is not conveyed",
+   "evidence": [
+    {
+     "ref": "RUT 3:15"
+    },
+    {
+     "ref": "LUK 16:6"
+    },
+    {
+     "ref": "JHN 6:13"
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:rut003",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:should_i_not",
+   "kind": "gap",
+   "source": "RUT 3:1",
+   "value": "the rhetorical 'should I not seek a resting place for you?' has no close model as a 1sg deontic question; rendered as a statement of intent 'No qo-te pusup manqei vawa-qa nombogó' (I want to seek …), with vawa-qa nombogó built after 'yoge-qa nombogó' (Act 25:22)",
+   "evidence": [
+    {
+     "ref": "RUT 3:1"
+    },
+    {
+     "ref": "ACT 25:22"
+    },
+    {
+     "ref": "1CO 9:1"
+    },
+    {
+     "ref": "LUK 13:16"
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:rut003",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:cover_me",
+   "kind": "gap",
+   "source": "RUT 3:9",
+   "value": "'spread the corner of your garment over me' rendered as the request 'Ambá qoqa ndabua-te qonø-gutavɨ́n' (please cover me with your garment), built from the request frame 'Ambá ibøkha qonø-etoamɨ́n' (Jhn 4:7) and gutav (cover); the 'wing' reading (taf, Rut 2:12) was not used",
+   "evidence": [
+    {
+     "ref": "RUT 3:9"
+    },
+    {
+     "ref": "JHN 4:7"
+    },
+    {
+     "ref": "ACT 9:3"
+    },
+    {
+     "ref": "LUK 13:34"
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:rut003",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:startled",
+   "kind": "gap",
+   "source": "RUT 3:8",
+   "value": "no word for 'startled'; 'Boaz was startled' rendered as two sentences, 'Boaz woke up' (gesuzam, Act 16:27) and 'Trembling.' (Kha wageap-ús, Luk 8:47)",
+   "evidence": [
+    {
+     "ref": "RUT 3:8"
+    },
+    {
+     "ref": "ACT 16:27"
+    },
+    {
+     "ref": "LUK 8:47"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:rut003",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:how_did_it_go",
+   "kind": "gap",
+   "source": "RUT 3:16",
+   "value": "'How did it go, my daughter?' (Hebrew 'who are you?') rendered 'Gê, áv khané꞉go, qo-te?' (how is it with you) after 'Gê, áv khané꞉go, …' (how is it that …, Act 2:8); the circumflex / question tone of the built phrase is unverified",
+   "evidence": [
+    {
+     "ref": "RUT 3:16"
+    },
+    {
+     "ref": "ACT 2:8"
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:rut003",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:lie_down_forms",
+   "kind": "gap",
+   "source": "RUT 3:4",
+   "value": "'lie down' is the sleep stem sømbi (sømbiam); attested: sasa ndøsømbiam, gesømbimám (he lay), ginø-sømbiám; built: gusømbimám (she lay, 3:8, 3:14), genø-sømbiám (he lay down, 3:7), the imperatives vø̄sømbiam / vø̀sømbiám (3:4, 3:13), 'when he lies down' = sømbiam-qa tewav (3:4)",
+   "evidence": [
+    {
+     "ref": "RUT 3:4"
+    },
+    {
+     "ref": "MAT 25:5"
+    },
+    {
+     "ref": "ACT 9:33"
+    },
+    {
+     "ref": "MAT 26:43"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:rut003",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:not_let_known",
+   "kind": "gap",
+   "source": "RUT 3:3",
+   "value": "'do not let the man know you are there' and 'do not let it be known that a woman came' have no jussive-passive model; rendered with the negative future 'X mè꞉-otevák' (X will / must not notice, know; 1Co 2:11 'no one knows')",
+   "evidence": [
+    {
+     "ref": "RUT 3:3"
+    },
+    {
+     "ref": "RUT 3:14"
+    },
+    {
+     "ref": "1CO 2:11"
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:rut003",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:not_rest",
+   "kind": "gap",
+   "source": "RUT 3:18",
+   "value": "'he will not rest unless he has resolved the matter today' rendered 'pusa gétayák, atema nqanek manqat nqægo khaiya vømǿ-navøēm' (he will not rest until he has finished this matter today); gétayák is attested only in 'yaq-fia gétayák' (will not hold judgment)",
+   "evidence": [
+    {
+     "ref": "RUT 3:18"
+    },
+    {
+     "ref": "MAT 23:16"
+    },
+    {
+     "ref": "ROM 8:1"
+    },
+    {
+     "ref": "HEB 4:10"
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:rut003",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:kinsman_redeemer_narrative",
+   "kind": "gap",
+   "source": "RUT 4:1",
+   "value": "the redeemer as a character in narrative (Rut 4:1, 3, 6, 8) = 'ta ekeza ezoqam ndøgo' (that relative), introduced in 4:1 by 'Boaz teqa yaq-te manqat ge-ein' (of whom Boaz had spoken); 'to redeem' = nqovotaz, 'right of redemption' = nqovotaz matev (built), 'I will redeem' = nó-nqovotáz (built after nó-unimanqatín Heb 8:8), imperative gè-nqovotáz (built after gè-etoám Luk 6:38)",
+   "evidence": [
+    {
+     "ref": "RUT 4:1"
+    },
+    {
+     "ref": "RUT 4:6"
+    },
+    {
+     "ref": "JHN 18:9"
+    },
+    {
+     "ref": "HEB 8:8"
+    },
+    {
+     "ref": "LUK 6:38"
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:rut004",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:custom_explanation",
+   "kind": "gap",
+   "source": "RUT 4:7",
+   "value": "the narrator's note on an old custom has no NT model of a habitual past; rendered 'Ibugukhokhof, Izlael manqei-te, matev nqánek ndøgoám:' + a conditional case (tegoat ... yaq) + Heb 6:16 'ndigu ekeza manqat gè-unimanqatinimín' for the confirmation; 'exchange' merged into wi",
+   "evidence": [
+    {
+     "ref": "RUT 4:7"
+    },
+    {
+     "ref": "HEB 6:16"
+    },
+    {
+     "ref": "JHN 8:44"
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:rut004",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:raise_up_name",
+   "kind": "gap",
+   "source": "RUT 4:5",
+   "value": "'raise up the name of the dead on his inheritance' rendered as a wish 'ta ezoqam-qa iz, ndego genanim, teqa manqei-te nango begó' (may the dead man's name be on his land again); Luk 20:28 'patu bembō-qatayat' (raise up offspring for him) is the closer levirate model but has a 3sg subject; 'his name will not be cut off' = teqa iz ... gemǿ-navøemák (after Luk 1:33)",
+   "evidence": [
+    {
+     "ref": "RUT 4:5"
+    },
+    {
+     "ref": "RUT 4:10"
+    },
+    {
+     "ref": "LUK 20:28"
+    },
+    {
+     "ref": "LUK 1:33"
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:rut004",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "tell_me",
+   "kind": "feature",
+   "value": "'tell me' (2sg imperative with 1sg addressee) = Qonømbé-eīn (Act 22:27); 'tell us' = Soqoní-eín (Act 5:8); 'I am telling you' = no qo ... nqataqa-manqate (2Ti 2:7)",
+   "evidence": [
+    {
+     "ref": "ACT 22:27",
+     "form": "Qonømbé-eīn"
+    },
+    {
+     "ref": "ACT 5:8",
+     "form": "Soqoní-eín"
+    },
+    {
+     "ref": "2TI 2:7",
+     "form": "nqataqa-manqate"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:rut004",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Rut 4:4"
+  },
+  {
+   "id": "gap:oath_formula.h",
+   "kind": "gap",
+   "value": "human: the oath becomes a promise with a self-curse: 'I promise this; if I do not keep it, the LORD may - let him strike me' (formula:oath_may_the_lord_punish), after 'only death will separate us' (formula:only_death_parts)",
+   "source": "RUT 1:17",
+   "evidence": [
+    {
+     "ref": "RUT 1:17"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:oath_formula",
+   "words": [
+    "may the lord punish me",
+    "ever so severely",
+    "anything but death separates you and me"
+   ],
+   "note": "Ours: two plain sentences. The human keeps the curse as an optative of ngi (strike) on 1sg."
+  },
+  {
+   "id": "gap:sister_in_law.h",
+   "kind": "gap",
+   "value": "human: 'your brother-in-law's wife', kin noun qakhapikia (husband's brother) + -pakha + -gu zas (term:H2994)",
+   "source": "RUT 1:15",
+   "evidence": [
+    {
+     "ref": "RUT 1:15"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:sister_in_law",
+   "words": [
+    "sister-in-law"
+   ],
+   "note": "Ours: 'qogu ezoqam' (your female relative)."
+  },
+  {
+   "id": "gap:call_me.h",
+   "kind": "gap",
+   "value": "human: prohibitive pl with 1sg object for 'do not call me X', then a 2pl future for 'call me Y' (formula:call_me), each followed by the name's meaning (formula:explain_name)",
+   "source": "RUT 1:20",
+   "evidence": [
+    {
+     "ref": "RUT 1:20"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:call_me",
+   "words": [
+    "call me",
+    "do not call me"
+   ],
+   "note": "Ours: 'my name shall be X' (Luk 1:60)."
+  },
+  {
+   "id": "gap:passive_bury.h",
+   "kind": "gap",
+   "value": "human: the 1sg future of otamb (bury) carries the passive sense: 'there I will be buried' (term:H6912.h); no passive construction needed",
+   "source": "RUT 1:17",
+   "evidence": [
+    {
+     "ref": "RUT 1:17"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:passive_bury",
+   "words": [
+    "buried",
+    "be buried"
+   ],
+   "note": "Ours: 'my grave will be there'."
+  },
+  {
+   "id": "gap:testify_against.h",
+   "kind": "gap",
+   "value": "human: 'testified against me' and 'afflicted me' are merged into one clause, 'the LORD has ruined my life' (ngi strike + yage life, 1:21); 1:13 'the hand of the LORD has gone out against me' = 'the LORD has struck me' (gènøngiú)",
+   "source": "RUT 1:21",
+   "evidence": [
+    {
+     "ref": "RUT 1:21"
+    },
+    {
+     "ref": "RUT 1:13"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:testify_against",
+   "words": [
+    "testified against me",
+    "afflicted me",
+    "the hand of the lord has gone out against me"
+   ],
+   "note": "Ours: 'spoke against me' (Mat 12:32). Merging two parallel Hebrew clauses is a human pattern (see ot-narrative.md)."
+  },
+  {
+   "id": "gap:full_person.h",
+   "kind": "gap",
+   "value": "human: 'full' and 'empty' of a person = with and without husband and sons: 'with my husband and my sons' (-ús having) ... 'no husband, no children' (mbaín)",
+   "source": "RUT 1:21",
+   "evidence": [
+    {
+     "ref": "RUT 1:21"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:full_person",
+   "words": [
+    "full",
+    "empty",
+    "i went away full"
+   ],
+   "note": "Ours: 'with my family' / khakha-mbá. 'empty-handed' of goods = 'zenda-zenda mba' (RUT 3:17, term:H7387.h)."
+  },
+  {
+   "id": "gap:refrain_marrying.h",
+   "kind": "gap",
+   "value": "human: 'would you wait many years until these children grow up? Would you go on living as widows until my sons marry you?' (kewag wait + atema until; ngængæm widows, term:widows)",
+   "source": "RUT 1:13",
+   "evidence": [
+    {
+     "ref": "RUT 1:13"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:refrain_marrying",
+   "words": [
+    "refrain from having husbands",
+    "wait for them to grow up"
+   ],
+   "note": "Ours: built from kewag and khouwev; close to the human."
+  },
+  {
+   "id": "gap:barley_harvest.h",
+   "kind": "gap",
+   "value": "human: 'the barley-picking season began' (bali vingisam viav, term:H7105.h), plus an explanation of barley in brackets at the end of the verse",
+   "source": "RUT 1:22",
+   "evidence": [
+    {
+     "ref": "RUT 1:22"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:barley_harvest",
+   "words": [
+    "barley harvest",
+    "beginning of the barley harvest",
+    "harvest"
+   ],
+   "note": "Ours: 'people began reaping the barley crops' (avøe). The harvest is a season (viav), not avøe gigiap."
+  },
+  {
+   "id": "gap:prohibitive_built.h",
+   "kind": "gap",
+   "value": "human: our built prohibitive was right in its tone pattern; the human form has the rising mark on the last vowel followed by the stem's final -t: 'do not urge me' (RUT 1:16)",
+   "source": "RUT 1:16",
+   "evidence": [
+    {
+     "ref": "RUT 1:16"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:prohibitive_built",
+   "words": [
+    "do not urge me"
+   ],
+   "note": "Ours lacked the final consonant. See prohibitive.3."
+  },
+  {
+   "id": "gap:chesed.h",
+   "kind": "gap",
+   "value": "human: human kindness = good deeds (matev mbomømboma, Ruth), God's loving devotion = kuku matev (Jonah); see term:H2617.h",
+   "source": "RUT 1:8",
+   "evidence": [
+    {
+     "ref": "RUT 1:8"
+    },
+    {
+     "ref": "JON 2:9"
+    },
+    {
+     "ref": "JON 4:2"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:chesed",
+   "words": [
+    "loving devotion",
+    "kindness"
+   ],
+   "note": "Ours: tanakh matev. tanakh is the human's word for favour and pity."
+  },
+  {
+   "id": "gap:ruth_name.h",
+   "kind": "gap",
+   "value": "human: Lut throughout; the 2015 book heading is also 'Lut'",
+   "source": "RUT 1:4",
+   "evidence": [
+    {
+     "ref": "RUT 1:4"
+    },
+    {
+     "ref": "RUT 3:9"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:ruth_name",
+   "words": [
+    "ruth"
+   ],
+   "note": "Decided: Lut for the person and the book."
+  },
+  {
+   "id": "gap:glean.h",
+   "kind": "gap",
+   "value": "human: gleaning = picking up the left-over barley (bali khakhayakh + pisam/pisum, term:H3950.h); harvesters = sasae ezoqam (workers), as ours",
+   "source": "RUT 2:2",
+   "evidence": [
+    {
+     "ref": "RUT 2:2"
+    },
+    {
+     "ref": "RUT 2:3"
+    },
+    {
+     "ref": "RUT 2:7"
+    },
+    {
+     "ref": "RUT 2:17"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:glean",
+   "words": [
+    "glean",
+    "gleaned",
+    "harvesters"
+   ],
+   "note": "Ours: 'bali nanga vingisam' (pluck heads of grain)."
+  },
+  {
+   "id": "gap:sheaves.h",
+   "kind": "gap",
+   "value": "human: the sheaves are 'the barley stalks being tied' (bali løvøtap, term:H6016.h); 2:7 'among the sheaves' is left out",
+   "source": "RUT 2:15",
+   "evidence": [
+    {
+     "ref": "RUT 2:15"
+    },
+    {
+     "ref": "RUT 2:16"
+    },
+    {
+     "ref": "RUT 2:7"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:sheaves",
+   "words": [
+    "sheaves",
+    "bundles"
+   ],
+   "note": "Ours: 'bali møvøyam'."
+  },
+  {
+   "id": "gap:kinsman_redeemer.h",
+   "kind": "gap",
+   "value": "human: the redeemer is 'X's relative' (ekeza ezoqam); his duty is explained in 2:20 from the law of Moses ('a woman whose husband dies, the husband's relative must help her'); redeeming = buying the land (wi) and marrying the widow (okɨ); see term:H1350.h",
+   "source": "RUT 2:20",
+   "evidence": [
+    {
+     "ref": "RUT 2:20"
+    },
+    {
+     "ref": "RUT 3:9"
+    },
+    {
+     "ref": "RUT 4:4"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:kinsman_redeemer",
+   "words": [
+    "kinsman-redeemer",
+    "redeemer",
+    "redeem"
+   ],
+   "note": "Ours: 'relatives who are there to redeem us' with the NT's nqovotaz. The human adds the background inside the text."
+  },
+  {
+   "id": "gap:refuge_under_wings.h",
+   "kind": "gap",
+   "value": "human: the image is dropped: 'you have come to him for help' (tøke-qa ... te-te), formula:repay_your_work",
+   "source": "RUT 2:12",
+   "evidence": [
+    {
+     "ref": "RUT 2:12"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:refuge_under_wings",
+   "words": [
+    "taken refuge",
+    "under whose wings",
+    "wings"
+   ],
+   "note": "Ours: made concrete with taf (wings). The human renders the meaning, not the picture."
+  },
+  {
+   "id": "gap:ephah.h",
+   "kind": "gap",
+   "value": "human: the measure is converted to kilograms in the text: 'about 10 kilograms' (term:H374.h)",
+   "source": "RUT 2:17",
+   "evidence": [
+    {
+     "ref": "RUT 2:17"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:ephah",
+   "words": [
+    "ephah"
+   ],
+   "note": "Ours: 'about one yakhav' (basket). Same for the seah (term:H5429.h)."
+  },
+  {
+   "id": "gap:roasted_grain.h",
+   "kind": "gap",
+   "value": "human: bali lonqotøvap (term:H7039)",
+   "source": "RUT 2:14",
+   "evidence": [
+    {
+     "ref": "RUT 2:14"
+    },
+    {
+     "ref": "RUT 2:18"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:roasted_grain",
+   "words": [
+    "roasted grain"
+   ],
+   "note": "Ours: 'bali nanga vesu'."
+  },
+  {
+   "id": "gap:foreman.h",
+   "kind": "gap",
+   "value": "human: 'the man who looked after the workers' (kewag), as ours (term:H5324)",
+   "source": "RUT 2:5",
+   "evidence": [
+    {
+     "ref": "RUT 2:5"
+    },
+    {
+     "ref": "RUT 2:6"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:foreman",
+   "words": [
+    "foreman"
+   ],
+   "note": "Ours confirmed."
+  },
+  {
+   "id": "gap:satisfied.h",
+   "kind": "gap",
+   "value": "human: 'it (the food) filled her' = qa- + mbo- + ewez (term:H7646.h)",
+   "source": "RUT 2:14",
+   "evidence": [
+    {
+     "ref": "RUT 2:14"
+    },
+    {
+     "ref": "RUT 2:18"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:satisfied",
+   "words": [
+    "satisfied",
+    "was satisfied"
+   ],
+   "note": "Ours: open between mbo- and zø-; the human uses the inanimate subject qa-."
+  },
+  {
+   "id": "gap:stay_close.h",
+   "kind": "gap",
+   "value": "human: 'stay here with ...' = 'be (go) here' + namba (formula:stay_with.h); 'clung to her' = 'stayed, with Naomi' (term:H1692.h); 'stayed close to the girls' = 'worked beside them'",
+   "source": "RUT 2:8",
+   "evidence": [
+    {
+     "ref": "RUT 2:8"
+    },
+    {
+     "ref": "RUT 2:21"
+    },
+    {
+     "ref": "RUT 1:14"
+    },
+    {
+     "ref": "RUT 2:23"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:stay_close",
+   "words": [
+    "stay close to",
+    "clung to",
+    "stay with"
+   ],
+   "note": "Ours: 'namba mba qanøqóm', 'gùmu-tøkenøvém'."
+  },
+  {
+   "id": "gap:chance.h",
+   "kind": "gap",
+   "value": "human: 'she happened to come to Boaz's field' = 'she did not know that this field was Boaz's' (formula:it_turned_out.h)",
+   "source": "RUT 2:3",
+   "evidence": [
+    {
+     "ref": "RUT 2:3"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:chance",
+   "words": [
+    "happened",
+    "as it turned out"
+   ],
+   "note": "Ours: 'it turned out thus:'."
+  },
+  {
+   "id": "gap:bless_you_2sg.h",
+   "kind": "gap",
+   "value": "human: 'Yawe zenda ndò꞉vé qo-te' (may the LORD put his hand on you), term:H1288.h; no optative of khakheinøv",
+   "source": "RUT 2:4",
+   "evidence": [
+    {
+     "ref": "RUT 2:4"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:bless_you_2sg",
+   "words": [
+    "the lord bless you",
+    "bless"
+   ],
+   "note": "Ours: built 2sg optative bèkhakheinøqavém."
+  },
+  {
+   "id": "gap:rebuke_prohibitive.h",
+   "kind": "gap",
+   "value": "human: 'do not say a word to her about it' (prohibitive pl of ein), term:H1605.h",
+   "source": "RUT 2:16",
+   "evidence": [
+    {
+     "ref": "RUT 2:16"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:rebuke_prohibitive",
+   "words": [
+    "do not rebuke her",
+    "rebuke"
+   ],
+   "note": "Ours: built prohibitive of gugu."
+  },
+  {
+   "id": "gap:threshing_floor.h",
+   "kind": "gap",
+   "value": "human: 'the grain-threshing place' (bali nanga tøkuza manqei, term:H1637.h)",
+   "source": "RUT 3:2",
+   "evidence": [
+    {
+     "ref": "RUT 3:2"
+    },
+    {
+     "ref": "RUT 3:3"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:threshing_floor",
+   "words": [
+    "threshing floor"
+   ],
+   "note": "Ours: 'bali evem nonqo'; evem (winnow) itself is right (RUT 3:2)."
+  },
+  {
+   "id": "gap:heap_of_grain.h",
+   "kind": "gap",
+   "value": "human: bali nanga møvøza (term:H6194.h)",
+   "source": "RUT 3:7",
+   "evidence": [
+    {
+     "ref": "RUT 3:7"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:heap_of_grain",
+   "words": [
+    "heap of grain",
+    "heap"
+   ],
+   "note": "Ours: 'bali nqeitam'."
+  },
+  {
+   "id": "gap:oath_as_the_lord_lives.h",
+   "kind": "gap",
+   "value": "human: 'I promise you before the LORD's face' (bugug-té qataqambø-manqaté), formula:as_the_lord_lives.h; 'lives' is not rendered",
+   "source": "RUT 3:13",
+   "evidence": [
+    {
+     "ref": "RUT 3:13"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:oath_as_the_lord_lives",
+   "words": [
+    "as surely as the lord lives"
+   ],
+   "note": "Ours: 'I swear to the LORD thus:' (Act 23:14). Both lose 'lives'; the human frame is shorter."
+  },
+  {
+   "id": "gap:redeem_2sg_object.h",
+   "kind": "gap",
+   "value": "human: redeeming the widow = marrying her: 'if he wants to marry you, good, let him marry you' ... 'I will marry you' (okɨ with the 2sg object, formula:if_he_wants_good)",
+   "source": "RUT 3:13",
+   "evidence": [
+    {
+     "ref": "RUT 3:13"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:redeem_2sg_object",
+   "words": [
+    "redeem you",
+    "let him redeem you"
+   ],
+   "note": "Ours: built forms of nqovotaz."
+  },
+  {
+   "id": "gap:measures_seah.h",
+   "kind": "gap",
+   "value": "human: 'its weight was about 20 kilograms' (term:H5429.h)",
+   "source": "RUT 3:15",
+   "evidence": [
+    {
+     "ref": "RUT 3:15"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:measures_seah",
+   "words": [
+    "six measures",
+    "measures"
+   ],
+   "note": "Ours: 'bali yakhav siks'."
+  },
+  {
+   "id": "gap:should_i_not.h",
+   "kind": "gap",
+   "value": "human: the rhetorical question becomes a statement of intent, as ours: 'I will find you a husband, so that you will live well' (term:H4494.h, term:H3190.h)",
+   "source": "RUT 3:1",
+   "evidence": [
+    {
+     "ref": "RUT 3:1"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:should_i_not",
+   "words": [
+    "should i not seek",
+    "resting place"
+   ],
+   "note": "Ours confirmed in form (statement), with the content made explicit (husband)."
+  },
+  {
+   "id": "gap:cover_me.h",
+   "kind": "gap",
+   "value": "human: 'take a little of your blanket and cover me' (khafu, term:H6566.h); then 'and look after me', 'please marry me' (No ambá qonøkeɨ́n)",
+   "source": "RUT 3:9",
+   "evidence": [
+    {
+     "ref": "RUT 3:9"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:cover_me",
+   "words": [
+    "spread the corner of your garment over me",
+    "spread",
+    "corner of your garment"
+   ],
+   "note": "Ours: 'please cover me with your garment' (gutav). The human spells out the request's meaning."
+  },
+  {
+   "id": "gap:startled.h",
+   "kind": "gap",
+   "value": "human: 'Boaz woke up, turned over, and fear took him' (tènesuzám ... nqova mbondáf, term:H2729.h)",
+   "source": "RUT 3:8",
+   "evidence": [
+    {
+     "ref": "RUT 3:8"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:startled",
+   "words": [
+    "startled",
+    "was startled"
+   ],
+   "note": "Ours: 'woke up' + 'trembling' - the same split into clauses."
+  },
+  {
+   "id": "gap:how_did_it_go.h",
+   "kind": "gap",
+   "value": "human: 'My daughter, how did things go (for you)?' (formula:how_did_it_go.h)",
+   "source": "RUT 3:16",
+   "evidence": [
+    {
+     "ref": "RUT 3:16"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:how_did_it_go",
+   "words": [
+    "how did it go"
+   ],
+   "note": "Ours: 'how is it with you'."
+  },
+  {
+   "id": "gap:lie_down_forms.h",
+   "kind": "gap",
+   "value": "human: lie (down) = buv in all forms; sleep = venanqei buv (term:H7901.h)",
+   "source": "RUT 3:4",
+   "evidence": [
+    {
+     "ref": "RUT 3:4"
+    },
+    {
+     "ref": "RUT 3:7"
+    },
+    {
+     "ref": "RUT 3:8"
+    },
+    {
+     "ref": "RUT 3:14"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:lie_down_forms",
+   "words": [
+    "lie down",
+    "lies down",
+    "lay down",
+    "lying"
+   ],
+   "note": "Ours: built forms of sømbi (sleep)."
+  },
+  {
+   "id": "gap:not_let_known.h",
+   "kind": "gap",
+   "value": "human: the negative optative be- + prohibitive tone: 'let Boaz not see you', 'let no one know' (formula:not_let_the_man_know.h, feature negative_optative)",
+   "source": "RUT 3:3",
+   "evidence": [
+    {
+     "ref": "RUT 3:3"
+    },
+    {
+     "ref": "RUT 3:14"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:not_let_known",
+   "words": [
+    "do not let the man know",
+    "do not let it be known"
+   ],
+   "note": "Ours: negative future 'will not notice'."
+  },
+  {
+   "id": "gap:not_rest.h",
+   "kind": "gap",
+   "value": "human: 'Boaz will not rest (pusa ... gétayák). The matter will be settled today.' - ours confirmed in the verb (formula:matter_settled)",
+   "source": "RUT 3:18",
+   "evidence": [
+    {
+     "ref": "RUT 3:18"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:not_rest",
+   "words": [
+    "he will not rest",
+    "resolved the matter"
+   ],
+   "note": "Ours confirmed (pusa gétayák)."
+  },
+  {
+   "id": "gap:kinsman_redeemer_narrative.h",
+   "kind": "gap",
+   "value": "human: in narrative 'Elimelek-ge ekeza ezoqam' (Elimelech's relative) or 'ndego ezoqam' (that man), 4:1 'of whom Boaz had spoken to Ruth'",
+   "source": "RUT 4:1",
+   "evidence": [
+    {
+     "ref": "RUT 4:1"
+    },
+    {
+     "ref": "RUT 4:3"
+    },
+    {
+     "ref": "RUT 4:6"
+    },
+    {
+     "ref": "RUT 4:8"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:kinsman_redeemer_narrative",
+   "words": [
+    "kinsman-redeemer",
+    "the kinsman-redeemer"
+   ],
+   "note": "Ours: 'ta ekeza ezoqam ndøgo' - close."
+  },
+  {
+   "id": "gap:custom_explanation.h",
+   "kind": "gap",
+   "value": "human: 'In those days in Israel the custom was this:' + the case told with the -ɨn suffix (feature suffix_in) + 'This was the Israelites' custom' (formula:in_former_times)",
+   "source": "RUT 4:7",
+   "evidence": [
+    {
+     "ref": "RUT 4:7"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:custom_explanation",
+   "words": [
+    "in former times",
+    "to make any matter legally binding",
+    "confirmation"
+   ],
+   "note": "Ours: 'Ibugukhokhof ... matev nqánek ndøgoám:' + a conditional case; the human has a habitual suffix the NT-only agents did not know."
+  },
+  {
+   "id": "gap:raise_up_name.h",
+   "kind": "gap",
+   "value": "human: 'that land will stay in the dead man's name' (4:5) and 'so Mahlon's name will not be forgotten among his people and in this town' (4:10, negative future of navøem)",
+   "source": "RUT 4:5",
+   "evidence": [
+    {
+     "ref": "RUT 4:5"
+    },
+    {
+     "ref": "RUT 4:10"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "gap:raise_up_name",
+   "words": [
+    "raise up the name of the deceased",
+    "his name will not disappear"
+   ],
+   "note": "Ours: a wish 'may the dead man's name be on his land again'."
+  },
+  {
+   "id": "letter:r.2",
+   "kind": "letter",
+   "value": "r → l (Lut, Lam, Pelez, Ezlon, Izlael, Mala, Laisol); r before a consonant drops (Opa, Tasis) and so does a final r (Tama)",
+   "evidence": [
+    {
+     "ref": "RUT 4:19",
+     "form": "Lam"
+    },
+    {
+     "ref": "RUT 4:18",
+     "form": "Pelez"
+    },
+    {
+     "ref": "RUT 1:4",
+     "form": "Opa"
+    },
+    {
+     "ref": "JON 1:3",
+     "form": "Tasis"
+    },
+    {
+     "ref": "RUT 4:12",
+     "form": "Tama"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "supersedes": "letter:r",
+   "note": "Confirmed by every r in Ruth/Jonah."
+  },
+  {
+   "id": "letter:j.2",
+   "kind": "letter",
+   "value": "j (Hebrew y) → z; Jo- → Zio- (Ziona Jonah, Ziopa Joppa, as NT Zion John)",
+   "evidence": [
+    {
+     "ref": "JON 1:3",
+     "form": "Ziona"
+    },
+    {
+     "ref": "JON 1:3",
+     "form": "Ziopa"
+    },
+    {
+     "ref": "RUT 4:22",
+     "form": "Zesi"
+    },
+    {
+     "ref": "RUT 1:1",
+     "form": "Zuda"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "supersedes": "letter:j"
+  },
+  {
+   "id": "letter:h.2",
+   "kind": "letter",
+   "value": "h drops at the start (Ezlon) and inside a name (Malon, Nason); final -h drops (Zuda, Opa, Niniva, Eflat)",
+   "evidence": [
+    {
+     "ref": "RUT 4:18",
+     "form": "Ezlon"
+    },
+    {
+     "ref": "RUT 1:2",
+     "form": "Malon"
+    },
+    {
+     "ref": "RUT 4:20",
+     "form": "Nason"
+    },
+    {
+     "ref": "JON 1:2",
+     "form": "Niniva"
+    },
+    {
+     "ref": "RUT 1:2",
+     "form": "Eflat"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "supersedes": "letter:h"
+  },
+  {
+   "id": "letter:ch.2",
+   "kind": "letter",
+   "value": "ch, k → k (Elimelek, Kilion)",
+   "evidence": [
+    {
+     "ref": "RUT 1:2",
+     "form": "Elimelék"
+    },
+    {
+     "ref": "RUT 1:2",
+     "form": "Kilion"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "supersedes": "letter:ch",
+   "note": "Confirmed."
+  },
+  {
+   "id": "letter:sh",
+   "kind": "letter",
+   "value": "sh → s (Tasis Tarshish, Nason Nahshon)",
+   "evidence": [
+    {
+     "ref": "JON 1:3",
+     "form": "Tasis"
+    },
+    {
+     "ref": "RUT 4:20",
+     "form": "Nason"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "letter:ph",
+   "kind": "letter",
+   "value": "ph → f (Eflat Ephrath)",
+   "evidence": [
+    {
+     "ref": "RUT 1:2",
+     "form": "Eflat"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "letter:double",
+   "kind": "letter",
+   "value": "double consonants are written single (Amitai Amittai, Ziopa Joppa, Aminadab Amminadab)",
+   "evidence": [
+    {
+     "ref": "JON 1:1",
+     "form": "Amitai"
+    },
+    {
+     "ref": "JON 1:3",
+     "form": "Ziopa"
+    },
+    {
+     "ref": "RUT 4:19",
+     "form": "Aminadab"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "letter:vowels.2",
+   "kind": "letter",
+   "value": "vowels: names the NT has keep the NT's English-sounding form (Deivid, Laisol, Zesi); names new in the OT stay close to the spelling (Naomi, not Neomi; Elimelek, Kilion, Amitai, Obed); Nineveh → Niniva",
+   "evidence": [
+    {
+     "ref": "RUT 1:2",
+     "form": "Naomí"
+    },
+    {
+     "ref": "RUT 4:22",
+     "form": "Deivid"
+    },
+    {
+     "ref": "RUT 4:11",
+     "form": "Laisol"
+    },
+    {
+     "ref": "JON 1:2",
+     "form": "Niniva"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "supersedes": "letter:vowels",
+   "note": "The NT-only agents built Neomi and Eflata from the pronunciation rule; the human writes Naomi and Eflat. For a new OT name: BSB spelling + the consonant rules, NT form where the NT has the name."
+  },
+  {
+   "id": "kin_pakha",
+   "kind": "feature",
+   "value": "in the 2015 OT a possessed kin noun takes -pakha (pl -pakha-za): zakhapuka-pakha (her mother-in-law), ziwap-pakha / ziupim-pakha-za (daughter(s)-in-law), sæ-pakha (my daughter), anganeam-pakha (husband), yo-pakha (son), qakhapikia-pakha (brother-in-law); the stem can change with the possessor's person (z- her, q- your: zakhapuka / qakhapuka, zøvøndipakha / qavøndipakha). The NT has -pakha only in evøndipakha (parents)",
+   "evidence": [
+    {
+     "ref": "RUT 1:14",
+     "form": "zakhapuka-pakha"
+    },
+    {
+     "ref": "RUT 1:22",
+     "form": "ziwap-pakha"
+    },
+    {
+     "ref": "RUT 1:6",
+     "form": "ziupim-pakha-za"
+    },
+    {
+     "ref": "RUT 2:2",
+     "form": "Sǽ-pakha"
+    },
+    {
+     "ref": "RUT 4:5",
+     "form": "yo-pakha-gu zas"
+    },
+    {
+     "ref": "RUT 2:11",
+     "form": "qakhapuka-pakha"
+    },
+    {
+     "ref": "RUT 1:15",
+     "form": "qakhapikia-pakha-gu"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "New: the NT-only agents never saw it (their drafts have bare kin nouns). Whether the newer NT revision dropped -pakha or the NT simply has no such contexts is a question for the Kuni team."
+  },
+  {
+   "id": "tail_head_linkage",
+   "kind": "feature",
+   "value": "narrative links a new event to the last one by repeating it as a backgrounded clause (often closed by ndøgo, or followed by yaq): 'they settled there. And while they lived in Moab, Elimelech died'; 'they came to Bethlehem. When they came to Bethlehem ...'; 'Naomi said this, and they wept'",
+   "evidence": [
+    {
+     "ref": "RUT 1:3",
+     "form": "Yaq Moab manqei-te giyagam"
+    },
+    {
+     "ref": "RUT 1:19",
+     "form": "Yaq Betliem vemiav-te gimøfakhaz"
+    },
+    {
+     "ref": "RUT 1:14",
+     "form": "Naomi nqanek manqat gu-ein"
+    },
+    {
+     "ref": "RUT 3:5",
+     "form": "Yaq Lut nqanek manqat"
+    },
+    {
+     "ref": "RUT 3:7",
+     "form": "Yaq venanqei gebuvat ndøgo"
+    },
+    {
+     "ref": "JON 2:2",
+     "form": "Yaq Ziona ate av-té"
+    },
+    {
+     "ref": "JON 3:6",
+     "form": "nqanek manqat ge-ewag"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "The human adds such links where the Hebrew has none (1:3, 1:14, 3:5, JON 2:2). See ot-narrative.md."
+  },
+  {
+   "id": "explicitation",
+   "kind": "feature",
+   "value": "the translators make implicit information explicit inside the text: the cause of a famine (RUT 1:1), the meaning of names (1:20), an unfamiliar plant in brackets (1:22 barley), the law behind the redeemer (2:20), the place of council at the gate (4:1), measures converted to kilograms (2:17, 3:15), the purpose of a request (3:9 'please marry me'), the resting place as a husband (3:1), lots as a procedure (JON 1:7)",
+   "evidence": [
+    {
+     "ref": "RUT 1:1"
+    },
+    {
+     "ref": "RUT 1:20"
+    },
+    {
+     "ref": "RUT 1:22"
+    },
+    {
+     "ref": "RUT 2:20"
+    },
+    {
+     "ref": "RUT 4:1"
+    },
+    {
+     "ref": "RUT 2:17"
+    },
+    {
+     "ref": "RUT 3:9"
+    },
+    {
+     "ref": "JON 1:7"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Drafts may do the same; mark each addition in the chapter notes for the team's review."
+  },
+  {
+   "id": "image_to_meaning",
+   "kind": "feature",
+   "value": "Hebrew images are rendered by their meaning: 'under whose wings you have taken refuge' = 'you have come to him for help'; 'the hand of the LORD has gone out against me' = 'the LORD has struck me'; 'cannot tell right from left' = 'do not know which way is good'; 'spread your wing over me' = 'cover me ... please marry me'",
+   "evidence": [
+    {
+     "ref": "RUT 2:12"
+    },
+    {
+     "ref": "RUT 1:13"
+    },
+    {
+     "ref": "JON 4:11"
+    },
+    {
+     "ref": "RUT 3:9"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "negative_optative",
+   "kind": "feature",
+   "value": "a negative wish or indirect prohibition ('let him not', 'let no one') is be- + the prohibitive tone (grave on the penult, U+1DC4 on the last vowel): 'let Boaz not see you', 'let no one know', 'let them not eat or drink'",
+   "evidence": [
+    {
+     "ref": "RUT 3:3",
+     "form": "beqàme᷄kh"
+    },
+    {
+     "ref": "RUT 3:14",
+     "form": "betezø̀te᷄z"
+    },
+    {
+     "ref": "JON 3:7",
+     "form": "belòge᷄"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "New: the NT-only agents used a negative future instead. NT model: Mat 16:22 (prohibitive.2)."
+  },
+  {
+   "id": "prohibitive.3",
+   "kind": "feature",
+   "value": "prohibition by a tone pattern on the verb: grave on the penult and the rising mark (U+1DC4) on the last vowel, object prefix kept; a final consonant follows the mark (pòuwe᷄t, qàva᷄q, khafène᷄m, eìni᷄m, akhàya᷄m). 2sg: 'do not urge me', 'do not go', 'do not be afraid', 'do not go back'; 2pl: 'do not drive her away', 'do not say a word to her', 'do not call me', 'do not eat or drink'; 1pl object: 'do not give us death' (JON 1:14). Negative wish: be- + the same marks (negative_optative)",
+   "evidence": [
+    {
+     "ref": "RUT 1:16",
+     "form": "nøpòuwe᷄t"
+    },
+    {
+     "ref": "RUT 2:8",
+     "form": "ndø̀qa᷄v"
+    },
+    {
+     "ref": "RUT 3:11",
+     "form": "ndø̀go᷄"
+    },
+    {
+     "ref": "RUT 3:17",
+     "form": "ndøqàva᷄q"
+    },
+    {
+     "ref": "RUT 2:15",
+     "form": "mbøe-khafène᷄m"
+    },
+    {
+     "ref": "RUT 2:16",
+     "form": "mbo-eìni᷄m"
+    },
+    {
+     "ref": "RUT 1:20",
+     "form": "nø-akhàya᷄m"
+    },
+    {
+     "ref": "JON 3:7",
+     "form": "ndølòge᷄"
+    },
+    {
+     "ref": "JON 1:14",
+     "form": "ni-etòa᷄m"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "supersedes": "prohibitive.2",
+   "note": "The rule the NT-only agents used is confirmed by nine OT stems; their 'nøpòuwe᷄' lacked the stem's final t. NT: 299 distinct prohibitive forms; prefer an attested one."
+  },
+  {
+   "id": "hortative",
+   "kind": "feature",
+   "value": "1pl 'let us' = zí- / sizi- / qazinǿ- on the verb (NT bizi-): 'let us write', 'let us put', 'let us see', 'let us wait', 'let us fast'; 'we will go' (future 1pl) = qazinǿ-",
+   "evidence": [
+    {
+     "ref": "JON 1:7",
+     "form": "zípeawám"
+    },
+    {
+     "ref": "JON 1:7",
+     "form": "qazinǿ-nqeitøvém"
+    },
+    {
+     "ref": "JON 1:7",
+     "form": "zíqeivím"
+    },
+    {
+     "ref": "RUT 3:18",
+     "form": "Sizió-kewagét"
+    },
+    {
+     "ref": "RUT 3:13",
+     "form": "sizíqeivím"
+    },
+    {
+     "ref": "JON 3:5",
+     "form": "zígoném"
+    },
+    {
+     "ref": "RUT 1:10",
+     "form": "qazinǿ-niáv"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "The NT has bizi- (Luk 2:15 'Bìziniáv'); zí-/sizi- forms were not in the store."
+  },
+  {
+   "id": "imperative.3",
+   "kind": "feature",
+   "value": "commands: 2sg mò-/qo-/qa- (+ -nø- thither, -ndo- hither): 'go there' qonǿqáv, 'go' Mòqoqáv / Vø̀qáv, 'come here' Qotøndéqāv, 'eat' qólóg / mòqológ, 'sit' Qànøqóm, 'get up' Mòqosuzám, 'hold it' Qóvøndáz, 'lie down' sasa qóbūv, 'buy it' ndøwí; 2pl qazonǿ- / zó- / vø̀- / qànø- ...-m/-v/-n: 'go back' Qazonǿ-qavøním, 'sit down' Qànøqonáv, 'pull out' zó-ovobém, 'wear' zó-uzám, 'turn' Zóqambúz; a following command chains with vø̀-/vø̄-; 1pl hortative zí-/sizi-/bizi- (hortative)",
+   "evidence": [
+    {
+     "ref": "JON 1:2",
+     "form": "qonǿqáv"
+    },
+    {
+     "ref": "RUT 2:2",
+     "form": "Vø̀qáv"
+    },
+    {
+     "ref": "RUT 2:14",
+     "form": "Qotøndéqāv"
+    },
+    {
+     "ref": "JON 1:6",
+     "form": "Mòqosuzám"
+    },
+    {
+     "ref": "RUT 3:15",
+     "form": "Qóvøndáz"
+    },
+    {
+     "ref": "RUT 1:8",
+     "form": "Qazonǿ-qavøním"
+    },
+    {
+     "ref": "RUT 4:2",
+     "form": "Qànøqonáv"
+    },
+    {
+     "ref": "JON 3:8",
+     "form": "Zóqambúz"
+    },
+    {
+     "ref": "ACT 7:34",
+     "form": "mòqoqáv"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "supersedes": "imperative.2"
+  },
+  {
+   "id": "suffix_in",
+   "kind": "feature",
+   "value": "the verb suffix -ɨn marks a non-actual event: a polite request with Ambá ('please let me go'), a wished or attempted act with amba ('I wanted to flee', 'the ship nearly broke up'), a hypothetical ('even if you had seven sons, they could not help you as ...'), and a customary act in a description of custom (RUT 4:7) or a repeated act (RUT 2:7)",
+   "evidence": [
+    {
+     "ref": "RUT 2:2",
+     "form": "qatønavɨ́n"
+    },
+    {
+     "ref": "RUT 3:9",
+     "form": "qonøkeɨ́n"
+    },
+    {
+     "ref": "JON 4:2",
+     "form": "amba Tasis manqei-te tækhokhonɨn"
+    },
+    {
+     "ref": "JON 1:4",
+     "form": "ambá vø̄tøkuiamin"
+    },
+    {
+     "ref": "RUT 4:15",
+     "form": "tiqagonɨn"
+    },
+    {
+     "ref": "RUT 4:7",
+     "form": "ndøkhofaɨ́n"
+    },
+    {
+     "ref": "RUT 2:7",
+     "form": "gumøqomɨn"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Refines request_permission (NT: Ambá ... -ɨn); the habitual use answers gap:custom_explanation. The NT glossary uses it for customs too ('gingazemɨn', Keliso)."
+  },
+  {
+   "id": "ability",
+   "kind": "feature",
+   "value": "'can / may' = kopømbá (it is fine, possible) / kopømbaqapé; 'cannot' = kopømba mbaín + irrealis verb; 'if he refuses, fine' = '..., kopømbá'",
+   "evidence": [
+    {
+     "ref": "RUT 4:6",
+     "form": "no kopømba mbaín manqei"
+    },
+    {
+     "ref": "JON 1:13",
+     "form": "Geté kopømba mbaín"
+    },
+    {
+     "ref": "RUT 4:4",
+     "form": "kopømbá"
+    },
+    {
+     "ref": "RUT 2:15",
+     "form": "kopømbaqapé"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "conditional.2",
+   "kind": "feature",
+   "value": "'if X' = irrealis verb (te-/tu-/toqo-/tæ- ...) + tøgoat/tegoat, then yaq; 'if he does not' = X-eav tøgoat ('poeveav tøgoat' if he does not want); 'if he wants to X' = irrealis of poev + irrealis X ('tømbopoe teqakɨ'); 'if so / if I do that' = 'Av tægoat ndægo, yaq ...'; 'even if' = 'Até ndøgó-a, ...'; 'when you buy' = 'Geté ... toqondap' (irrealis without tøgoat)",
+   "pattern": "<protasis with irrealis> (tøgoat), yaq <apodosis>",
+   "evidence": [
+    {
+     "ref": "RUT 3:13",
+     "form": "poeveav tøgoat"
+    },
+    {
+     "ref": "RUT 4:4",
+     "form": "poeveav tøgoat"
+    },
+    {
+     "ref": "RUT 4:6",
+     "form": "Av tægoat ndægo, yaq"
+    },
+    {
+     "ref": "RUT 1:12",
+     "form": "Até ndøgó-a"
+    },
+    {
+     "ref": "RUT 2:15",
+     "form": "Até ndøgó-a"
+    },
+    {
+     "ref": "RUT 4:5",
+     "form": "toqondap"
+    },
+    {
+     "ref": "1CO 10:27"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "supersedes": "conditional",
+   "note": "Confirmed and extended by Ruth 3-4 (legal conditions)."
+  },
+  {
+   "id": "speech_frame.2",
+   "kind": "feature",
+   "value": "the frame precedes the quote: speaker (addressee) + frame verb with person and object prefixes, then “...”. In Ruth/Jonah most frames are the short verb (gumbo-ein to her, gezø-ein to them); a reply takes -ndo-/-ndu- (gundu-ein, gendo-ein, gindu-einim); the long 'āv ... nqǽgo' frame marks questions, prayers, orders and solemn speech. A frame may follow a hearing clause ('Ruth heard this and replied'). Quotes inside quotes take ‘ ’",
+   "pattern": "<speaker> (<addressee>) gumbo-/gezø-/gundu-ein, “<quote>” | <speaker> āv ...-eín nqǽgo, “<quote>”",
+   "evidence": [
+    {
+     "ref": "RUT 2:2",
+     "form": "gumbo-ein"
+    },
+    {
+     "ref": "RUT 1:16",
+     "form": "gundu-ein"
+    },
+    {
+     "ref": "RUT 2:5",
+     "form": "āv gembøebeváp nqǽgo"
+    },
+    {
+     "ref": "JON 4:2",
+     "form": "āv gene-guligulím nqǽgo"
+    },
+    {
+     "ref": "RUT 4:9",
+     "form": "āv gezømbe-eín nqǽgo"
+    },
+    {
+     "ref": "RUT 3:5",
+     "form": "nqanek manqat gu-ewag, gundu-ein"
+    },
+    {
+     "ref": "RUT 2:7",
+     "form": "‘No ambá"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "supersedes": "speech_frame",
+   "note": "Style figure: 'nqǽgo' 11.4 per 1000 words in Ruth, 7.7 in Jonah (NT Gospels+Acts 10.6)."
+  },
+  {
+   "id": "vocative.2",
+   "kind": "feature",
+   "value": "a vocative stands first as its own sentence; a name in the vocative moves its accent to the first syllable (Evézøza, Zíona; NT Méli); kin and titles: Sǽ-pakha (my daughter), Nogí sæ-pakha-za (my daughters), Khanánqa (sir)",
+   "evidence": [
+    {
+     "ref": "JON 1:14",
+     "form": "Evézøza"
+    },
+    {
+     "ref": "JON 4:4",
+     "form": "Zíona"
+    },
+    {
+     "ref": "RUT 2:2",
+     "form": "Sǽ-pakha"
+    },
+    {
+     "ref": "RUT 2:13",
+     "form": "Khanánqa"
+    },
+    {
+     "ref": "LUK 1:30"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "supersedes": "vocative"
+  },
+  {
+   "id": "interjections",
+   "kind": "feature",
+   "value": "interjections open the reply as their own sentence: Nqáe! (look), Áe, (there, behold, in narrative), Yáiyé! (joy, surprise), Tiá. (no!), Mbaín. (no), Āv taoká. (not so), Ság. (good, enough), Qanimáv. (good, yes, agreed), Unimanqatín. (truly), Éisa, (perhaps)",
+   "evidence": [
+    {
+     "ref": "RUT 1:15",
+     "form": "Nqáe!"
+    },
+    {
+     "ref": "RUT 3:8",
+     "form": "Áe,"
+    },
+    {
+     "ref": "RUT 2:20",
+     "form": "Yáiyé!"
+    },
+    {
+     "ref": "RUT 1:10",
+     "form": "Tiá."
+    },
+    {
+     "ref": "RUT 1:11",
+     "form": "Mbaín."
+    },
+    {
+     "ref": "RUT 1:13",
+     "form": "Āv taoká."
+    },
+    {
+     "ref": "JON 4:8",
+     "form": "Ság."
+    },
+    {
+     "ref": "RUT 3:5",
+     "form": "Qanimáv."
+    },
+    {
+     "ref": "RUT 3:12",
+     "form": "Unimanqatín."
+    },
+    {
+     "ref": "JON 1:6",
+     "form": "Éisa,"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "The human adds them where the Hebrew has none (Yáiyé in 2:20 and 4:17, Qanimáv in 3:5, 4:4, 4:11)."
+  },
+  {
+   "id": "similative",
+   "kind": "feature",
+   "value": "'like X' = 'av X ndi꞉gu / ngi꞉gu' after the compared clause; 'as if' = andé; 'as you said' = 'av ... ndægo'",
+   "evidence": [
+    {
+     "ref": "RUT 4:11",
+     "form": "av nginik sakhei menas"
+    },
+    {
+     "ref": "RUT 4:12",
+     "form": "av Pelez-gi zi ndi꞉gu"
+    },
+    {
+     "ref": "RUT 4:17",
+     "form": "Ndego andé Naomi-gé nakhasám"
+    },
+    {
+     "ref": "RUT 3:5",
+     "form": "av qonømbe-manqatat ndægo"
+    },
+    {
+     "ref": "JON 3:2",
+     "form": "av tøtaqambe-ein ndægo"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "relative_pronoun",
+   "kind": "feature",
+   "value": "a relative clause follows its head, opened by the pronoun of the head (ndego, ndugu, ndigu) and closed by the verb: 'Naomi, the woman who came back from Moab'; 'the man who looked after the workers'; 'a woman whose husband dies'; 'God, who lives in heaven'",
+   "evidence": [
+    {
+     "ref": "RUT 4:3",
+     "form": "Naomi, ndugu sævam, Moab"
+    },
+    {
+     "ref": "RUT 2:5",
+     "form": "ndego ezoqam, sasae ezoqa"
+    },
+    {
+     "ref": "RUT 2:20",
+     "form": "Sævam ndugu anganeam tembonanim"
+    },
+    {
+     "ref": "JON 1:9",
+     "form": "ndego Mbumbukiam, yan-te ngo꞉yage"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Complements relative_clause.2 (locative ma ... ndøgo)."
+  },
+  {
+   "id": "connective_sequence.2",
+   "kind": "feature",
+   "value": "Yaq opens most narrative sentences (50 per 1000 words in Ruth, 60 in Jonah; NT 44); vø̄- chains following actions without subject marking and 'sasa nd(ø)-' closes the chain; 'até gendego, ...' (he for his part, then he) opens a new action of a known participant; Geté = but (8.5/1000); 'Zapa ndǿgo,' (because) is rare (1.8 Ruth, 2.3 Jonah; NT 3.4, our drafts 5.2): most Hebrew כִּי clauses are not marked; neka joins less often than in the NT (13.6 vs 18.8); 'Yaq nakémbá' = therefore",
+   "evidence": [
+    {
+     "ref": "RUT 4:13",
+     "form": "Lut vø̄-okɨ, venanqei nonqo"
+    },
+    {
+     "ref": "JON 1:3",
+     "form": "fia vø̄go, vø̄uketao, sasa"
+    },
+    {
+     "ref": "JON 1:1",
+     "form": "até gendego"
+    },
+    {
+     "ref": "RUT 4:1",
+     "form": "Boaz até gendego"
+    },
+    {
+     "ref": "RUT 1:12",
+     "form": "Yaq nakémbá."
+    },
+    {
+     "ref": "RUT 1:16",
+     "form": "Geté Lut"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "supersedes": "connective_sequence",
+   "note": "Figures from _eval/human_ruth_analysis.md section 2 (tone marks ignored)."
+  },
+  {
+   "id": "sentence_length.2",
+   "kind": "feature",
+   "value": "short sentences: 9.0 words per sentence in Ruth, 8.7 in Jonah (NT Gospels+Acts 9.9); about 1.6 Hebrew clauses per Kuni sentence; a long Hebrew verse becomes 3-6 sentences; a key clause can be repeated at the end of the verse (1:1 'Vikia sekeqape ndømát.'); names, attributes and time phrases stand as sentences of their own ('Khøuwa kopó.' JON 3:4; 'Khøuwa misiká neka lova misika.' JON 2:1)",
+   "evidence": [
+    {
+     "ref": "RUT 1:1"
+    },
+    {
+     "ref": "RUT 2:1"
+    },
+    {
+     "ref": "JON 3:4"
+    },
+    {
+     "ref": "JON 2:1"
+    },
+    {
+     "ref": "RUT 1:5"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "supersedes": "sentence_length"
+  },
+  {
+   "id": "time_setting.2",
+   "kind": "feature",
+   "value": "a time setting opens the sentence: 'Qàgoám.' opens a book; 'Ta khøuwa-te ndøgo, …' (in those days), 'Khøuwa nøme,' (one day), 'Yaq ta lova ndøgo,' (that night), 'Taqa zita-te,' (afterwards); a subordinate time clause ends in ndøgo ('when it was time to eat')",
+   "evidence": [
+    {
+     "ref": "RUT 1:1",
+     "form": "Qàgoám."
+    },
+    {
+     "ref": "JON 1:1",
+     "form": "Qàgoám."
+    },
+    {
+     "ref": "RUT 3:1",
+     "form": "Khøuwa nøme"
+    },
+    {
+     "ref": "RUT 3:6",
+     "form": "Yaq ta lova ndøgo"
+    },
+    {
+     "ref": "RUT 2:14",
+     "form": "lou loge khøuwa qandap"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "supersedes": "time_setting"
+  },
+  {
+   "id": "numerals.2",
+   "kind": "feature",
+   "value": "kopo 1, menas 2, misika 3, then English loans (foa, faev, siks, seven, ten, foti 40); large numbers as English words (wan andled tuenti taosen 120,000); measures in digits with kilogrém; numeral after the noun (ezoqa menas, viav ten); 'about N' = 'ande āv N ndægó'",
+   "evidence": [
+    {
+     "ref": "JON 2:1",
+     "form": "misiká"
+    },
+    {
+     "ref": "JON 3:4",
+     "form": "foti"
+    },
+    {
+     "ref": "JON 4:11",
+     "form": "wan andled tuenti taosen"
+    },
+    {
+     "ref": "RUT 2:17",
+     "form": "10 kilogrém"
+    },
+    {
+     "ref": "RUT 4:15",
+     "form": "seven"
+    },
+    {
+     "ref": "RUT 1:5",
+     "form": "viav ande āv tén"
+    },
+    {
+     "ref": "LUK 2:42"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "supersedes": "numerals"
+  },
+  {
+   "id": "constituent_order.2",
+   "kind": "feature",
+   "value": "verb-final (SOV) clauses, but phrases of company, place and time often follow the verb as afterthoughts ('he went to live in Moab, with his wife and two sons'; 'they went back to Judah, with the daughters-in-law'); a short clause per event",
+   "codes": [
+    "WALS:81A",
+    "WALS:83A"
+   ],
+   "evidence": [
+    {
+     "ref": "RUT 1:1",
+     "form": "Moab manqei-té genøyág, zas"
+    },
+    {
+     "ref": "RUT 1:7",
+     "form": "tinø-qavanát ndǿgo, Zuda manqei-te"
+    },
+    {
+     "ref": "MAT 2:1"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "supersedes": "constituent_order",
+   "note": "The afterthoughts are why lexeme-aligner's order profile measures Hebrew V>O kept 58% (cop:order)."
+  },
+  {
+   "id": "tell_me.2",
+   "kind": "feature",
+   "value": "'tell me' = Qonømbé-eīn (Act 22:27); 'tell us' = Qonimbí-eīn (JON 1:8; NT Soqoní-eín, Act 5:8); 'tell me (so I may know)' = 'sègenø-eín' (RUT 4:4)",
+   "evidence": [
+    {
+     "ref": "JON 1:8",
+     "form": "Qonimbí-eīn"
+    },
+    {
+     "ref": "RUT 4:4",
+     "form": "sègenø-eín"
+    },
+    {
+     "ref": "ACT 22:27",
+     "form": "Qonømbé-eīn"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "supersedes": "tell_me"
+  },
+  {
+   "id": "gs:adposition",
+   "kind": "feature",
+   "value": "gram-struct: postpositions (WALS 85A, external, confidence 0.99); its own alignment statistic (derived) says 'mixed' (52% after, n=5,381) and that adpositions are separate words in 68%",
+   "codes": [
+    "WALS:85A"
+   ],
+   "evidence": [
+    {
+     "ref": "RUT 1:1"
+    },
+    {
+     "ref": "LUK 2:6"
+    }
+   ],
+   "confidence": "medium",
+   "method": "external",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "external_source": "lexeme-aligner gram-struct/external (WALS, CC-BY-4.0) and gram-struct/derived (kvg_wbt), CC BY-NC-ND 4.0 basis",
+   "note": "Agrees with our adposition entry and adds the WALS code. The derived 'mixed' disagrees with ours: Kuni writes most postpositions as hyphenated suffixes (-te) and has free relational nouns (namba, mokho-te, zita-te) that the aligner may count on either side; trust WALS + the corpus here."
+  },
+  {
+   "id": "gs:object_verb",
+   "kind": "feature",
+   "value": "gram-struct: object before verb (WALS 83A, external, 0.97); derived 'mixed' (42% of objects after the verb, n=724)",
+   "codes": [
+    "WALS:83A"
+   ],
+   "evidence": [
+    {
+     "ref": "RUT 1:9"
+    },
+    {
+     "ref": "RUT 2:14"
+    }
+   ],
+   "confidence": "medium",
+   "method": "external",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "external_source": "lexeme-aligner gram-struct/external (WALS, CC-BY-4.0) and gram-struct/derived (kvg_wbt), CC BY-NC-ND 4.0 basis",
+   "note": "Agrees with constituent_order.2 (OV). The derived disagreement comes from object prefixes on the verb (the aligner links the Greek/Hebrew object to the verb form) and from afterthought phrases."
+  },
+  {
+   "id": "gs:subject_verb",
+   "kind": "feature",
+   "value": "gram-struct: subject before verb (WALS 82A, external, 0.96; derived 82% before, n=1,143)",
+   "codes": [
+    "WALS:82A"
+   ],
+   "evidence": [
+    {
+     "ref": "RUT 1:3"
+    },
+    {
+     "ref": "JON 1:3"
+    }
+   ],
+   "confidence": "high",
+   "method": "external",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "external_source": "lexeme-aligner gram-struct/external (WALS, CC-BY-4.0) and gram-struct/derived (kvg_wbt), CC BY-NC-ND 4.0 basis",
+   "note": "Agrees with ours; adds WALS 82A, which constituent_order.2 does not carry."
+  },
+  {
+   "id": "gs:possessor",
+   "kind": "feature",
+   "value": "gram-struct: possessor before the possessed (imputed from lang2vec, 0.92); derived 'mixed' (52%, n=58 only)",
+   "evidence": [
+    {
+     "ref": "RUT 2:3"
+    },
+    {
+     "ref": "RUT 4:1"
+    }
+   ],
+   "confidence": "medium",
+   "method": "external",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "external_source": "lexeme-aligner gram-struct/imputed (lang2vec, CC-BY-SA-4.0) and gram-struct/derived (kvg_wbt), CC BY-NC-ND 4.0 basis",
+   "note": "The imputed value agrees with ours (possessor); the derived one rests on 58 cases and disagrees - ours is observed in every possessive phrase of Ruth ('Boaz-qā', 'Elimelek-ge ekeza ezoqam')."
+  },
+  {
+   "id": "cop:order",
+   "kind": "feature",
+   "value": "constituent-order profile (Ruth + Jonah, 130 verses, MACULA phrase roles): Hebrew order kept for o>v 70%, pp>v 68%, s>v 65%, v>o 58%, v>pp 61%, v>s 48%, v>v 71%; mean drift: verbs move later (+0.03), subjects and phrases earlier",
+   "evidence": [
+    {
+     "ref": "RUT 1:1"
+    },
+    {
+     "ref": "JON 1:3"
+    }
+   ],
+   "confidence": "medium",
+   "method": "external",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "external_source": "lexeme-aligner constituent-order-profile (kvg_wbt, Ruth+Jonah), CC0 statistics on a CC BY-NC-ND 4.0 basis",
+   "note": "Adds a measured figure; it seems to disagree with verb-final order (V>O kept 58%) but does not: Kuni breaks a Hebrew clause into several short clauses and puts company, place and time after the verb (constituent_order.2), so a Hebrew object can align to a later clause. Measured on the test books themselves."
+  },
+  {
+   "id": "tm:affixes",
+   "kind": "feature",
+   "value": "target-morphology (unsupervised, 14,101 types): top prefixes vø-, qa-, ndø-, ge-, gi-, te-, tø-, ti-, gè-, be-, qo-, mø-, zø-, nø-, gu-; top suffixes -m, -t, -am, -at, -o, -át, -ɨn, -áv, -ák, -eáv",
+   "evidence": [
+    {
+     "ref": "RUT 1:3"
+    },
+    {
+     "ref": "RUT 2:2"
+    },
+    {
+     "ref": "JON 1:3"
+    }
+   ],
+   "confidence": "medium",
+   "method": "external",
+   "by": "agent:curate-rut-jon",
+   "date": "2026-10-14",
+   "status": "observed",
+   "external_source": "lexeme-aligner target-morphology (kvg), CC0 statistics on a CC BY-NC-ND 4.0 basis",
+   "note": "Agrees with our verb prefixes (subject ge-/gu-/gi-, sequence vø-, optative be-, object zø-/nø-) and negation (-áv, -eáv, -ák). It adds -ɨn as one of the commonest suffixes (feature suffix_in). It treats tone-marked variants as separate affixes (-am / -ám) and cannot tell prefix chains apart, so use it as a check, not as a parser."
+  }
+ ]
+}

@@ -1,0 +1,60 @@
+# Kuni (kvg): drafting for a language the model doesn't know. The agents learn Kuni from the Kuni NT, Ruth
+# and Jonah (eBible CC BY-NC-ND 4.0; the NT here is a newer working copy), its glossary, the alignment
+# lexicon in _learn/ and the language store and wiki built from them. Our work here is CC0 and public;
+# quotations follow docs/licensing.md (CREDITS.md). Drafts stay drafts until the Kuni team publishes them
+# (status.yaml, scripts/status.py).
+# Project id for the scripts: kvg/kvg_BSB
+
+language: kvg
+language_name: Kuni (Kuni-Boazi, Papua New Guinea)
+# The model can't write Kuni: the 'unknown' mode (scripts/modes.py, docs/onboarding.md). Its general rules come
+# from docs/prompts/modes.md; only Kuni's own rules are below.
+familiarity: unknown
+corpus_name: the Kuni NT, Ruth and Jonah             # how the prompts name the style corpus
+notes_language: English
+school_language: English        # the team's working language: wiki, store notes, analysis; quotations stay in the language
+
+based_on: null
+style_from: [KVG-KuNT]
+nt_basis: critical
+
+# Ruth and Jonah were held out as the test set of the Ruth drafting test until 2026-10-14 (reports and the
+# test drafts in _eval/); now they are part of the corpus, and _eval/ is open to the agents.
+quarantine: []
+do_not_open: [download/, scratch/]
+
+# The verse pack (built by scripts/verse_pack.py) carries the language store; the agents append to profile/ after drafting.
+style_guides: [wiki/index.md, "_learn/packs/{code}{nnn}.md"]
+
+# Target-language tokenising for the toolkit (scripts/langtools.py): suffixes after a hyphen are tokens;
+# ꞉ (U+A789) and the combining macron belong to words; the tone marks to ignore come from the store.
+tokenise:
+  split_hyphens: true
+  word_chars: [U+A789, U+0304]
+
+quotes: "“”"
+chapter_word: chapter
+book_titles:
+  rut: Lut
+  jon: Ziona
+book_title_rule: "Kuni has no title for this book yet: the NT titles a book by a name (Metiu, Lom) or by a description (Acts = Keliso-gi u-anim); propose one in that style, use it in the === line, and list it under open questions."
+
+# The prompt's own parts (scripts/make_prompt.py)
+footnotes: false
+report_items: number of searches you ran, store entries added
+notes_structure: "what the draft is; a table Verse · Hebrew · Kuni · BSB · Comment; for every verse, the corpus verses you modelled it on (references) and how sure you are (high / medium / low); new name forms; open questions. Mark every word or construction you could not find in the corpus."
+header:
+  - "!!<Translation: machine draft from the Hebrew ({file}), checked against the BSB, Kuni learned from the Kuni NT, Ruth and Jonah>!!"
+  - "!!<Status: experiment, not reviewed>!!"
+  - "!!<Date: {date}>!!"
+# No finished Kuni OT chapter of our own yet: the human Ruth and Jonah are the style model.
+style_model:
+  - import/non-free/kvg/KVG-KuNT/text/rut001.txt
+  - import/non-free/kvg/KVG-KuNT/text/rut002.txt
+  - import/non-free/kvg/KVG-KuNT/text/jon001.txt
+
+rules:
+  - "**Superseded test drafts:** `_eval/ruth-test/` holds our NT-only test drafts of Ruth 1–4; many of their forms were wrong (Neomi, Ngólam, sømbi). Never model a verse on them: the human Ruth and Jonah, the store and the wiki are the authority."
+  - "**Divine names:** God (ʔĕlōhîm) = Mbumbukiam. YHWH is an open question for the Kuni team (the human Ruth writes *Yawe, Jonah and the NT Evezøza; see the wiki's names page): until they decide, use Evezøza and list every YHWH verse under open questions."
+
+style_notes: "The Kuni NT, Ruth and Jonah are the only models; Ruth and Jonah show how the translators render Hebrew narrative. Kuni is not in your training data, so recall nothing: look everything up. Prefer the most frequent construction in the NT over a rarer one."

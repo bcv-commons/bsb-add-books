@@ -1,0 +1,36 @@
+# Kuni NT (Kuni dialect of Kuni-Boazi, Papua New Guinea). The Paratext SFM files are in source/;
+# build_text.py converts them to text/ (one file per chapter, NFC) and the glossary to glossary.tsv.
+# Without source/ (a fresh clone) it builds both from eBible's published text. Only this file,
+# README.md and build_text.py are in git.
+# A language without LLM exposure: agents learn it from this NT aligned with the BSB and the Greek.
+
+name: "Mbumbukiam-qa Manqat Mbomambaqape (Kuni NT)"
+language: kvg
+role: style                     # style and vocabulary corpus (the only Kuni text there is)
+text_dir: text
+format: "one file per chapter (<code>NNN.txt), repo chapter format, NFC; glossary.tsv (term, English, explanation)"
+
+# Mt 17:21, 18:11, 23:14, Mk 7:16, Lk 17:36, Jn 5:4, Acts 8:37, Rom 16:24 are absent and
+# 1 Jn 5:7 has no Comma: a critical text.
+nt_basis: critical
+
+books: [rut, jon, mat, mrk, luk, jhn, act, rom, 1co, 2co, gal, eph, php, col, 1th, 2th, 1ti, 2ti, tit, phm,
+        heb, jas, 1pe, 2pe, 1jn, 2jn, 3jn, jud, rev]
+quarantine: []
+
+# Ruth and Jonah come from eBible 'kvg' (build_text.py --ot), an older state of the same translation.
+# They were held out as the test set of the Ruth drafting test until 2026-10-14.
+ot_from_ebible: [rut, jon]
+
+# How a clone gets the text, which is not in git (scripts/project.py missing_text)
+get_text: "python3 import/non-free/kvg/KVG-KuNT/build_text.py (from eBible's published text when source/ is missing)"
+source: >-
+  Kuni/Boazi [kvg], Kuni dialect, Paratext SFM files of a working copy newer than the published
+  text (source/, not in git). The same translation, with Ruth and Jonah, is on eBible as 'kvg'
+  (https://ebible.org/kvg/); its NT is an earlier state (785 of 7,934 verses differ).
+licence: >-
+  CC BY-NC-ND 4.0 for the eBible text (https://ebible.org/kvg/copyright.htm, © 2015 Wycliffe
+  Switzerland: credit, no sale, no change to the words); this newer working copy: private use only
+attribution: ""
+credit: "Kuni NT © 2015 Wycliffe Switzerland, CC BY-NC-ND 4.0 (https://ebible.org/kvg/); quoted from the published text"
+published_text: download/editions/kvg/kvg_usfm.zip   # text/ is a newer working copy; quotations must match the published text

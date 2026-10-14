@@ -1,0 +1,1594 @@
+{
+ "iso": "gsw",
+ "edition": "ch-de-be_BSB",
+ "partition": "observations",
+ "licence": "CC0-1.0 (feature values and references; quotations credited in ../CREDITS.md)",
+ "orthography": {
+  "normalization": "NFC",
+  "ignore_marks": []
+ },
+ "entries": [
+  {
+   "id": "narrative_tense",
+   "kind": "feature",
+   "value": "Kein Präteritum: Erzählt wird im Perfekt (het/hei/isch/sy + Partizip). »war« als Verb 0×; dafür »isch gsi« 91×, »sy gsi« 41×; »gseit« 921×.",
+   "pattern": "<Subjekt> het/isch … <Partizip>",
+   "evidence": [
+    {
+     "ref": "1JN 1:1",
+     "form": "isch gsi",
+     "n": 91
+    },
+    {
+     "ref": "1CO 10:28",
+     "form": "het gseit",
+     "n": 392
+    },
+    {
+     "ref": "GEN 26:1",
+     "form": "isch e Hungersnot cho"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Auch Hilfsverben und Modalverben haben kein Präteritum: nicht »hatte/wollte/konnte«, sondern »het gha«, »het wölle«, »het chönne«. Drei »hatte« in LUK 20 sind Druckfehler für den Konjunktiv."
+  },
+  {
+   "id": "historic_present",
+   "kind": "feature",
+   "value": "Neben dem Perfekt steht in der Erzählung das historische Präsens, fast nur bei »säge«: »seit ne/ihm:« (seit 517×, gseit 921×; in JHN 128 : 194, in MRK 49 : 132).",
+   "evidence": [
+    {
+     "ref": "ACT 2:38",
+     "form": "seit ne",
+     "n": 54
+    },
+    {
+     "ref": "ACT 8:30",
+     "form": "seit ihm"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Die Entwürfe brauchen es sparsam (seit 144× gegen gseit 796×). Wechsel ins Präsens nur bei Redeeinleitungen, nicht bei anderen Verben der Handlung."
+  },
+  {
+   "id": "pluperfect",
+   "kind": "feature",
+   "value": "Vorvergangenheit als doppeltes Perfekt: »het … gmacht gha« (Partizip + gha, 66×), bei sein-Verben »isch … cho gsi« (5×).",
+   "pattern": "het <Partizip> gha | isch <Partizip> gsi",
+   "evidence": [
+    {
+     "ref": "2CO 7:7",
+     "form": "het gfunde gha",
+     "n": 41
+    },
+    {
+     "ref": "ACT 2:47",
+     "form": "het se gärn gha"
+    },
+    {
+     "ref": "ACT 8:16",
+     "form": "cho gsi",
+     "n": 5
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "passive",
+   "kind": "feature",
+   "value": "Passiv mit »wärde« im Präsens (»wird … gsääit«) und mit »worde« im Perfekt (»isch … gschlage worde«; worde 465×).",
+   "evidence": [
+    {
+     "ref": "1CO 2:2",
+     "form": "isch a ds Chrüz",
+     "n": 63
+    },
+    {
+     "ref": "1CO 5:7",
+     "form": "isch ja gopferet worde"
+    },
+    {
+     "ref": "1CO 1:8",
+     "form": "wird chönne"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "future",
+   "kind": "feature",
+   "value": "Zukunft meist mit Präsens, oft mit »de« (dann) oder einem Zeitwort: »morn stärbe mer«. »wird« + Infinitiv kommt vor, ist aber selten; die meisten »wird« sind Passiv.",
+   "evidence": [
+    {
+     "ref": "1CO 15:32",
+     "form": "morn stärbe"
+    },
+    {
+     "ref": "1CO 8:10",
+     "form": "wird er de"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "subjunctive_indirect",
+   "kind": "feature",
+   "value": "Indirekte Rede im Konjunktiv I: »syg« (94×, »sygi« 30×), »heig« (51×), »chönn« (17×), »gäb«, »well«. Er steht nach säge, meine, ghöre.",
+   "pattern": "… gseit, er syg / es heig …",
+   "evidence": [
+    {
+     "ref": "1CO 1:15",
+     "form": "syg",
+     "n": 101
+    },
+    {
+     "ref": "1CO 3:18",
+     "form": "syg"
+    },
+    {
+     "ref": "1CO 4:9",
+     "form": "heig",
+     "n": 53
+    },
+    {
+     "ref": "GEN 24:21",
+     "form": "heig"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Der Indikativ ist in indirekter Rede möglich, aber der Konjunktiv ist die Regel. Die Entwürfe folgen dem (RUT 1:6)."
+  },
+  {
+   "id": "subjunctive_conditional",
+   "kind": "feature",
+   "value": "Konjunktiv II ohne »würde«: starke Formen »wär« (396×), »hätt« (49×)/»hätti« (29×), »chäm«, »gieng«, »gäb«, »chönnt« (51×), »wett« (39×), »sött«; bei schwachen Verben -ti (»redti«, »nützti«, »bruuchti« 6×). »würd« als Hilfsverb 2×.",
+   "evidence": [
+    {
+     "ref": "1CO 4:18",
+     "form": "chäm",
+     "n": 8
+    },
+    {
+     "ref": "1CO 14:6",
+     "form": "chäm"
+    },
+    {
+     "ref": "1CO 9:16",
+     "form": "gieng",
+     "n": 7
+    },
+    {
+     "ref": "1CO 14:6",
+     "form": "nützti",
+     "n": 2
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Statt »würde + Infinitiv« in wenn-Sätzen auch »tät + Infinitiv« (13×, GAL 1:8). Nie »würde« für den Konditional einsetzen."
+  },
+  {
+   "id": "article",
+   "kind": "feature",
+   "value": "Bestimmter Artikel: »der« (m.), »d« (f. und Plural, vor dem Nomen), »di« (f./Pl., wenn ein Adjektiv folgt: 718× gegen 16), »ds« (n.). Dativ: »em« (m./n., 905×), »der« (f.), »de« (Pl.; »den« vor Vokal, 203×).",
+   "pattern": "der Maa · d Frou · di gueti Botschaft · ds Huus · em Maa · der Frou · de Lüt",
+   "evidence": [
+    {
+     "ref": "1CO 1:17",
+     "form": "di gueti Botschaft",
+     "n": 75
+    },
+    {
+     "ref": "1CO 1:26",
+     "form": "i den Ouge",
+     "n": 8
+    },
+    {
+     "ref": "1CO 1:6",
+     "form": "Ds Zügnis"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "article_indefinite",
+   "kind": "feature",
+   "value": "Unbestimmter Artikel: »e« (m./f.), »es« (n.), »en« vor Vokal (174×); Dativ »emene/mene« (m./n., 151×), »nere/ere« (f., zu nere …). »sone« für »so ein«.",
+   "evidence": [
+    {
+     "ref": "1CO 4:2",
+     "form": "Vo mene",
+     "n": 27
+    },
+    {
+     "ref": "1CO 4:9",
+     "form": "zu nere",
+     "n": 16
+    },
+    {
+     "ref": "1CO 3:4",
+     "form": "en andere"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "article_names",
+   "kind": "feature",
+   "value": "Personennamen tragen den Artikel: »der Petrus« (rund 130 von 165 Belegen, sonst nach »Simon«), »der Paulus«, »d Maria«, »em Mose«. Ausnahme: »Jesus« fast immer ohne Artikel (14 von 973).",
+   "evidence": [
+    {
+     "ref": "ACT 1:23",
+     "form": "der Josef",
+     "n": 13
+    },
+    {
+     "ref": "1CO 1:1",
+     "form": "Der Paulus"
+    },
+    {
+     "ref": "RUT 1:3",
+     "form": "der Elimelech"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Die Entwürfe folgen dem (der Boas, d Rut, d Noomi). Gott, der HERR und Jesus ohne Artikel."
+  },
+  {
+   "id": "case_marking",
+   "kind": "feature",
+   "value": "Kein Genitiv, kein eigener Akkusativ: Nominativ = Akkusativ (»der« auch für den Akkusativ; »den« nur als Dativ Plural vor Vokal). Der Dativ ist an Artikel und Pronomen markiert (em, der, de; ihm, ere, ne).",
+   "evidence": [
+    {
+     "ref": "1PE 2:17",
+     "form": "gät em Cheiser"
+    },
+    {
+     "ref": "1CO 1:20",
+     "form": "vo der Wält",
+     "n": 34
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Ein Genitiv kommt nur in festen Fügungen vor: »Gottes Rych« (100×), sonst selten »Gottes …« (156× gegen »vo Gott« 385×)."
+  },
+  {
+   "id": "possessor",
+   "kind": "feature",
+   "value": "Besitz wird mit »vo« + Dativ ausgedrückt (vom 1025×, vo der 328×, vo de 405×): »ds Huus vo sym Vatter«. Daneben der possessive Dativ »em Herr sys Wort« (35×). s-Genitiv nur bei »Gottes« in festen Fügungen.",
+   "pattern": "<Besessenes> vo <Dativ> | em/der <Besitzer> sy/syni/ire <Besessenes>",
+   "evidence": [
+    {
+     "ref": "1CO 10:21",
+     "form": "em Herr sym",
+     "n": 1
+    },
+    {
+     "ref": "1PE 2:17",
+     "form": "em Cheiser sy",
+     "n": 1
+    },
+    {
+     "ref": "GEN 24:7",
+     "form": "Huus vo mym"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "adjective_inflection",
+   "kind": "feature",
+   "value": "Attributive Adjektive: f./Pl. Nominativ/Akkusativ auf -i (»di gueti Botschaft«, »alli«, »iri eigeti …«), n. nach »es« auf -s (»es guets …«), sonst und im Dativ auf -e (»vo der gägewärtige Zyt«). Prädikativ unflektiert (»isch guet«).",
+   "evidence": [
+    {
+     "ref": "1CO 1:17",
+     "form": "di gueti",
+     "n": 76
+    },
+    {
+     "ref": "1CO 2:6",
+     "form": "der gägewärtige Zyt",
+     "n": 3
+    },
+    {
+     "ref": "1CO 7:8",
+     "form": "isch guet",
+     "n": 10
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "pronouns",
+   "kind": "feature",
+   "value": "Personalpronomen: i/ig, du/d, er/är, si/se, es/’s; mir/mer, dihr, si. Dativ/Akkusativ: mir/mer, dir/der, ihm/ne, ere/nere, üüs/is, öich/nech, ne(n). Betonte Form nur bei Hervorhebung (»är« 341× gegen »er« 2218×).",
+   "evidence": [
+    {
+     "ref": "1CO 1:5",
+     "form": "Dihr",
+     "n": 1440
+    },
+    {
+     "ref": "1CO 1:3",
+     "form": "nech",
+     "n": 954
+    },
+    {
+     "ref": "1CO 1:30",
+     "form": "üüs",
+     "n": 269
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Unbetont überwiegt: nech 954× gegen öich 573×; dihr 1440× (ihr als Pronomen 6×); ne 1781× (ihne 12×). »dihr« ist die Anrede für »ihr« – nie »ihr«."
+  },
+  {
+   "id": "pronoun_enclitic",
+   "kind": "feature",
+   "value": "Nach dem finiten Verb steht das unbetonte Pronomen: »han i« (167×, »ha i« 1×), »bin i« (73×), »het er« (494×, »het är« 18×), »hei si« (262×). Vor Vokal »ig«: »han ig ekene«; 167 von 176 »ig« stehen vor Vokal.",
+   "evidence": [
+    {
+     "ref": "1CO 1:14",
+     "form": "han i",
+     "n": 167
+    },
+    {
+     "ref": "1JN 2:26",
+     "form": "han ig",
+     "n": 35
+    },
+    {
+     "ref": "1TH 2:15",
+     "form": "hei si"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "hiatus_n",
+   "kind": "feature",
+   "value": "Zwischen Vokalen wird ein n eingeschoben: »won er« (255×, »wo er« 1×), »won i« (wo + ich), »wen i« (102×, »we i« 0), »zuen ihm« (246×, »zue ihm« 12×), »den Ouge«. Bei anderen Wörtern auf -e vor Vokal ist es frei (-en 2385× gegen -e 2359×).",
+   "evidence": [
+    {
+     "ref": "1CO 7:20",
+     "form": "won er",
+     "n": 255
+    },
+    {
+     "ref": "1PE 2:4",
+     "form": "zuen ihm",
+     "n": 246
+    },
+    {
+     "ref": "GEN 24:3",
+     "form": "won i"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Pflicht bei wo/we/zue + Pronomen; »wo i« ohne n heisst »wo in« (Präposition i)."
+  },
+  {
+   "id": "relative_clause",
+   "kind": "feature",
+   "value": "Relativsätze mit unveränderlichem »wo« (», wo« 2430×, », won« 347×); »welch-« 0×. Vor einem Relativsatz ohne Nomen steht das Demonstrativ: »dä, wo« 214×, »die, wo« 215×, »das, wo« 79×. Präpositionen gehen an das Demonstrativ: »mit däm, wo« (103×).",
+   "pattern": "<Nomen>, wo … | dä/die/das, wo … | <Präposition> däm/dere/dene, wo …",
+   "evidence": [
+    {
+     "ref": "1CO 2:2",
+     "form": "dä, wo",
+     "n": 203
+    },
+    {
+     "ref": "1CO 4:19",
+     "form": "bi dene, wo",
+     "n": 92
+    },
+    {
+     "ref": "GEN 24:2",
+     "form": "Huus, wo"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Für ein Dativ- oder Präpositionalobjekt im Relativsatz nimmt der Satz ein Pronomen oder Pronominaladverb wieder auf: »wo … drinne«, »wo … dermit«, »wo mer ne drum …« (1CO 7:24, 1CO 10:16, 1JN 5:15)."
+  },
+  {
+   "id": "relative_resumptive",
+   "kind": "feature",
+   "value": "Wiederaufnahme im wo-Satz: Dativ und Präposition stehen nach »wo« als Pronomen oder Pronominaladverb im Satz (»wo … drinne beruefe«, »wo … dermit danke«, »won er … dermit«).",
+   "evidence": [
+    {
+     "ref": "1CO 7:24",
+     "form": "wo ne Gott drinne"
+    },
+    {
+     "ref": "1CO 10:16",
+     "form": "wo mir Gott dermit"
+    },
+    {
+     "ref": "1JN 5:15",
+     "form": "wo mer ne drum"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Selten belegt, aber die einzige Lösung im Korpus für ›mit dem/in dem‹: keine Formen wie »mit dem«, »in welchem«."
+  },
+  {
+   "id": "verb_cluster",
+   "kind": "feature",
+   "value": "Im Verbalkomplex steht das finite Hilfsverb vor Modalverb und Infinitiv: »het müesse lyde«, »hei … chönne verschnuufe« (196×, die hochdeutsche Folge »lyde müesse het« 0×). Ersatzinfinitiv statt Partizip bei Modal- und Bewegungsverben (»het wölle«, »het dörfe ga sitze«).",
+   "pattern": "het/hei <Modal-Infinitiv> <Infinitiv>",
+   "evidence": [
+    {
+     "ref": "1PE 4:1",
+     "form": "het müesse lyde"
+    },
+    {
+     "ref": "2CO 7:5",
+     "form": "hei mer nüüt chönne"
+    },
+    {
+     "ref": "HEB 12:2",
+     "form": "dörfe ga sitze"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "subordinate_order",
+   "kind": "feature",
+   "value": "Im Nebensatz steht das Partizip meist vor dem Hilfsverb (»wo dihr ghört heit«, rund 312×), aber auch dahinter (»wo dihr heit ghört«, rund 80×). Beide Folgen sind korrekt; die zweite klingt mündlicher.",
+   "evidence": [
+    {
+     "ref": "1JN 2:7",
+     "form": "wo dihr heit ghört"
+    },
+    {
+     "ref": "ACT 2:37",
+     "form": "Wo si das hei"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Zählung über häufige Partizipien (gseit, gmacht, gseh, ghört …) nach wo/won/dass/wil/we; Schätzung."
+  },
+  {
+   "id": "purpose_infinitive",
+   "kind": "feature",
+   "value": "Finalsatz: »für (…) z + Infinitiv« (247×; »um … z« 1×) und »für dass« + Nebensatz (238×; »damit« 0×). Bei trennbaren Verben steht z in der Mitte: »heizga«, »yzsta«, »wyterzgä«.",
+   "pattern": "für <Objekt> z <Infinitiv> | für dass <Nebensatz>",
+   "evidence": [
+    {
+     "ref": "1CO 1:17",
+     "form": "für di gueti Botschaft",
+     "n": 160
+    },
+    {
+     "ref": "1CO 1:17",
+     "form": "für dass",
+     "n": 238
+    },
+    {
+     "ref": "RUT 1:6",
+     "form": "heizga"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "motion_infinitive",
+   "kind": "feature",
+   "value": "Bewegungsverben mit blossem Infinitiv: »ga« + Infinitiv (»sy ne ga begrabe«, 35×), »cho« + Infinitiv (»isch mi cho bsueche«, 25×); »aafa« + Infinitiv ohne z (»aafa rede«, 76×). »go« kommt nicht vor.",
+   "pattern": "<ga/cho/aafa> <Infinitiv>",
+   "evidence": [
+    {
+     "ref": "ACT 5:6",
+     "form": "ga begrabe"
+    },
+    {
+     "ref": "ACT 22:13",
+     "form": "cho bsueche"
+    },
+    {
+     "ref": "1CO 16:2",
+     "form": "aafa sammle",
+     "n": 76
+    },
+    {
+     "ref": "GEN 27:38",
+     "form": "aafa briegge"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "verb_doubling",
+   "kind": "feature",
+   "value": "Verbverdopplung bei »la« und »ga«: »lö nech la grüesse«, »la di nid la scheide« (»la … la« 46×), »gange ga bringe«.",
+   "pattern": "la … la <Infinitiv> | ga … ga <Infinitiv>",
+   "evidence": [
+    {
+     "ref": "1CO 16:19",
+     "form": "lö nech la grüesse",
+     "n": 7
+    },
+    {
+     "ref": "2CO 8:19",
+     "form": "gange ga bringe"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "negation",
+   "kind": "feature",
+   "value": "Verneinung: »nid« (2200×; »nicht« 0), »nüüt« (291×), »niemer« (140×), »nie« (86×), »ke/kes/keni/kene« (ke 198×, kes 69×, kene 38×, keni 23×; »kei« 21×), nach Konsonant auch »ekene/ekes«, »nümm/nümme« (nicht mehr, 103×), »kes … meh«.",
+   "evidence": [
+    {
+     "ref": "1PE 4:2",
+     "form": "nümme",
+     "n": 62
+    },
+    {
+     "ref": "1CO 8:13",
+     "form": "kes Fleisch meh"
+    },
+    {
+     "ref": "1CO 1:14",
+     "form": "ekene",
+     "n": 3
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Doppelte Verneinung ist selten (»nie nüüt«, 2CO 12:16); nicht als Regel einsetzen."
+  },
+  {
+   "id": "comparison",
+   "kind": "feature",
+   "value": "Vergleich: nach dem Komparativ meist »als« (rund 30×), daneben »weder« (12×), v. a. »meh weder« und bei Zahlen. Gleichheit: »wi«.",
+   "evidence": [
+    {
+     "ref": "1CO 1:25",
+     "form": "gschyder als"
+    },
+    {
+     "ref": "1CO 14:18",
+     "form": "meh weder",
+     "n": 15
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Die Entwürfe brauchen »weder« öfter (27× gegen 131× als, u. a. RUT 1:13). Beides ist korrekt."
+  },
+  {
+   "id": "diminutive",
+   "kind": "feature",
+   "value": "Verkleinerung auf -li (Zytli 21×, Chindli 12×, Wyli 7×, Stedtli 6×, Schiffli, Buebli) oder -eli (Bitzeli, Täfeli); nie -chen oder -lein. »Meitschi« (18×) ist ein eigenes Wort, keine Verkleinerung.",
+   "evidence": [
+    {
+     "ref": "1PE 2:2",
+     "form": "Chindli",
+     "n": 12
+    },
+    {
+     "ref": "1CO 7:5",
+     "form": "Zytli",
+     "n": 21
+    },
+    {
+     "ref": "2CO 11:1",
+     "form": "Bitzeli",
+     "n": 3
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "connective_sequence",
+   "kind": "feature",
+   "value": "Erzählfortschritt: »Da« am Satzanfang (403× vor Verb), »Du« (dann, 151×: »Du isch …«), »Und«, »Aber«; »Jitz« (149×), »Drufabe« (31×), »Speter«. Temporaler Nebensatz mit »Wo …« (als, rund 230×; »als« temporal 9×).",
+   "pattern": "Da/Du het … | Wo <Nebensatz>, het …",
+   "evidence": [
+    {
+     "ref": "ACT 7:11",
+     "form": "Du isch e Hungersnot"
+    },
+    {
+     "ref": "ACT 2:14",
+     "form": "Da isch",
+     "n": 226
+    },
+    {
+     "ref": "ACT 2:37",
+     "form": "Wo si das hei"
+    },
+    {
+     "ref": "GEN 26:1",
+     "form": "Du isch"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "»Du« ist hier kein Pronomen: es steht vor dem Verb in der 3. Person (Du isch …, Du het …). Die Entwürfe brauchen beides (RUT 1:3 »Du isch der Elimelech gstorbe«)."
+  },
+  {
+   "id": "conditional",
+   "kind": "feature",
+   "value": "Bedingung mit »we« (684×) bzw. »wen« vor Vokal (315×); »wenn« 21×, »falls« 0. Folgesatz oft mit »de«.",
+   "pattern": "We …, de …",
+   "evidence": [
+    {
+     "ref": "1CO 4:18",
+     "form": "wen i",
+     "n": 102
+    },
+    {
+     "ref": "1CO 3:17",
+     "form": "We eine",
+     "n": 42
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "causal",
+   "kind": "feature",
+   "value": "Begründung: »wil« (306×; »weil« 0), »drum« (354×; »darum/deshalb« 0), »nämlech« (121×), »denn« (89×), »wäge« + Dativ (124×).",
+   "evidence": [
+    {
+     "ref": "1CO 7:5",
+     "form": "wil",
+     "n": 321
+    },
+    {
+     "ref": "1CO 1:21",
+     "form": "Drum",
+     "n": 354
+    },
+    {
+     "ref": "1CO 2:8",
+     "form": "nämlech",
+     "n": 121
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "particles",
+   "kind": "feature",
+   "value": "Häufige Partikeln, die den Ton tragen: »ja« (616×), »doch« (302×), »scho« (242×), »no« (549×), »nume« (nur, 349×), »o« (auch, 1084×), »geng« (immer, 166×; »immer« 0), »öppe« (etwa, 106×), »äbe« (89×), »emel« (wenigstens/jedenfalls, 19×), »sälber« (289×), »jitz« (jetzt).",
+   "evidence": [
+    {
+     "ref": "1CO 1:2",
+     "form": "geng",
+     "n": 166
+    },
+    {
+     "ref": "1CO 5:5",
+     "form": "emel",
+     "n": 19
+    },
+    {
+     "ref": "1CO 1:11",
+     "form": "äbe",
+     "n": 89
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "»immer«, »auch«, »nur«, »jetzt« gibt es im Korpus nicht; die Entwürfe haben zweimal »immer« – zu ersetzen durch »geng«."
+  },
+  {
+   "id": "place_z",
+   "kind": "feature",
+   "value": "»z« + Ortsname für ›in/zu‹ bei Städten und Ländern: »z Jerusalem« (39×), »z Ephesus«, »z Galiläa« (zusammen 255× z + Grossbuchstabe).",
+   "evidence": [
+    {
+     "ref": "1CO 15:58",
+     "form": "z Jerusalem",
+     "n": 42
+    },
+    {
+     "ref": "RUT 1:1",
+     "form": "Betlehem z Juda"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "speech_frame",
+   "kind": "feature",
+   "value": "Direkte Rede nach Doppelpunkt in „…“: »het gseit: „…“«, »seit ne: „…“« (841×). Nachgestellte Einleitung (»…“, het er gseit, „…«) ist selten (9×).",
+   "pattern": "<Sprecher> het (zu <Dativ>) gseit: „<Rede>“",
+   "evidence": [
+    {
+     "ref": "ACT 2:38",
+     "form": "seit ne: „",
+     "n": 15
+    },
+    {
+     "ref": "ACT 1:5",
+     "form": "“, het er gseit",
+     "n": 4
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Innere Rede in ‚…‘ (Projektregel, Stilblatt Rut)."
+  },
+  {
+   "id": "verb_forms",
+   "kind": "feature",
+   "value": "Infinitiv auf -e ohne n (mache, säge; »-en« nur vor Vokal). Kurzverben: ga, cho, gseh, ha, sy, tue, gä, la, sta, nä. Partizipien: gsi, gha, ggä (216×), gno, cho, ggange, gseh, gseit, ta. Vor b/g verdoppelt sich das Präfix (»bbätte«, »bblibe«, »ggange«); vor p/t/k/ch fällt es weg (»touft«, »prediget«, »cho«, »bracht«).",
+   "evidence": [
+    {
+     "ref": "1CO 3:2",
+     "form": "ggä",
+     "n": 216
+    },
+    {
+     "ref": "1JN 5:15",
+     "form": "bbätte",
+     "n": 11
+    },
+    {
+     "ref": "1CO 1:13",
+     "form": "touft",
+     "n": 38
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "question_words",
+   "kind": "feature",
+   "value": "Fragewörter: »wiso« (39× für ›why‹), »warum« (30×), »was« (auch für ›warum‹), »wär« (wer), »wo« (wo), »wi« (wie), »wenn« selten; »öb« für ›ob‹.",
+   "evidence": [
+    {
+     "ref": "1CO 4:7",
+     "form": "wiso",
+     "n": 45
+    },
+    {
+     "ref": "2CO 11:11",
+     "form": "warum",
+     "n": 36
+    },
+    {
+     "ref": "1CO 3:13",
+     "form": "öb",
+     "n": 57
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "number_gender",
+   "kind": "feature",
+   "value": "Das Zahlwort ›zwei‹ hat drei Formen: »zwee« (m.), »zwo« (f.), »zwöi« (n.). Die Entwürfe folgen dem (Stilblatt Rut).",
+   "evidence": [
+    {
+     "ref": "1CO 6:6",
+     "form": "zwee",
+     "n": 64
+    },
+    {
+     "ref": "ACT 12:6",
+     "form": "zwo",
+     "n": 10
+    },
+    {
+     "ref": "1CO 6:16",
+     "form": "Zwöi",
+     "n": 25
+    },
+    {
+     "ref": "GEN 44:27",
+     "form": "zwee Sühn"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "plural",
+   "kind": "feature",
+   "value": "Plural oft ohne Endung oder mit Umlaut (Maa – Manne, Suhn – Sühn, Brueder – Brüeder, Boum – Böim), -ere bei Frauenbezeichnungen (Töchtere, Schwigertöchtere, Moabitere), -i/-e sonst (Chinder).",
+   "evidence": [
+    {
+     "ref": "2CO 6:18",
+     "form": "Sühn",
+     "n": 26
+    },
+    {
+     "ref": "1CO 6:6",
+     "form": "Brüeder",
+     "n": 85
+    },
+    {
+     "ref": "RUT 1:6",
+     "form": "Schwigertöchtere"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "address",
+   "kind": "feature",
+   "value": "Anrede an die Gemeinde: »Liebi Gschwüschterti« (Gschwüschterti 133× für ›brothers‹ als Anrede; »Brüeder« 85× für leibliche Brüder und in Erzählung). Anrede an Gott und Menschen mit »du«; »Myni Liebe« für ›beloved‹.",
+   "evidence": [
+    {
+     "ref": "1CO 1:10",
+     "form": "Liebi Gschwüschterti",
+     "n": 79
+    },
+    {
+     "ref": "1JN 2:7",
+     "form": "Myni Liebe",
+     "n": 12
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "spell_y",
+   "kind": "letter",
+   "value": "y = langes i (mhd. î): sy, my, dy, Zyt (123×; »Zeit« 0), blybe, schrybe, Wy. Kurzes i bleibt i (mit, isch, i).",
+   "evidence": [
+    {
+     "ref": "1CO 1:20",
+     "form": "Zyt",
+     "n": 123
+    },
+    {
+     "ref": "1CO 3:14",
+     "form": "blybt",
+     "n": 53
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "spell_ou",
+   "kind": "letter",
+   "value": "ou für hochdeutsches au aus mhd. ou: Frou (180×; »Frau« 0), Ouge (77×), gloube (82×), Boum, Tour.",
+   "evidence": [
+    {
+     "ref": "1CO 5:1",
+     "form": "Frou",
+     "n": 180
+    },
+    {
+     "ref": "1CO 1:26",
+     "form": "Ouge",
+     "n": 77
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "spell_oei",
+   "kind": "letter",
+   "value": "öi für hochdeutsches eu/äu: Fröid (71×; »Freude« 0), nöi, Tröiji, Böim, Töufer, öich.",
+   "evidence": [
+    {
+     "ref": "1CO 10:5",
+     "form": "Fröid",
+     "n": 71
+    },
+    {
+     "ref": "1CO 11:25",
+     "form": "nöi",
+     "n": 25
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "spell_diphthong",
+   "kind": "letter",
+   "value": "ie, ue, üe sind Diphthonge und werden geschrieben: lieb, Liecht (81×), guet (124×; »gut« 0), Mueter, Brüeder, Füess.",
+   "evidence": [
+    {
+     "ref": "1CO 6:12",
+     "form": "guet",
+     "n": 134
+    },
+    {
+     "ref": "1CO 6:6",
+     "form": "Brüeder",
+     "n": 85
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "spell_long",
+   "kind": "letter",
+   "value": "Langer Vokal wird verdoppelt, wo das Hochdeutsche einen alten Diphthong hat: Huus (97×; »Haus« 0), nüüt (285×), Füür, Tuusig; aa für langes a (aa, Aabe, Maa).",
+   "evidence": [
+    {
+     "ref": "1PE 2:5",
+     "form": "Huus",
+     "n": 97
+    },
+    {
+     "ref": "1CO 1:8",
+     "form": "nüüt",
+     "n": 291
+    },
+    {
+     "ref": "ACT 4:3",
+     "form": "Aabe",
+     "n": 21
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "spell_ch",
+   "kind": "letter",
+   "value": "ch für k am Wortanfang: Chind (72×), Chünig (97×; »König« 0), cho, chönne, Chrüz. Fremdwörter und Namen behalten k: Korinth, Kamel, Kärli.",
+   "evidence": [
+    {
+     "ref": "1TI 1:17",
+     "form": "Chünig",
+     "n": 97
+    },
+    {
+     "ref": "LUK 18:25",
+     "form": "Kamel",
+     "n": 4
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "spell_scht",
+   "kind": "letter",
+   "value": "sch vor t und p, auch im Wortinnern: isch, Chrischtus (509×; »Christus« 16×), Aposchtel (51×), Prieschter (32×), Geischt, Fescht, Teschtamänt.",
+   "evidence": [
+    {
+     "ref": "1CO 1:2",
+     "form": "Chrischtus",
+     "n": 509
+    },
+    {
+     "ref": "1CO 1:1",
+     "form": "Aposchtel",
+     "n": 51
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "spell_ae",
+   "kind": "letter",
+   "value": "ä für offenes e: Wält (246×), Läbe (261×), Härz (134×), säge, Gäld (54×; »Geld« 0), Fäld, Ärde.",
+   "evidence": [
+    {
+     "ref": "1CO 1:20",
+     "form": "Wält",
+     "n": 246
+    },
+    {
+     "ref": "1TI 3:3",
+     "form": "Gäld",
+     "n": 54
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "spell_l_nd",
+   "kind": "letter",
+   "value": "l und nd bleiben geschrieben wie im Hochdeutschen, obwohl sie oft anders gesprochen werden: Wält (»Wäut« 0), alli (411×), Milch; Chind (»Ching« 0), andere (»angere« 0), hinder.",
+   "evidence": [
+    {
+     "ref": "1CO 3:4",
+     "form": "andere",
+     "n": 249
+    },
+    {
+     "ref": "2CO 12:6",
+     "form": "hinder",
+     "n": 11
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Keine phonetische Schreibung (u für l, ng für nd) in den Entwürfen."
+  },
+  {
+   "id": "spell_consonants",
+   "kind": "letter",
+   "value": "Einzelne Konsonantenschreibung nach festen Wortbildern: Himel (230×; »Himmel« 18×), aber Vatter (353×; »Vater« 32×), Gschwüschterti, Schwöschter.",
+   "evidence": [
+    {
+     "ref": "1CO 8:5",
+     "form": "Himel",
+     "n": 229
+    },
+    {
+     "ref": "1CO 1:3",
+     "form": "Vatter",
+     "n": 353
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Die Formen »Vater«, »Himmel«, »Christus« stehen fast nur in MAT und MRK (Druckvorlage); massgebend sind Vatter, Himel, Chrischtus."
+  },
+  {
+   "id": "spell_variants",
+   "kind": "letter",
+   "value": "Das Korpus hat Druck- und Erkennungsfehler (»cm« für »em«, »gcischtlechc«, »ncre«, Punkt mitten im Satz). Einzelformen nur übernehmen, wenn sie mehrfach belegt sind.",
+   "evidence": [
+    {
+     "ref": "1CO 6:13",
+     "form": "cm",
+     "n": 55
+    },
+    {
+     "ref": "1CO 10:4",
+     "form": "gcischtlechc",
+     "n": 1
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "letter_h",
+   "kind": "letter",
+   "value": "Namen: hebräisch ḥ am Wortanfang → H (Ham, Hawila, Hebron), im Wortinnern → ch (Metuschelach, Machlon, Zochar).",
+   "evidence": [
+    {
+     "ref": "GEN 25:18",
+     "form": "Hawila"
+    },
+    {
+     "ref": "LUK 3:37",
+     "form": "Metuschelach"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Entschieden 02.10.2026 (gen_review_overview A 3)."
+  },
+  {
+   "id": "letter_sh",
+   "kind": "letter",
+   "value": "Namen: hebräisch š → sch (Enosch, Arpachschad, Schela, Beerscheba).",
+   "evidence": [
+    {
+     "ref": "LUK 3:38",
+     "form": "Enosch"
+    },
+    {
+     "ref": "GEN 26:23",
+     "form": "Beerscheba"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Umschriftregel des Stilblatts Genesis; das Korpus hat dieselben Formen in LUK 3."
+  },
+  {
+   "id": "letter_ts",
+   "kind": "letter",
+   "value": "Namen: hebräisch ṣ → z (Zoar, Zilla, Hezron, Perez).",
+   "evidence": [
+    {
+     "ref": "LUK 3:33",
+     "form": "Hezron"
+    },
+    {
+     "ref": "GEN 19:22",
+     "form": "Zoar"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Stilblatt Genesis."
+  },
+  {
+   "id": "letter_tradition",
+   "kind": "letter",
+   "value": "Namen mit eingeführter Form (Luther/Zürcher, NT) behalten diese: Noomi, Elimelech, Isaak, Mose, Pharao, Ägypte; das NT des Korpus geht vor, wo es den Namen hat (Mt 1, Lk 3).",
+   "evidence": [
+    {
+     "ref": "ACT 3:13",
+     "form": "Isaak",
+     "n": 20
+    },
+    {
+     "ref": "RUT 2:1",
+     "form": "Noomi"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided"
+  },
+  {
+   "id": "gap:divine_name",
+   "kind": "gap",
+   "value": "Gottesname JHWH: das Korpus hat nur »der Herr« (κύριος), auch in AT-Zitaten; keine Form für den Namen selbst.",
+   "words": [
+    "lord"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 24:1",
+     "form": "der HERR"
+    },
+    {
+     "ref": "1CO 1:31",
+     "form": "der Herr",
+     "n": 195
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Gelöst durch Projektentscheid »der HERR« (term:H3068)."
+  },
+  {
+   "id": "gap:goel",
+   "kind": "gap",
+   "value": "Löser (גֹּאֵל) und Lösrecht: keine Vorlage im NT.",
+   "words": [
+    "kinsman-redeemer",
+    "redeem"
+   ],
+   "evidence": [
+    {
+     "ref": "RUT 2:20",
+     "form": "Löser"
+    },
+    {
+     "ref": "RUT 4:6"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Gelöst: »Löser«, »uslöse«, »Lösrächt« (Entscheid Rut A 1). Erklärung nur in den Notizen."
+  },
+  {
+   "id": "gap:measures",
+   "kind": "gap",
+   "value": "Hebräische Masse (Elle, Schekel, Efa): das Korpus hat Elle 1×, Schekel und Efa 0×.",
+   "words": [
+    "cubit",
+    "cubits",
+    "shekel",
+    "shekels",
+    "ephah"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 6:15",
+     "form": "Elle"
+    },
+    {
+     "ref": "GEN 24:22",
+     "form": "Schekel"
+    },
+    {
+     "ref": "RUT 2:17",
+     "form": "Liter"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Gelöst: hebräische Einheit + »(ungefähr … m)« bzw. Gramm; Efa in Rut 2,17 als »zwänzg Liter« umgerechnet; »sächs Mäss« in 3,15 bewusst unbestimmt. Rut A 11 offen, ob »es Efa« im Text."
+  },
+  {
+   "id": "gap:creation_vocab",
+   "kind": "gap",
+   "value": "Schöpfungswortschatz (Himmelsgewölbe, Tohuwabohu, Gewimmel): keine NT-Vorlage.",
+   "words": [
+    "expanse",
+    "formless and void",
+    "crawling",
+    "teem"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 1:6",
+     "form": "Himelsgwölb"
+    },
+    {
+     "ref": "GEN 1:2",
+     "form": "wüescht und läär"
+    },
+    {
+     "ref": "GEN 8:17",
+     "form": "Chrüüchtier"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Gelöst durch Neubildungen: »ds Himelsgwölb«, »wüescht und läär«, »Chrüüchtier«, »wimmle« (gen001_notes)."
+  },
+  {
+   "id": "gap:sacrifice",
+   "kind": "gap",
+   "value": "Opferbegriffe (Brandopfer, Altar, beruhigender Duft): im Korpus nur Altar (17×), Brandopfer 1×.",
+   "words": [
+    "burnt offering",
+    "altar",
+    "pleasing aroma"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 22:2",
+     "form": "Brandopfer"
+    },
+    {
+     "ref": "GEN 33:20",
+     "form": "Altar"
+    },
+    {
+     "ref": "GEN 8:21",
+     "form": "fein Duft"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "open",
+   "note": "Brandopfer und Altar übernommen; »der fein Duft« offen als feste Formel (gen A 9)."
+  },
+  {
+   "id": "gap:plants",
+   "kind": "gap",
+   "value": "Pflanzen ohne Vorlage: Rizinusstaude, Terebinthe/Eiche, Alraunen.",
+   "words": [
+    "plant",
+    "vine",
+    "oak",
+    "oaks"
+   ],
+   "evidence": [
+    {
+     "ref": "JON 4:6",
+     "form": "Rizinusstude"
+    },
+    {
+     "ref": "GEN 18:1",
+     "form": "Eich"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Gelöst: »Rizinusstude« (Tradition), »Eich(e)« + Fussnote »Oder: Terebinthe«."
+  },
+  {
+   "id": "gap:poetry_layout",
+   "kind": "gap",
+   "value": "Hebräische Poesie: das Korpus druckt AT-Zitate als Prosa; kein Modell für Zeilenpoesie.",
+   "evidence": [
+    {
+     "ref": "JON 2:3"
+    },
+    {
+     "ref": "GEN 4:23"
+    },
+    {
+     "ref": "GEN 49:2"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Gelöst durch Hausschreibweise `//1`/`//2`-Zeilen (Jona 2; GEN 1,27; 2,23; 3,14-19; 4,23-24; 49,2-27)."
+  },
+  {
+   "id": "gap:name_meanings",
+   "kind": "gap",
+   "value": "Namensdeutungen, die der hebräische Text selbst gibt (Eva, Kain, Isaak, Mara …).",
+   "evidence": [
+    {
+     "ref": "RUT 1:20",
+     "form": "Mara"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Gelöst: nicht im Text, sondern als berndeutsche Fussnote in `<code>NNN_footnotes.txt` (Format `vN Stichwort: Text`), wie die BSB (entschieden 02.10.2026)."
+  },
+  {
+   "id": "gap:leitwort_shuv",
+   "kind": "gap",
+   "value": "Leitwort šûb (umkehren) in Rut 1: das Korpus hat keine einheitliche Wiedergabe.",
+   "words": [
+    "return",
+    "go back"
+   ],
+   "evidence": [
+    {
+     "ref": "RUT 1:8",
+     "form": "chehret"
+    },
+    {
+     "ref": "RUT 1:22"
+    },
+    {
+     "ref": "RUT 4:15"
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "open",
+   "note": "Offen: wechselnd »zrüggcho, umchehre, heicho«; Vorschlag durchgehend »zrüggchehre« (Rut A 4)."
+  },
+  {
+   "id": "gap:hayil",
+   "kind": "gap",
+   "value": "ḥayil (Tüchtigkeit, Ansehen) in Rut 2,1; 3,11; 4,11: kein fester Ausdruck.",
+   "words": [
+    "worthy",
+    "noble",
+    "standing"
+   ],
+   "evidence": [
+    {
+     "ref": "RUT 2:1"
+    },
+    {
+     "ref": "RUT 3:11"
+    },
+    {
+     "ref": "RUT 4:11",
+     "form": "Aaseh"
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "open",
+   "note": "Entwurf »aagsehe / Aaseh«; Alternative »tüchtig« durchgehend offen (Rut A 5)."
+  },
+  {
+   "id": "gap:oath_formulas",
+   "kind": "gap",
+   "value": "Schwurformeln (so tue mir Gott …, so wahr der HERR lebt): das NT hat nur Ansätze.",
+   "words": [
+    "as surely as the lord lives",
+    "may the lord punish me"
+   ],
+   "evidence": [
+    {
+     "ref": "RUT 1:17"
+    },
+    {
+     "ref": "RUT 3:13"
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "open",
+   "note": "In Rut 1,17 und 3,13 nach dem Hebräischen gebildet; noch nicht als feste Formel geprüft."
+  }
+ ]
+}

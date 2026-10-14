@@ -1,0 +1,48 @@
+# Copy this folder to import/<licence>/<language>/<edition-id>/ (CC0, CC-BY, CC-BY-SA or non-free; see import/README.md)
+# and put the imported books in text/.
+# One edition = one existing translation (a whole Bible, an NT, or single books).
+
+name: "Example: Bärndütschi Bibel (Bietenhard)"   # human-readable name
+language: gsw-BE                # BCP 47 / ISO 639 code of the edition's language
+role: style                     # style    = used as a style/vocabulary corpus only
+                                # continue = new drafts continue this edition
+                                # revise   = this edition is to be revised
+text_dir: text                  # folder (inside this edition) with the imported files
+format: "one .txt file per book" # free description of the imported file format
+
+# Textual basis of the edition's NT. Decides which Greek text and which
+# assisting translation a project that continues this edition uses:
+#   critical -> orig/grc (BGB) + BSB
+#   majority -> orig/grc-rp (Robinson-Pierpont 2018) + MSB
+#   tr       -> orig/grc-rp + MSB (closest available to the Textus Receptus)
+nt_basis: critical
+
+books: [mat, mrk, luk, act, rom, heb]   # BSB codes of the books present (optional)
+
+# Books of this edition that drafting agents must never see, for an
+# independent translation of exactly these books. check: also remove
+# them from text/ before drafting.
+quarantine: []
+
+# Optional hint added to the prompt, e.g. how this edition marks OT quotes,
+# so agents can take over its wording where it quotes the chapter.
+quote_hint: "Where it quotes the chapter being translated (marked like `(1Mo 22,18)`), take over its wording."
+
+# How a clone gets the text, which is not in git (a command, or why it isn't available);
+# not needed with a fetch: recipe.
+# get_text: ""
+
+# Optional: fetch the text from a Bible source instead of copying it in (scripts/fetch_edition.py;
+# --find <iso> lists the editions of a language). The text then stays out of git.
+# fetch:
+#   source: helloao    # helloao | openbible | ebible
+#   id: dan_det        # helloAO id | openbible '<iso>/<edition>' | eBible id
+#   books: [mat, mrk]  # optional subset (BSB codes)
+
+source: ""       # where the edition comes from (URL, publisher, file)
+licence: ""      # licence or permission; state 'private use only' if unclear.
+                 # It must match the licence folder (import/README.md).
+attribution: ""  # CC BY and CC BY-SA editions: the credit line the licence asks for
+credit: ""       # the line shown with quotations from this edition (any licence; docs/licensing.md)
+# published_text: download/editions/<id>/<id>_usfm.zip   # when text/ is a newer working copy:
+#                  the published form that quotations must match (eBible USFM zip or a folder)
