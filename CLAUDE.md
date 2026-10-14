@@ -68,11 +68,14 @@ working; this file adds the rules that hold for any task here.
 - **Two clause layouts, two jobs.** `orig/heb/` (the drafting layout, a copy of `orig/heb-bhsa/`)
   is BHSA data (ETCBC), CC BY-NC 4.0: its lines are BHSA clause atoms, the number after the colon
   BHSA's `tab`. Agents consult it as a reference work, as a translator would; the drafts are our
-  own text and stay free (CC0). Never publish the BHSA files, their levels, or anything laid out on
-  them (clause-line files, sidecars and indexes built on BHSA); publish drafts as prose. Clause
-  structure that is published (sidecars, clause-line editions, pages) is built on the bcv-query
-  layout (`orig/heb-bcv-query/`, CC BY-SA 4.0); `scripts/relayout.py` moves a clause-line draft
-  between layouts. The BHSA copy itself may be used only non-commercially: a commercial user of
+  own text and stay free (CC0). Never publish the BHSA files themselves, not in git, not on the site branch. Our
+  drafts laid out on the BHSA layout may be shown, as **CC BY-NC 4.0** with the ETCBC credited and the licence
+  shown prominently (the website's BHSA view; decided by the user, 2026-10-14): BY-NC allows adaptations,
+  non-commercially. Those clause lines are never stored: `scripts/build_site.py` derives them at build time from
+  each draft and its `.align` on the local layout files (`scripts/clause_lines.py`), so nothing laid out on BHSA is
+  in git. Everything else built on BHSA (sidecars, indexes, the levels as data) stays unpublished. Clause
+  structure for open reuse is built on the bcv-query layout (`orig/heb-bcv-query/`, CC BY-SA 4.0; the site's
+  MACULA/UHB view); `scripts/relayout.py` moves a clause-line draft between layouts. The BHSA copy itself may be used only non-commercially: a commercial user of
   this repo drafts on `bcv-query` (`--drafting bcv-query`) or asks the ETCBC.
 - **Don't use BSB text files from other converters:** older ones dropped verse markers and
   footnotes inside `\wj` (words of Jesus). Use the files `setup.py` builds.
@@ -121,6 +124,9 @@ python3 scripts/fetch_heb_macula.py <code>[:ch[-ch]] # MACULA clause layout for 
 python3 scripts/build_heb_bcvquery.py <release> [--law] [--out DIR] # bcv-query clause layout
 python3 scripts/build_heb_bhsa.py [--tf DIR] [--out DIR] [code ...] # BHSA 2021 clause layout (needs text-fabric)
 python3 scripts/relayout.py <draft> --from <layout> --to <layout> # move a clause-line draft between layouts
+python3 scripts/clause_lines.py check <project> [<code> <ch>] | show <project> <code> <ch> # the site's clause lines, derived from .align
+python3 scripts/bridge_align.py <project> <code> <ch> | --all # word alignment (.align) by script, no model
+python3 scripts/full_align.py check|export <project>  # .align files in the bcv-commons format; export = the HF layer (build/align/)
 python3 scripts/macula_to_tf.py <delivery dir>       # draft Text-Fabric dataset (needs text-fabric)
 ```
 

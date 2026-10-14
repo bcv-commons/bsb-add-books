@@ -112,7 +112,8 @@ Before your first commit, once per clone: `git config core.hooksPath .githooks` 
 The Hebrew clause layout is built three ways, side by side (see `docs/sources.md`):
 - the ETCBC BHSA 2021 (`setup.py --heb bhsa`): the deepest hierarchy, and the drafting layout.
   Agents consult it like a reference work; the drafts are our own text and stay free. The BHSA
-  files, their levels and anything laid out on them are never published;
+  files are never published; our drafts laid out on it are shown on the website, as CC BY-NC 4.0, derived at build
+  time and never stored;
 - the bcv-query Hebrew clause layout release v0.22 (`setup.py --heb bcv-query`), with the
   text-level hierarchy, pinned by tag and SHA-256: for every published clause structure
   (sidecars, clause-line editions), and the drafting layout for commercial users;

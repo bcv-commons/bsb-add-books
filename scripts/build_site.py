@@ -10,7 +10,8 @@ stops if a project's pages would need one.
 This is the first version of the site; the planned app (internal planning notes) replaces the pages one by one and
 keeps the same data rules.
 
-Usage: python3 scripts/build_site.py [--out DIR]      (default build/site/, git-ignored)
+Usage: python3 scripts/build_site.py [--out DIR] [--preview]   (default build/site/, git-ignored)
+       --preview: also new files not yet committed, for a local look; never deployed
 Deploy: scripts/deploy_site.py builds it and stages it on the `site` branch, which Netlify publishes.
 """
 import html as H, json, os, re, shutil, subprocess, sys
@@ -25,15 +26,24 @@ UI = {   # interface strings by school language; the content stays as written
     "English": {"projects": "Projects", "status": "Status", "memory": "Language memory", "credits": "Credits",
                 "chapters": "chapters", "draft": "draft", "review": "in review", "published": "published",
                 "built": "Built from commit", "all": "All projects", "mode": "Model knowledge",
-                "read": "Read", "language": "Language", "book": "Book", "chapter": "Chapter", "prev": "Previous", "next": "Next", "notes": "Notes", "nodrafts": "no drafts yet", "choose": "Choose a language", "status_word": "Status"},
+                "read": "Read", "language": "Language", "book": "Book", "chapter": "Chapter", "prev": "Previous", "next": "Next", "notes": "Notes", "nodrafts": "no drafts yet", "choose": "Choose a language", "status_word": "Status",
+                "v_std": "Text", "v_bhsa": "BHSA clauses", "v_hcl": "MACULA/UHB clauses", "v_none": "no clause layout for this chapter",
+                "n_bhsa": "Clause layout: ETCBC, BHSA 2021, licensed CC BY-NC 4.0. This view of our draft on that layout is CC BY-NC 4.0 too: non-commercial use only, with credit to the ETCBC.",
+                "n_hcl": "Clause layout: bcv-commons Hebrew clause layout v0.22 (MACULA Hebrew, UHB), CC BY-SA 4.0. This view of our draft on that layout is CC BY-SA 4.0."},
     "Standard German": {"projects": "Projekte", "status": "Stand", "memory": "Sprachgedächtnis", "credits": "Nachweise",
                         "chapters": "Kapitel", "draft": "Entwurf", "review": "in Prüfung", "published": "veröffentlicht",
                         "built": "Erstellt aus Commit", "all": "Alle Projekte", "mode": "Sprachkenntnis des Modells",
-                "read": "Lesen", "language": "Sprache", "book": "Buch", "chapter": "Kapitel", "prev": "Zurück", "next": "Weiter", "notes": "Anmerkungen", "nodrafts": "noch keine Entwürfe", "choose": "Sprache wählen", "status_word": "Stand"},
+                "read": "Lesen", "language": "Sprache", "book": "Buch", "chapter": "Kapitel", "prev": "Zurück", "next": "Weiter", "notes": "Anmerkungen", "nodrafts": "noch keine Entwürfe", "choose": "Sprache wählen", "status_word": "Stand",
+                "v_std": "Fliesstext", "v_bhsa": "BHSA-Sätze", "v_hcl": "MACULA/UHB-Sätze", "v_none": "für dieses Kapitel kein Satzlayout",
+                "n_bhsa": "Satzlayout: ETCBC, BHSA 2021, Lizenz CC BY-NC 4.0. Diese Darstellung unseres Entwurfs auf diesem Layout steht ebenfalls unter CC BY-NC 4.0: nur nicht kommerzielle Nutzung, mit Nennung des ETCBC.",
+                "n_hcl": "Satzlayout: bcv-commons Hebrew clause layout v0.22 (MACULA Hebrew, UHB), CC BY-SA 4.0. Diese Darstellung unseres Entwurfs auf diesem Layout steht unter CC BY-SA 4.0."},
     "Danish": {"projects": "Projekter", "status": "Status", "memory": "Sproghukommelse", "credits": "Kilder",
                "chapters": "kapitler", "draft": "udkast", "review": "til gennemsyn", "published": "udgivet",
                "built": "Bygget fra commit", "all": "Alle projekter", "mode": "Modellens kendskab",
-                "read": "Læs", "language": "Sprog", "book": "Bog", "chapter": "Kapitel", "prev": "Forrige", "next": "Næste", "notes": "Noter", "nodrafts": "ingen udkast endnu", "choose": "Vælg sprog", "status_word": "Status"},
+                "read": "Læs", "language": "Sprog", "book": "Bog", "chapter": "Kapitel", "prev": "Forrige", "next": "Næste", "notes": "Noter", "nodrafts": "ingen udkast endnu", "choose": "Vælg sprog", "status_word": "Status",
+                "v_std": "Løbende tekst", "v_bhsa": "BHSA-sætninger", "v_hcl": "MACULA/UHB-sætninger", "v_none": "intet sætningslayout for dette kapitel",
+                "n_bhsa": "Sætningslayout: ETCBC, BHSA 2021, licens CC BY-NC 4.0. Denne visning af vores udkast på det layout er også CC BY-NC 4.0: kun ikke-kommerciel brug, med kreditering af ETCBC.",
+                "n_hcl": "Sætningslayout: bcv-commons Hebrew clause layout v0.22 (MACULA Hebrew, UHB), CC BY-SA 4.0. Denne visning af vores udkast på det layout er CC BY-SA 4.0."},
 }
 FAMILIARITY = {"known": "known", "partial": "partial", "unknown": "unknown"}
 
@@ -74,6 +84,14 @@ code { font-size:90%; } .path { font-family:ui-monospace,monospace; font-size:90
 .text sup.n a, .notes .k { font-size:11px; text-decoration:none; color:var(--accent); font-weight:600; }
 .notes { font-size:14px; color:var(--muted); border-top:1px solid var(--line); margin-top:26px; padding-top:8px; max-width:42em; }
 .notes p { margin:4px 0; } .notes .k { margin-right:6px; }
+.modes { display:flex; flex-wrap:wrap; gap:4px; margin:0 0 12px; }
+.modes button { font:inherit; font-size:14px; padding:4px 12px; border:1px solid var(--line); border-radius:6px; background:transparent; color:var(--ink); cursor:pointer; }
+.modes button.on { background:var(--accent-soft); border-color:var(--accent); color:var(--accent); }
+.modes button:disabled { opacity:.45; cursor:default; }
+.view[hidden] { display:none; }
+.lic { background:var(--q); border:2px solid var(--q-line); border-radius:6px; padding:10px 14px; margin:0 0 14px; font-size:14px; font-weight:600; }
+.cls .l { padding-left:min(calc(var(--lv) * 1.6em), calc(var(--lv) * 3.5vw)); text-indent:-0.6em; margin:0 0 2px 0.6em; }
+.cls h2 { font-size:17px; margin:22px 0 6px; color:var(--muted); }
 .pager { display:flex; justify-content:space-between; gap:12px; margin:26px 0 0; max-width:42em; }
 .books { list-style:none; padding:0; } .books li { margin:10px 0; }
 .books .chs { display:flex; flex-wrap:wrap; gap:6px; margin-top:4px; }
@@ -81,9 +99,16 @@ code { font-size:90%; } .path { font-family:ui-monospace,monospace; font-size:90
 """
 
 
-def git_tracked():
+def git_tracked(preview=False):
+    """The files the site may read: tracked ones; with --preview also untracked, not ignored ones (a local look at
+    uncommitted work, never deployed: scripts/deploy_site.py builds without it from a clean tree)."""
     out = subprocess.run(["git", "ls-files", "-z", "export"], cwd=ROOT, capture_output=True, text=True, check=True).stdout
-    return {f for f in out.split("\0") if f}
+    files = {f for f in out.split("\0") if f}
+    if preview:
+        new = subprocess.run(["git", "ls-files", "-z", "--others", "--exclude-standard", "export"], cwd=ROOT,
+                             capture_output=True, text=True, check=True).stdout
+        files |= {f for f in new.split("\0") if f}
+    return files
 
 
 def page(title, body, nav, banner, built, depth, ui, lang="en"):
@@ -109,8 +134,8 @@ def need(tracked, path):
     return path
 
 
-def build(out, built):
-    tracked = git_tracked()
+def build(out, built, preview=False):
+    tracked = git_tracked(preview)
     projects = sorted(os.path.dirname(f)[len("export/"):] for f in tracked
                       if re.fullmatch(r"export/[^_/][^/]*/[^/]+/project\.yaml", f))
     if os.path.isdir(out):
@@ -240,11 +265,7 @@ def parse_chapter(p, text, footnotes):
         else:
             body.append(l)
     notes = []
-    fn = {}
-    for l in footnotes.splitlines():
-        m = re.match(r"^v(\d+)\s+(.+?):\s*(.+)$", l)
-        if m:
-            fn.setdefault(m[1], []).append((m[2].strip(), m[3].strip()))
+    fn = footnotes_of(footnotes)
     blocks = []
     for blk in re.split(r"\n\s*\n", "\n".join(body)):
         blk = blk.strip()
@@ -255,6 +276,23 @@ def parse_chapter(p, text, footnotes):
             blocks.append(("h", inline_md(quotes_of(p, m[1].strip()))))
             continue
         t = re.sub(r"\s*\n\s*", " ", blk)
+        blocks.append(("p", render(p, t, fn, notes)))
+    return title, blocks, notes
+
+
+def footnotes_of(footnotes):
+    fn = {}
+    for l in footnotes.splitlines():
+        m = re.match(r"^v(\d+)\s+(.+?):\s*(.+)$", l)
+        if m:
+            fn.setdefault(m[1], []).append((m[2].strip(), m[3].strip()))
+    return fn
+
+
+def render(p, t, fn, notes, ids=True):
+    """One run of draft text to HTML: the footnote file's entries placed after their keyword, inline notes numbered
+    (continuing `notes`), quotes, emphasis, verse numbers."""
+    if True:
         # footnotes: a marker after the keyword in its verse (or after the verse number)
         for v, items in fn.items():
             mv = re.search(rf"(?<![\w>.])v{v}(?=\s)", t)
@@ -272,10 +310,35 @@ def parse_chapter(p, text, footnotes):
             return f"\x00{len(notes)}\x00"
         t = NOTE.sub(note, t)
         t = inline_md(quotes_of(p, t))
-        t = VERSE.sub(lambda m: f'<sup class="v" id="v{m[1].split("-")[0]}">{m[1]}</sup>', t)
-        t = re.sub(r"\x00(\d+)\x00", lambda m: f'<sup class="n"><a href="#n{m[1]}" id="r{m[1]}">{m[1]}</a></sup>', t)
-        blocks.append(("p", t))
-    return title, blocks, notes
+        vid = (lambda n: f' id="v{n}"') if ids else (lambda n: "")
+        t = VERSE.sub(lambda m: f'<sup class="v"{vid(m[1].split("-")[0])}>{m[1]}</sup>', t)
+        rid = (lambda n: f' id="r{n}"') if ids else (lambda n: "")
+        t = re.sub(r"\x00(\d+)\x00", lambda m: f'<sup class="n"><a href="#n{m[1]}"{rid(m[1])}>{m[1]}</a></sup>', t)
+        return t
+
+
+def parse_clauses(p, text, footnotes):
+    """A clause-line file -> [('h', html) | ('l', level, html)]: the same rendering as the prose, line by line (merged
+    lines, '//N =', are shown inside the line above and get no line of their own)."""
+    fn = footnotes_of(footnotes)
+    parts = []
+    for l in text.splitlines():
+        if l.startswith(("!!<", "===")) or not l.strip():
+            continue
+        m = re.match(r"^==(.*)==\s*$", l)
+        if m:
+            parts.append(("h", m[1].strip()))
+            continue
+        m = re.match(r"//(\d+) (.*)$", l)
+        if m and not (m[2].strip() == "=" or m[2].startswith("= ")):
+            parts.append((int(m[1]) - 1, m[2].strip()))
+    joined = "".join(f"\x01{'H' if k == 'h' else k}\x02{t}" for k, t in parts)
+    html = render(p, joined, fn, [], ids=False)
+    out = []
+    for seg in html.split("\x01")[1:]:
+        k, t = seg.split("\x02", 1)
+        out.append(("h", t) if k == "H" else ("l", int(k), t))
+    return out
 
 
 def book_title(p, code, title):
@@ -299,8 +362,17 @@ def reader(pname, p, tracked, od, ui, banner, built, nav, lc, rows):
         fnf = f[:-4] + "_footnotes.txt"
         foot = open(fnf, encoding="utf-8").read() if os.path.relpath(fnf, ROOT) in tracked else ""
         title, blocks, notes = parse_chapter(p, open(f, encoding="utf-8").read(), foot)
+        views = {}
+        # the clause views: derived here from the draft and its .align on the local layouts (never stored, and the
+        # layout files never published; scripts/clause_lines.py)
+        if os.path.relpath(f[:-4] + ".align", ROOT) in tracked:
+            import bridge_align as BA
+            for lay, lines in (BA.clauses(pname, code, n) or {}).items():
+                views[lay] = parse_clauses(p, "\n".join(lines), foot)
+            if not views:
+                print(f"  note: no clause views for {pname} {code}{n:03d} (.align stale, or no layouts: setup.py --heb bhsa,bcv-query)")
         books.setdefault(code, {"title": book_title(p, code, title), "chs": []})["chs"].append(n)
-        pages.append((code, n, title, blocks, notes, r))
+        pages.append((code, n, title, blocks, notes, r, views))
     rd = os.path.join(od, "read")
     os.makedirs(rd, exist_ok=True)
     order = [c for c in BY_CODE if c in books]
@@ -314,7 +386,7 @@ def reader(pname, p, tracked, od, ui, banner, built, nav, lc, rows):
     open(os.path.join(rd, "index.html"), "w", encoding="utf-8").write(page(f"{p.get('language_name')}: {ui['read']}", body, nav("r"), banner, built, depth, ui, lc))
     # one page per chapter
     seq = [(c, n) for c in order for n in books[c]["chs"]]
-    for code, n, title, blocks, notes, r in pages:
+    for code, n, title, blocks, notes, r, views in pages:
         i = seq.index((code, n))
         prev = seq[i - 1] if i else None
         nxt = seq[i + 1] if i + 1 < len(seq) else None
@@ -324,6 +396,22 @@ def reader(pname, p, tracked, od, ui, banner, built, nav, lc, rows):
                 f'<select aria-label="{H.escape(ui["book"])}" data-pick="book"></select>'
                 f'<select aria-label="{H.escape(ui["chapter"])}" data-pick="ch"></select></form>')
         text = "".join(f"<h2>{h}</h2>" if k == "h" else f"<p>{h}</p>" for k, h in blocks)
+
+        def clause_view(lay):
+            rows = views.get(lay)
+            if not rows:
+                return ""
+            body_ = "".join(f"<h2>{x[1]}</h2>" if x[0] == "h" else f'<div class="l" style="--lv:{x[1]}">{x[2]}</div>' for x in rows)
+            notice = ui["n_bhsa"] if lay == "bhsa" else ui["n_hcl"]
+            return f'<div class="lic">{H.escape(notice)}</div><div class="text cls">{body_}</div>'
+        modes = [("std", ui["v_std"], True), ("bhsa", ui["v_bhsa"], "bhsa" in views), ("hcl", ui["v_hcl"], "bcv-query" in views)]
+        none = H.escape(ui["v_none"])
+        switch = ('<div class="modes" role="tablist">' + "".join(
+            f'<button type="button" data-mode="{m}"' + ("" if ok else f' disabled title="{none}"') + f">{H.escape(lab)}</button>"
+            for m, lab, ok in modes) + "</div>")
+        text = (f'<div class="view" data-view="std">{text}</div>'
+                f'<div class="view" data-view="bhsa" hidden>{clause_view("bhsa")}</div>'
+                f'<div class="view" data-view="hcl" hidden>{clause_view("bcv-query")}</div>')
         nt = "".join(f'<p id="n{j}"><a class="k" href="#r{j}">{j}</a>{h}</p>' for j, h in enumerate(notes, 1))
         link = lambda x, arrow_first: (f'<a href="{rel(*x)}">' + (f"← {H.escape(books[x[0]]['title'])} {x[1]}" if arrow_first
                                        else f"{H.escape(books[x[0]]['title'])} {x[1]} →") + "</a>") if x else ""
@@ -332,7 +420,7 @@ def reader(pname, p, tracked, od, ui, banner, built, nav, lc, rows):
             bn = f"<strong>{H.escape(ui['published'].capitalize())}.</strong> {H.escape(r.get('statement', ''))}"
         else:
             bn = banner + (f" <em>({H.escape(ui['review'])})</em>" if r.get("status") == "in-review" else "")
-        body = (pick + f'<h1>{H.escape(title or books[code]["title"] + " " + str(n))}</h1><div class="text">{text}</div>'
+        body = (pick + f'<h1>{H.escape(title or books[code]["title"] + " " + str(n))}</h1>{switch}<div class="text">{text}</div>'
                 + (f'<div class="notes"><strong>{H.escape(ui["notes"])}</strong>{nt}</div>' if notes else "") + pager
                 + f'<script>window.HERE={json.dumps({"p": pname, "b": code, "c": n})}</script>'
                 + f'<script src="{"../" * (depth + 1)}nav.js"></script>')
@@ -357,6 +445,22 @@ NAV_JS = """// The reader's selectors: language, book, chapter (scripts/build_si
   L.onchange = function () { var b = N[L.value].books[0]; go(L.value, b[0], b[2][0]); };
   B.onchange = function () { chs(); go(H.p, B.value, C.value); };
   C.onchange = function () { go(H.p, B.value, C.value); };
+})();
+// The view switch: text, BHSA clauses, MACULA/UHB clauses; no reload, the choice remembered across pages.
+(function () {
+  var bs = document.querySelectorAll(".modes button"), vs = document.querySelectorAll(".view");
+  if (!bs.length) return;
+  function get() { try { return localStorage.getItem("view") || "std"; } catch (e) { return "std"; } }
+  function set(m) { try { localStorage.setItem("view", m); } catch (e) {} }
+  function show(m, keep) {
+    var b = document.querySelector('.modes button[data-mode="' + m + '"]');
+    if (!b || b.disabled) m = "std";
+    bs.forEach(function (x) { x.classList.toggle("on", x.dataset.mode === m); x.setAttribute("aria-selected", x.dataset.mode === m); });
+    vs.forEach(function (v) { v.hidden = v.dataset.view !== m; });
+    if (!keep) set(m);
+  }
+  bs.forEach(function (b) { b.onclick = function () { show(b.dataset.mode); }; });
+  show(get(), true);
 })();
 """
 
@@ -392,7 +496,8 @@ def main():
     out = os.path.join(ROOT, a[a.index("--out") + 1]) if "--out" in a else os.path.join(ROOT, "build", "site")
     sha = subprocess.run(["git", "rev-parse", "--short", "HEAD"], cwd=ROOT, capture_output=True, text=True).stdout.strip()
     date = subprocess.run(["git", "log", "-1", "--format=%cs"], cwd=ROOT, capture_output=True, text=True).stdout.strip()
-    build(out, f"{sha} ({date})")
+    preview = "--preview" in a
+    build(out, f"{sha} ({date})" + (" + uncommitted (preview)" if preview else ""), preview)
 
 
 if __name__ == "__main__":

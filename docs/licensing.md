@@ -18,8 +18,10 @@ this is our own work and is CC0, whatever the licence of the edition it was lear
 - **statistics**: lexicons (word pairs with counts), alignment figures, style norms, chrF scores.
 
 **CC BY-SA** applies where we build on share-alike data: clause structure from bcv-query
-(`orig/heb-bcv-query/`). **CC BY** data (MACULA) keeps its credit line. **BHSA** (CC BY-NC) is consulted
-and never republished (CLAUDE.md, Pitfalls).
+(`orig/heb-bcv-query/`). **CC BY** data (MACULA) keeps its credit line. **BHSA** (CC BY-NC) is consulted;
+its files are never republished, but our drafts laid out on it (the website's BHSA view, derived at build time from the
+drafts and their `.align`, never stored) are published as **CC BY-NC 4.0**,
+the ETCBC credited and the licence shown at the top of the website's BHSA view (CLAUDE.md, Pitfalls).
 
 ## Quoting an edition
 
@@ -56,7 +58,7 @@ Bulk text stays out of git and off any public site:
 - **generated files that print corpus verses**: verse packs (`_learn/packs/`), per-verse alignment
   links (`_learn/links_*.tsv`), style reports (`*_style.md`), and comparison reports that quote a
   held-out book at length (`_eval/local/`);
-- BHSA data and anything laid out on it.
+- BHSA data itself, and anything built on it other than the website's BHSA view of our drafts (CC BY-NC 4.0).
 
 These can all be rebuilt from the sources with the scripts.
 

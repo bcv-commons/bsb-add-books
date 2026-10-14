@@ -7,7 +7,8 @@
 
 Steps:
   1. refuse if the files the site shows have uncommitted changes (export/, scripts/), so the site equals a commit;
-  2. scripts/check_project.py for every project, in full: the edition texts are on this machine;
+  2. the clause layouts are here (orig/heb-bhsa, orig/heb-bcv-query: read for the clause views, never published), and
+     scripts/check_project.py passes for every project, in full: the edition texts are on this machine;
   3. scripts/build_site.py into build/site/;
   4. the worktree .site/ on branch `site` (created the first time: an orphan branch with no history shared with
      main, or the existing local or remote `site`); its files are replaced by the new build and staged.
@@ -51,6 +52,9 @@ def main():
     dirty = git("status", "--porcelain", "--", "export", "scripts")
     if dirty:
         raise SystemExit("uncommitted changes in what the site shows; commit them first, so the site equals a commit:\n" + dirty)
+    for lay in ("orig/heb-bhsa", "orig/heb-bcv-query"):
+        if not os.path.isdir(os.path.join(ROOT, lay)):
+            raise SystemExit(f"{lay} is missing: the clause views are built from it (python3 scripts/setup.py --heb bhsa,bcv-query)")
     if "--no-check" not in a:
         r = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "check_project.py"), *projects()], cwd=ROOT)
         if r.returncode:

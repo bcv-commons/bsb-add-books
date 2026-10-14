@@ -17,10 +17,15 @@ To keep that possible:
   (`draft` until published, with the date and statement); `STATUS.md` shows it
   (`scripts/status.py`, `docs/workflow.md`).
 - **No derived data with another licence.** Clause sidecars and other data built from
-  a clause layout carry that layout's licence: from BHSA (`orig/heb-bhsa/`, the drafting
-  layout, CC BY-NC) they never go here or anywhere public; from bcv-query (CC BY-SA 4.0) or MACULA
-  (CC BY 4.0) they keep that licence and its attribution, so they belong elsewhere or are labelled
-  as such. Drafts made on the BHSA layout are our own text and go here as prose.
+  a clause layout carry that layout's licence and don't go here. The drafts laid out on a layout (the website's
+  clause views: BHSA CC BY-NC 4.0, ETCBC credited; MACULA/UHB CC BY-SA 4.0) are not stored either:
+  `scripts/build_site.py` derives them at build time from the drafts and their `.align` files. Other data built on
+  BHSA (sidecars, indexes) never goes here or anywhere public. Drafts made on the BHSA layout are our own text and go
+  here as prose.
+- **Word alignments** (`<code>/<code>NNN.align`, next to each OT draft): which draft words render which Hebrew word,
+  in the bcv-commons compact-alignments format (numbers only, no text; CC0; `scripts/full_align.py`). Made by script
+  (`scripts/bridge_align.py`, profile `a`) or by the drafting agent (profile `b`); `full_align.py export` builds the
+  Hugging Face layer `<edition>+draft+bsb-add-books` from them.
 
 One folder per project, by language: `export/<language>/<langID>_BSB/` (ISO 639-3 code, or an
 interim dialect id such as `ch-de-be`), with `project.yaml` (start from `_template/`) and the

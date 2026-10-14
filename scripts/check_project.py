@@ -45,6 +45,8 @@ def main():
             ok &= run("store", ["scripts/language_profile.py", "check", os.path.join(d, "profile"), "--project", p])
         if os.path.isdir(os.path.join(d, "wiki")):
             ok &= run("wiki", ["scripts/wiki.py", "lint", p])
+        if any(f.endswith(".align") for _, _, fs in os.walk(d) for f in fs):
+            ok &= run("alignments", ["scripts/full_align.py", "check", p])
         ok &= run("quotations", ["scripts/quotes.py", p])
         ok &= run("status", ["scripts/status.py", p, "check"])
     sys.exit(0 if ok else 1)
