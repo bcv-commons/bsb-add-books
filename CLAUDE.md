@@ -112,6 +112,8 @@ python3 scripts/style.py <project> <draft> [--brief]  # style against the human 
 python3 scripts/language_profile.py check <dir>      # validate a language profile (docs/proposals/language-profile/)
 python3 scripts/wiki.py sync|lint <project>          # a project's language wiki: pages + generated store blocks
 python3 scripts/wiki.py view <project>               # one offline HTML file to read the wiki and search the store
+python3 scripts/build_site.py                        # the website from tracked files (build/site/)
+python3 scripts/deploy_site.py                       # check, build, stage it on the `site` branch (.site/); the user commits and pushes
 python3 scripts/wrap_draft.py <file>                 # wrap a draft at ~100 chars
 python3 scripts/vrs.py <code> <ch>                   # Hebrew -> BSB verse mapping of a chapter
 python3 scripts/clause_sidecar.py <draft> <orig/heb file> <BOOK> --out DIR --index-dir DIR

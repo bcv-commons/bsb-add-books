@@ -2,7 +2,7 @@
 
 85 chapters: **85 draft**, 0 in review, 0 published.
 
-> **Draft.** Translated with AI agents directly from the Hebrew and Greek, with the BSB as the only assisting translation; not yet reviewed or approved by a language team. Not for use as published Scripture. Public domain (CC0).
+> **Entwurf.** Mit KI-Agenten direkt aus dem Hebräischen und Griechischen übersetzt, mit der Berean Standard Bible (BSB) als einziger Hilfsübersetzung; noch nicht von einem Sprachteam geprüft oder freigegeben. Nicht zur Verwendung als veröffentlichter Bibeltext. Gemeinfrei (CC0).
 
 | Book | Chapters | Status | Existing edition |
 |---|---|---|---|

@@ -103,7 +103,7 @@ def write_status_md(pname, pdir, p):
     n = {s: sum(1 for _, _, r in rows if r["status"] == s) for s in STATUSES}
     L = [f"# Status: {p.get('language_name') or pname}", "",
          f"{len(rows)} chapters: **{n['draft']} draft**, {n['in-review']} in review, {n['published']} published.", "",
-         "> " + re.sub(r"^(Draft\.)", r"**\1**", draft_st), "",
+         "> " + re.sub(r"^([^\s.]+\.)", r"**\1**", draft_st), "",
          "| Book | Chapters | Status | Existing edition |", "|---|---|---|---|"]
     files = chapter_files(pdir)
     Q = None

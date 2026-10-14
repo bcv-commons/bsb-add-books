@@ -66,3 +66,13 @@ rules:
 
 # Free-text addition to the style section of the prompt.
 style_notes: "Synoptic and other parallels in the style corpus may be used for vocabulary only, never copied."
+
+# Shown with every draft (STATUS.md, the website) and recorded when a chapter is published (scripts/status.py);
+# in Standard German, the project's school language
+draft_statement: >-
+  Entwurf. Mit KI-Agenten direkt aus dem Hebräischen und Griechischen übersetzt, mit der Berean Standard Bible (BSB)
+  als einziger Hilfsübersetzung; noch nicht von einem Sprachteam geprüft oder freigegeben. Nicht zur Verwendung als
+  veröffentlichter Bibeltext. Gemeinfrei (CC0).
+publish_statement: >-
+  Veröffentlicht am {date} von {by}, nach Prüfung durch das Sprachteam. Mit KI-Agenten direkt aus dem Hebräischen
+  und Griechischen erarbeitet und vom Team überarbeitet. Gemeinfrei (CC0).

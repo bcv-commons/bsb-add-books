@@ -87,3 +87,12 @@ rules:
 
 # Free-text addition to the style section of the prompt.
 style_notes: "Den Frie Bibel is the edition these drafts continue: wherever the chapter has parallels already translated there (same names, formulas, parallel passages), reuse their wording. Read its house style for the same genre, e.g. `jdg004.txt` for narrative with dialogue, the psalms (`psa…`) for poetry, and `exo001.txt` for the density of notes."
+
+# Shown with every draft (STATUS.md, the website) and recorded when a chapter is published (scripts/status.py)
+draft_statement: >-
+  Udkast. Oversat med AI-agenter direkte fra hebraisk og græsk, med Berean Standard Bible (BSB) som eneste
+  hjælpeoversættelse; endnu ikke gennemset eller godkendt af et sprogteam. Ikke til brug som udgivet bibeltekst.
+  Fri af ophavsret (CC0).
+publish_statement: >-
+  Udgivet {date} af {by} efter gennemsyn af sprogteamet. Udarbejdet med AI-agenter direkte fra hebraisk og græsk og
+  bearbejdet af teamet. Fri af ophavsret (CC0).

@@ -39,6 +39,11 @@ export/**/wiki-view.html
 
 # Local only (CLAUDE.local.md holds this working copy's private state)
 CLAUDE.local.md
+internal-docs/
+# the built website and the worktree of the `site` branch (scripts/build_site.py, scripts/deploy_site.py)
+build/
+.site/
+.netlify/
 scratch/
 __pycache__/
 .DS_Store
