@@ -1,0 +1,11 @@
+# The `site` branch is the finished site (scripts/build_site.py, staged by scripts/deploy_site.py on the
+# maintainer's machine): Netlify builds nothing and publishes the branch as it is.
+[build]
+  command = ""
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

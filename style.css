@@ -1,0 +1,28 @@
+:root { --bg:#fbfaf7; --panel:#ffffff; --ink:#1f2328; --muted:#646b73; --line:#e2ded6; --accent:#2f5d8a;
+  --accent-soft:#e8eff6; --q:#fff4dc; --q-line:#d9a640; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#16181b; --panel:#1e2125; --ink:#e4e6e8;
+  --muted:#9aa1a8; --line:#33373c; --accent:#8fb8e0; --accent-soft:#24303c; --q:#3a3120; --q-line:#c99a3a; } }
+:root[data-theme="dark"] { --bg:#16181b; --panel:#1e2125; --ink:#e4e6e8; --muted:#9aa1a8; --line:#33373c;
+  --accent:#8fb8e0; --accent-soft:#24303c; --q:#3a3120; --q-line:#c99a3a; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif; }
+header { background:var(--panel); border-bottom:1px solid var(--line); padding:10px 16px; display:flex; flex-wrap:wrap;
+  gap:6px 18px; align-items:baseline; }
+header .site { font-weight:600; color:var(--ink); text-decoration:none; }
+header nav { display:flex; flex-wrap:wrap; gap:4px; }
+header nav a { padding:4px 10px; border:1px solid var(--line); border-radius:6px; color:var(--ink); text-decoration:none; font-size:14px; }
+header nav a.on { background:var(--accent-soft); border-color:var(--accent); color:var(--accent); }
+main { max-width:960px; margin:0 auto; padding:18px 16px 40px; }
+h1 { font-size:24px; margin:8px 0 12px; } h2 { font-size:19px; margin:26px 0 8px; }
+a { color:var(--accent); }
+.banner { background:var(--q); border-left:4px solid var(--q-line); padding:10px 14px; border-radius:4px; margin:12px 0 18px; }
+table { border-collapse:collapse; width:100%; display:block; overflow-x:auto; font-size:15px; }
+th, td { border-bottom:1px solid var(--line); padding:6px 10px; text-align:left; vertical-align:top; }
+th { color:var(--muted); font-weight:600; }
+blockquote { margin:12px 0; padding:8px 14px; background:var(--q); border-left:4px solid var(--q-line); border-radius:4px; }
+.cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:14px; padding:0; list-style:none; }
+.cards li { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:14px 16px; }
+.cards h2 { margin:0 0 4px; font-size:18px; } .cards h2 a { text-decoration:none; }
+.muted { color:var(--muted); font-size:14px; }
+footer { max-width:960px; margin:0 auto; padding:0 16px 30px; color:var(--muted); font-size:13px; }
+code { font-size:90%; } .path { font-family:ui-monospace,monospace; font-size:90%; }
