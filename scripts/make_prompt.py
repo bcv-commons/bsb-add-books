@@ -188,6 +188,8 @@ def main():
                     "use it; where a flag doesn't fit a verse, leave it. Check each word form it finds nowhere in the corpus. "
                     "Run it once more at the end." if style_check else ""),
     )
+    import full_align
+    fields["align_step"] = "" if nt else "\n" + full_align.step(pname, code, chapter)
     template = open(os.path.join(ROOT, "docs", "prompts", "chapter_prompt.md"), encoding="utf-8").read()
     body = template.split("\n---\n", 1)[1]
     text = body.format(**fields)

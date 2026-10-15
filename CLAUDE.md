@@ -126,7 +126,7 @@ python3 scripts/build_heb_bhsa.py [--tf DIR] [--out DIR] [code ...] # BHSA 2021 
 python3 scripts/relayout.py <draft> --from <layout> --to <layout> # move a clause-line draft between layouts
 python3 scripts/clause_lines.py check <project> [<code> <ch>] | show <project> <code> <ch> # the site's clause lines, derived from .align
 python3 scripts/bridge_align.py <project> <code> <ch> | --all # word alignment (.align) by script, no model
-python3 scripts/full_align.py check|export <project>  # .align files in the bcv-commons format; export = the HF layer (build/align/)
+python3 scripts/full_align.py listing|prompt <project> <code> <ch> | check <project> [<code> [<ch>]] | export <project> # .align (bcv-commons format): the agent's sheet and prompt, checks, the HF layer
 python3 scripts/macula_to_tf.py <delivery dir>       # draft Text-Fabric dataset (needs text-fabric)
 ```
 

@@ -24,8 +24,14 @@ The published layer, one file set per book, as on Hugging Face (`export` below):
   <hash> = the last 5 hex characters of compact-alignments' book_content_hash: sha256 of "{c}:{v}:{text}" lines
   (translatable text only, ascending verses, joined by "\\n").
 
-    python3 scripts/full_align.py check <project> [code]      the working files: stale, out of range, coverage
-    python3 scripts/full_align.py export <project> [--out DIR] the layer (default build/align/)
+    python3 scripts/full_align.py listing <project> <code> <ch>  numbered Hebrew and draft tokens per verse, for the agent
+                                                                 that aligns (writes the script's proposal first if needed)
+    python3 scripts/full_align.py prompt <project> <code> <ch>   a fresh agent's prompt to align an existing chapter
+    python3 scripts/full_align.py check <project> [<code> [<ch>]] the working files: stale, out of range, coverage
+    python3 scripts/full_align.py export <project> [--out DIR]   the layer (default build/align/)
+
+The agent's step (STEP below, in every OT chapter prompt): run `listing`, correct the chapter's .align line by line
+from it, mark each verse it checked with profile b, then `check`.
 """
 import hashlib, json, os, re, sys, unicodedata, urllib.request
 
@@ -158,22 +164,22 @@ def draft_texts(path):
     return [(v, verse_text(raw)) for v, raw, _ in BA.draft_verses(path)[2]]
 
 
-def chapters(pname, only=None):
+def chapters(pname, only=None, ch=None):
     d = os.path.join(ROOT, "export", pname)
     for code in BY_CODE:
         if BY_CODE[code][2] != "ot" or (only and code != only) or not os.path.isdir(os.path.join(d, code)):
             continue
         for f in sorted(os.listdir(os.path.join(d, code))):
             m = re.fullmatch(rf"{code}(\d{{3}})\.txt", f)
-            if m:
+            if m and (ch is None or int(m[1]) == ch):
                 yield code, int(m[1]), os.path.join(d, code, f), os.path.join(d, code, f"{code}{m[1]}.align")
 
 
-def check(pname, only=None, quiet=False):
+def check(pname, only=None, quiet=False, ch=None):
     """Problems (an ordinal or a position out of range) and warnings (a chapter without alignment, or stale: the
     draft changed since; rerun scripts/bridge_align.py or the agent's alignment step)."""
     problems, warns, tot = [], [], {"c": [0, 0], "f": [0, 0], "t": [0, 0]}
-    for code, ch, draft, ap in chapters(pname, only):
+    for code, ch, draft, ap in chapters(pname, only, ch):
         name = os.path.relpath(ap, ROOT)
         if not os.path.exists(ap):
             warns.append(f"{name}: missing")
@@ -187,6 +193,8 @@ def check(pname, only=None, quiet=False):
         for v, t in verses:
             ref = f"{book} {ch}:{v}"
             ntok = len(tokenize(t))
+            if v not in rows:
+                problems.append(f"{name}: {ref}: no line for this verse")
             m, f, _ = rows.get(v, ("", "", "a"))
             M, F = parse(m), parse(f)
             nc, nf = len(index(book, "keys").get(ref, [])), len(index(book, "fn_keys").get(ref, []))
@@ -208,6 +216,86 @@ def check(pname, only=None, quiet=False):
         for p in problems[:30] + [f"warn {w}" for w in warns[:30]]:
             print("  " + p)
     return problems
+
+
+POINTS = re.compile(r"[\u0591-\u05AF\u05BD\u05C0\u05C3-\u05C6]")  # accents and marks; vowels and dagesh stay
+
+
+def listing(pname, code, ch):
+    """The aligning agent's sheet: per verse the Hebrew tokens in order with their ordinals (cN content, fN function),
+    lemma gloss; the draft's tokens numbered; the current .align line."""
+    import bridge_align as BA, align as AL
+    draft = os.path.join(ROOT, "export", pname, code, f"{code}{ch:03d}.txt")
+    ap = draft[:-4] + ".align"
+    verses = BA.draft_verses(draft)[2]
+    texts = [(v, verse_text(raw)) for v, raw, _ in verses]
+    if not os.path.exists(ap) or read_chapter(ap)[0] != text_hash(ch, texts):
+        BA.build(pname, code, ch)  # the script's proposal (profile a), on the current draft
+    _, rows = read_chapter(ap)
+    book = code.upper()
+    sc = AL.scaffold(code, ch)["tokens"]
+    by_key = {t["key"]: t for t in sc}
+    out = [f"# {book} {ch}: alignment sheet for {os.path.relpath(ap, ROOT)} (scripts/full_align.py; numbers as in the file)",
+           "# he: Hebrew tokens in order, cN = content ordinal (main column), fN = function ordinal (fn column), with a gloss",
+           "# dr: the draft's tokens, numbered; now: the file's line (main | fn | profile)"]
+    for v, t in texts:
+        ref = f"{book} {ch}:{v}"
+        lab = {}
+        for kind, c in (("keys", "c"), ("fn_keys", "f")):
+            for o, k in enumerate(index(book, kind).get(ref, [])):
+                parts = k.split("+") if k else []
+                if parts:
+                    lab[parts[0]] = (f"{c}{o}", parts)
+        he = []
+        for k in sorted(lab):
+            name, parts = lab[k]
+            word = "+".join(POINTS.sub("", by_key.get(x, {}).get("text", "")) for x in parts) or "?"  # + = one token over two words
+            gl = (by_key.get(parts[0], {}).get("gloss") or "").replace(" ", "_")
+            he.append(f"{name} {word} {gl}".rstrip())
+        m, f, p = rows.get(v, ("", "", "a"))
+        out += [f"v{v}", " he: " + " · ".join(he), " dr: " + " ".join(f"{i} {w}" for i, w in enumerate(tokenize(t))),
+                f" now: {m} | {f} | {p}"]
+    return "\n".join(out)
+
+
+STEP = """- **Word alignment** (last step, after the checks, when the draft text is final): run
+  `python3 scripts/full_align.py listing {project} {code} {chapter}`. It writes a first alignment by script into
+  `export/{project}/{code}/{code}{nnn}.align` and prints a sheet: per verse the Hebrew tokens (`cN` content, `fN`
+  function words: prefixes, article, object marker, suffixes) and your draft's words, numbered. Correct the file
+  line by line; each line is `verse<TAB>main<TAB>fn<TAB>profile`:
+  - main: `cN` links as `N:span` (`0:3` = c0 is draft word 3; `5:7-8` contiguous; `4:2,6` scattered), ascending N;
+  - fn: the same for `fN`;
+  - every draft word that renders a Hebrew token goes in that token's span, function words included (»and« with
+    וַ, »in« with בְּ, a pronoun with its suffix); a draft word with no Hebrew token of its own (added for
+    grammar) goes into the span of the content word it belongs to; a Hebrew token with no draft word is left out;
+    one draft word rendering two tokens is listed under both;
+  - set the profile to `b` on every verse you have checked, changed or not.
+  Keep the lines short: numbers only, no words, no comments. Then run
+  `python3 scripts/full_align.py check {project} {code} {chapter}` until it says ok. Don't change the draft after
+  this step (the file would no longer match it); if you must, run `listing` again and redo the changed verses."""
+
+
+ALONE = """Work in {root}. The draft `export/{project}/{code}/{code}{nnn}.txt` ({language}) is final; your only task is
+its word alignment to the Hebrew. Don't change the draft or any other file than the .align. The Hebrew of the
+chapter is `orig/heb/{code}{nnn}.txt` if you need context; don't open other translations, `import/`, `download/`
+or `scratch/`.
+
+{step}
+
+Report in under 60 words: verses changed from the script's proposal (about how many), anything hard to align."""
+
+
+def prompt(pname, code, ch):
+    """A prompt for a fresh agent that aligns an existing chapter (one whose drafting agent left no alignment)."""
+    from project import project
+    p = project(pname)
+    return ALONE.format(root=ROOT, project=pname, code=code, nnn=f"{ch:03d}", language=p.get("language_name"),
+                        step=step(pname, code, ch).replace("- **Word alignment** (last step, after the checks, when the "
+                                                           "draft text is final): run", "Run").replace("your draft's", "the draft's"))
+
+
+def step(pname, code, ch):
+    return STEP.format(project=pname, code=code, chapter=ch, nnn=f"{ch:03d}")
 
 
 def iso_and_edition(pname):
@@ -266,10 +354,16 @@ def export(pname, out=None):
 
 def main():
     a = sys.argv[1:]
-    if len(a) < 2 or a[0] not in ("check", "export"):
+    if len(a) < 2 or a[0] not in ("check", "export", "listing", "prompt"):
         raise SystemExit(__doc__)
+    if a[0] == "prompt":
+        print(prompt(a[1], a[2], int(a[3])))
+        return
+    if a[0] == "listing":
+        print(listing(a[1], a[2], int(a[3])))
+        return
     if a[0] == "check":
-        sys.exit(1 if check(a[1], a[2] if len(a) > 2 and not a[2].startswith("-") else None) else 0)
+        sys.exit(1 if check(a[1], a[2] if len(a) > 2 else None, ch=int(a[3]) if len(a) > 3 else None) else 0)
     export(a[1], os.path.join(ROOT, a[a.index("--out") + 1]) if "--out" in a else None)
 
 

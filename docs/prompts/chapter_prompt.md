@@ -46,6 +46,6 @@ Where your source repeats a phrase that an earlier chapter already rendered, reu
 
 **Finally:**
 - Run `python3 scripts/wrap_draft.py export/{project}/{code}/{code}{nnn}.txt`.{style_step}
-- Run `python3 scripts/check_draft.py {project} {code}` and fix every problem reported for your chapter.{numbering_note}
+- Run `python3 scripts/check_draft.py {project} {code}` and fix every problem reported for your chapter.{numbering_note}{align_step}
 
 Write only your chapter's files. Report in under 150 words: verse check, {report_items}, new name forms or fixed renderings, top open questions.

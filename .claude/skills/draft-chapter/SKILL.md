@@ -42,6 +42,11 @@ The full way of working is `docs/workflow.md`; this is the procedure.
    - `python3 scripts/wrap_draft.py export/<project>/<code>/<code>NNN.txt` if lines are long;
    - OT chapters whose verses fall into other BSB chapters are reported as information: the
      draft keeps the Hebrew numbering.
+   - OT chapters: the agent's last step is the word alignment (`<code>NNN.align`, the bcv-commons format, profile `b`
+     on the verses it checked); `python3 scripts/full_align.py check <project> <code> <chapter>` must say ok. The
+     website's clause views are built from it. An existing chapter without one: `python3 scripts/bridge_align.py`
+     (script, profile `a`), then optionally `python3 scripts/full_align.py prompt <project> <code> <chapter>` for a
+     fresh agent that checks it.
    - The prompt already makes the agent keep to the quotation rules (`docs/licensing.md`) and check its
      own files; at the end of the wave run `python3 scripts/check_project.py <project>` (drafts, store,
      wiki, quotations, status) as the double check, and fix the cause in the prompt or the rules when
