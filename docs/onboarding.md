@@ -114,6 +114,12 @@ every prompt, `CREDITS.md`, and which generated files stay local (`docs/licensin
    - for `unknown`, follow the `learn-language` skill instead (a test chapter first, a held-out book,
      the curation step);
    - `python3 scripts/wiki.py view <project>` gives the team a page to read it; they correct it in the wiki.
+   - for a known or partly known language, `python3 scripts/priors.py write <project>` (the wizard's step after the
+     probes) has the model write down what it believes about the language's grammar: word-forming affixes,
+     inflection with the grammatical value each marks, function words. `lang.py derive` leaves the word-forming affixes
+     out of its hypotheses, and `priors.py check` tests every item against the corpus; for a partial language it shows
+     where the standard language or another dialect leaks in (Bern German: the model's *dr*, *wüu*, *u* for "and" are
+     absent from Bietenhard, who writes *der*, *wil*, *und*).
 5. **Draft**: a reference chapter first, reviewed with the team; then waves (`draft-chapter` skill). Per
    chapter the pack (`verse_pack.py`, level by the mode), for the OT the clause packages (`package.py`: per Hebrew
    clause line the tokens with their numbers, the BSB words, the project's earlier renderings, and for an unknown

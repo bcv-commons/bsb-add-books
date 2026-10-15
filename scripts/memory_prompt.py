@@ -123,7 +123,11 @@ def main():
             f"- **The occurrence index:** `python3 scripts/lang.py hbo {pname} <Hebrew Strong's, e.g. H2617>` shows how "
             "the NT renders a Hebrew word through the Septuagint (its Greek equivalents, the target words with counts, "
             f"example verses); `python3 scripts/lang.py grc {pname} <Greek Strong's>` the same for one Greek lemma. Use "
-            "them for the term base: the OT concepts the drafts will need.")
+            "them for the term base: the OT concepts the drafts will need.\n"
+            f"- **The priors** `export/{pname}/profile/priors.yaml` (if the report ends with them): what the model believed "
+            "about the language before the corpus was studied, each item checked against the corpus (confirmed, weak, "
+            "not found, ABSENT). Correct the file where the corpus contradicts it (change the item, add `source: corpus` "
+            "and the evidence), and don't carry an unconfirmed prior into the store.")
     out = text.format(
         store_dir=store_dir, wiki_dir=wiki_dir, derived_lines=derived_lines,
         example_line=("" if pname == "kvg/kvg_BSB" else " A worked example of a finished memory, for its form only: "

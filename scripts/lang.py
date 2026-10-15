@@ -194,6 +194,28 @@ GREEK_LATIN = dict(zip("αβγδεζηθικλμνξοπρστυφχψως", ["a
                                                      "x", "o", "p", "r", "s", "t", "u", "f", "ch", "ps", "o", "s"]))
 
 
+def merge_fragments(rows, counts, share=0.8):
+    """One real affix shows up as nested candidates (-sch, -h; gsch-, gsc-, gc-). When a candidate makes up most
+    (≥ share) of the cases of its one-letter-shorter form, that shorter form is only its tail and goes. Measured
+    (internal-docs plan, section 25): at 0.8 Kuni keeps all 20 affixes its study agents confirmed and Bern German its 7
+    known ones; dropping longer 'subset' candidates as well (-get of -et) cost Kuni -av, ge-, vø-, -gi (real affixes
+    whose one-letter tails are meaningless), so subsets stay for the agent to judge."""
+    best = {}
+    for a, f, v, n, rate, lift in rows:
+        best[a] = max(best.get(a, 0), lift)
+    drop = set()
+
+    def shorter(a):
+        if a.startswith("-"):
+            return "-" + a[2:] if len(a) > 2 else None
+        return a[:-2] + "-" if len(a) > 2 else None
+    for a in sorted(best, key=len, reverse=True):
+        s = shorter(a)
+        if s and s in best and a not in drop and counts[a] >= share * counts[s]:
+            drop.add(s)
+    return [r for r in rows if r[0] not in drop]
+
+
 def context(t):
     if t["class"] == "verb":
         return ".".join(x for x in (t["tense"], t["voice"], t["mood"], (t["person"] or "")[:1] + (t["number"] or "")[:1]) if x)
@@ -272,12 +294,15 @@ def derive(pname, quiet=False):
         if r["degree"]:
             out.add(("degree", r["degree"]))
         if r["class"] == "verb":
-            out.add(("negated", "yes" if r["clause"] in neg_clause else "no"))
+            if r["clause"] in neg_clause:  # only the marked value: "not negated" is every other verb and says nothing
+                out.add(("negated", "yes"))
             if r["clause"] in obj_of:
                 out.add(("object", obj_of[r["clause"]]))
             if r["key"] in subj_gender:
                 out.add(("subject_gender", subj_gender[r["key"]]))
         return out
+    import priors
+    prior_affixes = priors.inflection_affixes(pname)  # tested as themselves, whatever their length (-schte)
     base, joint, cnt_aff = collections.Counter(), collections.Counter(), collections.Counter()
     words_of = collections.defaultdict(collections.Counter)  # an affix only if it occurs on several different words,
     # and not mostly on one of them (nøfuap, ndigu, nøten: a frequent word's ending is not an affix)
@@ -288,7 +313,9 @@ def derive(pname, quiet=False):
         total += 1
         f_ = fold(r["form"])
         affs = {f_} if f_.startswith("-") else ({"-" + f_[-k:] for k in (1, 2, 3) if len(f_) > k + 1}
-                                               | {f_[:k] + "-" for k in (1, 2, 3, 4) if len(f_) > k + 2})
+                                               | {f_[:k] + "-" for k in (1, 2, 3, 4) if len(f_) > k + 2}
+                                               | {a for a in prior_affixes if len(f_) > len(a) and (
+                                                   f_.endswith(a[1:]) if a.startswith("-") else f_.startswith(a[:-1]))})
         fv = features(r)
         for fvv in fv:
             base[fvv] += 1
@@ -308,6 +335,14 @@ def derive(pname, quiet=False):
             lift = rate / (cnt_aff[a_] / total)
             if lift >= 1.5:
                 out.append((a_, f, val, n, rate, lift))
+    out = merge_fragments(out, cnt_aff)
+    # word-forming affixes named in profile/priors.yaml carry no grammar: not hypotheses
+    wf = priors.word_forming(pname)
+    # ...unless the priors also list it as inflection, or the statistics tie it strongly to a grammatical value (lift
+    # ≥ 5): then it stays, and the priors check reports the contradiction (the model listed Bern German -i as word-forming)
+    strong = {r[0] for r in out if r[5] >= 5}
+    keep = priors.inflection_affixes(pname) | strong
+    out = [r for r in out if r[0] not in wf or r[0] in keep]
     con.executemany("insert into d_affix values(?,?,?,?,?,?)", out)
     # 3b. tone and other marks: each combining mark on a verb against the same features, and the last word of a verse
     #     against a Greek question mark (;) ending the verse
@@ -526,6 +561,10 @@ def report(pname, top=8):
     print(f"\n## Gaps: frequent Hebrew content words the NT hardly has ({con.execute('select count(*) from d_gaps').fetchone()[0]})")
     print("  " + ", ".join(f"{g} ({l}) ×{n}" for l, g, n in con.execute(
         "select lemma, gloss, ot_n from d_gaps order by ot_n desc limit 25")))
+    import priors
+    if priors.load(pname):
+        print()
+        priors.check(pname)
 
 
 def stats(pname):

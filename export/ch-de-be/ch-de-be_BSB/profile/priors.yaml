@@ -1,0 +1,188 @@
+# Priors: what was believed about the language before its corpus was studied (scripts/priors.py).
+# Each item is a hypothesis; `python3 scripts/priors.py check` tests it against the corpus. The team may
+# correct or add items (mark them `source: team`); a speaker's entry outranks the model's.
+source: 'model knowledge (claude-code, 2026-10-15): hypotheses until the corpus or the team confirms them'
+language: Bern German (Berndeutsch)
+word_forming_prefixes:
+- un-
+- ver-
+- be-
+- er-
+- ent-
+- zer-
+- ab-
+- uf-
+- us-
+- y-
+- mit-
+- vor-
+- aa-
+- use-
+- ume-
+word_forming_suffixes:
+- -li
+- -ig
+- -lech
+- -heit
+- -keit
+- -schaft
+- -er
+- -i
+- -los
+- -bar
+- -isch
+- -ere
+- -tum
+- -in
+- -u
+inflection:
+- affix: -e
+  expect: mood=infinitive
+  note: 'infinitive ending: mache, säge, ga/gah and cho are short irregular infinitives'
+  confidence: high
+- affix: -e
+  expect: person+number=fs
+  note: '1sg present: i mache; same ending as the plural forms'
+  confidence: medium
+- affix: -sch
+  expect: person+number=ss
+  note: '2sg present: du machsch, du hesch, du bisch'
+  confidence: high
+- affix: -t
+  expect: person+number=ts
+  note: '3sg present: är macht, si seit'
+  confidence: high
+- affix: -e
+  expect: person+number=fp
+  note: '1pl present: mir mache'
+  confidence: medium
+- affix: -et
+  expect: person+number=sp
+  note: '2pl present: dir machet; also the polite address form (Ihrzen with Dir)'
+  confidence: high
+- affix: -e
+  expect: person+number=tp
+  note: '3pl present: si mache'
+  confidence: medium
+- affix: -et
+  expect: person+number+mood=sp.imperative
+  note: 'plural/polite imperative: machet! loset!'
+  confidence: medium
+- affix: g-
+  expect: tense+mood=perfect.participle
+  note: 'participle prefix, reduced from ge-: gmacht, gseit, gä, gno; often merges or drops before stops (cho, bracht)'
+  confidence: high
+- affix: -t
+  expect: tense+mood=perfect.participle
+  note: 'weak participle ending with g-: gmacht, gläbt'
+  confidence: medium
+- affix: -e
+  expect: tense+mood=perfect.participle
+  note: 'strong participle ending with g-: gfunde, gschribe'
+  confidence: medium
+- affix: -i
+  expect: mood=subjunctive
+  note: 'subjunctive II on some verbs: i wäri, i hätti, i chönnti; else würd + infinitive'
+  confidence: low
+- affix: -ig
+  expect: mood=subjunctive
+  note: 'subjunctive I in reported speech: är syg / sig, är heig'
+  confidence: low
+- affix: -er
+  expect: degree=comparative
+  note: grösser, nöcher
+  confidence: high
+- affix: -schte
+  expect: degree=superlative
+  note: am gröschte, dr liebschte
+  confidence: medium
+- affix: -e
+  expect: number=plural
+  note: a common noun plural ending, but many plurals equal the singular or show only umlaut
+  confidence: low
+- affix: -ne
+  expect: object=3s
+  note: 'enclitic masculine object pronoun: i ha ne gseh'
+  confidence: medium
+- affix: -mer
+  expect: person+number=fp
+  note: 'enclitic subject pronoun after the verb: hei mer, gö mer'
+  confidence: low
+function_words:
+  articles:
+  - dr
+  - d
+  - di
+  - ds
+  - em
+  - de
+  - e
+  - es
+  - en
+  - ere
+  - emne
+  pronouns:
+  - i
+  - du
+  - är
+  - si
+  - es
+  - mir
+  - dir
+  - mi
+  - di
+  - ne
+  - üs
+  - öich
+  prepositions:
+  - i
+  - uf
+  - us
+  - mit
+  - vo
+  - zue
+  - für
+  - bi
+  - nach
+  - gäge
+  - ohni
+  - under
+  conjunctions:
+  - u
+  - oder
+  - aber
+  - dass
+  - we
+  - wüu
+  - wo
+  - sondern
+  - denn
+  - ob
+  - wie
+  - bis
+  negation:
+  - nid
+  - nüt
+  - kei
+  - ke
+  - nie
+  - niemer
+notes:
+- Verb-second in main clauses and verb-final in subordinate clauses, as in Standard German; verb clusters often
+  reverse order (dass er het chönne cho).
+- 'There is no simple past: narrative past uses the perfect (är isch cho, är het gseit), so Greek aorist and imperfect
+  both appear as ha/sy + participle; the pluperfect is a double perfect (het gha gseit).'
+- The future is usually the present tense, sometimes wird + infinitive.
+- 'The genitive is almost absent: use vo + dative or a possessive dative (em Vater sys Huus).'
+- 'L-vocalization is typical of Bern: l before a consonant or at word end becomes u (Wäut ''Welt'', aut ''alt'',
+  vüu ''viel''). Some speakers also velarize nd to ng (hinger ''hinter'', angere ''andere''; Chind vs. Ching varies).'
+- 'Spelling is Dieth-like: y = long i (Zyt, sy), ie/ue/üe are diphthongs (lieb, guet, füess), ou/öi correspond to
+  Standard au/äu (Frou, Böim), ch- corresponds to initial k (Chind, cho, chönne).'
+- Polite address is Ihrzen with Dir + 2pl verb (Dir syt), and the same form can be used to address God or Jesus
+  in some translations.
+- Relative clauses use the invariable particle wo (dr Ma, wo das gseit het), with a resumptive pronoun in oblique
+  cases.
+- Pronouns cliticize heavily (hesch es → hesch's, gö mer, i ha ne); the doubling verbs ga/cho add an extra particle
+  before an infinitive (är geit ga bätte, chunnt cho luege).
+- The diminutive -li (often -eli) is productive and neuter (Chindli, Schäfli); the abstract suffix -ig corresponds
+  to Standard -ung (Zytig, Rettig).

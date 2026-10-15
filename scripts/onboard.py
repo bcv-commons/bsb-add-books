@@ -401,6 +401,10 @@ def main():
         fields["close_to"] = ask("close_to", "It reads the language well: which related language does it know (empty: none)?",
                                  "") or None
     write_project(pdir, fields, books, overlap)
+    if fam in ("known", "partial") and route and ask(
+            "write_priors", f"Write down what the model believes about {name}'s grammar (profile/priors.yaml: about 10k "
+            "tokens; the derived products test each item against the corpus later, and the team can correct it)?", True):
+        run("scripts/priors.py", "write", pname, "--route", route)
 
     say(f"\n== 7. Tools for '{fam}'")
     if not tools_step(pname, fam):

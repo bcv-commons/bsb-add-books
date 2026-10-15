@@ -102,6 +102,7 @@ python3 scripts/fetch_edition.py <edition> | --all  # fetch an edition by its re
 python3 scripts/project.py <project> [code]          # resolved sources for a project
 python3 scripts/modes.py <project>                   # the project's mode (familiarity x licence) and what it switches on
 python3 scripts/probe_language.py <project> run | write|read|tell [--score F] # how well the model knows the language (sets familiarity)
+python3 scripts/priors.py write|check <project>     # what the model believes about the language (profile/priors.yaml), tested against the corpus
 python3 scripts/usage.py <project> add <code><nnn> --tokens N | summary # tokens per chapter, by familiarity
 python3 scripts/memory_prompt.py <project>           # prompt for an agent that builds the store and wiki, by mode
 python3 scripts/make_prompt.py <project> <code> <ch> [--end-align] # chapter prompt for a fresh agent (OT: tagged drafting)
