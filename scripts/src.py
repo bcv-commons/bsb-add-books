@@ -36,6 +36,9 @@ our two Greek texts to MACULA's keys: map(edition, book, ch, v, pos, key, how) f
 orig/grc-rp (RP 2018, the MSB's); how = same | spelling | moved, a variant token has no row.
 
     python3 scripts/src.py build [code ...]          build or update (default: every OT book; NT codes -> Greek)
+    python3 scripts/src.py speakers                  who speaks where: Clear Bible's MACULA Quotation and Speaker Data
+                                                     (CC BY 4.0; with SIL Glyssen / FCBH character data, MIT), one span
+                                                     per quotation with its first and last MACULA word, via shoresh
     python3 scripts/src.py layouts [code ...]        (re)build the layout rows from the layouts on this machine
     python3 scripts/src.py export-open DIR           the publishable cache: no UBS columns, no BHSA (manifest.json)
     python3 scripts/src.py show <code> <ch>:<v>      one verse: tokens, numbers, clause, referents, LXX, BSB words
@@ -209,6 +212,56 @@ OPEN = {  # what the published cache leaves out: UBS data (SDBH, Louw-Nida; perm
 }
 
 
+def speakers():
+    """speakers(speaker, divine, start, stop, word_start, word_end, start_partial, end_partial, block_speaker,
+    speaker_basis, quote_type): one row per quotation, from shoresh (bcv-query). start/stop are verses in English
+    numbering (bbcccvvv); word_start/word_end MACULA word ids without their 'o' / 'n' (so they compare with the token
+    keys); *_partial: the span covers only part of that verse. Licence: CC BY 4.0 (Clear Bible) + MIT (Glyssen)."""
+    from concurrent.futures import ThreadPoolExecutor
+    import urllib.parse
+    base = "https://shoresh.qombi.com"
+    lst = json.load(urllib.request.urlopen(urllib.request.Request(f"{base}/speakers", headers=UA), timeout=300))["speakers"]
+
+    import time
+
+    def one(sp):
+        url = f"{base}/speaker/{urllib.parse.quote(sp['speaker'], safe='')}"  # names may contain '/'
+        for attempt in range(6):
+            try:
+                return sp, json.load(urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=300))
+            except Exception:
+                time.sleep(2 ** attempt)
+        return sp, None
+    with ThreadPoolExecutor(3) as ex:
+        got = list(ex.map(one, lst))
+    failed = [sp["speaker"] for sp, d in got if d is None]
+    # a group name with '/' (Zebah/Zalmunna) is unreachable as /speaker/<name>: the server reads %2F as a path
+    # separator (reported to bcv-query, 2026-10-15); those are skipped and listed, any other failure stops the update
+    slashed = [n for n in failed if "/" in n]
+    if len(failed) > len(slashed):
+        raise SystemExit(f"speakers: {len(failed)} of {len(lst)} could not be fetched (e.g. {failed[:3]}); nothing written")
+    got = [(sp, d) for sp, d in got if d]
+    con = sqlite3.connect(DB)
+    con.execute("drop table if exists speakers")
+    con.execute("""create table speakers(speaker text, divine int, start int, stop int, word_start text, word_end text,
+                   start_partial int, end_partial int, block_speaker text, speaker_basis text, quote_type text)""")
+    strip = lambda w: (w or "")[1:] if (w or "")[:1] in ("o", "n") else w
+    rows = [(sp["speaker"], int(bool(sp.get("divine"))), r["start_bbcccvvv"], r["end_bbcccvvv"], strip(r.get("word_start")),
+             strip(r.get("word_end")), int(bool(r.get("start_partial"))), int(bool(r.get("end_partial"))),
+             r.get("block_speaker"), r.get("speaker_basis"), r.get("quote_type")) for sp, d in got for r in d.get("ranges", [])]
+    con.executemany("insert into speakers values(?,?,?,?,?,?,?,?,?,?,?)", rows)
+    con.execute("create index if not exists speakers_range on speakers(start, stop)")
+    src = (got[0][1] or {}).get("source", {}) if got else {}
+    con.execute("insert or replace into meta values('speakers', ?)", (
+        f"{src.get('attribution', 'MACULA Quotation and Speaker Data, © 2023 Clear Bible, Inc')} ({src.get('license', 'CC-BY-4.0')}); "
+        "includes FCBH character data via SIL Glyssen (MIT), Copyright (c) 2014-2020 SIL LSDev and Faith Comes By Hearing; "
+        f"via shoresh /speakers, {len(lst)} speakers, fetched {__import__('datetime').date.today()}"
+        + (f"; not fetchable (a '/' in the name): {'; '.join(slashed)}" if slashed else ""),))
+    con.commit()
+    print(f"speakers: {len(lst) - len(slashed)} of {len(lst)} speakers, {len(rows)} quotations"
+          + (f"; {len(slashed)} group names with '/' skipped" if slashed else ""))
+
+
 def export_open(out):
     """The publishable cache (internal-docs plan, setup cache): heb-open.sqlite and grc-open.sqlite without the UBS
     columns and without any layout row, heb-bcv-query.sqlite with the bcv-query layout rows only (CC BY-SA, a file of
@@ -223,6 +276,7 @@ def export_open(out):
         shutil.copy(src, dst)
         con = sqlite3.connect(dst)
         con.execute(f"update tokens set {', '.join(c + '=null' for c in OPEN[lang]['null'])}")
+        # speakers stay (CC BY 4.0 + MIT, credited in meta 'speakers')
         if lang == "heb":
             lay = os.path.join(out, "heb-bcv-query.sqlite")
             if os.path.exists(lay):
@@ -537,6 +591,8 @@ def main():
                 layouts(con, c, ch)
             con.commit()
             print(f"{c}: layouts", flush=True)
+    elif a[0] == "speakers":
+        speakers()
     elif a[0] == "export-open":
         export_open(os.path.abspath(a[1]))
     elif a[0] == "show":

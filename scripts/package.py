@@ -5,7 +5,8 @@ its store, and, for a language learnt from its NT, the occurrence index (scripts
 tagged format's verse-local token numbers (scripts/full_align.py): the agent writes them after its words.
 
 Per clause line:
-    §<verse>.<line> L<level> <MACULA clause rule>
+    §<verse>.<line> L<level> <MACULA clause rule>  [speech: <speaker>]   the line is (in) a quotation by that speaker
+                                                    (Clear's MACULA Quotation and Speaker Data, CC BY 4.0)
      <n> <Hebrew> <gloss> [<morphology for verbs; the referent for pronouns and suffixes>] · ...
      BSB: the BSB words that render these tokens, each with its token numbers (word^n), gaps as …
      had: what this project already wrote for these lexemes (earlier chapters' .align), the store's decisions,
@@ -25,6 +26,7 @@ import full_align as FULL  # noqa: E402
 import langtools as LT  # noqa: E402
 import vrs  # noqa: E402
 from project import project  # noqa: E402
+from books import BY_CODE  # noqa: E402
 
 HEB = os.path.join(ROOT, "orig", "heb.sqlite")
 POINTS = re.compile(r"[֑-ֽ֯׀׃-׆]")
@@ -166,6 +168,17 @@ def build(pname, code, ch, level=None):
             continue
         ln = line_of.get(t["key"], (None, None))
         lines.setdefault((t["v"], ln[0]), []).append(t)
+    has_sp = con.execute("select count(*) from sqlite_master where name='speakers'").fetchone()[0]
+    booknum = list(BY_CODE).index(code) + 1
+    spans = []
+    if has_sp:  # the quotations touching this chapter (verses in English numbering, words as MACULA keys)
+        lo, hi = booknum * 1000000 + max(ch - 1, 0) * 1000, booknum * 1000000 + (ch + 2) * 1000
+        spans = con.execute("select speaker, word_start, word_end from speakers where stop >= ? and start <= ?", (lo, hi)).fetchall()
+
+    def speaking(group):
+        """Who speaks in this clause line: the quotations whose word span covers one of its tokens."""
+        who_ = [sp for sp, a, b in spans if a and b and any(a <= t["key"] <= b for t in group)]
+        return f"  [speech: {', '.join(dict.fromkeys(who_))}]" if who_ else ""
     seen_v, k = None, 0
     for (v, line), group in lines.items():
         cur_v = v
@@ -175,7 +188,7 @@ def build(pname, code, ch, level=None):
         k += 1
         lev = line_of.get(group[0]["key"], (None, None))[1]
         cl = con.execute("select rule from nodes where id=?", (group[0]["clause"] or group[-1]["clause"],)).fetchone()
-        out.append(f"§{v}.{k} L{'' if lev is None else lev} {cl['rule'] if cl and cl['rule'] else ''}".rstrip())
+        out.append((f"§{v}.{k} L{'' if lev is None else lev} {cl['rule'] if cl and cl['rule'] else ''}".rstrip()) + speaking(group))
         cells, seen_n = [], set()
         for t in group:
             if t["n"] in seen_n:  # a fused token: one number

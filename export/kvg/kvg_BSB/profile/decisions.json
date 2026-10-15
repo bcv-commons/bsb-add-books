@@ -11479,6 +11479,3926 @@
     "genesis"
    ],
    "note": "Proposed title after the book's first word: 'Ibugukhokhof' (In the beginning, Jhn 1:1), a description as the NT titles Acts. Question for the Kuni team."
+  },
+  {
+   "id": "term:H7307spirit",
+   "kind": "term",
+   "source": "H7307 (spirit)",
+   "value": "Nqova",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 6:19",
+     "form": "Nqova Mbomambaqape",
+     "n": 226
+    },
+    {
+     "ref": "1CO 2:4",
+     "form": "Mbumbukiam-ge Nqova",
+     "n": 55
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "spirit",
+    "my spirit",
+    "his spirit"
+   ],
+   "note": "BSB spirit: 286 of 312 verses have it (631 verses in all). From study run v2b (term:G4151), checked against the corpus."
+  },
+  {
+   "id": "term:H1697",
+   "kind": "term",
+   "source": "H1697 (word, message)",
+   "value": "manqat",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 1:19",
+     "form": "Mbumbukiam-qa Manqat",
+     "n": 394
+    },
+    {
+     "ref": "1CO 1:20",
+     "form": "Mbumbukiam-qa Manqat"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "word",
+    "words",
+    "message"
+   ],
+   "note": "BSB word/words/message: 299 of 318 verses have it (3441 verses in all). From study run v2b (term:G3056), checked against the corpus."
+  },
+  {
+   "id": "term:H1004",
+   "kind": "term",
+   "source": "H1004 (house, household)",
+   "value": "khoev",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 16:19",
+     "form": "khoev",
+     "n": 678
+    },
+    {
+     "ref": "1PE 2:5",
+     "form": "khoev"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "house",
+    "home",
+    "household"
+   ],
+   "note": "BSB house/home/household: 172 of 213 verses have it (567 verses in all). From study run v2b (term:G3624), checked against the corpus."
+  },
+  {
+   "id": "term:H1121",
+   "kind": "term",
+   "source": "H1121 (son of a father)",
+   "value": "yo",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1JN 1:7",
+     "form": "Mbumbukiam-ge Yo",
+     "n": 46
+    },
+    {
+     "ref": "1CO 1:9",
+     "form": "tege yo",
+     "n": 24
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "son of",
+    "his son",
+    "sons of"
+   ],
+   "note": "BSB son/sons: 274 of 391 verses have it (689 verses in all). 'X's son' = <X>-ge yo (formula:x_son_of_y.h); a newborn or child is nakhasam (term:child), sons as children nakhei angana (term:H1121pl). From study run v2b (term:G5207), checked against the corpus."
+  },
+  {
+   "id": "term:H1",
+   "kind": "term",
+   "source": "H1 (father)",
+   "value": "tat",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 1:4",
+     "form": "noge Tat",
+     "n": 37
+    },
+    {
+     "ref": "1CO 1:3",
+     "form": "nigi Tat",
+     "n": 32
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "father"
+   ],
+   "alternatives": [
+    {
+     "value": "eve",
+     "n": 79
+    }
+   ],
+   "note": "BSB father: 191 of 348 verses have it (685 verses in all). Plural fathers / forefathers: tat-za (feature plural); father and mother = zøvøndipakha (term:parents). From study run v2b (term:G3962), checked against the corpus."
+  },
+  {
+   "id": "term:H802woman",
+   "kind": "term",
+   "source": "H802 (woman)",
+   "value": "sævam",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 7:2",
+     "form": "Sævam",
+     "n": 220
+    },
+    {
+     "ref": "1CO 7:13",
+     "form": "Sævam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "woman",
+    "women"
+   ],
+   "alternatives": [
+    {
+     "value": "zas",
+     "n": 29,
+     "note": "wife"
+    }
+   ],
+   "note": "BSB woman/women: 93 of 167 verses have it (199 verses in all). Wife is zas (term:H802), a wife being married sævam (term:H3947w). From study run v2b (term:G1135), checked against the corpus."
+  },
+  {
+   "id": "term:H120",
+   "kind": "term",
+   "source": "H120 / H376 (man, person, human being)",
+   "value": "ezoqam",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 1:20",
+     "form": "ezoqam",
+     "n": 4594
+    },
+    {
+     "ref": "1CO 1:25",
+     "form": "ezoqam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "man",
+    "person",
+    "mankind"
+   ],
+   "alternatives": [
+    {
+     "value": "ezoqa",
+     "n": 106
+    }
+   ],
+   "note": "BSB man/person/people: 599 of 897 verses have it (3372 verses in all). People in general ezoqa (term:H5971.h); ezoqam also follows role nouns (feature agent_noun). From study run v2b (term:G444), checked against the corpus."
+  },
+  {
+   "id": "term:H4438",
+   "kind": "term",
+   "source": "H4438 / H4467 (kingdom, reign)",
+   "value": "Megeat Matev",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 4:20",
+     "form": "Megeat Matev",
+     "n": 150
+    },
+    {
+     "ref": "1CO 6:9",
+     "form": "Megeat Matev"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "kingdom"
+   ],
+   "note": "BSB kingdom: 131 of 147 verses have it (147 verses in all). The kingdom of God = Mbumbukiam-qa Megeat Matev (formula:kingdom_of_god). From study run v2b (term:G932), checked against the corpus."
+  },
+  {
+   "id": "term:H2403",
+   "kind": "term",
+   "source": "H2403 / H5771 (sin, iniquity)",
+   "value": "manqa-zapazapa",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 15:3",
+     "form": "manqa-zapazapa",
+     "n": 303
+    },
+    {
+     "ref": "1JN 1:7",
+     "form": "manqa-zapazapa"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "sin",
+    "sins"
+   ],
+   "alternatives": [
+    {
+     "value": "manqa-zapa",
+     "n": 270
+    }
+   ],
+   "note": "BSB sin/sins: 107 of 179 verses have it (265 verses in all). Evil deeds in Jonah: manqa-zapazapa (formula:turn_from_evil); sinful = manqa-zapazapa-us (having_suffix). From study run v2b (term:G266), checked against the corpus."
+  },
+  {
+   "id": "term:H3548",
+   "kind": "term",
+   "source": "H3548 (priest)",
+   "value": "iziz ezoqam",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1PE 2:9",
+     "form": "iziz ezoqam",
+     "n": 108
+    },
+    {
+     "ref": "ACT 4:1",
+     "form": "iziz ezoqam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "priest",
+    "priests"
+   ],
+   "note": "BSB priest/priests: 123 of 153 verses have it (151 verses in all). God's priest: Mbumbukiam-ge iziz ezoqam; priests: -gi (possessor). From study run v2b (term:G2409), checked against the corpus."
+  },
+  {
+   "id": "term:H7965",
+   "kind": "term",
+   "source": "H7965 (peace)",
+   "value": "sambi",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 1:3",
+     "form": "sambi",
+     "n": 94
+    },
+    {
+     "ref": "1CO 7:15",
+     "form": "sambi"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "peace"
+   ],
+   "note": "BSB peace: 80 of 90 verses have it (86 verses in all). From study run v2b (term:G1515), checked against the corpus."
+  },
+  {
+   "id": "term:H157",
+   "kind": "term",
+   "source": "H157 / H160 (love)",
+   "value": "kuku",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 1:3",
+     "form": "kuku matev",
+     "n": 237
+    },
+    {
+     "ref": "1CO 1:4",
+     "form": "kuku matev"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "love",
+    "grace"
+   ],
+   "note": "BSB love/grace: 271 of 299 verses have it (369 verses in all). God's חֶסֶד in Jonah = kuku matev (term:H2617.h). From study run v2b (term:G26), checked against the corpus."
+  },
+  {
+   "id": "term:H5030",
+   "kind": "term",
+   "source": "H5030 (prophet)",
+   "value": "manqa vevezam ezoqam",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 12:28",
+     "form": "manqa vevezam ezoqam",
+     "n": 165
+    },
+    {
+     "ref": "1CO 12:29",
+     "form": "manqa vevezam ezoqam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "prophet",
+    "prophets"
+   ],
+   "note": "BSB prophet/prophets: 142 of 151 verses have it (171 verses in all). God's prophet: Mbumbukiam-ge manqa vevezam ezoqam (feature agent_noun). From study run v2b (term:G4396), checked against the corpus."
+  },
+  {
+   "id": "term:H5650",
+   "kind": "term",
+   "source": "H5650 (servant, slave)",
+   "value": "sasae ezoqam",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 3:5",
+     "form": "sasae ezoqam",
+     "n": 210
+    },
+    {
+     "ref": "1CO 4:1",
+     "form": "sasae ezoqam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "servant",
+    "servants"
+   ],
+   "note": "BSB servant/servants: 133 of 172 verses have it (265 verses in all). A servant girl is sasae mbasønakám (term:H8198). From study run v2b (term:G1401), checked against the corpus."
+  },
+  {
+   "id": "term:H4397",
+   "kind": "term",
+   "source": "H4397 (angel, messenger)",
+   "value": "enzol ezoqam",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 4:9",
+     "form": "enzol ezoqam",
+     "n": 199
+    },
+    {
+     "ref": "1CO 6:3",
+     "form": "enzol ezoqam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "angel",
+    "angels"
+   ],
+   "note": "BSB angel/angels: 168 of 184 verses have it (184 verses in all). From study run v2b (term:G32), checked against the corpus."
+  },
+  {
+   "id": "term:H4325",
+   "kind": "term",
+   "source": "H4325 (water)",
+   "value": "ibøkha",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 3:6",
+     "form": "ibøkha",
+     "n": 314
+    },
+    {
+     "ref": "1CO 3:7",
+     "form": "ibøkha"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "water",
+    "waters"
+   ],
+   "note": "BSB water/waters: 74 of 82 verses have it (255 verses in all). From study run v2b (term:G5204), checked against the corpus."
+  },
+  {
+   "id": "term:H8034",
+   "kind": "term",
+   "source": "H8034 (name)",
+   "value": "iz",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 5:1",
+     "form": "tuqa iz",
+     "n": 14
+    },
+    {
+     "ref": "1CO 1:2",
+     "form": "iz",
+     "n": 890
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "name"
+   ],
+   "note": "BSB name: 135 of 168 verses have it (1939 verses in all). Naming: feature naming, formula:named_it. From study run v2b (term:G3686), checked against the corpus."
+  },
+  {
+   "id": "term:H3027",
+   "kind": "term",
+   "source": "H3027 (hand)",
+   "value": "zenda",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 4:12",
+     "form": "zenda",
+     "n": 386
+    },
+    {
+     "ref": "1CO 5:5",
+     "form": "zenda"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "hand",
+    "hands"
+   ],
+   "note": "BSB hand/hands: 150 of 209 verses have it (350 verses in all). Also 'power over' (zenda-té, gap:rule_over.h) and blessing (term:H1288.h). From study run v2b (term:G5495), checked against the corpus."
+  },
+  {
+   "id": "term:H5892",
+   "kind": "term",
+   "source": "H5892 (city, town)",
+   "value": "taon",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "2CO 11:26",
+     "form": "taon",
+     "n": 617
+    },
+    {
+     "ref": "2CO 11:32",
+     "form": "taon"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "city",
+    "town"
+   ],
+   "note": "BSB city/town: 117 of 161 verses have it (508 verses in all). A village is vemiav (term:village); taon follows a city's name (place_class_noun). From study run v2b (term:G4172), checked against the corpus."
+  },
+  {
+   "id": "term:H4194",
+   "kind": "term",
+   "source": "H4194 (death)",
+   "value": "løvøte",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 6:14",
+     "form": "løvøte",
+     "n": 309
+    },
+    {
+     "ref": "1CO 11:26",
+     "form": "løvøte"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "death",
+    "dead"
+   ],
+   "note": "BSB death/dead: 166 of 266 verses have it (262 verses in all). To die is nanim (term:H4191). From study run v2b (term:G2288), checked against the corpus."
+  },
+  {
+   "id": "term:H784",
+   "kind": "term",
+   "source": "H784 (fire)",
+   "value": "gøinam",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 3:13",
+     "form": "gøinam",
+     "n": 88
+    },
+    {
+     "ref": "1PE 1:7",
+     "form": "gøinam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "fire"
+   ],
+   "note": "BSB fire: 48 of 72 verses have it (77 verses in all). From study run v2b (term:G4442), checked against the corpus."
+  },
+  {
+   "id": "term:H3117",
+   "kind": "term",
+   "source": "H3117 (day, time)",
+   "value": "khøuwa",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 1:8",
+     "form": "khøuwa",
+     "n": 993
+    },
+    {
+     "ref": "1CO 3:13",
+     "form": "khøuwa"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "day",
+    "days",
+    "time"
+   ],
+   "note": "BSB day/days/time: 412 of 573 verses have it (851 verses in all). Today = nqægo khaiya (term:H3117today); sun is also khøuwa (term:sun). From study run v2b (term:G2250), checked against the corpus."
+  },
+  {
+   "id": "term:H6629",
+   "kind": "term",
+   "source": "H6629 / H7716 (sheep, flock)",
+   "value": "sip",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1PE 2:25",
+     "form": "sip",
+     "n": 124
+    },
+    {
+     "ref": "ACT 8:32",
+     "form": "sip"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "sheep",
+    "flock",
+    "lamb"
+   ],
+   "note": "BSB sheep/flock/lamb: 82 of 85 verses have it (135 verses in all). From study run v2b (term:G4263), checked against the corpus."
+  },
+  {
+   "id": "term:H3196",
+   "kind": "term",
+   "source": "H3196 (wine)",
+   "value": "waen",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1TI 5:23",
+     "form": "waen",
+     "n": 102
+    },
+    {
+     "ref": "JHN 2:3",
+     "form": "waen"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "wine"
+   ],
+   "note": "BSB wine: 29 of 34 verses have it (72 verses in all). From study run v2b (term:G3631), checked against the corpus."
+  },
+  {
+   "id": "term:H7704",
+   "kind": "term",
+   "source": "H7704 (field)",
+   "value": "khae",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 3:9",
+     "form": "khae",
+     "n": 127
+    },
+    {
+     "ref": "ACT 1:18",
+     "form": "khae"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "field",
+    "fields"
+   ],
+   "note": "BSB field/fields: 30 of 41 verses have it (357 verses in all). From study run v2b (term:G68), checked against the corpus."
+  },
+  {
+   "id": "term:H1471",
+   "kind": "term",
+   "source": "H1471 (nation, people group)",
+   "value": "bawan",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 14:21",
+     "form": "bawan",
+     "n": 472
+    },
+    {
+     "ref": "1PE 2:9",
+     "form": "bawan"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "nation",
+    "nations",
+    "gentiles",
+    "tribe"
+   ],
+   "note": "BSB nation/nations/gentiles: 127 of 158 verses have it (449 verses in all). Nations = bawabawan (plural); Gentiles, foreigners = vini-ak (term:H5237); clan khagua bawan (term:H4940). From study run v2b (term:G1484), checked against the corpus."
+  },
+  {
+   "id": "term:H3467",
+   "kind": "term",
+   "source": "H3467 / H4931 (saviour; save)",
+   "value": "khandi etoam ezoqam",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1TI 1:1",
+     "form": "khandi etoam ezoqam",
+     "n": 25
+    },
+    {
+     "ref": "1TI 2:3",
+     "form": "khandi etoam ezoqam"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "savior",
+    "saviour",
+    "deliverer"
+   ],
+   "note": "BSB savior/saviour/save: 24 of 104 verses have it (35 verses in all). Salvation = khandi etoam matev (term:H3444). From study run v2b (term:G4991), checked against the corpus."
+  },
+  {
+   "id": "term:H4941",
+   "kind": "term",
+   "source": "H4941 (judgment, justice)",
+   "value": "ovøyam",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 11:29",
+     "form": "ovøyam",
+     "n": 173
+    },
+    {
+     "ref": "1CO 11:32",
+     "form": "ovøyam"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "judge",
+    "judgment",
+    "justice"
+   ],
+   "note": "BSB judge/judgment/justice: 73 of 133 verses have it (190 verses in all). Judges = ovøyam megetapak (formula:judges_ruled). From study run v2b (term:G2919), checked against the corpus."
+  },
+  {
+   "id": "term:disciple",
+   "kind": "term",
+   "source": "G3101 (disciple, follower)",
+   "value": "paev ezoqam",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 15:5",
+     "form": "ekeza paev ezoqam",
+     "n": 118
+    },
+    {
+     "ref": "JHN 4:2",
+     "form": "ekeza paev ezoqam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "disciple",
+    "disciples",
+    "followers"
+   ],
+   "note": "BSB disciple/disciples/followers: 210 of 280 verses have it (353 verses in all). NT word; for OT followers or attendants. From study run v2b (term:G3101), checked against the corpus."
+  },
+  {
+   "id": "term:H1323",
+   "kind": "term",
+   "source": "H1323 (daughter)",
+   "value": "yu",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 7:21",
+     "form": "yu",
+     "n": 16
+    },
+    {
+     "ref": "HEB 11:24",
+     "form": "yu-ge"
+    },
+    {
+     "ref": "LUK 2:36",
+     "form": "yú"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "daughter"
+   ],
+   "note": "BSB daughter: 17 of 35 verses have it (31 verses in all). 'My daughter' as address = Sǽ-pakha (term:H1323voc.h); daughters = nakhei mbasi (term:H1323pl). From study run v2 (term:H1323), checked against the corpus."
+  },
+  {
+   "id": "term:H251",
+   "kind": "term",
+   "source": "H251 (brother)",
+   "value": "nøfu",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 1:1",
+     "form": "nøfu",
+     "n": 45
+    },
+    {
+     "ref": "1CO 1:11",
+     "form": "nøfu"
+    },
+    {
+     "ref": "1CO 16:12",
+     "form": "nøfu"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "brother"
+   ],
+   "note": "BSB brother: 28 of 102 verses have it (199 verses in all). Brothers, also as address = nøfuap (formula:brothers). From study run v2 (term:H251), checked against the corpus."
+  },
+  {
+   "id": "term:H1818",
+   "kind": "term",
+   "source": "H1818 (blood)",
+   "value": "kouk",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 10:16",
+     "form": "kóuk",
+     "n": 82
+    },
+    {
+     "ref": "1CO 11:25",
+     "form": "kouk"
+    },
+    {
+     "ref": "1CO 11:27",
+     "form": "kouk-qa"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "blood"
+   ],
+   "note": "BSB blood: 67 of 88 verses have it (99 verses in all). From study run v2 (term:H1818), checked against the corpus."
+  },
+  {
+   "id": "term:H1241",
+   "kind": "term",
+   "source": "H1241 / H6499 (ox, bull, calf)",
+   "value": "kao",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 9:9",
+     "form": "kao-qa",
+     "n": 20
+    },
+    {
+     "ref": "1TI 5:18",
+     "form": "kao-qa"
+    },
+    {
+     "ref": "ACT 7:41",
+     "form": "kao"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "ox",
+    "cattle",
+    "bull"
+   ],
+   "note": "BSB ox/cattle/bull: 8 of 9 verses have it (25 verses in all). Calves = kao nakhasam (HEB 9:19); livestock in general søvakha gigiap nanák (term:H929lv). From study run v2 (term:H1241), checked against the corpus."
+  },
+  {
+   "id": "term:H5795",
+   "kind": "term",
+   "source": "H5795 (goat)",
+   "value": "naningus",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "HEB 9:12",
+     "form": "naningus",
+     "n": 6
+    },
+    {
+     "ref": "HEB 9:13",
+     "form": "naningus"
+    },
+    {
+     "ref": "HEB 9:19",
+     "form": "naningus"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "goat",
+    "goats"
+   ],
+   "note": "BSB goat/goats: 6 of 8 verses have it (7 verses in all). From study run v2 (term:H5795), checked against the corpus."
+  },
+  {
+   "id": "term:H2719",
+   "kind": "term",
+   "source": "H2719 (sword)",
+   "value": "kaiya",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 12:2",
+     "form": "kaiyá",
+     "n": 41
+    },
+    {
+     "ref": "ACT 16:27",
+     "form": "kaiya"
+    },
+    {
+     "ref": "EPH 6:17",
+     "form": "kaiya"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "sword"
+   ],
+   "note": "BSB sword: 24 of 26 verses have it (36 verses in all). Not khaiya (expanse, term:H7549): kaiya is written with k. From study run v2 (term:H2719), checked against the corpus."
+  },
+  {
+   "id": "term:H341",
+   "kind": "term",
+   "source": "H341 (enemy)",
+   "value": "qaqa ezoqam",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "2TH 3:15",
+     "form": "qaqa ezoqam",
+     "n": 38
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "enemy"
+   ],
+   "note": "BSB enemy: 9 of 11 verses have it (130 verses in all). From study run v2 (term:H341), checked against the corpus."
+  },
+  {
+   "id": "term:H2091",
+   "kind": "term",
+   "source": "H2091 (gold)",
+   "value": "gol",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 3:12",
+     "form": "gol",
+     "n": 35
+    },
+    {
+     "ref": "1PE 1:7",
+     "form": "gol"
+    },
+    {
+     "ref": "2TI 2:20",
+     "form": "gol"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "gold"
+   ],
+   "note": "BSB gold: 18 of 24 verses have it (42 verses in all). From study run v2 (term:H2091), checked against the corpus."
+  },
+  {
+   "id": "term:H3701",
+   "kind": "term",
+   "source": "H3701 (silver, money)",
+   "value": "moni",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1TI 3:3",
+     "form": "moni-te",
+     "n": 259
+    },
+    {
+     "ref": "1TI 3:8",
+     "form": "moni-te"
+    },
+    {
+     "ref": "1TI 6:10",
+     "form": "moni-te"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "silver",
+    "money"
+   ],
+   "alternatives": [
+    {
+     "value": "silva",
+     "note": "the metal"
+    }
+   ],
+   "note": "BSB silver/money: 46 of 56 verses have it (199 verses in all). The NT also has the loan silva (4×). From study run v2 (term:H3701), checked against the corpus."
+  },
+  {
+   "id": "term:H5104",
+   "kind": "term",
+   "source": "H5104 (river, stream)",
+   "value": "kea",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "2CO 11:26",
+     "form": "Kea",
+     "n": 31
+    },
+    {
+     "ref": "ACT 16:13",
+     "form": "kea"
+    },
+    {
+     "ref": "JHN 1:28",
+     "form": "kea"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "river",
+    "stream"
+   ],
+   "note": "BSB river/stream: 8 of 9 verses have it (202 verses in all). Also the class noun after a river's name (Zoden kea, MRK 1:5). From study run v2 (term:H5104), checked against the corpus."
+  },
+  {
+   "id": "term:H2022",
+   "kind": "term",
+   "source": "H2022 (mountain, hill)",
+   "value": "poyat",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "JHN 6:3",
+     "form": "poyat-té",
+     "n": 6
+    },
+    {
+     "ref": "JHN 6:15",
+     "form": "poyat-té"
+    },
+    {
+     "ref": "LUK 4:29",
+     "form": "poyat-té"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "mountain"
+   ],
+   "alternatives": [
+    {
+     "value": "olol"
+    }
+   ],
+   "note": "BSB mountain: 14 of 31 verses have it (28 verses in all). From study run v2 (term:H2022), checked against the corpus."
+  },
+  {
+   "id": "term:H4057",
+   "kind": "term",
+   "source": "H4057 (wilderness, desert)",
+   "value": "Leg-av manqei",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 10:5",
+     "form": "leg-av manqei-te",
+     "n": 2
+    },
+    {
+     "ref": "ACT 7:30",
+     "form": "leg-av manqei-te"
+    },
+    {
+     "ref": "ACT 7:36",
+     "form": "leg-av manqei-te"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "wilderness",
+    "desert"
+   ],
+   "note": "BSB wilderness/desert: 31 of 33 verses have it (38 verses in all). From study run v2 (term:H4057), checked against the corpus."
+  },
+  {
+   "id": "term:H6086",
+   "kind": "term",
+   "source": "H6086 (tree, wood)",
+   "value": "tae",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 3:12",
+     "form": "tae",
+     "n": 242
+    },
+    {
+     "ref": "1PE 2:24",
+     "form": "tae"
+    },
+    {
+     "ref": "2TI 2:20",
+     "form": "tae"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "tree",
+    "wood"
+   ],
+   "note": "BSB tree/wood: 43 of 45 verses have it (252 verses in all). From study run v2 (term:H6086), checked against the corpus."
+  },
+  {
+   "id": "term:H7676",
+   "kind": "term",
+   "source": "H7676 (Sabbath)",
+   "value": "Sabat khøuwa",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 13:14",
+     "form": "Sabat khøuwa-te",
+     "n": 32
+    },
+    {
+     "ref": "ACT 13:27",
+     "form": "Sabat khøuwa"
+    },
+    {
+     "ref": "ACT 13:42",
+     "form": "Sabat khøuwa"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "sabbath"
+   ],
+   "note": "BSB sabbath: 54 of 55 verses have it (58 verses in all). From study run v2 (term:H7676), checked against the corpus."
+  },
+  {
+   "id": "term:H3820",
+   "kind": "term",
+   "source": "H3820 / H3824 (heart)",
+   "value": "mbøni",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1JN 3:20",
+     "form": "mbøni",
+     "n": 163
+    },
+    {
+     "ref": "1JN 3:21",
+     "form": "mbøni"
+    },
+    {
+     "ref": "1PE 3:8",
+     "form": "mbøni"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "heart"
+   ],
+   "note": "BSB heart: 36 of 84 verses have it (181 verses in all). Mind, thoughts = matavap (15 of the heart verses). From study run v2 (term:H3820), checked against the corpus."
+  },
+  {
+   "id": "term:H8057",
+   "kind": "term",
+   "source": "H8057 / H8055 (joy, rejoice; blessed = happy)",
+   "value": "khanakhanakh",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 7:30",
+     "form": "khanakhanakh",
+     "n": 274
+    },
+    {
+     "ref": "1CO 12:26",
+     "form": "khanakhanakh"
+    },
+    {
+     "ref": "1CO 13:6",
+     "form": "khanakhanakh"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "joy",
+    "rejoice",
+    "glad",
+    "gladness"
+   ],
+   "note": "BSB joy/rejoice/glad: 138 of 171 verses have it (303 verses in all). 'Blessed are …' (makarios) = khanakhanakh (51 of 111 bless- verses); God blessing people is term:H1288.h. From study run v2 (term:joy), checked against the corpus."
+  },
+  {
+   "id": "term:H3581",
+   "kind": "term",
+   "source": "H3581 / H1369 (power, strength, might)",
+   "value": "bazaføgakh",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 1:18",
+     "form": "bazaføgakh-ús",
+     "n": 302
+    },
+    {
+     "ref": "1CO 1:24",
+     "form": "bazaføgakh"
+    },
+    {
+     "ref": "1CO 1:25",
+     "form": "bazaføgakh"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "power",
+    "strength",
+    "mighty"
+   ],
+   "note": "BSB power/strength/mighty: 111 of 127 verses have it (435 verses in all). Shaddai = Mbumbukiam Bazaføgakh-qape (term:H7706); powerful = bazaføgakh-us. From study run v2 (term:power), checked against the corpus."
+  },
+  {
+   "id": "term:H6635",
+   "kind": "term",
+   "source": "H6635 (YHWH of hosts, LORD Almighty)",
+   "value": "Evezøza Bazaføgakh-qape",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "JAS 5:4",
+     "form": "Evezøza Bazaføgakh-qape-qá",
+     "n": 1
+    },
+    {
+     "ref": "ROM 9:29",
+     "form": "Evezøza Bazaføgakh-qape"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "lord of hosts",
+    "lord almighty"
+   ],
+   "note": "BSB lord of hosts/lord almighty: 2 of 3 verses have it (7 verses in all). Only 2 NT models (2CO 6:18, JAS 5:4 area); compare Shaddai, term:H7706. Question for the team with the divine names. From study run v2 (term:H6635), checked against the corpus."
+  },
+  {
+   "id": "term:H6456",
+   "kind": "term",
+   "source": "H6456 / H457 / H1544 (idol, carved image)",
+   "value": "khape mbumbuk",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 8:4",
+     "form": "khape mbumbuk-te",
+     "n": 9
+    },
+    {
+     "ref": "1CO 8:7",
+     "form": "khape mbumbuk-te"
+    },
+    {
+     "ref": "1CO 8:10",
+     "form": "khape mbumbuk"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "idol",
+    "idols"
+   ],
+   "note": "BSB idol/idols: 7 of 21 verses have it (44 verses in all). 1CO 8:4 'an idol is nothing'. Jonah's 'worthless idols' are khokho mbumbuk (term:H1892): see the questions page. From study run v2 (term:idol), checked against the corpus."
+  },
+  {
+   "id": "term:H3727",
+   "kind": "term",
+   "source": "H3727 (mercy seat, atonement cover)",
+   "value": "Mboges mumat",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "HEB 9:5",
+     "form": "Mboges mumat",
+     "n": 1
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "mercy seat",
+    "atonement cover"
+   ],
+   "note": "BSB mercy seat/atonement cover: 1 of 1 verses have it (1 verses in all). One NT model (HEB 9:5), the lid on the chest. From study run v2 (term:H3727), checked against the corpus."
+  },
+  {
+   "id": "term:H8181",
+   "kind": "term",
+   "source": "H8181 (hair)",
+   "value": "izum",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 11:6",
+     "form": "izum",
+     "n": 15
+    },
+    {
+     "ref": "1CO 11:15",
+     "form": "izum"
+    },
+    {
+     "ref": "1PE 3:3",
+     "form": "izum"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "hair"
+   ],
+   "note": "BSB hair: 12 of 17 verses have it (76 verses in all). Shaving is izum + a cutting verb (1CO 11:6). From study run v2 (term:hair), checked against the corpus."
+  },
+  {
+   "id": "term:H713",
+   "kind": "term",
+   "source": "H713 (purple; red cloth)",
+   "value": "ndabua køkouk",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 16:14",
+     "form": "Ndabua køkouk",
+     "n": 7
+    },
+    {
+     "ref": "JHN 19:2",
+     "form": "ndabua køkouk"
+    },
+    {
+     "ref": "JHN 19:5",
+     "form": "ndabua køkouk"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "purple"
+   ],
+   "note": "BSB purple: 8 of 9 verses have it (10 verses in all). køkouk is red: the NT uses it for purple and scarlet (gap:colours). From study run v2 (term:purple), checked against the corpus."
+  },
+  {
+   "id": "term:H3595",
+   "kind": "term",
+   "source": "H3595 / H4219 (basin, bowl)",
+   "value": "ndis",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "JHN 13:5",
+     "form": "ndis-te",
+     "n": 16
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "basin",
+    "bowl",
+    "dish"
+   ],
+   "note": "BSB basin/bowl/dish: 8 of 13 verses have it (48 verses in all). One NT model, JHN 13:5. From study run v2 (term:basin), checked against the corpus."
+  },
+  {
+   "id": "term:H8398",
+   "kind": "term",
+   "source": "H8398 (world, the earth as a whole)",
+   "value": "manqei-qape",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 1:20",
+     "form": "manqei-qape",
+     "n": 267
+    },
+    {
+     "ref": "1CO 1:21",
+     "form": "Manqei-qape"
+    },
+    {
+     "ref": "1CO 1:27",
+     "form": "manqei-qape-te"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "world"
+   ],
+   "note": "BSB world: 154 of 163 verses have it (424 verses in all). The same word is the dry land as created in Jonah (term:H3004). From study run v2 (term:world), checked against the corpus."
+  },
+  {
+   "id": "term:jews",
+   "kind": "term",
+   "source": "H3064 (Jews, Judeans)",
+   "value": "Zu ezoqam",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 1:22",
+     "form": "Zu ezoqam",
+     "n": 107
+    },
+    {
+     "ref": "1CO 1:23",
+     "form": "Zu ezoqam"
+    },
+    {
+     "ref": "1CO 1:24",
+     "form": "Zu ezoqam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "jews",
+    "jew"
+   ],
+   "note": "BSB jews/jew: 106 of 168 verses have it (379 verses in all). From study run v2 (term:jews), checked against the corpus."
+  },
+  {
+   "id": "term:H4196",
+   "kind": "term",
+   "source": "H4196 (altar)",
+   "value": "lou-qase",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 17:23",
+     "form": "lou-qase-te"
+    },
+    {
+     "ref": "LUK 1:11",
+     "form": "lou-qase-qa"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "altar",
+    "altars"
+   ],
+   "note": "BSB altar: 15 of 23 NT verses (lou-qase 18 tokens). Corrects study-v2b (søvakha -qase, not attested); from study-v2."
+  },
+  {
+   "id": "term:H6944",
+   "kind": "term",
+   "source": "H6944 / H6918 (holy)",
+   "value": "mbomambaqape",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 12:3",
+     "form": "Nqova Mbomambaqape"
+    },
+    {
+     "ref": "1PE 2:9"
+    },
+    {
+     "ref": "JON 2:5",
+     "form": "khoev mbomambaqape"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "holy",
+    "holy place",
+    "sacred"
+   ],
+   "note": "BSB holy: 82 of 170 NT verses; the human Jonah's holy temple (term:H1964). study-v2's ndaføyamba-qape for holy is wrong: it occurs with righteous (17 of 62 verses), holy only 20 of 170."
+  },
+  {
+   "id": "term:H6662",
+   "kind": "term",
+   "source": "H6662 (righteous)",
+   "value": "eqeieqei",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1JN 2:29",
+     "form": "eqeieqei"
+    },
+    {
+     "ref": "1JN 2:1",
+     "form": "ndaføyamba-qape"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "righteous",
+    "upright"
+   ],
+   "alternatives": [
+    {
+     "value": "ndaføyamba-qape",
+     "n": 17,
+     "note": "righteous before God, justified"
+    }
+   ],
+   "note": "BSB righteous: eqeieqei in 35 of 62 NT verses (it is also 'good', formula:god_saw_good), ndaføyamba-qape in 17 (being right before God: 'Mbumbukiam-qa bøi-te ndaføyamba', justified). From study-v2 and v2b."
+  },
+  {
+   "id": "term:H7355",
+   "kind": "term",
+   "source": "H7355 / H7356 (have compassion, mercy)",
+   "value": "tanakh",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 7:25",
+     "form": "tanakh",
+     "n": 103
+    },
+    {
+     "ref": "1PE 1:3",
+     "form": "tanakh"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "mercy",
+    "compassion",
+    "have mercy",
+    "compassionate"
+   ],
+   "note": "BSB mercy/compassion: tanakh in 75 of 85 NT verses; the human Ruth and Jonah use it for favour and compassion (term:H2580.h; JON 4:2). From study-v2b (G1656), which also gave it for חֶסֶד: see the questions page."
+  },
+  {
+   "id": "term:H1285",
+   "kind": "term",
+   "source": "H1285 (covenant)",
+   "value": "poev",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 11:25",
+     "form": "poev"
+    },
+    {
+     "ref": "2CO 3:6",
+     "form": "poev"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "covenant"
+   ],
+   "note": "BSB covenant: poev in 29 of 30 NT verses, mostly with a form of unimanqatin (believe, agree: ge-unimanqatin, 1CO 11:25), i.e. 'an agreement made'. Copy the whole phrase from the model. From study-v2 and v2b."
+  },
+  {
+   "id": "term:H8426",
+   "kind": "term",
+   "source": "H8426 / H3034 (give thanks, praise)",
+   "value": "ike manqat",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 1:4",
+     "form": "ike manqat"
+    },
+    {
+     "ref": "1CO 11:24",
+     "form": "ike manqat"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "give thanks",
+    "thanks",
+    "thanksgiving"
+   ],
+   "note": "BSB thanks/praise: 33 of 75 NT verses; 63 verses in all. From study-v2b (G2127), whose 'bless' reading is too wide: God blessing people is term:H1288.h, 'blessed are' khanakhanakh (term:H8057)."
+  },
+  {
+   "id": "term:lake",
+   "kind": "term",
+   "source": "H3220 (an inland sea, lake)",
+   "value": "kewan",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "JHN 6:1",
+     "form": "kewan"
+    },
+    {
+     "ref": "MRK 1:16",
+     "form": "kewan"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "lake",
+    "sea of galilee",
+    "sea of chinnereth"
+   ],
+   "note": "BSB lake / Sea of Galilee: 11 of 16 NT verses. The sea (as created) is ndaola, into the sea ibøkha-te (term:H3220). From study-v2 (place_classifier)."
+  },
+  {
+   "id": "term:H6453",
+   "kind": "term",
+   "source": "H6453 (Passover)",
+   "value": "Pasova",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 22:1",
+     "form": "Pasova"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "passover"
+   ],
+   "note": "BSB passover: 27 of 27 verses have it (35 verses in all). From study-v2b."
+  },
+  {
+   "id": "term:H6010",
+   "kind": "term",
+   "source": "H6010 / H1516 (valley)",
+   "value": "manqei tømbuvap",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 3:5",
+     "form": "Manqei tømbuvap"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "valley",
+    "valleys"
+   ],
+   "note": "One NT model (LUK 3:5, low ground); JHN 18:1 calls the Kidron valley kea (stream). From study-v2 (gap:valley)."
+  },
+  {
+   "id": "term:H4421",
+   "kind": "term",
+   "source": "H4421 (war, battle)",
+   "value": "nakhag",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 14:31",
+     "form": "nakhag"
+    },
+    {
+     "ref": "2CO 10:3",
+     "form": "nakhag"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "war",
+    "battle"
+   ],
+   "note": "BSB war/battle/fight: 16 of 59 NT verses; nakhag ezoqam = soldiers. From study-v2."
+  },
+  {
+   "id": "term:H8336",
+   "kind": "term",
+   "source": "H8336 / H906 (linen)",
+   "value": "ndabua papaqa",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "JHN 19:40",
+     "form": "ndabua papaqa"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "linen",
+    "linen garment"
+   ],
+   "note": "Linen cloth = white cloth (JHN 19:40); fine twisted linen has no model (gap:fine_linen). From study-v2b."
+  },
+  {
+   "id": "formula:answered",
+   "kind": "formula",
+   "source": "וַיַּעַן / answered (he answered)",
+   "value": "gendo-qavøiu",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 9:13",
+     "form": "gendo-qavøiu",
+     "n": 72
+    },
+    {
+     "ref": "ACT 10:4",
+     "form": "gendo-qavøiu"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "answered",
+    "he answered"
+   ],
+   "note": "BSB answered/replied: 55 of 350 verses have it (72 verses in all). Prefixes vary with the addressee: gendo-qavøiu 27, gezø-qavøiu 26 (to them, JON 1:9), gembo-qavøiu 22 (to him) in BSB 'answered' verses; Ruth/Jonah 'replied' also gundu-ein (formula:replied). From study run v2b (formula:answered), checked against the corpus."
+  },
+  {
+   "id": "formula:it_is_written",
+   "kind": "formula",
+   "source": "כַּכָּתוּב / it is written",
+   "value": "Mbumbukiam-qa Manqat, āv qane-peawáp nqǽgo",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 1:19",
+     "form": "āv qane-peawáp nqǽgo",
+     "n": 62
+    },
+    {
+     "ref": "1CO 3:19",
+     "form": "āv qane-peawáp nqǽgo"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "it is written",
+    "written"
+   ],
+   "note": "BSB it is written/written: 43 of 119 verses have it (136 verses in all). From study run v2b (formula:it_is_written), checked against the corpus."
+  },
+  {
+   "id": "formula:truly_i_tell_you",
+   "kind": "formula",
+   "source": "ἀμὴν λέγω ὑμῖν / Truly I tell you",
+   "value": "No unimanqatín nqazø-manqate",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 4:24",
+     "form": "unimanqatín nqazø-manqate",
+     "n": 71
+    },
+    {
+     "ref": "LUK 12:37",
+     "form": "unimanqatín nqazø-manqate"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "truly i tell you"
+   ],
+   "note": "BSB truly i tell you: 45 of 50 verses have it (72 verses in all). nqazø- is the present 1sg with a plural addressee (present_nq). From study run v2b (formula:truly_i_tell_you), checked against the corpus."
+  },
+  {
+   "id": "formula:brothers",
+   "kind": "formula",
+   "source": "אַחַי / Brothers! (address)",
+   "value": "Nǿfuap!",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 1:10",
+     "form": "Nǿfuap",
+     "n": 154
+    },
+    {
+     "ref": "1CO 1:11",
+     "form": "Nǿfuap"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "brothers"
+   ],
+   "note": "BSB brothers: 120 of 232 verses have it (153 verses in all). Address word with the vocative accent (vocative.2). From study run v2b (formula:brothers), checked against the corpus."
+  },
+  {
+   "id": "formula:because",
+   "kind": "formula",
+   "source": "כִּי / for, because",
+   "value": "Zapa ndǿgo",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 1:6",
+     "form": "Zapa ndǿgo",
+     "n": 849
+    },
+    {
+     "ref": "1CO 2:14",
+     "form": "Zapa ndǿgo"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "for",
+    "because"
+   ],
+   "note": "BSB for/because: 712 of 2097 verses have it (1080 verses in all). Rare in Ruth and Jonah (connective_sequence.2): most כִּי clauses stay unmarked. From study run v2b (formula:because), checked against the corpus."
+  },
+  {
+   "id": "formula:therefore",
+   "kind": "formula",
+   "source": "לָכֵן / עַל־כֵּן / therefore",
+   "value": "Yaq nakémbá",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 3:21",
+     "form": "Yaq nakémbá",
+     "n": 321
+    },
+    {
+     "ref": "1CO 4:5",
+     "form": "Yaq nakémbá"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "therefore",
+    "so then"
+   ],
+   "note": "BSB therefore/so: 182 of 1057 verses have it (324 verses in all). From study run v2b (formula:therefore), checked against the corpus."
+  },
+  {
+   "id": "formula:about",
+   "kind": "formula",
+   "source": "עַל / about, concerning <X>",
+   "value": "<X>-qa yaq-te",
+   "pattern": "<X>-qa yaq-te",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "HEB 1:7",
+     "form": "enzol ezoqam-qa yaq-te"
+    },
+    {
+     "ref": "MRK 1:1",
+     "form": "yaq-te"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "about",
+    "concerning"
+   ],
+   "note": "BSB about/concerning: 114 of 367 verses have it (562 verses in all). From study run v2b (formula:about), checked against the corpus."
+  },
+  {
+   "id": "formula:not_so",
+   "kind": "formula",
+   "source": "rhetorical answer: Certainly not! By no means!",
+   "value": "Āv taoká.",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 1:13",
+     "form": "Āv taoká",
+     "n": 162
+    },
+    {
+     "ref": "1CO 2:16",
+     "form": "Āv taoká"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "certainly not",
+    "by no means"
+   ],
+   "note": "BSB certainly not/by no means: 13 of 16 verses have it (167 verses in all). Listed among interjections; this entry gives it the BSB words. 162× after a rhetorical question (LUK 13:2, GAL 2:17). From study run v2b (formula:not_so), checked against the corpus."
+  },
+  {
+   "id": "formula:do_you_not_know",
+   "kind": "formula",
+   "source": "הֲלֹא יְדַעְתֶּם / Do you not know …?",
+   "value": "Ge zô, møzøté-zøtez?",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 3:16",
+     "form": "Ge zô, møzøté-zøtez",
+     "n": 9
+    },
+    {
+     "ref": "1CO 5:6",
+     "form": "Ge zô, møzøté-zøtez"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "do you not know"
+   ],
+   "note": "BSB do you not know: 13 of 14 verses have it (51 verses in all). 'Ge zô,' opens a rhetorical question in 36 verses. From study run v2b (formula:do_you_not_know), checked against the corpus."
+  },
+  {
+   "id": "formula:grace_and_peace",
+   "kind": "formula",
+   "source": "grace and peace (greeting)",
+   "value": "kuku matev neka sambi matev",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 1:3",
+     "form": "neka sambi matev",
+     "n": 23
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "grace and peace"
+   ],
+   "note": "BSB grace and peace: 13 of 14 verses have it (83 verses in all). From study run v2b (formula:grace_peace), checked against the corpus."
+  },
+  {
+   "id": "formula:whoever",
+   "kind": "formula",
+   "source": "מִי / כָּל־אִישׁ אֲשֶׁר / whoever, if anyone",
+   "value": "gekha ezoqām ndego, …",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 1:31",
+     "form": "Gekha ezoqām ndego",
+     "n": 356
+    },
+    {
+     "ref": "1CO 2:14",
+     "form": "Gekha ezoqām ndego"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "whoever",
+    "if anyone",
+    "anyone who"
+   ],
+   "note": "BSB whoever/if anyone/anyone who: 141 of 200 verses have it (329 verses in all). From study run v2b (formula:whoever), checked against the corpus."
+  },
+  {
+   "id": "formula:do_not_fear_pl",
+   "kind": "formula",
+   "source": "אַל־תִּירְאוּ / Do not be afraid (pl)",
+   "value": "møe ndøgòne᷄m",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "JHN 6:20",
+     "form": "møe ndøgòne᷄m",
+     "n": 31
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "do not be afraid"
+   ],
+   "note": "BSB do not be afraid: 7 of 25 verses have it (33 verses in all). The singular is formula:do_not_fear (møe ndø̀go᷄). From study run v2 (formula:do_not_be_afraid_pl), checked against the corpus."
+  },
+  {
+   "id": "formula:kingdom_of_god",
+   "kind": "formula",
+   "source": "the kingdom of God",
+   "value": "Mbumbukiam-qa Megeat Matev",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 4:20",
+     "form": "Mbumbukiam-qa Megeat Matev",
+     "n": 82
+    },
+    {
+     "ref": "1CO 6:9",
+     "form": "Mbumbukiam-qa Megeat Matev-te"
+    },
+    {
+     "ref": "1CO 6:10",
+     "form": "Mbumbukiam-qa Megeat Matev-te"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "kingdom of god",
+    "kingdom of heaven"
+   ],
+   "note": "BSB kingdom of god/kingdom of heaven: 92 of 96 verses have it (108 verses in all). From study run v2 (formula:kingdom_of_god), checked against the corpus."
+  },
+  {
+   "id": "formula:son_of_man",
+   "kind": "formula",
+   "source": "בֶּן־אָדָם / son of man",
+   "value": "Ezoqam-ge Yo",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 7:56",
+     "form": "Ezoqam-ge Yo",
+     "n": 74
+    },
+    {
+     "ref": "HEB 2:6",
+     "form": "ezoqam-ge yo"
+    },
+    {
+     "ref": "JHN 1:51",
+     "form": "Ezoqam-ge Yo-te"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "son of man"
+   ],
+   "note": "BSB son of man: 82 of 82 verses have it (93 verses in all). For Ezekiel's address and Daniel 7:13; NT title. From study run v2 (formula:son_of_man), checked against the corpus."
+  },
+  {
+   "id": "formula:son_of_god",
+   "kind": "formula",
+   "source": "בְּנֵי הָאֱלֹהִים / the son(s) of God",
+   "value": "Mbumbukiam-ge Yo",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1JN 3:8",
+     "form": "Mbumbukiam-ge Yo",
+     "n": 43
+    },
+    {
+     "ref": "1JN 5:10",
+     "form": "Mbumbukiam-ge Yo"
+    },
+    {
+     "ref": "1JN 5:12",
+     "form": "Mbumbukiam-ge Yo"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "son of god"
+   ],
+   "note": "BSB son of god: 37 of 42 verses have it (54 verses in all). From study run v2 (formula:son_of_god), checked against the corpus."
+  },
+  {
+   "id": "formula:amen",
+   "kind": "formula",
+   "source": "אָמֵן / Amen",
+   "value": "Amén",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 14:16",
+     "form": "Amen",
+     "n": 27
+    },
+    {
+     "ref": "1PE 4:11",
+     "form": "Amén"
+    },
+    {
+     "ref": "1PE 5:11",
+     "form": "Amén"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "amen"
+   ],
+   "note": "BSB amen: 26 of 29 verses have it (29 verses in all). From study run v2 (formula:amen), checked against the corpus."
+  },
+  {
+   "id": "formula:lord_god",
+   "kind": "formula",
+   "source": "אֲדֹנָי יְהוִה / יְהוָה אֱלֹהִים / the Lord GOD",
+   "value": "Evezøza Mbumbukiam",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 1:32",
+     "form": "Evezøza Mbumbukiam",
+     "n": 16
+    },
+    {
+     "ref": "REV 1:8",
+     "form": "Evezøza Mbumbukiam"
+    },
+    {
+     "ref": "REV 4:8",
+     "form": "Evezøza Mbumbukiam"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "lord god"
+   ],
+   "note": "BSB lord god: 10 of 10 verses have it (112 verses in all). Compare formula:god_of_heaven; YHWH question on names.md. From study run v2 (formula:lord_god), checked against the corpus."
+  },
+  {
+   "id": "formula:word_of_god",
+   "kind": "formula",
+   "source": "דְּבַר אֱלֹהִים / the word of God",
+   "value": "Mbumbukiam-qa Manqat",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 14:36",
+     "form": "Mbumbukiam-qa manqat",
+     "n": 381
+    },
+    {
+     "ref": "1CO 15:3",
+     "form": "Mbumbukiam-qa Manqat"
+    },
+    {
+     "ref": "1CO 15:4",
+     "form": "Mbumbukiam-qa Manqat"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "word of god",
+    "scripture"
+   ],
+   "note": "BSB word of god/scripture: 64 of 70 verses have it (577 verses in all). From study run v2 (term:word_of_god), checked against the corpus."
+  },
+  {
+   "id": "formula:holy_spirit",
+   "kind": "formula",
+   "source": "רוּחַ קָדְשׁוֹ / the Holy Spirit (his holy Spirit)",
+   "value": "Nqova Mbomambaqape",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 6:19",
+     "form": "Nqova Mbomambaqape-qá",
+     "n": 171
+    },
+    {
+     "ref": "1CO 12:3",
+     "form": "Nqova Mbomambaqape"
+    },
+    {
+     "ref": "1PE 1:12",
+     "form": "Nqova Mbomambaqape-qa"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "holy spirit"
+   ],
+   "note": "BSB holy spirit: 88 of 89 verses have it (218 verses in all). From study run v2 (term:H7307), checked against the corpus."
+  },
+  {
+   "id": "formula:but",
+   "kind": "formula",
+   "source": "וְ / אֲבָל / but, however",
+   "value": "Geté,",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MRK 1:8",
+     "form": "Geté",
+     "n": 2510
+    },
+    {
+     "ref": "1CO 1:23",
+     "form": "Geté"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "but",
+    "however",
+    "yet"
+   ],
+   "note": "Sentence-initial Geté about 2,350× in the NT ('but' 1,200 of 1,508 verses); 8.5 per 1000 words in Ruth (connective_sequence.2). From study-v2 and v2b."
+  },
+  {
+   "id": "formula:lest",
+   "kind": "formula",
+   "source": "פֶּן / so that … not, lest",
+   "value": "Soqaín ndøgo,",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 1:15",
+     "form": "Soqaín ndøgo",
+     "n": 150
+    },
+    {
+     "ref": "1CO 2:5",
+     "form": "Soqaín ndøgo"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "lest",
+    "so that no",
+    "so that not",
+    "or else"
+   ],
+   "note": "Opens a clause of negative purpose; the clause after it has no negator (feature negative_purpose). From study-v2 and v2b."
+  },
+  {
+   "id": "name:jesus",
+   "kind": "name",
+   "source": "Ἰησοῦς (NT)",
+   "value": "Yesu",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 1:1",
+     "form": "Yesu",
+     "n": 2315
+    },
+    {
+     "ref": "1CO 1:2",
+     "form": "Yesu"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "jesus"
+   ],
+   "note": "NT form: in 1359 of 1379 verses whose BSB names Jesus. From study run v2b."
+  },
+  {
+   "id": "name:christ",
+   "kind": "name",
+   "source": "Χριστός (NT; מָשִׁיחַ)",
+   "value": "Keliso",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 1:1",
+     "form": "Keliso",
+     "n": 699
+    },
+    {
+     "ref": "1CO 1:2",
+     "form": "Keliso"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "christ"
+   ],
+   "note": "NT form: in 456 of 514 verses whose BSB names Christ. From study run v2b."
+  },
+  {
+   "id": "name:adam",
+   "kind": "name",
+   "source": "אָדָם",
+   "value": "Adam",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 15:22",
+     "form": "Adam",
+     "n": 17
+    },
+    {
+     "ref": "1CO 15:45",
+     "form": "Adam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "adam"
+   ],
+   "note": "NT form: in 7 of 7 verses whose BSB names Adam. From study run v2b."
+  },
+  {
+   "id": "name:eve",
+   "kind": "name",
+   "source": "חַוָּה",
+   "value": "Iv",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1TI 2:13",
+     "form": "Iv",
+     "n": 3
+    },
+    {
+     "ref": "2CO 11:3",
+     "form": "Iv"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "eve"
+   ],
+   "note": "NT form: in 2 of 2 verses whose BSB names Eve. From study run v2b."
+  },
+  {
+   "id": "name:noah",
+   "kind": "name",
+   "source": "נֹחַ",
+   "value": "Noa",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1PE 3:20",
+     "form": "Noa",
+     "n": 10
+    },
+    {
+     "ref": "2PE 2:5",
+     "form": "Noa"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "noah"
+   ],
+   "note": "NT form: in 8 of 8 verses whose BSB names Noah. From study run v2b."
+  },
+  {
+   "id": "name:abraham",
+   "kind": "name",
+   "source": "אַבְרָהָם",
+   "value": "Eibleem",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1PE 3:6",
+     "form": "Eibleem",
+     "n": 124
+    },
+    {
+     "ref": "2CO 11:22",
+     "form": "Eibleem"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "abraham"
+   ],
+   "note": "NT form: in 78 of 78 verses whose BSB names Abraham. From study run v2b."
+  },
+  {
+   "id": "name:sarah",
+   "kind": "name",
+   "source": "שָׂרָה",
+   "value": "Sæla",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1PE 3:6",
+     "form": "Sæla",
+     "n": 5
+    },
+    {
+     "ref": "HEB 11:11",
+     "form": "Sæla"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "sarah"
+   ],
+   "note": "NT form: in 4 of 4 verses whose BSB names Sarah. From study run v2b."
+  },
+  {
+   "id": "name:isaac",
+   "kind": "name",
+   "source": "יִצְחָק",
+   "value": "Aezek",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 3:13",
+     "form": "Aezek",
+     "n": 23
+    },
+    {
+     "ref": "ACT 7:8",
+     "form": "Aezek"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "isaac"
+   ],
+   "note": "NT form: in 18 of 19 verses whose BSB names Isaac. From study run v2b."
+  },
+  {
+   "id": "name:jacob",
+   "kind": "name",
+   "source": "יַעֲקֹב",
+   "value": "Zekop",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 3:13",
+     "form": "Zekop",
+     "n": 30
+    },
+    {
+     "ref": "ACT 7:8",
+     "form": "Zekop"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "jacob"
+   ],
+   "note": "NT form: in 25 of 25 verses whose BSB names Jacob. From study run v2b."
+  },
+  {
+   "id": "name:esau",
+   "kind": "name",
+   "source": "עֵשָׂו",
+   "value": "Isao",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "HEB 11:20",
+     "form": "Isao",
+     "n": 7
+    },
+    {
+     "ref": "HEB 12:16",
+     "form": "Isao"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "esau"
+   ],
+   "note": "NT form: in 3 of 3 verses whose BSB names Esau. From study run v2b."
+  },
+  {
+   "id": "name:joseph",
+   "kind": "name",
+   "source": "יוֹסֵף",
+   "value": "Zosef",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 1:23",
+     "form": "Zosef",
+     "n": 59
+    },
+    {
+     "ref": "ACT 4:36",
+     "form": "Zosef"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "joseph"
+   ],
+   "note": "NT form: in 37 of 37 verses whose BSB names Joseph. From study run v2b."
+  },
+  {
+   "id": "name:levi",
+   "kind": "name",
+   "source": "לֵוִי",
+   "value": "Livai",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "HEB 7:5",
+     "form": "Livai",
+     "n": 26
+    },
+    {
+     "ref": "HEB 7:6",
+     "form": "Livai"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "levi"
+   ],
+   "note": "NT form: in 12 of 12 verses whose BSB names Levi. From study run v2b."
+  },
+  {
+   "id": "name:benjamin",
+   "kind": "name",
+   "source": "בִּנְיָמִין",
+   "value": "Benzamin",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 13:21",
+     "form": "Benzamin",
+     "n": 4
+    },
+    {
+     "ref": "PHP 3:5",
+     "form": "Benzamin"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "benjamin"
+   ],
+   "note": "NT form: in 4 of 4 verses whose BSB names Benjamin. From study run v2b."
+  },
+  {
+   "id": "name:aaron",
+   "kind": "name",
+   "source": "אַהֲרֹן",
+   "value": "Elon",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 7:40",
+     "form": "Elon",
+     "n": 5
+    },
+    {
+     "ref": "HEB 5:4",
+     "form": "Elon"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "aaron"
+   ],
+   "note": "NT form: in 5 of 5 verses whose BSB names Aaron. From study run v2b."
+  },
+  {
+   "id": "name:pharaoh",
+   "kind": "name",
+   "source": "פַּרְעֹה",
+   "value": "Felo",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 7:10",
+     "form": "Felo",
+     "n": 6
+    },
+    {
+     "ref": "ACT 7:13",
+     "form": "Felo"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "pharaoh"
+   ],
+   "note": "NT form: in 5 of 5 verses whose BSB names Pharaoh. From study run v2b."
+  },
+  {
+   "id": "name:egypt",
+   "kind": "name",
+   "source": "מִצְרַיִם",
+   "value": "Izip",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 2:10",
+     "form": "Izip",
+     "n": 42
+    },
+    {
+     "ref": "ACT 7:9",
+     "form": "Izip"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "egypt"
+   ],
+   "note": "NT form: in 23 of 23 verses whose BSB names Egypt. From study run v2b."
+  },
+  {
+   "id": "name:jordan",
+   "kind": "name",
+   "source": "יַרְדֵּן",
+   "value": "Zoden",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "JHN 1:28",
+     "form": "Zoden",
+     "n": 15
+    },
+    {
+     "ref": "JHN 3:26",
+     "form": "Zoden"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "jordan"
+   ],
+   "note": "NT form: in 15 of 15 verses whose BSB names Jordan. From study run v2b."
+  },
+  {
+   "id": "name:joshua",
+   "kind": "name",
+   "source": "יְהוֹשֻׁעַ",
+   "value": "Zosua",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 7:45",
+     "form": "Zosua",
+     "n": 4
+    },
+    {
+     "ref": "HEB 4:8",
+     "form": "Zosua"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "joshua"
+   ],
+   "note": "NT form: in 3 of 3 verses whose BSB names Joshua. From study run v2b."
+  },
+  {
+   "id": "name:rahab",
+   "kind": "name",
+   "source": "רָחָב",
+   "value": "Leiab",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "HEB 11:31",
+     "form": "Leiab",
+     "n": 3
+    },
+    {
+     "ref": "JAS 2:25",
+     "form": "Leiab"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "rahab"
+   ],
+   "note": "NT form: in 3 of 3 verses whose BSB names Rahab. From study run v2b."
+  },
+  {
+   "id": "name:jericho",
+   "kind": "name",
+   "source": "יְרִיחוֹ",
+   "value": "Zeliko",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "HEB 11:30",
+     "form": "Zeliko",
+     "n": 8
+    },
+    {
+     "ref": "LUK 10:30",
+     "form": "Zeliko"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "jericho"
+   ],
+   "note": "NT form: in 6 of 6 verses whose BSB names Jericho. From study run v2b."
+  },
+  {
+   "id": "name:solomon",
+   "kind": "name",
+   "source": "שְׁלֹמֹה",
+   "value": "Solomon",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 3:11",
+     "form": "Solomon",
+     "n": 12
+    },
+    {
+     "ref": "ACT 5:12",
+     "form": "Solomon"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "solomon"
+   ],
+   "note": "NT form: in 10 of 10 verses whose BSB names Solomon. From study run v2b."
+  },
+  {
+   "id": "name:samuel",
+   "kind": "name",
+   "source": "שְׁמוּאֵל",
+   "value": "Samuel",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 3:24",
+     "form": "Samuel",
+     "n": 3
+    },
+    {
+     "ref": "ACT 13:20",
+     "form": "Samuel"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "samuel"
+   ],
+   "note": "NT form: in 3 of 3 verses whose BSB names Samuel. From study run v2b."
+  },
+  {
+   "id": "name:saul",
+   "kind": "name",
+   "source": "שָׁאוּל",
+   "value": "Sol",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 7:58",
+     "form": "Sol",
+     "n": 43
+    },
+    {
+     "ref": "ACT 8:1",
+     "form": "Sol"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "saul"
+   ],
+   "note": "NT form: in 30 of 31 verses whose BSB names Saul. From study run v2b."
+  },
+  {
+   "id": "name:elijah",
+   "kind": "name",
+   "source": "אֵלִיָּהוּ",
+   "value": "Ilaiza",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "JAS 5:17",
+     "form": "Ilaiza",
+     "n": 31
+    },
+    {
+     "ref": "JHN 1:21",
+     "form": "Ilaiza"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "elijah"
+   ],
+   "note": "NT form: in 28 of 29 verses whose BSB names Elijah. From study run v2b."
+  },
+  {
+   "id": "name:isaiah",
+   "kind": "name",
+   "source": "יְשַׁעְיָהוּ",
+   "value": "Aezaya",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 8:28",
+     "form": "Aezaya",
+     "n": 23
+    },
+    {
+     "ref": "ACT 8:30",
+     "form": "Aezaya"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "isaiah"
+   ],
+   "note": "NT form: in 22 of 22 verses whose BSB names Isaiah. From study run v2b."
+  },
+  {
+   "id": "name:jeremiah",
+   "kind": "name",
+   "source": "יִרְמְיָהוּ",
+   "value": "Zelemaya",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MAT 2:17",
+     "form": "Zelemaya",
+     "n": 3
+    },
+    {
+     "ref": "MAT 16:14",
+     "form": "Zelemaya"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "jeremiah"
+   ],
+   "note": "NT form: in 3 of 3 verses whose BSB names Jeremiah. From study run v2b."
+  },
+  {
+   "id": "name:babylon",
+   "kind": "name",
+   "source": "בָּבֶל",
+   "value": "Bebilon",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1PE 5:13",
+     "form": "Bebilon",
+     "n": 20
+    },
+    {
+     "ref": "ACT 7:43",
+     "form": "Bebilon"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "babylon"
+   ],
+   "note": "NT form: in 11 of 11 verses whose BSB names Babylon. From study run v2b."
+  },
+  {
+   "id": "name:jerusalem",
+   "kind": "name",
+   "source": "יְרוּשָׁלַיִם",
+   "value": "Zelusalem",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 16:3",
+     "form": "Zelusalem",
+     "n": 192
+    },
+    {
+     "ref": "ACT 1:4",
+     "form": "Zelusalem"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "jerusalem"
+   ],
+   "note": "NT form: in 141 of 141 verses whose BSB names Jerusalem. From study run v2b."
+  },
+  {
+   "id": "name:zion",
+   "kind": "name",
+   "source": "צִיּוֹן",
+   "value": "Zayon",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1PE 2:6",
+     "form": "Zayon",
+     "n": 7
+    },
+    {
+     "ref": "HEB 12:22",
+     "form": "Zayon"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "zion"
+   ],
+   "note": "NT form: in 7 of 7 verses whose BSB names Zion. From study run v2b."
+  },
+  {
+   "id": "name:canaan",
+   "kind": "name",
+   "source": "כְּנַעַן",
+   "value": "Keinan",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 7:11",
+     "form": "Keinan",
+     "n": 3
+    },
+    {
+     "ref": "ACT 13:19",
+     "form": "Keinan"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "canaan"
+   ],
+   "note": "NT form: in 2 of 2 verses whose BSB names Canaan. From study run v2b."
+  },
+  {
+   "id": "name:sinai",
+   "kind": "name",
+   "source": "סִינַי",
+   "value": "Sainai",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 7:30",
+     "form": "Sainai",
+     "n": 7
+    },
+    {
+     "ref": "ACT 7:38",
+     "form": "Sainai"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "sinai"
+   ],
+   "note": "NT form: in 4 of 4 verses whose BSB names Sinai. From study run v2b."
+  },
+  {
+   "id": "name:sodom",
+   "kind": "name",
+   "source": "סְדֹם",
+   "value": "Sodom",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "2PE 2:6",
+     "form": "Sodom",
+     "n": 9
+    },
+    {
+     "ref": "JUD 1:7",
+     "form": "Sodom"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "sodom"
+   ],
+   "note": "NT form: in 9 of 9 verses whose BSB names Sodom. From study run v2b."
+  },
+  {
+   "id": "name:gomorrah",
+   "kind": "name",
+   "source": "עֲמֹרָה",
+   "value": "Gomola",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "2PE 2:6",
+     "form": "Gomola",
+     "n": 4
+    },
+    {
+     "ref": "JUD 1:7",
+     "form": "Gomola"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "gomorrah"
+   ],
+   "note": "NT form: in 4 of 4 verses whose BSB names Gomorrah. From study run v2b."
+  },
+  {
+   "id": "name:abel",
+   "kind": "name",
+   "source": "הֶבֶל",
+   "value": "Eibol",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "HEB 11:4",
+     "form": "Eibol",
+     "n": 6
+    },
+    {
+     "ref": "HEB 12:24",
+     "form": "Eibol"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "abel"
+   ],
+   "note": "NT form: in 4 of 4 verses whose BSB names Abel. From study run v2b."
+  },
+  {
+   "id": "name:cain",
+   "kind": "name",
+   "source": "קַיִן",
+   "value": "Kein",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1JN 3:12",
+     "form": "Kein",
+     "n": 3
+    },
+    {
+     "ref": "HEB 11:4",
+     "form": "Kein"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "cain"
+   ],
+   "note": "NT form: in 3 of 3 verses whose BSB names Cain. From study run v2b."
+  },
+  {
+   "id": "name:enoch",
+   "kind": "name",
+   "source": "חֲנוֹךְ",
+   "value": "Inok",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "HEB 11:5",
+     "form": "Inok",
+     "n": 5
+    },
+    {
+     "ref": "JUD 1:14",
+     "form": "Inok"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "enoch"
+   ],
+   "note": "NT form: in 3 of 3 verses whose BSB names Enoch. From study run v2b."
+  },
+  {
+   "id": "name:melchizedek",
+   "kind": "name",
+   "source": "מַלְכִּי־צֶדֶק",
+   "value": "Melkizedek",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "HEB 5:6",
+     "form": "Melkizedek",
+     "n": 19
+    },
+    {
+     "ref": "HEB 5:10",
+     "form": "Melkizedek"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "melchizedek"
+   ],
+   "note": "NT form: in 11 of 11 verses whose BSB names Melchizedek. From study run v2b."
+  },
+  {
+   "id": "name:hagar",
+   "kind": "name",
+   "source": "הָגָר",
+   "value": "Hega",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GAL 4:24",
+     "form": "Hega",
+     "n": 4
+    },
+    {
+     "ref": "GAL 4:25",
+     "form": "Hega"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "hagar"
+   ],
+   "note": "NT form: in 2 of 2 verses whose BSB names Hagar. From study run v2b."
+  },
+  {
+   "id": "name:samaria",
+   "kind": "name",
+   "source": "שֹׁמְרוֹן",
+   "value": "Samalia",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 1:8",
+     "form": "Samalia",
+     "n": 27
+    },
+    {
+     "ref": "ACT 8:1",
+     "form": "Samalia"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "samaria"
+   ],
+   "note": "NT form: in 10 of 10 verses whose BSB names Samaria. From study run v2b."
+  },
+  {
+   "id": "name:satan",
+   "kind": "name",
+   "source": "שָׂטָן",
+   "value": "Saitan",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 5:5",
+     "form": "Saitan",
+     "n": 48
+    },
+    {
+     "ref": "1CO 7:5",
+     "form": "Saitan"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "satan"
+   ],
+   "note": "NT form: in 33 of 33 verses whose BSB names Satan. From study run v2b. Satan as the accuser of Job and Zech 3 may need a decision."
+  },
+  {
+   "id": "name:galilee",
+   "kind": "name",
+   "source": "גָּלִיל",
+   "value": "Gelili",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 1:11",
+     "form": "Gelili",
+     "n": 81
+    },
+    {
+     "ref": "ACT 9:31",
+     "form": "Gelili"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "galilee"
+   ],
+   "note": "NT form: in 60 of 60 verses whose BSB names Galilee. From study run v2b."
+  },
+  {
+   "id": "name:reuben",
+   "kind": "name",
+   "source": "רְאוּבֵן",
+   "value": "Luben",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "REV 7:5",
+     "form": "Luben",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "reuben"
+   ],
+   "note": "NT form: in 1 of 1 verses whose BSB names Reuben. From study run v2b."
+  },
+  {
+   "id": "name:naphtali",
+   "kind": "name",
+   "source": "נַפְתָּלִי",
+   "value": "Naftali",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MAT 4:13",
+     "form": "Naftali",
+     "n": 3
+    },
+    {
+     "ref": "MAT 4:15",
+     "form": "Naftali"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "naphtali"
+   ],
+   "note": "NT form: in 3 of 3 verses whose BSB names Naphtali. From study run v2b."
+  },
+  {
+   "id": "name:zebulun",
+   "kind": "name",
+   "source": "זְבוּלֻן",
+   "value": "Zebulon",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MAT 4:13",
+     "form": "Zebulon",
+     "n": 3
+    },
+    {
+     "ref": "MAT 4:15",
+     "form": "Zebulon"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "zebulun"
+   ],
+   "note": "NT form: in 3 of 3 verses whose BSB names Zebulun. From study run v2b."
+  },
+  {
+   "id": "name:manasseh",
+   "kind": "name",
+   "source": "מְנַשֶּׁה",
+   "value": "Manase",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MAT 1:10",
+     "form": "Manase",
+     "n": 3
+    },
+    {
+     "ref": "REV 7:6",
+     "form": "Manase"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "manasseh"
+   ],
+   "note": "NT form: in 2 of 2 verses whose BSB names Manasseh. From study run v2b."
+  },
+  {
+   "id": "name:ephraim",
+   "kind": "name",
+   "source": "אֶפְרַיִם",
+   "value": "Eflaim",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "JHN 11:54",
+     "form": "Eflaim",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "ephraim"
+   ],
+   "note": "NT form: in 1 of 1 verses whose BSB names Ephraim. From study run v2b."
+  },
+  {
+   "id": "name:lot",
+   "kind": "name",
+   "source": "לוֹט",
+   "value": "Lot",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "2PE 2:7",
+     "form": "Lot-za",
+     "n": 1
+    },
+    {
+     "ref": "LUK 17:28",
+     "form": "Lot-qá"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "lot"
+   ],
+   "note": "NT form: in 4 of 7 verses whose BSB names Lot. From study run v2."
+  },
+  {
+   "id": "name:hezekiah",
+   "kind": "name",
+   "source": "חִזְקִיָּהוּ",
+   "value": "Ezekaya",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MAT 1:9",
+     "form": "Ezekaya",
+     "n": 2
+    },
+    {
+     "ref": "MAT 1:10",
+     "form": "Ezekaya"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "hezekiah"
+   ],
+   "note": "NT form: in 2 of 2 verses whose BSB names Hezekiah. From study run v2."
+  },
+  {
+   "id": "name:tyre",
+   "kind": "name",
+   "source": "צֹר",
+   "value": "Taya",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 12:20",
+     "form": "Taya",
+     "n": 12
+    },
+    {
+     "ref": "ACT 21:3",
+     "form": "Taya"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "tyre"
+   ],
+   "note": "NT form: in 13 of 13 verses whose BSB names Tyre. From study run v2."
+  },
+  {
+   "id": "name:sidon",
+   "kind": "name",
+   "source": "צִידוֹן",
+   "value": "Saedon",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 12:20",
+     "form": "Saedon",
+     "n": 11
+    },
+    {
+     "ref": "ACT 27:3",
+     "form": "Saedon"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "sidon"
+   ],
+   "note": "NT form: in 11 of 11 verses whose BSB names Sidon. From study run v2."
+  },
+  {
+   "id": "name:syria",
+   "kind": "name",
+   "source": "אֲרָם",
+   "value": "Silia",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 15:23",
+     "form": "Silia",
+     "n": 10
+    },
+    {
+     "ref": "ACT 15:41",
+     "form": "Silia"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "syria"
+   ],
+   "note": "NT form: in 8 of 8 verses whose BSB names Syria. From study run v2."
+  },
+  {
+   "id": "name:judea",
+   "kind": "name",
+   "source": "יְהוּדָה (the province)",
+   "value": "Zudia",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1TH 2:14",
+     "form": "Zudia",
+     "n": 54
+    },
+    {
+     "ref": "ACT 1:8",
+     "form": "Zudia"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "judea"
+   ],
+   "note": "NT form: in 42 of 44 verses whose BSB names Judea. From study run v2. Zudia is the Roman province; the tribe and kingdom are Zuda (name:judah)."
   }
  ]
 }

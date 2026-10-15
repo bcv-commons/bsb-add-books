@@ -12,9 +12,7 @@ drafted from the Hebrew and Greek with the BSB as the only assisting translation
 read this memory before every chapter; the language team reads and edits the wiki. {language_rule}
 
 **What the memory is** (read first): `docs/proposals/language-profile/README.md` (the store: entry kinds,
-fields, evidence; the wiki section at the end) and `scripts/wiki.py` (page format). A worked example of a
-finished memory, for its form only: `export/kvg/kvg_BSB/wiki/` and `export/kvg/kvg_BSB/profile/` (a different
-language; take nothing from its content).
+fields, evidence; the wiki section at the end) and `scripts/wiki.py` (page format).{example_line}
 
 **Focus ({familiarity}):**
 {focus}
@@ -25,24 +23,24 @@ language; take nothing from its content).
   (`collections.Counter`) over the files where a figure helps.
 - The alignment lexicons in `export/{project}/_learn/` (`lexicon_eng.tsv`, `lexicon_grc.tsv`; built by
   `scripts/align.py`): how English and Greek words are rendered, with counts.
+{derived_lines}
 {drafts_line}
 {decisions_line}
 
 **Do NOT open:** `download/`, `scratch/`{do_not_open}.
 
 **Write:**
-1. `export/{project}/profile/observations.json` (`feature`, `letter`, `gap` entries) and
-   `profile/decisions.json` (`term`, `formula`, `name`): every entry with evidence (`"BOOK C:V"`, verses of
+1. `{store_dir}/observations.json` (`feature`, `letter`, `gap` entries) and
+   `{store_dir}/decisions.json` (`term`, `formula`, `name`): every entry with evidence (`"BOOK C:V"`, verses of
    the corpus or of the project's drafts), `confidence`, `method` (`corpus-observed` for what the corpus
    shows, `project-decision` for what the project decided), `by: agent:memory-setup`, today's date
    {date}. Give terms and formulas `words` (the BSB words they answer, lower case).
-2. Wiki pages in `export/{project}/wiki/` (frontmatter `title`, `entries`: the store ids each page shows),
+2. Wiki pages in `{wiki_dir}/` (frontmatter `title`, `entries`: the store ids each page shows),
    one per topic, prose with short examples and references{pages_hint}. `index.md` says what the wiki is
    and links the pages; add a page of numbered questions for the language team (titled in {school_language},
    frontmatter `kind: questions`) with what you could not settle.
-3. Run `python3 scripts/language_profile.py check export/{project}/profile --project {project}` and
-   `python3 scripts/wiki.py sync {project}`, then `python3 scripts/wiki.py lint {project}`, and fix every
-   problem; add one line to `wiki/log.md`.
+3. Run `python3 scripts/language_profile.py check {store_dir} --project {project}`{wiki_check}, and fix every
+   problem.
 
 **Rules:**
 - Every claim rests on the corpus or the project's drafts: give references, and counts where a choice

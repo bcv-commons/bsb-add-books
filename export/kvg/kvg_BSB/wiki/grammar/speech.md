@@ -545,4 +545,109 @@ See also [OT narrative and dialogue](../ot-narrative.md), which holds the narrat
   - answers: very good, indeed, it was very good
   - tantáv = very (Rut 2:20; 46x). Gen 1:31 'Áe, ndøgo eqeieqei tantáv.' (Áe = behold in narrative, Rut 3:8).
   - agent:gen001, 2026-10-15
-<!-- store:end sha=f735cd18 -->
+- **`formula:answered`** וַיַּעַן / answered (he answered) → **gendo-qavøiu** [high, observed, attested]
+  - NT: ACT 9:13 *gendo-qavøiu*; ACT 10:4 *gendo-qavøiu*
+  - answers: answered, he answered
+  - BSB answered/replied: 55 of 350 verses have it (72 verses in all). Prefixes vary with the addressee: gendo-qavøiu 27, gezø-qavøiu 26 (to them, JON 1:9), gembo-qavøiu 22 (to him) in BSB 'answered' verses; Ruth/Jonah 'replied' also gundu-ein (formula:replied). From study run v2b (formula:answered), checked against the corpus.
+  - agent:curation-study, 2026-10-15
+- **`formula:it_is_written`** כַּכָּתוּב / it is written → **Mbumbukiam-qa Manqat, āv qane-peawáp nqǽgo** [high, observed, attested]
+  - NT: 1CO 1:19 *āv qane-peawáp nqǽgo*; 1CO 3:19 *āv qane-peawáp nqǽgo*
+  - answers: it is written, written
+  - BSB it is written/written: 43 of 119 verses have it (136 verses in all). From study run v2b (formula:it_is_written), checked against the corpus.
+  - agent:curation-study, 2026-10-15
+- **`formula:truly_i_tell_you`** ἀμὴν λέγω ὑμῖν / Truly I tell you → **No unimanqatín nqazø-manqate** [high, observed, attested]
+  - NT: LUK 4:24 *unimanqatín nqazø-manqate*; LUK 12:37 *unimanqatín nqazø-manqate*
+  - answers: truly i tell you
+  - BSB truly i tell you: 45 of 50 verses have it (72 verses in all). nqazø- is the present 1sg with a plural addressee (present_nq). From study run v2b (formula:truly_i_tell_you), checked against the corpus.
+  - agent:curation-study, 2026-10-15
+- **`formula:brothers`** אַחַי / Brothers! (address) → **Nǿfuap!** [high, observed, attested]
+  - NT: 1CO 1:10 *Nǿfuap*; 1CO 1:11 *Nǿfuap*
+  - answers: brothers
+  - BSB brothers: 120 of 232 verses have it (153 verses in all). Address word with the vocative accent (vocative.2). From study run v2b (formula:brothers), checked against the corpus.
+  - agent:curation-study, 2026-10-15
+- **`formula:because`** כִּי / for, because → **Zapa ndǿgo** [high, observed, attested]
+  - NT: 1CO 1:6 *Zapa ndǿgo*; 1CO 2:14 *Zapa ndǿgo*
+  - answers: for, because
+  - BSB for/because: 712 of 2097 verses have it (1080 verses in all). Rare in Ruth and Jonah (connective_sequence.2): most כִּי clauses stay unmarked. From study run v2b (formula:because), checked against the corpus.
+  - agent:curation-study, 2026-10-15
+- **`formula:therefore`** לָכֵן / עַל־כֵּן / therefore → **Yaq nakémbá** [medium, observed, attested]
+  - NT: 1CO 3:21 *Yaq nakémbá*; 1CO 4:5 *Yaq nakémbá*
+  - answers: therefore, so then
+  - BSB therefore/so: 182 of 1057 verses have it (324 verses in all). From study run v2b (formula:therefore), checked against the corpus.
+  - agent:curation-study, 2026-10-15
+- **`formula:about`** עַל / about, concerning <X> → **<X>-qa yaq-te** [high, observed, attested] — `<X>-qa yaq-te`
+  - NT: HEB 1:7 *enzol ezoqam-qa yaq-te*; MRK 1:1 *yaq-te*
+  - answers: about, concerning
+  - BSB about/concerning: 114 of 367 verses have it (562 verses in all). From study run v2b (formula:about), checked against the corpus.
+  - agent:curation-study, 2026-10-15
+- **`formula:not_so`** rhetorical answer: Certainly not! By no means! → **Āv taoká.** [high, observed, attested]
+  - NT: 1CO 1:13 *Āv taoká*; 1CO 2:16 *Āv taoká*
+  - answers: certainly not, by no means
+  - BSB certainly not/by no means: 13 of 16 verses have it (167 verses in all). Listed among interjections; this entry gives it the BSB words. 162× after a rhetorical question (LUK 13:2, GAL 2:17). From study run v2b (formula:not_so), checked against the corpus.
+  - agent:curation-study, 2026-10-15
+- **`formula:do_you_not_know`** הֲלֹא יְדַעְתֶּם / Do you not know …? → **Ge zô, møzøté-zøtez?** [high, observed, attested]
+  - NT: 1CO 3:16 *Ge zô, møzøté-zøtez*; 1CO 5:6 *Ge zô, møzøté-zøtez*
+  - answers: do you not know
+  - BSB do you not know: 13 of 14 verses have it (51 verses in all). 'Ge zô,' opens a rhetorical question in 36 verses. From study run v2b (formula:do_you_not_know), checked against the corpus.
+  - agent:curation-study, 2026-10-15
+- **`formula:grace_and_peace`** grace and peace (greeting) → **kuku matev neka sambi matev** [high, observed, attested]
+  - NT: 1CO 1:3 *neka sambi matev*
+  - answers: grace and peace
+  - BSB grace and peace: 13 of 14 verses have it (83 verses in all). From study run v2b (formula:grace_peace), checked against the corpus.
+  - agent:curation-study, 2026-10-15
+- **`formula:whoever`** מִי / כָּל־אִישׁ אֲשֶׁר / whoever, if anyone → **gekha ezoqām ndego, …** [medium, observed, attested]
+  - NT: 1CO 1:31 *Gekha ezoqām ndego*; 1CO 2:14 *Gekha ezoqām ndego*
+  - answers: whoever, if anyone, anyone who
+  - BSB whoever/if anyone/anyone who: 141 of 200 verses have it (329 verses in all). From study run v2b (formula:whoever), checked against the corpus.
+  - agent:curation-study, 2026-10-15
+- **`formula:do_not_fear_pl`** אַל־תִּירְאוּ / Do not be afraid (pl) → **møe ndøgòne᷄m** [medium, observed, attested]
+  - NT: JHN 6:20 *møe ndøgòne᷄m*
+  - answers: do not be afraid
+  - BSB do not be afraid: 7 of 25 verses have it (33 verses in all). The singular is formula:do_not_fear (møe ndø̀go᷄). From study run v2 (formula:do_not_be_afraid_pl), checked against the corpus.
+  - agent:curation-study, 2026-10-15
+- **`formula:kingdom_of_god`** the kingdom of God → **Mbumbukiam-qa Megeat Matev** [high, observed, attested]
+  - NT: 1CO 4:20 *Mbumbukiam-qa Megeat Matev*; 1CO 6:9 *Mbumbukiam-qa Megeat Matev-te*; 1CO 6:10 *Mbumbukiam-qa Megeat Matev-te*
+  - answers: kingdom of god, kingdom of heaven
+  - BSB kingdom of god/kingdom of heaven: 92 of 96 verses have it (108 verses in all). From study run v2 (formula:kingdom_of_god), checked against the corpus.
+  - agent:curation-study, 2026-10-15
+- **`formula:son_of_man`** בֶּן־אָדָם / son of man → **Ezoqam-ge Yo** [high, observed, attested]
+  - NT: ACT 7:56 *Ezoqam-ge Yo*; HEB 2:6 *ezoqam-ge yo*; JHN 1:51 *Ezoqam-ge Yo-te*
+  - answers: son of man
+  - BSB son of man: 82 of 82 verses have it (93 verses in all). For Ezekiel's address and Daniel 7:13; NT title. From study run v2 (formula:son_of_man), checked against the corpus.
+  - agent:curation-study, 2026-10-15
+- **`formula:son_of_god`** בְּנֵי הָאֱלֹהִים / the son(s) of God → **Mbumbukiam-ge Yo** [high, observed, attested]
+  - NT: 1JN 3:8 *Mbumbukiam-ge Yo*; 1JN 5:10 *Mbumbukiam-ge Yo*; 1JN 5:12 *Mbumbukiam-ge Yo*
+  - answers: son of god
+  - BSB son of god: 37 of 42 verses have it (54 verses in all). From study run v2 (formula:son_of_god), checked against the corpus.
+  - agent:curation-study, 2026-10-15
+- **`formula:amen`** אָמֵן / Amen → **Amén** [high, observed, attested]
+  - NT: 1CO 14:16 *Amen*; 1PE 4:11 *Amén*; 1PE 5:11 *Amén*
+  - answers: amen
+  - BSB amen: 26 of 29 verses have it (29 verses in all). From study run v2 (formula:amen), checked against the corpus.
+  - agent:curation-study, 2026-10-15
+- **`formula:lord_god`** אֲדֹנָי יְהוִה / יְהוָה אֱלֹהִים / the Lord GOD → **Evezøza Mbumbukiam** [medium, observed, attested]
+  - NT: LUK 1:32 *Evezøza Mbumbukiam*; REV 1:8 *Evezøza Mbumbukiam*; REV 4:8 *Evezøza Mbumbukiam*
+  - answers: lord god
+  - BSB lord god: 10 of 10 verses have it (112 verses in all). Compare formula:god_of_heaven; YHWH question on names.md. From study run v2 (formula:lord_god), checked against the corpus.
+  - agent:curation-study, 2026-10-15
+- **`formula:word_of_god`** דְּבַר אֱלֹהִים / the word of God → **Mbumbukiam-qa Manqat** [high, observed, attested]
+  - NT: 1CO 14:36 *Mbumbukiam-qa manqat*; 1CO 15:3 *Mbumbukiam-qa Manqat*; 1CO 15:4 *Mbumbukiam-qa Manqat*
+  - answers: word of god, scripture
+  - BSB word of god/scripture: 64 of 70 verses have it (577 verses in all). From study run v2 (term:word_of_god), checked against the corpus.
+  - agent:curation-study, 2026-10-15
+- **`formula:holy_spirit`** רוּחַ קָדְשׁוֹ / the Holy Spirit (his holy Spirit) → **Nqova Mbomambaqape** [high, observed, attested]
+  - NT: 1CO 6:19 *Nqova Mbomambaqape-qá*; 1CO 12:3 *Nqova Mbomambaqape*; 1PE 1:12 *Nqova Mbomambaqape-qa*
+  - answers: holy spirit
+  - BSB holy spirit: 88 of 89 verses have it (218 verses in all). From study run v2 (term:H7307), checked against the corpus.
+  - agent:curation-study, 2026-10-15
+- **`formula:but`** וְ / אֲבָל / but, however → **Geté,** [high, observed, attested]
+  - NT: MRK 1:8 *Geté*; 1CO 1:23 *Geté*
+  - answers: but, however, yet
+  - Sentence-initial Geté about 2,350× in the NT ('but' 1,200 of 1,508 verses); 8.5 per 1000 words in Ruth (connective_sequence.2). From study-v2 and v2b.
+  - agent:curation-study, 2026-10-15
+- **`formula:lest`** פֶּן / so that … not, lest → **Soqaín ndøgo,** [high, observed, attested]
+  - NT: 1CO 1:15 *Soqaín ndøgo*; 1CO 2:5 *Soqaín ndøgo*
+  - answers: lest, so that no, so that not, or else
+  - Opens a clause of negative purpose; the clause after it has no negator (feature negative_purpose). From study-v2 and v2b.
+  - agent:curation-study, 2026-10-15
+<!-- store:end sha=7c0cceaa -->

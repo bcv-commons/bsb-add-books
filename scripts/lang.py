@@ -31,7 +31,7 @@ from books import BY_CODE  # noqa: E402
 HEB, GRC = os.path.join(ROOT, "orig", "heb.sqlite"), os.path.join(ROOT, "orig", "grc.sqlite")
 EDITION = {"critical": "bgb", "majority": "rp", "tr": "rp"}
 SCHEMA = """
-create table if not exists nt_tokens(book text, ch int, v int, pos int, surface text, form text);
+create table if not exists nt_tokens(book text, ch int, v int, pos int, surface text, form text, raw text);
 create index if not exists nt_tokens_ref on nt_tokens(book, ch, v);
 create index if not exists nt_tokens_form on nt_tokens(form);
 create table if not exists nt_links(book text, ch int, v int, pos int, key text, src text);
@@ -57,13 +57,26 @@ def build(pname, links=None):
     con.execute("delete from nt_links")
     con.execute("attach database ? as g", (GRC,))
     toks = {}
+    # the same tokens with every mark kept (the project's tokenizer drops the ignored tone marks): `raw`, for the marks test
+    import unicodedata
+    combining = "".join(chr(c) for r in ((0x0300, 0x0370), (0x1DC0, 0x1E00), (0x20D0, 0x2100)) for c in range(*r))
+    raw_rx = re.compile(rf"[\w{re.escape(P.tok.extra + combining)}]+")
+    mismatch = 0
     for ref, code, key, _, text in P.corpus():
         if BY_CODE[code][2] != "nt":
             continue
         t = P.tok.tokens(text)
         toks[ref] = t
-        con.executemany("insert into nt_tokens values(?,?,?,?,?,?)",
-                        [(code.upper(), key[0], key[1], i, w, w.lower()) for i, w in enumerate(t)])
+        raw = []
+        for w in raw_rx.findall(unicodedata.normalize("NFD", text.lower())):
+            parts = ([w] if not (P.tok.split and "-" in w) else w.split("-"))
+            raw += [x for x in parts if x and not x.isdigit()]
+        raw = [unicodedata.normalize("NFC", x) for x in raw]
+        if len(raw) != len(t):
+            mismatch += 1
+            raw = [None] * len(t)
+        con.executemany("insert into nt_tokens values(?,?,?,?,?,?,?)",
+                        [(code.upper(), key[0], key[1], i, w, w.lower(), raw[i]) for i, w in enumerate(t)])
     gmap = {}
     for book, ch, v, pos, key in con.execute("select book, ch, v, pos, key from g.map where edition=?", (ed,)):
         gmap[(book, ch, v, pos)] = key
@@ -79,7 +92,8 @@ def build(pname, links=None):
             continue
         rows.append((m[1], int(m[2]), int(m[3]), int(tpos), k, "eflomal"))
     con.executemany("insert into nt_links values(?,?,?,?,?,?)", rows)
-    con.executemany("insert or replace into meta values(?,?)", [("nt_basis", P.p["nt_basis"]), ("links", os.path.relpath(links, ROOT))])
+    con.executemany("insert or replace into meta values(?,?)", [("nt_basis", P.p["nt_basis"]), ("links", os.path.relpath(links, ROOT)),
+                                                               ("raw_mismatch_verses", str(mismatch))])
     con.commit()
     n = con.execute("select count(*) from nt_tokens").fetchone()[0]
     linked = con.execute("select count(*) from (select distinct book, ch, v, pos from nt_links)").fetchone()[0]
@@ -171,6 +185,10 @@ create table if not exists d_discourse(lemma text, form text, n int, share real,
 create table if not exists d_gaps(lexeme text, lemma text, gloss text, ot_n int, nt_linked int);
 """
 FUNCTION = ("det", "conj", "prep", "ptcl", "pron")
+ONE_WORD = 0.4  # an affix candidate is dropped when one word makes up this share of its occurrences,
+TWO_WORDS = 0.65  # or its two most frequent words this share (measured: internal-docs plan, section 15)
+STOP_EN = set("a an the and or but of to in on at by for with from as is are was were be been his her their him them "
+              "he she they it its this that these those who which what will shall not no all one".split())
 CONNECTORS = ("καί", "δέ", "γάρ", "οὖν", "τότε", "ἀλλά", "ὅτι", "ἵνα", "ὡς", "ἰδού")
 GREEK_LATIN = dict(zip("αβγδεζηθικλμνξοπρστυφχψως", ["a", "b", "g", "d", "e", "z", "e", "th", "i", "k", "l", "m", "n",
                                                      "x", "o", "p", "r", "s", "t", "u", "f", "ch", "ps", "o", "s"]))
@@ -198,7 +216,7 @@ def derive(pname, quiet=False):
     for t in ("d_renderings", "d_function", "d_affix", "d_order", "d_names", "d_letters", "d_formulas", "d_discourse", "d_gaps"):
         con.execute(f"delete from {t}")
     # every link with its Greek token and target form
-    rows = con.execute("""select l.book, l.ch, l.v, l.pos, t.form, g.* from nt_links l
+    rows = con.execute("""select l.book, l.ch, l.v, l.pos, t.form, t.raw, g.* from nt_links l
         join nt_tokens t on t.book=l.book and t.ch=l.ch and t.v=l.v and t.pos=l.pos
         join g.tokens g on g.key=l.key""").fetchall()
     by_key = collections.defaultdict(list)
@@ -223,32 +241,113 @@ def derive(pname, quiet=False):
     con.executemany("insert into d_function values(?,?,?,?,?,?)",
                     [(c, l, f, n, n / sum(cnt.values()), 1 - linked[(c, l)] / occ[(c, l)])
                      for (c, l), cnt in fm.items() if occ[(c, l)] >= 30 for f, n in cnt.most_common(4)])
-    # 3. affixes: hyphenated target tokens and word-final strings, against the Greek features of the linked token
-    feats = ("person", "number", "tense", "mood", "gcase", "voice")
+    # 3. affixes: endings and beginnings of the target word (accents folded, so tone doesn't split the counts), against
+    #    the Greek features of the linked token, single and in pairs (person+number, tense+mood), and two clause-level
+    #    features: negation (οὐ / μή in the Greek clause) and the object's person+number (the clause's object pronoun);
+    #    for verbs also the subject's gender (through the subject referent)
+    import unicodedata
+    fold = lambda w: "".join(c for c in unicodedata.normalize("NFD", w) if not unicodedata.combining(c))
+    NEG = {"οὐ", "μή", "οὐδέ", "μηδέ", "οὐχί", "οὐκέτι", "μηκέτι"}
+    neg_clause = {t["clause"] for t in gtok.values() if t["lemma"] in NEG and t["clause"]}
+    obj_of = {}
+    for t in gtok.values():
+        if t["role"] in ("o", "io") and t["class"] == "pron" and t["clause"]:
+            m_ = re.match(r"P-(\d)?", t["morph"] or "")
+            if m_:
+                obj_of.setdefault(t["clause"], f"{m_[1] or '3'}{(t['number'] or '')[:1]}")
+    subj_gender = {}
+    for k, kind, target in con.execute("select key, kind, target from g.refs where kind='subjref'"):
+        tg = gtok.get(target)
+        if tg and tg["gender"]:
+            subj_gender.setdefault(k, tg["gender"])
+
+    def features(r):
+        out = {(f, r[f]) for f in ("person", "number", "tense", "mood", "gcase", "voice") if r[f]}
+        if r["person"] and r["number"]:
+            out.add(("person+number", f"{r['person'][:1]}{r['number'][:1]}"))
+        if r["tense"] and r["mood"]:
+            out.add(("tense+mood", f"{r['tense']}.{r['mood']}"))
+        if r["class"] == "verb":
+            out.add(("negated", "yes" if r["clause"] in neg_clause else "no"))
+            if r["clause"] in obj_of:
+                out.add(("object", obj_of[r["clause"]]))
+            if r["key"] in subj_gender:
+                out.add(("subject_gender", subj_gender[r["key"]]))
+        return out
     base, joint, cnt_aff = collections.Counter(), collections.Counter(), collections.Counter()
-    words_of = collections.defaultdict(set)  # an ending is an affix only if it ends several different words
+    words_of = collections.defaultdict(collections.Counter)  # an affix only if it occurs on several different words,
+    # and not mostly on one of them (nøfuap, ndigu, nøten: a frequent word's ending is not an affix)
     total = 0
     for r in rows:
         if r["class"] not in ("verb", "noun", "pron", "adj"):
             continue
         total += 1
-        affs = {r["form"]} if r["form"].startswith("-") else {"-" + r["form"][-k:] for k in (1, 2, 3) if len(r["form"]) > k + 1}
-        fv = {(f, r[f]) for f in feats if r[f]}
+        f_ = fold(r["form"])
+        affs = {f_} if f_.startswith("-") else ({"-" + f_[-k:] for k in (1, 2, 3) if len(f_) > k + 1}
+                                               | {f_[:k] + "-" for k in (1, 2, 3, 4) if len(f_) > k + 2})
+        fv = features(r)
         for fvv in fv:
             base[fvv] += 1
-        for a in affs:
-            cnt_aff[a] += 1
+        for a_ in affs:
+            cnt_aff[a_] += 1
             for fvv in fv:
-                joint[(a, fvv)] += 1
-                words_of[(a, fvv)].add(r["form"])
+                joint[(a_, fvv)] += 1
+                words_of[(a_, fvv)][fold(r["form"])] += 1
     out = []
-    for (a, (f, val)), n in joint.items():
-        if n >= 30 and cnt_aff[a] >= 50 and len(words_of[(a, (f, val))]) >= 5:
+    for (a_, (f, val)), n in joint.items():
+        w = words_of[(a_, (f, val))]
+        top = w.most_common(2)
+        if (n >= 30 and cnt_aff[a_] >= 50 and len(w) >= 5 and top[0][1] / n < ONE_WORD
+                and sum(c for _, c in top) / n < TWO_WORDS):
             rate = n / base[(f, val)]
-            lift = rate / (cnt_aff[a] / total)
+            lift = rate / (cnt_aff[a_] / total)
             if lift >= 1.5:
-                out.append((a, f, val, n, rate, lift))
+                out.append((a_, f, val, n, rate, lift))
     con.executemany("insert into d_affix values(?,?,?,?,?,?)", out)
+    # 3b. tone and other marks: each combining mark on a verb against the same features, and the last word of a verse
+    #     against a Greek question mark (;) ending the verse
+    marks, mbase, mjoint = collections.Counter(), collections.Counter(), collections.Counter()
+    nv = 0
+    for r in rows:
+        if r["class"] != "verb":
+            continue
+        nv += 1
+        ms = {f"U+{ord(c):04X}" for c in unicodedata.normalize("NFD", r["raw"] or "") if unicodedata.combining(c)}
+        fv = features(r)
+        neg_mood = ("negated+mood", f"{'neg' if r['clause'] in neg_clause else 'pos'}.{r['mood']}")
+        fv.add(neg_mood)
+        for fvv in fv:
+            mbase[fvv] += 1
+        for m_ in ms:
+            marks[m_] += 1
+            for fvv in fv:
+                mjoint[(m_, fvv)] += 1
+    # questions: a verse with a Greek question mark (;) anywhere against the marks anywhere in the target verse
+    q_ends, q_last = collections.Counter(), collections.Counter()
+    verse_marks = collections.defaultdict(set)
+    for (book, ch, v, form) in con.execute("select book, ch, v, coalesce(raw, form) from nt_tokens"):
+        verse_marks[(book, ch, v)] |= {f"U+{ord(c):04X}" for c in unicodedata.normalize("NFD", form) if unicodedata.combining(c)}
+    is_q = {(t["book"], t["ch"], t["v"]) for t in gtok.values() if (t["after"] or "").strip() == ";"}
+    for ref, ms in verse_marks.items():
+        q = "question" if ref in is_q else "statement"
+        q_ends[q] += 1
+        for m_ in ms:
+            q_last[(m_, q)] += 1
+    con.execute("create table if not exists d_marks(mark text, feature text, value text, n int, rate real, lift real)")
+    con.execute("delete from d_marks")
+    mo = []
+    for (m_, (f, val)), n in mjoint.items():
+        if n >= 20:
+            lift = (n / mbase[(f, val)]) / (marks[m_] / nv)
+            if lift >= 1.5:
+                mo.append((m_, f, val, n, n / mbase[(f, val)], lift))
+    allq = sum(q_ends.values())
+    for (m_, q), n in q_last.items():
+        tot_m = sum(c for (mm, _), c in q_last.items() if mm == m_)
+        lift = (n / q_ends[q]) / (tot_m / allq) if tot_m else 0
+        if n >= 20 and lift >= 1.5:
+            mo.append((m_, "verse", q, n, n / q_ends[q], lift))
+    con.executemany("insert into d_marks values(?,?,?,?,?,?)", mo)
     # 4. constituent order: S, V, O of a Greek clause by the target positions of their linked words
     pat, gpat = collections.Counter(), {}
     clause_words = collections.defaultdict(list)
@@ -327,6 +426,32 @@ def derive(pname, quiet=False):
     for r in rows:
         nt_by_strong[r["strong"]] += 1
     gaps = []
+    eng_nt = collections.Counter()  # the BSB NT's words: a gap whose English word the NT has is not a gap
+    for code in BY_CODE:
+        if BY_CODE[code][2] == "nt":
+            for f in sorted(__import__("glob").glob(os.path.join(ROOT, "reference", "BSB", f"{code}[0-9][0-9][0-9].txt"))):
+                for vt in LT.verses_of(f).values():
+                    eng_nt.update(w.lower() for w in re.findall(r"[^\W\d_]+", vt))
+    bsb_ot = {}
+
+    def english_of(lex):
+        """The lexeme's most frequent BSB word (through the BSB tables), stopwords left out."""
+        import full_align as FA
+        c = collections.Counter()
+        for key, book, ch, v in con.execute("select key, book, ch, v from h.tokens where lexeme=? limit 60", (lex,)):
+            pos = con.execute("select positions from h.bsb where key=?", (key,)).fetchone()
+            if not pos:
+                continue
+            import vrs as V
+            c2, v2 = V.to_bsb(book.lower(), ch, v)
+            f = os.path.join(ROOT, "reference", "BSB", f"{book.lower()}{c2:03d}.txt")
+            if f not in bsb_ot:
+                bsb_ot[f] = LT.verses_of(f) if os.path.exists(f) else {}
+            toks = FA.tokenize(bsb_ot[f].get((c2, v2), ""))
+            for i in map(int, pos[0].split()):
+                if i < len(toks) and toks[i].lower() not in STOP_EN:
+                    c[toks[i].lower()] += 1
+        return [w for w, _ in c.most_common(2)]
     for lex, n in con.execute("""select lexeme, count(*) from h.tokens where kind='c' and class in ('noun','verb','adj')
             and coalesce(type, '') <> 'proper' and lexeme is not null group by lexeme having count(*) >= 20""").fetchall():
         lemma, gloss = con.execute("""select lemma, coalesce(english, gloss) from h.tokens where lexeme=?
@@ -334,7 +459,11 @@ def derive(pname, quiet=False):
         eq = con.execute("select greekstrong, sum(n) from h.lxx where lexeme=? group by greekstrong order by 2 desc limit 3", (lex,)).fetchall()
         nt = sum(nt_by_strong.get(g.lstrip("0"), 0) + nt_by_strong.get(g, 0) for g, _ in eq)
         if nt < 3:
-            gaps.append((lex, lemma, gloss, n, nt))
+            eng = english_of(lex)
+            stem = lambda w: w[:-1] if w.endswith("s") else w
+            in_nt = sum(c for w in eng for ww, c in eng_nt.items() if stem(ww) == stem(w))
+            if in_nt < 3:  # neither the LXX route nor the English one finds it in the NT
+                gaps.append((lex, lemma, gloss, n, nt))
     con.executemany("insert into d_gaps values(?,?,?,?,?)", gaps)
     con.commit()
     if not quiet:
@@ -360,8 +489,19 @@ def report(pname, top=8):
         rs = con.execute("select form, share, dropped from d_discourse where lemma=? order by n desc limit 3", (l,)).fetchall()
         print(f"  {l}: " + ", ".join(f"{f} {100 * sh:.0f}%" for f, sh, _ in rs) + f"; none {100 * rs[0][2]:.0f}%")
     print("\n## Affixes and the Greek features they go with (lift ≥ 1.5)")
-    for a, f, v, n, rate, lift in con.execute("select * from d_affix order by lift * min(n, 300) desc limit 16"):
-        print(f"  {a} with {f}={v}: n {n}, lift {lift:.1f}")
+    for label, cond in (("endings", "affix like '-%'"), ("beginnings", "affix like '%-' and affix not like '-%'")):
+        print(f"  {label}:")
+        best = {}  # one line per affix: its strongest feature, then the next ones in brief
+        for a, f, v, n, rate, lift in con.execute(f"select * from d_affix where {cond} order by lift * min(n, 300) desc"):
+            best.setdefault(a, []).append((f, v, n, lift))
+        for a, fs in list(best.items())[:24]:
+            f, v, n, lift = fs[0]
+            more = "; also " + ", ".join(f"{x[0]}={x[1]} ({x[3]:.1f})" for x in fs[1:3]) if len(fs) > 1 else ""
+            print(f"    {a} with {f}={v}: n {n}, lift {lift:.1f}{more}")
+    print("\n## Marks (tone and other combining marks) and what they go with (lift ≥ 1.5)")
+    names = {"U+0300": "grave", "U+0301": "acute", "U+0302": "circumflex", "U+0304": "macron", "U+1DC4": "macron-acute"}
+    for m_, f, v, n, rate, lift in con.execute("select * from d_marks order by lift * min(n, 300) desc limit 12"):
+        print(f"  {names.get(m_, m_)} with {f}={v}: n {n}, lift {lift:.1f}")
     print("\n## Letters in names (Greek → target)")
     print("  " + ", ".join(f"{g}→{t} ×{n}" for g, t, n in con.execute("select * from d_letters order by n desc limit 20")))
     print("\n## Names (most frequent)")

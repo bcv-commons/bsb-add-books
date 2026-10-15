@@ -27,7 +27,9 @@ The plan and the reasons are in `docs/proposals/language-toolkit/README.md`; the
    token; `lang.py hbo <project> <lexeme>` shows how the NT renders any Hebrew word through the LXX) and
    `python3 scripts/lang.py derive <project>` + `report <project>`: word order, function words, connectors, affix
    hypotheses (endings against the Greek features), name letters, formulas, OT gaps. Give the report to the agent
-   of step 4 as its starting point: it confirms or rejects each item against the corpus.
+   of step 4 as its starting point: `python3 scripts/memory_prompt.py <project>` does that by default when the
+   occurrence index exists (`--no-derived` without it); the agent confirms or rejects each item against the corpus.
+   Measured on Kuni (NT only): one such study run found 73% of the topics of the curated store, 195k tokens.
 4. **Seed the store and the wiki:** a first agent drafts one chapter and writes a grammar sketch; turn it
    into `profile/observations.json` + `decisions.json` (`docs/proposals/language-profile/`, validate with
    `python3 scripts/language_profile.py check export/<project>/profile --project <project>`) and seed the

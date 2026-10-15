@@ -76,7 +76,7 @@ Every entry, whatever its kind:
 | `value` | the finding (a string, or a small object for formulas) |
 | `evidence` | verse references in the edition, `"BOOK C:V"` (USFM code, the edition's numbering), each with an optional count `n` of occurrences in the corpus; at least one for `feature`, `term`, `formula`, `name` |
 | `confidence` | `high`, `medium`, `low` |
-| `method` | `corpus-observed` (read off the edition), `project-decision` (chosen for drafting among alternatives), `external` (from a published dataset) |
+| `method` | `corpus-observed` (read off the edition), `corpus-derived` (a statistic computed by script from the edition aligned to the source, confirmed against the corpus by an agent; the figure in `note`), `project-decision` (chosen for drafting among alternatives), `external` (from a published dataset) |
 | `by` | who recorded it: a drafting run (`agent:rut001`), a person, or a script |
 | `date` | ISO date |
 | `status` | `observed`, `decided`, `open`, `superseded` |

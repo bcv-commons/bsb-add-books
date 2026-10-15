@@ -47,7 +47,7 @@
         "alternatives": { "type": "array", "items": { "type": "object", "required": ["value"], "properties": { "value": { "type": "string" }, "n": { "type": "integer" }, "note": { "type": "string" } } } },
         "evidence": { "type": "array", "items": { "$ref": "#/$defs/ref" } },
         "confidence": { "enum": ["high", "medium", "low"] },
-        "method": { "enum": ["corpus-observed", "project-decision", "external"] },
+        "method": { "enum": ["corpus-observed", "corpus-derived", "project-decision", "external"] },
         "by": { "type": "string", "description": "agent:<chapter>, a person, or script:<name>." },
         "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
         "status": { "enum": ["observed", "decided", "open", "superseded"] },

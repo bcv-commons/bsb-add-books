@@ -4624,6 +4624,726 @@
     "preside"
    ],
    "note": "draft gen001"
+  },
+  {
+   "id": "reflexive_possessive",
+   "kind": "feature",
+   "value": "own, his own: nøkeza (1sg), qakeza (2sg), ekeza (3sg and 3pl), nikeza (1pl), zøkeza (2pl), before the noun",
+   "evidence": [
+    {
+     "ref": "MRK 1:21",
+     "form": "ekeza paev ezoqam",
+     "n": 801
+    },
+    {
+     "ref": "1CO 9:27",
+     "form": "nøkeza",
+     "n": 83
+    },
+    {
+     "ref": "ACT 16:28",
+     "form": "qakeza",
+     "n": 82
+    },
+    {
+     "ref": "1JN 1:8",
+     "form": "nikeza",
+     "n": 40
+    },
+    {
+     "ref": "1CO 6:19",
+     "form": "zøkeza",
+     "n": 104
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "ekeza 801 verses, zøkeza 104, nøkeza 83, qakeza 82, nikeza 40 (NT + Ruth/Jonah). With 'myself / my own' 36 of 62 verses have nøkeza, 'yourself / your own' 36 of 79 qakeza. Used where the possessor is the subject: 'ekeza paev ezoqam' (his disciples, MRK 1:21); 'ekeza kha' (herself, MRK 5:29). Extends possessive_pronouns, which lists only ekeza. Live example: formula:buy_it_yourself (qakeza, RUT 4:8)."
+  },
+  {
+   "id": "having_suffix",
+   "kind": "feature",
+   "value": "-us after a noun: having, with, full of; it forms adjectives (bazaføgakh-us powerful, loloakh-us wise, manqa-zapazapa-us sinful, khanakhanakh-us joyful)",
+   "evidence": [
+    {
+     "ref": "1CO 1:18",
+     "form": "bazaføgakh-ús",
+     "n": 133
+    },
+    {
+     "ref": "1CO 1:20",
+     "form": "loloakh-us",
+     "n": 30
+    },
+    {
+     "ref": "JON 4:2",
+     "form": "kuku matev-us"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "590 tokens: bazaføgakh-us 133, khanakhanakh-us 51, manqa-zapa-us 39, enqoni-us 34, manqa-zapazapa-us 33, loloakh-us 30, matev-us 21. Ruth/Jonah use it too: 'with my husband and sons' (gap:full_person.h), 'kuku matev-us Mbumbukiám' (JON 4:2). Its opposite is mbaín (without)."
+  },
+  {
+   "id": "plural",
+   "kind": "feature",
+   "value": "no general plural ending on nouns: number is shown by a numeral, a plural pronoun or possessive (-gi, ndigu), verb agreement, a separate plural stem (nakhasam child / nakheis children), reduplication (kawa → kawakawa rulers, bawan → bawabawan nations, kandamba → kandakanda), or -za on some person nouns (kawakawa-za, tat-za fathers, -pakha-za)",
+   "evidence": [
+    {
+     "ref": "1CO 4:14",
+     "form": "nakheis",
+     "n": 160
+    },
+    {
+     "ref": "GAL 3:8",
+     "form": "bawabawan",
+     "n": 55
+    },
+    {
+     "ref": "1CO 2:8",
+     "form": "kawakawa-za",
+     "n": 49
+    },
+    {
+     "ref": "ACT 4:23",
+     "form": "iziz ezoqa kandakanda"
+    },
+    {
+     "ref": "RUT 1:7",
+     "form": "ziupim-pakha-za"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Merges study-v2 and v2b (plural). Counts: kawakawa-za 49 (+ -qa/-te/-ge forms), atanakha-zapazapa-za 50, tat-za 6, ata-za 4, -pakha-za in Ruth (kin_pakha). Most nouns take no mark (sip sheep, manqat word). So study-v2's 'no plural ending' holds except for -za, which is limited to some person nouns."
+  },
+  {
+   "id": "negative_purpose",
+   "kind": "feature",
+   "value": "soqain ndøgo 'so that … not, lest' opens a purpose clause whose negation is in the connector: the clause itself has no negator",
+   "evidence": [
+    {
+     "ref": "1CO 1:15",
+     "form": "Soqaín ndøgo",
+     "n": 150
+    },
+    {
+     "ref": "1CO 1:17",
+     "form": "Soqaín ndøgo"
+    },
+    {
+     "ref": "1CO 2:5",
+     "form": "Soqaín ndøgo"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Soqaín ndøgo in 145 verses; 82 of them have not / no / lest / so that … not in the BSB. 1CO 1:15 ('so no one can say') has no negator in the following clause: the connector carries the negation. Not in Ruth or Jonah."
+  },
+  {
+   "id": "constituent_negation",
+   "kind": "feature",
+   "value": "'not X but Y' = ambá before the negated part, then Geté and the right one: 'ambá av nqǣgo … Geté …'; ambá negates a phrase or a clause, not the verb (the verb negative is -áv, feature negation)",
+   "evidence": [
+    {
+     "ref": "1CO 1:17",
+     "form": "ambá av nqǣgo",
+     "n": 240
+    },
+    {
+     "ref": "MRK 1:22",
+     "form": "Ambá av nqǣgo"
+    },
+    {
+     "ref": "1CO 2:4",
+     "form": "ambá"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "From study-v2 (contrast) and v2b (negation). 514 verses have ambá … gete, 173 of the 371 BSB verses with 'not … but'. ambá also opens a polite request (request_permission) and a wished act with -ɨn (suffix_in): the -ɨn verb tells those apart."
+  },
+  {
+   "id": "similative_ande",
+   "kind": "feature",
+   "value": "'like a <X>' = andé <X> me (+ verb): the compared noun between andé and me; andé alone also means 'about, roughly' (formula:about_n.h)",
+   "pattern": "andé <X> me <verb>",
+   "evidence": [
+    {
+     "ref": "MRK 1:10",
+     "form": "Andé kuvøkuvuam me",
+     "n": 3
+    },
+    {
+     "ref": "1PE 5:8",
+     "form": "andé"
+    },
+    {
+     "ref": "1PE 2:25",
+     "form": "andé"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "ande … me in 74 of 220 BSB verses with 'like' (281 verses in all): 'Andé kuvøkuvuam me' (like a dove, MRK 1:10). Beside similative ('av X ndi꞉gu', after the clause) and 'as if' andé."
+  },
+  {
+   "id": "present_nq",
+   "kind": "feature",
+   "value": "present tense (mostly 1st person) with nq- prefixes: nqazø-manqate (I tell you pl), nqataqa-manqate (I tell you sg), nqæmanqate (I say), nqæmatavap (I think)",
+   "evidence": [
+    {
+     "ref": "1CO 10:15",
+     "form": "nqazø-manqate",
+     "n": 141
+    },
+    {
+     "ref": "MAT 5:18",
+     "form": "nqazø-manqate"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-derived",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Derived report: nq- with present (lift 2.8); checked: of 1,428 verse-word pairs with an nq- verb (nqægo, nqanek, nqova left out), 53% are in verses whose BSB has am/is/are/I tell/I know (base 34%), 20% in was/were/had/did verses (base 28%). Frequent: nqazø-manqate 141, nqosøgeap 115, nqazi꞉gu 38. Copy an attested form; the paradigm is not worked out."
+  },
+  {
+   "id": "as_soon_as",
+   "kind": "feature",
+   "value": "'as soon as / when he had just …' = e-vø- + stem + -ae (e-vøndo-fakhan-ae, e-vø-ein-ae)",
+   "evidence": [
+    {
+     "ref": "MRK 1:10",
+     "form": "é-vøndo-fakhán-ae"
+    },
+    {
+     "ref": "ACT 23:7",
+     "form": "vø-ein-ae"
+    },
+    {
+     "ref": "MRK 5:29",
+     "form": "e-vømbokhanaz-ae"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "From study-v2 (temporal_clauses). Only 10 tokens in the NT; 7 of their BSB verses have when / as soon as / immediately. Rare: use it only where a model fits."
+  },
+  {
+   "id": "loanwords",
+   "kind": "feature",
+   "value": "introduced objects and institutions are English/Tok Pisin loans spelled by Kuni letters: moni 'money/silver', gol 'gold', waen 'wine', wit 'wheat', bali 'barley', flawa 'flour/bread', sip 'sheep', mbuk 'book/scroll', pepa 'letter', taon 'town'",
+   "evidence": [
+    {
+     "ref": "1TI 5:23",
+     "form": "waen",
+     "n": 102
+    },
+    {
+     "ref": "1CO 5:7",
+     "form": "sip",
+     "n": 124
+    },
+    {
+     "ref": "1CO 5:9",
+     "form": "pepa",
+     "n": 119
+    },
+    {
+     "ref": "2TI 4:13",
+     "form": "mbuk"
+    },
+    {
+     "ref": "LUK 13:21",
+     "form": "Flawa"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Checked: sheep sip (82 of 85 verses), wine waen (29 of 34), gold gol (18 of 24), silver/money moni (46 of 56), book/scroll mbuk (25 of 41), letter pepa (25 of 29), bread flawa (39 of 75; lou is the general food word), city taon. Ruth adds kilogrém (gap:ephah.h). A new OT object without a native NT word may take an English loan: ask the team (gaps)."
+  },
+  {
+   "id": "letter:long_a",
+   "kind": "letter",
+   "value": "English long a /ei/ → ei (Eibleem Abraham, Deivid David, Keinan Canaan, Kein Cain, Leiab Rahab, Eibol Abel)",
+   "evidence": [
+    {
+     "ref": "1PE 3:6",
+     "form": "Eibleem",
+     "n": 124
+    },
+    {
+     "ref": "ACT 7:11",
+     "form": "Keinan",
+     "n": 3
+    },
+    {
+     "ref": "1JN 3:12",
+     "form": "Kein",
+     "n": 3
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "For names the NT has; a name new in the OT follows letter:vowels.2 (close to the spelling). From study-v2b."
+  },
+  {
+   "id": "letter:long_i",
+   "kind": "letter",
+   "value": "English long i /ai/ → ai or ae (Sainai, Saitan, Aezaya Isaiah, Livai Levi, Ilaiza Elijah, Saemon Simon, Saedon Sidon, Aezek Isaac)",
+   "evidence": [
+    {
+     "ref": "ACT 7:30",
+     "form": "Sainai",
+     "n": 7
+    },
+    {
+     "ref": "1CO 5:5",
+     "form": "Saitan",
+     "n": 48
+    },
+    {
+     "ref": "ACT 8:28",
+     "form": "Aezaya",
+     "n": 23
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "For names the NT has; new OT names follow letter:vowels.2. From study-v2b."
+  },
+  {
+   "id": "letter:s_z",
+   "kind": "letter",
+   "value": "s sounded /z/ in English → z (Mozes Moses, Izlael Israel, Izip Egypt, Aezek Isaac)",
+   "evidence": [
+    {
+     "ref": "MRK 1:44",
+     "form": "Mozes"
+    },
+    {
+     "ref": "MAT 2:6",
+     "form": "Izlael"
+    },
+    {
+     "ref": "ACT 7:11",
+     "form": "Izip"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "From study-v2."
+  },
+  {
+   "id": "letter:c_soft",
+   "kind": "letter",
+   "value": "soft c → s (Siza Caesar)",
+   "evidence": [
+    {
+     "ref": "LUK 2:1",
+     "form": "Siza"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Siza in 24 verses. From study-v2."
+  },
+  {
+   "id": "letter:final_er",
+   "kind": "letter",
+   "value": "a final -er / -ar / -ah sounds as -a (Pita Peter, Hega Hagar, Asa Asher, Zelemaya, Aezaya)",
+   "evidence": [
+    {
+     "ref": "ACT 1:13",
+     "form": "Pita",
+     "n": 221
+    },
+    {
+     "ref": "GAL 4:24",
+     "form": "Hega"
+    },
+    {
+     "ref": "LUK 2:36",
+     "form": "Asa"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "From study-v2b (letter:final); with letter:h.2 (final -h drops) and letter:r.2 (final r drops: Tama). Initial h may drop (Elon Aaron, Isao Esau) or stay (Hega)."
+  },
+  {
+   "id": "gap:snow",
+   "kind": "gap",
+   "source": "snow (שֶׁלֶג, about 20× OT)",
+   "value": "snow: one NT model, sík in 'andé sík' (as white as snow, REV 1:14); MAT 28:3 says only 'white' (papaqá)",
+   "evidence": [
+    {
+     "ref": "REV 1:14",
+     "form": "andé sík"
+    },
+    {
+     "ref": "MAT 28:3",
+     "form": "papaqá"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "snow"
+   ],
+   "note": "Corrects study-v2b, which found no word: sík occurs once. Whether sík is the Kuni word for snow (or hail, ice: REV 16:21 has the loan ais) is a question for the team."
+  },
+  {
+   "id": "gap:wheel",
+   "kind": "gap",
+   "source": "אוֹפָן / גַּלְגַּל (EZK 1:15; about 35× OT)",
+   "value": "wheel: no NT model (no BSB 'wheel' in the NT); a chariot is 'hos manqei khagua' (ACT 8:28) with no wheel named",
+   "evidence": [
+    {
+     "ref": "ACT 8:28",
+     "form": "hos manqei khagua"
+    },
+    {
+     "ref": "EZK 1:15"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "wheel",
+    "wheels"
+   ],
+   "note": "From study-v2 and v2b. Build a description or a loan; ask the team."
+  },
+  {
+   "id": "gap:pomegranate",
+   "kind": "gap",
+   "source": "רִמּוֹן (EXO 28:33; about 32× OT)",
+   "value": "pomegranate: no NT model; describe it as a fruit (nanga) or take a loan",
+   "evidence": [
+    {
+     "ref": "EXO 28:33"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "pomegranate",
+    "pomegranates"
+   ],
+   "note": "No BSB 'pomegranate' in the NT. From study-v2 and v2b."
+  },
+  {
+   "id": "gap:colours",
+   "kind": "gap",
+   "source": "תְּכֵלֶת / אַרְגָּמָן / תּוֹלַעַת שָׁנִי (EXO 25:4)",
+   "value": "blue, purple, scarlet: the NT has køkouk (red) for purple and scarlet cloth (ndabua køkouk, JHN 19:2; MAT 27:28); no word for blue",
+   "evidence": [
+    {
+     "ref": "JHN 19:2",
+     "form": "ndabua køkouk"
+    },
+    {
+     "ref": "MAT 27:28",
+     "form": "ndabua køkouk"
+    },
+    {
+     "ref": "HEB 9:19",
+     "form": "køkóuk"
+    },
+    {
+     "ref": "EXO 25:4"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "blue",
+    "purple",
+    "scarlet",
+    "crimson"
+   ],
+   "note": "From study-v2 and v2b (gap:blue). The tabernacle lists need three colours; Kuni models give one. Ask the team."
+  },
+  {
+   "id": "gap:dew",
+   "kind": "gap",
+   "source": "טַל (GEN 27:28; about 31× OT)",
+   "value": "dew: no NT model (no BSB 'dew' in the NT)",
+   "evidence": [
+    {
+     "ref": "GEN 27:28"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "dew"
+   ],
+   "note": "From study-v2."
+  },
+  {
+   "id": "gap:acacia",
+   "kind": "gap",
+   "source": "שִׁטָּה (EXO 25:10; about 28× OT)",
+   "value": "acacia wood: no NT model; tae (tree, wood) + a description or loan",
+   "evidence": [
+    {
+     "ref": "EXO 25:10"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "acacia",
+    "acacia wood"
+   ],
+   "note": "From study-v2."
+  },
+  {
+   "id": "gap:kidneys",
+   "kind": "gap",
+   "source": "כִּלְיָה (LEV 3:4; about 31× OT)",
+   "value": "kidneys: no NT model; in sacrifices describe the organ; as the seat of feeling (heart and kidneys) use mbøni (term:H3820)",
+   "evidence": [
+    {
+     "ref": "LEV 3:4"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "kidneys"
+   ],
+   "note": "From study-v2."
+  },
+  {
+   "id": "gap:fortified",
+   "kind": "gap",
+   "source": "מִבְצָר (NUM 13:19; about 36× OT)",
+   "value": "fortified city, stronghold, fortress: no NT model (2CO 10:4 'strongholds' is figurative and has no fortress word)",
+   "evidence": [
+    {
+     "ref": "2CO 10:4"
+    },
+    {
+     "ref": "NUM 13:19"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "fortified",
+    "fortified city",
+    "stronghold",
+    "fortress"
+   ],
+   "note": "From study-v2 and v2b. Candidate: taon + a word for strong (bazaføgakh); open."
+  },
+  {
+   "id": "gap:shekel",
+   "kind": "gap",
+   "source": "שֶׁקֶל / כִּכָּר (GEN 24:22)",
+   "value": "shekel, talent, weight: no NT model for weighing; the NT turns talents into a sum of money (moni, MAT 18:24) and weights into kilograms (JHN 19:39), as the human Ruth does (gap:ephah.h)",
+   "evidence": [
+    {
+     "ref": "MAT 18:24",
+     "form": "moni milión"
+    },
+    {
+     "ref": "JHN 19:39",
+     "form": "kilogrém"
+    },
+    {
+     "ref": "GEN 24:22"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "shekel",
+    "shekels",
+    "talent",
+    "talents",
+    "weight",
+    "weighed"
+   ],
+   "note": "From study-v2 and v2b (gap:weight)."
+  },
+  {
+   "id": "gap:fine_linen",
+   "kind": "gap",
+   "source": "שֵׁשׁ מָשְׁזָר (EXO 26:1)",
+   "value": "fine (twisted) linen: no model for spun or twisted; linen = ndabua papaqa (white cloth, JHN 19:40)",
+   "evidence": [
+    {
+     "ref": "JHN 19:40",
+     "form": "ndabua papaqa"
+    },
+    {
+     "ref": "EXO 26:1"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "fine linen",
+    "finely spun linen",
+    "twisted",
+    "linen"
+   ],
+   "note": "From study-v2b (gap:twisted); the NT's 'twisted' is the crown of thorns."
+  },
+  {
+   "id": "gap:enlarge",
+   "kind": "gap",
+   "source": "רָחַב (GEN 9:27)",
+   "value": "enlarge, widen: no NT model; build from kandamba (big) + a verb",
+   "evidence": [
+    {
+     "ref": "GEN 9:27"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "enlarge",
+    "widen"
+   ],
+   "note": "From study-v2b; no BSB 'enlarge' or 'widen' in the NT."
+  },
+  {
+   "id": "gap:mixed",
+   "kind": "gap",
+   "source": "בָּלַל (LEV 2:4; about 42× OT)",
+   "value": "mixed / mingled (with oil): a model exists: '<X> namba … tøkua' (mixed with their blood, LUK 13:1; with water, HEB 9:19)",
+   "evidence": [
+    {
+     "ref": "LUK 13:1",
+     "form": "namba vømø̄-tøkua"
+    },
+    {
+     "ref": "HEB 9:19",
+     "form": "vø̄e-tøkua"
+    },
+    {
+     "ref": "LEV 2:4"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "mixed",
+    "mingled",
+    "mixed with oil"
+   ],
+   "note": "Corrects study-v2, which found no model."
+  },
+  {
+   "id": "gap:peoples",
+   "kind": "gap",
+   "source": "הַחִתִּי / הַחִוִּי / הַפְּרִזִּי (EXO 3:8)",
+   "value": "peoples (Hittites, Hivites, Perizzites, Cushites): the name by the letter table + bawan (people group), as 'Keinan bawan' (Canaanite, MAT 15:22)",
+   "evidence": [
+    {
+     "ref": "MAT 15:22",
+     "form": "Keinan bawan"
+    },
+    {
+     "ref": "EXO 3:8"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "hittites",
+    "hivites",
+    "perizzites",
+    "amorites",
+    "jebusites",
+    "cushite"
+   ],
+   "note": "From study-v2b."
   }
  ]
 }

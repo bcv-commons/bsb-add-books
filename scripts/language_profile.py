@@ -29,7 +29,7 @@ from books import BY_CODE  # noqa: E402
 
 KINDS = {"feature", "letter", "gap", "term", "formula", "name"}
 NEEDS_EVIDENCE = {"feature", "term", "formula", "name"}
-ENUMS = {"confidence": {"high", "medium", "low"}, "method": {"corpus-observed", "project-decision", "external"},
+ENUMS = {"confidence": {"high", "medium", "low"}, "method": {"corpus-observed", "corpus-derived", "project-decision", "external"},
          "status": {"observed", "decided", "open", "superseded"}, "partition": {"observations", "decisions", "external"}}
 REQUIRED = ["id", "kind", "value", "confidence", "method", "by", "date", "status"]
 REF = re.compile(r"^([1-3A-Z][A-Z0-9]{2}) (\d{1,3}):(\d{1,3})$")

@@ -431,6 +431,7 @@ def main():
             if not os.path.exists(os.path.join(ROOT, "orig", "grc.sqlite")):
                 run("scripts/src.py", "build", *[c for c in BY_CODE if BY_CODE[c][2] == "nt"])
             run("scripts/lang.py", "build", pname)
+            run("scripts/lang.py", "derive", pname)  # the derived products: the memory agent starts from them
     if ask("init_memory", "Create the empty store and wiki (memory_prompt.py --init)?", True) and not DRY:
         subprocess.run([sys.executable, "scripts/memory_prompt.py", pname, "--init"], cwd=ROOT, stdout=subprocess.DEVNULL)
         say(f"  export/{pname}/profile/ and wiki/")

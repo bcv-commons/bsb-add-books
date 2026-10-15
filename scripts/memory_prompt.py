@@ -3,7 +3,14 @@
 focused by the project's familiarity (scripts/modes.py; docs/onboarding.md, step 4). Template:
 docs/prompts/memory_prompt.md.
 
-Usage: python3 scripts/memory_prompt.py <project> [--init]
+Usage: python3 scripts/memory_prompt.py <project> [--init] [--no-derived] [--out DIR] [--store-only]
+       The study starts from the derived products whenever the project has its occurrence index
+       (_learn/lang.sqlite; scripts/lang.py build): the derived products (scripts/lang.py derive + report, written to
+                  _eval/local/derived_report.md) and uses the occurrence index (lang.py hbo / grc): the agent
+                  confirms or rejects each item against the corpus instead of finding everything by reading
+       --no-derived: without them (reading and searching only)
+       --out DIR: write the store (and wiki) under DIR instead of the project's own (a test run)
+       --store-only: no wiki (a test run)
        --init: first create an empty store (profile/observations.json, decisions.json) and wiki (index.md,
                log.md) where they don't exist yet
 """
@@ -88,7 +95,42 @@ def main():
     fill = {"close_to": p.get("close_to") or "the standard language", "label": label}
     text = open(os.path.join(ROOT, "docs", "prompts", "memory_prompt.md"), encoding="utf-8").read().split("\n---\n", 1)[1]
     qr = quotes.rule_text(pname)
+    out_dir = os.path.abspath(sys.argv[sys.argv.index("--out") + 1]) if "--out" in sys.argv else None
+    store_dir = os.path.relpath(os.path.join(out_dir, "profile"), ROOT) if out_dir else f"export/{pname}/profile"
+    wiki_dir = os.path.relpath(os.path.join(out_dir, "wiki"), ROOT) if out_dir else f"export/{pname}/wiki"
+    derived_lines = ""
+    import lang
+    if "--no-derived" not in sys.argv and os.path.exists(os.path.join(pdir, "_learn", "lang.sqlite")):
+        rep_path = os.path.join(pdir, "_eval", "local", "derived_report.md")
+        os.makedirs(os.path.dirname(rep_path), exist_ok=True)
+        import contextlib, io
+        buf = io.StringIO()
+        lang.derive(pname, quiet=True)
+        with contextlib.redirect_stdout(buf):
+            lang.report(pname)
+        open(rep_path, "w", encoding="utf-8").write(buf.getvalue())
+        rel = os.path.relpath(rep_path, ROOT)
+        derived_lines = (
+            f"- **Start here: the derived report** `{rel}`, computed by script from the corpus aligned to the Greek "
+            "(every NT token linked to its MACULA Greek token): word order, function words and how often they have no "
+            "word, clause-initial connectors, affix hypotheses (word endings or affix tokens against the Greek features "
+            "they go with, with lift; also person+number, tense+mood, negation and the object's person), tone and other "
+            "marks against the same features and against questions, letter correspondences in names, formulas, and the "
+            "OT words the NT hardly has (through the LXX and the BSB English). "
+            "Each line is a hypothesis with counts, not a finding: confirm or reject it against the corpus (look at "
+            "examples, find the counter-cases) and write what holds as a store entry, `method: corpus-derived` (statistic confirmed by you) where the "
+            "statistic carries it, citing the report's figure. Then look for what statistics can't show.\n"
+            f"- **The occurrence index:** `python3 scripts/lang.py hbo {pname} <Hebrew Strong's, e.g. H2617>` shows how "
+            "the NT renders a Hebrew word through the Septuagint (its Greek equivalents, the target words with counts, "
+            f"example verses); `python3 scripts/lang.py grc {pname} <Greek Strong's>` the same for one Greek lemma. Use "
+            "them for the term base: the OT concepts the drafts will need.")
     out = text.format(
+        store_dir=store_dir, wiki_dir=wiki_dir, derived_lines=derived_lines,
+        example_line=("" if pname == "kvg/kvg_BSB" else " A worked example of a finished memory, for its form only: "
+                      "`export/kvg/kvg_BSB/wiki/` and `export/kvg/kvg_BSB/profile/` (a different language; take nothing "
+                      "from its content)."),
+        wiki_check=("" if "--store-only" in sys.argv else
+                    f" and `python3 scripts/wiki.py sync {pname}`, then `python3 scripts/wiki.py lint {pname}`; add one line to `wiki/log.md`"),
         root=ROOT, project=pname, language_name=p.get("language_name"), school_language=modes.school_language(p),
         language_rule=(f"Write the wiki and the store's notes in **{modes.school_language(p)}**."
                        if modes.school_language(p).split(" (")[0] == label else
