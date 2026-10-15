@@ -4458,6 +4458,172 @@
    "status": "observed",
    "external_source": "lexeme-aligner target-morphology (kvg), CC0 statistics on a CC BY-NC-ND 4.0 basis",
    "note": "Agrees with our verb prefixes (subject ge-/gu-/gi-, sequence vø-, optative be-, object zø-/nø-) and negation (-áv, -eáv, -ák). It adds -ɨn as one of the commonest suffixes (feature suffix_in). It treats tone-marked variants as separate affixes (-am / -ám) and cannot tell prefix chains apart, so use it as a check, not as a parser."
+  },
+  {
+   "id": "ordinal",
+   "kind": "feature",
+   "value": "ordinals are verbs of becoming: '<noun>, gè-<N>-éz' (the Nth angel, Rev 8:8; 'gèmbo-menas-éz' the second seal, Rev 6:3), 'khøuwa mø̀ndømø-<N>-éz' (it is the Nth day, Luk 24:21), 'khøuwa timømbo-misika-ez ndøgo' (on the third day, Luk 9:22); 'first' = bugukhokhof before the noun (Rev 8:7)",
+   "evidence": [
+    {
+     "ref": "REV 8:8",
+     "form": "gè-menas-éz"
+    },
+    {
+     "ref": "LUK 24:21",
+     "form": "mø̀ndømø-misika-éz"
+    },
+    {
+     "ref": "LUK 9:22",
+     "form": "timømbo-misika-ez"
+    },
+    {
+     "ref": "REV 8:7",
+     "form": "bugukhokhof enzol ezoqam"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "The prefix chain varies (mø̀ndømbo- with foa, Jhn 11:39). formula:nth_day."
+  },
+  {
+   "id": "optative_bete",
+   "kind": "feature",
+   "value": "a third-person wish or 'let it ...' for things also takes bete-/betø- + stem: 'let both grow' (Mat 13:30 bete-umianét), 'let your light shine' (Mat 5:16 betekháev); beside be- + stem (begó, befakhan, beqatøzo)",
+   "evidence": [
+    {
+     "ref": "MAT 13:30",
+     "form": "bete-umianét"
+    },
+    {
+     "ref": "MAT 5:16",
+     "form": "betekháev"
+    },
+    {
+     "ref": "HEB 9:23",
+     "form": "begó"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Refines optative.2 for non-human subjects (the Gen 1 jussives)."
+  },
+  {
+   "id": "gap:let_us_make.h",
+   "kind": "gap",
+   "source": "נַעֲשֶׂה אָדָם (GEN 1:26)",
+   "value": "searched hortative forms of khakhein (zí-/sizi-/bizi-): none; used zíkhakheinám by the hortative pattern (Jon 1:7 zípeawám)",
+   "evidence": [
+    {
+     "ref": "JON 1:7"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "let us make"
+   ],
+   "note": "draft gen001"
+  },
+  {
+   "id": "gap:waters_gather.h",
+   "kind": "gap",
+   "source": "יִקָּווּ הַמַּיִם (GEN 1:9)",
+   "value": "searched gather with water or things: pind- is used only of people assembling; used bepindám by analogy",
+   "evidence": [
+    {
+     "ref": "ACT 16:13"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "gathered",
+    "gathering"
+   ],
+   "note": "draft gen001"
+  },
+  {
+   "id": "gap:birds_fly.h",
+   "kind": "gap",
+   "source": "וְעוֹף יְעוֹפֵף (GEN 1:20)",
+   "value": "searched løvuv- forms (ndiløvuvam, geløvuvat, me꞉løvuvavún): no optative; used bete-løvuvat by the bete- pattern (feature optative_bete)",
+   "evidence": [
+    {
+     "ref": "JAS 3:7"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "fly",
+    "let birds fly"
+   ],
+   "note": "draft gen001"
+  },
+  {
+   "id": "gap:fruitful_multiply.h",
+   "kind": "gap",
+   "source": "פְּרוּ וּרְבוּ (GEN 1:22, 28)",
+   "value": "searched multiply, numerous, increase: Heb 6:14 'I will give you many descendants', Heb 11:12 'zi kopoav-qapé'; no verb 'multiply'; used 'Zo kopoav zógoát' (become many)",
+   "evidence": [
+    {
+     "ref": "HEB 6:14"
+    },
+    {
+     "ref": "HEB 11:12"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "be fruitful",
+    "multiply",
+    "fruitful"
+   ],
+   "note": "draft gen001"
+  },
+  {
+   "id": "gap:rule_over.h",
+   "kind": "gap",
+   "source": "מֶמְשֶׁלֶת / רָדָה (GEN 1:16, 26, 28)",
+   "value": "searched rule over, reign, dominion: 'kawa zømbógoát' (Luk 1:33), 'zenda-té' (authority, Jhn 17:2); no verb 'rule' for the lights; used the predicate noun 'khøuwa-qá kawá'",
+   "evidence": [
+    {
+     "ref": "LUK 1:33"
+    },
+    {
+     "ref": "JHN 17:2"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "rule",
+    "rule over",
+    "preside"
+   ],
+   "note": "draft gen001"
   }
  ]
 }

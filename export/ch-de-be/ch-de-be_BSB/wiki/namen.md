@@ -360,4 +360,64 @@ der Durchsicht zu bestätigen.
   - answers: manasseh
   - Im Korpus belegt.
   - agent:memory-setup, 2026-10-14
-<!-- store:end sha=49ccdbba -->
+- **`name:reuben`** רְאוּבֵן → **Ruben** [high, decided, attested]
+  - NT: GEN 46:8 *Ruben*; EXO 1:2 *Ruben*
+  - answers: reuben
+  - Wie Gen 46.
+  - agent:exo001, 2026-10-15
+- **`name:simeon`** שִׁמְעוֹן → **Simeon** [high, decided, attested]
+  - NT: GEN 46:10 *Simeon*; EXO 1:2 *Simeon*
+  - answers: simeon
+  - Wie Gen 46.
+  - agent:exo001, 2026-10-15
+- **`name:issachar`** יִשָּׂשכָר → **Issachar** [high, decided, attested]
+  - NT: GEN 46:13 *Issachar*; EXO 1:3 *Issachar*
+  - answers: issachar
+  - Wie Gen 46.
+  - agent:exo001, 2026-10-15
+- **`name:zebulun`** זְבוּלֻן → **Sebulon** [high, decided, attested]
+  - NT: GEN 46:14 *Sebulon*; EXO 1:3 *Sebulon*
+  - answers: zebulun
+  - Wie Gen 46.
+  - agent:exo001, 2026-10-15
+- **`name:dan`** דָּן → **Dan** [high, decided, attested]
+  - NT: GEN 46:23 *Dan*; EXO 1:4 *Dan*
+  - answers: dan
+  - Wie Gen 46.
+  - agent:exo001, 2026-10-15
+- **`name:naphtali`** נַפְתָּלִי → **Naftali** [high, decided, attested]
+  - NT: GEN 46:24 *Naftali*; EXO 1:4 *Naftali*
+  - answers: naphtali
+  - Wie Gen 46.
+  - agent:exo001, 2026-10-15
+- **`name:gad`** גָּד → **Gad** [high, decided, attested]
+  - NT: GEN 46:16 *Gad*; EXO 1:4 *Gad*
+  - answers: gad
+  - Wie Gen 46.
+  - agent:exo001, 2026-10-15
+- **`name:asher`** אָשֵׁר → **Ascher** [high, decided, attested]
+  - NT: GEN 46:17 *Ascher*; EXO 1:4 *Ascher*
+  - answers: asher
+  - Wie Gen 46.
+  - agent:exo001, 2026-10-15
+- **`name:shiphrah`** שִׁפְרָה → **Schifra** [medium, decided, by-rule]
+  - NT: EXO 1:15 *Schifra*
+  - answers: shiphrah
+  - š → sch, p (spirantisch) → f; wie Luther/Zürcher.
+  - agent:exo001, 2026-10-15
+- **`name:puah`** פּוּעָה → **Pua** [medium, decided, by-rule]
+  - NT: EXO 1:15 *Pua*
+  - answers: puah
+  - Wie Luther/Zürcher; nicht verwechseln mit Puwa (Gen 46,13).
+  - agent:exo001, 2026-10-15
+- **`name:pithom`** פִּתֹם → **Pitom** [medium, decided, by-rule]
+  - NT: EXO 1:11 *Pitom*
+  - answers: pithom
+  - th → t wie Zürcher.
+  - agent:exo001, 2026-10-15
+- **`name:rameses`** רַעַמְסֵס → **Ramses** [high, decided, attested]
+  - NT: GEN 47:11 *Ramses*; EXO 1:11 *Ramses*
+  - answers: rameses
+  - Wie Gen 47,11.
+  - agent:exo001, 2026-10-15
+<!-- store:end sha=50b55d8b -->

@@ -1,6 +1,10 @@
 """Print the drafting prompt for one chapter, filled in from the project config.
 
-Usage: python3 scripts/make_prompt.py <project> <code> <chapter> [--date DD.MM.YYYY]
+Usage: python3 scripts/make_prompt.py <project> <code> <chapter> [--date DD.MM.YYYY] [--end-align]
+
+OT chapters are drafted tagged by default: the agent reads the clause packages (scripts/package.py, built first)
+and writes <code>NNN.tagged, from which scripts/full_align.py split makes the draft and its word alignment.
+--end-align: the old way instead, the draft first and the alignment as a last step (full_align.py listing).
 
 Reads docs/prompts/chapter_prompt.md (everything below the first '---' line),
 export/<project>/project.yaml and the import/<licence>/<language>/<edition>/edition.yaml files it
@@ -189,7 +193,14 @@ def main():
                     "Run it once more at the end." if style_check else ""),
     )
     import full_align
-    fields["align_step"] = "" if nt else "\n" + full_align.step(pname, code, chapter)
+    fields.update(package_line="", tagged_first="", tagged_split="", draft_ext="txt",
+                  align_step="" if nt else "\n" + full_align.step(pname, code, chapter))
+    if not nt and "--end-align" not in sys.argv:  # OT default: tagged drafting with clause packages (scripts/package.py)
+        pkg = os.path.join(ROOT, "export", pname, "_learn", "packs", f"{code}{nnn}.pkg.md")
+        if not os.path.exists(pkg):
+            raise SystemExit(f"no clause packages {os.path.relpath(pkg, ROOT)}: python3 scripts/package.py {pname} {code} {chapter} "
+                             "(or --end-align for the old way: draft, then align)")
+        fields.update(full_align.tagged_fields(pname, code, chapter, orig_path))
     template = open(os.path.join(ROOT, "docs", "prompts", "chapter_prompt.md"), encoding="utf-8").read()
     body = template.split("\n---\n", 1)[1]
     text = body.format(**fields)

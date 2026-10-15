@@ -41,7 +41,7 @@ from 0 (`numbering`); an untagged word renders no token of its own.
     python3 scripts/full_align.py split <project> <code> <ch>   <code>NNN.tagged -> prose .txt + .align (profile b),
                                                                 and the content tokens left untagged per verse
 """
-import hashlib, json, os, re, sys, unicodedata, urllib.request
+import functools, hashlib, json, os, re, sys, unicodedata, urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
@@ -57,6 +57,7 @@ PROFILES = {"a": {"method": "script", "score": None, "prior": None, "extra": Non
             "b": {"method": "agent", "score": None, "prior": None, "extra": None, "attr": {}}}
 
 
+@functools.lru_cache(maxsize=None)
 def index(book, kind):
     """_index/<BOOK>_<kind>.json (lexemes, keys, fn, fn_keys), downloaded once."""
     path = os.path.join(INDEX, f"{book}_{kind}.json")
@@ -431,6 +432,35 @@ def prompt(pname, code, ch):
     return ALONE.format(root=ROOT, project=pname, code=code, nnn=f"{ch:03d}", language=p.get("language_name"),
                         step=step(pname, code, ch).replace("- **Word alignment** (last step, after the checks, when the "
                                                            "draft text is final): run", "Run").replace("your draft's", "the draft's"))
+
+
+TAGGED_SOURCE = """
+- `export/{project}/_learn/packs/{code}{nnn}.pkg.md`: the **clause packages**, one block per Hebrew clause line in
+  the order of `{orig}`: each token with its number (`7 וַ and · 8 יְהִי there_was [q.wyq.3ms]`), gloss, verb form and
+  the referent of pronouns and suffixes (`ref=man(14)`); the BSB words that render the tokens (`famine^9`); and
+  under `had:` what this project wrote before for those words (and the store's decisions, and for an unknown
+  language the NT's words for them). Read each block as you translate its clause."""
+
+TAGGED_WRITE = """
+- **Write the draft tagged:** write it to `export/{project}/{code}/{code}{nnn}.tagged`, in the draft's usual layout,
+  with the package's token numbers right after the letters of each word that renders Hebrew tokens:
+  `Synerzyt^2,3, wo^4 d^5 Richter^6 im^10 Land^11 regiert^4 hei^4, isch^8 e^9 Hungersnot^9 cho^8.`
+  Tag as you write each clause: a word for two tokens gets both (`^2,3`); words that render one token
+  separately each get it (`wo^4 … regiert^4 hei^4`); a word added for the grammar, with no token of its own,
+  gets no tag. No tags inside notes, headings, the title or header lines. Never write the `.txt` or the `.align`
+  yourself: every change, also later, goes into the `.tagged` file."""
+
+TAGGED_SPLIT = (", then `python3 scripts/full_align.py split {project} {code} {chapter}`: it writes the "
+                "`{code}{nnn}.txt` and `{code}{nnn}.align` from the tagged file and lists the content tokens you left "
+                "untagged; tag each one or leave it if your draft renders it with no word (it is then left out). "
+                "After any later change to the `.tagged` file, run both again")
+
+
+def tagged_fields(pname, code, ch, orig):
+    nnn = f"{ch:03d}"
+    f = dict(project=pname, code=code, nnn=nnn, chapter=ch, orig=orig)
+    return {"package_line": TAGGED_SOURCE.format(**f), "tagged_first": TAGGED_WRITE.format(**f),
+            "tagged_split": TAGGED_SPLIT.format(**f), "draft_ext": "tagged", "align_step": ""}
 
 
 def step(pname, code, ch):

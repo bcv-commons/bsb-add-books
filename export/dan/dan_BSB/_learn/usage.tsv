@@ -1,0 +1,5 @@
+date	chapter	familiarity	tokens	calls	minutes	note
+2026-10-15	gen028	known	183509	34	15.0	test A: alignment at the end (quarantine; draft in _eval/local)
+2026-10-15	gen028	known	201291	41	7.3	test B: tagged with clause packages (quarantine; draft in _eval/local)
+2026-10-15	gen018	known	201667	37	8.9	test A: alignment at the end (quarantine; draft in _eval/local)
+2026-10-15	gen018	known	197286	40	13.9	test B: tagged with clause packages (quarantine; draft in _eval/local)

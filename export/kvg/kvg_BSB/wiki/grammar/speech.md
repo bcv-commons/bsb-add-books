@@ -298,7 +298,7 @@ See also [OT narrative and dialogue](../ot-narrative.md), which holds the narrat
 - **`formula:explain_name`** (name meaning explained) → **Taqa manqa mokho, ‘…’** [high, decided, attested]
   - NT: RUT 1:20 *Taqa manqa mokho, ‘Yage*
   - answers: naomi means pleasant, mara means bitter, means
-  - The human explains a name inside the text: 'No Naomi nø-akhàya᷄m. Taqa manqa mokho, ‘Yage qanimāv’. Geté Mala zonǿ-akhaemát. Taqa manqa mokho, ‘Yage soqaín’.' (its meaning is ...). The NT glossary uses the same words ('Taqa manqa mokho nqánek'). Use it for name etiologies (Genesis).
+  - The human explains a name inside the text: 'No Naomi nø-akhàya᷄m. Taqa manqa mokho, ‘Yage qanimāv’ …' (RUT 1:20: the name, then 'its meaning is …'). The NT glossary uses the same words ('Taqa manqa mokho nqánek'). Use it for name etiologies (Genesis).
   - agent:curate-rut-jon, 2026-10-14
 - **`formula:call_me`** אַל־תִּקְרֶאנָה לִי <X> קְרֶאןָ לִי <Y> / do not call me X, call me Y → **No Naomi nø-akhàya᷄m** [high, decided, attested]
   - NT: RUT 1:20 *No Naomi nø-akhàya᷄m*; RUT 1:20 *Geté Mala zonǿ-akhaemát*
@@ -510,4 +510,39 @@ See also [OT narrative and dialogue](../ot-narrative.md), which holds the narrat
   - answers: salvation is from the lord, salvation
   - khandi etoam = give life, save (NT glossary 'khandi etoam ezoqam' saviour).
   - agent:curate-rut-jon, 2026-10-14
-<!-- store:end sha=abdd295f -->
+- **`formula:be_fruitful`** פְּרוּ וּרְבוּ / be fruitful and multiply → **Zo kopoav zógoát** [low, decided, by-rule]
+  - NT: REV 14:7 *møe zógoát*
+  - answers: be fruitful and multiply, be fruitful, multiply
+  - No idiom found (gap:fruitful_multiply.h): 'become many' with the 2pl future as a command (Rev 14:7 'møe zógoát' fear God). 'let birds multiply' = 'pipisi ... kopoav begó'.
+  - agent:gen001, 2026-10-15
+- **`formula:fill_the_earth`** וּמִלְאוּ אֶת־הָאָרֶץ / fill the earth → **manqei-qape-te ate nqægo, zo zóyagát** [medium, decided, by-rule]
+  - NT: 1PE 5:9 *manqei-qape-te ate nqægo*; ACT 24:5 *manqei-qape-te ate nqægo*
+  - answers: fill the earth, fill the waters, fill
+  - 'live all over the earth' (image to meaning; 'all over the world' 1Pe 5:9, Act 24:5). The sea creatures: 'ndaola-te, ibøkha ate qægoam, zo zóyagát'.
+  - agent:gen001, 2026-10-15
+- **`formula:let_us_make`** נַעֲשֶׂה / let us make → **zíkhakheinám** [medium, decided, by-rule]
+  - NT: JON 1:7 *Iziz zípeawám*
+  - answers: let us make, let us
+  - Hortative zí- (Jon 1:7 'let us write') + khakhein (make); zíkhakheinám is not in the corpus (gap:let_us_make.h). Who 'us' is stays open, as in the Hebrew.
+  - agent:gen001, 2026-10-15
+- **`formula:male_female`** זָכָר וּנְקֵבָה בָּרָא אֹתָם / male and female he created them → **anganeam neká sævam, tèkhakheinøvém** [high, decided, attested]
+  - NT: MRK 10:6 *anganeam neká sævam, tèkhakheinøvém*
+  - answers: male and female, male and female he created them
+  - Mrk 10:6 quotes Gen 1:27; the human form is kept.
+  - agent:gen001, 2026-10-15
+- **`formula:behold_i_have_given`** הִנֵּה נָתַתִּי לָכֶם / Behold, I have given you → **Nqáe! No zo <X> mø̀ezø-etoám** [high, decided, attested]
+  - NT: LUK 10:19 *mø̀ezø-etoám*
+  - answers: behold, i have given you, i have given you, i have given
+  - Luk 10:19 'Behold, I have given you authority'. Gen 1:29-30.
+  - agent:gen001, 2026-10-15
+- **`formula:for_food`** לָכֶם יִהְיֶה לְאָכְלָה / they will be yours for food → **Ndigu zogí lou ndǿgoát** [medium, decided, by-rule]
+  - NT: RUT 1:16 *nogí ezoqam ndǿgoát*
+  - answers: for food, they will be yours for food, yours for food
+  - Possessive + noun + ndǿgoát (will be), as Rut 1:16. lou = food.
+  - agent:gen001, 2026-10-15
+- **`formula:very_good`** טוֹב מְאֹד / very good → **eqeieqei tantáv** [medium, decided, by-rule]
+  - NT: RUT 2:20 *Qanimav tantáv*
+  - answers: very good, indeed, it was very good
+  - tantáv = very (Rut 2:20; 46x). Gen 1:31 'Áe, ndøgo eqeieqei tantáv.' (Áe = behold in narrative, Rut 3:8).
+  - agent:gen001, 2026-10-15
+<!-- store:end sha=f735cd18 -->

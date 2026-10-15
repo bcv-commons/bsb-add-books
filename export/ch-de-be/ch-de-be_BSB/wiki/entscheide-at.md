@@ -1,6 +1,6 @@
 ---
 title: Entscheide AT-Wortschatz
-entries: [term:H2617, term:H1350, term:H2205, term:H3618, term:H2545, term:H8184, term:H2406, term:H7105, term:H7641, term:H1637, term:H5401, formula:weep_aloud, term:H2009, term:H3247, term:H4487, term:H2904, term:H7021, term:royal_robe, term:H1254, formula:in_the_beginning, formula:tohu_wabohu, term:H8415, term:H7549, formula:evening_morning, formula:and_it_was_so, formula:that_it_was_good, formula:after_its_kind, term:nefesh_chayah, term:H120, term:H5175, term:H6174, term:H779, term:H1288, term:H3999, term:H8392, term:H7198, term:H1285, term:H2555, term:H4135, term:H8198, term:H1616, term:H2233, term:H6666, term:gebiret, term:H3045_sex, term:H436, term:H520, term:H8255, formula:gathered_to_people, formula:here_i_am, formula:and_he_died, term:H5631, term:H953, term:captain_guard, term:H4676, term:H2748, term:H8441, term:H6629, term:H3701, term:H6485, term:rech_nichoach]
+entries: [term:H2617, term:H1350, term:H2205, term:H3618, term:H2545, term:H8184, term:H2406, term:H7105, term:H7641, term:H1637, term:H5401, formula:weep_aloud, term:H2009, term:H3247, term:H4487, term:H2904, term:H7021, term:royal_robe, term:H1254, formula:in_the_beginning, formula:tohu_wabohu, term:H8415, term:H7549, formula:evening_morning, formula:and_it_was_so, formula:that_it_was_good, formula:after_its_kind, term:nefesh_chayah, term:H120, term:H5175, term:H6174, term:H779, term:H1288, term:H3999, term:H8392, term:H7198, term:H1285, term:H2555, term:H4135, term:H8198, term:H1616, term:H2233, term:H6666, term:gebiret, term:H3045_sex, term:H436, term:H520, term:H8255, formula:gathered_to_people, formula:here_i_am, formula:and_he_died, term:H5631, term:H953, term:captain_guard, term:H4676, term:H2748, term:H8441, term:H6629, term:H3701, term:H6485, term:rech_nichoach, term:midwife, formula:fear_god, term:chayah_piel, term:brick_clay, term:perek, term:forced_labor, term:store_cities, term:nile, term:newborn_son_daughter, formula:the_more_the_more, term:qutz_dread, term:chayot, term:deal_shrewdly, term:sharats, term:title_exodus]
 ---
 # Entscheide AT-Wortschatz (Genesis, Rut, Jona)
 
@@ -21,6 +21,11 @@ dort den Entwurf beibehalten und im Notizfile nennen.
 - **Gefühl:** »lut aafa briegge« (laut weinen), »es Müntschi gä« (küssen).
 - Offen sind u. a. Herde/Härde (Korpus nur »Härde«), Süüle/Gedänkstei, Zouberer, Gröiel,
   sech kümmere/heisueche, Gäld/Silber, Meitli/Meitschi.
+- **Exodus 1** (2Mo 1): Hebamme (wie Gen 35; 38), »Ehrfurcht vor Gott ha« (wie Gen 42,18),
+  חיה Pi. immer »la läbe«, Neugeborene »Bueb / Meitschi« (sonst Suhn / Tochter), Lätt und Ziegle,
+  בְּפָרֶךְ »ohni Erbarme«, Fronvögt / Fronarbeit (Fron- im Korpus nicht belegt), Vorratsstedt,
+  »je meh …, descht meh« (wie Apg 7,17), שָׁרַץ »wimmle« wie Gen 1,20. Buchtitel »Ds zwöite Buech
+  Mose« ist offen.
 
 ## Store entries
 
@@ -314,4 +319,79 @@ dort den Entwurf beibehalten und im Notizfile nennen.
   - answers: pleasing aroma
   - Offen, ob feste Opferformel für alle Bücher Mose.
   - agent:memory-setup, 2026-10-14
-<!-- store:end sha=fa94e567 -->
+- **`term:midwife`** מְיַלֶּדֶת → **Hebamme** [high, decided, attested]
+  - NT: GEN 35:17 *Hebamme*; GEN 38:28 *Hebamme*; EXO 1:15 *Hebamme*
+  - answers: midwife, midwives
+  - Im NT-Korpus nicht belegt; Form der Genesis-Entwürfe. Plural gleich (d Hebamme), Dativ »de Hebamme«.
+  - agent:exo001, 2026-10-15
+- **`formula:fear_god`** יָרֵא אֶת־הָאֱלֹהִים → **Ehrfurcht vor Gott ha** [high, decided, attested]
+  - NT: GEN 42:18 *Ehrfurcht vor Gott*; GEN 22:12 *Ehrfurcht hesch vor Gott*; ACT 9:31 *Ehrfurcht*
+  - answers: feared god, fear god
+  - Wie Gen 20,11; 22,12; 42,18. 2Mo 1,17.21.
+  - agent:exo001, 2026-10-15
+- **`term:chayah_piel`** חִיָּה → **la läbe** [high, decided, by-rule]
+  - NT: EXO 1:17 *la läbe*; EXO 1:22 *löt läbe*
+  - answers: let live, let her live, let the boys live, allow to live
+  - Pi. von חיה »am Leben lassen«: überall gleich »la läbe« (2Mo 1,16.17.18.22).
+  - agent:exo001, 2026-10-15
+- **`term:brick_clay`** חֹמֶר / לְבֵנִים → **Lätt / Ziegle** [high, decided, attested]
+  - NT: ROM 9:21 *Lätt*; GEN 11:3 *Ziegle*; LUK 5:19 *Ziegle*
+  - answers: brick, bricks, mortar, clay
+  - חֹמֶר = Lätt (Ton, Lehm), לְבֵנִים = Ziegle. In Gen 11,3 steht für חֵמָר (Erdpech) »Mörtel«.
+  - agent:exo001, 2026-10-15
+- **`term:perek`** בְּפֶרֶךְ → **ohni Erbarme** [high, decided, attested]
+  - NT: HEB 10:28 *Erbarme*; EXO 1:13 *ohni Erbarme*
+  - answers: ruthlessly, harsh
+  - בְּפָרֶךְ 2Mo 1,13.14 beide Male gleich.
+  - agent:exo001, 2026-10-15
+- **`term:forced_labor`** שָׂרֵי מִסִּים / סִבְלֹת → **Fronvögt / Fronarbeit** [medium, decided, attested]
+  - NT: MRK 10:42 *Vögt.*; EXO 1:11 *Fronvögt*
+  - answers: taskmasters, forced labor
+  - Fron- im Korpus nicht belegt (siehe gap:fron); Vogt/Vögt 1×. Gilt für 2Mo 1,11; 3,7; 5,6-14.
+  - agent:exo001, 2026-10-15
+- **`term:store_cities`** עָרֵי מִסְכְּנוֹת → **Vorratsstedt** [medium, decided, attested]
+  - NT: MAT 12:35 *Vorrat*; EXO 1:11 *Vorratsstedt*
+  - answers: store cities, supply cities
+  - Zusammensetzung aus Vorrat + Stedt (Plural von Stadt).
+  - agent:exo001, 2026-10-15
+- **`term:nile`** יְאֹר → **der Nil** [high, decided, attested]
+  - NT: GEN 41:1 *Nil*; EXO 1:22 *Nil*
+  - answers: nile
+  - Wie Gen 41; »i Nil« mit Akkusativ.
+  - agent:exo001, 2026-10-15
+- **`term:newborn_son_daughter`** בֵּן / בַּת (neugeboren) → **Bueb / Meitschi** [high, decided, attested]
+  - NT: JHN 4:49 *Bueb*; 1CO 7:28 *Meitschi*; EXO 1:16 *Bueb*
+  - answers: son, daughter, boys
+  - Bei Neugeborenen (2Mo 1,16.22) בֵּן/בַּת = Bueb/Meitschi, הַיְלָדִים = d Buebe (wie Rut 1,5); sonst Suhn/Tochter.
+  - agent:exo001, 2026-10-15
+- **`formula:the_more_the_more`** כַּאֲשֶׁר … כֵּן → **je meh …, descht meh** [high, decided, attested]
+  - NT: ACT 7:17 *descht*; EXO 1:12 *descht meh*
+  - answers: the more, the more they
+  - כַּאֲשֶׁר … כֵּן; Korpus »je … descht« (descht 25×).
+  - agent:exo001, 2026-10-15
+- **`term:qutz_dread`** קוּץ → **es gruuset eim vor …** [medium, decided, attested]
+  - NT: JUD 1:23 *gruuse*; EXO 1:12 *gruuse*
+  - answers: dread, came to dread
+  - קוּץ מִפְּנֵי; vgl. Gen 46,34 »gruusig zwider«.
+  - agent:exo001, 2026-10-15
+- **`term:chayot`** חָיוֹת → **chreftig** [medium, decided, attested]
+  - NT: 1PE 5:10 *chreftig*; EXO 1:19 *chreftig*
+  - answers: vigorous
+  - חָיוֹת »lebenskräftig«; Alternative »zwäg« (16×, meist »bereit«).
+  - agent:exo001, 2026-10-15
+- **`term:deal_shrewdly`** הִתְחַכֵּם → **gschyd aastelle** [medium, decided, attested]
+  - NT: 1PE 3:17 *gschyder,*; EXO 1:10 *gschyd aastelle*
+  - answers: deal shrewdly
+  - הִתְחַכֵּם; »gschyd« 60× im Korpus, »aastelle« 1×.
+  - agent:exo001, 2026-10-15
+- **`term:sharats`** שָׁרַץ → **wimmle** [high, decided, attested]
+  - NT: GEN 1:20 *wimmle*; EXO 1:7 *gwimmlet*
+  - answers: increased rapidly, swarm, teem
+  - שָׁרַץ wie Gen 1,20.21; 9,7 (Leitwortbezug Schöpfung).
+  - agent:exo001, 2026-10-15
+- **`term:title_exodus`** שְׁמוֹת (Buchtitel) → **Ds zwöite Buech Mose** [medium, open, by-rule]
+  - NT: EXO 1:1 *Ds zwöite Buech Mose*
+  - answers: exodus
+  - Titel nach dem Muster »Ds erschte Buech Mose«; Korpusverweise »2Mo«. Offen bis zur Durchsicht.
+  - agent:exo001, 2026-10-15
+<!-- store:end sha=a0628655 -->

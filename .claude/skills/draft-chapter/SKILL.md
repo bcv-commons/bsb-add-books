@@ -28,7 +28,11 @@ The full way of working is `docs/workflow.md`; this is the procedure.
    - `python3 scripts/verse_pack.py <project> <code> <chapter>` builds the verse pack first, at the level the project's
      mode sets (`memory`, `dialect` or `full`; `python3 scripts/modes.py <project>`). The prompt points the agent to it,
      and its rules apply only when the pack exists;
-   - `python3 scripts/make_prompt.py <project> <code> <chapter>` prints the prompt;
+   - for an OT chapter, `python3 scripts/package.py <project> <code> <chapter>` builds the clause packages (it needs
+     `orig/heb.sqlite`: `python3 scripts/src.py build` once; for an unknown language with an NT, the occurrence index
+     `python3 scripts/lang.py build <project>` after `align.py`). `make_prompt.py` refuses an OT prompt without them;
+   - `python3 scripts/make_prompt.py <project> <code> <chapter>` prints the prompt (OT: tagged drafting; `--end-align`
+     gives the old way, the draft first and the alignment at the end);
    - give it, unchanged except for the shared terms, to a **new** agent (Agent tool, not a
      fork of this conversation: a fork has seen other chapters, and for a quarantined book it
      may have seen the existing translation);
@@ -42,11 +46,13 @@ The full way of working is `docs/workflow.md`; this is the procedure.
    - `python3 scripts/wrap_draft.py export/<project>/<code>/<code>NNN.txt` if lines are long;
    - OT chapters whose verses fall into other BSB chapters are reported as information: the
      draft keeps the Hebrew numbering.
-   - OT chapters: the agent's last step is the word alignment (`<code>NNN.align`, the bcv-commons format, profile `b`
-     on the verses it checked); `python3 scripts/full_align.py check <project> <code> <chapter>` must say ok. The
-     website's clause views are built from it. An existing chapter without one: `python3 scripts/bridge_align.py`
-     (script, profile `a`), then optionally `python3 scripts/full_align.py prompt <project> <code> <chapter>` for a
-     fresh agent that checks it.
+   - OT chapters: the agent writes `<code>NNN.tagged` (its words with the Hebrew token numbers) and `full_align.py
+     split` makes the `.txt` and the `.align` (the bcv-commons format, profile `b`) from it; the `.tagged` file is the
+     working copy (git-ignored): a correction goes into it, then `split` again (`full_align.py tag` rebuilds it from the
+     `.txt` and `.align` when it is gone). `python3 scripts/full_align.py check <project> <code> <chapter>` must say ok;
+     the website's clause views are built from the `.align`. An existing chapter without one: `python3
+     scripts/bridge_align.py` (script, profile `a`), then optionally `python3 scripts/full_align.py prompt <project>
+     <code> <chapter>` for a fresh agent that checks it.
    - The prompt already makes the agent keep to the quotation rules (`docs/licensing.md`) and check its
      own files; at the end of the wave run `python3 scripts/check_project.py <project>` (drafts, store,
      wiki, quotations, status) as the double check, and fix the cause in the prompt or the rules when

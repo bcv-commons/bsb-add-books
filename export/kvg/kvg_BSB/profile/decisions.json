@@ -10368,6 +10368,1117 @@
     "more than 120,000"
    ],
    "note": "Large numbers are English words (feature numerals.2)."
+  },
+  {
+   "id": "formula:let_there_be",
+   "kind": "formula",
+   "source": "יְהִי <X> (jussive) / let there be X",
+   "value": "<X> begó",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "HEB 9:23",
+     "form": "matev vini begó"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "let there be"
+   ],
+   "note": "Optative of go (be): '<X> begó.' (let X be, Heb 9:23). Gen 1:3 'Waev begó.'; 2Co 4:6 quotes the verse as 'Waev bekhā' (let light shine)."
+  },
+  {
+   "id": "formula:and_it_was_so",
+   "kind": "formula",
+   "source": "וַיְהִי־כֵן / and it was so",
+   "value": "Yaq ate av-té qafakhan.",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "LUK 2:21",
+     "form": "ate av-té"
+    },
+    {
+     "ref": "JON 1:8",
+     "form": "qafakhan"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "and it was so",
+    "it was so"
+   ],
+   "note": "Built from 'ate av-té' (just as, Luk 2:21) and qafakhan (it happened, Jon 1:8). A longer form with 'av Mbumbukiam ge꞉-ein' (as God had said) was tried in gen001 and cut: too many -ein."
+  },
+  {
+   "id": "formula:god_saw_good",
+   "kind": "formula",
+   "source": "וַיַּרְא אֱלֹהִים כִּי־טוֹב / God saw that it was good",
+   "value": "Yaq ndego geqeiv av nqægo, ndøgo eqeieqeí.",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "JON 3:10",
+     "form": "geqeiv av nqægo"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "god saw that it was good",
+    "saw that it was good",
+    "that it was good"
+   ],
+   "note": "Perception with 'av nqægo' (Jon 3:10 'Mbumbukiam geqeiv av nqægo'), the content a nominal clause 'ndøgo eqeieqeí'. After a sentence with Mbumbukiam: 'Yaq ndego' (the style check flags 'Yaq Mbumbukiam')."
+  },
+  {
+   "id": "formula:evening_morning",
+   "kind": "formula",
+   "source": "וַיְהִי־עֶרֶב וַיְהִי־בֹקֶר / there was evening and there was morning",
+   "value": "Yaq qakhagus ndøgo, qanaqanus qandopave.",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "MAT 14:15",
+     "form": "Yaq qakhagus ndøgo"
+    },
+    {
+     "ref": "ACT 27:39",
+     "form": "qanaqanus qandopave"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "and there was evening",
+    "and there was morning",
+    "evening",
+    "morning"
+   ],
+   "note": "'When evening came, the morning dawned': 'qakhagus ndøgo' is always subordinate in the corpus (13 verses); 'qanaqanus qandopave' (Act 27:39, 10:23)."
+  },
+  {
+   "id": "formula:nth_day",
+   "kind": "formula",
+   "source": "יוֹם שֵׁנִי / the second (third ...) day",
+   "value": "Khøuwa mø̀ndømø-<N>-éz.",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 24:21",
+     "form": "khøuwa mø̀ndømø-misika-éz"
+    },
+    {
+     "ref": "JHN 11:39",
+     "form": "khøuwa mø̀ndømbo-foa-éz"
+    },
+    {
+     "ref": "LUK 19:18",
+     "form": "mø̀ndømø-faev-éz"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "the second day",
+    "the third day",
+    "the fourth day",
+    "the fifth day",
+    "the sixth day"
+   ],
+   "note": "'(Now) it is the third day' (Luk 24:21). Gen 1: menas and siks by pattern, misika, foa (with -mbo-, Jhn 11:39), faev attested. The first day: 'Ndøgo bugukhokhof khøuwá.' (bugukhokhof first, Rev 8:7; predicate noun with final accent as Luk 23:54)."
+  },
+  {
+   "id": "formula:named_it",
+   "kind": "formula",
+   "source": "וַיִּקְרָא ... לְ<X> <Y> / he called X 'Y'",
+   "value": "<X>, iz <Y> mbo-akhá",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MAT 1:25",
+     "form": "iz Yesu mbo-akhá"
+    },
+    {
+     "ref": "LUK 2:21",
+     "form": "iz Yesu mbo-akhaém"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "god called",
+    "called the light",
+    "called the expanse",
+    "called the dry land",
+    "he called"
+   ],
+   "note": "Naming with iz + name + mbo-akha (Mat 1:25). Gen 1:5 'Mbumbukiam waev, iz Khøuwa mbo-akhá' (God named the light Day)."
+  },
+  {
+   "id": "term:H7549",
+   "kind": "term",
+   "source": "H7549 רָקִיעַ (expanse, firmament)",
+   "value": "khaiya",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "HEB 11:12",
+     "form": "khaiya-te nqo꞉go"
+    },
+    {
+     "ref": "MAT 16:2",
+     "form": "Khaiya køkouk"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "expanse",
+    "the expanse",
+    "expanse of the sky",
+    "open expanse"
+   ],
+   "note": "khaiya = the visible sky (stars, weather: Heb 11:12, Mat 16:2-3); yan = heaven (God's dwelling; 'heavens and earth'). Gen 1:8 God names the khaiya 'Yan'. Lights and birds are 'khaiya-te'."
+  },
+  {
+   "id": "term:H8064",
+   "kind": "term",
+   "source": "H8064 שָׁמַיִם (heavens, sky)",
+   "value": "yan",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 4:24",
+     "form": "Yan neka manqei-qape"
+    },
+    {
+     "ref": "REV 14:7",
+     "form": "yan neka manqei-qape"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "heavens",
+    "the heavens and the earth",
+    "sky"
+   ],
+   "note": "'the heavens and the earth' = 'yan neka manqei-qape' (Act 4:24, Rev 14:7). For רְקִיעַ הַשָּׁמַיִם use khaiya-te (term:H7549)."
+  },
+  {
+   "id": "term:H914",
+   "kind": "term",
+   "source": "H914 בָּדַל (separate)",
+   "value": "geqatøzo",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MAT 25:32",
+     "form": "géqatøzó"
+    },
+    {
+     "ref": "MRK 10:9",
+     "form": "beqatø̀zo᷄"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "separated",
+    "separate",
+    "to separate",
+    "distinguish"
+   ],
+   "note": "qatøzo = separate (Mat 25:32 the shepherd separates; Mrk 10:9 let no one separate). Past geqatøzo; optative beqatøzo (2x in the corpus)."
+  },
+  {
+   "id": "term:H8432",
+   "kind": "term",
+   "source": "H8432 בְּתוֹךְ (in the midst of, between)",
+   "value": "livin-te",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 12:6",
+     "form": "livin-té"
+    },
+    {
+     "ref": "ACT 8:25",
+     "form": "nakhoa livin-te"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "between",
+    "in the midst of",
+    "in the middle"
+   ],
+   "note": "livin-te = in the middle of (Act 12:6 Peter between two soldiers; Act 8:25 on the way)."
+  },
+  {
+   "id": "term:H8414",
+   "kind": "term",
+   "source": "H8414 + H922 תֹהוּ וָבֹהוּ (formless and void)",
+   "value": "unimé꞉-khakhambá. Gigiap nøme mbaín.",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "ACT 1:20",
+     "form": "unimé꞉-khakhambá"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "formless",
+    "void",
+    "formless and void"
+   ],
+   "note": "khakhamba = empty, deserted (Act 1:20 'may his house be deserted'); 'void' as 'there was nothing' with mbaín."
+  },
+  {
+   "id": "term:H2822cover",
+   "kind": "term",
+   "source": "H2822 + עַל־פְּנֵי (darkness over the surface of)",
+   "value": "bøivun ndønqeivøém",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 23:44",
+     "form": "bøivun ndønqeivøém"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "darkness was over the surface",
+    "darkness over the deep"
+   ],
+   "note": "'darkness covered (the land)' (Luk 23:44). Gen 1:2 'anana-mba-qape bøivun ndønqeivøém' (the deep = term:H8415)."
+  },
+  {
+   "id": "term:H7363",
+   "kind": "term",
+   "source": "H7363 רָחַף (hover)",
+   "value": "me꞉løvuvavún",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MRK 1:10",
+     "form": "me꞉løvuvavún"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "hovering",
+    "hovering over"
+   ],
+   "note": "løvuvav = fly (down) (Mrk 1:10, Mat 3:16: the Spirit like a dove). Gen 1:2 without the simile. Whether it can mean hovering in place: question for the Kuni team."
+  },
+  {
+   "id": "term:H6960",
+   "kind": "term",
+   "source": "H6960 קָוָה (be gathered; מִקְוֶה gathering of waters)",
+   "value": "bepindám",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "ACT 16:13",
+     "form": "é-møndøpindám"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "gathered",
+    "be gathered",
+    "gathering",
+    "gathering of waters"
+   ],
+   "note": "pind = gather, assemble, said of people (gindupindam 22x). For the waters by analogy: 'manqei kopo-té bepindám', 'ibøkha gipindam ndøgo' (the water that gathered). See gap:waters_gather.h."
+  },
+  {
+   "id": "term:H7200appear",
+   "kind": "term",
+   "source": "H7200 (Niphal: appear)",
+   "value": "befakhan",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "REV 12:1",
+     "form": "ndøfakhán"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "appear",
+    "may appear"
+   ],
+   "note": "fakhan = come out, appear (Rev 12:1, 12:3 a sign appeared); optative befakhan (8x)."
+  },
+  {
+   "id": "term:H1877",
+   "kind": "term",
+   "source": "H1877 / H3418 דֶּשֶׁא / יֶרֶק (vegetation, green plants)",
+   "value": "gagayag",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MAT 6:30",
+     "form": "gagayag-te"
+    },
+    {
+     "ref": "1PE 1:24",
+     "form": "gagayag"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "vegetation",
+    "green plant",
+    "grass"
+   ],
+   "note": "gagayag = grass, plants of the field (Mat 6:30, 1Pe 1:24)."
+  },
+  {
+   "id": "term:H6212",
+   "kind": "term",
+   "source": "H6212 עֵשֶׂב (plants, seed-bearing plants)",
+   "value": "avøe gigiap",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "JAS 5:7",
+     "form": "Avøe gigiap"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "plants",
+    "plant",
+    "seed-bearing plants",
+    "seed-bearing plant"
+   ],
+   "note": "avøe gigiap = crops (Jas 5:7; 2Co 9:10 'avøe khayam ezoqam' sower). 'seed-bearing' = 'nanga-us ndigu' (with seeds; -us by pattern)."
+  },
+  {
+   "id": "term:H6529",
+   "kind": "term",
+   "source": "H6529 + H6213 עֹשֶׂה פְּרִי (bear fruit)",
+   "value": "nanga ndǿviam",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "JAS 3:12",
+     "form": "nanga ndǿviam"
+    },
+    {
+     "ref": "JHN 12:24",
+     "form": "nanga ndǿviám"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "bearing fruit",
+    "bear fruit",
+    "fruit trees",
+    "fruit"
+   ],
+   "note": "nanga = fruit, seed; viam = bear (Jas 3:12, Jhn 12:24, Luk 6:43 géviamák). The first draft had an unattested ndiviam."
+  },
+  {
+   "id": "term:H2233seed",
+   "kind": "term",
+   "source": "H2233 זֶרַע (seed)",
+   "value": "tae nanga",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 15:36",
+     "form": "Tae nanga"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "seed",
+    "with seed",
+    "whose fruit contains seed"
+   ],
+   "note": "tae nanga = seed to sow (1Co 15:36); 'with seed in it' = 'ta nanga mokho-te ... tae nanga ndøugu' (inside, Act 10:12 'Ta mokho-te ndøugu')."
+  },
+  {
+   "id": "term:H4327",
+   "kind": "term",
+   "source": "H4327 לְמִינוֹ (according to its kind)",
+   "value": "bugug vinivinimbá",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 10:12",
+     "form": "bugug vinivinimbá"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "according to its kind",
+    "according to their kinds",
+    "after its kind",
+    "kind",
+    "kinds"
+   ],
+   "note": "'animals of all kinds' (Act 10:12; bugug form, vinivinimba different). After each class in Gen 1."
+  },
+  {
+   "id": "term:H3974",
+   "kind": "term",
+   "source": "H3974 מְאֹרֹת (lights; the greater and the lesser light)",
+   "value": "waev",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "2CO 4:6",
+     "form": "Waev bekhā"
+    },
+    {
+     "ref": "LUK 21:25",
+     "form": "Khøuwa neka løvøyak"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "lights",
+    "greater light",
+    "lesser light",
+    "great lights"
+   ],
+   "note": "waev = light. Gen 1:16 names the two lights in the text (feature explicitation): 'Waev kandambaqape, ndøgo khøuwá ... waev khasøkhasis, ndøgo løvøyák' (sun, moon; Luk 21:25). Marked for the team."
+  },
+  {
+   "id": "term:H4475",
+   "kind": "term",
+   "source": "H4475 / H4910 / H7287 (rule, dominion, rule over)",
+   "value": "kawa zømbógoát",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 1:33",
+     "form": "kawa zømbógoát"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "rule",
+    "rule over",
+    "preside",
+    "to rule the day"
+   ],
+   "note": "'he will be king over them' (Luk 1:33). People over the animals (Gen 1:26, 28): 'ndigu / zo ... kawa zømbógoát'. The lights rule as a predicate noun: 'khøuwa-qá kawá' (the day's chief). See gap:rule_over.h."
+  },
+  {
+   "id": "term:H226",
+   "kind": "term",
+   "source": "H226 + H4150 (signs, seasons)",
+   "value": "umingiap",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 2:19",
+     "form": "umingiap matev"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "signs",
+    "seasons",
+    "days and years"
+   ],
+   "note": "umingiap = sign, wonder (83x). מוֹעֲדִים as 'pindap khøuwa' (feast days, Jhn 5:1); 'times and seasons' in the NT = 'khøuwa neka viav' (Act 1:7)."
+  },
+  {
+   "id": "term:H215",
+   "kind": "term",
+   "source": "H215 הֵאִיר (give light, shine on)",
+   "value": "waev betekháev",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MAT 5:16",
+     "form": "betekháev"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "shine",
+    "to shine upon",
+    "give light",
+    "shine upon the earth"
+   ],
+   "note": "khaev = shine; 'let it shine' = betekháev (Mat 5:16), betøkháev (Luk 12:35)."
+  },
+  {
+   "id": "term:H8317",
+   "kind": "term",
+   "source": "H8317 שָׁרַץ (swarm, teem)",
+   "value": "kopoav-qape begó",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "ACT 10:12",
+     "form": "søvakha gigiap"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "teem",
+    "teemed",
+    "swarm"
+   ],
+   "note": "No verb for swarming: 'let there be very many (living creatures) in the water' (kopoav-qape very many + begó)."
+  },
+  {
+   "id": "term:H5775",
+   "kind": "term",
+   "source": "H5775 עוֹף (birds; winged birds, birds of the air)",
+   "value": "pipisi",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MAT 6:26",
+     "form": "Pipisi"
+    },
+    {
+     "ref": "JAS 3:7",
+     "form": "ndiløvuvam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "birds",
+    "bird",
+    "winged bird",
+    "birds of the air",
+    "fly"
+   ],
+   "note": "pipisi = bird; 'the ones that fly' = ndiløvuvam (Jas 3:7). 'birds of the air' = 'pipisi, khaiya-te'. 'let birds fly' = bete-løvuvat (by pattern; gap:birds_fly.h)."
+  },
+  {
+   "id": "term:H8577",
+   "kind": "term",
+   "source": "H8577 תַּנִּינִם (great sea creatures)",
+   "value": "søvakha gigiap kandakanda ... ibøkha-te ndi-okho",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "JAS 3:7",
+     "form": "ibøkha-te ndi-okho"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "great sea creatures",
+    "sea creatures"
+   ],
+   "note": "'big animals' + 'they go in the water' (Jas 3:7 creatures of the sea). Gen 1:21 as two sentences."
+  },
+  {
+   "id": "term:H929lv",
+   "kind": "term",
+   "source": "H929 בְּהֵמָה (livestock, cattle)",
+   "value": "søvakha gigiap nanák",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 11:6",
+     "form": "Nøme nanák"
+    },
+    {
+     "ref": "JHN 4:12",
+     "form": "søvakha gigiap nanak"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "livestock",
+    "cattle"
+   ],
+   "note": "nanak = tame (Jhn 4:12 Jacob's livestock; Act 11:6 tame and wild animals)."
+  },
+  {
+   "id": "term:H7431",
+   "kind": "term",
+   "source": "H7431 / H7430 רֶמֶשׂ / רֹמֵשׂ (creeping things, what crawls)",
+   "value": "gigiap ndivisigiap",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 11:6",
+     "form": "ndivisigiap"
+    },
+    {
+     "ref": "JAS 3:7",
+     "form": "ndivisigiap"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "crawlers",
+    "land crawlers",
+    "crawls",
+    "creature that crawls",
+    "everything that crawls",
+    "moves"
+   ],
+   "note": "visigiap = crawl (reptiles, Act 10:12, 11:6, Jas 3:7). 'that crawls on the earth' = 'manqei-qape-te ndivisigiap'."
+  },
+  {
+   "id": "term:H2416beast",
+   "kind": "term",
+   "source": "H2416 חַיַּת הָאָרֶץ (beasts of the earth)",
+   "value": "søvakha gigiap lozokhák",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 11:6",
+     "form": "nøme lozokhák"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "beasts of the earth",
+    "beast of the earth",
+    "beasts"
+   ],
+   "note": "lozokhak = wild (Act 11:6 wild beasts; Luk 9:58 foxes)."
+  },
+  {
+   "id": "term:H1288god",
+   "kind": "term",
+   "source": "H1288 (God blessed them)",
+   "value": "zenda gezømbove",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "HEB 11:20",
+     "form": "zenda gezømbove"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "god blessed them",
+    "blessed them",
+    "blessed"
+   ],
+   "note": "'put his hand on them' (Heb 11:20 Isaac blessed Jacob and Esau). The wish form is 'zenda ndò꞉vé' (term:H1288.h)."
+  },
+  {
+   "id": "formula:be_fruitful",
+   "kind": "formula",
+   "source": "פְּרוּ וּרְבוּ / be fruitful and multiply",
+   "value": "Zo kopoav zógoát",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "REV 14:7",
+     "form": "møe zógoát"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "be fruitful and multiply",
+    "be fruitful",
+    "multiply"
+   ],
+   "note": "No idiom found (gap:fruitful_multiply.h): 'become many' with the 2pl future as a command (Rev 14:7 'møe zógoát' fear God). 'let birds multiply' = 'pipisi ... kopoav begó'."
+  },
+  {
+   "id": "formula:fill_the_earth",
+   "kind": "formula",
+   "source": "וּמִלְאוּ אֶת־הָאָרֶץ / fill the earth",
+   "value": "manqei-qape-te ate nqægo, zo zóyagát",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "1PE 5:9",
+     "form": "manqei-qape-te ate nqægo"
+    },
+    {
+     "ref": "ACT 24:5",
+     "form": "manqei-qape-te ate nqægo"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "fill the earth",
+    "fill the waters",
+    "fill"
+   ],
+   "note": "'live all over the earth' (image to meaning; 'all over the world' 1Pe 5:9, Act 24:5). The sea creatures: 'ndaola-te, ibøkha ate qægoam, zo zóyagát'."
+  },
+  {
+   "id": "term:H3533",
+   "kind": "term",
+   "source": "H3533 כָּבַשׁ (subdue)",
+   "value": "zoqá zenda-té qatǿvé",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "LUK 4:6",
+     "form": "zenda-té qatǿvé"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "subdue",
+    "subdue it"
+   ],
+   "note": "'I put it into your hands' (Luk 4:6 'qoqá zenda-té qatǿvé'; Jhn 17:2). Recast from command to grant: mark for the team."
+  },
+  {
+   "id": "term:H6754",
+   "kind": "term",
+   "source": "H6754 + H1823 צֶלֶם / דְּמוּת (image, likeness)",
+   "value": "andé <X> bugug me",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "2CO 4:4",
+     "form": "Mbumbukiam-qa bugug me"
+    },
+    {
+     "ref": "COL 1:15",
+     "form": "Mbumbukiam-qá bugug ndondáp"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "image",
+    "in our image",
+    "likeness",
+    "after our likeness",
+    "in his own image",
+    "in the image of god"
+   ],
+   "note": "bugug = face, form; Christ, the image of God (2Co 4:4, Col 1:15). Gen 1:26-27 'andé niqa bugug me', 'andé ekeza bugug me', 'andé Mbumbukiam-qa bugug me'."
+  },
+  {
+   "id": "formula:let_us_make",
+   "kind": "formula",
+   "source": "נַעֲשֶׂה / let us make",
+   "value": "zíkhakheinám",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "JON 1:7",
+     "form": "Iziz zípeawám"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "let us make",
+    "let us"
+   ],
+   "note": "Hortative zí- (Jon 1:7 'let us write') + khakhein (make); zíkhakheinám is not in the corpus (gap:let_us_make.h). Who 'us' is stays open, as in the Hebrew."
+  },
+  {
+   "id": "formula:male_female",
+   "kind": "formula",
+   "source": "זָכָר וּנְקֵבָה בָּרָא אֹתָם / male and female he created them",
+   "value": "anganeam neká sævam, tèkhakheinøvém",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MRK 10:6",
+     "form": "anganeam neká sævam, tèkhakheinøvém"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "male and female",
+    "male and female he created them"
+   ],
+   "note": "Mrk 10:6 quotes Gen 1:27; the human form is kept."
+  },
+  {
+   "id": "formula:behold_i_have_given",
+   "kind": "formula",
+   "source": "הִנֵּה נָתַתִּי לָכֶם / Behold, I have given you",
+   "value": "Nqáe! No zo <X> mø̀ezø-etoám",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 10:19",
+     "form": "mø̀ezø-etoám"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "behold, i have given you",
+    "i have given you",
+    "i have given"
+   ],
+   "note": "Luk 10:19 'Behold, I have given you authority'. Gen 1:29-30."
+  },
+  {
+   "id": "formula:for_food",
+   "kind": "formula",
+   "source": "לָכֶם יִהְיֶה לְאָכְלָה / they will be yours for food",
+   "value": "Ndigu zogí lou ndǿgoát",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "RUT 1:16",
+     "form": "nogí ezoqam ndǿgoát"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "for food",
+    "they will be yours for food",
+    "yours for food"
+   ],
+   "note": "Possessive + noun + ndǿgoát (will be), as Rut 1:16. lou = food."
+  },
+  {
+   "id": "formula:very_good",
+   "kind": "formula",
+   "source": "טוֹב מְאֹד / very good",
+   "value": "eqeieqei tantáv",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "RUT 2:20",
+     "form": "Qanimav tantáv"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "very good",
+    "indeed, it was very good"
+   ],
+   "note": "tantáv = very (Rut 2:20; 46x). Gen 1:31 'Áe, ndøgo eqeieqei tantáv.' (Áe = behold in narrative, Rut 3:8)."
+  },
+  {
+   "id": "term:H5414set",
+   "kind": "term",
+   "source": "H5414 (set, place)",
+   "value": "genøvé",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "EPH 1:22",
+     "form": "genøvé"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "set",
+    "placed",
+    "god set"
+   ],
+   "note": "ve = put (Eph 1:22). Gen 1:17 'Mbumbukiam ndigu khaiya-te genøvé'."
+  },
+  {
+   "id": "term:H5315living",
+   "kind": "term",
+   "source": "H5315 + H2416 נֶפֶשׁ חַיָּה (living creatures; that has the breath of life)",
+   "value": "khandi gigiap",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "REV 6:3",
+     "form": "khandi gigiap nøme"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "living creatures",
+    "living thing",
+    "living creature",
+    "breath of life",
+    "every living thing"
+   ],
+   "note": "khandi = life; khandi gigiap = living creature (Rev 4-6). 'that has the breath of life' = 'khandi-us ndigu' (with life; -us by pattern)."
+  },
+  {
+   "id": "name:genesis_title",
+   "kind": "name",
+   "source": "בְּרֵאשִׁית (book title, Genesis)",
+   "value": "Ibugukhokhof",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "JHN 1:1",
+     "form": "Ibugukhokhof"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "genesis"
+   ],
+   "note": "Proposed title after the book's first word: 'Ibugukhokhof' (In the beginning, Jhn 1:1), a description as the NT titles Acts. Question for the Kuni team."
   }
  ]
 }

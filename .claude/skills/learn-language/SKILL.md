@@ -22,6 +22,12 @@ The plan and the reasons are in `docs/proposals/language-toolkit/README.md`; the
 3. **Align:** `python3 scripts/align.py <project>` (eflomal if installed; see the toolkit's *External
    tools* for macOS). Read `_learn/align_report.txt`: the glossary and name checks show how far to trust the
    lexicons. lexeme-aligner may already have the language: compare, and cite its data as `external`.
+   Then the occurrence index and the derived products: `python3 scripts/src.py build <NT codes>` once (the Greek
+   structure, `orig/grc.sqlite`), `python3 scripts/lang.py build <project>` (every NT token linked to a MACULA Greek
+   token; `lang.py hbo <project> <lexeme>` shows how the NT renders any Hebrew word through the LXX) and
+   `python3 scripts/lang.py derive <project>` + `report <project>`: word order, function words, connectors, affix
+   hypotheses (endings against the Greek features), name letters, formulas, OT gaps. Give the report to the agent
+   of step 4 as its starting point: it confirms or rejects each item against the corpus.
 4. **Seed the store and the wiki:** a first agent drafts one chapter and writes a grammar sketch; turn it
    into `profile/observations.json` + `decisions.json` (`docs/proposals/language-profile/`, validate with
    `python3 scripts/language_profile.py check export/<project>/profile --project <project>`) and seed the

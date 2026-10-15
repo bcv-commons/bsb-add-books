@@ -233,4 +233,29 @@ mbomambaqape", JON 2:5); check the NT (Hebrews, Luke 1-2) before recording a new
   - answers: raise up the name of the deceased, his name will not disappear
   - Ours: a wish 'may the dead man's name be on his land again'.
   - agent:curate-rut-jon, 2026-10-14, supersedes `gap:raise_up_name`
-<!-- store:end sha=5836d730 -->
+- **`gap:let_us_make.h`** נַעֲשֶׂה אָדָם (GEN 1:26) → **searched hortative forms of khakhein (zí-/sizi-/bizi-): none; used zíkhakheinám by the hortative pattern (Jon 1:7 zípeawám)** [medium, observed]
+  - NT: JON 1:7
+  - answers: let us make
+  - draft gen001
+  - agent:gen001, 2026-10-15
+- **`gap:waters_gather.h`** יִקָּווּ הַמַּיִם (GEN 1:9) → **searched gather with water or things: pind- is used only of people assembling; used bepindám by analogy** [medium, observed]
+  - NT: ACT 16:13
+  - answers: gathered, gathering
+  - draft gen001
+  - agent:gen001, 2026-10-15
+- **`gap:birds_fly.h`** וְעוֹף יְעוֹפֵף (GEN 1:20) → **searched løvuv- forms (ndiløvuvam, geløvuvat, me꞉løvuvavún): no optative; used bete-løvuvat by the bete- pattern (feature optative_bete)** [medium, observed]
+  - NT: JAS 3:7
+  - answers: fly, let birds fly
+  - draft gen001
+  - agent:gen001, 2026-10-15
+- **`gap:fruitful_multiply.h`** פְּרוּ וּרְבוּ (GEN 1:22, 28) → **searched multiply, numerous, increase: Heb 6:14 'I will give you many descendants', Heb 11:12 'zi kopoav-qapé'; no verb 'multiply'; used 'Zo kopoav zógoát' (become many)** [medium, observed]
+  - NT: HEB 6:14; HEB 11:12
+  - answers: be fruitful, multiply, fruitful
+  - draft gen001
+  - agent:gen001, 2026-10-15
+- **`gap:rule_over.h`** מֶמְשֶׁלֶת / רָדָה (GEN 1:16, 26, 28) → **searched rule over, reign, dominion: 'kawa zømbógoát' (Luk 1:33), 'zenda-té' (authority, Jhn 17:2); no verb 'rule' for the lights; used the predicate noun 'khøuwa-qá kawá'** [medium, observed]
+  - NT: LUK 1:33; JHN 17:2
+  - answers: rule, rule over, preside
+  - draft gen001
+  - agent:gen001, 2026-10-15
+<!-- store:end sha=f05836d6 -->

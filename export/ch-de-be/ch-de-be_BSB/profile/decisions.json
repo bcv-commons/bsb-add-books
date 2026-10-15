@@ -5473,6 +5473,725 @@
    "date": "2026-10-14",
    "status": "decided",
    "note": "Im Korpus belegt."
+  },
+  {
+   "id": "term:midwife",
+   "kind": "term",
+   "value": "Hebamme",
+   "source": "מְיַלֶּדֶת",
+   "attested": "attested",
+   "words": [
+    "midwife",
+    "midwives"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 35:17",
+     "form": "Hebamme"
+    },
+    {
+     "ref": "GEN 38:28",
+     "form": "Hebamme"
+    },
+    {
+     "ref": "EXO 1:15",
+     "form": "Hebamme"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:exo001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "note": "Im NT-Korpus nicht belegt; Form der Genesis-Entwürfe. Plural gleich (d Hebamme), Dativ »de Hebamme«."
+  },
+  {
+   "id": "formula:fear_god",
+   "kind": "formula",
+   "value": "Ehrfurcht vor Gott ha",
+   "source": "יָרֵא אֶת־הָאֱלֹהִים",
+   "attested": "attested",
+   "words": [
+    "feared god",
+    "fear god"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 42:18",
+     "form": "Ehrfurcht vor Gott"
+    },
+    {
+     "ref": "GEN 22:12",
+     "form": "Ehrfurcht hesch vor Gott"
+    },
+    {
+     "ref": "ACT 9:31",
+     "form": "Ehrfurcht"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:exo001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "note": "Wie Gen 20,11; 22,12; 42,18. 2Mo 1,17.21."
+  },
+  {
+   "id": "term:chayah_piel",
+   "kind": "term",
+   "value": "la läbe",
+   "source": "חִיָּה",
+   "attested": "by-rule",
+   "words": [
+    "let live",
+    "let her live",
+    "let the boys live",
+    "allow to live"
+   ],
+   "evidence": [
+    {
+     "ref": "EXO 1:17",
+     "form": "la läbe"
+    },
+    {
+     "ref": "EXO 1:22",
+     "form": "löt läbe"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:exo001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "note": "Pi. von חיה »am Leben lassen«: überall gleich »la läbe« (2Mo 1,16.17.18.22)."
+  },
+  {
+   "id": "term:brick_clay",
+   "kind": "term",
+   "value": "Lätt / Ziegle",
+   "source": "חֹמֶר / לְבֵנִים",
+   "attested": "attested",
+   "words": [
+    "brick",
+    "bricks",
+    "mortar",
+    "clay"
+   ],
+   "evidence": [
+    {
+     "ref": "ROM 9:21",
+     "form": "Lätt"
+    },
+    {
+     "ref": "GEN 11:3",
+     "form": "Ziegle"
+    },
+    {
+     "ref": "LUK 5:19",
+     "form": "Ziegle"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:exo001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "note": "חֹמֶר = Lätt (Ton, Lehm), לְבֵנִים = Ziegle. In Gen 11,3 steht für חֵמָר (Erdpech) »Mörtel«."
+  },
+  {
+   "id": "term:perek",
+   "kind": "term",
+   "value": "ohni Erbarme",
+   "source": "בְּפֶרֶךְ",
+   "attested": "attested",
+   "words": [
+    "ruthlessly",
+    "harsh"
+   ],
+   "evidence": [
+    {
+     "ref": "HEB 10:28",
+     "form": "Erbarme"
+    },
+    {
+     "ref": "EXO 1:13",
+     "form": "ohni Erbarme"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:exo001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "note": "בְּפָרֶךְ 2Mo 1,13.14 beide Male gleich."
+  },
+  {
+   "id": "term:forced_labor",
+   "kind": "term",
+   "value": "Fronvögt / Fronarbeit",
+   "source": "שָׂרֵי מִסִּים / סִבְלֹת",
+   "attested": "attested",
+   "words": [
+    "taskmasters",
+    "forced labor"
+   ],
+   "evidence": [
+    {
+     "ref": "MRK 10:42",
+     "form": "Vögt."
+    },
+    {
+     "ref": "EXO 1:11",
+     "form": "Fronvögt"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:exo001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "note": "Fron- im Korpus nicht belegt (siehe gap:fron); Vogt/Vögt 1×. Gilt für 2Mo 1,11; 3,7; 5,6-14."
+  },
+  {
+   "id": "term:store_cities",
+   "kind": "term",
+   "value": "Vorratsstedt",
+   "source": "עָרֵי מִסְכְּנוֹת",
+   "attested": "attested",
+   "words": [
+    "store cities",
+    "supply cities"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 12:35",
+     "form": "Vorrat"
+    },
+    {
+     "ref": "EXO 1:11",
+     "form": "Vorratsstedt"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:exo001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "note": "Zusammensetzung aus Vorrat + Stedt (Plural von Stadt)."
+  },
+  {
+   "id": "term:nile",
+   "kind": "term",
+   "value": "der Nil",
+   "source": "יְאֹר",
+   "attested": "attested",
+   "words": [
+    "nile"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 41:1",
+     "form": "Nil"
+    },
+    {
+     "ref": "EXO 1:22",
+     "form": "Nil"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:exo001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "note": "Wie Gen 41; »i Nil« mit Akkusativ."
+  },
+  {
+   "id": "term:newborn_son_daughter",
+   "kind": "term",
+   "value": "Bueb / Meitschi",
+   "source": "בֵּן / בַּת (neugeboren)",
+   "attested": "attested",
+   "words": [
+    "son",
+    "daughter",
+    "boys"
+   ],
+   "evidence": [
+    {
+     "ref": "JHN 4:49",
+     "form": "Bueb"
+    },
+    {
+     "ref": "1CO 7:28",
+     "form": "Meitschi"
+    },
+    {
+     "ref": "EXO 1:16",
+     "form": "Bueb"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:exo001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "note": "Bei Neugeborenen (2Mo 1,16.22) בֵּן/בַּת = Bueb/Meitschi, הַיְלָדִים = d Buebe (wie Rut 1,5); sonst Suhn/Tochter."
+  },
+  {
+   "id": "formula:the_more_the_more",
+   "kind": "formula",
+   "value": "je meh …, descht meh",
+   "source": "כַּאֲשֶׁר … כֵּן",
+   "attested": "attested",
+   "words": [
+    "the more",
+    "the more they"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 7:17",
+     "form": "descht"
+    },
+    {
+     "ref": "EXO 1:12",
+     "form": "descht meh"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:exo001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "note": "כַּאֲשֶׁר … כֵּן; Korpus »je … descht« (descht 25×)."
+  },
+  {
+   "id": "term:qutz_dread",
+   "kind": "term",
+   "value": "es gruuset eim vor …",
+   "source": "קוּץ",
+   "attested": "attested",
+   "words": [
+    "dread",
+    "came to dread"
+   ],
+   "evidence": [
+    {
+     "ref": "JUD 1:23",
+     "form": "gruuse"
+    },
+    {
+     "ref": "EXO 1:12",
+     "form": "gruuse"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:exo001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "note": "קוּץ מִפְּנֵי; vgl. Gen 46,34 »gruusig zwider«."
+  },
+  {
+   "id": "term:chayot",
+   "kind": "term",
+   "value": "chreftig",
+   "source": "חָיוֹת",
+   "attested": "attested",
+   "words": [
+    "vigorous"
+   ],
+   "evidence": [
+    {
+     "ref": "1PE 5:10",
+     "form": "chreftig"
+    },
+    {
+     "ref": "EXO 1:19",
+     "form": "chreftig"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:exo001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "note": "חָיוֹת »lebenskräftig«; Alternative »zwäg« (16×, meist »bereit«)."
+  },
+  {
+   "id": "term:deal_shrewdly",
+   "kind": "term",
+   "value": "gschyd aastelle",
+   "source": "הִתְחַכֵּם",
+   "attested": "attested",
+   "words": [
+    "deal shrewdly"
+   ],
+   "evidence": [
+    {
+     "ref": "1PE 3:17",
+     "form": "gschyder,"
+    },
+    {
+     "ref": "EXO 1:10",
+     "form": "gschyd aastelle"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:exo001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "note": "הִתְחַכֵּם; »gschyd« 60× im Korpus, »aastelle« 1×."
+  },
+  {
+   "id": "term:sharats",
+   "kind": "term",
+   "value": "wimmle",
+   "source": "שָׁרַץ",
+   "attested": "attested",
+   "words": [
+    "increased rapidly",
+    "swarm",
+    "teem"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 1:20",
+     "form": "wimmle"
+    },
+    {
+     "ref": "EXO 1:7",
+     "form": "gwimmlet"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:exo001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "note": "שָׁרַץ wie Gen 1,20.21; 9,7 (Leitwortbezug Schöpfung)."
+  },
+  {
+   "id": "term:title_exodus",
+   "kind": "term",
+   "value": "Ds zwöite Buech Mose",
+   "source": "שְׁמוֹת (Buchtitel)",
+   "attested": "by-rule",
+   "words": [
+    "exodus"
+   ],
+   "evidence": [
+    {
+     "ref": "EXO 1:1",
+     "form": "Ds zwöite Buech Mose"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:exo001",
+   "date": "2026-10-15",
+   "status": "open",
+   "note": "Titel nach dem Muster »Ds erschte Buech Mose«; Korpusverweise »2Mo«. Offen bis zur Durchsicht."
+  },
+  {
+   "id": "name:reuben",
+   "kind": "name",
+   "value": "Ruben",
+   "source": "רְאוּבֵן",
+   "attested": "attested",
+   "words": [
+    "reuben"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 46:8",
+     "form": "Ruben"
+    },
+    {
+     "ref": "EXO 1:2",
+     "form": "Ruben"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:exo001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "note": "Wie Gen 46."
+  },
+  {
+   "id": "name:simeon",
+   "kind": "name",
+   "value": "Simeon",
+   "source": "שִׁמְעוֹן",
+   "attested": "attested",
+   "words": [
+    "simeon"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 46:10",
+     "form": "Simeon"
+    },
+    {
+     "ref": "EXO 1:2",
+     "form": "Simeon"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:exo001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "note": "Wie Gen 46."
+  },
+  {
+   "id": "name:issachar",
+   "kind": "name",
+   "value": "Issachar",
+   "source": "יִשָּׂשכָר",
+   "attested": "attested",
+   "words": [
+    "issachar"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 46:13",
+     "form": "Issachar"
+    },
+    {
+     "ref": "EXO 1:3",
+     "form": "Issachar"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:exo001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "note": "Wie Gen 46."
+  },
+  {
+   "id": "name:zebulun",
+   "kind": "name",
+   "value": "Sebulon",
+   "source": "זְבוּלֻן",
+   "attested": "attested",
+   "words": [
+    "zebulun"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 46:14",
+     "form": "Sebulon"
+    },
+    {
+     "ref": "EXO 1:3",
+     "form": "Sebulon"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:exo001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "note": "Wie Gen 46."
+  },
+  {
+   "id": "name:dan",
+   "kind": "name",
+   "value": "Dan",
+   "source": "דָּן",
+   "attested": "attested",
+   "words": [
+    "dan"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 46:23",
+     "form": "Dan"
+    },
+    {
+     "ref": "EXO 1:4",
+     "form": "Dan"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:exo001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "note": "Wie Gen 46."
+  },
+  {
+   "id": "name:naphtali",
+   "kind": "name",
+   "value": "Naftali",
+   "source": "נַפְתָּלִי",
+   "attested": "attested",
+   "words": [
+    "naphtali"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 46:24",
+     "form": "Naftali"
+    },
+    {
+     "ref": "EXO 1:4",
+     "form": "Naftali"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:exo001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "note": "Wie Gen 46."
+  },
+  {
+   "id": "name:gad",
+   "kind": "name",
+   "value": "Gad",
+   "source": "גָּד",
+   "attested": "attested",
+   "words": [
+    "gad"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 46:16",
+     "form": "Gad"
+    },
+    {
+     "ref": "EXO 1:4",
+     "form": "Gad"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:exo001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "note": "Wie Gen 46."
+  },
+  {
+   "id": "name:asher",
+   "kind": "name",
+   "value": "Ascher",
+   "source": "אָשֵׁר",
+   "attested": "attested",
+   "words": [
+    "asher"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 46:17",
+     "form": "Ascher"
+    },
+    {
+     "ref": "EXO 1:4",
+     "form": "Ascher"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:exo001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "note": "Wie Gen 46."
+  },
+  {
+   "id": "name:shiphrah",
+   "kind": "name",
+   "value": "Schifra",
+   "source": "שִׁפְרָה",
+   "attested": "by-rule",
+   "words": [
+    "shiphrah"
+   ],
+   "evidence": [
+    {
+     "ref": "EXO 1:15",
+     "form": "Schifra"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:exo001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "note": "š → sch, p (spirantisch) → f; wie Luther/Zürcher."
+  },
+  {
+   "id": "name:puah",
+   "kind": "name",
+   "value": "Pua",
+   "source": "פּוּעָה",
+   "attested": "by-rule",
+   "words": [
+    "puah"
+   ],
+   "evidence": [
+    {
+     "ref": "EXO 1:15",
+     "form": "Pua"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:exo001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "note": "Wie Luther/Zürcher; nicht verwechseln mit Puwa (Gen 46,13)."
+  },
+  {
+   "id": "name:pithom",
+   "kind": "name",
+   "value": "Pitom",
+   "source": "פִּתֹם",
+   "attested": "by-rule",
+   "words": [
+    "pithom"
+   ],
+   "evidence": [
+    {
+     "ref": "EXO 1:11",
+     "form": "Pitom"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:exo001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "note": "th → t wie Zürcher."
+  },
+  {
+   "id": "name:rameses",
+   "kind": "name",
+   "value": "Ramses",
+   "source": "רַעַמְסֵס",
+   "attested": "attested",
+   "words": [
+    "rameses"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 47:11",
+     "form": "Ramses"
+    },
+    {
+     "ref": "EXO 1:11",
+     "form": "Ramses"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:exo001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "note": "Wie Gen 47,11."
   }
  ]
 }

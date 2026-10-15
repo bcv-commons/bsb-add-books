@@ -68,4 +68,14 @@ Bildung nach berndeutschem Muster (Komposita wie »Himelsgwölb«, Umschreibung)
   - answers: as surely as the lord lives, may the lord punish me
   - In Rut 1,17 und 3,13 nach dem Hebräischen gebildet; noch nicht als feste Formel geprüft.
   - agent:memory-setup, 2026-10-14
-<!-- store:end sha=6080e907 -->
+- **`gap:fron`** **Fron- (Fronvögt, Fronarbeit): im Korpus nicht belegt; gesucht »fron«, »ufseher«, »vogt«; nur »Vögt« 1×. Verwendet: Fronvögt / Fronarbeit (term:forced_labor).** [medium, decided]
+  - NT: MRK 10:42 *Vögt.*
+  - answers: taskmasters, forced labor
+  - 2Mo 1,11.
+  - agent:exo001, 2026-10-15
+- **`gap:birthstool`** **Gebärstuhl (אָבְנַיִם): kein Korpuswort; gesucht »gebär«, »stuel«, »stei«. Verwendet: »Gebärstuel« mit Fussnote »di zwee Steine«.** [medium, decided]
+  - NT: EXO 1:16 *Gebärstuel*
+  - answers: birthstools
+  - 2Mo 1,16.
+  - agent:exo001, 2026-10-15
+<!-- store:end sha=41c5a4e0 -->

@@ -11,7 +11,8 @@ working; this file adds the rules that hold for any task here.
    missing, run `python3 scripts/setup.py` (about a minute). For the OT add the Hebrew clause
    layouts, built side by side in `orig/heb-<layout>/`: `--heb bhsa,bcv-query`. `bhsa` (ETCBC
    BHSA 2021, needs `text-fabric`) is the drafting layout, copied to `orig/heb/`; `bcv-query`
-   (CC BY-SA 4.0) is for published clause structure; `macula` is an open, slow alternative.
+   (CC BY-SA 4.0) is for published clause structure; `macula` is an open, slow alternative. The clause packages need
+   the prepared structure `orig/heb.sqlite`: `python3 scripts/src.py build` (about 50 minutes of downloads, once).
 2. **Requirements:** Python 3 with PyYAML (`pip install pyyaml`) for the project scripts, and
    `usfmtc` (`pip install usfmtc`) for USFM sources (`scripts/usfm_usj.py`).
    `scripts/macula_to_tf.py` also needs `text-fabric`.
@@ -101,7 +102,8 @@ python3 scripts/modes.py <project>                   # the project's mode (famil
 python3 scripts/probe_language.py <project> run | write|read|tell [--score F] # how well the model knows the language (sets familiarity)
 python3 scripts/usage.py <project> add <code><nnn> --tokens N | summary # tokens per chapter, by familiarity
 python3 scripts/memory_prompt.py <project>           # prompt for an agent that builds the store and wiki, by mode
-python3 scripts/make_prompt.py <project> <code> <ch> # chapter prompt for a fresh agent
+python3 scripts/make_prompt.py <project> <code> <ch> [--end-align] # chapter prompt for a fresh agent (OT: tagged drafting)
+python3 scripts/package.py <project> <code> <ch>   # clause packages for an OT chapter (orig/heb.sqlite, the project's .align, store, NT bridge)
 python3 scripts/check_draft.py <project> [code]      # verse/format checks of drafts
 python3 scripts/quarantine.py <project> <code> [--release] # quarantine a book (required for non-free editions)
 python3 scripts/status.py <project> [set|publish|check] # draft status per chapter; writes STATUS.md
@@ -129,7 +131,7 @@ python3 scripts/bridge_align.py <project> <code> <ch> | --all # word alignment (
 python3 scripts/full_align.py listing|prompt <project> <code> <ch> | check <project> [<code> [<ch>]] | export <project> # .align (bcv-commons format): the agent's sheet and prompt, checks, the HF layer
 python3 scripts/full_align.py tag|split <project> <code> <ch> # the tagged interim format (word^n) <-> prose + .align
 python3 scripts/src.py build [code ...] | layouts | show <code> <c>:<v> | bridge <lexeme> | export-open DIR # orig/heb.sqlite, orig/grc.sqlite (MACULA + numbering + BSB tables; local)
-python3 scripts/lang.py build <project> | hbo <project> <lexeme> | grc <project> <strong> # the project's language DB: NT occurrences of any Hebrew word via the LXX
+python3 scripts/lang.py build|derive|report <project> | hbo <project> <lexeme> | grc <project> <strong> # the project's language DB: NT occurrences of any Hebrew word via the LXX; derived grammar statistics
 python3 scripts/macula_to_tf.py <delivery dir>       # draft Text-Fabric dataset (needs text-fabric)
 ```
 

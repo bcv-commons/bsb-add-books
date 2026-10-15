@@ -31,7 +31,7 @@ Your chapter must read like a direct continuation, by the same translator. Match
 Where your source repeats a phrase that an earlier chapter already rendered, reuse that rendering verbatim.
 
 **Sources:**
-- `{orig_path}`: the {orig_name}. This is what you translate.{orig_notes_line}
+- `{orig_path}`: the {orig_name}. This is what you translate.{orig_notes_line}{package_line}
 - {assist_files}: the {assist_name}, the ONLY assisting translation. Use no other translation. Consult it verse by verse as a guide to the {orig_language}, and follow its interpretation when the source allows more than one reading. Do not translate from it.{numbering_block}
 {style_lines}
 
@@ -44,8 +44,8 @@ Where your source repeats a phrase that an earlier chapter already rendered, reu
 {header_rule}
 {extra_rules}
 
-**Finally:**
-- Run `python3 scripts/wrap_draft.py export/{project}/{code}/{code}{nnn}.txt`.{style_step}
+**Finally:**{tagged_first}
+- Run `python3 scripts/wrap_draft.py export/{project}/{code}/{code}{nnn}.{draft_ext}`{tagged_split}.{style_step}
 - Run `python3 scripts/check_draft.py {project} {code}` and fix every problem reported for your chapter.{numbering_note}{align_step}
 
 Write only your chapter's files. Report in under 150 words: verse check, {report_items}, new name forms or fixed renderings, top open questions.

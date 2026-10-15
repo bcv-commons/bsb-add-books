@@ -1589,6 +1589,47 @@
    "date": "2026-10-14",
    "status": "open",
    "note": "In Rut 1,17 und 3,13 nach dem Hebräischen gebildet; noch nicht als feste Formel geprüft."
+  },
+  {
+   "id": "gap:fron",
+   "kind": "gap",
+   "value": "Fron- (Fronvögt, Fronarbeit): im Korpus nicht belegt; gesucht »fron«, »ufseher«, »vogt«; nur »Vögt« 1×. Verwendet: Fronvögt / Fronarbeit (term:forced_labor).",
+   "words": [
+    "taskmasters",
+    "forced labor"
+   ],
+   "evidence": [
+    {
+     "ref": "MRK 10:42",
+     "form": "Vögt."
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:exo001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "note": "2Mo 1,11."
+  },
+  {
+   "id": "gap:birthstool",
+   "kind": "gap",
+   "value": "Gebärstuhl (אָבְנַיִם): kein Korpuswort; gesucht »gebär«, »stuel«, »stei«. Verwendet: »Gebärstuel« mit Fussnote »di zwee Steine«.",
+   "words": [
+    "birthstools"
+   ],
+   "evidence": [
+    {
+     "ref": "EXO 1:16",
+     "form": "Gebärstuel"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:exo001",
+   "date": "2026-10-15",
+   "status": "decided",
+   "note": "2Mo 1,16."
   }
  ]
 }

@@ -115,8 +115,11 @@ every prompt, `CREDITS.md`, and which generated files stay local (`docs/licensin
      the curation step);
    - `python3 scripts/wiki.py view <project>` gives the team a page to read it; they correct it in the wiki.
 5. **Draft**: a reference chapter first, reviewed with the team; then waves (`draft-chapter` skill). Per
-   chapter the pack (`verse_pack.py`, level by the mode) and the prompt (`make_prompt.py`, rules by the mode)
-   are generated; agents extend the memory as they go.
+   chapter the pack (`verse_pack.py`, level by the mode), for the OT the clause packages (`package.py`: per Hebrew
+   clause line the tokens with their numbers, the BSB words, the project's earlier renderings, and for an unknown
+   language the NT's words through the LXX bridge) and the prompt (`make_prompt.py`, rules by the mode) are
+   generated; the agent writes the draft tagged (`word^n`) and `full_align.py split` makes the draft and its word
+   alignment; agents extend the memory as they go.
 6. **Check** after every wave: `python3 scripts/check_project.py <project>` (drafts, store, wiki,
    quotations, status). The agents keep to the rules as they write; this is the double check.
 7. **Review and publish**: the team reads the drafts and the wiki; `scripts/status.py` marks chapters
