@@ -20861,6 +20861,2992 @@
     "mizpah"
    ],
    "note": "Built: final -ah → -a (letter rule). Meaning in brackets: Kewagam manqei (watching place)."
+  },
+  {
+   "id": "term:H3409.g",
+   "kind": "term",
+   "source": "H3409 יָרֵךְ / כַּף הַיָּרֵךְ (thigh, hip, socket of the hip)",
+   "value": "bov zapazapa",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 24:2",
+     "form": "bov zapazapa"
+    },
+    {
+     "ref": "GEN 24:9",
+     "form": "teqa bov zapazapa"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "hip",
+    "thigh",
+    "socket of the hip",
+    "socket",
+    "hip socket"
+   ],
+   "note": "Abraham's 'under my thigh' (24:2, 24:9); bov alone is leg (REV 10:1). gen032:26, 32, 33 use it for the hip and its socket."
+  },
+  {
+   "id": "term:H6760.g",
+   "kind": "term",
+   "source": "H6760 צֹלֵעַ (limping)",
+   "value": "bov gèmbo-wauwauám",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 14:8",
+     "form": "bov gèmbo-wauwauám"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "limping",
+    "limp",
+    "lame",
+    "was limping"
+   ],
+   "note": "'his legs were crippled' (ACT 14:8); the lame man is kagi ezoqam (ACT 3:2). gen032:32 'he was limping because of his hip' = 'bov gèmbo-wauwauám, teqa bov zapazapa zapaya'; gen032:26 also renders 'dislocated' with it (gap:dislocate.g)."
+  },
+  {
+   "id": "term:H79.g",
+   "kind": "term",
+   "source": "H79 אָבַק (wrestle); H8280 שָׂרָה (struggle with)",
+   "value": "<X> namba gènøfeáp (fought with X)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GAL 5:17",
+     "form": "namba, gènøfeáp"
+    },
+    {
+     "ref": "HEB 11:33",
+     "form": "ginøfeapam"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "wrestled",
+    "wrestle",
+    "struggled",
+    "struggle",
+    "as they wrestled"
+   ],
+   "note": "nøfeap = fight, oppose; 'as they wrestled' = 'ndigu ginøfeapam ndøgo'. Rachel's wrestling (GEN 30:8, a different Hebrew word) is fifingiap (compete, 1CO 9:25); we kept nøfeap for a bodily fight. 2sg past 'qoqo-nøfeap' (gen032:29) is built on qoqo- (feature second_person_past)."
+  },
+  {
+   "id": "term:H3201prevail.g",
+   "kind": "term",
+   "source": "H3201 יָכֹל (prevail; could not overpower)",
+   "value": "kopømba-én (won); 'could not overpower him' = kopømba mbaín, … tetømbuatat",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 30:8",
+     "form": "mø̀e-kopømba-én"
+    },
+    {
+     "ref": "1JN 5:5",
+     "form": "tetømbuatat"
+    },
+    {
+     "ref": "JHN 14:30",
+     "form": "kopømba mbaín"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "prevailed",
+    "prevail",
+    "overpower",
+    "could not overpower",
+    "won"
+   ],
+   "note": "Rachel's 'I have won' (30:8) = mø̀e-kopømba-én; gen032:29 'you have prevailed' = mòqo-kopømba-én (2sg built). Overcome = tømbu- (1JN 2:13 mòzo-tømbuinám, 5:5 tetømbuatat)."
+  },
+  {
+   "id": "term:H5337.g",
+   "kind": "term",
+   "source": "H5337 הַצִּילֵנִי (deliver me, rescue me)",
+   "value": "vø̀nøtøké",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MAT 15:25",
+     "form": "Vø̀nøtøké"
+    },
+    {
+     "ref": "2TI 4:18",
+     "form": "gékhandí꞉n"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "deliver",
+    "deliver me",
+    "rescue me",
+    "please deliver me",
+    "save me"
+   ],
+   "note": "'Lord, help me!' (MAT 15:25); a future 'he will rescue me' = 'no gékhandí꞉n' (2TI 4:18). 'from the hand of X' = 'X-qa zenda-te'."
+  },
+  {
+   "id": "term:H4264.g",
+   "kind": "term",
+   "source": "H4264 מַחֲנֶה (camp, company, group)",
+   "value": "bawan (group); two camps = bawan menás",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "JHN 19:23",
+     "form": "Møvøyap foá"
+    },
+    {
+     "ref": "ACT 14:23",
+     "form": "bawan vinivinimba"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "camp",
+    "camps",
+    "two camps",
+    "company",
+    "the camp"
+   ],
+   "note": "No word for a camp in the corpus (the NT's 'camp' in HEB 13:11-13 is 'outside the town'). gen032 renders a group of people and animals as bawan and Mahanaim's meaning as 'Bawan menás'. Question for the team."
+  },
+  {
+   "id": "term:H2673.g",
+   "kind": "term",
+   "source": "H2673 חָצָה (divide into two groups)",
+   "value": "geqatøzo, bawan menás",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 21:28",
+     "form": "mø̀ndø-qatozó"
+    },
+    {
+     "ref": "JHN 19:23",
+     "form": "gèmøvøemém"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "divided",
+    "divide",
+    "divided into two",
+    "separated",
+    "selected"
+   ],
+   "note": "qatøz- (set apart, separate: Abraham's seven lambs 21:28) for dividing people and flocks, then the parts: 'bawan menás' (as 'Møvøyap foá', four parts, JHN 19:23). Also used for 'selected (a gift)' in gen032:14."
+  },
+  {
+   "id": "term:H4503.g",
+   "kind": "term",
+   "source": "H4503 מִנְחָה (gift, present, offering)",
+   "value": "etoam matev",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 4:3",
+     "form": "etoam matev"
+    },
+    {
+     "ref": "GEN 4:4",
+     "form": "etoam matev"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "gift",
+    "gifts",
+    "present",
+    "offering",
+    "a gift for"
+   ],
+   "note": "The same Hebrew word as Cain's and Abel's offering (4:3-5). Jacob's gift to Esau (32:14-22, 33:10) = etoam matev; 'to give to Esau' = 'Isao-te etoam matev nonqo'."
+  },
+  {
+   "id": "term:female_male.g",
+   "kind": "term",
+   "source": "female / male animals (עִזִּים / תְּיָשִׁים, רְחֵלִים / אֵילִים, פָּרוֹת / פָּרִים, אֲתֹנֹת / עְיָרִם)",
+   "value": "<animal> sakheis (female) / <animal> angana (male)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 30:35",
+     "form": "naningus angana neka sakheis"
+    },
+    {
+     "ref": "GEN 12:16",
+     "form": "donki angana neka sakheis"
+    },
+    {
+     "ref": "GEN 21:28",
+     "form": "Sakheis mbá"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "female goats",
+    "male goats",
+    "ewes",
+    "rams",
+    "cows",
+    "bulls",
+    "female donkeys",
+    "male donkeys",
+    "milk camels",
+    "heifer"
+   ],
+   "note": "The team marks sex with angana / sakheis after the animal (30:35, 12:16; ewe lambs 21:28). One ram = sip anganeam (22:13); a heifer = kao-yu (HEB 9:13). Milk camels: 'kemol sakheis … tiqa nakheis namba' (gap:milk_camels.g)."
+  },
+  {
+   "id": "term:H6413.g",
+   "kind": "term",
+   "source": "H6413 פְּלֵיטָה (escape, the remnant that escapes)",
+   "value": "khokhoz- (flee): kopømbá tikhokhoz (they can escape)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1TH 5:3",
+     "form": "kopømba mbaín tikhokhoz"
+    },
+    {
+     "ref": "2CO 11:33",
+     "form": "tøtø-khokhón"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "escape",
+    "can escape",
+    "escaped"
+   ],
+   "note": "'they will not escape' (1TH 5:3) turned positive for gen032:9; flee = khokhon (term:H1272)."
+  },
+  {
+   "id": "term:H3190prosper.g",
+   "kind": "term",
+   "source": "H3190 הֵיטִיב עִם (do good to, make prosper)",
+   "value": "matev eqeieqei nøtaqá-matanám (I will do good to you)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 28:14",
+     "form": "matev eqeieqei nøzǿ-matanám"
+    },
+    {
+     "ref": "GEN 19:19",
+     "form": "matev eqeieqei qonø-matanám"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "prosper",
+    "make you prosper",
+    "i will make you prosper",
+    "surely make you prosper",
+    "do good"
+   ],
+   "note": "God's promise 'I will do good to you' on the pattern of 28:14 (nøzǿ- I to them → nøtaqá- I to you sg, as 13:16 nøtaqá-etoám). gen032:10, 13."
+  },
+  {
+   "id": "term:H7725ret.g",
+   "kind": "term",
+   "source": "H7725 שׁוּב (imperative: go back, return to your land)",
+   "value": "qonǿveséz",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 3:19",
+     "form": "manqei-té qonǿveséz"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "go back",
+    "return",
+    "go back to your country"
+   ],
+   "note": "'to the ground you will return' (3:19). gen031:3 and 31:13 wrote 'nango mòqoveséz', a form not found in the corpus; gen032:10 uses qonǿveséz. A later revision of gen031 may follow."
+  },
+  {
+   "id": "term:H5060touch.g",
+   "kind": "term",
+   "source": "H5060 נָגַע (touch, strike the hip)",
+   "value": "<X> gembo-khanaz",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 27:22",
+     "form": "kha gembo-khanaz"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "struck",
+    "touched",
+    "struck the socket",
+    "was struck"
+   ],
+   "note": "Isaac touching Jacob (27:22); used for the man touching Jacob's hip (gen032:26, 33)."
+  },
+  {
+   "id": "term:H1517.g",
+   "kind": "term",
+   "source": "H1517 גִּיד (sinew, tendon)",
+   "value": "kinik",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "COL 2:19",
+     "form": "kha kinik"
+    },
+    {
+     "ref": "EPH 4:16",
+     "form": "kha kinik-te"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "tendon",
+    "sinew",
+    "the tendon"
+   ],
+   "note": "kinik = ligament (COL 2:19, EPH 4:16, only 2 verses). gen032:33 'the tendon on the hip' = 'søvakha gigiap-qa kinik ndøgo, bov zapazapa-te nqøugu'."
+  },
+  {
+   "id": "term:distress.g",
+   "kind": "term",
+   "source": "H3334 וַיֵּצֶר לוֹ (he was distressed)",
+   "value": "mbøni vaev matev mbofakhán",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "ROM 2:9",
+     "form": "mbøni vaev matev"
+    },
+    {
+     "ref": "GEN 31:24",
+     "form": "mbofakhán"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "distress",
+    "distressed",
+    "in great fear and distress"
+   ],
+   "note": "'trouble and distress will come upon them' (ROM 2:9) with fakhan + mbo- (came to him, 31:24)."
+  },
+  {
+   "id": "formula:unworthy.g",
+   "kind": "formula",
+   "source": "קָטֹנְתִּי מִכֹּל הַחֲסָדִים (I am unworthy of all the kindness)",
+   "value": "No ezoqam khapúmbá.",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "RUT 2:13",
+     "form": "No ezoqam khapúmbá"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "unworthy",
+    "i am unworthy",
+    "not worthy"
+   ],
+   "note": "The Hebrew says 'I am small': Ruth's self-abasement (formula:humble_self) fits word for word. Then the kindness: 'Qo kuku matev … qoqonøgo' (RUT 2:10 pattern)."
+  },
+  {
+   "id": "formula:appease.g",
+   "kind": "formula",
+   "source": "אֲכַפְּרָה פָנָיו (I will appease him, lit. cover his face)",
+   "value": "<X>-qa mbøni nqosøgeap bembø̄e-navøem",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 27:44",
+     "form": "mbøni nqosøgeap bembø̄e-navøem"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "appease",
+    "i will appease"
+   ],
+   "note": "'until your brother's anger subsides' (27:44, of the same Esau)."
+  },
+  {
+   "id": "formula:accept_me.g",
+   "kind": "formula",
+   "source": "יִשָּׂא פָנָי (he will accept me, lift up my face)",
+   "value": "Éisa, ndego no tanakh ndø̀nøgó",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "RUT 2:2",
+     "form": "tanakh ndø̀nøgó"
+    },
+    {
+     "ref": "JON 1:6",
+     "form": "Éisa"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "accept",
+    "accept me",
+    "perhaps he will accept me",
+    "will accept"
+   ],
+   "note": "'someone will be kind to me' (RUT 2:2) + perhaps (formula:perhaps)."
+  },
+  {
+   "id": "formula:let_me_go.g",
+   "kind": "formula",
+   "source": "שַׁלְּחֵנִי (let me go, send me away)",
+   "value": "É-moqonøták.",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 30:25",
+     "form": "É-moqonøták"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "let me go",
+    "send me away",
+    "send me on my way"
+   ],
+   "note": "Jacob to Laban (30:25). 'I will not let you go' = 'No qo nótakák' (gen032:27, built on gembótakák, 1CO 10:13, and nó-…-ák)."
+  },
+  {
+   "id": "formula:why_ask.g",
+   "kind": "formula",
+   "source": "לָמָּה זֶּה תִּשְׁאַל לִשְׁמִי (Why do you ask my name?)",
+   "value": "Gekha zapâ, <X>-qa yaq-te, ndoqonømbe-bevap?",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MAT 19:17",
+     "form": "ndoqonømbe-bevap"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "why do you ask"
+   ],
+   "note": "Jesus's 'Why do you ask me about what is good?' (MAT 19:17)."
+  },
+  {
+   "id": "formula:name_no_longer.g",
+   "kind": "formula",
+   "source": "לֹא <X> יֵאָמֵר עוֹד שִׁמְךָ כִּי אִם־<Y> (your name will no longer be X but Y)",
+   "value": "Qoqa iz, <X> sekemba gégoák. Geté <Y> qágoát.",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 17:5",
+     "form": "sekemba gégoák"
+    },
+    {
+     "ref": "GEN 17:5",
+     "form": "Eibleem qágoát"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "your name will no longer be",
+    "no longer",
+    "will no longer be called"
+   ],
+   "note": "Abram → Abraham (17:5), with the meaning in brackets. Gen 32:29 and 35:10 (Jacob → Israel)."
+  },
+  {
+   "id": "formula:to_this_day.g",
+   "kind": "formula",
+   "source": "עַד הַיּוֹם הַזֶּה (to this day)",
+   "value": "Yaq nakémbá, até ndakin khøuwa-té-a,",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 26:33",
+     "form": "ndakin khøuwa-té-a"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "to this day",
+    "therefore to this day"
+   ],
+   "note": "Isaac's well (26:33), with 'therefore'."
+  },
+  {
+   "id": "formula:where_going.g",
+   "kind": "formula",
+   "source": "אָנָה תֵלֵךְ (where are you going?)",
+   "value": "Gê, qo ākhoqotéma?",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "JHN 13:36",
+     "form": "qo ākhoqotéma"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "where are you going"
+   ],
+   "note": "Also GEN 16:8 'av khoqotéma?' (Hagar)."
+  },
+  {
+   "id": "formula:tell_him_pl.g",
+   "kind": "formula",
+   "source": "וַאֲמַרְתֶּם / תְּדַבְּרוּן אֶל (you pl are to say to him)",
+   "value": "āv qazømbøé-einím nqǽgo, ‘…’; 'tell him the same' = manqat kopó vømømbó-einīm",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MAT 21:3",
+     "form": "qazømbøé-einím nqǽgo"
+    },
+    {
+     "ref": "MAT 26:18",
+     "form": "vømømbó-einīm"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "you are to say",
+    "say to him",
+    "tell him",
+    "the same thing"
+   ],
+   "note": "The disciples' instruction (MAT 21:3, LUK 19:31: if anyone asks …, say …). 2sg built in gen032:19: 'āv qombøé-eín nqǽgo'."
+  },
+  {
+   "id": "formula:left_alone.g",
+   "kind": "formula",
+   "source": "וַיִּוָּתֵר לְבַדּוֹ (he was left alone)",
+   "value": "yakhapus mbá sege-ivøvém",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "JHN 8:9",
+     "form": "yakhapus mbá sege-ivøvém"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "left alone",
+    "was left all alone",
+    "alone"
+   ],
+   "note": "Jesus left alone with the woman (JHN 8:9)."
+  },
+  {
+   "id": "formula:sun_rose.g",
+   "kind": "formula",
+   "source": "וַיִּזְרַח הַשֶּׁמֶשׁ (the sun rose)",
+   "value": "khøuwa gendosasev",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MRK 4:6",
+     "form": "khøuwa gendosasev"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "the sun rose",
+    "sun rose",
+    "rose"
+   ],
+   "note": "MRK 4:6, MAT 13:6."
+  },
+  {
+   "id": "formula:messengers.g",
+   "kind": "formula",
+   "source": "וַיִּשְׁלַח מַלְאָכִים לְפָנָיו (sent messengers ahead of him)",
+   "value": "u-anim ndøkhofotáz, teqa megemege-te",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 9:52",
+     "form": "u-anim ndøkhofotáz"
+    },
+    {
+     "ref": "LUK 7:10",
+     "form": "u-anim"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "messengers",
+    "sent messengers",
+    "ahead of him"
+   ],
+   "note": "Human messengers are u-anim (sg u-anem), not enzol ezoqam (angels). 'the messengers returned' = 'u-anim … giqavaz' (LUK 7:10)."
+  },
+  {
+   "id": "name:mahanaim.g",
+   "kind": "name",
+   "source": "מַחֲנַיִם (Mahanaim)",
+   "value": "Maanaim",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 26:20",
+     "form": "mbo-akhá"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "mahanaim"
+   ],
+   "note": "Not in the corpus; inner h drops (letter rule), the vowels kept. Meaning in brackets: 'Bawan menás' (two groups)."
+  },
+  {
+   "id": "name:jabbok.g",
+   "kind": "name",
+   "source": "יַבֹּק (Jabbok)",
+   "value": "Zabok (kea)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "MRK 1:5",
+     "form": "Zoden kea"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "jabbok"
+   ],
+   "note": "j → z, double consonant single; river class noun kea (place_class_noun)."
+  },
+  {
+   "id": "name:peniel.g",
+   "kind": "name",
+   "source": "פְּנִיאֵל / פְּנוּאֵל (Peniel, Penuel)",
+   "value": "Peniel; Penuel",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 26:20",
+     "form": "mbo-akhá"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "peniel",
+    "penuel"
+   ],
+   "note": "Not in the corpus; kept as spelled (both forms, as the Hebrew). Meaning in brackets: 'Mbumbukiam-qa bugug' (the face of God)."
+  },
+  {
+   "id": "formula:insisted.g",
+   "kind": "formula",
+   "source": "וַיִּפְצַר־בּוֹ (he urged him, pressed him; insisted)",
+   "value": "<X> gèmbo-pouweám, bazaføgakh-ús (he urged him strongly)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 19:3",
+     "form": "gèzø-pouweám, bazaføgakh-ús"
+    },
+    {
+     "ref": "LUK 23:5",
+     "form": "segembo-pouweám"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "insisted",
+    "urged",
+    "pressed",
+    "pressed him",
+    "urged him"
+   ],
+   "note": "Lot urging the angels (19:3, to them: gèzø-); to one person gèmbo- is built on the gembo-/gezø- pair. gen033:11."
+  },
+  {
+   "id": "formula:accept_it.g",
+   "kind": "formula",
+   "source": "קַח / וְלָקַחְתָּ (take, accept a gift) ; וַיִּקָּח (and he took it)",
+   "value": "sègekhatiú (accept it, imperative); he took it = ndøndaf",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 23:13",
+     "form": "sègekhatiú"
+    },
+    {
+     "ref": "GEN 21:12",
+     "form": "Sègekhatiú"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "accept",
+    "receive",
+    "accepted",
+    "take it",
+    "accept my gift",
+    "receive this gift"
+   ],
+   "note": "Abraham to Ephron 'accept my price' (23:13). 'X took it' after urging: 'X até gendego, … ndøndaf' (gen033:11)."
+  },
+  {
+   "id": "formula:no_please.g",
+   "kind": "formula",
+   "source": "אַל־נָא (no, please)",
+   "value": "Āv taoká.",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 19:3",
+     "form": "Āv taoká"
+    },
+    {
+     "ref": "2CO 11:11",
+     "form": "Āv taoká"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "no please",
+    "no, please"
+   ],
+   "note": "Lot's refusal to the angels (19:3), a polite 'not so'. gen033:10."
+  },
+  {
+   "id": "formula:keep_yours.g",
+   "kind": "formula",
+   "source": "יְהִי לְךָ אֲשֶׁר־לָךְ (keep what is yours)",
+   "value": "Qoqa gigiap, bètaqagó. (let your goods be yours)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 14:21",
+     "form": "bètaqagó"
+    },
+    {
+     "ref": "MAT 25:25",
+     "form": "qogi moni ngínik"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "keep what belongs to you",
+    "what belongs to you",
+    "keep"
+   ],
+   "note": "14:21 'take the goods for yourself' = '… bètaqagó' (may it be yours). gen033:9."
+  },
+  {
+   "id": "term:H2603.g",
+   "kind": "term",
+   "source": "חָנַן (be gracious to, graciously give)",
+   "value": "tanakh + go: Mbumbukiam no tanakh genøgo (God had mercy on me)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "PHP 2:27",
+     "form": "tanakh mbogó"
+    },
+    {
+     "ref": "LUK 18:13",
+     "form": "No tanakh gènøgó"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "graciously",
+    "gracious",
+    "graciously given",
+    "has been gracious"
+   ],
+   "note": "The NT's 'have mercy on me' (tanakh gènøgó, imperative) and 'God had mercy on him' (tanakh mbogó); the 3sg past with nø- (me) is built. Same word as favour (term:H2580). gen033:5, 11."
+  },
+  {
+   "id": "term:last_rear.g",
+   "kind": "term",
+   "source": "רִאשֹׁנָה / אַחֲרֹנִים (first, next, last; in front, at the rear)",
+   "value": "bugukhokhof (first) … Taqa zita-te (after that) … Yaq vaev-te (last of all)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 15:8",
+     "form": "Yaq vaev-te"
+    },
+    {
+     "ref": "LUK 20:32",
+     "form": "Yaq vaev"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "rear",
+    "at the rear",
+    "last",
+    "in front",
+    "next",
+    "then joseph"
+   ],
+   "note": "Order of a line of people (gen033:2) and 'and then Joseph and Rachel' (33:7)."
+  },
+  {
+   "id": "term:H5066.g",
+   "kind": "term",
+   "source": "נָגַשׁ (draw near, approach)",
+   "value": "ginduzáv (they came, pl); he came near = gèkhanøgím; near X = X avønin-te",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MRK 7:1",
+     "form": "ginduzáv"
+    },
+    {
+     "ref": "GEN 27:27",
+     "form": "gèkhanøgím"
+    },
+    {
+     "ref": "GEN 27:22",
+     "form": "avønin-te vø̄khanøgim"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "approached",
+    "drew near",
+    "came near",
+    "approach"
+   ],
+   "note": "gen033:6-7 'X avønin-te ginduzáv'."
+  },
+  {
+   "id": "formula:bowed_pl.g",
+   "kind": "formula",
+   "source": "וַתִּשְׁתַּחֲוֶיןָ / וַיִּשְׁתַּחֲווּ (they bowed down)",
+   "value": "ekeza kha, manqei me꞉laém (they threw themselves to the ground)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "REV 7:11",
+     "form": "manqei me꞉laém"
+    },
+    {
+     "ref": "MAT 17:6",
+     "form": "sège-o꞉áz"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "bowed down",
+    "they bowed",
+    "bowed"
+   ],
+   "note": "Plural of 'ekeza kha, manqei me꞉laváo. Bugug até manqei-té.' (GEN 17:3); the singular formula is formula:bowed_down.g. gen033:6-7."
+  },
+  {
+   "id": "term:frail.g",
+   "kind": "term",
+   "source": "רַכִּים (tender, frail children)",
+   "value": "kha bazaføgakh mbaín (the body has no strength)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 2:3",
+     "form": "kha bazaføgakh mbaín"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "frail",
+    "weak",
+    "tender"
+   ],
+   "note": "gen033:13."
+  },
+  {
+   "id": "term:nursing.g",
+   "kind": "term",
+   "source": "עָלוֹת (nursing animals) / מֵינִיקוֹת (nursing)",
+   "value": "nakhei tete ndizøloge (they suckle young: nursing mothers); a mother nursing = nakheis tete nduzø-etoam",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 21:23",
+     "form": "nakhei tete ndizøloge"
+    },
+    {
+     "ref": "1TH 2:7",
+     "form": "nakheis tete nduzø-etoam"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "nursing",
+    "nursing their young",
+    "that are nursing"
+   ],
+   "note": "Said of ewes and cows in gen033:13 ('sip neka kao sakheis … nakhei tete ndizøloge'). Settles part of gap:milk_camels.g for later chapters."
+  },
+  {
+   "id": "term:slowly.g",
+   "kind": "term",
+   "source": "לְאִטִּי (slowly, gently)",
+   "value": "aiyav-té",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 27:7",
+     "form": "aiyav-té"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "slowly",
+    "continue on slowly",
+    "gently"
+   ],
+   "note": "'sailing slowly'. gen033:14 'no aiyav-té qatǿnáv' (I will go slowly)."
+  },
+  {
+   "id": "term:H5521.g",
+   "kind": "term",
+   "source": "סֻכָּה / סֻכּוֹת (booth, shelter)",
+   "value": "khoev-qasis (little houses) + puan (put up)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 9:33",
+     "form": "khoev-qasis"
+    },
+    {
+     "ref": "JHN 7:2",
+     "form": "khoev-qasis gipuanumatun"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "shelters",
+    "booths",
+    "shelter",
+    "tabernacles"
+   ],
+   "note": "Peter's three shelters and the Feast of Tabernacles. Also Succoth's meaning (name:succoth.g). gen033:17."
+  },
+  {
+   "id": "name:succoth.g",
+   "kind": "name",
+   "source": "סֻכּוֹת (Succoth)",
+   "value": "Sukot (Sukot manqei); meaning '(Taqa manqa mokho: Khoev-qasis.)'",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 21:31",
+     "form": "mbo-akhayám"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "succoth"
+   ],
+   "note": "Not in the corpus: k for kk, th → t (letter rules). Naming as 21:31 'iz … mbo-akhayám' with the meaning in brackets."
+  },
+  {
+   "id": "term:H8003safely.g",
+   "kind": "term",
+   "source": "שָׁלֵם (safely, in peace; arrived safely)",
+   "value": "sambi-té (in peace)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "1CO 16:11",
+     "form": "Sambi-té"
+    },
+    {
+     "ref": "1TH 5:13",
+     "form": "sambi bèzøgó"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "safely",
+    "in peace",
+    "arrived safely"
+   ],
+   "note": "'send him in peace'. gen033:18 'sambi-té, Sekem taon-te gemøfakhan' follows the BSB (safely), not the place Shalem."
+  },
+  {
+   "id": "formula:camped.g",
+   "kind": "formula",
+   "source": "וַיִּחַן (camped) / נָטָה אֹהֶל (pitched a tent)",
+   "value": "palai khoev vø̄puan (and put up the tent)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 26:25",
+     "form": "palai khoev vø̄puan"
+    },
+    {
+     "ref": "GEN 13:3",
+     "form": "palai khoev qazømbe-puatam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "camped",
+    "encamped",
+    "pitched his tent",
+    "pitched",
+    "tent"
+   ],
+   "note": "In a relative clause 'ma ndego palai khoev ndøpuan' (gen033:19). Camping 'outside/near the city' = 'taon avønin-te'."
+  },
+  {
+   "id": "term:H7069.g",
+   "kind": "term",
+   "source": "קָנָה (buy, purchase from)",
+   "value": "<seller>-te gewi (he bought from X); the price given = vømbō-etoam / vøzø̄-etoam",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 23:20",
+     "form": "Hit-ak ezoqam-te gewi"
+    },
+    {
+     "ref": "GEN 23:16",
+     "form": "vømbō-etoam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "purchased",
+    "bought",
+    "buy"
+   ],
+   "note": "Abraham's field (23:16-20, 25:10). gen033:19."
+  },
+  {
+   "id": "name:hamor.g",
+   "kind": "name",
+   "source": "חֲמוֹר (Hamor)",
+   "value": "Hamo",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 7:16",
+     "form": "Hamo-gi nakheis-qa"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "hamor"
+   ],
+   "note": "'the sons of Hamor' = Hamo-gi nakheis (ACT 7:16); 'Shechem's father' = 'Sekem-gé evé' (pattern 11:27)."
+  },
+  {
+   "id": "name:el_elohe_israel.g",
+   "kind": "name",
+   "source": "אֵל אֱלֹהֵי יִשְׂרָאֵל (El-Elohe-Israel)",
+   "value": "El-Eloe-Izlael; meaning '(Taqa manqa mokho: Mbumbukiam, ndego Izlael-ge Mbumbukiam.)'",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 28:19",
+     "form": "Taqa manqa mokho"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "el-elohe-israel",
+    "elohe",
+    "el elohe israel"
+   ],
+   "note": "Not in the corpus: inner h drops (Bila, Zilpa), Izlael attested; meaning as the BSB note (God, the God of Israel)."
+  },
+  {
+   "id": "formula:let_us_go.g",
+   "kind": "formula",
+   "source": "נִסְעָה וְנֵלֵכָה (let us journey on, let us go)",
+   "value": "qazinǿ-niáv (let us go)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 4:8",
+     "form": "qazinǿ-niáv"
+    },
+    {
+     "ref": "HEB 13:13",
+     "form": "qabizinø-niáv"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "let us be on our way",
+    "let us go",
+    "on our way"
+   ],
+   "note": "Cain to Abel (4:8). gen033:12 'Ndakin qazinǿ-niáv.'"
+  },
+  {
+   "id": "formula:go_ahead_of_you.g",
+   "kind": "formula",
+   "source": "אֵלְכָה לְנֶגְדֶּךָ (I will go ahead of you)",
+   "value": "No é-ndøto꞉má ndøgo, qoqa megemege-te",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MAT 26:32",
+     "form": "é-ndøto꞉má ndøgo, zoqa megemege-te"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "i will go ahead of you",
+    "go ahead of you",
+    "ahead of you"
+   ],
+   "note": "MAT 26:32 with zoqa (you pl) → qoqa (you sg). 'go ahead of me' (command) = 'noqa megemege-té qonǿqáv' (gen033:14, gen032:17 pl)."
+  },
+  {
+   "id": "formula:you_know.g",
+   "kind": "formula",
+   "source": "אֲדֹנִי יֹדֵעַ כִּי (my lord knows that)",
+   "value": "Khanánqa. Qo mòqote-qatéq, av nqægo, …",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "JHN 21:17",
+     "form": "mòqote-qatéq"
+    },
+    {
+     "ref": "JHN 16:30",
+     "form": "mòqote-qatéq"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "knows",
+    "you know",
+    "my lord knows",
+    "lord knows"
+   ],
+   "note": "Peter's 'Lord, you know'. The third-person 'my lord' becomes the vocative Khanánqa + 'you' (as RUT 2:13). gen033:13."
+  },
+  {
+   "id": "formula:it_is_like.g",
+   "kind": "formula",
+   "source": "כִּרְאֹת (it is like seeing)",
+   "value": "Ndøgo andé <X> me me꞉gó (it is like X)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 14:20",
+     "form": "me me꞉gó"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "like seeing",
+    "it is like",
+    "is like"
+   ],
+   "note": "Feature similative_ande. gen033:10 'Ndøgo andé Mbumbukiam-qa bugug me me꞉gó.'"
+  },
+  {
+   "id": "formula:let_them_stay.g",
+   "kind": "formula",
+   "source": "אַצִּיגָה־נָּא עִמְּךָ מִן־הָעָם (let me leave some people with you)",
+   "value": "Nøkeza ezoqam nøme, qo namba bezøgó (let some of my people be with you)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "1TH 5:13",
+     "form": "sambi bèzøgó"
+    },
+    {
+     "ref": "GEN 23:11",
+     "form": "Nøkeza ezoqam-qá"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "let me leave",
+    "leave some of my people",
+    "leave"
+   ],
+   "note": "Built: the optative be-zø- (let them be) with 'qo namba'. gen033:15."
+  },
+  {
+   "id": "formula:until_i_come.g",
+   "kind": "formula",
+   "source": "עַד אֲשֶׁר־אָבֹא (until I come)",
+   "value": "atema no banø̄fakhan",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1TI 4:13",
+     "form": "atema no banø̄fakhan"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "until i come",
+    "until i come to"
+   ],
+   "note": "gen033:14 'atema no qo-te banø̄fakhan, Sia manqei-te'."
+  },
+  {
+   "id": "formula:i_have.g",
+   "kind": "formula",
+   "source": "יֶשׁ־לִי (I have)",
+   "value": "No <X> nqanø̂gó",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "2CO 11:6",
+     "form": "nøtenat nqanø̂gó"
+    },
+    {
+     "ref": "2CO 11:11",
+     "form": "kuku nqanø̂gó"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "i have",
+    "i already have plenty",
+    "have plenty",
+    "i have all i need",
+    "plenty"
+   ],
+   "note": "gen031:29, gen033:9 'No gigiap kopoáv nqanø̂gó', 33:11 'no gigiap ate ndægo nqanø̂gó'."
+  },
+  {
+   "id": "term:brother_voc.g",
+   "kind": "term",
+   "source": "אָחִי (my brother!, vocative)",
+   "value": "Áta!",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "ACT 7:2",
+     "form": "ata-za"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "my brother"
+   ],
+   "note": "Built: ata (brother, ACT 7:2 'Tát-za neka ata-za!'; 'Ata Isao' GEN 27:11) with the vocative accent on the first syllable (vocative.2). Question for the Kuni team. gen033:9."
+  },
+  {
+   "id": "formula:divided_among.g",
+   "kind": "formula",
+   "source": "וַיַּחַץ … עַל (divided the children among)",
+   "value": "<X>, livin-mbá gunumu-qatatát, <Y> vøzø̄-etoam (divided X and gave them to Y)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 15:12",
+     "form": "livin-mbá gunumu-qatatát"
+    },
+    {
+     "ref": "GEN 1:4",
+     "form": "livin-mbá gunumu-qatá"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "divided",
+    "divided among",
+    "so he divided"
+   ],
+   "note": "The father dividing his property between his sons. gen033:1. For two camps keep term:H2673.g."
+  },
+  {
+   "id": "name:hivite.g",
+   "kind": "name",
+   "source": "חִוִּי (Hivite)",
+   "value": "Hiv-ak",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 10:17",
+     "form": "Hiv-ak"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "hivite",
+    "hivites"
+   ],
+   "note": "Origin suffix -ak (suffix_origin). gen034:2 'Hiv-ak Hamo-ge yo'."
+  },
+  {
+   "id": "name:perizzite.g",
+   "kind": "name",
+   "source": "פְּרִזִּי (Perizzite)",
+   "value": "Pelez-ak",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 13:7",
+     "form": "Keinan-ak neka Pelez-ak"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "perizzite",
+    "perizzites"
+   ],
+   "note": "The team's form in 13:7, beside Keinan-ak. gen034:30."
+  },
+  {
+   "id": "term:H2930defile.g",
+   "kind": "term",
+   "source": "טִמֵּא (defile a woman, Gen 34:5, 13, 27)",
+   "value": "<X> namba mambe matev gego (did an immoral act with her)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "REV 18:3",
+     "form": "tu namba mambe matev"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "defiled",
+    "had defiled",
+    "been defiled"
+   ],
+   "note": "No model for 'defile' a person (ACT 21:28 'vø̄ngiu' is for a holy place). The kings 'were immoral with her' (REV 18:3) gives the construction; gego (he did) as LUK 1:25 'matev kandambá gego'; 3pl gigonem. gen034:5, 13, 27."
+  },
+  {
+   "id": "term:H6031force.g",
+   "kind": "term",
+   "source": "וַיִּשְׁכַּב אֹתָהּ וַיְעַנֶּהָ (lay with her by force)",
+   "value": "<woman> poeveáv. Geté ndego bazaføgakh-te, tu namba venanqei nonqo vø̄tøkuanem",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 29:23",
+     "form": "venanqei nonqo vø̄tøkuanem"
+    },
+    {
+     "ref": "GEN 24:5",
+     "form": "sævam ndugu poeveav"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "by force",
+    "lay with her",
+    "lying with"
+   ],
+   "note": "'She did not want; but he by strength slept with her'. bazaføgakh-te (by strength) is attested 25 times. gen034:2; 'lying with' alone (34:7) = venanqei nonqo vø̄tøkuanem. Question for the Kuni team: how plainly may this be said?"
+  },
+  {
+   "id": "term:H2734fury.g",
+   "kind": "term",
+   "source": "וַיִּחַר לָהֶם מְאֹד (they were very angry)",
+   "value": "qaqa kandambá gigonem",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 19:28",
+     "form": "qaqa kandambá gigonem"
+    },
+    {
+     "ref": "ACT 5:33",
+     "form": "qaqa kandambá gigonem"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "fury",
+    "furious",
+    "enraged",
+    "very angry"
+   ],
+   "note": "gen034:7. Singular: qaqa kandambá gego (MAT 22:7)."
+  },
+  {
+   "id": "term:grief.g",
+   "kind": "term",
+   "source": "וַיִּתְעַצְּבוּ (they were grieved)",
+   "value": "mbøni vaev matev zøfakhán (sorrow came to them)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "2CO 2:5",
+     "form": "mbøni vaev matev gengaz"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "grief",
+    "grieved",
+    "filled with grief"
+   ],
+   "note": "Like term:distress.g (mbøni vaev matev mbofakhán) with zø- (them). gen034:7."
+  },
+  {
+   "id": "formula:should_not_be_done.g",
+   "kind": "formula",
+   "source": "וְכֵן לֹא יֵעָשֶׂה (a thing that should not be done)",
+   "value": "Ezoqa matønumáv, matev av nqægo.",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 20:9",
+     "form": "Ezoqa matønumáv"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "should not be done",
+    "a thing that should not be done"
+   ],
+   "note": "Abimelech to Abraham (20:9): 'people do not do such a thing'. gen034:7."
+  },
+  {
+   "id": "term:outrage.g",
+   "kind": "term",
+   "source": "נְבָלָה (outrage, disgraceful thing)",
+   "value": "soqa matev kandambaqape (a great evil deed)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "1JN 1:9",
+     "form": "soqa matev"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "outrage",
+    "committed an outrage"
+   ],
+   "note": "term:H7451 soqa matev + kandambaqape. 'in Israel' = 'Izlael bawan mokho-te'. gen034:7."
+  },
+  {
+   "id": "term:H2836longs.g",
+   "kind": "term",
+   "source": "חָשְׁקָה נַפְשׁוֹ / חָפֵץ בְּ (longs for, delighted with a woman)",
+   "value": "poev kandambá, <woman>-te",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 24:67",
+     "form": "poev kandambá, tu-te"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "longs",
+    "longs for",
+    "delighted",
+    "delighted with"
+   ],
+   "note": "As term:H157.g (a man's love for a woman). gen034:3, 8, 19."
+  },
+  {
+   "id": "term:tenderly.g",
+   "kind": "term",
+   "source": "דִּבֶּר עַל־לֵב (spoke tenderly to her)",
+   "value": "manqat eqeieqei gumbo-ein (spoke good words to her)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "1CO 4:13",
+     "form": "manqat eqeieqeí"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "tenderly",
+    "spoke tenderly"
+   ],
+   "note": "'we answer gently' = 'manqat eqeieqeí qeizømbe-qavøiuín' (1CO 4:13); gumbo-ein (to her). gen034:3."
+  },
+  {
+   "id": "term:intermarry.g",
+   "kind": "term",
+   "source": "הִתְחַתְּנוּ אֹתָנוּ (intermarry with us)",
+   "value": "Ni neka zo, bizi-tøkuaném (let us unite)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "MRK 10:7",
+     "form": "mé꞉tøkuaném"
+    },
+    {
+     "ref": "ACT 4:26",
+     "form": "mø̀ndø-tøkuaném"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "intermarry",
+    "intermarry with us"
+   ],
+   "note": "tøkuanem = unite, of man and wife (MRK 10:7) and of a gathering; hortative bizi- (feature hortative). The giving and taking of daughters follows as its own sentences. gen034:9."
+  },
+  {
+   "id": "term:trade.g",
+   "kind": "term",
+   "source": "סָחַר (trade, move about freely)",
+   "value": "bisnis <...>-gonem (do business)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "JAS 4:13",
+     "form": "bisnis vizimǿ-gonēm"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "trade",
+    "move about freely"
+   ],
+   "note": "Loan bisnis (7×). 2pl command built 'bisnis vozomǿ-gonēm' (gen034:10), 3pl wish 'bisnis bègonem' (34:21)."
+  },
+  {
+   "id": "term:property.g",
+   "kind": "term",
+   "source": "הֵאָחֲזוּ בָהּ (acquire property in it)",
+   "value": "manqei vø̀wím (buy land)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "LUK 14:18",
+     "form": "manqei"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "property",
+    "acquire",
+    "acquire your own property"
+   ],
+   "note": "wi = buy (term:H7069); imperative chain vø̀- (feature imperative_chain). gen034:10."
+  },
+  {
+   "id": "term:uncircumcised.g",
+   "kind": "term",
+   "source": "עָרְלָה / אִישׁ אֲשֶׁר־לוֹ עָרְלָה (an uncircumcised man)",
+   "value": "ezoqam, ndego ngusum kepøtøzateav gegoam",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 7:18",
+     "form": "ngusum kepøtøzateav gegoam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "uncircumcised",
+    "uncircumcised man"
+   ],
+   "note": "gen034:14."
+  },
+  {
+   "id": "term:circumcise.g",
+   "kind": "term",
+   "source": "נִמּוֹל / הִמֹּל (be circumcised)",
+   "value": "ngusu bèzøqogøzát (let them be circumcised); ngusu vø̄qogaz (they were circumcised); 'to be circumcised' = ngusu qogøzat-qa",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 17:10",
+     "form": "ngusu bèzøqogøzát"
+    },
+    {
+     "ref": "GEN 17:27",
+     "form": "ngusu vø̄qogaz"
+    },
+    {
+     "ref": "GAL 6:13",
+     "form": "ngusu qogøzat-qa"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "circumcised",
+    "be circumcised",
+    "are circumcised"
+   ],
+   "note": "The team's Genesis 17. Also 'circumcise him' = ngusu vømbō-kepøtaz (17:23). gen034:15, 17, 22, 24."
+  },
+  {
+   "id": "term:males.g",
+   "kind": "term",
+   "source": "כָּל־זָכָר (every male)",
+   "value": "angana ate ndi꞉gu / angana ate gi꞉goam",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 17:10",
+     "form": "angana ate ndi꞉gu"
+    },
+    {
+     "ref": "GEN 17:23",
+     "form": "angana ate gi꞉goam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "males",
+    "every male",
+    "every one of your males"
+   ],
+   "note": "ndi꞉gu in speech (present), gi꞉goam in narrative. gen034:15, 22, 24, 25."
+  },
+  {
+   "id": "formula:condition.g",
+   "kind": "formula",
+   "source": "אַךְ בְּזֹאת (only on this condition)",
+   "value": "Geté sa nqánek: …",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 15:28",
+     "form": "Geté sa nqánek"
+    },
+    {
+     "ref": "GEN 14:24",
+     "form": "Geté sa ndǿgo"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "condition",
+    "on one condition",
+    "only on this condition",
+    "only"
+   ],
+   "note": "The condition then follows as its own sentence after the colon. gen034:15, 22, 23."
+  },
+  {
+   "id": "term:disgrace.g",
+   "kind": "term",
+   "source": "חֶרְפָּה (disgrace)",
+   "value": "mivi matev",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 1:25",
+     "form": "noqa mivi matev"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "disgrace",
+    "a disgrace to us"
+   ],
+   "note": "'it is our disgrace' = 'ndøgo niqa mivi matév'. gen034:14."
+  },
+  {
+   "id": "term:deceitfully.g",
+   "kind": "term",
+   "source": "בְּמִרְמָה (deceitfully)",
+   "value": "<them> zømbe-khavozám (they deceived them)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "LUK 20:47",
+     "form": "zømbe-khavozumatún"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "deceitfully",
+    "deceit"
+   ],
+   "note": "khavoz (term:H7411.g) with zømbe- (them). gen034:13."
+  },
+  {
+   "id": "term:respected.g",
+   "kind": "term",
+   "source": "נִכְבָּד מִכֹּל (the most respected of all)",
+   "value": "ezoqa ate gi꞉goam, ndego gèmbo-vizupám (all respected him)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 22:12",
+     "form": "ndego gèmbo-vizupám"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "respected",
+    "most respected"
+   ],
+   "note": "Ananias, 'highly regarded by all the Jews'. gen034:19."
+  },
+  {
+   "id": "term:hesitate.g",
+   "kind": "term",
+   "source": "לֹא אֵחַר (did not hesitate, did not delay)",
+   "value": "nakhamas-té (quickly)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "1TI 3:14",
+     "form": "nakhamas-té"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "hesitate",
+    "did not hesitate"
+   ],
+   "note": "The negated delay as its positive; no word for hesitate found. gen034:19."
+  },
+  {
+   "id": "term:unsuspecting.g",
+   "kind": "term",
+   "source": "בֶּטַח (unsuspecting, off guard)",
+   "value": "<people> zøtezateáv (they did not know)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "1CO 8:7",
+     "form": "zøtezateáv"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "unsuspecting"
+   ],
+   "note": "Told as its own short sentence: 'Taon ezoqam zøtezateáv.' gen034:25."
+  },
+  {
+   "id": "term:slaughtered.g",
+   "kind": "term",
+   "source": "הָרַג (kill, slaughter many)",
+   "value": "pakhapakha vøzø̄-khanæmam (and they killed them)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MRK 12:5",
+     "form": "pakhapakha vøzø̄-khanæmam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "slaughtered",
+    "killed",
+    "they killed"
+   ],
+   "note": "Singular object: pakhapakha mbokhanøém (MRK 12:5), vømbō-khana (1JN 3:12). gen034:25, 26."
+  },
+  {
+   "id": "term:plunder.g",
+   "kind": "term",
+   "source": "בָּזַז / שָׁבָה (plunder, loot; carry off)",
+   "value": "gigiap vø̄-aqonømem (stole the goods); carried off = vø̄-upøgimem; captives = vøzø̄-geanem (built)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MAT 12:29",
+     "form": "gigiap voqombó-aqonām"
+    },
+    {
+     "ref": "GEN 14:11",
+     "form": "vø̄-upøgimem"
+    },
+    {
+     "ref": "GEN 14:12",
+     "form": "vømbō-geanem"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "looted",
+    "plundered",
+    "carried off",
+    "plunder"
+   ],
+   "note": "Genesis 14 tells the raid on Sodom with upøgim (goods) and gean (Lot seized). gen034:27-29."
+  },
+  {
+   "id": "term:stench.g",
+   "kind": "term",
+   "source": "הַבְאִישֵׁנִי (you made me a stench to)",
+   "value": "<people> no gèsanqaná (they hate me)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "JHN 7:7",
+     "form": "no, gèsanqaná"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "stench",
+    "making me a stench"
+   ],
+   "note": "Image to meaning (image_to_meaning). gen034:30."
+  },
+  {
+   "id": "term:brought_trouble.g",
+   "kind": "term",
+   "source": "עֲכַרְתֶּם אֹתִי (you have brought trouble on me)",
+   "value": "Zo no soqain-te qazo-amb.",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 20:9",
+     "form": "ni soqain-te toqo-amb"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "brought trouble",
+    "trouble",
+    "you have brought trouble"
+   ],
+   "note": "Abimelech's 'you have brought guilt on us' with 2pl qazo- (qazo-kopo꞉nem ACT 5:9). gen034:30."
+  },
+  {
+   "id": "term:attack.g",
+   "kind": "term",
+   "source": "וְנֶאֶסְפוּ עָלַי וְהִכּוּנִי (they unite against me and attack me)",
+   "value": "kopo-te ti꞉tøkuanem tøgoat, no namba nøfe-qa",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "ACT 4:26",
+     "form": "nøfe-qa mba"
+    },
+    {
+     "ref": "1CO 6:16",
+     "form": "ti꞉tøkuanem"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "unite",
+    "attack",
+    "unite against me",
+    "attack me"
+   ],
+   "note": "The kings gathered 'to fight' (ACT 4:26). gen034:30. 'I will be destroyed' = 'no nǿnaním' (I will die, MRK 14:34)."
+  },
+  {
+   "id": "term:prostitute.g",
+   "kind": "term",
+   "source": "זוֹנָה (prostitute)",
+   "value": "mambe sævam",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1CO 6:16",
+     "form": "mambe okho sævam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "prostitute",
+    "like a prostitute"
+   ],
+   "note": "mambe = immoral (mambe matev immorality, REV 18:3). gen034:31."
+  },
+  {
+   "id": "term:few.g",
+   "kind": "term",
+   "source": "מְתֵי מִסְפָּר (few in number)",
+   "value": "Ni ezoqa khapimbá.",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "MAT 7:14",
+     "form": "khapimba"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "few in number",
+    "few"
+   ],
+   "note": "khapimba 'few' (15×), khapemba 'little' (44×). gen034:30."
+  },
+  {
+   "id": "term:sister.g",
+   "kind": "term",
+   "source": "אָחוֹת (sister)",
+   "value": "sævømiu (our sister = nigu sævømiu; their = tigu sævømiu)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 12:19",
+     "form": "nogū sævømiū"
+    },
+    {
+     "ref": "PHM 1:2",
+     "form": "nigu Klisten nøfu"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "sister",
+    "our sister",
+    "their sister"
+   ],
+   "note": "Abram's 'she is my sister' (12:19); possessive -gu for a woman. gen034:13, 14, 17, 27, 31."
+  },
+  {
+   "id": "term:in_pain.g",
+   "kind": "term",
+   "source": "כֹּאֲבִים (in pain)",
+   "value": "zua nqosøgeap giyogem (they still felt pain)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 3:16",
+     "form": "nqosøgeap kandambá, toqombo-ewagat"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "in pain",
+    "still in pain"
+   ],
+   "note": "ewag = hear, feel (3pl past giyogem). gen034:25."
+  },
+  {
+   "id": "term:visit.g",
+   "kind": "term",
+   "source": "לִרְאוֹת (went out to visit, see)",
+   "value": "<persons> okha-qa <go>",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 9:32",
+     "form": "okha vø̄wav"
+    },
+    {
+     "ref": "GEN 19:8",
+     "form": "okha ndøgeavún"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "visit",
+    "to visit"
+   ],
+   "note": "gen034:1 'nakhei mbasi okha-qa gunøwáv'."
+  },
+  {
+   "id": "term:H6370.g",
+   "kind": "term",
+   "source": "פִּילֶגֶשׁ (concubine)",
+   "value": "sasae sævam",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 22:24",
+     "form": "Nao sasae sævam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen035",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "concubine",
+    "his father's concubine"
+   ],
+   "note": "Nahor's concubine Reumah (22:24); 25:6 says 'sakheis nøme' (other women). gen035:22 'tege eve-gu sasae sævam, Bila'."
+  },
+  {
+   "id": "term:H5141.g",
+   "kind": "term",
+   "source": "נֶזֶם (ring, earring, nose ring)",
+   "value": "agiwa-qasi",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 24:22",
+     "form": "agiwa-qasi"
+    },
+    {
+     "ref": "GEN 24:47",
+     "form": "agiwa-qasi nombo-føláb"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen035",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "earrings",
+    "ring",
+    "rings",
+    "nose ring"
+   ],
+   "note": "The ring Abraham's servant gave Rebekah (24:22, 24:47, worn on the nose: kesov-te). Earrings = 'agiwa-qasi, tiqa gea-te gi꞉goam' (rings that were on their ears; gea ear) in gen035:4, built."
+  },
+  {
+   "id": "term:H2934.g",
+   "kind": "term",
+   "source": "טָמַן (hide, bury objects)",
+   "value": "gèkhonáb (he hid it); 'hid it in the ground' = nòkhonáb. Manqei-té qæmø-otáz",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 5:2",
+     "form": "nøme gèkhonáb"
+    },
+    {
+     "ref": "MAT 25:25",
+     "form": "Manqei-té qæmø-otáz"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen035",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "buried",
+    "hid",
+    "hide",
+    "buried them"
+   ],
+   "note": "For objects hidden in the ground, not for burying the dead (term:H6912.g). gen035:4 'gèkhonáb. Manqei-té gemø-otáz' (3sg gemø- built on 1sg qæmø-)."
+  },
+  {
+   "id": "term:H3205labor.g",
+   "kind": "term",
+   "source": "תֵּלֶד / תְּקַשׁ בְּלִדְתָּהּ (give birth; hard labour)",
+   "value": "nqosøgeap (pain) + gui-ovaɨn (she was about to give birth)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1TH 5:3",
+     "form": "sævam-qa nqosøgeap, gui-ovaɨn"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen035",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "labor",
+    "severe labor",
+    "difficult",
+    "began to give birth",
+    "her labor was difficult"
+   ],
+   "note": "'labor pains on a pregnant woman' (1TH 5:3). gen035:16 'Laisol gui-ovaɨn. Tuqa nqosøgeap kandambá tantáv.'"
+  },
+  {
+   "id": "term:right_hand.g",
+   "kind": "term",
+   "source": "יָמִין (right hand; Benjamin 'son of the right hand')",
+   "value": "nakeamo zenda",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1PE 3:22",
+     "form": "nakeamo zenda-te vømø̄qom"
+    },
+    {
+     "ref": "ACT 2:33",
+     "form": "teqa nakeamo zenda-te"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen035",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "right hand",
+    "right"
+   ],
+   "note": "Used in the meaning of Benjamin, gen035:18 '(Taqa manqa mokho: Noqa nakeamo zenda-ge yó.)'."
+  },
+  {
+   "id": "term:H2891purify.g",
+   "kind": "term",
+   "source": "הִטַּהֲרוּ (purify yourselves)",
+   "value": "Mbumbukiam-qa bøi-te, vø̀-eqeieqei-éz (become clean before God)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "1PE 1:22",
+     "form": "vozō-eqeieqei-ez"
+    },
+    {
+     "ref": "ACT 21:24",
+     "form": "Mbumbukiam-qa bøi-te eqeieqei"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen035",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "purify",
+    "purify yourselves",
+    "purified"
+   ],
+   "note": "The NT's 'purify' is 'become right/clean in God's eyes' (1PE 1:22, ACT 21:24); the 2pl imperative is built with the chain prefix vø̀- (feature imperative_chain). gen035:2."
+  },
+  {
+   "id": "term:change_clothes.g",
+   "kind": "term",
+   "source": "וְהַחֲלִיפוּ שִׂמְלֹתֵיכֶם (change your garments)",
+   "value": "zoqa ndabua ndakinak zó-uzám (put on new clothes)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "COL 3:12",
+     "form": "ndakinak zó-uzám"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen035",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "change",
+    "change your garments",
+    "garments",
+    "change clothes"
+   ],
+   "note": "COL 3:12 'clothe yourselves' = 'matev ndakinak zó-uzám' (put on new ways); with ndabua (clothes) in gen035:2. No corpus verse changes clothes (searched 'change(d) ... clothes|garments')."
+  },
+  {
+   "id": "term:nurse.g",
+   "kind": "term",
+   "source": "מֵינֶקֶת (nurse of a woman, Rebekah's nurse)",
+   "value": "<nurse> ndugu sævam, ma <X> gumbi꞉-kewagam (the woman who looked after her)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 24:59",
+     "form": "sævam ma gumbi꞉-kewagam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen035",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "nurse",
+    "rebekah's nurse"
+   ],
+   "note": "The same woman as Gen 24:59 (Rebekah's nurse, unnamed there). Ruth's nurse to a child is term:H539nurse.h. gen035:8."
+  },
+  {
+   "id": "term:oak.g",
+   "kind": "term",
+   "source": "אֵלָה / אַלּוֹן (oak, terebinth, great tree)",
+   "value": "tae kandambaqape; 'under the oak' = tae kandambaqape guzuguzu-te (in its shade)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 12:6",
+     "form": "tae kandambaqape qo꞉yam"
+    },
+    {
+     "ref": "GEN 18:8",
+     "form": "Tae guzuguzu-te ndøgo"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen035",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "oak",
+    "under the oak",
+    "great tree",
+    "terebinth"
+   ],
+   "note": "The Oak of Moreh = 'big tree' (12:6); the Oaks of Mamre 'tae kandakanda' (13:18); 'under the tree' = in its shade (18:8). gen035:4, 8."
+  },
+  {
+   "id": "term:distance.g",
+   "kind": "term",
+   "source": "כִּבְרַת־הָאָרֶץ (some distance from)",
+   "value": "<X> fakhaneav ndøgoám (they had not yet arrived at X). Zua qambaqapé (still far)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "JHN 11:30",
+     "form": "fakhaneav ndøgoám"
+    },
+    {
+     "ref": "ACT 9:38",
+     "form": "qambaqapé mbá"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen035",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "distance",
+    "some distance",
+    "still",
+    "while they were still"
+   ],
+   "note": "Jesus had not yet come into the village (JHN 11:30); far = qambaqapé (ACT 9:38 'not far'). gen035:16."
+  },
+  {
+   "id": "formula:arise.g",
+   "kind": "formula",
+   "source": "קוּם (arise!, get up! before another command)",
+   "value": "Mòqo-itán.",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 22:10",
+     "form": "Mòqo-itán."
+    },
+    {
+     "ref": "GEN 31:13",
+     "form": "Ndakin mòqo-itán."
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen035",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "arise",
+    "get up"
+   ],
+   "note": "Its own sentence before the next command (ACT 22:10 then 'go into Damascus'). 'Let us arise and go' = qazinǿ-niáv alone (formula:let_us_go.g). gen035:1, 3."
+  },
+  {
+   "id": "formula:wherever_i_went.g",
+   "kind": "formula",
+   "source": "בַּדֶּרֶךְ אֲשֶׁר הָלָכְתִּי (wherever I have gone)",
+   "value": "okho ate ndægo, no qæmat (all the journeys I went)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 28:20",
+     "form": "ta okho-te nqanek"
+    },
+    {
+     "ref": "ACT 24:11",
+     "form": "Zelusalem taon-te qæmat"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen035",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "wherever",
+    "gone",
+    "wherever i have gone"
+   ],
+   "note": "okho journey (28:20) + 1sg past qæmat (I went, ACT 24:11). gen035:3 'Neka ndego no namba ndøgoám, okho ate ndægo, no qæmat.'"
+  },
+  {
+   "id": "formula:answered_in_distress.g",
+   "kind": "formula",
+   "source": "הָעֹנֶה אֹתִי בְּיוֹם צָרָתִי (who answered me in my day of distress)",
+   "value": "no soqaqape-te qægoam, noqa akhayam ge-ewag",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "JON 2:3",
+     "form": "no soqaqape-te qægoam"
+    },
+    {
+     "ref": "JON 2:3",
+     "form": "noqa akhayam mòqo-ewág"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen035",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "distress",
+    "answered me",
+    "day of distress"
+   ],
+   "note": "Jonah's prayer (2:3) with 3sg ge-ewag (he heard). gen035:3."
+  },
+  {
+   "id": "formula:terror_from_god.g",
+   "kind": "formula",
+   "source": "חִתַּת אֱלֹהִים עַל־הֶעָרִים (a terror from God fell on the cities)",
+   "value": "<people> Mbumbukiam-qá møe kandambá gigonem (they were greatly afraid of God)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "JON 1:3",
+     "form": "Evezøza-qá møe"
+    },
+    {
+     "ref": "JON 1:10",
+     "form": "møe kandambá gigonem"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen035",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "terror",
+    "terror from god",
+    "fell"
+   ],
+   "note": "Told from the people's side (image_to_meaning). gen035:5 'taon ezoqam, ti avønin-te gi꞉yagam, Mbumbukiam-qá møe kandambá gigonem'."
+  },
+  {
+   "id": "formula:kings_from_you.g",
+   "kind": "formula",
+   "source": "וּמְלָכִים מֵחֲלָצֶיךָ יֵצֵאוּ (kings shall come from you, descend from you)",
+   "value": "ti mokho-te ndigu, ezoqa nøme kawakawa-za vǿgoāt",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 17:6",
+     "form": "ezoqa nøme kawakawa-za vǿgoāt"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen035",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "descend",
+    "kings",
+    "come from you",
+    "kings shall descend from you"
+   ],
+   "note": "17:6 to Abraham, reused in gen035:11 with 'Qogi qazi, ezoqa bawan kandambaqape ndǿgoát' for the nation."
+  },
+  {
+   "id": "formula:that_is.g",
+   "kind": "formula",
+   "source": "הִוא <Y> (that is, Y: an older place name explained)",
+   "value": "Iz nøme nqambógo, <Y>.",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 23:2",
+     "form": "Iz nøme nqambógo, Hiblón."
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen035",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "that is"
+   ],
+   "note": "Its own sentence after the place (23:2 Kiriath-arba / Hebron). gen035:6 (Luz/Betel), 19 (Eflat/Betliem), 27 (Kiliat-Aba/Hiblon)."
+  },
+  {
+   "id": "formula:old_full_of_years.g",
+   "kind": "formula",
+   "source": "זָקֵן וּשְׂבַע יָמִים (old and full of years)",
+   "value": "Yage outap-ús.",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 25:8",
+     "form": "Yage outap-ús."
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen035",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "old",
+    "full of years",
+    "old and full of years"
+   ],
+   "note": "Abraham's death (25:8), reused verbatim with 'ùnime꞉-lawaqape-év, genanim' for Isaac, gen035:29."
+  },
+  {
+   "id": "term:stone_marker.g",
+   "kind": "term",
+   "source": "מַצֶּבֶת אָבֶן / מַצֵּבָה (pillar, stone marker)",
+   "value": "Andé uk me me꞉wuáb",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 28:18",
+     "form": "Andé uk me me꞉wuáb"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen035",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "marker",
+    "stone marker",
+    "pillar",
+    "marks"
+   ],
+   "note": "With 'nandi … sasa ndøwuab' before it (formula:set_up_pillar.g). 'it marks Rachel's tomb to this day' = 'nqanek nandi, Laisol-qa manqei pakha-te me꞉yám' (stands at the tomb; me꞉yám from GEN 19:26), gen035:20."
+  },
+  {
+   "id": "term:H5262.g",
+   "kind": "term",
+   "source": "נֶסֶךְ (drink offering)",
+   "value": "Mbumbukiam-te etoam matev, waen … vō꞉qouz (poured wine as a gift to God)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "2TI 4:6",
+     "form": "waen gi꞉qouzumatun"
+    },
+    {
+     "ref": "GEN 28:18",
+     "form": "oil vō꞉qouz"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen035",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "drink offering",
+    "poured out",
+    "drink"
+   ],
+   "note": "The NT's drink offering is wine poured out (2TI 4:6, PHP 2:17); the Hebrew does not name the liquid. gen035:14. Question for the Kuni team whether 'waen' should stand."
+  },
+  {
+   "id": "name:deborah.g",
+   "kind": "name",
+   "source": "דְּבֹרָה (Deborah)",
+   "value": "Debola",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 23:2",
+     "form": "gunaním"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen035",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "deborah"
+   ],
+   "note": "r → l (letter rules); not in the corpus. gen035:8."
+  },
+  {
+   "id": "name:allon_bacuth.g",
+   "kind": "name",
+   "source": "אַלּוֹן בָּכוּת (Allon-bacuth)",
+   "value": "Alon-Bakut; meaning '(Taqa manqa mokho: Eiv matev-qa tae.)'",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 23:2",
+     "form": "eiv matev ndøgó"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen035",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "allon",
+    "bacuth",
+    "allon-bacuth"
+   ],
+   "note": "Double consonants single, ch/k → k. eiv matev (weeping, 23:2) + tae (tree). gen035:8."
+  },
+  {
+   "id": "name:el_bethel.g",
+   "kind": "name",
+   "source": "אֵל בֵּית־אֵל (El-bethel)",
+   "value": "El-Betel; meaning '(Taqa manqa mokho: Betel-qa Mbumbukiam.)'",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 28:19",
+     "form": "iz Betel mbo-akhá"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen035",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "el-bethel",
+    "el"
+   ],
+   "note": "Like El-Eloe-Izlael (gen033:20). gen035:7."
+  },
+  {
+   "id": "name:ben_oni.g",
+   "kind": "name",
+   "source": "בֶּן־אוֹנִי (Ben-oni)",
+   "value": "Ben-Oni; meaning '(Taqa manqa mokho: Noqa nqosøgeap-ge yó.)'",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 19:38",
+     "form": "Iz Ben-Ami mbo-akhá."
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen035",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "ben",
+    "oni",
+    "ben-oni"
+   ],
+   "note": "Like Ben-Ami (19:38). The meaning 'son of my pain' uses nqosøgeap (1TH 5:3) with -ge yo (Ezoqam-ge Yo pattern). gen035:18."
+  },
+  {
+   "id": "name:eder.g",
+   "kind": "name",
+   "source": "מִגְדַּל־עֵדֶר (Migdal-eder, the Tower of Eder)",
+   "value": "Eda-qa khoev eqawat-qape (Eder's tall house)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "LUK 13:4",
+     "form": "khoev eqawat-qape qandonqoe"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen035",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "eder",
+    "tower",
+    "tower of eder"
+   ],
+   "note": "The BSB translates migdal; LUK 13:4 the tower of Siloam = khoev eqawat-qape. Final -er → -a (letter rules). gen035:21."
+  },
+  {
+   "id": "name:kiriath_arba.g",
+   "kind": "name",
+   "source": "קִרְיַת הָאַרְבַּע (Kiriath-arba)",
+   "value": "Kiliat-Aba (taon)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 23:2",
+     "form": "Kiliat-Aba taon-té gunaním."
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen035",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "kiriath",
+    "arba",
+    "kiriath-arba"
+   ],
+   "note": "The team's form (23:2), explained there as Hiblon. gen035:27."
   }
  ]
 }

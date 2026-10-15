@@ -638,4 +638,179 @@ gumbo-ein (to her) 13; she says "āv guni-eín nqǽgo" (29:33); answers with -qa
   - answers: spent the night, lodged, stayed the night
   - 'slept one night' (24:54); alone ge-buv (28:11).
   - agent:gen031, 2026-10-15
-<!-- store:end sha=7335d7b4 -->
+- **`formula:unworthy.g`** קָטֹנְתִּי מִכֹּל הַחֲסָדִים (I am unworthy of all the kindness) → **No ezoqam khapúmbá.** [high, decided, attested]
+  - NT: RUT 2:13 *No ezoqam khapúmbá*
+  - answers: unworthy, i am unworthy, not worthy
+  - The Hebrew says 'I am small': Ruth's self-abasement (formula:humble_self) fits word for word. Then the kindness: 'Qo kuku matev … qoqonøgo' (RUT 2:10 pattern).
+  - agent:gen032, 2026-10-15
+- **`formula:appease.g`** אֲכַפְּרָה פָנָיו (I will appease him, lit. cover his face) → **<X>-qa mbøni nqosøgeap bembø̄e-navøem** [high, decided, attested]
+  - NT: GEN 27:44 *mbøni nqosøgeap bembø̄e-navøem*
+  - answers: appease, i will appease
+  - 'until your brother's anger subsides' (27:44, of the same Esau).
+  - agent:gen032, 2026-10-15
+- **`formula:accept_me.g`** יִשָּׂא פָנָי (he will accept me, lift up my face) → **Éisa, ndego no tanakh ndø̀nøgó** [high, decided, attested]
+  - NT: RUT 2:2 *tanakh ndø̀nøgó*; JON 1:6 *Éisa*
+  - answers: accept, accept me, perhaps he will accept me, will accept
+  - 'someone will be kind to me' (RUT 2:2) + perhaps (formula:perhaps).
+  - agent:gen032, 2026-10-15
+- **`formula:let_me_go.g`** שַׁלְּחֵנִי (let me go, send me away) → **É-moqonøták.** [high, decided, attested]
+  - NT: GEN 30:25 *É-moqonøták*
+  - answers: let me go, send me away, send me on my way
+  - Jacob to Laban (30:25). 'I will not let you go' = 'No qo nótakák' (gen032:27, built on gembótakák, 1CO 10:13, and nó-…-ák).
+  - agent:gen032, 2026-10-15
+- **`formula:why_ask.g`** לָמָּה זֶּה תִּשְׁאַל לִשְׁמִי (Why do you ask my name?) → **Gekha zapâ, <X>-qa yaq-te, ndoqonømbe-bevap?** [high, decided, attested]
+  - NT: MAT 19:17 *ndoqonømbe-bevap*
+  - answers: why do you ask
+  - Jesus's 'Why do you ask me about what is good?' (MAT 19:17).
+  - agent:gen032, 2026-10-15
+- **`formula:name_no_longer.g`** לֹא <X> יֵאָמֵר עוֹד שִׁמְךָ כִּי אִם־<Y> (your name will no longer be X but Y) → **Qoqa iz, <X> sekemba gégoák. Geté <Y> qágoát.** [high, decided, attested]
+  - NT: GEN 17:5 *sekemba gégoák*; GEN 17:5 *Eibleem qágoát*
+  - answers: your name will no longer be, no longer, will no longer be called
+  - Abram → Abraham (17:5), with the meaning in brackets. Gen 32:29 and 35:10 (Jacob → Israel).
+  - agent:gen032, 2026-10-15
+- **`formula:to_this_day.g`** עַד הַיּוֹם הַזֶּה (to this day) → **Yaq nakémbá, até ndakin khøuwa-té-a,** [high, decided, attested]
+  - NT: GEN 26:33 *ndakin khøuwa-té-a*
+  - answers: to this day, therefore to this day
+  - Isaac's well (26:33), with 'therefore'.
+  - agent:gen032, 2026-10-15
+- **`formula:where_going.g`** אָנָה תֵלֵךְ (where are you going?) → **Gê, qo ākhoqotéma?** [high, decided, attested]
+  - NT: JHN 13:36 *qo ākhoqotéma*
+  - answers: where are you going
+  - Also GEN 16:8 'av khoqotéma?' (Hagar).
+  - agent:gen032, 2026-10-15
+- **`formula:tell_him_pl.g`** וַאֲמַרְתֶּם / תְּדַבְּרוּן אֶל (you pl are to say to him) → **āv qazømbøé-einím nqǽgo, ‘…’; 'tell him the same' = manqat kopó vømømbó-einīm** [high, decided, attested]
+  - NT: MAT 21:3 *qazømbøé-einím nqǽgo*; MAT 26:18 *vømømbó-einīm*
+  - answers: you are to say, say to him, tell him, the same thing
+  - The disciples' instruction (MAT 21:3, LUK 19:31: if anyone asks …, say …). 2sg built in gen032:19: 'āv qombøé-eín nqǽgo'.
+  - agent:gen032, 2026-10-15
+- **`formula:left_alone.g`** וַיִּוָּתֵר לְבַדּוֹ (he was left alone) → **yakhapus mbá sege-ivøvém** [high, decided, attested]
+  - NT: JHN 8:9 *yakhapus mbá sege-ivøvém*
+  - answers: left alone, was left all alone, alone
+  - Jesus left alone with the woman (JHN 8:9).
+  - agent:gen032, 2026-10-15
+- **`formula:sun_rose.g`** וַיִּזְרַח הַשֶּׁמֶשׁ (the sun rose) → **khøuwa gendosasev** [high, decided, attested]
+  - NT: MRK 4:6 *khøuwa gendosasev*
+  - answers: the sun rose, sun rose, rose
+  - MRK 4:6, MAT 13:6.
+  - agent:gen032, 2026-10-15
+- **`formula:messengers.g`** וַיִּשְׁלַח מַלְאָכִים לְפָנָיו (sent messengers ahead of him) → **u-anim ndøkhofotáz, teqa megemege-te** [high, decided, attested]
+  - NT: LUK 9:52 *u-anim ndøkhofotáz*; LUK 7:10 *u-anim*
+  - answers: messengers, sent messengers, ahead of him
+  - Human messengers are u-anim (sg u-anem), not enzol ezoqam (angels). 'the messengers returned' = 'u-anim … giqavaz' (LUK 7:10).
+  - agent:gen032, 2026-10-15
+- **`formula:insisted.g`** וַיִּפְצַר־בּוֹ (he urged him, pressed him; insisted) → **<X> gèmbo-pouweám, bazaføgakh-ús (he urged him strongly)** [medium, decided, by-rule]
+  - NT: GEN 19:3 *gèzø-pouweám, bazaføgakh-ús*; LUK 23:5 *segembo-pouweám*
+  - answers: insisted, urged, pressed, pressed him, urged him
+  - Lot urging the angels (19:3, to them: gèzø-); to one person gèmbo- is built on the gembo-/gezø- pair. gen033:11.
+  - agent:gen033, 2026-10-15
+- **`formula:accept_it.g`** קַח / וְלָקַחְתָּ (take, accept a gift) ; וַיִּקָּח (and he took it) → **sègekhatiú (accept it, imperative); he took it = ndøndaf** [high, decided, attested]
+  - NT: GEN 23:13 *sègekhatiú*; GEN 21:12 *Sègekhatiú*
+  - answers: accept, receive, accepted, take it, accept my gift, receive this gift
+  - Abraham to Ephron 'accept my price' (23:13). 'X took it' after urging: 'X até gendego, … ndøndaf' (gen033:11).
+  - agent:gen033, 2026-10-15
+- **`formula:no_please.g`** אַל־נָא (no, please) → **Āv taoká.** [high, decided, attested]
+  - NT: GEN 19:3 *Āv taoká*; 2CO 11:11 *Āv taoká*
+  - answers: no please, no, please
+  - Lot's refusal to the angels (19:3), a polite 'not so'. gen033:10.
+  - agent:gen033, 2026-10-15
+- **`formula:keep_yours.g`** יְהִי לְךָ אֲשֶׁר־לָךְ (keep what is yours) → **Qoqa gigiap, bètaqagó. (let your goods be yours)** [medium, decided, by-rule]
+  - NT: GEN 14:21 *bètaqagó*; MAT 25:25 *qogi moni ngínik*
+  - answers: keep what belongs to you, what belongs to you, keep
+  - 14:21 'take the goods for yourself' = '… bètaqagó' (may it be yours). gen033:9.
+  - agent:gen033, 2026-10-15
+- **`formula:bowed_pl.g`** וַתִּשְׁתַּחֲוֶיןָ / וַיִּשְׁתַּחֲווּ (they bowed down) → **ekeza kha, manqei me꞉laém (they threw themselves to the ground)** [high, decided, attested]
+  - NT: REV 7:11 *manqei me꞉laém*; MAT 17:6 *sège-o꞉áz*
+  - answers: bowed down, they bowed, bowed
+  - Plural of 'ekeza kha, manqei me꞉laváo. Bugug até manqei-té.' (GEN 17:3); the singular formula is formula:bowed_down.g. gen033:6-7.
+  - agent:gen033, 2026-10-15
+- **`formula:camped.g`** וַיִּחַן (camped) / נָטָה אֹהֶל (pitched a tent) → **palai khoev vø̄puan (and put up the tent)** [high, decided, attested]
+  - NT: GEN 26:25 *palai khoev vø̄puan*; GEN 13:3 *palai khoev qazømbe-puatam*
+  - answers: camped, encamped, pitched his tent, pitched, tent
+  - In a relative clause 'ma ndego palai khoev ndøpuan' (gen033:19). Camping 'outside/near the city' = 'taon avønin-te'.
+  - agent:gen033, 2026-10-15
+- **`formula:let_us_go.g`** נִסְעָה וְנֵלֵכָה (let us journey on, let us go) → **qazinǿ-niáv (let us go)** [high, decided, attested]
+  - NT: GEN 4:8 *qazinǿ-niáv*; HEB 13:13 *qabizinø-niáv*
+  - answers: let us be on our way, let us go, on our way
+  - Cain to Abel (4:8). gen033:12 'Ndakin qazinǿ-niáv.'
+  - agent:gen033, 2026-10-15
+- **`formula:go_ahead_of_you.g`** אֵלְכָה לְנֶגְדֶּךָ (I will go ahead of you) → **No é-ndøto꞉má ndøgo, qoqa megemege-te** [high, decided, attested]
+  - NT: MAT 26:32 *é-ndøto꞉má ndøgo, zoqa megemege-te*
+  - answers: i will go ahead of you, go ahead of you, ahead of you
+  - MAT 26:32 with zoqa (you pl) → qoqa (you sg). 'go ahead of me' (command) = 'noqa megemege-té qonǿqáv' (gen033:14, gen032:17 pl).
+  - agent:gen033, 2026-10-15
+- **`formula:you_know.g`** אֲדֹנִי יֹדֵעַ כִּי (my lord knows that) → **Khanánqa. Qo mòqote-qatéq, av nqægo, …** [high, decided, attested]
+  - NT: JHN 21:17 *mòqote-qatéq*; JHN 16:30 *mòqote-qatéq*
+  - answers: knows, you know, my lord knows, lord knows
+  - Peter's 'Lord, you know'. The third-person 'my lord' becomes the vocative Khanánqa + 'you' (as RUT 2:13). gen033:13.
+  - agent:gen033, 2026-10-15
+- **`formula:it_is_like.g`** כִּרְאֹת (it is like seeing) → **Ndøgo andé <X> me me꞉gó (it is like X)** [medium, decided, attested]
+  - NT: 1CO 14:20 *me me꞉gó*
+  - answers: like seeing, it is like, is like
+  - Feature similative_ande. gen033:10 'Ndøgo andé Mbumbukiam-qa bugug me me꞉gó.'
+  - agent:gen033, 2026-10-15
+- **`formula:let_them_stay.g`** אַצִּיגָה־נָּא עִמְּךָ מִן־הָעָם (let me leave some people with you) → **Nøkeza ezoqam nøme, qo namba bezøgó (let some of my people be with you)** [low, decided, by-rule]
+  - NT: 1TH 5:13 *sambi bèzøgó*; GEN 23:11 *Nøkeza ezoqam-qá*
+  - answers: let me leave, leave some of my people, leave
+  - Built: the optative be-zø- (let them be) with 'qo namba'. gen033:15.
+  - agent:gen033, 2026-10-15
+- **`formula:until_i_come.g`** עַד אֲשֶׁר־אָבֹא (until I come) → **atema no banø̄fakhan** [high, decided, attested]
+  - NT: 1TI 4:13 *atema no banø̄fakhan*
+  - answers: until i come, until i come to
+  - gen033:14 'atema no qo-te banø̄fakhan, Sia manqei-te'.
+  - agent:gen033, 2026-10-15
+- **`formula:i_have.g`** יֶשׁ־לִי (I have) → **No <X> nqanø̂gó** [high, decided, attested]
+  - NT: 2CO 11:6 *nøtenat nqanø̂gó*; 2CO 11:11 *kuku nqanø̂gó*
+  - answers: i have, i already have plenty, have plenty, i have all i need, plenty
+  - gen031:29, gen033:9 'No gigiap kopoáv nqanø̂gó', 33:11 'no gigiap ate ndægo nqanø̂gó'.
+  - agent:gen033, 2026-10-15
+- **`formula:divided_among.g`** וַיַּחַץ … עַל (divided the children among) → **<X>, livin-mbá gunumu-qatatát, <Y> vøzø̄-etoam (divided X and gave them to Y)** [high, decided, attested]
+  - NT: LUK 15:12 *livin-mbá gunumu-qatatát*; GEN 1:4 *livin-mbá gunumu-qatá*
+  - answers: divided, divided among, so he divided
+  - The father dividing his property between his sons. gen033:1. For two camps keep term:H2673.g.
+  - agent:gen033, 2026-10-15
+- **`formula:should_not_be_done.g`** וְכֵן לֹא יֵעָשֶׂה (a thing that should not be done) → **Ezoqa matønumáv, matev av nqægo.** [high, decided, attested]
+  - NT: GEN 20:9 *Ezoqa matønumáv*
+  - answers: should not be done, a thing that should not be done
+  - Abimelech to Abraham (20:9): 'people do not do such a thing'. gen034:7.
+  - agent:gen034, 2026-10-15
+- **`formula:condition.g`** אַךְ בְּזֹאת (only on this condition) → **Geté sa nqánek: …** [medium, decided, attested]
+  - NT: ACT 15:28 *Geté sa nqánek*; GEN 14:24 *Geté sa ndǿgo*
+  - answers: condition, on one condition, only on this condition, only
+  - The condition then follows as its own sentence after the colon. gen034:15, 22, 23.
+  - agent:gen034, 2026-10-15
+- **`formula:arise.g`** קוּם (arise!, get up! before another command) → **Mòqo-itán.** [high, decided, attested]
+  - NT: ACT 22:10 *Mòqo-itán.*; GEN 31:13 *Ndakin mòqo-itán.*
+  - answers: arise, get up
+  - Its own sentence before the next command (ACT 22:10 then 'go into Damascus'). 'Let us arise and go' = qazinǿ-niáv alone (formula:let_us_go.g). gen035:1, 3.
+  - agent:gen035, 2026-10-15
+- **`formula:wherever_i_went.g`** בַּדֶּרֶךְ אֲשֶׁר הָלָכְתִּי (wherever I have gone) → **okho ate ndægo, no qæmat (all the journeys I went)** [medium, decided, by-rule]
+  - NT: GEN 28:20 *ta okho-te nqanek*; ACT 24:11 *Zelusalem taon-te qæmat*
+  - answers: wherever, gone, wherever i have gone
+  - okho journey (28:20) + 1sg past qæmat (I went, ACT 24:11). gen035:3 'Neka ndego no namba ndøgoám, okho ate ndægo, no qæmat.'
+  - agent:gen035, 2026-10-15
+- **`formula:answered_in_distress.g`** הָעֹנֶה אֹתִי בְּיוֹם צָרָתִי (who answered me in my day of distress) → **no soqaqape-te qægoam, noqa akhayam ge-ewag** [medium, decided, by-rule]
+  - NT: JON 2:3 *no soqaqape-te qægoam*; JON 2:3 *noqa akhayam mòqo-ewág*
+  - answers: distress, answered me, day of distress
+  - Jonah's prayer (2:3) with 3sg ge-ewag (he heard). gen035:3.
+  - agent:gen035, 2026-10-15
+- **`formula:terror_from_god.g`** חִתַּת אֱלֹהִים עַל־הֶעָרִים (a terror from God fell on the cities) → **<people> Mbumbukiam-qá møe kandambá gigonem (they were greatly afraid of God)** [medium, decided, by-rule]
+  - NT: JON 1:3 *Evezøza-qá møe*; JON 1:10 *møe kandambá gigonem*
+  - answers: terror, terror from god, fell
+  - Told from the people's side (image_to_meaning). gen035:5 'taon ezoqam, ti avønin-te gi꞉yagam, Mbumbukiam-qá møe kandambá gigonem'.
+  - agent:gen035, 2026-10-15
+- **`formula:kings_from_you.g`** וּמְלָכִים מֵחֲלָצֶיךָ יֵצֵאוּ (kings shall come from you, descend from you) → **ti mokho-te ndigu, ezoqa nøme kawakawa-za vǿgoāt** [high, decided, attested]
+  - NT: GEN 17:6 *ezoqa nøme kawakawa-za vǿgoāt*
+  - answers: descend, kings, come from you, kings shall descend from you
+  - 17:6 to Abraham, reused in gen035:11 with 'Qogi qazi, ezoqa bawan kandambaqape ndǿgoát' for the nation.
+  - agent:gen035, 2026-10-15
+- **`formula:that_is.g`** הִוא <Y> (that is, Y: an older place name explained) → **Iz nøme nqambógo, <Y>.** [high, decided, attested]
+  - NT: GEN 23:2 *Iz nøme nqambógo, Hiblón.*
+  - answers: that is
+  - Its own sentence after the place (23:2 Kiriath-arba / Hebron). gen035:6 (Luz/Betel), 19 (Eflat/Betliem), 27 (Kiliat-Aba/Hiblon).
+  - agent:gen035, 2026-10-15
+- **`formula:old_full_of_years.g`** זָקֵן וּשְׂבַע יָמִים (old and full of years) → **Yage outap-ús.** [high, decided, attested]
+  - NT: GEN 25:8 *Yage outap-ús.*
+  - answers: old, full of years, old and full of years
+  - Abraham's death (25:8), reused verbatim with 'ùnime꞉-lawaqape-év, genanim' for Isaac, gen035:29.
+  - agent:gen035, 2026-10-15
+<!-- store:end sha=0f9eb992 -->

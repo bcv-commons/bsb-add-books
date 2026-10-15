@@ -26,18 +26,20 @@ from project import project, edition, missing_texts, LICENCE_CLASS  # noqa: E402
 
 FAMILIARITY = ("known", "partial", "unknown")
 FEATURES = {
-    "known": {"pack": "memory", "style_check": False,
+    "known": {"pack": "memory", "style_check": False, "drafting": "waves",
               "summary": "drafts from the model's own command of the language; the memory keeps decisions consistent"},
-    "partial": {"pack": "dialect", "style_check": True,
+    "partial": {"pack": "dialect", "style_check": True, "drafting": "waves",
                 "summary": "drafts in the variety, not the standard language: forms checked against the corpus"},
-    "unknown": {"pack": "full", "style_check": True,
+    # unknown: one chapter after another (decided by the user, 2026-10-15, Kuni Genesis 31-40): each chapter's store
+    # entries reach the next chapter's pack, which is built just in time; no waves
+    "unknown": {"pack": "full", "style_check": True, "drafting": "sequential",
                 "summary": "learns the language from the corpus while drafting; invents nothing"},
 }
 STRICTNESS = ("public-domain", "attributable", "non-free")
 
 
 def mode(p):
-    """{familiarity, licence, pack, style_check, quotation_rule, summary} for a project config."""
+    """{familiarity, licence, pack, style_check, drafting, quotation_rule, summary} for a project config."""
     fam = p.get("familiarity") or "known"
     if fam not in FAMILIARITY:
         raise SystemExit(f"familiarity {fam!r}: one of {', '.join(FAMILIARITY)}")
@@ -105,6 +107,8 @@ def main():
     print(f"  licence: {m['licence']} ({', '.join(f'{e} {c}' for e, c in m['editions'].items()) or 'no edition'})"
           + ("; quarantine for books it has, quotation rule in the prompts" if m["quotation_rule"] else ""))
     print(f"  verse pack: {m['pack']}; style check in the prompt: {'yes' if m['style_check'] else 'no'}")
+    print("  drafting: " + ("sequential: one chapter after another, its pack built just in time (no waves)"
+                            if m["drafting"] == "sequential" else "waves of about ten chapters, shared terms fixed first"))
     print(f"  memory tools present: {', '.join(sorted(have)) or 'none'}"
           + ("" if {"store", "wiki"} <= have else f" (set up: docs/onboarding.md, step 4)"))
     for e, how in missing_texts(p):

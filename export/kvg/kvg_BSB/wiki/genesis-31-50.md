@@ -72,6 +72,126 @@ What the chapter needed and where the models are:
 - Built and open: *gèmbo-ten* (ten times), the saddlebag, "the way of women", tambourine (left out),
   "bore the loss", "squandered". Each has a gap entry with what was searched.
 
+## Genesis 32 (drafted 15.10.2026, agent:gen032)
+
+- **Messengers are people, not angels.** The NT's *u-anim* (LUK 9:52 "u-anim ndøkhofotáz, teqa
+  megemege-te", LUK 7:10 the messengers returned) fits Jacob's messengers word for word; *enzol
+  ezoqam* stays for "the angels of God" (32:2).
+- **Messages within messages.** Jacob's "say to my lord Esau: 'Thus says your servant Jacob: …'"
+  follows the disciples' instructions in MAT 21:3 and MAT 26:18: "āv qazømbøé-einím nqǽgo, ‘… āv
+  gene-eín: …’", the inner message after a colon, without a third level of quotes. "If he asks you …,
+  say …" is LUK 19:31. The 2sg "āv qombøé-eín nqǽgo" (32:19) is built.
+- **The prayer (32:10–13)** reuses the team's promise wording: "I am small" is Ruth's "No ezoqam
+  khapúmbá" (RUT 2:13), the offspring that cannot be counted is 16:10 and 13:16 ("kopoav-qape
+  ndø̀taqa-etoám … gevebumav ndǿgoát"), the sand of the sea ROM 9:27. "Help me" is MAT 15:25
+  "Vø̀nøtøké". "Go back to your land" is "qonǿveséz" (3:19); gen031's "mòqoveséz" is not in the corpus.
+- **Camps.** No noun for a camp exists in the corpus (HEB 13:11–13 says "outside the town"). The draft
+  calls the groups *bawan* and explains Mahanaim as "(Taqa manqa mokho: Bawan menás.)"; dividing them
+  is *qatøz-* (21:28) as "Møvøyap foá" (four parts, JHN 19:23). Question for the team.
+- **The gift** (מִנְחָה) is Cain and Abel's *etoam matev* (4:3–5), the same Hebrew word. "Appease him"
+  is Rebekah's "until his anger subsides" (27:44 "mbøni nqosøgeap bembø̄e-navøem"); "perhaps he
+  will accept me" is Ruth's "tanakh ndø̀nøgó" (RUT 2:2).
+- **Animals by sex**: the team writes *angana* / *sakheis* after the animal (30:35, 12:16); 200 = "tu
+  andled" (11:23).
+- **The wrestling.** "Let me go" is Jacob's own "É-moqonøták" to Laban (30:25); "left alone" is JHN
+  8:9; the hip is Abraham's *bov zapazapa* (24:2); limping is "bov gèmbo-wauwauám" (ACT 14:8). The
+  fight is *nøfeap* (GAL 5:17, HEB 11:33), "you have prevailed" is built on Rachel's "mø̀e-kopømba-én"
+  (30:8). The renaming follows 17:5 ("Qoqa iz, Eiblam sekemba gégoák … Geté Eibleem qágoát"), with
+  Israel's meaning in brackets. "Why do you ask my name?" is MAT 19:17.
+- **Gaps:** ford (left out), dislocated (rendered as crippled), nursing camels (with their young),
+  tendon = *kinik* (ligament, COL 2:19, two verses only).
+
+## Genesis 33 (drafted 15.10.2026, agent:gen033)
+
+- **The meeting is told with the team's greeting words.** Esau runs, embraces and kisses as Laban
+  does in 29:13 ("nakhamas-té … sège-møvøiú, vø̄ngenøtam"); "fell on his neck" is not rendered
+  separately (the embrace covers it). Jacob bows as Abraham in 18:2 ("gèkhafutáv … Bugug até
+  manqei-té"); the women and children bow with the plural of REV 7:11 ("ekeza kha, manqei me꞉laém").
+  "Seven times" puts the numeral before the verb ("seven gèkhafutáv", as LUK 17:4 counts acts):
+  open, like gen031's *gèmbo-ten*.
+- **Order of the line**: first *bugukhokhof*, then "Taqa zita-te", last "Yaq vaev-te" (1CO 15:8,
+  LUK 20:32). The same "vaev-te" gives "and then Joseph and Rachel" (33:7).
+- **The polite exchange** reuses Genesis' own bargaining scenes: "No, please" is Lot's "Āv taoká"
+  (19:3), "accept it" is Abraham's "sègekhatiú" (23:13), "keep what is yours" is the king of Sodom's
+  "bètaqagó" (14:21), "Jacob pressed him" is Lot's "gèzø-pouweám, bazaføgakh-ús" (19:3, here
+  gèmbo- for one person). Favour is *tanakh* throughout ("qo tanakh toqonøgo", gen032:6), and "God
+  has been gracious to me" is the NT's "have mercy on me" turned into a past ("Mbumbukiam no tanakh
+  genøgo", after PHP 2:27 "tanakh mbogó").
+- **"My lord knows …"** becomes the vocative plus "you know" (JHN 21:17 "mòqote-qatéq"), as Ruth
+  turns "my lord" into *Khanánqa*. "Let us go" is Cain's "qazinǿ-niáv" (4:8); "I will go ahead of
+  you" is MAT 26:32 with *qoqa*; "until I come" is 1TI 4:13; "slowly" is ACT 27:7 *aiyav-té*.
+- **Animals**: ewes and cows "nakhei tete ndizøloge" (nursing, LUK 21:23). "Driven hard", "in my
+  care" and "at the pace of" have no model: the draft says "if I lead them fast", "with me" and "as
+  they walk" (gap entries).
+- **Succoth and the altar**: shelters are the NT's *khoev-qasis* (LUK 9:33, the Feast of Tabernacles
+  JHN 7:2), so Succoth's meaning in brackets is "(Taqa manqa mokho: Khoev-qasis.)". Jacob camps as
+  Isaac does (26:25 "palai khoev vø̄puan") and buys the field as Abraham does (23:16–20 "X-te gewi",
+  the silver given with *vøzø̄-etoam*); Hamor is the NT's *Hamo* (ACT 7:16). El-Elohe-Israel is
+  written *El-Eloe-Izlael* with its meaning in brackets.
+
+## Genesis 34 (drafted 15.10.2026, agent:gen034)
+
+- **The rape of Dinah is told plainly but with the team's own words.** "He took her" is Pharaoh's
+  *guindaf* (12:17, gu- because a man acts on a woman); "lay with her" is the wedding-night phrase
+  "venanqei nonqo vø̄tøkuanem" (29:23); "by force" is added as "she did not want" (the servant's
+  *poeveav*, 24:5) plus *bazaføgakh-te* (by strength). "Defiled" has no model for a person: the
+  draft says "he did an immoral act with her" with REV 18:3 ("tu namba mambe matev"); the brothers'
+  word "prostitute" is *mambe sævam* (1CO 6:16 "mambe okho sævam"), so the chapter's two words stay
+  in one family. **Question for the Kuni team:** how plainly may a Kuni reader be told this?
+- **Anger and the outrage**: "very angry" is the NT's "qaqa kandambá gigonem" (ACT 19:28); grief is
+  "mbøni vaev matev" with zø- (them), as gen032's distress; "a thing that should not be done" is
+  Abimelech's "Ezoqa matønumáv, matev av nqægo" (20:9).
+- **Negotiation at the gate** follows Genesis 23 (the gate = "taon mboqog tambav", those who came out
+  of the gate = "ndigu taon mboqog-te ginduzav", 23:10, 18) and Genesis 24's marriage talk ("tegu
+  sævam tugoat" as his wife, 30:9; "give her" as Laban, 29:19). Circumcision is the team's Genesis 17
+  throughout: "angana ate ndi꞉gu, ngusu bèzøqogøzát" (17:10) for the condition, "ngusu vø̄qogaz"
+  (17:27) for the deed; an uncircumcised man is "ndego ngusum kepøtøzateav gegoam" (1CO 7:18).
+  "Only on this condition" is "Geté sa nqánek:" (ACT 15:28), the condition after a colon.
+- **Trade** is the loan *bisnis* with *gonem* (JAS 4:13); "acquire property" became "buy land".
+  "Dowry" has no word (gap: the draft says *fia*, price, as 23:15).
+- **The massacre** uses Genesis 14's raid: goods carried off "vø̄-upøgimem" (14:11), people seized
+  with *gean* (14:12), looting with *aqon* (steal, MAT 12:29); killing many is "pakhapakha
+  vøzø̄-khanæmam" (MRK 12:5). "On the third day" is "Khøuwa misika-te ndøgo" (22:4).
+- **Jacob's complaint**: "you brought trouble on me" is 20:9's "soqain-te … amb"; "a stench to them"
+  is said by its meaning, "they hate me" (JHN 7:7 "gèsanqaná"); "unite and attack" is ACT 4:26
+  (gathered "nøfe-qa", to fight); "I will be destroyed" is "no nǿnaním" (I will die, MRK 14:34).
+- **Names**: Hivite = *Hiv-ak* (10:17), Perizzites = *Pelez-ak* (13:7), Dinah = *Daina* (30:21).
+- **Built forms** to check: *gumøfakhan*, *qotøndó-ndáf*, *tozombo-etoam*, *tozonøgo*,
+  *tozonø-viømemat*, *gìnø-etoám*, *ndø̀izø-etøomém*, *zíndafém*, *vø̀ndafém*, *bizi-tøkuaném*,
+  *tizi-matønømem*, *ti꞉kopo꞉nem*, *gégoâk*, *zømbe-khavozám*, *vøzø̄-geanem*, *ndømatanâm*.
+
+## Genesis 35 (drafted 15.10.2026, agent:gen035)
+
+- **Bethel again** is told with the team's Bethel and Abraham chapters: "Arise" is its own sentence,
+  "Mòqo-itán." (ACT 22:10, our gen031:13), then "Betel-té qonǿqáv"; the altar is 33:20's "lou-qase
+  tenø-khakheinám ndǿgo, iz … mbo-akhá"; the pillar is 28:18 verbatim ("Andé uk me me꞉wuáb", with oil
+  "vō꞉qouz"). The drink offering has no OT model: the NT's drink offering is poured-out wine (2TI 4:6),
+  so the draft says *waen* (question for the team: the Hebrew does not name the liquid).
+- **Jacob's order to his household** borrows from the NT: "get rid of" = 1CO 5:7 "vø̀-ogiím";
+  "purify yourselves" = "become clean before God" (1PE 1:22, ACT 21:24, the 2pl chain form built);
+  "change your clothes" = "put on new clothes", after COL 3:12 "matev ndakinak zó-uzám".
+- **Hiding the gods**: the Hebrew says "hid" (BSB "buried"): the servant who hid the talent in the
+  ground (MAT 25:25) gives "gèkhonáb … Manqei-té gemø-otáz" (3sg built). The oak is 12:6's "tae
+  kandambaqape", "under it" = in its shade (18:8 "tae guzuguzu-te"). Earrings are the ring of 24:22
+  (*agiwa-qasi*) "on their ears" (*gea-te*, built).
+- **"That is X"** after an old place name is 23:2's own sentence "Iz nøme nqambógo, X." (Luz/Bethel,
+  Ephrath/Bethlehem, Kiriath-arba/Hebron).
+- **God's speech in 35:10–12** reuses 17:5 (name no longer), 1:28 (be fruitful), 17:6 (kings will come
+  from you) and 28:13 (I will give you and your offspring the land) almost word for word.
+- **Rachel's death**: labour pains are the NT's *nqosøgeap* of a woman giving birth (1TH 5:3, "gui-ovaɨn"
+  about to give birth); the midwife has no word (gap: "the woman who helped Rachel", LUK 18:7
+  *gumbotøke*); "as her soul departed" = "she was dying" (*gunanimtát*, built on LUK 8:42 gènanimtát).
+  Both names get the meaning in brackets, as the team does: Ben-Oni "Noqa nqosøgeap-ge yó", Benjamin
+  "Noqa nakeamo zenda-ge yó" (right hand = *nakeamo zenda*, 1PE 3:22).
+- **The list of sons** follows 10:4 and 25:13: "<mother>-gi nakhei angana ngínik: A neka B …"; the
+  concubine is Nahor's "sasae sævam" (22:24). Isaac's death is 25:8 verbatim ("ùnime꞉-lawaqape-év,
+  genanim. Yage outap-ús. … ekeza ezoqam zøpaév, ndigu bugukhokhof go꞉pakhaez") and the burial 25:9
+  ("ginø-otøvém").
+- **New names** (by the letter rules): Debola (Deborah), Alon-Bakut, El-Betel, Ben-Oni, Eda (Eder,
+  "Eda-qa khoev eqawat-qape" the tall house, LUK 13:4); attested Kiliat-Aba (23:2).
+- **Built forms** to check: *vø̀khakheinám*, *ndæ̀khakheinám*, *vø̀-eqeieqei-éz*, *qoqo-khokhon*,
+  *gemø-otáz*, *zøpavateáv*, *gunanimtát*, *qazø-etoam* (I gave them).
+
 ## Not in Genesis 1–30 nor in the NT
 
 Checked and not found as Kuni words: Potiphar, Goshen, Mahanaim, Peniel, Gilead, the Ishmaelite

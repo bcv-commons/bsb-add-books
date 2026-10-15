@@ -387,4 +387,54 @@ Joseph's robe, the household gods; see [looking ahead](genesis-31-50.md).
   - answers: household gods, household idols, idols, my gods, your gods, gods
   - Still a question for the team (word, and whether to explain them in brackets). Gen 35:2-4 need it.
   - agent:gen031, 2026-10-15, supersedes `gap:household_gods.g`
-<!-- store:end sha=f3da222c -->
+- **`gap:ford.g`** מַעֲבַר (ford, a crossing place) → **searched 'ford|crossing' in the BSB of the corpus: no verse; gen032:23 says only 'Zabok kea ndøqantav' (crossed the Jabbok)** [low, open, attested]
+  - NT: MRK 8:13 *ndøqantav*
+  - answers: ford, the ford of the jabbok
+  - Left out; a team word for a shallow crossing place may exist.
+  - agent:gen032, 2026-10-15
+- **`gap:dislocate.g`** תֵּקַע כַּף־יֶרֶךְ (the hip was dislocated) → **searched 'out of joint|dislocat|broken bone': none; gen032:26 renders it as 'his hip became crippled' (bov zapazapa gèmbo-wauwauám, ACT 14:8)** [low, open, attested]
+  - NT: ACT 14:8 *gèmbo-wauwauám*
+  - answers: dislocated, was dislocated, put out of joint
+  - By meaning; question for the team.
+  - agent:gen032, 2026-10-15
+- **`gap:milk_camels.g`** גְּמַלִּים מֵינִיקוֹת (nursing camels) → **no word for nursing animals checked beyond 'milk' (tete, NT); gen032:16 writes 'kemol sakheis teti, tiqa nakheis namba' (thirty female camels with their young)** [low, open, attested]
+  - NT: GEN 30:35 *sakheis*
+  - answers: milk camels, nursing camels, milking
+  - 'with their young' carries the meaning.
+  - agent:gen032, 2026-10-15
+- **`gap:driven_hard.g`** וּדְפָקוּם (if they are driven hard) → **no model for driving animals hard (searched 'are driven', 'drive'); gen033:13 writes 'nakhamas-té tæzø-itub tøgoat' (if I lead them fast)** [low, open, by-rule]
+  - NT: GEN 12:20 *vø̄-itub*; ACT 21:26 *gè-itúb*
+  - answers: driven, driven hard, are driven hard
+  - itub = take along, lead (GEN 12:20, ACT 21:26); nakhamas-té = quickly (GEN 29:13).
+  - agent:gen033, 2026-10-15
+- **`gap:care_for.g`** עָלוֹת עָלָי (are in my care, upon me) → **searched 'care for' and the kewag/keoge forms (no 1sg present found; ndækeoge means 'seem'); gen033:13 writes 'no namba' (with me)** [low, open, by-rule]
+  - NT: RUT 2:5 *sasae ezoqa gezø-kewagat*
+  - answers: care, care for, must care for
+  - keoge/kewag = look after (RUT 2:5); a 1sg form is unattested.
+  - agent:gen033, 2026-10-15
+- **`gap:pace.g`** לְרֶגֶל (at the pace of) → **no word for pace (searched 'pace', 'comfortable'); gen033:14 writes 'av … tiqa okho ndægo' (as … walk)** [low, open, by-rule]
+  - NT: LUK 8:38 *okho-qa*
+  - answers: pace, comfortable, comfortable pace, at a comfortable pace
+  - Similative 'av … ndægo' (as …).
+  - agent:gen033, 2026-10-15
+- **`gap:n_times.g33`** שֶׁבַע פְּעָמִים (seven times) → **gen033:3 puts the numeral before the verb ('seven gèkhafutáv', bowed seven), as LUK 17:4 counts acts with the bare numeral; gen031 built gèmbo-ten** [low, open, by-rule]
+  - NT: LUK 17:4 *seven tematønumit*
+  - answers: seven times, times
+  - Both are open; question for the Kuni team.
+  - agent:gen033, 2026-10-15
+- **`gap:dowry.g`** מֹהַר וּמַתָּן (dowry and gift) → **no word for bride price (searched 'dowry|bride price'); gen034:12 writes 'Fia kopoav-qapé, neka etoam matev' (a big price and a gift), fia as in GEN 23:15** [low, open, by-rule]
+  - NT: GEN 23:15 *taqa fia*
+  - answers: dowry, high dowry, expensive, expensive gift
+  - Question for the Kuni team: is there a Kuni word for bride price?
+  - agent:gen034, 2026-10-15
+- **`gap:midwife.g`** הַמְיַלֶּדֶת (the midwife) → **no word for midwife (searched 'midwi'); gen035:17 writes 'sævam, ndugu Laisol gumbotøke' (the woman who helped Rachel; gumbotøke LUK 18:7 'he helped the widow')** [low, open, by-rule]
+  - NT: LUK 18:7 *ngæmam gumbotøke*
+  - answers: midwife, the midwife
+  - Gen 38:28 and Exod 1 need it. Question for the Kuni team.
+  - agent:gen035, 2026-10-15
+- **`gap:below.g`** מִתַּחַת לְ (below, beneath a town) → **no model for 'below / beneath a place' (searched 'below|beneath': only sky/earth contrasts); gen035:8 writes 'Betel taon avønin-te' (near Bethel)** [low, open, by-rule]
+  - NT: GEN 27:27 *avønin-te*
+  - answers: below, beneath
+  - Deborah was buried below Bethel (downhill). If the team has a word for 'downhill from', use it.
+  - agent:gen035, 2026-10-15
+<!-- store:end sha=88ac8ac1 -->

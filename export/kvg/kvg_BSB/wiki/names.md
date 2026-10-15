@@ -109,6 +109,9 @@ X: "X manqei" ("Keinan manqei-té", 23:2).
 **Meanings in brackets.** At every naming whose meaning the Hebrew explains, the team adds it in
 brackets: "Yaq ndugu iz Livai mbo-akhá. (Taqa manqa mokho: Tøkuát.)" (29:34). For Gen 31–50:
 Mahanaim, Peniel, Israel, Ben-oni/Benjamin, Manasseh, Ephraim, Abel-mizraim.
+Done in our drafts: Maanaim "(Bawan menás)" and Peniel (gen032), Sukot "(Khoev-qasis)" and
+El-Eloe-Izlael "(Mbumbukiam, ndego Izlael-ge Mbumbukiam)" (gen033: inner h of Elohe dropped as in
+Bila, Zilpa). Hamor is the NT's Hamo (ACT 7:16), "Shechem's father" "Sekem-gé evé" (as 11:27).
 
 **Letters, corrected.** Initial h is kept in most Genesis names (Hæga, Hæm, Hiblon, Hit), so
 the rule "h drops at the start" (from Ruth's Ezlon) is superseded by letter:h.g; Haran = Elan
@@ -776,4 +779,74 @@ more names (letter:r_l.g).
   - answers: mizpah
   - Built: final -ah → -a (letter rule). Meaning in brackets: Kewagam manqei (watching place).
   - agent:gen031, 2026-10-15
-<!-- store:end sha=32e5931a -->
+- **`name:mahanaim.g`** מַחֲנַיִם (Mahanaim) → **Maanaim** [low, decided, by-rule]
+  - NT: GEN 26:20 *mbo-akhá*
+  - answers: mahanaim
+  - Not in the corpus; inner h drops (letter rule), the vowels kept. Meaning in brackets: 'Bawan menás' (two groups).
+  - agent:gen032, 2026-10-15
+- **`name:jabbok.g`** יַבֹּק (Jabbok) → **Zabok (kea)** [low, decided, by-rule]
+  - NT: MRK 1:5 *Zoden kea*
+  - answers: jabbok
+  - j → z, double consonant single; river class noun kea (place_class_noun).
+  - agent:gen032, 2026-10-15
+- **`name:peniel.g`** פְּנִיאֵל / פְּנוּאֵל (Peniel, Penuel) → **Peniel; Penuel** [low, decided, by-rule]
+  - NT: GEN 26:20 *mbo-akhá*
+  - answers: peniel, penuel
+  - Not in the corpus; kept as spelled (both forms, as the Hebrew). Meaning in brackets: 'Mbumbukiam-qa bugug' (the face of God).
+  - agent:gen032, 2026-10-15
+- **`name:succoth.g`** סֻכּוֹת (Succoth) → **Sukot (Sukot manqei); meaning '(Taqa manqa mokho: Khoev-qasis.)'** [medium, decided, by-rule]
+  - NT: GEN 21:31 *mbo-akhayám*
+  - answers: succoth
+  - Not in the corpus: k for kk, th → t (letter rules). Naming as 21:31 'iz … mbo-akhayám' with the meaning in brackets.
+  - agent:gen033, 2026-10-15
+- **`name:hamor.g`** חֲמוֹר (Hamor) → **Hamo** [high, decided, attested]
+  - NT: ACT 7:16 *Hamo-gi nakheis-qa*
+  - answers: hamor
+  - 'the sons of Hamor' = Hamo-gi nakheis (ACT 7:16); 'Shechem's father' = 'Sekem-gé evé' (pattern 11:27).
+  - agent:gen033, 2026-10-15
+- **`name:el_elohe_israel.g`** אֵל אֱלֹהֵי יִשְׂרָאֵל (El-Elohe-Israel) → **El-Eloe-Izlael; meaning '(Taqa manqa mokho: Mbumbukiam, ndego Izlael-ge Mbumbukiam.)'** [low, decided, by-rule]
+  - NT: GEN 28:19 *Taqa manqa mokho*
+  - answers: el-elohe-israel, elohe, el elohe israel
+  - Not in the corpus: inner h drops (Bila, Zilpa), Izlael attested; meaning as the BSB note (God, the God of Israel).
+  - agent:gen033, 2026-10-15
+- **`name:hivite.g`** חִוִּי (Hivite) → **Hiv-ak** [high, decided, attested]
+  - NT: GEN 10:17 *Hiv-ak*
+  - answers: hivite, hivites
+  - Origin suffix -ak (suffix_origin). gen034:2 'Hiv-ak Hamo-ge yo'.
+  - agent:gen034, 2026-10-15
+- **`name:perizzite.g`** פְּרִזִּי (Perizzite) → **Pelez-ak** [high, decided, attested]
+  - NT: GEN 13:7 *Keinan-ak neka Pelez-ak*
+  - answers: perizzite, perizzites
+  - The team's form in 13:7, beside Keinan-ak. gen034:30.
+  - agent:gen034, 2026-10-15
+- **`name:deborah.g`** דְּבֹרָה (Deborah) → **Debola** [medium, decided, by-rule]
+  - NT: GEN 23:2 *gunaním*
+  - answers: deborah
+  - r → l (letter rules); not in the corpus. gen035:8.
+  - agent:gen035, 2026-10-15
+- **`name:allon_bacuth.g`** אַלּוֹן בָּכוּת (Allon-bacuth) → **Alon-Bakut; meaning '(Taqa manqa mokho: Eiv matev-qa tae.)'** [medium, decided, by-rule]
+  - NT: GEN 23:2 *eiv matev ndøgó*
+  - answers: allon, bacuth, allon-bacuth
+  - Double consonants single, ch/k → k. eiv matev (weeping, 23:2) + tae (tree). gen035:8.
+  - agent:gen035, 2026-10-15
+- **`name:el_bethel.g`** אֵל בֵּית־אֵל (El-bethel) → **El-Betel; meaning '(Taqa manqa mokho: Betel-qa Mbumbukiam.)'** [medium, decided, by-rule]
+  - NT: GEN 28:19 *iz Betel mbo-akhá*
+  - answers: el-bethel, el
+  - Like El-Eloe-Izlael (gen033:20). gen035:7.
+  - agent:gen035, 2026-10-15
+- **`name:ben_oni.g`** בֶּן־אוֹנִי (Ben-oni) → **Ben-Oni; meaning '(Taqa manqa mokho: Noqa nqosøgeap-ge yó.)'** [medium, decided, by-rule]
+  - NT: GEN 19:38 *Iz Ben-Ami mbo-akhá.*
+  - answers: ben, oni, ben-oni
+  - Like Ben-Ami (19:38). The meaning 'son of my pain' uses nqosøgeap (1TH 5:3) with -ge yo (Ezoqam-ge Yo pattern). gen035:18.
+  - agent:gen035, 2026-10-15
+- **`name:eder.g`** מִגְדַּל־עֵדֶר (Migdal-eder, the Tower of Eder) → **Eda-qa khoev eqawat-qape (Eder's tall house)** [medium, decided, by-rule]
+  - NT: LUK 13:4 *khoev eqawat-qape qandonqoe*
+  - answers: eder, tower, tower of eder
+  - The BSB translates migdal; LUK 13:4 the tower of Siloam = khoev eqawat-qape. Final -er → -a (letter rules). gen035:21.
+  - agent:gen035, 2026-10-15
+- **`name:kiriath_arba.g`** קִרְיַת הָאַרְבַּע (Kiriath-arba) → **Kiliat-Aba (taon)** [high, decided, attested]
+  - NT: GEN 23:2 *Kiliat-Aba taon-té gunaním.*
+  - answers: kiriath, arba, kiriath-arba
+  - The team's form (23:2), explained there as Hiblon. gen035:27.
+  - agent:gen035, 2026-10-15
+<!-- store:end sha=e942e976 -->

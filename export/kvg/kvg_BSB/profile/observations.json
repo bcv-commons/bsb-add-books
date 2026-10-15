@@ -6201,6 +6201,248 @@
    ],
    "note": "Still a question for the team (word, and whether to explain them in brackets). Gen 35:2-4 need it.",
    "supersedes": "gap:household_gods.g"
+  },
+  {
+   "id": "gap:ford.g",
+   "kind": "gap",
+   "source": "מַעֲבַר (ford, a crossing place)",
+   "value": "searched 'ford|crossing' in the BSB of the corpus: no verse; gen032:23 says only 'Zabok kea ndøqantav' (crossed the Jabbok)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MRK 8:13",
+     "form": "ndøqantav"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "ford",
+    "the ford of the jabbok"
+   ],
+   "note": "Left out; a team word for a shallow crossing place may exist."
+  },
+  {
+   "id": "gap:dislocate.g",
+   "kind": "gap",
+   "source": "תֵּקַע כַּף־יֶרֶךְ (the hip was dislocated)",
+   "value": "searched 'out of joint|dislocat|broken bone': none; gen032:26 renders it as 'his hip became crippled' (bov zapazapa gèmbo-wauwauám, ACT 14:8)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 14:8",
+     "form": "gèmbo-wauwauám"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "dislocated",
+    "was dislocated",
+    "put out of joint"
+   ],
+   "note": "By meaning; question for the team."
+  },
+  {
+   "id": "gap:milk_camels.g",
+   "kind": "gap",
+   "source": "גְּמַלִּים מֵינִיקוֹת (nursing camels)",
+   "value": "no word for nursing animals checked beyond 'milk' (tete, NT); gen032:16 writes 'kemol sakheis teti, tiqa nakheis namba' (thirty female camels with their young)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 30:35",
+     "form": "sakheis"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen032",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "milk camels",
+    "nursing camels",
+    "milking"
+   ],
+   "note": "'with their young' carries the meaning."
+  },
+  {
+   "id": "gap:driven_hard.g",
+   "kind": "gap",
+   "source": "וּדְפָקוּם (if they are driven hard)",
+   "value": "no model for driving animals hard (searched 'are driven', 'drive'); gen033:13 writes 'nakhamas-té tæzø-itub tøgoat' (if I lead them fast)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 12:20",
+     "form": "vø̄-itub"
+    },
+    {
+     "ref": "ACT 21:26",
+     "form": "gè-itúb"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "driven",
+    "driven hard",
+    "are driven hard"
+   ],
+   "note": "itub = take along, lead (GEN 12:20, ACT 21:26); nakhamas-té = quickly (GEN 29:13)."
+  },
+  {
+   "id": "gap:care_for.g",
+   "kind": "gap",
+   "source": "עָלוֹת עָלָי (are in my care, upon me)",
+   "value": "searched 'care for' and the kewag/keoge forms (no 1sg present found; ndækeoge means 'seem'); gen033:13 writes 'no namba' (with me)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "RUT 2:5",
+     "form": "sasae ezoqa gezø-kewagat"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "care",
+    "care for",
+    "must care for"
+   ],
+   "note": "keoge/kewag = look after (RUT 2:5); a 1sg form is unattested."
+  },
+  {
+   "id": "gap:pace.g",
+   "kind": "gap",
+   "source": "לְרֶגֶל (at the pace of)",
+   "value": "no word for pace (searched 'pace', 'comfortable'); gen033:14 writes 'av … tiqa okho ndægo' (as … walk)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "LUK 8:38",
+     "form": "okho-qa"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "pace",
+    "comfortable",
+    "comfortable pace",
+    "at a comfortable pace"
+   ],
+   "note": "Similative 'av … ndægo' (as …)."
+  },
+  {
+   "id": "gap:n_times.g33",
+   "kind": "gap",
+   "source": "שֶׁבַע פְּעָמִים (seven times)",
+   "value": "gen033:3 puts the numeral before the verb ('seven gèkhafutáv', bowed seven), as LUK 17:4 counts acts with the bare numeral; gen031 built gèmbo-ten",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "LUK 17:4",
+     "form": "seven tematønumit"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen033",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "seven times",
+    "times"
+   ],
+   "note": "Both are open; question for the Kuni team."
+  },
+  {
+   "id": "gap:dowry.g",
+   "kind": "gap",
+   "source": "מֹהַר וּמַתָּן (dowry and gift)",
+   "value": "no word for bride price (searched 'dowry|bride price'); gen034:12 writes 'Fia kopoav-qapé, neka etoam matev' (a big price and a gift), fia as in GEN 23:15",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 23:15",
+     "form": "taqa fia"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen034",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "dowry",
+    "high dowry",
+    "expensive",
+    "expensive gift"
+   ],
+   "note": "Question for the Kuni team: is there a Kuni word for bride price?"
+  },
+  {
+   "id": "gap:midwife.g",
+   "kind": "gap",
+   "source": "הַמְיַלֶּדֶת (the midwife)",
+   "value": "no word for midwife (searched 'midwi'); gen035:17 writes 'sævam, ndugu Laisol gumbotøke' (the woman who helped Rachel; gumbotøke LUK 18:7 'he helped the widow')",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "LUK 18:7",
+     "form": "ngæmam gumbotøke"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen035",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "midwife",
+    "the midwife"
+   ],
+   "note": "Gen 38:28 and Exod 1 need it. Question for the Kuni team."
+  },
+  {
+   "id": "gap:below.g",
+   "kind": "gap",
+   "source": "מִתַּחַת לְ (below, beneath a town)",
+   "value": "no model for 'below / beneath a place' (searched 'below|beneath': only sky/earth contrasts); gen035:8 writes 'Betel taon avønin-te' (near Bethel)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 27:27",
+     "form": "avønin-te"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen035",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "below",
+    "beneath"
+   ],
+   "note": "Deborah was buried below Bethel (downhill). If the team has a word for 'downhill from', use it."
   }
  ]
 }

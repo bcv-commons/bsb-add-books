@@ -1,0 +1,102 @@
+# Genesis 32 (gen032), Kuni: notes on the draft
+
+**What this is.** A machine draft of Genesis 32 (33 verses, Hebrew numbering) in Kuni, translated from
+the Hebrew (`orig/heb/gen032.txt`) with the BSB as the only assisting translation. The agent does not
+know Kuni: every word and construction was looked up in the Kuni team's Genesis 1–30, Ruth, Jonah and
+the NT, the verse pack and the wiki. Status: experiment, not reviewed. Source of the text:
+`gen032.tagged` (the `.txt` and `.align` are generated from it).
+
+**Verse numbering.** Hebrew 32:1 = BSB 31:55 (Laban's departure); Hebrew 32:2–33 = BSB 32:1–32. The
+project has no footnotes, so the BSB numbers are given here only.
+
+**Style model.** Our Genesis 31 draft (read in full, with its notes) for the thread and the names; the
+team's Genesis 27 and 28 (Jacob, Esau, the Bethel vow and blessing) for narrative and speech; Genesis
+30:25 and 30:8 for Jacob's "let me go" and Rachel's wrestling. Short sentences opened by *Yaq*, verb
+last; long frames (*āv … nqǽgo*) for the prayer, thoughts and the message, short frames elsewhere;
+name meanings in brackets.
+
+## Verse by verse
+
+| Verse | Hebrew | Kuni | BSB | Comment (models; certainty) |
+|---|---|---|---|---|
+| 1 | וַיַּשְׁכֵּם לָבָן … וַיָּשָׁב | Yaq khøuwa nøme qandopave, qæwaemat, Leiben … sège-møvøiú, vø̄ngenøtam. … zenda gezømbove. … genøqaván. | (31:55) Early the next morning Laban … kissed … blessed … returned home | Rose early GEN 21:14, 22:3; embrace and kiss GEN 29:13; blessed them HEB 11:20; grandchildren = "his daughters and their children" (as gen031:28). *genøqaván* built (genøwáv pattern). **Medium.** |
+| 2 | וְיַעֲקֹב הָלַךְ … וַיִּפְגְּעוּ־בוֹ | Zekop até genøwáv. Yaq nakhoa livin-te ndøugu, Mbumbukiam-gi enzol ezoqam vømbø̄e-qatøzem. | Jacob also went on his way, and the angels of God met him | On the way ACT 8:27; met JHN 11:20 (*mbøeqatáz*); angels JHN 1:51. **Medium.** |
+| 3 | מַחֲנֵה אֱלֹהִים זֶה … מַחֲנָיִם | … gezømet, yaq ge-ein, “Nqanek Mbumbukiam-qa bawán.” … iz Maanaim mbo-akhá. (Taqa manqa mokho: Bawan menás.) | This is the camp of God … Mahanaim | Saw them LUK 17:14; naming 26:20–21 with brackets. **Camp = bawan (group): no corpus word.** **Low/medium.** |
+| 4 | וַיִּשְׁלַח … מַלְאָכִים … שְׂדֵה אֱדוֹם | Yaq Zekop u-anim ndøkhofotáz, teqa megemege-te, tege zapikia Isao-te, Sia manqei-te, ndøgo Edom manqei. | sent messengers ahead … Seir, the country of Edom | LUK 9:52 nearly word for word; his brother 27:30; Sia 14:6. **High.** |
+| 5 | וַיְצַו … כֹּה תֹאמְרוּן … כֹּה אָמַר | … manqa āv gezø-løvuá nqǽgo, “Zo noge kawa ezoqam Isao āv qazømbøé-einím nqǽgo, ‘Qoge sasae ezoqam Zekop āv gene-eín nqǽgo: No Leiben namba qægoam …’ | instructed them, You are to say to my master Esau … I have been staying with Laban | Order frame (feature order_frame); MAT 21:3 (tell him), MAT 26:18 (message inside a message); my master GEN 24:39; until now 21:26. **Medium.** |
+| 6 | וַיְהִי־לִי שׁוֹר … לִמְצֹא־חֵן | No kao neka donki neka sip neka sasae ezoqam angana neka sakheis nqanø̂gó. … qatøndo-khofotáv, emanqat nonqo. … qo tanakh toqonøgo.’ ” | I have oxen, donkeys … find favor in your sight | Lists 24:35, 30:43; "I have" JHN 4:32 (as gen031:29); "I sent to you" ACT 23:30; favour RUT 2:2, 2:10. *toqonøgo* built (irrealis toqo- + nø-). **Medium.** |
+| 7 | וַיָּשֻׁבוּ הַמַּלְאָכִים … וְאַרְבַּע־מֵאוֹת אִישׁ | Yaq u-anim Zekop-te giqavaz … “Ni qoge qazøpikia Isao-te qeigeavun. … ngégeav, qo qatøzu-qa. Neka ezoqam fo andled, ndego namba.” | the messengers returned … four hundred men with him | LUK 7:10; your brother 27:42; we came 1TH 1:9; coming JHN 14:30; to meet ACT 27:15 (*qatøzu-qa*); 400 = fo andled. **Medium.** |
+| 8 | וַיִּירָא … וַיֵּצֶר לוֹ וַיַּחַץ | Yaq Zekop møe kandambá ndøgó. Yaq mbøni vaev matev mbofakhán. … geqatøzo, bawan menás. | In great fear and distress, Jacob divided … into two camps | Fear GEN 19:30, JON 1:10; distress ROM 2:9 + 31:24 (*mbofakhán*); divide 21:28, JHN 19:23. **Medium/low.** |
+| 9 | אִם־יָבוֹא עֵשָׂו … לִפְלֵיטָה | Yaq āv gene-matavupám nqǽgo, “Isao bawan kopo-te tendowav, ndigu namba tenøfeap tøgoat, yaq bawan nøme ndøgo, kopømbá tikhokhoz.” | If Esau comes and attacks one camp, the other camp can escape | Thought 26:7; conditional (feature conditional.2); attack = fight with (*nøfeap*, HEB 11:33); escape 1TH 5:3. *tenøfeap* built. **Low/medium.** |
+| 10 | אֱלֹהֵי אָבִי אַבְרָהָם … יְהוָה … שׁוּב … וְאֵיטִיבָה | … āv gene-guligulím nqǽgo, “Noge atanakha Eibleem-gé Mbumbukiam neka noge tat Aezek-ge Mbumbukiam! Evézøza! … nango qonǿveséz. Yaq no matev eqeieqei nøtaqá-matanám.’ | O God of my father Abraham … the LORD who told me, Go back … I will make you prosper | Prayed (formula:prayed); 28:13 God of Abraham and Isaac; vocative Evézøza 15:2; "you told me" (*qoqonømbe-eín*) JHN; go back GEN 3:19; do good 28:14 (*nøtaqá-* built). **YHWH.** **Medium.** |
+| 11 | קָטֹנְתִּי … כִּי בְמַקְלִי … לִשְׁנֵי מַחֲנוֹת | No ezoqam khapúmbá. Qo kuku matev neka unimanqatin matev ate ndægo … qoqonøgo. No noqa tatuag mba namba, nqanek Zoden kea qæqantav. Geté ndakin no bawan menás qægó. | I am unworthy … with only my staff I crossed the Jordan … two camps | RUT 2:13 (I am small); God's חֶסֶד = kuku matev (JON 2:9); faithfulness MAT 23:23; you were kind to me RUT 2:10; staff (tatuag); Jordan MRK 1:5. *qæqantav* built (1sg past). **Medium.** |
+| 12 | הַצִּילֵנִי … פֶּן־יָבוֹא וְהִכַּנִי | Ata Isao-qa zenda-te, vø̀nøtøké. No Isao-qá møe nogoám. Soqaín ndøgo, ndego tendowav, no neka nakheis neka tigu evo, telavao. | Deliver me from the hand of my brother Esau … attack me and the mothers and children | Help me MAT 15:25; my brother Esau 27:11 (*Ata Isao*); fear gen031:31, JON 1:3; lest (feature negative_purpose); kill 27:41. *telavao* built. **Medium.** |
+| 13 | הֵיטֵב אֵיטִיב … כְּחוֹל הַיָּם | Geté qo āv qoqonømbe-eín nqǽgo, ‘No unimanqatín, matev eqeieqei nøtaqá-matanám. Yaq qogi qazi kopoav-qape ndø̀taqa-etoám, andé ndivind me me꞉gó … gevebumav ndǿgoát.’ ” | I will surely make you prosper … like the sand of the sea, too numerous to count | GEN 16:10 and 13:16 nearly verbatim; sand ROM 9:27. **High.** |
+| 14 | וַיָּלֶן שָׁם … מִנְחָה לְעֵשָׂו | Yaq Zekop ta lova ndøgo, ndǿgo vømø̄buv. … nøme geqatøzo, tege zapikia Isao-te etoam matev nonqo. | spent the night there … selected a gift for his brother Esau | MAT 21:17; gift = etoam matev (GEN 4:3–5, the same Hebrew word). **Medium.** |
+| 15 | עִזִּים מָאתַיִם … | Naningus sakheis tu andled, neka naningus angana tuenti, sip sakheis tu andled, neka sip angana tuenti, | 200 female goats, 20 male goats, 200 ewes, 20 rams | Sex after the animal 30:35, 21:28; 200 = tu andled (11:23). **High.** |
+| 16 | גְּמַלִּים מֵינִיקוֹת … וַעְיָרִם עֲשָׂרָה | kemol sakheis teti, tiqa nakheis namba, kao sakheis foti, neka kao angana ten, donki sakheis tuenti, neka donki angana ten. | 30 milk camels with their young, 40 cows, 10 bulls … | 12:16 (donki angana neka sakheis); MAT 22:4 (kao angana). **Nursing camels: "with their young" (gap).** **Medium.** |
+| 17 | וַיִּתֵּן בְּיַד־עֲבָדָיו … וְרֶוַח תָּשִׂימוּ | … ekeza sasae ezoqam-qá zenda-té genø-áb. Yaq gezø-ein, “Noqa megemege-té qazonǿzáv. Neka søvakha gigiap kopokopo, livin-te, manqei qambá betegó.” | entrusted … Go on ahead of me, and keep some distance between the herds | Into their hands 30:35; go pl MAT 28:7; far MRK 5:6; between livin-te ACT 12:6. "keep a distance" built with *betegó*. **Low/medium.** |
+| 18 | וַיְצַו אֶת־הָרִאשׁוֹן … לְמִי־אַתָּה | Yaq sasae ezoqam bugukhokhof ndøgo, manqa āv gembo-løvuá nqǽgo, “Ata Isao, qo teqa-qataz ndøgo, neka teqa-bevap av nqægo, ‘Qo gekha ezoqam-gê? … qo ākhoqotéma? … gekha ezoqam-gî?’ | instructed the one in the lead, When my brother Esau meets you and asks … | Whose (feature question_where_whose); where are you going JHN 13:36; if he asks LUK 19:31. *teqa-qataz*, *teqa-bevap* built. **Medium.** |
+| 19 | לְעַבְדְּךָ לְיַעֲקֹב מִנְחָה הִוא | Yaq qo āv qombøé-eín nqǽgo, ‘Nginik qoge sasae ezoqam Zekop-gí. … ndøkhofotáz. Neka nqáe! Até Zekóp-a, ni zita-te ngégeav.’ ” | They belong to your servant Jacob. They are a gift … Jacob is behind us | *qombøé-eín* built (2sg of MAT 21:3); "até X-a" 25:20; behind = zita-te. **Medium.** |
+| 20 | וַיְצַו גַּם אֶת־הַשֵּׁנִי … כַּדָּבָר הַזֶּה | Neka sasae ezoqam, bawan menas-te ndøgo, neka bawan misika-te ndøgo, … gimbopavam, … “Isao-te tozomø-fakhan ndøgo, manqat kopó vømømbó-einīm. | the second, the third, and all those following … say the same thing | Ordinals (ordinal.g: N-te ndøgo); followers MAT 8:10; same thing MAT 21:30; tell him MAT 26:18. *tozomø-fakhan* built. **Medium/low.** |
+| 21 | וַאֲמַרְתֶּם … אֲכַפְּרָה פָנָיו … אוּלַי | Neka āv qazømbøé-einím nqǽgo, ‘Nqáe! …’ ” Yaq Zekop āv gene-matavupám nqǽgo, “Ta etoam matev ndøgo, bugukhokhof ndøwav, yaq Isao-qa mbøni nqosøgeap bembø̄e-navøem. … teqa bugug ndæ̀qeív. Éisa, ndego no tanakh ndø̀nøgó.” | I will appease him with the gift … perhaps he will accept me | Appease GEN 27:44; see his face 1TH 3:10; accept RUT 2:2; perhaps JON 1:6. כִּי unmarked (connective_sequence.2). *ndæ̀qeív* built. **Medium.** |
+| 22 | וַתַּעֲבֹר הַמִּנְחָה … וְהוּא לָן | Yaq ta etoam matev ndøgo, bugukhokhof ndøwav. Geté ndego ta lova ndøgo, tegi ezoqam namba, vømø̄buv. | the gifts went on before him, while he spent the night in the camp | MAT 21:17; his people 24:54. "camp" = with his people. **Medium.** |
+| 23 | וַיָּקָם בַּלַּיְלָה … מַעֲבַר יַבֹּק | Yaq ta lova ndøgo, Zekop gè-itán. Ekeza sakheis menas, neka sasae mbasønakheis menas, neka nakheis ileven, vø̄-upøzo. Yaq Zabok kea ndøqantav. | During the night Jacob got up … crossed the ford of the Jabbok | MAT 2:14 (got up, took, by night); ACT 5:19 (during the night); MRK 8:13 (crossed). **Ford left out (gap).** **Medium.** |
+| 24 | וַיִּקָּחֵם וַיַּעֲבִרֵם | Yaq ndego ndigu gekhatob, kea yaq-keoqa sasa ndøkhofotaz. Neka teqa gigiap ate ndægo, até yaq-keoqa vø̄khofotav. | He took them and sent them across the stream, along with all his possessions | Other side MRK 8:13; sent ACT 13:3; sent him 28:5. **Medium.** |
+| 25 | וַיִּוָּתֵר יַעֲקֹב לְבַדּוֹ וַיֵּאָבֵק אִישׁ | Yaq Zekop yakhapus mbá sege-ivøvém. Yaq ezoqa nøme ndøfakhán, Zekop namba gènøfeáp, atema꞉ vøndōpave. | Jacob was left all alone, and a man wrestled with him until daybreak | JHN 8:9 verbatim; fight GAL 5:17; until daybreak ACT 20:11. "a man appeared" added. **Medium.** |
+| 26 | כִּי לֹא יָכֹל לוֹ … וַתֵּקַע | Yaq ngenek ezoqam geqeiv av nqægo, ndego kopømba mbaín, Zekop tetømbuatat. … bov zapazapa gembo-khanaz. … bov zapazapa gèmbo-wauwauám. | could not overpower Jacob, struck the socket of his hip … dislocated it | Saw that MRK 12:34; could not JHN 14:30; overcome 1JN 5:5; hip 24:2; touch 27:22; crippled ACT 14:8. **Dislocated rendered as crippled (gap).** **Low/medium.** |
+| 27 | שַׁלְּחֵנִי … כִּי אִם־בֵּרַכְתָּנִי | Yaq ezoqam gembo-ein, “É-moqonøták. Khøuwa qandopave.” Geté Zekop gendo-qavøiu, “No qo nótakák. Qo zenda toqonømbo-ve tøgoat, yaq ndǿgo, kopømbá.” | Let me go, for it is daybreak … I will not let you go unless you bless me | Let me go GEN 30:25 verbatim; day broke (time_of_day.2); bless me 27:19; "unless" turned to "if you bless me, then it is fine" (feature ability). *nótakák* built. **Medium.** |
+| 28 | מַה־שְּׁמֶךָ … יַעֲקֹב | … gembobevap, “Qo gekha îz?” Yaq gembo-qavøiu, “No Zekóp.” | What is your name? … Jacob | MRK 5:9 verbatim; "No Isaó." 27:19. **High.** |
+| 29 | לֹא יַעֲקֹב יֵאָמֵר עוֹד … כִּי־שָׂרִיתָ | “Qoqa iz, Zekop sekemba gégoák. Geté Izlael qágoát. (Taqa manqa mokho: Mbumbukiam namba gènøfeáp.) Zapa ndǿgo, qo Mbumbukiam namba neka ezoqam namba qoqo-nøfeap. Yaq qo ndakin mòqo-kopømba-én.” | Your name will no longer be Jacob, but Israel … you have prevailed | GEN 17:5 pattern; meaning brackets (BSB note: he struggles with God); prevailed GEN 30:8. *qoqo-nøfeap*, *mòqo-kopømba-én* built. **Medium.** |
+| 30 | הַגִּידָה־נָּא שְׁמֶךָ … לָמָּה זֶּה | Yaq Zekop gembobevap, “Qoqa iz, qonømbé-eīn.” Geté … “Gekha zapâ, noqa iz-qa yaq-te, ndoqonømbe-bevap?” … ndego Zekop zenda gembøeve. | Please tell me your name … Why do you ask my name? Then he blessed Jacob there | Tell me (feature tell_me.2); MAT 19:17 verbatim pattern; blessed 28:6. **High/medium.** |
+| 31 | פְּנִיאֵל … פָּנִים אֶל־פָּנִים | … iz Peniel mbo-akhá. (Taqa manqa mokho: Mbumbukiam-qa bugug.) Zapa ndǿgo, ndego ge-ein, “No Mbumbukiam-qa bugug mø̀eqeív. Geté no mø̀ekhandí꞉n.” | named the place Peniel … I have seen God face to face, and yet my life was spared | Naming with brackets 28:19; seen JHN 1:34; face to face 1TH 3:10 (see your face); alive REV 1:18. **Medium.** |
+| 32 | וַיִּזְרַח־לוֹ הַשֶּׁמֶשׁ … צֹלֵעַ | Zekop Penuel ge-ivav ndøgo, yaq khøuwa gendosasev. Yaq ndego bov gèmbo-wauwauám, teqa bov zapazapa zapaya. | The sun rose above him as he passed by Penuel, and he was limping because of his hip | Sun rose MRK 4:6; left GEN 4:16; crippled legs ACT 14:8. "passed by" as "left". **Medium.** |
+| 33 | עַל־כֵּן לֹא־יֹאכְלוּ … גִּיד הַנָּשֶׁה | Yaq nakémbá, até ndakin khøuwa-té-a, Izlael ezoqam søvakha gigiap-qa kinik ndøgo, bov zapazapa-te nqøugu, logemáv. Zapa ndǿgo, ngenek ezoqam Zekop-qa bov zapazapa gembo-khanaz, kinik avønin-te. | Therefore to this day the Israelites do not eat the tendon … | GEN 26:33 verbatim opening; habitual not eat MRK 7:3; tendon = kinik (COL 2:19, ligament: 2 verses); "that is in" ROM 7:23. "of animals" added. **Low/medium.** |
+
+## Not found in the corpus (built, or rendered by meaning)
+
+- **camp** (v3, 8, 9, 11, 22): no noun; *bawan* (group) and "with his people". Mahanaim's meaning
+  "Bawan menás" follows from that.
+- **ford** (v23): left out. **dislocated** (v26): "became crippled" (*gèmbo-wauwauám*). **nursing
+  camels** (v16): "female camels with their young". **tendon** (v33): *kinik* (ligament, two NT verses).
+- **attack** (v9, 12): rendered as "fight with" (*nøfeap*) and "kill" (*lavao*).
+- **keep a distance** (v17): "let there be far ground between them" (*manqei qambá betegó*), built.
+- Verb forms built on attested patterns, not seen as such: *genøqaván*, *toqonøgo*, *tenøfeap*,
+  *nøtaqá-matanám*, *qæqantav*, *telavao*, *teqa-qataz*, *teqa-bevap*, *qombøé-eín*, *tozomø-fakhan*,
+  *ndæ̀qeív*, *nótakák*, *qoqo-nøfeap*, *mòqo-kopømba-én*, *vømbø̄e-qatøzem* (for a plural subject
+  after *Yaq*), *tetømbuatat* (3sg irrealis used for "could not overpower him").
+- Additions for clarity (feature explicitation): "a man appeared" (v25), "of animals" (v33).
+
+## New name forms
+
+- **Maanaim** (Mahanaim, v3): inner h drops; meaning in brackets "Bawan menás" (two groups).
+- **Zabok** (Jabbok, v23): j → z, double consonant single, with *kea* (river).
+- **Peniel** (v31) and **Penuel** (v32): kept as spelled; Peniel's meaning in brackets
+  "Mbumbukiam-qa bugug" (the face of God).
+- **Izlael** (attested) with its meaning in brackets for the first time: "Mbumbukiam namba gènøfeáp"
+  (he fought with God).
+
+## Fixed renderings changed against gen031
+
+- "Go back (to your land)": gen031:3 and 31:13 wrote *nango mòqoveséz*, which is not in the corpus;
+  this chapter uses *qonǿveséz* (GEN 3:19). gen031 may need the same change (store term:H7725ret.g).
+
+## Open questions for the Kuni team
+
+1. **YHWH** = Evezøza in v10 (vocative *Evézøza*), as decided for Genesis; listed as instructed.
+2. **Camp**: is there a word for a camp or a travelling company? We used *bawan* (group).
+3. **The wrestling**: *nøfeap* (fight) or Rachel's *fifingiap* (30:8) or another word for wrestling?
+4. **The hip**: *bov zapazapa* (thigh, 24:2) for the hip and its socket; "dislocated" as "crippled";
+   the tendon as *kinik*. Please check all three.
+5. **Israel's meaning in brackets** and the reading "he fought with God": right as the team would say it?
+6. **Messengers** (*u-anim*) and **gift** (*etoam matev*, the word for Cain's offering): right here?
+7. **Built forms** (list above), especially *qombøé-eín* (you sg say to him) and *nótakák* (I will not let you go).
+
+## Least sure
+
+v9, v17, v20 (built verb forms in instructions), v26 and v33 (hip, dislocation, tendon), v3 (camp).
+
+Searches: 16 batched calls to `concord.py` (about 58 single queries); each searched word ends in a store entry.
+
+Quotations above are short forms from the Kuni team's Genesis and the Kuni NT (Mbumbukiam-qa Manqat
+Mbomambaqape, Kuni; credit in `../CREDITS.md`).

@@ -1454,4 +1454,329 @@ successor, the successor is the one the verse packs use.
   - answers: harps, harp, lyre, songs, singing
   - Gen 4:21 has gita and pøinda (flute). Tambourine: gap:tambourine.g.
   - agent:gen031, 2026-10-15
-<!-- store:end sha=7c921cd5 -->
+- **`term:H3409.g`** H3409 יָרֵךְ / כַּף הַיָּרֵךְ (thigh, hip, socket of the hip) → **bov zapazapa** [high, decided, attested]
+  - NT: GEN 24:2 *bov zapazapa*; GEN 24:9 *teqa bov zapazapa*
+  - answers: hip, thigh, socket of the hip, socket, hip socket
+  - Abraham's 'under my thigh' (24:2, 24:9); bov alone is leg (REV 10:1). gen032:26, 32, 33 use it for the hip and its socket.
+  - agent:gen032, 2026-10-15
+- **`term:H6760.g`** H6760 צֹלֵעַ (limping) → **bov gèmbo-wauwauám** [medium, decided, attested]
+  - NT: ACT 14:8 *bov gèmbo-wauwauám*
+  - answers: limping, limp, lame, was limping
+  - 'his legs were crippled' (ACT 14:8); the lame man is kagi ezoqam (ACT 3:2). gen032:32 'he was limping because of his hip' = 'bov gèmbo-wauwauám, teqa bov zapazapa zapaya'; gen032:26 also renders 'dislocated' with it (gap:dislocate.g).
+  - agent:gen032, 2026-10-15
+- **`term:H79.g`** H79 אָבַק (wrestle); H8280 שָׂרָה (struggle with) → **<X> namba gènøfeáp (fought with X)** [medium, decided, by-rule]
+  - NT: GAL 5:17 *namba, gènøfeáp*; HEB 11:33 *ginøfeapam*
+  - answers: wrestled, wrestle, struggled, struggle, as they wrestled
+  - nøfeap = fight, oppose; 'as they wrestled' = 'ndigu ginøfeapam ndøgo'. Rachel's wrestling (GEN 30:8, a different Hebrew word) is fifingiap (compete, 1CO 9:25); we kept nøfeap for a bodily fight. 2sg past 'qoqo-nøfeap' (gen032:29) is built on qoqo- (feature second_person_past).
+  - agent:gen032, 2026-10-15
+- **`term:H3201prevail.g`** H3201 יָכֹל (prevail; could not overpower) → **kopømba-én (won); 'could not overpower him' = kopømba mbaín, … tetømbuatat** [medium, decided, by-rule]
+  - NT: GEN 30:8 *mø̀e-kopømba-én*; 1JN 5:5 *tetømbuatat*; JHN 14:30 *kopømba mbaín*
+  - answers: prevailed, prevail, overpower, could not overpower, won
+  - Rachel's 'I have won' (30:8) = mø̀e-kopømba-én; gen032:29 'you have prevailed' = mòqo-kopømba-én (2sg built). Overcome = tømbu- (1JN 2:13 mòzo-tømbuinám, 5:5 tetømbuatat).
+  - agent:gen032, 2026-10-15
+- **`term:H5337.g`** H5337 הַצִּילֵנִי (deliver me, rescue me) → **vø̀nøtøké** [high, decided, attested]
+  - NT: MAT 15:25 *Vø̀nøtøké*; 2TI 4:18 *gékhandí꞉n*
+  - answers: deliver, deliver me, rescue me, please deliver me, save me
+  - 'Lord, help me!' (MAT 15:25); a future 'he will rescue me' = 'no gékhandí꞉n' (2TI 4:18). 'from the hand of X' = 'X-qa zenda-te'.
+  - agent:gen032, 2026-10-15
+- **`term:H4264.g`** H4264 מַחֲנֶה (camp, company, group) → **bawan (group); two camps = bawan menás** [low, decided, by-rule]
+  - NT: JHN 19:23 *Møvøyap foá*; ACT 14:23 *bawan vinivinimba*
+  - answers: camp, camps, two camps, company, the camp
+  - No word for a camp in the corpus (the NT's 'camp' in HEB 13:11-13 is 'outside the town'). gen032 renders a group of people and animals as bawan and Mahanaim's meaning as 'Bawan menás'. Question for the team.
+  - agent:gen032, 2026-10-15
+- **`term:H2673.g`** H2673 חָצָה (divide into two groups) → **geqatøzo, bawan menás** [medium, decided, by-rule]
+  - NT: GEN 21:28 *mø̀ndø-qatozó*; JHN 19:23 *gèmøvøemém*
+  - answers: divided, divide, divided into two, separated, selected
+  - qatøz- (set apart, separate: Abraham's seven lambs 21:28) for dividing people and flocks, then the parts: 'bawan menás' (as 'Møvøyap foá', four parts, JHN 19:23). Also used for 'selected (a gift)' in gen032:14.
+  - agent:gen032, 2026-10-15
+- **`term:H4503.g`** H4503 מִנְחָה (gift, present, offering) → **etoam matev** [high, decided, attested]
+  - NT: GEN 4:3 *etoam matev*; GEN 4:4 *etoam matev*
+  - answers: gift, gifts, present, offering, a gift for
+  - The same Hebrew word as Cain's and Abel's offering (4:3-5). Jacob's gift to Esau (32:14-22, 33:10) = etoam matev; 'to give to Esau' = 'Isao-te etoam matev nonqo'.
+  - agent:gen032, 2026-10-15
+- **`term:female_male.g`** female / male animals (עִזִּים / תְּיָשִׁים, רְחֵלִים / אֵילִים, פָּרוֹת / פָּרִים, אֲתֹנֹת / עְיָרִם) → **<animal> sakheis (female) / <animal> angana (male)** [high, decided, attested]
+  - NT: GEN 30:35 *naningus angana neka sakheis*; GEN 12:16 *donki angana neka sakheis*; GEN 21:28 *Sakheis mbá*
+  - answers: female goats, male goats, ewes, rams, cows, bulls, female donkeys, male donkeys, milk camels, heifer
+  - The team marks sex with angana / sakheis after the animal (30:35, 12:16; ewe lambs 21:28). One ram = sip anganeam (22:13); a heifer = kao-yu (HEB 9:13). Milk camels: 'kemol sakheis … tiqa nakheis namba' (gap:milk_camels.g).
+  - agent:gen032, 2026-10-15
+- **`term:H6413.g`** H6413 פְּלֵיטָה (escape, the remnant that escapes) → **khokhoz- (flee): kopømbá tikhokhoz (they can escape)** [high, decided, attested]
+  - NT: 1TH 5:3 *kopømba mbaín tikhokhoz*; 2CO 11:33 *tøtø-khokhón*
+  - answers: escape, can escape, escaped
+  - 'they will not escape' (1TH 5:3) turned positive for gen032:9; flee = khokhon (term:H1272).
+  - agent:gen032, 2026-10-15
+- **`term:H3190prosper.g`** H3190 הֵיטִיב עִם (do good to, make prosper) → **matev eqeieqei nøtaqá-matanám (I will do good to you)** [medium, decided, by-rule]
+  - NT: GEN 28:14 *matev eqeieqei nøzǿ-matanám*; GEN 19:19 *matev eqeieqei qonø-matanám*
+  - answers: prosper, make you prosper, i will make you prosper, surely make you prosper, do good
+  - God's promise 'I will do good to you' on the pattern of 28:14 (nøzǿ- I to them → nøtaqá- I to you sg, as 13:16 nøtaqá-etoám). gen032:10, 13.
+  - agent:gen032, 2026-10-15
+- **`term:H7725ret.g`** H7725 שׁוּב (imperative: go back, return to your land) → **qonǿveséz** [medium, decided, attested]
+  - NT: GEN 3:19 *manqei-té qonǿveséz*
+  - answers: go back, return, go back to your country
+  - 'to the ground you will return' (3:19). gen031:3 and 31:13 wrote 'nango mòqoveséz', a form not found in the corpus; gen032:10 uses qonǿveséz. A later revision of gen031 may follow.
+  - agent:gen032, 2026-10-15
+- **`term:H5060touch.g`** H5060 נָגַע (touch, strike the hip) → **<X> gembo-khanaz** [high, decided, attested]
+  - NT: GEN 27:22 *kha gembo-khanaz*
+  - answers: struck, touched, struck the socket, was struck
+  - Isaac touching Jacob (27:22); used for the man touching Jacob's hip (gen032:26, 33).
+  - agent:gen032, 2026-10-15
+- **`term:H1517.g`** H1517 גִּיד (sinew, tendon) → **kinik** [low, decided, by-rule]
+  - NT: COL 2:19 *kha kinik*; EPH 4:16 *kha kinik-te*
+  - answers: tendon, sinew, the tendon
+  - kinik = ligament (COL 2:19, EPH 4:16, only 2 verses). gen032:33 'the tendon on the hip' = 'søvakha gigiap-qa kinik ndøgo, bov zapazapa-te nqøugu'.
+  - agent:gen032, 2026-10-15
+- **`term:distress.g`** H3334 וַיֵּצֶר לוֹ (he was distressed) → **mbøni vaev matev mbofakhán** [medium, decided, by-rule]
+  - NT: ROM 2:9 *mbøni vaev matev*; GEN 31:24 *mbofakhán*
+  - answers: distress, distressed, in great fear and distress
+  - 'trouble and distress will come upon them' (ROM 2:9) with fakhan + mbo- (came to him, 31:24).
+  - agent:gen032, 2026-10-15
+- **`term:H2603.g`** חָנַן (be gracious to, graciously give) → **tanakh + go: Mbumbukiam no tanakh genøgo (God had mercy on me)** [medium, decided, by-rule]
+  - NT: PHP 2:27 *tanakh mbogó*; LUK 18:13 *No tanakh gènøgó*
+  - answers: graciously, gracious, graciously given, has been gracious
+  - The NT's 'have mercy on me' (tanakh gènøgó, imperative) and 'God had mercy on him' (tanakh mbogó); the 3sg past with nø- (me) is built. Same word as favour (term:H2580). gen033:5, 11.
+  - agent:gen033, 2026-10-15
+- **`term:last_rear.g`** רִאשֹׁנָה / אַחֲרֹנִים (first, next, last; in front, at the rear) → **bugukhokhof (first) … Taqa zita-te (after that) … Yaq vaev-te (last of all)** [medium, decided, attested]
+  - NT: 1CO 15:8 *Yaq vaev-te*; LUK 20:32 *Yaq vaev*
+  - answers: rear, at the rear, last, in front, next, then joseph
+  - Order of a line of people (gen033:2) and 'and then Joseph and Rachel' (33:7).
+  - agent:gen033, 2026-10-15
+- **`term:H5066.g`** נָגַשׁ (draw near, approach) → **ginduzáv (they came, pl); he came near = gèkhanøgím; near X = X avønin-te** [high, decided, attested]
+  - NT: MRK 7:1 *ginduzáv*; GEN 27:27 *gèkhanøgím*; GEN 27:22 *avønin-te vø̄khanøgim*
+  - answers: approached, drew near, came near, approach
+  - gen033:6-7 'X avønin-te ginduzáv'.
+  - agent:gen033, 2026-10-15
+- **`term:frail.g`** רַכִּים (tender, frail children) → **kha bazaføgakh mbaín (the body has no strength)** [medium, decided, attested]
+  - NT: 1CO 2:3 *kha bazaføgakh mbaín*
+  - answers: frail, weak, tender
+  - gen033:13.
+  - agent:gen033, 2026-10-15
+- **`term:nursing.g`** עָלוֹת (nursing animals) / מֵינִיקוֹת (nursing) → **nakhei tete ndizøloge (they suckle young: nursing mothers); a mother nursing = nakheis tete nduzø-etoam** [medium, decided, attested]
+  - NT: LUK 21:23 *nakhei tete ndizøloge*; 1TH 2:7 *nakheis tete nduzø-etoam*
+  - answers: nursing, nursing their young, that are nursing
+  - Said of ewes and cows in gen033:13 ('sip neka kao sakheis … nakhei tete ndizøloge'). Settles part of gap:milk_camels.g for later chapters.
+  - agent:gen033, 2026-10-15
+- **`term:slowly.g`** לְאִטִּי (slowly, gently) → **aiyav-té** [medium, decided, attested]
+  - NT: ACT 27:7 *aiyav-té*
+  - answers: slowly, continue on slowly, gently
+  - 'sailing slowly'. gen033:14 'no aiyav-té qatǿnáv' (I will go slowly).
+  - agent:gen033, 2026-10-15
+- **`term:H5521.g`** סֻכָּה / סֻכּוֹת (booth, shelter) → **khoev-qasis (little houses) + puan (put up)** [high, decided, attested]
+  - NT: LUK 9:33 *khoev-qasis*; JHN 7:2 *khoev-qasis gipuanumatun*
+  - answers: shelters, booths, shelter, tabernacles
+  - Peter's three shelters and the Feast of Tabernacles. Also Succoth's meaning (name:succoth.g). gen033:17.
+  - agent:gen033, 2026-10-15
+- **`term:H8003safely.g`** שָׁלֵם (safely, in peace; arrived safely) → **sambi-té (in peace)** [medium, decided, by-rule]
+  - NT: 1CO 16:11 *Sambi-té*; 1TH 5:13 *sambi bèzøgó*
+  - answers: safely, in peace, arrived safely
+  - 'send him in peace'. gen033:18 'sambi-té, Sekem taon-te gemøfakhan' follows the BSB (safely), not the place Shalem.
+  - agent:gen033, 2026-10-15
+- **`term:H7069.g`** קָנָה (buy, purchase from) → **<seller>-te gewi (he bought from X); the price given = vømbō-etoam / vøzø̄-etoam** [high, decided, attested]
+  - NT: GEN 23:20 *Hit-ak ezoqam-te gewi*; GEN 23:16 *vømbō-etoam*
+  - answers: purchased, bought, buy
+  - Abraham's field (23:16-20, 25:10). gen033:19.
+  - agent:gen033, 2026-10-15
+- **`term:brother_voc.g`** אָחִי (my brother!, vocative) → **Áta!** [low, decided, by-rule]
+  - NT: ACT 7:2 *ata-za*
+  - answers: my brother
+  - Built: ata (brother, ACT 7:2 'Tát-za neka ata-za!'; 'Ata Isao' GEN 27:11) with the vocative accent on the first syllable (vocative.2). Question for the Kuni team. gen033:9.
+  - agent:gen033, 2026-10-15
+- **`term:H2930defile.g`** טִמֵּא (defile a woman, Gen 34:5, 13, 27) → **<X> namba mambe matev gego (did an immoral act with her)** [medium, decided, by-rule]
+  - NT: REV 18:3 *tu namba mambe matev*
+  - answers: defiled, had defiled, been defiled
+  - No model for 'defile' a person (ACT 21:28 'vø̄ngiu' is for a holy place). The kings 'were immoral with her' (REV 18:3) gives the construction; gego (he did) as LUK 1:25 'matev kandambá gego'; 3pl gigonem. gen034:5, 13, 27.
+  - agent:gen034, 2026-10-15
+- **`term:H6031force.g`** וַיִּשְׁכַּב אֹתָהּ וַיְעַנֶּהָ (lay with her by force) → **<woman> poeveáv. Geté ndego bazaføgakh-te, tu namba venanqei nonqo vø̄tøkuanem** [medium, decided, by-rule]
+  - NT: GEN 29:23 *venanqei nonqo vø̄tøkuanem*; GEN 24:5 *sævam ndugu poeveav*
+  - answers: by force, lay with her, lying with
+  - 'She did not want; but he by strength slept with her'. bazaføgakh-te (by strength) is attested 25 times. gen034:2; 'lying with' alone (34:7) = venanqei nonqo vø̄tøkuanem. Question for the Kuni team: how plainly may this be said?
+  - agent:gen034, 2026-10-15
+- **`term:H2734fury.g`** וַיִּחַר לָהֶם מְאֹד (they were very angry) → **qaqa kandambá gigonem** [high, decided, attested]
+  - NT: ACT 19:28 *qaqa kandambá gigonem*; ACT 5:33 *qaqa kandambá gigonem*
+  - answers: fury, furious, enraged, very angry
+  - gen034:7. Singular: qaqa kandambá gego (MAT 22:7).
+  - agent:gen034, 2026-10-15
+- **`term:grief.g`** וַיִּתְעַצְּבוּ (they were grieved) → **mbøni vaev matev zøfakhán (sorrow came to them)** [medium, decided, by-rule]
+  - NT: 2CO 2:5 *mbøni vaev matev gengaz*
+  - answers: grief, grieved, filled with grief
+  - Like term:distress.g (mbøni vaev matev mbofakhán) with zø- (them). gen034:7.
+  - agent:gen034, 2026-10-15
+- **`term:outrage.g`** נְבָלָה (outrage, disgraceful thing) → **soqa matev kandambaqape (a great evil deed)** [medium, decided, by-rule]
+  - NT: 1JN 1:9 *soqa matev*
+  - answers: outrage, committed an outrage
+  - term:H7451 soqa matev + kandambaqape. 'in Israel' = 'Izlael bawan mokho-te'. gen034:7.
+  - agent:gen034, 2026-10-15
+- **`term:H2836longs.g`** חָשְׁקָה נַפְשׁוֹ / חָפֵץ בְּ (longs for, delighted with a woman) → **poev kandambá, <woman>-te** [high, decided, attested]
+  - NT: GEN 24:67 *poev kandambá, tu-te*
+  - answers: longs, longs for, delighted, delighted with
+  - As term:H157.g (a man's love for a woman). gen034:3, 8, 19.
+  - agent:gen034, 2026-10-15
+- **`term:tenderly.g`** דִּבֶּר עַל־לֵב (spoke tenderly to her) → **manqat eqeieqei gumbo-ein (spoke good words to her)** [medium, decided, by-rule]
+  - NT: 1CO 4:13 *manqat eqeieqeí*
+  - answers: tenderly, spoke tenderly
+  - 'we answer gently' = 'manqat eqeieqeí qeizømbe-qavøiuín' (1CO 4:13); gumbo-ein (to her). gen034:3.
+  - agent:gen034, 2026-10-15
+- **`term:intermarry.g`** הִתְחַתְּנוּ אֹתָנוּ (intermarry with us) → **Ni neka zo, bizi-tøkuaném (let us unite)** [low, decided, by-rule]
+  - NT: MRK 10:7 *mé꞉tøkuaném*; ACT 4:26 *mø̀ndø-tøkuaném*
+  - answers: intermarry, intermarry with us
+  - tøkuanem = unite, of man and wife (MRK 10:7) and of a gathering; hortative bizi- (feature hortative). The giving and taking of daughters follows as its own sentences. gen034:9.
+  - agent:gen034, 2026-10-15
+- **`term:trade.g`** סָחַר (trade, move about freely) → **bisnis <...>-gonem (do business)** [high, decided, attested]
+  - NT: JAS 4:13 *bisnis vizimǿ-gonēm*
+  - answers: trade, move about freely
+  - Loan bisnis (7×). 2pl command built 'bisnis vozomǿ-gonēm' (gen034:10), 3pl wish 'bisnis bègonem' (34:21).
+  - agent:gen034, 2026-10-15
+- **`term:property.g`** הֵאָחֲזוּ בָהּ (acquire property in it) → **manqei vø̀wím (buy land)** [low, decided, by-rule]
+  - NT: LUK 14:18 *manqei*
+  - answers: property, acquire, acquire your own property
+  - wi = buy (term:H7069); imperative chain vø̀- (feature imperative_chain). gen034:10.
+  - agent:gen034, 2026-10-15
+- **`term:uncircumcised.g`** עָרְלָה / אִישׁ אֲשֶׁר־לוֹ עָרְלָה (an uncircumcised man) → **ezoqam, ndego ngusum kepøtøzateav gegoam** [high, decided, attested]
+  - NT: 1CO 7:18 *ngusum kepøtøzateav gegoam*
+  - answers: uncircumcised, uncircumcised man
+  - gen034:14.
+  - agent:gen034, 2026-10-15
+- **`term:circumcise.g`** נִמּוֹל / הִמֹּל (be circumcised) → **ngusu bèzøqogøzát (let them be circumcised); ngusu vø̄qogaz (they were circumcised); 'to be circumcised' = ngusu qogøzat-qa** [high, decided, attested]
+  - NT: GEN 17:10 *ngusu bèzøqogøzát*; GEN 17:27 *ngusu vø̄qogaz*; GAL 6:13 *ngusu qogøzat-qa*
+  - answers: circumcised, be circumcised, are circumcised
+  - The team's Genesis 17. Also 'circumcise him' = ngusu vømbō-kepøtaz (17:23). gen034:15, 17, 22, 24.
+  - agent:gen034, 2026-10-15
+- **`term:males.g`** כָּל־זָכָר (every male) → **angana ate ndi꞉gu / angana ate gi꞉goam** [high, decided, attested]
+  - NT: GEN 17:10 *angana ate ndi꞉gu*; GEN 17:23 *angana ate gi꞉goam*
+  - answers: males, every male, every one of your males
+  - ndi꞉gu in speech (present), gi꞉goam in narrative. gen034:15, 22, 24, 25.
+  - agent:gen034, 2026-10-15
+- **`term:disgrace.g`** חֶרְפָּה (disgrace) → **mivi matev** [high, decided, attested]
+  - NT: LUK 1:25 *noqa mivi matev*
+  - answers: disgrace, a disgrace to us
+  - 'it is our disgrace' = 'ndøgo niqa mivi matév'. gen034:14.
+  - agent:gen034, 2026-10-15
+- **`term:deceitfully.g`** בְּמִרְמָה (deceitfully) → **<them> zømbe-khavozám (they deceived them)** [medium, decided, by-rule]
+  - NT: LUK 20:47 *zømbe-khavozumatún*
+  - answers: deceitfully, deceit
+  - khavoz (term:H7411.g) with zømbe- (them). gen034:13.
+  - agent:gen034, 2026-10-15
+- **`term:respected.g`** נִכְבָּד מִכֹּל (the most respected of all) → **ezoqa ate gi꞉goam, ndego gèmbo-vizupám (all respected him)** [high, decided, attested]
+  - NT: ACT 22:12 *ndego gèmbo-vizupám*
+  - answers: respected, most respected
+  - Ananias, 'highly regarded by all the Jews'. gen034:19.
+  - agent:gen034, 2026-10-15
+- **`term:hesitate.g`** לֹא אֵחַר (did not hesitate, did not delay) → **nakhamas-té (quickly)** [medium, decided, by-rule]
+  - NT: 1TI 3:14 *nakhamas-té*
+  - answers: hesitate, did not hesitate
+  - The negated delay as its positive; no word for hesitate found. gen034:19.
+  - agent:gen034, 2026-10-15
+- **`term:unsuspecting.g`** בֶּטַח (unsuspecting, off guard) → **<people> zøtezateáv (they did not know)** [medium, decided, by-rule]
+  - NT: 1CO 8:7 *zøtezateáv*
+  - answers: unsuspecting
+  - Told as its own short sentence: 'Taon ezoqam zøtezateáv.' gen034:25.
+  - agent:gen034, 2026-10-15
+- **`term:slaughtered.g`** הָרַג (kill, slaughter many) → **pakhapakha vøzø̄-khanæmam (and they killed them)** [high, decided, attested]
+  - NT: MRK 12:5 *pakhapakha vøzø̄-khanæmam*
+  - answers: slaughtered, killed, they killed
+  - Singular object: pakhapakha mbokhanøém (MRK 12:5), vømbō-khana (1JN 3:12). gen034:25, 26.
+  - agent:gen034, 2026-10-15
+- **`term:plunder.g`** בָּזַז / שָׁבָה (plunder, loot; carry off) → **gigiap vø̄-aqonømem (stole the goods); carried off = vø̄-upøgimem; captives = vøzø̄-geanem (built)** [high, decided, attested]
+  - NT: MAT 12:29 *gigiap voqombó-aqonām*; GEN 14:11 *vø̄-upøgimem*; GEN 14:12 *vømbō-geanem*
+  - answers: looted, plundered, carried off, plunder
+  - Genesis 14 tells the raid on Sodom with upøgim (goods) and gean (Lot seized). gen034:27-29.
+  - agent:gen034, 2026-10-15
+- **`term:stench.g`** הַבְאִישֵׁנִי (you made me a stench to) → **<people> no gèsanqaná (they hate me)** [medium, decided, by-rule]
+  - NT: JHN 7:7 *no, gèsanqaná*
+  - answers: stench, making me a stench
+  - Image to meaning (image_to_meaning). gen034:30.
+  - agent:gen034, 2026-10-15
+- **`term:brought_trouble.g`** עֲכַרְתֶּם אֹתִי (you have brought trouble on me) → **Zo no soqain-te qazo-amb.** [medium, decided, by-rule]
+  - NT: GEN 20:9 *ni soqain-te toqo-amb*
+  - answers: brought trouble, trouble, you have brought trouble
+  - Abimelech's 'you have brought guilt on us' with 2pl qazo- (qazo-kopo꞉nem ACT 5:9). gen034:30.
+  - agent:gen034, 2026-10-15
+- **`term:attack.g`** וְנֶאֶסְפוּ עָלַי וְהִכּוּנִי (they unite against me and attack me) → **kopo-te ti꞉tøkuanem tøgoat, no namba nøfe-qa** [medium, decided, by-rule]
+  - NT: ACT 4:26 *nøfe-qa mba*; 1CO 6:16 *ti꞉tøkuanem*
+  - answers: unite, attack, unite against me, attack me
+  - The kings gathered 'to fight' (ACT 4:26). gen034:30. 'I will be destroyed' = 'no nǿnaním' (I will die, MRK 14:34).
+  - agent:gen034, 2026-10-15
+- **`term:prostitute.g`** זוֹנָה (prostitute) → **mambe sævam** [high, decided, attested]
+  - NT: 1CO 6:16 *mambe okho sævam*
+  - answers: prostitute, like a prostitute
+  - mambe = immoral (mambe matev immorality, REV 18:3). gen034:31.
+  - agent:gen034, 2026-10-15
+- **`term:few.g`** מְתֵי מִסְפָּר (few in number) → **Ni ezoqa khapimbá.** [medium, decided, by-rule]
+  - NT: MAT 7:14 *khapimba*
+  - answers: few in number, few
+  - khapimba 'few' (15×), khapemba 'little' (44×). gen034:30.
+  - agent:gen034, 2026-10-15
+- **`term:sister.g`** אָחוֹת (sister) → **sævømiu (our sister = nigu sævømiu; their = tigu sævømiu)** [high, decided, attested]
+  - NT: GEN 12:19 *nogū sævømiū*; PHM 1:2 *nigu Klisten nøfu*
+  - answers: sister, our sister, their sister
+  - Abram's 'she is my sister' (12:19); possessive -gu for a woman. gen034:13, 14, 17, 27, 31.
+  - agent:gen034, 2026-10-15
+- **`term:in_pain.g`** כֹּאֲבִים (in pain) → **zua nqosøgeap giyogem (they still felt pain)** [medium, decided, by-rule]
+  - NT: GEN 3:16 *nqosøgeap kandambá, toqombo-ewagat*
+  - answers: in pain, still in pain
+  - ewag = hear, feel (3pl past giyogem). gen034:25.
+  - agent:gen034, 2026-10-15
+- **`term:visit.g`** לִרְאוֹת (went out to visit, see) → **<persons> okha-qa <go>** [high, decided, attested]
+  - NT: ACT 9:32 *okha vø̄wav*; GEN 19:8 *okha ndøgeavún*
+  - answers: visit, to visit
+  - gen034:1 'nakhei mbasi okha-qa gunøwáv'.
+  - agent:gen034, 2026-10-15
+- **`term:H6370.g`** פִּילֶגֶשׁ (concubine) → **sasae sævam** [high, decided, attested]
+  - NT: GEN 22:24 *Nao sasae sævam*
+  - answers: concubine, his father's concubine
+  - Nahor's concubine Reumah (22:24); 25:6 says 'sakheis nøme' (other women). gen035:22 'tege eve-gu sasae sævam, Bila'.
+  - agent:gen035, 2026-10-15
+- **`term:H5141.g`** נֶזֶם (ring, earring, nose ring) → **agiwa-qasi** [medium, decided, attested]
+  - NT: GEN 24:22 *agiwa-qasi*; GEN 24:47 *agiwa-qasi nombo-føláb*
+  - answers: earrings, ring, rings, nose ring
+  - The ring Abraham's servant gave Rebekah (24:22, 24:47, worn on the nose: kesov-te). Earrings = 'agiwa-qasi, tiqa gea-te gi꞉goam' (rings that were on their ears; gea ear) in gen035:4, built.
+  - agent:gen035, 2026-10-15
+- **`term:H2934.g`** טָמַן (hide, bury objects) → **gèkhonáb (he hid it); 'hid it in the ground' = nòkhonáb. Manqei-té qæmø-otáz** [medium, decided, attested]
+  - NT: ACT 5:2 *nøme gèkhonáb*; MAT 25:25 *Manqei-té qæmø-otáz*
+  - answers: buried, hid, hide, buried them
+  - For objects hidden in the ground, not for burying the dead (term:H6912.g). gen035:4 'gèkhonáb. Manqei-té gemø-otáz' (3sg gemø- built on 1sg qæmø-).
+  - agent:gen035, 2026-10-15
+- **`term:H3205labor.g`** תֵּלֶד / תְּקַשׁ בְּלִדְתָּהּ (give birth; hard labour) → **nqosøgeap (pain) + gui-ovaɨn (she was about to give birth)** [medium, decided, attested]
+  - NT: 1TH 5:3 *sævam-qa nqosøgeap, gui-ovaɨn*
+  - answers: labor, severe labor, difficult, began to give birth, her labor was difficult
+  - 'labor pains on a pregnant woman' (1TH 5:3). gen035:16 'Laisol gui-ovaɨn. Tuqa nqosøgeap kandambá tantáv.'
+  - agent:gen035, 2026-10-15
+- **`term:right_hand.g`** יָמִין (right hand; Benjamin 'son of the right hand') → **nakeamo zenda** [high, decided, attested]
+  - NT: 1PE 3:22 *nakeamo zenda-te vømø̄qom*; ACT 2:33 *teqa nakeamo zenda-te*
+  - answers: right hand, right
+  - Used in the meaning of Benjamin, gen035:18 '(Taqa manqa mokho: Noqa nakeamo zenda-ge yó.)'.
+  - agent:gen035, 2026-10-15
+- **`term:H2891purify.g`** הִטַּהֲרוּ (purify yourselves) → **Mbumbukiam-qa bøi-te, vø̀-eqeieqei-éz (become clean before God)** [medium, decided, by-rule]
+  - NT: 1PE 1:22 *vozō-eqeieqei-ez*; ACT 21:24 *Mbumbukiam-qa bøi-te eqeieqei*
+  - answers: purify, purify yourselves, purified
+  - The NT's 'purify' is 'become right/clean in God's eyes' (1PE 1:22, ACT 21:24); the 2pl imperative is built with the chain prefix vø̀- (feature imperative_chain). gen035:2.
+  - agent:gen035, 2026-10-15
+- **`term:change_clothes.g`** וְהַחֲלִיפוּ שִׂמְלֹתֵיכֶם (change your garments) → **zoqa ndabua ndakinak zó-uzám (put on new clothes)** [medium, decided, by-rule]
+  - NT: COL 3:12 *ndakinak zó-uzám*
+  - answers: change, change your garments, garments, change clothes
+  - COL 3:12 'clothe yourselves' = 'matev ndakinak zó-uzám' (put on new ways); with ndabua (clothes) in gen035:2. No corpus verse changes clothes (searched 'change(d) ... clothes|garments').
+  - agent:gen035, 2026-10-15
+- **`term:nurse.g`** מֵינֶקֶת (nurse of a woman, Rebekah's nurse) → **<nurse> ndugu sævam, ma <X> gumbi꞉-kewagam (the woman who looked after her)** [high, decided, attested]
+  - NT: GEN 24:59 *sævam ma gumbi꞉-kewagam*
+  - answers: nurse, rebekah's nurse
+  - The same woman as Gen 24:59 (Rebekah's nurse, unnamed there). Ruth's nurse to a child is term:H539nurse.h. gen035:8.
+  - agent:gen035, 2026-10-15
+- **`term:oak.g`** אֵלָה / אַלּוֹן (oak, terebinth, great tree) → **tae kandambaqape; 'under the oak' = tae kandambaqape guzuguzu-te (in its shade)** [high, decided, attested]
+  - NT: GEN 12:6 *tae kandambaqape qo꞉yam*; GEN 18:8 *Tae guzuguzu-te ndøgo*
+  - answers: oak, under the oak, great tree, terebinth
+  - The Oak of Moreh = 'big tree' (12:6); the Oaks of Mamre 'tae kandakanda' (13:18); 'under the tree' = in its shade (18:8). gen035:4, 8.
+  - agent:gen035, 2026-10-15
+- **`term:distance.g`** כִּבְרַת־הָאָרֶץ (some distance from) → **<X> fakhaneav ndøgoám (they had not yet arrived at X). Zua qambaqapé (still far)** [medium, decided, attested]
+  - NT: JHN 11:30 *fakhaneav ndøgoám*; ACT 9:38 *qambaqapé mbá*
+  - answers: distance, some distance, still, while they were still
+  - Jesus had not yet come into the village (JHN 11:30); far = qambaqapé (ACT 9:38 'not far'). gen035:16.
+  - agent:gen035, 2026-10-15
+- **`term:stone_marker.g`** מַצֶּבֶת אָבֶן / מַצֵּבָה (pillar, stone marker) → **Andé uk me me꞉wuáb** [high, decided, attested]
+  - NT: GEN 28:18 *Andé uk me me꞉wuáb*
+  - answers: marker, stone marker, pillar, marks
+  - With 'nandi … sasa ndøwuab' before it (formula:set_up_pillar.g). 'it marks Rachel's tomb to this day' = 'nqanek nandi, Laisol-qa manqei pakha-te me꞉yám' (stands at the tomb; me꞉yám from GEN 19:26), gen035:20.
+  - agent:gen035, 2026-10-15
+- **`term:H5262.g`** נֶסֶךְ (drink offering) → **Mbumbukiam-te etoam matev, waen … vō꞉qouz (poured wine as a gift to God)** [medium, decided, by-rule]
+  - NT: 2TI 4:6 *waen gi꞉qouzumatun*; GEN 28:18 *oil vō꞉qouz*
+  - answers: drink offering, poured out, drink
+  - The NT's drink offering is wine poured out (2TI 4:6, PHP 2:17); the Hebrew does not name the liquid. gen035:14. Question for the Kuni team whether 'waen' should stand.
+  - agent:gen035, 2026-10-15
+<!-- store:end sha=a8372f73 -->

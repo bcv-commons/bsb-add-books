@@ -21,6 +21,12 @@ The full way of working is `docs/workflow.md`; this is the procedure.
 
 ## A wave (about ten chapters)
 
+**Unknown languages draft no waves** (`python3 scripts/modes.py <project>` says `drafting: sequential`): one chapter at a
+time, in order. For each: build its verse pack and clause packages just now (after the previous chapter's store entries
+are in), write the prompt, run one fresh agent, check the result and log its usage; only then prepare the next chapter.
+`make_prompt.py` refuses a pack older than the store. Shared terms need no fixing in advance (each chapter reads the
+store the previous ones wrote); the consistency pass and the review below come after the run of chapters.
+
 1. **Fix shared terms first.** Chapters in the same wave can't see each other. List the names,
    titles and recurring terms the chapters will share, agree them with the user (or take them
    from `style_guide.md` / `review_overview.md`), and add them to the prompts.

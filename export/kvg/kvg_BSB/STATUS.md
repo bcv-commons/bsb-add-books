@@ -1,12 +1,12 @@
 # Status: Kuni (Kuni-Boazi, Papua New Guinea)
 
-1 chapters: **1 draft**, 0 in review, 0 published.
+5 chapters: **5 draft**, 0 in review, 0 published.
 
 > **Draft.** Translated with AI agents directly from the Hebrew and Greek, with the BSB as the only assisting translation; not yet reviewed or approved by a language team. Not for use as published Scripture. Public domain (CC0).
 
 | Book | Chapters | Status | Existing edition |
 |---|---|---|---|
-| Genesis (`gen`) | 1 | draft: 31 | KVG-KuNT (non-free) has chapters 1–30: ours continue it |
+| Genesis (`gen`) | 5 | draft: 31–35 | KVG-KuNT (non-free) has chapters 1–30: ours continue it |
 
 ## Test drafts (not part of the drafts)
 

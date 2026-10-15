@@ -149,6 +149,19 @@ def main():
 
     orig = orig_lines(os.path.join(ROOT, orig_dir, f"{code}{nnn}.txt"), nt)
     assist = verses_of(os.path.join(ROOT, assist_dir, f"{code}{nnn}.txt"))
+    bsb_ref = {}                                   # Hebrew verse -> the BSB's (chapter, verse), shown with the verse
+    if not nt:
+        # OT: the verses of the Hebrew chapter (the drafts' numbering), each with its BSB verse through orig/vrs (Hebrew
+        # 32:1 is BSB 31:55); not the BSB chapter of the same number
+        import vrs
+        files, assist = {}, {}
+        for hv in vrs.heb_verses(code, chapter):
+            bc, bv = vrs.to_bsb(code, chapter, hv)
+            if bc not in files:
+                files[bc] = verses_of(os.path.join(ROOT, assist_dir, f"{code}{bc:03d}.txt"))
+            if (bc, bv) in files[bc]:
+                assist[(chapter, hv)] = files[bc][(bc, bv)]
+                bsb_ref[hv] = (bc, bv)
     LP = LT.Project(pname)                         # the style corpus, paired with the BSB (scripts/langtools.py)
     glossary = LP.glossary()
     # never the chapter being drafted; the book's other chapters are the best models when the edition has them (Kuni
@@ -328,7 +341,8 @@ def main():
         ch_, vn = v
         bsb = assist[v]
         heb = "\n".join(f"    {l}" for l in orig.get(vn, []))
-        L += [f"### {code.upper()} {chapter}:{vn}", "", f"**{BY_CODE[code][1]} {chapter}:{vn}, {assist_dir.split('/')[-1]}:** {bsb}", ""]
+        bc, bv = bsb_ref.get(vn, (chapter, vn))
+        L += [f"### {code.upper()} {chapter}:{vn}", "", f"**{BY_CODE[code][1]} {bc}:{bv}, {assist_dir.split('/')[-1]}:** {bsb}", ""]
         if heb:
             L += ["Original, one clause per line (level after the colon):", "", heb, ""]
         bw = content_words(bsb)

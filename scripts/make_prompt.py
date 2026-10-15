@@ -195,6 +195,16 @@ def main():
     import full_align
     fields.update(package_line="", tagged_first="", tagged_split="", draft_ext="txt",
                   align_step="" if nt else "\n" + full_align.step(pname, code, chapter))
+    if modes.mode(p)["drafting"] == "sequential":
+        # no waves for this mode: the pack must be built after the store's last change, i.e. after the previous chapter
+        # (a pack built in advance for a wave goes stale as soon as one chapter writes the store)
+        vp = os.path.join(ROOT, "export", pname, "_learn", "packs", f"{code}{nnn}.md")
+        store = [os.path.join(ROOT, "export", pname, "profile", f) for f in ("observations.json", "decisions.json")]
+        newest = max((os.path.getmtime(f) for f in store if os.path.exists(f)), default=0)
+        if os.path.exists(vp) and os.path.getmtime(vp) < newest:
+            raise SystemExit(f"{os.path.relpath(vp, ROOT)} is older than the store: this project drafts one chapter after "
+                             f"another (modes.py: sequential), with each pack built just in time. Wait for the chapter in "
+                             f"progress, then python3 scripts/verse_pack.py {pname} {code} {chapter}")
     if not nt and "--end-align" not in sys.argv:  # OT default: tagged drafting with clause packages (scripts/package.py)
         pkg = os.path.join(ROOT, "export", pname, "_learn", "packs", f"{code}{nnn}.pkg.md")
         if not os.path.exists(pkg):
