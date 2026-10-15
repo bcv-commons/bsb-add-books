@@ -39,6 +39,7 @@ code { font-size:90%; } .path { font-family:ui-monospace,monospace; font-size:90
 .modes button.on { background:var(--accent-soft); border-color:var(--accent); color:var(--accent); }
 .modes button:disabled { opacity:.45; cursor:default; }
 .view[hidden] { display:none; }
+.banner .tm { background:var(--q-line); color:#1f2328; font-weight:700; padding:1px 8px; border-radius:4px; text-transform:uppercase; font-size:13px; letter-spacing:.04em; }
 .lic { background:var(--q); border:2px solid var(--q-line); border-radius:6px; padding:10px 14px; margin:0 0 14px; font-size:14px; font-weight:600; }
 .cls .l { padding-left:min(calc(var(--lv) * 1.6em), calc(var(--lv) * 3.5vw)); text-indent:-0.6em; margin:0 0 2px 0.6em; }
 .cls h2 { font-size:17px; margin:22px 0 6px; color:var(--muted); }
