@@ -118,10 +118,28 @@ def editions_with_book(p, code):
     return out
 
 
-def must_quarantine(p, code):
+def has_chapter(ed, code, ch):
+    """Whether the edition has chapter ch of the book: its chapter file (in text/ or quarantined/), or 'ch:' verse lines
+    in a book file. None when that can't be told (no text here, as in a fresh clone)."""
+    d = os.path.join(ROOT, ed["dir"], ed.get("text_dir", "text"))
+    name = f"{code}{ch:03d}.txt"
+    if os.path.exists(os.path.join(d, name)) or os.path.exists(os.path.join(ROOT, ed["dir"], "quarantined", code, name)):
+        return True
+    books = [os.path.join(d, f"{code}.txt"), os.path.join(ROOT, ed["dir"], "quarantined", code, f"{code}.txt")]
+    for f in books:
+        if os.path.exists(f):
+            return bool(re.search(rf"^{ch}:\d", open(f, encoding="utf-8").read(), re.M))
+    have = book_files(ed, code) or (os.listdir(os.path.join(ROOT, ed["dir"], "quarantined", code))
+                                    if os.path.isdir(os.path.join(ROOT, ed["dir"], "quarantined", code)) else [])
+    return False if have else None
+
+
+def must_quarantine(p, code, chapter=None):
     """The style editions whose copy of this book a draft must not see: every non-free edition that has the
     book, and an attributable (CC BY / CC BY-SA) one when the project sets quarantine_attributable: true.
-    Public-domain editions never need it. Returns [(edition id, licence class, [files still present])]."""
+    Public-domain editions never need it. With chapter: an edition that has other chapters of the book but not this
+    one needs no quarantine for it (Kuni Genesis 31-50 while the edition has 1-30); when that can't be told (no text
+    here), the whole-book rule holds. Returns [(edition id, licence class, [files still present])]."""
     out = []
     for e in p["style_from"]:
         ed = edition(e)
@@ -130,6 +148,8 @@ def must_quarantine(p, code):
             files = book_files(ed, code)
             held = os.path.isdir(os.path.join(ROOT, ed["dir"], "quarantined", code))
             if files or held or code in (ed.get("books") or []):
+                if chapter is not None and has_chapter(ed, code, chapter) is False:
+                    continue
                 out.append((e, cls, files))
     return out
 

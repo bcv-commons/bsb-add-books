@@ -11,8 +11,13 @@ Quarantine moves the book's files out of each such edition's text folder into
 to the project's `quarantine:` list. --release moves them back and removes the book from the list.
 Afterwards, re-run scripts/align.py for a project whose lexicons were built with the book in the corpus.
 
-Usage: python3 scripts/quarantine.py <project> <code> [--release] [--all-editions]
+A chapter that the edition doesn't have needs no quarantine, though the edition has other chapters of the book
+(Kuni Genesis 31-50 beside the edition's Genesis 1-30): make_prompt.py checks it per chapter; --chapter N says
+whether chapter N needs one.
+
+Usage: python3 scripts/quarantine.py <project> <code> [--release] [--all-editions] [--chapter N]
        --all-editions: quarantine the book in every style edition, public domain ones included
+       --chapter N: only report whether chapter N needs a quarantine (nothing is moved)
 """
 import os, re, shutil, sys
 
@@ -38,6 +43,12 @@ def main():
         raise SystemExit(__doc__)
     pname, code, release = a[0], a[1], "--release" in a
     p = project(pname)
+    if "--chapter" in a:
+        ch = int(a[a.index("--chapter") + 1])
+        need = must_quarantine(p, code, ch)
+        print(f"{code} {ch}: " + (f"quarantine needed ({', '.join(e for e, _, _ in need)} has it, or can't be checked here)"
+                                  if need else "no quarantine needed: no non-free style edition has this chapter"))
+        return
     eds = [(e, LICENCE_CLASS.get(edition(e)["licence_folder"], "non-free")) for e in p["style_from"]] if "--all-editions" in a \
         else [(e, cls) for e, cls, _ in must_quarantine(p, code)]
     if not eds and not release:

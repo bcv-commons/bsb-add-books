@@ -1,4 +1,4 @@
 project ch-de-be/ch-de-be_BSB, model eflomal, corpus 7952 verses
-eng: 7934 verse pairs, 6062 source words
+eng: 7934 verse pairs, 6042 source words
 hbo: no verse pairs
-grc: 7934 verse pairs, 8810 source words
+grc: 7934 verse pairs, 8857 source words

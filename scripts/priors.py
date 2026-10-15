@@ -148,6 +148,8 @@ def check(pname, out=print):
         out(f"    {it.get('affix')} = {exp} [{it.get('confidence', '?')}]: {verdict}")
     out("  function words (in the NT):")
     for cat, ws in (pri.get("function_words") or {}).items():
+        if not isinstance(ws, list):
+            continue
         cells = []
         for w in ws or []:
             n = ffold[fold(str(w))]

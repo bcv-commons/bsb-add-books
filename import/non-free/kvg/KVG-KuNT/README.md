@@ -1,14 +1,16 @@
 # Kuni NT (kvg)
 
-The New Testament (and Ruth, Jonah) in the Kuni dialect of Kuni-Boazi (Papua New Guinea), with its
+The New Testament (and Genesis 1–30, Ruth, Jonah) in the Kuni dialect of Kuni-Boazi (Papua New Guinea), with its
 glossary. The texts are not in git (`import/non-free/`); this README, `edition.yaml` and `build_text.py` are.
 
-- `source/`: the Paratext SFM files as received (UTF-8 NFD; 27 NT books and the glossary `A9GLO`).
+- `source/`: the Paratext SFM files as received (UTF-8 NFD; 27 NT books, Genesis 1–30, Ruth, Jonah
+  and the glossary `A9GLO`).
 - `text/`: one file per chapter, built by `python3 build_text.py` (run it again after replacing a
   file in `source/`).
 - `glossary.tsv`: 156 glossary terms with their English equivalents and the Kuni explanation.
-- Ruth and Jonah in `text/` come from eBible `kvg` (`build_text.py --ot`), the 2015 state of the
-  same translation. Until 2026-10-14 they were held out (`holdout/`) as the test set of the Ruth
+- Ruth and Jonah: since 2026-10-15 from `source/` (the same text as eBible's but for two spaces); without
+  them there, from eBible `kvg` (`build_text.py --ot`), the 2015 state of the same translation. Genesis is not
+  on eBible, so a fresh clone has no Genesis. Until 2026-10-14 they were held out (`holdout/`) as the test set of the Ruth
   drafting test (`export/kvg/kvg_BSB/_eval/`).
 
 The local NT is a newer working copy than eBible's: 785 of 7,934 verses differ.

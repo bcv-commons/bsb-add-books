@@ -1,0 +1,73 @@
+!!<Modenhed: Udkast>!!
+!!<Oversættelse: Maskinudkast fra grundteksten (orig/1mos005.txt), sammenholdt med Berean Standard Bible>!!
+!!<Eksegetisk bearbejdning: Endnu ikke sket>!!
+!!<Litterært tjek: Endnu ikke sket>!!
+!!<Dato for denne version: 09.10.2026>!!
+
+===1 Mosebog, kapitel 5===
+
+
+==Adam og hans efterkommere lever og dør==
+
+v1 Dette er bogen om Adams slægt.{E: Formlen *tôlᵊdôt* (jf. 2,4) indleder her et slægtsregister, som
+kaldes en >>bog<< (*sēfer*), dvs. et skrevet dokument. Registret fører i ti led fra Adam til Noa,
+ligesom 11,10-26 fører i ti led fra Sem til Abram. Over for Kains slægt i 4,17-24 står her den linje
+som løftet føres videre i; begge linjer har en Enok og en Lamek.} Den dag Gud skabte mennesket,
+gjorde han det i lighed med Gud. v2 Som mand og kvinde skabte han dem, og han velsignede dem. Og den
+dag de blev skabt, gav han dem navnet menneske.{T: Hebraisk *ʔādām*, samme ord som navnet Adam i v.
+1 og 3.}
+
+v3 Da Adam var 130 år, fik han en søn{T: Hebraisk har ikke >>en søn<<; ordret: >>avlede han i sin
+lighed, i sit billede<<.} i lighed med sig selv, i sit billede,{E: Ordene *dᵊmût* >>lighed<< og
+*ṣelem* >>billede<< er de samme som i 1,26, men i omvendt rækkefølge. Sammen med v. 1 siger verset
+forsigtigt at det Gud gav mennesket, føres videre fra far til søn, også efter syndefaldet (jf.
+9,6).} og han gav ham navnet Set. v4 Efter at Adam var blevet far til Set, levede han 800 år, og han
+fik sønner og døtre. v5 Adam levede i alt 930 år,{T: Ordret: >>Alle Adams dage som han levede, var
+930 år<<.} og så døde han.
+
+v6 Da Set var 105 år, blev han far til{T: Ordret: >>avlede han<<. Udtrykket kan også bruges om en
+fjernere efterkommer, jf. Matt 1,8.} Enosh. v7 Efter at Set var blevet far til Enosh, levede han 807
+år, og han fik sønner og døtre. v8 Set levede i alt 912 år, og så døde han.
+
+v9 Da Enosh var 90 år, blev han far til Kenan. v10 Efter at Enosh var blevet far til Kenan, levede
+han 815 år, og han fik sønner og døtre. v11 Enosh levede i alt 905 år, og så døde han.
+
+v12 Da Kenan var 70 år, blev han far til Mahalalel. v13 Efter at Kenan var blevet far til Mahalalel,
+levede han 840 år, og han fik sønner og døtre. v14 Kenan levede i alt 910 år, og så døde han.
+
+v15 Da Mahalalel var 65 år, blev han far til Jered. v16 Efter at Mahalalel var blevet far til Jered,
+levede han 830 år, og han fik sønner og døtre. v17 Mahalalel levede i alt 895 år, og så døde han.
+
+v18 Da Jered var 162 år, blev han far til Enok. v19 Efter at Jered var blevet far til Enok, levede
+han 800 år, og han fik sønner og døtre. v20 Jered levede i alt 962 år, og så døde han.
+
+
+==Enok vandrer med Gud, og Gud tager ham bort==
+
+v21 Da Enok var 65 år, blev han far til Metushela. v22 Efter at Enok var blevet far til Metushela,
+vandrede han med Gud{E: Udtrykket *hithallēk ʔet-hāʔᵉlōhîm* >>vandre med Gud<< bruges ellers kun om
+Noa (6,9) og betegner et liv i nært og trofast fællesskab med Gud. Septuaginta gengiver det med
+>>behagede Gud<<, og den forståelse følger Hebr 11,5.} i 300 år, og han fik sønner og døtre.
+v23 Enok levede i alt 365 år.{T: Lige så mange år som et solår har dage. Som den eneste i registret
+slutter Enoks afsnit ikke med >>og så døde han<<.} v24 Enok vandrede med Gud, og så var han der ikke
+mere,{T: Ordret: >>og han var ikke<<. Septuaginta har: >>og han blev ikke fundet<<.} for Gud havde
+taget ham bort.{H: Hebr 11,5.}
+
+
+==Lamek giver sin søn navnet Noa==
+
+v25 Da Metushela var 187 år, blev han far til Lamek. v26 Efter at Metushela var blevet far til
+Lamek, levede han 782 år, og han fik sønner og døtre. v27 Metushela levede i alt 969 år,{E: Med
+Masoretertekstens tal dør Metushela i det år syndfloden kommer (187 + 182 + 600 = 969, jf. 7,6), og
+hans alder er den højeste i registret. Septuaginta og den samaritanske Pentateuk har til dels andre
+tal, især for alderen ved den første søns fødsel; tallenes betydning er omdiskuteret.} og så døde
+han.
+
+v28 Da Lamek var 182 år, fik han en søn. v29 Han gav ham navnet Noa{T: Navnet *nōₐḥ* minder om
+*nûₐḥ* >>hvile<< og spilles her sammen med *yᵊnaḥᵃmēnû* >>han skal trøste os<< (af *nāḥam*).
+Septuaginta har: >>han skal give os hvile<<.} og sagde: >>Han skal trøste os i vores arbejde og i
+vores hænders møje{T: Samme ord *ʕiṣṣāvôn* som i 3,17: >>Med møje skal du spise af den<<.} med
+agerjorden, som HERREN har forbandet.<< v30 Efter at Lamek var blevet far til Noa, levede han 595
+år, og han fik sønner og døtre. v31 Lamek levede i alt 777 år, og så døde han.
+
+v32 Da Noa var 500 år, blev han far til Sem, Ham og Jafet.

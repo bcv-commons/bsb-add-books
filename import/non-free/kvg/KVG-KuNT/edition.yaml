@@ -14,12 +14,14 @@ format: "one file per chapter (<code>NNN.txt), repo chapter format, NFC; glossar
 # 1 Jn 5:7 has no Comma: a critical text.
 nt_basis: critical
 
-books: [rut, jon, mat, mrk, luk, jhn, act, rom, 1co, 2co, gal, eph, php, col, 1th, 2th, 1ti, 2ti, tit, phm,
+books: [gen, rut, jon, mat, mrk, luk, jhn, act, rom, 1co, 2co, gal, eph, php, col, 1th, 2th, 1ti, 2ti, tit, phm,
         heb, jas, 1pe, 2pe, 1jn, 2jn, 3jn, jud, rev]
 quarantine: []
 
-# Ruth and Jonah come from eBible 'kvg' (build_text.py --ot), an older state of the same translation.
-# They were held out as the test set of the Ruth drafting test until 2026-10-14.
+# Genesis 1-30, Ruth and Jonah are in source/ (received 2026-10-15; Ruth and Jonah equal to eBible's but for two
+# spaces). In a fresh clone Ruth and Jonah come from eBible 'kvg' (build_text.py --ot); Genesis is not on eBible.
+# Ruth and Jonah were held out as the test set of the Ruth drafting test until 2026-10-14; our Genesis 1 draft
+# was made before Genesis arrived and is kept as a test in export/kvg/kvg_BSB/_eval/genesis-test/.
 ot_from_ebible: [rut, jon]
 
 # How a clone gets the text, which is not in git (scripts/project.py missing_text)

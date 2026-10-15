@@ -1,0 +1,72 @@
+!!<Modenhed: Udkast>!!
+!!<Oversættelse: Maskinudkast fra grundteksten (orig/1mos012.txt), sammenholdt med Berean Standard Bible>!!
+!!<Eksegetisk bearbejdning: Endnu ikke sket>!!
+!!<Litterært tjek: Endnu ikke sket>!!
+!!<Dato for denne version: 09.10.2026>!!
+
+===1 Mosebog, kapitel 12===
+
+
+==HERREN kalder Abram og lover at velsigne ham==
+
+v1 HERREN sagde til Abram: >>Gå bort{T: Ordret: >>Gå for dig selv<< (*lek-lᵊkā*). Samme vending står
+i 22,2, hvor Abraham skal gå til Morija.} fra dit land og fra din slægt og fra din fars hus, til det
+land som jeg vil vise dig.{H: ApG 7,3}
+
+//1 v2 Jeg vil gøre dig til et stort folk,
+
+//2 jeg vil velsigne dig
+
+//2 og gøre dit navn stort,
+
+//2 og du skal være en velsignelse.{T: Ordret bydeform: >>Vær en velsignelse!<<}
+
+//1 v3 Jeg vil velsigne dem der velsigner dig,
+
+//2 og den der håner dig, vil jeg forbande.{E: To forskellige verber: *qillēl* (egentlig >>gøre
+let, ringeagte<<) om den der håner Abram, og *ʔārar* >>forbande<< om Guds svar. Teksten skelner
+måske mellem menneskers foragt og Guds højtidelige forbandelse; bemærk også at velsignerne står i
+flertal, men den der håner, i ental.}
+
+//1 I dig skal alle slægter på jorden velsignes.{T: Ordret: >>alle agerjordens slægter<<
+(*ʔădāmāh*), samme ord som i 3,17, hvor agerjorden blev forbandet. Verbet kan også forstås som
+>>velsigne sig ved dig<<.}{H: Gal 3,8}<<
+
+v4 Så drog Abram af sted, sådan som HERREN havde sagt til ham, og Lot gik sammen med ham. Abram var
+75 år da han drog ud fra Karan. v5 Abram tog sin hustru Saraj og sin brorsøn Lot med sig og alt det
+gods de havde samlet, og de mennesker{N: Sjæl} de havde skaffet sig i Karan. De drog af sted for at
+gå til landet Kana'an, og de kom til landet Kana'an.
+
+v6 Abram drog gennem landet til stedet ved Sikem, til Mores eg.{T: *môrēh* betyder >>lærer, en der
+giver vejledning<<; navnet kan pege på et træ hvor man søgte orakelsvar. Eller >>Mores terebinte<<.}
+Dengang boede kana'anæerne i landet. v7 HERREN viste sig for Abram og sagde: >>Dit afkom{T: Ordret:
+>>sæd<< (*zeraʕ*), et ental der kan være kollektivt, jf. 3,15.} vil jeg give dette land.<< Så
+byggede Abram et alter dér for HERREN, som havde vist sig for ham.
+
+v8 Derfra brød han op og drog til bjerglandet øst for Betel og slog sit telt op med Betel mod vest
+og Aj mod øst. Dér byggede han et alter for HERREN og påkaldte HERRENS navn. v9 Derefter drog Abram
+videre fra lejrplads til lejrplads{T: Ordret: >>gående og brydende op<<; *nāsaʕ* er at trække
+teltpælene op.} mod Negev.
+
+==Abram og Saraj i Egypten==
+
+v10 Der kom hungersnød i landet, og Abram drog ned til Egypten for at bo dér som fremmed, for
+hungersnøden var hård i landet. v11 Da han nærmede sig Egypten, sagde han til sin hustru Saraj:
+>>Hør, jeg ved at du er en smuk kvinde. v12 Når egypterne ser dig, vil de sige: Det er hans hustru.
+Så slår de mig ihjel, men dig lader de leve. v13 Sig dog at du er min søster,{E: Ifølge 20,12 var
+Saraj datter af Abrams far, men ikke af hans mor. Udsagnet er altså en halv sandhed, der skjuler at
+hun er hans hustru.} så det går mig godt for din skyld, og jeg får lov at leve{N: Sjæl} takket være
+dig.<<
+
+v14 Da Abram kom til Egypten, så egypterne at kvinden var meget smuk. v15 Faraos stormænd så hende
+og roste hende over for Farao, og kvinden blev hentet til Faraos hus.{T: Dvs. Faraos palads og hof,
+evt. hans kvindehus.} v16 For hendes skyld behandlede han Abram godt, og Abram fik får og kvæg,
+hanæsler, tjenere og tjenestepiger, hunæsler og kameler.
+
+v17 Men HERREN ramte Farao og hans hus med store plager på grund af Saraj, Abrams hustru. v18 Så
+kaldte Farao Abram til sig og sagde: >>Hvad er det du har gjort mod mig? Hvorfor fortalte du mig
+ikke at hun er din hustru? v19 Hvorfor sagde du: Hun er min søster, så jeg tog hende til hustru? Se,
+her er din hustru. Tag hende og gå!<< v20 Farao gav nogle mænd ordre om ham, og de sendte ham bort
+sammen med hans hustru og alt hvad han ejede.{E: Fortællingen foregriber måske udvandringen fra
+Egypten: hungersnød fører Israels fædre ned til Egypten, HERREN rammer Farao med plager (*negaʕ*,
+jf. 2 Mos 11,1), og Farao sender dem bort (*šillaḥ*, som i >>Lad mit folk gå<<) med stor rigdom.}

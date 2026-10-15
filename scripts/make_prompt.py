@@ -60,7 +60,7 @@ def main():
             numbering += " Where verses belong to another BSB chapter, give the BSB numbering in a footnote."
 
     # a book that a non-free (or, by choice, attributable) style edition has is drafted only in quarantine
-    needed = must_quarantine(p, code)
+    needed = must_quarantine(p, code, chapter)  # a chapter the edition doesn't have needs none
     left = [(e, f) for e, _, f in needed if f]
     if left or (needed and code not in p["quarantine"]):
         sys.exit(f"{code}: {', '.join(e for e, _, _ in needed)} has this book and isn't public domain: quarantine it "

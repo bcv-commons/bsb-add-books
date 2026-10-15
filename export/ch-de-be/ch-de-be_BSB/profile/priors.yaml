@@ -38,8 +38,9 @@ word_forming_suffixes:
 inflection:
 - affix: -e
   expect: mood=infinitive
-  note: 'infinitive ending: mache, säge, ga/gah and cho are short irregular infinitives'
+  note: 'infinitive ending: mache, säge; ga and cho are short irregular infinitives (the corpus writes ga, not gah)'
   confidence: high
+  source: corpus
 - affix: -e
   expect: person+number=fs
   note: '1sg present: i mache; same ending as the plural forms'
@@ -58,8 +59,9 @@ inflection:
   confidence: medium
 - affix: -et
   expect: person+number=sp
-  note: '2pl present: dir machet; also the polite address form (Ihrzen with Dir)'
+  note: '2pl present: dihr machet (no polite Dir in the corpus)'
   confidence: high
+  source: corpus
 - affix: -e
   expect: person+number=tp
   note: '3pl present: si mache'
@@ -74,20 +76,19 @@ inflection:
   confidence: high
 - affix: -t
   expect: tense+mood=perfect.participle
-  note: 'weak participle ending with g-: gmacht, gläbt'
+  note: 'weak participle ending with g-: gmacht, gläbt (right, though the derived report doesn''t separate it from
+    -t 3sg)'
   confidence: medium
+  source: corpus
 - affix: -e
   expect: tense+mood=perfect.participle
   note: 'strong participle ending with g-: gfunde, gschribe'
   confidence: medium
 - affix: -i
   expect: mood=subjunctive
-  note: 'subjunctive II on some verbs: i wäri, i hätti, i chönnti; else würd + infinitive'
+  note: 'subjunctive forms in -i: sygi, gangi, hätti; reported speech uses syg (94×) and heig (51×), sig only 3×'
   confidence: low
-- affix: -ig
-  expect: mood=subjunctive
-  note: 'subjunctive I in reported speech: är syg / sig, är heig'
-  confidence: low
+  source: corpus
 - affix: -er
   expect: degree=comparative
   note: grösser, nöcher
@@ -100,17 +101,9 @@ inflection:
   expect: number=plural
   note: a common noun plural ending, but many plurals equal the singular or show only umlaut
   confidence: low
-- affix: -ne
-  expect: object=3s
-  note: 'enclitic masculine object pronoun: i ha ne gseh'
-  confidence: medium
-- affix: -mer
-  expect: person+number=fp
-  note: 'enclitic subject pronoun after the verb: hei mer, gö mer'
-  confidence: low
 function_words:
   articles:
-  - dr
+  - der
   - d
   - di
   - ds
@@ -121,6 +114,8 @@ function_words:
   - en
   - ere
   - emne
+  - nere
+  - emene
   pronouns:
   - i
   - du
@@ -129,11 +124,16 @@ function_words:
   - es
   - mir
   - dir
+  - dihr
   - mi
   - di
   - ne
-  - üs
+  - üüs
   - öich
+  - nech
+  - se
+  - sech
+  - mer
   prepositions:
   - i
   - uf
@@ -147,42 +147,54 @@ function_words:
   - gäge
   - ohni
   - under
+  - dür
   conjunctions:
-  - u
+  - und
   - oder
   - aber
   - dass
   - we
-  - wüu
+  - wil
   - wo
-  - sondern
+  - nei
   - denn
   - ob
-  - wie
+  - wi
   - bis
   negation:
   - nid
-  - nüt
-  - kei
+  - nüüt
   - ke
+  - kes
+  - kene
+  - keni
   - nie
   - niemer
+  - nümm
+  - nümme
+function_words_source: 'corpus: der 4622 (dr 0), und 7403 (u 4), wil 306 (wüu 0), wi 705 (wie 23), nei for ''but''
+  108 verses (sondern 1), nüüt 291 (nüt 10), üüs 269 (üs 6), dihr 1417, dür 297'
 notes:
 - Verb-second in main clauses and verb-final in subordinate clauses, as in Standard German; verb clusters often
   reverse order (dass er het chönne cho).
-- 'There is no simple past: narrative past uses the perfect (är isch cho, är het gseit), so Greek aorist and imperfect
-  both appear as ha/sy + participle; the pluperfect is a double perfect (het gha gseit).'
+- 'There is no simple past: narration uses the perfect (gseit 921×) and, in the Gospels, the historic present (seit
+  519×); the pluperfect is ''het … gseit gha'' (49 verses; source: corpus).'
 - The future is usually the present tense, sometimes wird + infinitive.
-- 'The genitive is almost absent: use vo + dative or a possessive dative (em Vater sys Huus).'
-- 'L-vocalization is typical of Bern: l before a consonant or at word end becomes u (Wäut ''Welt'', aut ''alt'',
-  vüu ''viel''). Some speakers also velarize nd to ng (hinger ''hinter'', angere ''andere''; Chind vs. Ching varies).'
+- 'The genitive is almost absent: vo + dative (vo Gott 385×) or a possessive dative; the one exception is Gottes
+  (156×) (source: corpus).'
+- 'Corpus (source: corpus): no l-vocalisation and no nd → ng: Bietenhard writes Wält, vil, alt, Chind, angere is
+  absent; write the conservative forms.'
 - 'Spelling is Dieth-like: y = long i (Zyt, sy), ie/ue/üe are diphthongs (lieb, guet, füess), ou/öi correspond to
   Standard au/äu (Frou, Böim), ch- corresponds to initial k (Chind, cho, chönne).'
-- Polite address is Ihrzen with Dir + 2pl verb (Dir syt), and the same form can be used to address God or Jesus
-  in some translations.
+- 'Corpus (source: corpus): no polite Dir; God and Jesus are addressed with du.'
 - Relative clauses use the invariable particle wo (dr Ma, wo das gseit het), with a resumptive pronoun in oblique
   cases.
-- Pronouns cliticize heavily (hesch es → hesch's, gö mer, i ha ne); the doubling verbs ga/cho add an extra particle
-  before an infinitive (är geit ga bätte, chunnt cho luege).
+- 'Pronouns cliticize heavily (hesch es → hesch''s, gö mer, i ha ne); the doubling verbs ga/cho add an extra particle
+  before an infinitive (är geit ga bätte, chunnt cho luege). ne (him) and mer (we) are separate words in the corpus,
+  not affixes (source: corpus).'
 - The diminutive -li (often -eli) is productive and neuter (Chindli, Schäfli); the abstract suffix -ig corresponds
   to Standard -ung (Zytig, Rettig).
+- 'Spelling (source: corpus): doubled vowels üü, uu, aa (nüüt, üüs); the participle g- doubles a following b, d,
+  g (bbracht, ggä); scht inside words; a linking n before vowel-initial pronouns (won er 255, wo er 1).'
+corrected: 'corpus (study test 2, 2026-10-15): items marked `source: corpus` were changed or added from counts in
+  Bietenhard''s NT; the model''s spelling leaned to another variety (dr, u, wüu, nüt, üs, Wäut)'

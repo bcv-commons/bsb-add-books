@@ -1201,23 +1201,17 @@
   {
    "id": "spell_variants",
    "kind": "letter",
-   "value": "Das Korpus hat Druck- und Erkennungsfehler (»cm« für »em«, »gcischtlechc«, »ncre«, Punkt mitten im Satz). Einzelformen nur übernehmen, wenn sie mehrfach belegt sind.",
+   "value": "Die Erkennungsfehler der gescannten Vorlage (c für e wie »cm« für »em«, »gcischtlechc«; »Böll« für »söll«; ein überzähliges c) sind seit 2026-10-15 im Korpus berichtigt (fix_ocr.py in der Ausgabe, 348 Wörter). Offen ist Lk 24:28–29 (verderbt). Eine Einzelform nur übernehmen, wenn sie mehrfach belegt ist.",
    "evidence": [
     {
-     "ref": "1CO 6:13",
-     "form": "cm",
-     "n": 55
-    },
-    {
-     "ref": "1CO 10:4",
-     "form": "gcischtlechc",
+     "ref": "LUK 24:29",
      "n": 1
     }
    ],
    "confidence": "medium",
    "method": "corpus-observed",
-   "by": "agent:memory-setup",
-   "date": "2026-10-14",
+   "by": "agent:ocr-review",
+   "date": "2026-10-15",
    "status": "observed"
   },
   {

@@ -1,6 +1,6 @@
-project kvg/kvg_BSB, model eflomal, corpus 8067 verses
-eng: 8065 verse pairs, 5285 source words
-  glossary: the term is the top rendering of its one-word English equivalent in 85 of 113
-hbo: 133 verse pairs, 320 source words
-  names: the top rendering of a Hebrew name is the edition's name in 20 of 23
-grc: 7932 verse pairs, 7357 source words
+project kvg/kvg_BSB, model eflomal, corpus 8938 verses
+eng: 8936 verse pairs, 5676 source words
+  glossary: the term is the top rendering of its one-word English equivalent in 90 of 116
+hbo: 1004 verse pairs, 1157 source words
+  names: the top rendering of a Hebrew name is the edition's name in 118 of 182
+grc: 7932 verse pairs, 7376 source words

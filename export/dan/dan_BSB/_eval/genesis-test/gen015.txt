@@ -1,0 +1,67 @@
+!!<Modenhed: Udkast>!!
+!!<Oversættelse: Maskinudkast fra grundteksten (orig/1mos015.txt), sammenholdt med Berean Standard Bible>!!
+!!<Eksegetisk bearbejdning: Endnu ikke sket>!!
+!!<Litterært tjek: Endnu ikke sket>!!
+!!<Dato for denne version: 09.10.2026>!!
+
+===1 Mosebog, kapitel 15===
+
+
+==HERREN lover Abram et afkom så talrigt som stjernerne==
+
+v1 Efter disse begivenheder kom HERRENS ord til Abram i et syn:
+
+//1 >>Frygt ikke, Abram,
+
+//2 jeg er dit skjold,{T: *māgēn* >>skjold<< lyder som *miggēn* >>gav i hænde<< i 14,20, og >>løn<<
+(*śākār*) kan pege tilbage på at Abram afslog Sodomas konges gods (14,22-24).}
+
+//2 din løn skal blive meget stor.<<
+
+v2 Men Abram sagde: >>Herre, HERRE, hvad vil du give mig? Jeg går jo barnløs bort,{T: Ordret: >>jeg
+går barnløs<<; *hôlēk* >>går<< kan også betyde >>går bort, dør<<.} og den der skal arve mit hus, er
+Eliezer fra Damaskus.<<{E: Udtrykket *ben-mešeq bêtî* er uklart; *mešeq* forekommer kun her og er
+muligvis valgt som ordspil med *dammeśeq* >>Damaskus<<. Retstekster fra Nuzi viser måske at en
+barnløs mand kunne indsætte en tjener som arving.} v3 Abram sagde: >>Se, mig har du ikke givet noget
+afkom, og nu skal en af mine husfolk arve mig.<<
+
+v4 Men se, da kom HERRENS ord til ham: >>Han skal ikke arve dig. Nej, en der kommer af dit eget
+legeme,{T: Ordret: >>som udgår af dine indvolde<<.} han skal arve dig.<< v5 Han førte ham ud og
+sagde: >>Se op mod himlen og tæl stjernerne, hvis du kan tælle dem!<< Og han sagde til ham: >>Sådan
+skal dit afkom blive.<<{H: Rom 4,18} v6 Abram troede på HERREN, og han regnede ham det til
+retfærdighed.{E: Andet led har ikke noget udtrykt subjekt, men det naturlige subjekt er HERREN, der
+regner Abrams tro for retfærdighed. Septuaginta og NT-citaterne har passiv: >>det blev tilregnet
+ham<<. Nogle læser i stedet Abram som subjekt: han regnede løftet for et udtryk for HERRENS
+retfærdighed.}{H: Rom 4,3; Gal 3,6; Jak 2,23}
+
+==HERREN slutter en pagt med Abram==
+
+v7 Han sagde til ham: >>Jeg er HERREN, som førte dig ud fra Ur i Kaldæa for at give dig dette land i
+eje.<< v8 Men han sagde: >>Herre, HERRE, hvordan skal jeg vide at jeg skal få det i eje?<< v9 Han
+sagde til ham: >>Hent mig en treårig kvie, en treårig ged og en treårig vædder, en turteldue og en
+dueunge.<<
+
+v10 Han hentede alle disse dyr til ham, skar dem midt over og lagde hver halvdel over for den anden;
+men fuglene skar han ikke over. v11 Rovfuglene slog ned på de døde kroppe, men Abram jog dem bort.
+
+v12 Da solen var ved at gå ned, faldt en dyb søvn{T: Samme ord (*tardēmāh*) som i 2,21, hvor Gud
+HERREN lod en dyb søvn falde over mennesket.} over Abram, og se, en stor og mørk rædsel faldt over
+ham. v13 Så sagde HERREN til Abram: >>Du skal vide for vist at dit afkom skal bo som fremmede i et
+land som ikke er deres. Dér skal de være trælle, og man skal undertrykke dem i 400 år.{E: 400 år er
+sandsynligvis et rundt tal; 2 Mos 12,40 har 430 år (jf. Gal 3,17). Det kan også svare til >>fjerde
+slægtled<< i v. 16, hvis et slægtled her regnes som 100 år.} v14 Men også det folk de skal være
+trælle for, vil jeg dømme, og derefter skal de drage ud med meget gods.{H: ApG 7,6-7} v15 Du selv
+skal gå til dine fædre i fred og blive begravet i en god alderdom. v16 I det fjerde slægtled{T:
+Ordret: >>fjerde slægt<<; *dôr* kan også betegne et menneskes levetid.} skal de vende tilbage
+hertil, for amoritternes skyld er endnu ikke fuldt udmålt.<<
+
+v17 Da solen var gået ned og det var blevet bælgmørkt, se, da var der en rygende ovn{T: *tannûr* er
+en lerovn til brødbagning, her måske et ildkar.} og en flammende fakkel som gik mellem de afskårne
+stykker.{E: Ritualet minder om Jer 34,18-19, hvor de der sluttede pagt, gik mellem stykkerne af en
+kalv og dermed nedkaldte samme skæbne over sig selv hvis de brød pagten. Her er det kun HERREN, i
+røg og ild, der går mellem stykkerne.} v18 På den dag sluttede HERREN en pagt med Abram{T: Ordret:
+>>skar HERREN en pagt<< (*kārat bᵊrît*); udtrykket svarer til de dyr der blev skåret over.} og
+sagde: >>Dit afkom giver jeg dette land, fra Egyptens flod{T: Enten Nilen eller Egyptens bæk (*naḥal
+miṣrayim*, 4 Mos 34,5), dvs. Wadi el-Arish.} til den store flod, Eufratfloden: v19 kenitternes,
+kenizzitternes, kadmonitternes, v20 hittitternes, perizzitternes, refaitternes, v21 amoritternes,
+kana'anæernes, girgashitternes og jebusitternes land.<<

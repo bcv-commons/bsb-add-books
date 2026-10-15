@@ -107,13 +107,16 @@ class Quotes:
             j = k + N - 1
         return ts, out
 
-    def check_text(self, text):
+    def check_text(self, text, own_book=None):
+        """own_book: the book of a test draft (export/<project>/_eval/<name>-test/<code>NNN*): its text and notes were
+        written before the agent could see the edition's book, so a match with that book is our own wording that
+        coincides with the human one, not a quotation."""
         ts, runs = self.runs(text)
         wt = self.w(self.written_tok, text)
         same = len(wt) == len(ts)
         verses, quoted, unpublished, marks = collections.Counter(), 0, [], []
         for a, b, vs in runs:
-            vs = {v for v in vs if self.rows[v][6]}          # quotations of limited (non-free) editions only
+            vs = {v for v in vs if self.rows[v][6] and self.rows[v][1] != own_book}  # limited (non-free) editions only
             if not vs:
                 continue
             quoted += b - a
@@ -146,7 +149,9 @@ class Quotes:
         files = [f for f in files if not re.fullmatch(r"[0-9a-z]{3}\d{3}\.txt", os.path.basename(f))]
         for f in files:
             text = open(f, encoding="utf-8", errors="replace").read()
-            quoted, verses, unpub, marks = self.check_text(text)
+            m = re.fullmatch(r"([0-9a-z]{3})\d{3}\D.*", os.path.basename(f))
+            test = m and re.search(r"/_eval/[^/]+-test/", f.replace(os.sep, "/"))
+            quoted, verses, unpub, marks = self.check_text(text, m[1] if test else None)
             total += quoted
             rel = os.path.relpath(f, ROOT)
             if not quoted:

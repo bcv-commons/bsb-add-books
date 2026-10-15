@@ -26,21 +26,21 @@ UI = {   # interface strings by school language; the content stays as written
     "English": {"projects": "Projects", "status": "Status", "memory": "Language memory", "credits": "Credits",
                 "chapters": "chapters", "draft": "draft", "review": "in review", "published": "published",
                 "built": "Built from commit", "all": "All projects", "mode": "Model knowledge",
-                "read": "Read", "language": "Language", "book": "Book", "chapter": "Chapter", "prev": "Previous", "next": "Next", "notes": "Notes", "nodrafts": "no drafts yet", "choose": "Choose a language", "status_word": "Status",
+                "read": "Read", "language": "Language", "book": "Book", "chapter": "Chapter", "prev": "Previous", "next": "Next", "notes": "Notes", "tests": "Test drafts", "test": "Test draft", "test_banner": "An experiment with the drafting method, kept for comparison: not the project's draft of this chapter.", "reports": "Reports", "tests_intro": "Chapters drafted to test the method (held-out books, variants of the tools). They are separate from the project's drafts and are never published as its text.", "nodrafts": "no drafts yet", "choose": "Choose a language", "status_word": "Status",
                 "v_std": "Text", "v_bhsa": "BHSA clauses", "v_hcl": "MACULA/UHB clauses", "v_none": "no clause layout for this chapter",
                 "n_bhsa": "Clause layout: ETCBC, BHSA 2021, licensed CC BY-NC 4.0. This view of our draft on that layout is CC BY-NC 4.0 too: non-commercial use only, with credit to the ETCBC.",
                 "n_hcl": "Clause layout: bcv-commons Hebrew clause layout v0.22 (MACULA Hebrew, UHB), CC BY-SA 4.0. This view of our draft on that layout is CC BY-SA 4.0."},
     "Standard German": {"projects": "Projekte", "status": "Stand", "memory": "Sprachgedächtnis", "credits": "Nachweise",
                         "chapters": "Kapitel", "draft": "Entwurf", "review": "in Prüfung", "published": "veröffentlicht",
                         "built": "Erstellt aus Commit", "all": "Alle Projekte", "mode": "Sprachkenntnis des Modells",
-                "read": "Lesen", "language": "Sprache", "book": "Buch", "chapter": "Kapitel", "prev": "Zurück", "next": "Weiter", "notes": "Anmerkungen", "nodrafts": "noch keine Entwürfe", "choose": "Sprache wählen", "status_word": "Stand",
+                "read": "Lesen", "language": "Sprache", "book": "Buch", "chapter": "Kapitel", "prev": "Zurück", "next": "Weiter", "notes": "Anmerkungen", "tests": "Testentwürfe", "test": "Testentwurf", "test_banner": "Ein Versuch mit der Arbeitsweise, zum Vergleich aufbewahrt: nicht der Entwurf des Projekts für dieses Kapitel.", "reports": "Berichte", "tests_intro": "Kapitel, die zum Prüfen der Arbeitsweise übersetzt wurden (zurückgehaltene Bücher, Varianten der Werkzeuge). Sie sind von den Entwürfen des Projekts getrennt und werden nie als sein Text veröffentlicht.", "nodrafts": "noch keine Entwürfe", "choose": "Sprache wählen", "status_word": "Stand",
                 "v_std": "Fliesstext", "v_bhsa": "BHSA-Sätze", "v_hcl": "MACULA/UHB-Sätze", "v_none": "für dieses Kapitel kein Satzlayout",
                 "n_bhsa": "Satzlayout: ETCBC, BHSA 2021, Lizenz CC BY-NC 4.0. Diese Darstellung unseres Entwurfs auf diesem Layout steht ebenfalls unter CC BY-NC 4.0: nur nicht kommerzielle Nutzung, mit Nennung des ETCBC.",
                 "n_hcl": "Satzlayout: bcv-commons Hebrew clause layout v0.22 (MACULA Hebrew, UHB), CC BY-SA 4.0. Diese Darstellung unseres Entwurfs auf diesem Layout steht unter CC BY-SA 4.0."},
     "Danish": {"projects": "Projekter", "status": "Status", "memory": "Sproghukommelse", "credits": "Kilder",
                "chapters": "kapitler", "draft": "udkast", "review": "til gennemsyn", "published": "udgivet",
                "built": "Bygget fra commit", "all": "Alle projekter", "mode": "Modellens kendskab",
-                "read": "Læs", "language": "Sprog", "book": "Bog", "chapter": "Kapitel", "prev": "Forrige", "next": "Næste", "notes": "Noter", "nodrafts": "ingen udkast endnu", "choose": "Vælg sprog", "status_word": "Status",
+                "read": "Læs", "language": "Sprog", "book": "Bog", "chapter": "Kapitel", "prev": "Forrige", "next": "Næste", "notes": "Noter", "tests": "Testudkast", "test": "Testudkast", "test_banner": "Et forsøg med arbejdsmetoden, gemt til sammenligning: ikke projektets udkast til dette kapitel.", "reports": "Rapporter", "tests_intro": "Kapitler oversat for at afprøve metoden (tilbageholdte bøger, varianter af værktøjerne). De er adskilt fra projektets udkast og udgives aldrig som dets tekst.", "nodrafts": "ingen udkast endnu", "choose": "Vælg sprog", "status_word": "Status",
                 "v_std": "Løbende tekst", "v_bhsa": "BHSA-sætninger", "v_hcl": "MACULA/UHB-sætninger", "v_none": "intet sætningslayout for dette kapitel",
                 "n_bhsa": "Sætningslayout: ETCBC, BHSA 2021, licens CC BY-NC 4.0. Denne visning af vores udkast på det layout er også CC BY-NC 4.0: kun ikke-kommerciel brug, med kreditering af ETCBC.",
                 "n_hcl": "Sætningslayout: bcv-commons Hebrew clause layout v0.22 (MACULA Hebrew, UHB), CC BY-SA 4.0. Denne visning af vores udkast på det layout er CC BY-SA 4.0."},
@@ -89,6 +89,7 @@ code { font-size:90%; } .path { font-family:ui-monospace,monospace; font-size:90
 .modes button.on { background:var(--accent-soft); border-color:var(--accent); color:var(--accent); }
 .modes button:disabled { opacity:.45; cursor:default; }
 .view[hidden] { display:none; }
+.banner .tm { background:var(--q-line); color:#1f2328; font-weight:700; padding:1px 8px; border-radius:4px; text-transform:uppercase; font-size:13px; letter-spacing:.04em; }
 .lic { background:var(--q); border:2px solid var(--q-line); border-radius:6px; padding:10px 14px; margin:0 0 14px; font-size:14px; font-weight:600; }
 .cls .l { padding-left:min(calc(var(--lv) * 1.6em), calc(var(--lv) * 3.5vw)); text-indent:-0.6em; margin:0 0 2px 0.6em; }
 .cls h2 { font-size:17px; margin:22px 0 6px; color:var(--muted); }
@@ -158,7 +159,9 @@ def build(out, built, preview=False):
         od = os.path.join(out, pname)
         os.makedirs(od)
         has_drafts = any(os.path.relpath(f, ROOT) in tracked for _, f, _ in rows)
+        has_tests = bool(test_drafts(pname, tracked))
         nav = lambda on: [(ui["read"], f"{pname}/read/index.html", on == "r")] * has_drafts + [
+                          (ui["tests"], f"{pname}/tests/index.html", on == "t")] * has_tests + [
                           (ui["status"], f"{pname}/index.html", on == "s"), (ui["memory"], f"{pname}/memory.html", on == "m"),
                           (ui["credits"], f"{pname}/credits.html", on == "c"), (ui["all"], "index.html", False)]
         first = re.match(r"([^\s.]+)\.\s*", draft_st)       # the statement's first word ("Draft.", "Udkast.")
@@ -207,6 +210,8 @@ def build(out, built, preview=False):
             h = h.replace("<body>", "<body>" + bar, 1).replace('<html lang="en">', f'<html lang="{lc}">', 1)
             open(mem, "w", encoding="utf-8").write(h)
         rd = reader(pname, p, tracked, od, ui, banner, built, nav, lc, rows)
+        if has_tests:
+            tests(pname, p, tracked, od, ui, banner, built, nav, lc)
         if rd:
             readers[pname] = rd
         counts = ", ".join(f"{n[k]} {ui[l]}" for k, l in (("draft", "draft"), ("in-review", "review"), ("published", "published")) if n[k])
@@ -233,6 +238,66 @@ def build(out, built, preview=False):
     open(os.path.join(out, "netlify.toml"), "w").write(NETLIFY)
     leak_test(out)
     print(f"{os.path.relpath(out, ROOT)}/: {len(cards)} projects, built from {built}")
+
+
+def test_drafts(pname, tracked):
+    """Test drafts: tracked chapter files under export/<project>/_eval/<…>-test/ (never _eval/local/), by folder."""
+    pre = f"export/{pname}/_eval/"
+    out = {}
+    for f in sorted(tracked):
+        m = re.fullmatch(re.escape(pre) + r"((?:[^/]+/)*[^/]*-test(?:/[^/]+)*)/([0-9a-z]{3})(\d{3})\.txt", f)
+        if m and not m[1].startswith("local"):
+            out.setdefault(m[1], []).append((m[2], int(m[3]), f))
+    return out
+
+
+def tests(pname, p, tracked, od, ui, banner, built, nav, lc):
+    """The project's test drafts, apart from its drafts: an index (folders, chapters, the reports in _eval/) and one
+    page per test chapter, each under a test banner. They are not in the reader's selectors (nav.js)."""
+    from books import BY_CODE
+    depth = pname.count("/") + 1
+    td = os.path.join(od, "tests")
+    os.makedirs(td, exist_ok=True)
+    tb = f'<span class="tm">{H.escape(ui["test"])}</span> {H.escape(ui["test_banner"])} ' + banner
+    pre = f"export/{pname}/_eval/"
+    reports = sorted(f for f in tracked if re.fullmatch(re.escape(pre) + r"[^/]+\.md", f))
+    items = []
+    for folder, chs in test_drafts(pname, tracked).items():
+        links = []
+        for code, n, f in sorted(chs, key=lambda x: (list(BY_CODE).index(x[0]), x[1])):
+            title, blocks, notes = parse_chapter(p, open(os.path.join(ROOT, f), encoding="utf-8").read(), "")
+            name = book_title(p, code, title)
+            slug = folder.replace("/", "_") + f"_{code}{n:03d}"
+            text = "".join(f"<h2>{h}</h2>" if k == "h" else f"<p>{h}</p>" for k, h in blocks)
+            nt = "".join(f'<p id="n{j}"><a class="k" href="#r{j}">{j}</a>{h}</p>' for j, h in enumerate(notes, 1))
+            nf = f[:-4] + "_notes.md"
+            extra = ""
+            if nf in tracked:
+                extra += f'<details class="notes"><summary><strong>{H.escape(ui["notes"])}</strong> ({H.escape(os.path.basename(nf))})</summary>' \
+                         + wiki.md_html(wiki.read_page(os.path.join(ROOT, nf))[1], os.path.basename(nf)) + "</details>"
+            rf = f"{pre}{code}{n:03d}_report.md"
+            if rf in tracked:
+                extra += f'<p><a href="{os.path.basename(rf)[:-3]}.html">{H.escape(ui["reports"])}: {H.escape(os.path.basename(rf))}</a></p>'
+            body = (f'<p class="muted"><a href="index.html">{H.escape(ui["tests"])}</a> · {H.escape(folder)}</p>'
+                    f'<h1>{H.escape(name)} {n} <span class="muted">({H.escape(ui["test"].lower())}, {H.escape(folder)})</span></h1>'
+                    f'<div class="text">{text}</div>'
+                    + (f'<div class="notes"><strong>{H.escape(ui["notes"])}</strong>{nt}</div>' if notes else "") + extra)
+            open(os.path.join(td, slug + ".html"), "w", encoding="utf-8").write(
+                page(f"{name} {n} ({ui['test'].lower()}) · {p.get('language_name')}", body, nav("t"), tb, built, depth + 1, ui, lc))
+            links.append(f'<a href="{slug}.html">{H.escape(name)} {n}</a>')
+        items.append(f'<li><strong>{H.escape(folder)}</strong><div class="chs">{"".join(links)}</div></li>')
+    reps = []
+    for f in reports:
+        b = os.path.basename(f)[:-3]
+        open(os.path.join(td, b + ".html"), "w", encoding="utf-8").write(page(
+            f"{b} · {p.get('language_name')}", f'<p class="muted"><a href="index.html">{H.escape(ui["tests"])}</a></p>'
+            + wiki.md_html(wiki.read_page(os.path.join(ROOT, f))[1], b + ".md"), nav("t"), tb, built, depth + 1, ui, lc))
+        reps.append(f'<li><a href="{b}.html">{H.escape(b)}</a></li>')
+    body = (f'<h1>{H.escape(p.get("language_name") or pname)}: {H.escape(ui["tests"])}</h1>'
+            f'<div class="lic">{H.escape(ui["tests_intro"])}</div><ul class="books">{"".join(items)}</ul>'
+            + (f'<h2>{H.escape(ui["reports"])}</h2><ul>{"".join(reps)}</ul>' if reps else ""))
+    open(os.path.join(td, "index.html"), "w", encoding="utf-8").write(
+        page(f"{p.get('language_name')}: {ui['tests']}", body, nav("t"), tb, built, depth + 1, ui, lc))
 
 
 NOTE = re.compile(r"\{([A-Z]):\s*(.*?)\}", re.S)

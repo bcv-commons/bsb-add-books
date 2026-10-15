@@ -1,0 +1,86 @@
+!!<Modenhed: Udkast>!!
+!!<Oversættelse: Maskinudkast fra grundteksten (orig/1mos011.txt), sammenholdt med Berean Standard Bible>!!
+!!<Eksegetisk bearbejdning: Endnu ikke sket>!!
+!!<Litterært tjek: Endnu ikke sket>!!
+!!<Dato for denne version: 09.10.2026>!!
+
+===1 Mosebog, kapitel 11===
+
+
+==Menneskene bygger en by og et tårn, og HERREN forvirrer deres sprog==
+
+v1 Hele jorden havde ét sprog og de samme ord.{T: Ordret: >>én læbe og ens ord<<. *śāfāh* >>læbe<<
+betyder her og i v. 6.7.9 >>sprog<<.} v2 Da de drog af sted mod øst,{T: Eller >>østfra<<. *miqqedem*
+kan betyde både >>mod øst<< og >>fra øst<<; jf. 2,8 og 13,11.} fandt de en slette i landet Sinear og
+bosatte sig der. v3 De sagde til hinanden: >>Kom, lad os forme teglsten og brænde dem godt!<<{T:
+Hebraisk har lydspil: *nilbᵊnāh lᵊbēnîm* >>lad os forme teglsten<<, *niśrᵊfāh liśrēfāh*, ordret
+>>lad os brænde dem til brænding<<, og i fortsættelsen *lᵊbēnāh* >>teglsten<< – *ʔāben* >>sten<< og
+*ḥēmār* >>asfalt<< – *ḥōmer* >>mørtel<<.} Teglstenene brugte de som sten, og asfalten brugte de som
+mørtel. v4 Og de sagde: >>Kom, lad os bygge os en by og et tårn med toppen i himlen,{T: Ordret: >>og
+dets hoved i himlen<<.} så vi kan skabe os et navn{E: *šēm* >>navn<< er måske et nøgleord i
+sammenhængen: menneskene vil selv skabe sig et navn, slægtsregistret i 11,10 begynder med *šēm*
+>>Sem<<, og i 12,2 er det Gud der lover Abram: >>jeg vil gøre dit navn stort<<.} og ikke bliver
+spredt ud over hele jorden.<<
+
+v5 Men HERREN steg ned for at se byen og tårnet som menneskene byggede. v6 Og HERREN sagde: >>Se, de
+er ét folk, og de har alle ét sprog, og dette er kun begyndelsen på hvad de vil gøre.{T: Ordret:
+>>og dette er deres begyndelse til at gøre<<.} Nu vil intet af det de sætter sig for at gøre, være
+umuligt for dem. v7 Kom, lad os stige ned{E: Gud gentager menneskenes >>Kom, lad os …<< fra v. 3-4
+(*hāḇāh*), nu som modtræk. Flertallet forstås som i 1,26 og 3,22: som Guds tale til sit himmelske
+råd, som et overvejelsesflertal eller i kirkens tradition som en antydning af treenigheden. Der
+ligger måske også ironi i at tårnet >>med toppen i himlen<< er så lille at HERREN må stige ned for
+at se det (v. 5).} og forvirre deres sprog dér,{T: *nābᵊlāh* >>lad os forvirre<< har de samme lyde
+som menneskenes *nilbᵊnāh* >>lad os forme teglsten<< (v. 3), blot med *b* og *l* i omvendt
+rækkefølge, og forbereder navnet Babel i v. 9.} så de ikke forstår hinandens sprog.<<
+
+v8 Så spredte HERREN dem derfra ud over hele jorden, og de holdt op med at bygge byen. v9 Derfor
+kaldte man den Babel,{T: Navnet *bābel* forbindes her med verbet *bālal* >>blande sammen,
+forvirre<<: >>for dér forvirrede (*bālal*) HERREN …<<. Babylonierne selv forstod navnet som
+>>gudernes port<< (*bāb-ili*); den hebraiske forklaring gør det til >>forvirring<<.} for dér
+forvirrede HERREN hele jordens sprog, og derfra spredte HERREN dem ud over hele jorden.
+
+==Sems slægt føres frem til Tera og hans sønner==
+
+v10 Dette er Sems slægtshistorie.{H: Luk 3,34-36.} Da Sem var 100 år, blev han far til Arpaksad,{T:
+Ordret: >>avlede han Arpaksad<<. Udtrykket kan også bruges om en fjernere efterkommer, jf. 5,6.} to
+år efter syndfloden. v11 Efter at Sem var blevet far til Arpaksad, levede han 500 år, og han fik
+sønner og døtre.
+
+v12 Da Arpaksad var 35 år, blev han far til Shela.{E: Den græske oversættelse (LXX) har her et
+ekstra led: Arpaksad bliver far til Kainan, og Kainan til Shela; det følger Luk 3,36. LXX har
+desuden 100 år mere før fødslen for de fleste led i registret. Udkastet følger den hebraiske tekst.}
+v13 Efter at Arpaksad var blevet far til Shela, levede han 403 år, og han fik sønner og døtre.
+
+v14 Da Shela var 30 år, blev han far til Eber. v15 Efter at Shela var blevet far til Eber, levede
+han 403 år, og han fik sønner og døtre.
+
+v16 Da Eber var 34 år, blev han far til Peleg. v17 Efter at Eber var blevet far til Peleg, levede
+han 430 år, og han fik sønner og døtre.
+
+v18 Da Peleg var 30 år, blev han far til Re'u. v19 Efter at Peleg var blevet far til Re'u, levede
+han 209 år, og han fik sønner og døtre.
+
+v20 Da Re'u var 32 år, blev han far til Serug. v21 Efter at Re'u var blevet far til Serug, levede
+han 207 år, og han fik sønner og døtre.
+
+v22 Da Serug var 30 år, blev han far til Nahor. v23 Efter at Serug var blevet far til Nahor, levede
+han 200 år, og han fik sønner og døtre.
+
+v24 Da Nahor var 29 år, blev han far til Tera. v25 Efter at Nahor var blevet far til Tera, levede
+han 119 år, og han fik sønner og døtre.
+
+v26 Da Tera var 70 år, blev han far til Abram, Nahor og Haran.
+
+==Tera drager med sin familie fra Ur i Kaldæa til Karan==
+
+v27 Dette er Teras slægtshistorie. Tera fik sønnerne Abram, Nahor og Haran, og Haran fik sønnen Lot.
+v28 Haran døde mens hans far Tera endnu levede,{N: Ansigt} i sit fødeland, i Ur i Kaldæa. v29 Abram
+og Nahor tog sig hustruer. Abrams hustru hed Saraj, og Nahors hustru hed Milka; hun var datter af
+Haran, som var far til Milka og Jiska. v30 Men Saraj var ufrugtbar; hun havde intet barn.{E:
+Bemærkningen står som en skarp kontrast lige efter et langt register af fødsler og forbereder løftet
+om afkom til Abram (12,2; 15,2-5); jf. Hebr 11,11.}
+
+v31 Tera tog sin søn Abram, sin sønnesøn Lot, Harans søn, og sin svigerdatter Saraj, sin søn Abrams
+hustru, og de drog sammen ud af Ur i Kaldæa for at gå til Kana'ans land. Men da de kom til Karan,{T:
+Byen *ḥārān* staves med en anden begyndelseskonsonant end Abrams bror *hārān* (v. 26-31); bynavnet
+gengives Karan som i Es 37,12.} slog de sig ned der. v32 Tera blev 205 år, og han døde i Karan.

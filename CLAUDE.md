@@ -85,6 +85,8 @@ working; this file adds the rules that hold for any task here.
 - **Quarantine is required for non-free text.** A book that a non-free style edition has
   (`import/non-free/`) is drafted only in quarantine: `python3 scripts/quarantine.py <project> <code>`
   moves its files out of the edition's `text/` and lists the book; `make_prompt.py` refuses otherwise.
+  A chapter the edition doesn't have needs none (Kuni Genesis 31–50 beside the edition's 1–30; `--chapter N`
+  checks it); without the edition's text here, the whole-book rule holds.
   A public-domain edition never needs it; an attributable one (CC BY, CC BY-SA) only with
   `quarantine_attributable: true`. Draft with fresh agents, not forks (`docs/workflow.md`).
 - **The shoresh API** (`https://shoresh.qombi.com`) rejects Python's default User-Agent (403);

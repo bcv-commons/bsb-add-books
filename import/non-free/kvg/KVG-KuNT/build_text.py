@@ -5,8 +5,10 @@
   '===Book, chapter N===', '==heading==', inline 'vN' markers, cross references as {H: …}.
   The text is normalised to NFC (the SFM files are NFD), so that words can be counted and matched.
 - glossary.tsv: the glossary book (A9GLO) as term, English equivalent, explanation (Kuni).
-- --ot: Ruth and Jonah, which this NT copy doesn't have, from eBible's edition 'kvg' (the same
-  translation, © 2015 Wycliffe Switzerland, an older state than source/), into text/<code>NNN.txt.
+- OT books in source/ (since 2026-10-15: Genesis 1-30, Ruth, Jonah, newer than eBible's) are renumbered to the
+  Hebrew verses (repo rule, orig/vrs).
+- --ot: Ruth and Jonah from eBible's edition 'kvg' (the same translation, © 2015 Wycliffe Switzerland, an
+  older state), into text/<code>NNN.txt, only where source/ doesn't have them.
   (Until 2026-10-14 they were held out in holdout/ as the test set of the Ruth drafting test.) The
   eBible NT is compared with source/ and the number of differing verses reported.
 - Without source/ (a fresh clone: the working copy is not in git), the whole text and the glossary
@@ -109,6 +111,9 @@ def main():
         local[code] = verses(usfm)
         total += n
     print(f"text/: {total} chapters of {len(local)} books")
+    for code in sorted(local):
+        if BY_CODE[code][2] == "ot":
+            hebrew_numbering(text_dir, code)
 
     if "--ot" in sys.argv:
         from fetch_edition import get, EBIBLE, DL
@@ -119,7 +124,7 @@ def main():
                 continue
             usfm = z.read(n).decode("utf-8-sig")
             code = (book_of(usfm) or "").lower()
-            if code in ("rut", "jon"):
+            if code in ("rut", "jon") and code not in local:
                 _, k = write_chapters(usfm, text_dir, "Kuni (eBible kvg)", EBIBLE_SOURCE)
                 print(f"text/: {code} {k} chapters (eBible)")
             elif code in local:
@@ -130,7 +135,8 @@ def main():
                         diff += ev[key] != t
         print(f"eBible NT against source/: {same} verses the same, {diff} different")
         for code in ("rut", "jon"):
-            hebrew_numbering(text_dir, code)
+            if code not in local:
+                hebrew_numbering(text_dir, code)
 
 
 def ebible_zip():

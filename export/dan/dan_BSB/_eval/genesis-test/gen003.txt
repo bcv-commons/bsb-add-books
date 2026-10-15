@@ -1,0 +1,138 @@
+!!<Modenhed: Udkast>!!
+!!<Oversættelse: Maskinudkast fra grundteksten (orig/1mos003.txt), sammenholdt med Berean Standard Bible>!!
+!!<Eksegetisk bearbejdning: Endnu ikke sket>!!
+!!<Litterært tjek: Endnu ikke sket>!!
+!!<Dato for denne version: 09.10.2026>!!
+
+===1 Mosebog, kapitel 3===
+
+
+==Slangen frister kvinden, og hun og manden spiser af træet==
+
+v1 Slangen var snedigere{T: Det hebraiske *ʕārûm* >>snedig, klog<< lyder næsten som *ʕărûmmîm*
+>>nøgne<< i 2,25 og *ʕêrōm* >>nøgen<< i v. 7.10.11; ordspillet kan ikke gengives på dansk.} end alle
+markens vilde dyr som Gud HERREN havde gjort. Den sagde til kvinden: >>Har Gud virkelig sagt at I
+ikke må spise af nogen af havens træer?<< v2 Kvinden svarede slangen: >>Vi må gerne spise af frugten
+fra havens træer, v3 men om frugten fra det træ som står midt i haven, har Gud sagt: I må ikke spise
+af det, og I må ikke røre ved det, for så skal I dø.<< v4 Men slangen sagde til kvinden: >>I skal
+slet ikke dø! v5 For Gud ved at den dag I spiser af det, bliver jeres øjne åbnet, og I bliver som
+Gud{T: Eller >>som guder<<. *ʔĕlōhîm* kan her forstås både som ental og som flertal.} og kender godt
+og ondt.<<
+
+v6 Kvinden så at træet var godt at spise af, at det var en lyst for øjnene, og at træet var
+tiltrækkende fordi det kunne give indsigt. Så tog hun af dets frugt og spiste, og hun gav også noget
+til sin mand, som var sammen med hende, og han spiste. v7 Da blev øjnene åbnet på dem begge, og de
+forstod at de var nøgne. De syede figenblade sammen og lavede sig lændeklæder.
+
+==Gud HERREN kalder mennesket og kvinden til regnskab==
+
+v8 Da hørte de lyden af Gud HERREN, der gik omkring i haven i den kølige dagbrise,{T: Ordret: >>ved
+dagens vind<<, dvs. sandsynligvis den svale vind sidst på dagen.}{E: Verbet *hithallēk* >>gå
+omkring, vandre<< bruges senere om Guds nærvær i lejren og helligdommen (3 Mos 26,12; 5 Mos 23,15; 2
+Sam 7,6-7). Haven fremstilles måske derfor som et sted hvor Gud færdes blandt mennesker.} og
+mennesket og hans hustru gemte sig for Gud HERREN{N: Ansigt} mellem havens træer. v9 Men Gud HERREN
+kaldte på mennesket og sagde til ham: >>Hvor er du?<<
+
+v10 Han svarede: >>Jeg hørte dig i haven, og jeg blev bange fordi jeg er nøgen, og så gemte jeg
+mig.<<
+
+v11 Han sagde: >>Hvem har fortalt dig at du er nøgen? Har du spist af det træ som jeg befalede dig
+ikke at spise af?<<
+
+v12 Mennesket svarede: >>Kvinden som du gav mig til at være hos mig, hun gav mig af træet, og jeg
+spiste.<<
+
+v13 Så sagde Gud HERREN til kvinden: >>Hvad er det du har gjort?<< Kvinden svarede: >>Slangen bedrog
+mig, og jeg spiste.<<
+
+==Gud HERREN udtaler dom over slangen, kvinden og mennesket==
+
+v14 Så sagde Gud HERREN til slangen:
+
+//1 >>Fordi du har gjort dette,
+
+//2 er du forbandet blandt alt kvæget
+
+//2 og blandt alle markens vilde dyr.
+
+//1 På din bug skal du krybe,
+
+//2 og støv skal du æde
+
+//2 alle dit livs dage.
+
+//1 v15 Jeg sætter fjendskab mellem dig og kvinden,
+
+//2 mellem dit afkom og hendes afkom.
+
+//1 Han{E: Pronominet *hûʔ* >>han<< retter sig grammatisk efter *zeraʕ* >>afkom<<, som både kan
+være kollektivt og betegne en enkelt efterkommer. Fra oldkirken (Irenæus) er verset læst som det
+første løfte om Kristus, >>protevangeliet<<, der knuser slangen; jf. Rom 16,20 og Åb 12,9.17. I
+selve teksten er sejren antydet ved forskellen på hoved og hæl.} skal knuse dit hoved,
+
+//2 og du skal hugge ham i hælen.{T: Det samme verbum *šûf* bruges begge steder; ordret evt.
+>>Han skal ramme dit hoved, og du skal ramme hans hæl<<. Verbets præcise betydning (>>knuse<< eller
+>>snappe efter<<) er usikker.}<<
+
+v16 Til kvinden sagde han:
+
+//1 >>Jeg vil gøre dine smerter ved graviditeten meget store,
+
+//2 med smerte skal du føde børn.
+
+//1 Din længsel skal være efter din mand,{T: Ordet *tᵊšûqāh* >>længsel, attrå<< findes kun
+her, i 4,7 og Højs 7,11. Ud fra 4,7 forstår nogle det som et ønske om at beherske: >>Du skal ville
+herske over din mand, men han skal herske over dig<<.}
+
+//2 og han skal herske over dig.<<
+
+v17 Og til Adam{T: Eller >>mennesket<<. Masoreterne har her og i 3,21 punkteret *lᵊʔādām* uden
+artikel, så ordet læses som egennavn (jf. 2,20). Ellers i kapitlet står *hā-ʔādām* >>mennesket<<.}
+sagde han:
+
+//1 >>Fordi du lyttede til din hustrus ord
+
+//2 og spiste af det træ
+
+//2 som jeg befalede dig ikke at spise af,
+
+//1 skal agerjorden være forbandet for din skyld.
+
+//2 Med møje{T: Samme ord *ʕiṣṣāḇôn* som >>smerter<< i v. 16.} skal du spise af den
+
+//2 alle dit livs dage.
+
+//1 v18 Torne og tidsler skal den lade vokse frem for dig,
+
+//2 og du skal spise markens urter.
+
+//1 v19 I dit ansigts sved skal du spise brød,
+
+//2 indtil du vender tilbage til agerjorden,{T: Hebraisk ordspil: *ʔādām* >>menneske<< –
+*ʔădāmāh* >>agerjord<<, jf. 2,7.}
+
+//2 for af den er du taget.
+
+//1 For støv er du,
+
+//2 og til støv skal du vende tilbage.<<
+
+v20 Mennesket gav sin hustru navnet Eva,{T: Det hebraiske navn *ḥawwāh* lyder som ordet for >>liv,
+levende<< (*ḥay*); navnet kan forstås som >>den levende<< eller >>hun der giver liv<<. Den danske
+form Eva følger den græske og latinske tradition, jf. 2 Kor 11,3 og 1 Tim 2,13.} for hun blev mor
+til alle levende.
+
+==Gud HERREN klæder dem og driver dem ud af Edens have==
+
+v21 Gud HERREN lavede kjortler af skind til Adam{T: Eller >>mennesket<<; se note til v. 17.} og hans
+hustru og klædte dem i dem.
+
+v22 Gud HERREN sagde: >>Se, mennesket er blevet som en af os{E: Flertallet >>en af os<< (jf. 1,26 og
+11,7) forstås forskelligt: som Guds tale til sit himmelske råd (jf. 1 Kong 22,19; Job 1,6), som et
+overvejelsesflertal eller i kirkens tradition som en antydning af treenigheden.} og kender godt og
+ondt. Nu må han ikke række hånden ud og også tage af livets træ og spise og leve evigt!<< v23 Så
+sendte Gud HERREN ham bort fra Edens have for at han skulle dyrke agerjorden som han var taget fra.
+v24 Han drev mennesket ud, og øst for Edens have satte han keruberne og det flammende sværd, der
+svingede frem og tilbage, for at vogte vejen til livets træ.{E: Verbet *šākan* >>lade bo, anbringe<<
+og verbet *šāmar* >>vogte<< (som i 2,15) peger frem mod helligdommen, hvor keruber er udskåret på
+forhænget og står over arken (2 Mos 25,18-22; 26,31), og hvor indgangen vender mod øst.}

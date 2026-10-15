@@ -1,0 +1,105 @@
+!!<Modenhed: Udkast>!!
+!!<Oversættelse: Maskinudkast fra grundteksten (orig/1mos001.txt), sammenholdt med Berean Standard Bible>!!
+!!<Eksegetisk bearbejdning: Endnu ikke sket>!!
+!!<Litterært tjek: Endnu ikke sket>!!
+!!<Dato for denne version: 09.10.2026>!!
+
+===1 Mosebog, kapitel 1===
+
+
+==Gud skaber himlen og jorden==
+
+v1 I begyndelsen{T: Eller: >>Da Gud begyndte at skabe himlen og jorden, var jorden …<<.} skabte Gud
+himlen og jorden. v2 Jorden var gold og øde,{E: Ordparret *tōhû wāvōhû* betegner noget formløst og
+tomt, endnu uden orden og liv; det genkommer i Jer 4,23 som billede på skabelsen der går i
+opløsning. Resten af kapitlet kan læses som Guds svar på begge dele: de første tre dage giver orden,
+de næste tre fylder.} der var mørke over urdybet, og Guds ånd{E: *rûₐḥ ʔᵊlōhîm* kan også forstås som
+>>Guds vind<< eller, med *ʔᵊlōhîm* som forstærkende, >>en vældig storm<<. Verbet *mᵊraḥefet* bruges
+i 5 Mos 32,11 om ørnen der svæver over sine unger, og taler snarest for en personlig, omsorgsfuld
+nærværen.} svævede over vandene.
+
+
+==Den første dag skaber Gud lyset==
+
+v3 Gud sagde: >>Der skal være lys!<< Og der blev lys. v4 Gud så at lyset var godt, og Gud skilte
+lyset fra mørket. v5 Gud kaldte lyset dag, og mørket kaldte han nat. Det blev aften, og det blev
+morgen – første dag.{T: Ordret: >>dag én<<.}
+
+
+==Den anden dag skiller Gud vandene med en hvælving==
+
+v6 Gud sagde: >>Der skal være en hvælving{T: Hebraisk *rāqîaʕ* er afledt af et verbum der betyder
+>>hamre ud, udbrede<<; der tænkes på himlen som en udspændt flade, jf. Es 40,22 og Job 37,18.} midt
+i vandene, og den skal skille vand fra vand.<< v7 Så gjorde Gud hvælvingen og skilte vandet under
+hvælvingen fra vandet over hvælvingen. Og sådan skete det. v8 Gud kaldte hvælvingen himmel. Det blev
+aften, og det blev morgen – anden dag.
+
+
+==Den tredje dag kommer det tørre land og planterne frem==
+
+v9 Gud sagde: >>Vandet under himlen skal samles på ét sted, så det tørre land kommer til syne.<< Og
+sådan skete det. v10 Gud kaldte det tørre land jord, og vandet der var samlet, kaldte han hav. Gud
+så at det var godt.
+
+v11 Gud sagde: >>Jorden skal lade grønt spire frem: planter der sætter frø, og frugttræer på jorden
+der bærer frugt med frø i, hver efter sin art.<< Og sådan skete det. v12 Jorden frembragte grønt:
+planter der sætter frø efter deres art, og træer der bærer frugt med frø i, efter deres art. Gud så
+at det var godt. v13 Det blev aften, og det blev morgen – tredje dag.
+
+
+==Den fjerde dag sætter Gud lys på himlen==
+
+v14 Gud sagde: >>Der skal være lys på himmelhvælvingen til at skille dagen fra natten. De skal være
+tegn og fastsætte festtider,{T: Ordret: >>være til tegn og til faste tider og til dage og år<<.
+Ordet *môʕᵃdîm* bruges ellers om de faste festtider, jf. Sl 104,19.} dage og år. v15 De skal være
+lys på himmelhvælvingen og lyse på jorden.<< Og sådan skete det. v16 Gud gjorde de to store lys, det
+største lys til herredømme om dagen og det mindste lys til herredømme om natten,{E: Sol og måne
+nævnes ikke ved navn (*šemeš*, *yārēₐḥ*), men kun som >>det store<< og >>det lille lys<<; måske for
+at understrege at de er skabte lamper med en tildelt opgave og ikke guddomme.} og stjernerne.
+v17 Gud satte dem på himmelhvælvingen for at lyse på jorden, v18 for at herske om dagen og om natten
+og for at skille lyset fra mørket. Gud så at det var godt. v19 Det blev aften, og det blev morgen –
+fjerde dag.
+
+
+==Den femte dag skaber Gud dyrene i vandet og fuglene==
+
+v20 Gud sagde: >>Vandet skal vrimle med levende væsener, og fugle skal flyve over jorden, oppe under
+himmelhvælvingen.<< v21 Så skabte Gud de store havdyr{T: Hebraisk *tannînim*, også >>havuhyrer<<,
+jf. Sl 74,13.} og alle de levende væsener der rører sig, som vandet vrimler med, efter deres art, og
+alle vingede fugle efter deres art. Gud så at det var godt. v22 Gud velsignede dem og sagde: >>Vær
+frugtbare og bliv mange, og fyld vandet i havene, og fuglene skal blive mange på jorden.<< v23 Det
+blev aften, og det blev morgen – femte dag.
+
+
+==Den sjette dag skaber Gud landdyrene==
+
+v24 Gud sagde: >>Jorden skal frembringe levende væsener efter deres art: kvæg, krybdyr og vilde dyr,
+hver efter sin art.<< Og sådan skete det. v25 Gud gjorde de vilde dyr efter deres art, kvæget efter
+dets art og alle krybdyr på jorden efter deres art. Gud så at det var godt.
+
+
+==Gud skaber mennesket i sit billede==
+
+v26 Gud sagde: >>Lad os{E: Flertallet >>lad os<< er tolket på flere måder: som en tale til det
+himmelske råd (jf. 1 Kong 22,19; Es 6,8), som et majestætsflertal, eller som en selvopfordring.
+Kirkens tolkning har set det som et tidligt spor af den treenige Gud. Teksten selv fastholder i v.
+27 at det er Gud alene der skaber.} gøre mennesker i vores billede, i lighed med os. De skal herske
+over fiskene i havet og fuglene under himlen, over kvæget og over hele jorden og over alle krybdyr
+der kryber på jorden.<<
+
+//1 v27 Så skabte Gud mennesket i sit billede,
+
+//2 i Guds billede skabte han det,{T: Eller: >>ham<<.}
+
+//3 som mand og kvinde skabte han dem.{H: Matt 19,4. Mark 10,6.}
+
+v28 Gud velsignede dem, og Gud sagde til dem: >>Vær frugtbare og bliv mange, fyld jorden og underlæg
+jer den. Hersk over fiskene i havet og fuglene under himlen og over alle de dyr der rører sig på
+jorden.<<
+
+v29 Gud sagde: >>Se, jeg giver jer alle planter der sætter frø, på hele jordens overflade, og alle
+træer der bærer frugt med frø i. De skal være jeres føde. v30 Og alle jordens vilde dyr, alle
+himlens fugle og alt hvad der kryber på jorden, alt der har liv i sig, giver jeg alle grønne planter
+som føde.<< Og sådan skete det. v31 Gud så alt hvad han havde gjort, og se, det var meget godt. Det
+blev aften, og det blev morgen – den sjette dag.{T: Kun her og ved den syvende dag (2,3) har
+hebraisk bestemt artikel: >>den sjette dag<<.}
