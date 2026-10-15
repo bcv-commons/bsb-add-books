@@ -5,3 +5,6 @@ date	chapter	familiarity	tokens	calls	minutes	note
 2026-10-15	gen018	known	197286	40	13.9	test B: tagged with clause packages (quarantine; draft in _eval/local)
 2026-10-15	gen028	known	184577	30	6.4	test A2: alignment at the end, repeat (quarantine; draft in _eval/local)
 2026-10-15	gen028	known	219093	45	8.7	test B2: tagged, repeat with the same package (quarantine; draft in _eval/local)
+2026-10-15	gen028	known	245671	47	9.5	test B3: tagged with packages v2 (senses, speakers per line; quarantine; draft in _eval/local)
+2026-10-15	gen028	known	178969	35	7.1	test B4: tagged with the lean known-level package (quarantine; draft in _eval/local)
+2026-10-15	gen028	known	188429	41	7.5	test B5: tagged, lean package with function-word glosses (quarantine; draft in _eval/local)

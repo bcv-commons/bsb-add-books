@@ -27,6 +27,8 @@ import/non-free/*/*/*
 !import/non-free/*/*/fetch.lock.json
 
 # Drafts of chapters that a published translation already covers: kept locally, never in git
+# a quarantine moves an edition's text aside (scripts/quarantine.py): the text never goes into git, in any licence folder
+import/**/quarantined/
 export/**/quarantine/
 # Generated files that print corpus verses (docs/licensing.md): local only, rebuilt at will
 export/**/_learn/packs/

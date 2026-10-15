@@ -13,8 +13,13 @@ Per clause line:
           and for an NT-only language how the NT renders them (Hebrew -> LXX Greek -> the NT's words)
 Writes export/<project>/_learn/packs/<code>NNN.pkg.md (git-ignored, like the verse packs).
 
-Levels by the project's mode (scripts/modes.py): known -> tokens, BSB, the project's renderings and decisions;
-partial -> the same; unknown -> also the NT renderings through the LXX bridge.
+Levels by the project's mode (scripts/modes.py):
+  known    lean: the line header, each token's number and Hebrew word (a function word with its gloss), and `had:`
+           (the project's renderings and the store's decisions); no content-word glosses, morphology, referents, BSB
+           words or speech marks. Measured on Danish Gen 28:
+           the fuller packages changed neither chrF nor the alignment against the lean need (the numbers, for tagging)
+  partial  the full package: glosses, verb forms, referents, BSB words, speech, `had:`
+  unknown  the full package, and the NT's words through the LXX bridge
 
     python3 scripts/package.py <project> <code> <ch> [--level known|partial|unknown] [--out FILE]
 """
@@ -133,6 +138,7 @@ def morph(t):
 def build(pname, code, ch, level=None):
     p = project(pname)
     level = level or p.get("familiarity") or "known"
+    lean = level == "known"
     if not os.path.exists(HEB):
         raise SystemExit("no orig/heb.sqlite: python3 scripts/setup.py --only src (the prepared structures; seconds)")
     con = sqlite3.connect(HEB)
@@ -166,8 +172,10 @@ def build(pname, code, ch, level=None):
         return f"{(t['english'] or t['gloss'] or '').replace(' ', '_')}{('(' + str(t['n']) + ('' if t['v'] == cur_v else ' v' + str(t['v'])) + ')') if here else ''}"
 
     out = [f"# {book} {ch}: clause packages ({lay} layout, level {level}). Write your words with these numbers: word^n.",
-           "# Per line: §verse.line L(level) rule / tokens: n Hebrew gloss [morph; ref=referent] / BSB words^n /"
-           " had: this project's renderings (count), store decisions, the NT's words (unknown languages)", ""]
+           ("# Per line: §verse.line L(level) rule / tokens: n Hebrew (function words with a gloss) / had: this "
+            "project's renderings (count) and the store's decisions" if lean else
+            "# Per line: §verse.line L(level) rule / tokens: n Hebrew gloss [morph; ref=referent] / BSB words^n /"
+            " had: this project's renderings (count), store decisions, the NT's words (unknown languages)"), ""]
     lines = collections.OrderedDict()
     for t in toks:
         if t["n"] is None:
@@ -194,13 +202,19 @@ def build(pname, code, ch, level=None):
         k += 1
         lev = line_of.get(group[0]["key"], (None, None))[1]
         cl = con.execute("select rule from nodes where id=?", (group[0]["clause"] or group[-1]["clause"],)).fetchone()
-        out.append((f"§{v}.{k} L{'' if lev is None else lev} {cl['rule'] if cl and cl['rule'] else ''}".rstrip()) + speaking(group))
+        out.append((f"§{v}.{k} L{'' if lev is None else lev} {cl['rule'] if cl and cl['rule'] else ''}".rstrip())
+                   + ("" if lean else speaking(group)))
         cells, seen_n = [], set()
         for t in group:
             if t["n"] in seen_n:  # a fused token: one number
                 continue
             seen_n.add(t["n"])
             heb = POINTS.sub("", "".join(x["text"] for x in group if x["n"] == t["n"]))
+            if lean:  # known language: the number and the word are what tagging needs; a function word also its
+                # gloss, which helps to place it (B4: function words 88% linked without, 95-99% with full glosses)
+                gl = (t["english"] or t["gloss"] or "").replace(" ", "_") if t["kind"] == "f" else ""
+                cells.append(f"{t['n']} {heb}" + (f" {gl}" if gl else ""))
+                continue
             gl = (t["english"] or t["gloss"] or "").replace(" ", "_")
             extra = [m] if (m := morph(t)) else []
             refs = [r[0] for r in con.execute("select target from refs where key=? and kind in ('participantref','subjref')", (t["key"],))]
@@ -215,7 +229,7 @@ def build(pname, code, ch, level=None):
             b = con.execute("select positions from bsb where key=?", (t["key"],)).fetchone()
             for x in (b[0].split() if b else []):
                 pos[int(x)].add(t["n"])
-        if pos:
+        if pos and not lean:
             bt = bsb_tokens(v)
             words, last = [], None
             for i in sorted(pos):

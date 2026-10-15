@@ -196,6 +196,8 @@ def check(pname, only=None, quiet=False, ch=None):
     """Problems (an ordinal or a position out of range) and warnings (a chapter without alignment, or stale: the
     draft changed since; rerun scripts/bridge_align.py or the agent's alignment step)."""
     problems, warns, tot = [], [], {"c": [0, 0], "f": [0, 0], "t": [0, 0]}
+    shared = 0  # function links whose words a content link also claims: a sign of over-linking (and with וַ -> the verb),
+    # though some is right (a Danish article written as an ending renders noun and הַ alike)
     for code, ch, draft, ap in chapters(pname, only, ch):
         name = os.path.relpath(ap, ROOT)
         if not os.path.exists(ap):
@@ -223,12 +225,16 @@ def check(pname, only=None, quiet=False, ch=None):
                 bad = [i for i in ids if i >= ntok]
                 if bad:
                     problems.append(f"{name}: {ref}: target position {bad[0]} out of range ({ntok} tokens)")
+            content = {i for ids in M.values() for i in ids}
+            shared += sum(1 for ids in F.values() if ids and all(i in content for i in ids))
             tot["c"][0] += len(M); tot["c"][1] += nc
             tot["f"][0] += len(F); tot["f"][1] += nf
             tot["t"][0] += len({i for ids in list(M.values()) + list(F.values()) for i in ids}); tot["t"][1] += ntok
     if not quiet:
         pc = lambda k: f"{tot[k][0]}/{tot[k][1]} ({100 * tot[k][0] / max(tot[k][1], 1):.0f}%)"
-        print(f"{pname}: content tokens linked {pc('c')}, function tokens {pc('f')}, draft tokens covered {pc('t')}; "
+        print(f"{pname}: content tokens linked {pc('c')}, function tokens {pc('f')} ({100 * shared / max(tot['f'][0], 1):.0f}% "
+              "on a content word's words: compare within a language; high where affixes render them, else over-linking), "
+              f"draft tokens covered {pc('t')}; "
               + (f"{len(problems)} problems" if problems else "ok") + (f", {len(warns)} warnings" if warns else ""))
         for p in problems[:30] + [f"warn {w}" for w in warns[:30]]:
             print("  " + p)
@@ -434,6 +440,11 @@ def prompt(pname, code, ch):
                                                            "draft text is final): run", "Run").replace("your draft's", "the draft's"))
 
 
+TAGGED_SOURCE_LEAN = """
+- `export/{project}/_learn/packs/{code}{nnn}.pkg.md`: the **clause packages**, one block per Hebrew clause line in
+  the order of `{orig}`: each token with its number (`7 וַ and · 8 יְהִי`; function words with a gloss), and under `had:` what this project wrote
+  before for those words and the store's decisions. The numbers are what you tag your words with."""
+
 TAGGED_SOURCE = """
 - `export/{project}/_learn/packs/{code}{nnn}.pkg.md`: the **clause packages**, one block per Hebrew clause line in
   the order of `{orig}`: each token with its number (`7 וַ and · 8 יְהִי there_was [q.wyq.3ms]`), gloss, verb form and
@@ -459,7 +470,9 @@ TAGGED_SPLIT = (", then `python3 scripts/full_align.py split {project} {code} {c
 def tagged_fields(pname, code, ch, orig):
     nnn = f"{ch:03d}"
     f = dict(project=pname, code=code, nnn=nnn, chapter=ch, orig=orig)
-    return {"package_line": TAGGED_SOURCE.format(**f), "tagged_first": TAGGED_WRITE.format(**f),
+    from project import project
+    lean = (project(pname).get("familiarity") or "known") == "known"
+    return {"package_line": (TAGGED_SOURCE_LEAN if lean else TAGGED_SOURCE).format(**f), "tagged_first": TAGGED_WRITE.format(**f),
             "tagged_split": TAGGED_SPLIT.format(**f), "draft_ext": "tagged", "align_step": ""}
 
 
