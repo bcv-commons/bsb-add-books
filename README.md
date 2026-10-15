@@ -85,7 +85,7 @@ After cloning:
 3. **Check a project:** `python3 scripts/modes.py <project>` (its mode and what it switches on) and
    `python3 scripts/check_project.py <project>` (drafts, store, wiki, quotations, status).
 4. **Draft a chapter:** `python3 scripts/verse_pack.py` and, for an OT chapter, `python3 scripts/package.py <project>
-   <code> <chapter>` (the clause packages, from `orig/heb.sqlite`: `python3 scripts/src.py build` once); then
+   <code> <chapter>` (the clause packages, from `orig/heb.sqlite`, which `setup.py` fetches); then
    `python3 scripts/make_prompt.py <project> <code> <chapter>` prints the prompt for a fresh agent, who writes the
    draft tagged with the Hebrew token numbers (`scripts/full_align.py split` makes the draft and its word alignment).
    `docs/workflow.md` gives the way of working.

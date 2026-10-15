@@ -134,7 +134,7 @@ def build(pname, code, ch, level=None):
     p = project(pname)
     level = level or p.get("familiarity") or "known"
     if not os.path.exists(HEB):
-        raise SystemExit("no orig/heb.sqlite: python3 scripts/src.py build (the prepared Hebrew structure; once)")
+        raise SystemExit("no orig/heb.sqlite: python3 scripts/setup.py --only src (the prepared structures; seconds)")
     con = sqlite3.connect(HEB)
     con.row_factory = sqlite3.Row
     book = code.upper()

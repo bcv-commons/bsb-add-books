@@ -29,7 +29,7 @@ The full way of working is `docs/workflow.md`; this is the procedure.
      mode sets (`memory`, `dialect` or `full`; `python3 scripts/modes.py <project>`). The prompt points the agent to it,
      and its rules apply only when the pack exists;
    - for an OT chapter, `python3 scripts/package.py <project> <code> <chapter>` builds the clause packages (it needs
-     `orig/heb.sqlite`: `python3 scripts/src.py build` once; for an unknown language with an NT, the occurrence index
+     `orig/heb.sqlite`, which `python3 scripts/setup.py` fetches (`--only src`: bcv-query's published cache); for an unknown language with an NT, the occurrence index
      `python3 scripts/lang.py build <project>` after `align.py`). `make_prompt.py` refuses an OT prompt without them;
    - `python3 scripts/make_prompt.py <project> <code> <chapter>` prints the prompt (OT: tagged drafting; `--end-align`
      gives the old way, the draft first and the alignment at the end);

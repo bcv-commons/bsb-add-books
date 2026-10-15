@@ -22,8 +22,8 @@ The plan and the reasons are in `docs/proposals/language-toolkit/README.md`; the
 3. **Align:** `python3 scripts/align.py <project>` (eflomal if installed; see the toolkit's *External
    tools* for macOS). Read `_learn/align_report.txt`: the glossary and name checks show how far to trust the
    lexicons. lexeme-aligner may already have the language: compare, and cite its data as `external`.
-   Then the occurrence index and the derived products: `python3 scripts/src.py build <NT codes>` once (the Greek
-   structure, `orig/grc.sqlite`), `python3 scripts/lang.py build <project>` (every NT token linked to a MACULA Greek
+   Then the occurrence index and the derived products: the Greek structure
+   (`orig/grc.sqlite`, fetched by `python3 scripts/setup.py --only src`), `python3 scripts/lang.py build <project>` (every NT token linked to a MACULA Greek
    token; `lang.py hbo <project> <lexeme>` shows how the NT renders any Hebrew word through the LXX) and
    `python3 scripts/lang.py derive <project>` + `report <project>`: word order, function words, connectors, affix
    hypotheses (endings against the Greek features), name letters, formulas, OT gaps. Give the report to the agent

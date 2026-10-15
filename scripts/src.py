@@ -39,7 +39,8 @@ orig/grc-rp (RP 2018, the MSB's); how = same | spelling | moved, a variant token
     python3 scripts/src.py speakers                  who speaks where: Clear Bible's MACULA Quotation and Speaker Data
                                                      (CC BY 4.0; with SIL Glyssen / FCBH character data, MIT), one span
                                                      per quotation with its first and last MACULA word, via shoresh
-    python3 scripts/src.py layouts [code ...]        (re)build the layout rows from the layouts on this machine
+    python3 scripts/src.py layouts [code ...] [--layout bhsa|bcv-query]   (re)build the layout rows from the layouts here
+    python3 scripts/src.py map [code ...]            (re)build the BGB/RP -> MACULA mapping in orig/grc.sqlite
     python3 scripts/src.py export-open DIR           the publishable cache: no UBS columns, no BHSA (manifest.json)
     python3 scripts/src.py show <code> <ch>:<v>      one verse: tokens, numbers, clause, referents, LXX, BSB words
     python3 scripts/src.py bridge <lexeme>           the LXX equivalents of a Hebrew lexeme (e.g. 2617 or H2617)
@@ -235,8 +236,8 @@ def speakers():
     with ThreadPoolExecutor(3) as ex:
         got = list(ex.map(one, lst))
     failed = [sp["speaker"] for sp, d in got if d is None]
-    # a group name with '/' (Zebah/Zalmunna) is unreachable as /speaker/<name>: the server reads %2F as a path
-    # separator (reported to bcv-query, 2026-10-15); those are skipped and listed, any other failure stops the update
+    # a group name with '/' (Zebah/Zalmunna) was unreachable as /speaker/<name> until bcv-query fixed the route
+    # (2026-10-15); should it fail again, those are skipped and listed; any other failure stops the update
     slashed = [n for n in failed if "/" in n]
     if len(failed) > len(slashed):
         raise SystemExit(f"speakers: {len(failed)} of {len(lst)} could not be fetched (e.g. {failed[:3]}); nothing written")
@@ -362,7 +363,7 @@ def build(codes):
                             [(n["id"], n["book"], n["ch"], n["v"], n["parent"], n["class"], n["rule"], n["role"],
                               n["head"], n["clausetype"], n["first"], n["last"]) for n in nodes])
             con.executemany("insert into refs values(?,?,?)", refs)
-            layouts(con, code, ch, by_v)
+            layouts(con, code, ch)  # from the database: tokens in text (key) order, not the tree's document order
             con.commit()
         print(f"{code}: {heb_chapters(code)} chapters", flush=True)
     con.execute("delete from lxx")
@@ -474,6 +475,34 @@ def grc_rows(book, root):
     return tokens, nodes, refs
 
 
+def map_editions(con, codes=None):
+    """The mapping from our Greek texts (orig/grc: BGB; orig/grc-rp: RP) to MACULA's keys, from the Greek tokens in the
+    database (also after the structure came from the published cache, whose `map` is empty: it is ours, built here)."""
+    codes = codes or [c for c in BY_CODE if BY_CODE[c][2] == "nt"]
+    for code in codes:
+        book = code.upper()
+        con.execute("delete from map where book=?", (book,))
+        by_v = {}
+        for key, ch, v, text in con.execute("select key, ch, v, text from tokens where book=? order by key", (book,)):
+            by_v.setdefault((ch, v), []).append({"key": key, "text": text})
+        for ed, d in (("bgb", "orig/grc"), ("rp", "orig/grc-rp")):
+            for ch in sorted({c for c, _ in by_v}):
+                path = os.path.join(ROOT, d, f"{code}{ch:03d}.txt")
+                if not os.path.exists(path):
+                    continue
+                for l in open(path, encoding="utf-8").read().splitlines()[1:]:
+                    m = re.match(r"(\d+):(\d+)\s+(.*)", l)
+                    if not m:
+                        continue
+                    c, v = int(m[1]), int(m[2])
+                    ed_toks = re.findall(r"[^\W\d_]+", m[3])
+                    nest = by_v.get((c, v), [])
+                    con.executemany("insert into map values(?,?,?,?,?,?,?)",
+                                    [(ed, book, c, v, j, nest[i]["key"], how)
+                                     for j, i, how in map_verse([t["text"] for t in nest], ed_toks)])
+    con.commit()
+
+
 def build_grc(codes):
     import full_align as FULL, bridge_align as BA
     from concurrent.futures import ThreadPoolExecutor
@@ -503,22 +532,6 @@ def build_grc(codes):
                 t["n"], t["kind"], t["ord"] = num.get(fused.get(t["key"], t["key"]), (None, None, None))
             con.executemany("insert or replace into bsb values(?,?)",
                             [(k, " ".join(map(str, p))) for k, p in T.get(ref, {}).items()])
-        # the mapping from our Greek texts to MACULA's keys
-        for ed, d in (("bgb", "orig/grc"), ("rp", "orig/grc-rp")):
-            for ch in sorted({c for c, _ in by_v}):
-                path = os.path.join(ROOT, d, f"{code}{ch:03d}.txt")
-                if not os.path.exists(path):
-                    continue
-                for l in open(path, encoding="utf-8").read().splitlines()[1:]:
-                    m = re.match(r"(\d+):(\d+)\s+(.*)", l)
-                    if not m:
-                        continue
-                    c, v = int(m[1]), int(m[2])
-                    ed_toks = re.findall(r"[^\W\d_]+", m[3])
-                    nest = by_v.get((c, v), [])
-                    con.executemany("insert into map values(?,?,?,?,?,?,?)",
-                                    [(ed, book, c, v, j, nest[i]["key"], how)
-                                     for j, i, how in map_verse([t["text"] for t in nest], ed_toks)])
         con.executemany(f"insert into tokens values({','.join('?' * 31)})",
                         [tuple(t[k] for k in ("key", "book", "ch", "v", "word", "n", "kind", "ord", "text", "after"))
                          + tuple(t[a] for a in GRC_ATTRS) + (t["node"], t["clause"]) for t in tokens])
@@ -527,6 +540,7 @@ def build_grc(codes):
                           n["head"], n["clausetype"], n["first"], n["last"]) for n in nodes])
         con.executemany("insert into refs values(?,?,?)", refs)
         con.commit()
+        map_editions(con, [code])
         print(f"{code}: {len(tokens)} tokens", flush=True)
     con.execute("insert or replace into meta values(?,?)", ("macula_greek", MACULA_GRC))
     con.commit()
@@ -586,11 +600,16 @@ def main():
             build_grc(nt)
     elif a[0] == "layouts":
         con = sqlite3.connect(DB)
-        for c in a[1:] or [c for c in BY_CODE if BY_CODE[c][2] == "ot"]:
+        which = [a[a.index("--layout") + 1]] if "--layout" in a else None
+        codes = [x for x in a[1:] if not x.startswith("--") and x not in (which or [])]
+        for c in codes or [c for c in BY_CODE if BY_CODE[c][2] == "ot"]:
             for ch in range(1, heb_chapters(c) + 1):
-                layouts(con, c, ch)
+                layouts(con, c, ch, which=which)
             con.commit()
             print(f"{c}: layouts", flush=True)
+    elif a[0] == "map":
+        map_editions(sqlite3.connect(DB_GRC), a[1:] or None)
+        print("orig/grc.sqlite: map (BGB, RP -> MACULA keys) rebuilt")
     elif a[0] == "speakers":
         speakers()
     elif a[0] == "export-open":

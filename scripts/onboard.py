@@ -419,17 +419,17 @@ def main():
             except ImportError:
                 say("  text-fabric isn't installed: the open layout (bcv-query) becomes the drafting layout")
                 run("scripts/setup.py", "--only", "none", "--heb", "bcv-query", "--drafting", "bcv-query")
-    if need_ot and not os.path.exists(os.path.join(ROOT, "orig", "heb.sqlite")) and ask(
-            "run_src", "Build the prepared Hebrew structure now (scripts/src.py build; the clause packages need it; "
-            "about 50 minutes of downloads the first time)?", True):
-        run("scripts/src.py", "build")
+    if not os.path.exists(os.path.join(ROOT, "orig", "heb.sqlite")) and ask(
+            "run_src", "Fetch the prepared Hebrew and Greek structures now (scripts/setup.py --only src: bcv-query's "
+            "published cache, about 60 MB; the clause packages and the occurrence index need them)?", True):
+        run("scripts/setup.py", "--only", "src")
     if eds and ask("run_align", "Build the alignment lexicons now (scripts/align.py; a few minutes)?", True):
         corpus_ot = any(BY_CODE[c][2] == "ot" for c in all_have)
         run("scripts/align.py", pname, "--sides", "eng,grc" + (",hbo" if corpus_ot else ""))
         if fam == "unknown" and any(BY_CODE[c][2] == "nt" for c in all_have):
             # the occurrence index: how the NT renders any Hebrew word, through the LXX (the packages use it)
             if not os.path.exists(os.path.join(ROOT, "orig", "grc.sqlite")):
-                run("scripts/src.py", "build", *[c for c in BY_CODE if BY_CODE[c][2] == "nt"])
+                run("scripts/setup.py", "--only", "src")
             run("scripts/lang.py", "build", pname)
             run("scripts/lang.py", "derive", pname)  # the derived products: the memory agent starts from them
     if ask("init_memory", "Create the empty store and wiki (memory_prompt.py --init)?", True) and not DRY:

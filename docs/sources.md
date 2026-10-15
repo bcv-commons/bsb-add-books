@@ -114,6 +114,26 @@ The Hebrew is optional: `--heb bhsa,bcv-query` builds both clause layouts side b
   via the shoresh scaffold API of bcv-commons/bcv-query (into `orig/heb-macula/`). Its levels are
   MACULA's sentence-internal tree depth, flatter than both other layouts.
 
+## orig/heb.sqlite and orig/grc.sqlite — the prepared source structures
+
+- **What:** every MACULA Hebrew (WLC) and Greek (Nestle 1904) token with morphology, glosses, the LXX equivalent,
+  referents, semantic frames and the syntax tree, joined with the compact-alignments numbering and the BSB Translation
+  Tables; the speaker quotations; the token's line in each clause layout; for Greek the mapping from the BGB and RP to
+  MACULA's keys. Built by `scripts/src.py`; read by `scripts/package.py` (clause packages) and `scripts/lang.py`.
+- **From:** bcv-query's published cache **source-structure v1** (`https://files.qombi.com/files/source-structure-v1-…`:
+  `heb-open.sqlite.gz`, `grc-open.sqlite.gz`, `heb-bcv-query.sqlite.gz`, `manifest.json`, `README.md`; SHA-256 pinned in
+  `scripts/setup.py`). Built from MACULA Hebrew `47db250bd55d`, MACULA Greek `8423afe47b9e`, compact-alignments
+  `7982b3d9feda`, full-alignments-manual `1d845bf91390`, hebrew-clause-layout v0.22; verified here row by row against a
+  local build of the same pins (2026-10-15: every table identical). New builds come as v2, never over v1. The download
+  route allows 8 requests per hour per address.
+- **Licences:** MACULA Hebrew and Greek CC BY 4.0; MACULA Quotation and Speaker Data CC BY 4.0 (Clear Bible) with SIL
+  Glyssen / FCBH character data, MIT; compact-alignments and the BSB tables CC0; the bcv-query layout file CC BY-SA 4.0.
+  The UBS data in MACULA (SDBH, Louw–Nida) is not in the cache (its columns are empty).
+- **Added here, never published:** the BHSA layout rows (from `orig/heb-bhsa`) and the BGB/RP mapping
+  (`src.py layouts --layout bhsa`, `src.py map`; `setup.py --only src` runs both).
+- **Rebuild from scratch:** `python3 scripts/src.py build` (all OT books) and `src.py build <NT codes>`: about 50 minutes
+  of downloads from GitHub, and it fills the UBS columns for local use.
+
 ## orig/vrs/ — Hebrew to BSB verse numbering
 
 - **What:** the verse maps from Hebrew (Masoretic, `org`) to English/KJV numbering

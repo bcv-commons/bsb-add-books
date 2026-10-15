@@ -12,7 +12,9 @@ working; this file adds the rules that hold for any task here.
    layouts, built side by side in `orig/heb-<layout>/`: `--heb bhsa,bcv-query`. `bhsa` (ETCBC
    BHSA 2021, needs `text-fabric`) is the drafting layout, copied to `orig/heb/`; `bcv-query`
    (CC BY-SA 4.0) is for published clause structure; `macula` is an open, slow alternative. The clause packages need
-   the prepared structure `orig/heb.sqlite`: `python3 scripts/src.py build` (about 50 minutes of downloads, once).
+   the prepared structures `orig/heb.sqlite` and `orig/grc.sqlite`: `setup.py` fetches them (`--only src`, bcv-query's
+   published cache v1, pinned SHA-256; seconds) and adds the local layers (BHSA layout rows, our BGB/RP mapping).
+   `python3 scripts/src.py build` builds them from MACULA instead (about 50 minutes; with the UBS columns).
 2. **Requirements:** Python 3 with PyYAML (`pip install pyyaml`) for the project scripts, and
    `usfmtc` (`pip install usfmtc`) for USFM sources (`scripts/usfm_usj.py`).
    `scripts/macula_to_tf.py` also needs `text-fabric`.
@@ -93,7 +95,7 @@ working; this file adds the rules that hold for any task here.
 ## Commands
 
 ```
-python3 scripts/setup.py [--heb bhsa,bcv-query,macula] [--drafting LAYOUT] [--only bsb,msb,bgb,rp,vrs,editions] [--force]
+python3 scripts/setup.py [--heb bhsa,bcv-query,macula] [--drafting LAYOUT] [--only bsb,msb,bgb,rp,vrs,src,editions] [--force]
 python3 scripts/onboard.py [--answers F] [--yes] [--dry-run] # wizard for a new language: editions, project, memory
 python3 scripts/fetch_edition.py --find <iso>       # editions of a language (bcv-commons/bibles, eBible)
 python3 scripts/fetch_edition.py <edition> | --all  # fetch an edition by its recipe into import/
@@ -130,7 +132,7 @@ python3 scripts/clause_lines.py check <project> [<code> <ch>] | show <project> <
 python3 scripts/bridge_align.py <project> <code> <ch> | --all # word alignment (.align) by script, no model
 python3 scripts/full_align.py listing|prompt <project> <code> <ch> | check <project> [<code> [<ch>]] | export <project> # .align (bcv-commons format): the agent's sheet and prompt, checks, the HF layer
 python3 scripts/full_align.py tag|split <project> <code> <ch> # the tagged interim format (word^n) <-> prose + .align
-python3 scripts/src.py build [code ...] | layouts | show <code> <c>:<v> | bridge <lexeme> | export-open DIR # orig/heb.sqlite, orig/grc.sqlite (MACULA + numbering + BSB tables; local)
+python3 scripts/src.py build [code ...] | layouts [--layout L] | map | speakers | show <code> <c>:<v> | bridge <lexeme> | export-open DIR # orig/heb.sqlite, orig/grc.sqlite (MACULA + numbering + BSB tables; local)
 python3 scripts/lang.py build|derive|report <project> | hbo <project> <lexeme> | grc <project> <strong> # the project's language DB: NT occurrences of any Hebrew word via the LXX; derived grammar statistics
 python3 scripts/macula_to_tf.py <delivery dir>       # draft Text-Fabric dataset (needs text-fabric)
 ```

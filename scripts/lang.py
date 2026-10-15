@@ -198,7 +198,7 @@ def context(t):
     if t["class"] == "verb":
         return ".".join(x for x in (t["tense"], t["voice"], t["mood"], (t["person"] or "")[:1] + (t["number"] or "")[:1]) if x)
     if t["class"] in ("noun", "adj", "pron", "det"):
-        return ".".join(x for x in (t["gcase"], (t["number"] or "")[:1]) if x)
+        return ".".join(x for x in (t["gcase"], (t["number"] or "")[:1], t["degree"]) if x)
     return ""
 
 
@@ -267,6 +267,10 @@ def derive(pname, quiet=False):
             out.add(("person+number", f"{r['person'][:1]}{r['number'][:1]}"))
         if r["tense"] and r["mood"]:
             out.add(("tense+mood", f"{r['tense']}.{r['mood']}"))
+        if r["person"] and r["number"] and r["mood"] in ("subjunctive", "imperative", "optative"):
+            out.add(("person+number+mood", f"{r['person'][:1]}{r['number'][:1]}.{r['mood']}"))  # 1p subjunctive = 'let us'
+        if r["degree"]:
+            out.add(("degree", r["degree"]))
         if r["class"] == "verb":
             out.add(("negated", "yes" if r["clause"] in neg_clause else "no"))
             if r["clause"] in obj_of:
@@ -297,7 +301,8 @@ def derive(pname, quiet=False):
     for (a_, (f, val)), n in joint.items():
         w = words_of[(a_, (f, val))]
         top = w.most_common(2)
-        if (n >= 30 and cnt_aff[a_] >= 50 and len(w) >= 5 and top[0][1] / n < ONE_WORD
+        min_n = 10 if f in ("person+number+mood", "degree") else 30  # rare features (1p subjunctive, comparative)
+        if (n >= min_n and cnt_aff[a_] >= 50 and len(w) >= 5 and top[0][1] / n < ONE_WORD
                 and sum(c for _, c in top) / n < TWO_WORDS):
             rate = n / base[(f, val)]
             lift = rate / (cnt_aff[a_] / total)
@@ -498,6 +503,14 @@ def report(pname, top=8):
             f, v, n, lift = fs[0]
             more = "; also " + ", ".join(f"{x[0]}={x[1]} ({x[3]:.1f})" for x in fs[1:3]) if len(fs) > 1 else ""
             print(f"    {a} with {f}={v}: n {n}, lift {lift:.1f}{more}")
+    print("\n## Constructions (rarer Greek forms, and how the target renders them)")
+    hort = con.execute("select affix, n, lift from d_affix where feature='person+number+mood' and value='fp.subjunctive' "
+                       "order by lift * min(n, 300) desc limit 3").fetchall()
+    print("  'let us' (1st plural subjunctive): " + (", ".join(f"{a} (n {n}, lift {l:.0f})" for a, n, l in hort) or "nothing"))
+    cmp = con.execute("select form, sum(n) from d_renderings where context like '%comparative%' group by form "
+                      "order by 2 desc limit 8").fetchall()
+    print("  Greek comparatives rendered with: " + ", ".join(f"{f} ×{n}" for f, n in cmp)
+          + " (lexicalised comparatives such as 'elders' included)")
     print("\n## Marks (tone and other combining marks) and what they go with (lift ≥ 1.5)")
     names = {"U+0300": "grave", "U+0301": "acute", "U+0302": "circumflex", "U+0304": "macron", "U+1DC4": "macron-acute"}
     for m_, f, v, n, rate, lift in con.execute("select * from d_marks order by lift * min(n, 300) desc limit 12"):

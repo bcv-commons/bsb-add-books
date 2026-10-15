@@ -89,9 +89,15 @@ BY_CODE = {b[0]: b for b in BOOKS}
 
 
 def chapters(code):
-    """Number of chapters, counted from the BSB files."""
+    """Number of chapters, counted from the BSB files; before setup.py has built them, from books.tsv."""
     d = os.path.join(ROOT, "reference", "BSB")
-    return len([f for f in os.listdir(d) if f[:3] == code and f[3:6].isdigit()])
+    if os.path.isdir(d):
+        return len([f for f in os.listdir(d) if f[:3] == code and f[3:6].isdigit()])
+    for l in open(os.path.join(ROOT, "books.tsv"), encoding="utf-8").read().splitlines()[1:]:
+        c = l.split("\t")
+        if c[0] == code:
+            return int(c[3])
+    return 0
 
 
 # Books whose Hebrew chapter count differs from the BSB's (Joel 2:28-3:21 BSB = 3-4 Hebrew; Mal 4 BSB = 3:19-24 Hebrew).
