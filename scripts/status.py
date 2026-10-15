@@ -26,7 +26,7 @@ import yaml
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
-from project import project, edition, editions_with_book, book_files  # noqa: E402
+from project import project, edition, editions_with_book, book_files, missing_text  # noqa: E402
 from books import BY_CODE  # noqa: E402
 
 DRAFT_STATEMENT = ("Draft. Translated with AI agents directly from the Hebrew and Greek, with the BSB as the only "
@@ -107,6 +107,15 @@ def write_status_md(pname, pdir, p):
          "| Book | Chapters | Status | Existing edition |", "|---|---|---|---|"]
     files = chapter_files(pdir)
     Q = None
+    # the figures measured where the edition's text was present: kept when it is not here (a fresh clone has no
+    # non-free texts), so that STATUS.md doesn't change with the machine it is written on
+    prev = {}
+    sf = os.path.join(pdir, "STATUS.md")
+    if os.path.exists(sf):
+        for l in open(sf, encoding="utf-8").read().splitlines():
+            m = re.match(r"\| .*\(`(\w{3})`\) \| .* \| (.*) \|$", l)
+            if m:
+                prev[m[1]] = m[2]
     for code, chs in by_book.items():
         ex = []
         ours = {int(c[3:]) for c, _ in chs}
@@ -118,6 +127,12 @@ def write_status_md(pname, pdir, p):
             both = ours if whole else ours & theirs
             if not both:
                 ex.append(f"{e} ({cls}) has chapters {ranges(sorted(theirs))}: ours continue it")
+            elif cls == "non-free" and missing_text(e):
+                m = re.search(rf"{re.escape(e)} \(.*?(?=; [\w.-]+ \((?:non-free|public-domain|attributable|share-alike)\)|$)",
+                              prev.get(code, ""))  # this edition's whole entry (it contains '; ' itself)
+                old = m[0] if m else None
+                ex.append(old or f"{e} ({cls}): not shown; ours drafted independently (its text is not on this machine, "
+                                 "so the overlap is not measured here)")
             elif cls == "non-free":
                 if Q is None:
                     import quotes

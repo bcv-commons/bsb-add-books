@@ -152,7 +152,7 @@ def main():
             none += 1
             print(f"{code}{ch:03d}: no clause lines (.align missing or stale, or no layout)")
             continue
-        bad += any([check(pname, code, ch, lay, d[lay], quiet=len(chs) > 1 and True) for lay in LAYOUTS])
+        bad += any([check(pname, code, ch, lay, d[lay], quiet=len(chs) > 1 and True) for lay in d])
     print(f"{pname}: {len(chs)} OT chapters, {len(chs) - none - bad} ok, {bad} with problems, {none} without clause lines")
     sys.exit(1 if bad else 0)
 

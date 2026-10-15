@@ -283,12 +283,12 @@ def split_lines(D, raw, S, seg_of_h, nseg, cuts_after, conj):
     return lab
 
 
-def lay_out_verse(code, ch, v, raw, headings, D, H, S, conj):
+def lay_out_verse(code, ch, v, raw, headings, D, H, S, conj, layouts=None):
     """{layout: the verse's clause lines} from the evidence matrix S (draft tokens D x Hebrew tokens H)."""
     res = {}
     # cut cues: punctuation between token i and i+1
     cuts_after = [bool(re.search(r"[,.;:!?·)»«“”]", raw[D[i][2]:D[i + 1][1]])) for i in range(len(D) - 1)] + [True]
-    for lay in LAYOUTS:
+    for lay in layouts or LAYOUTS:
         if lay == "bhsa":
             seg_map, rows = bhsa_segments(code, ch, v, H)
             levels = [r[1] for r in rows]
@@ -340,7 +340,8 @@ def clauses(pname, code, ch, linked=LINKED):
     saved link counts as evidence `linked` for its draft token; the cuts follow as in build()."""
     prose = os.path.join(ROOT, "export", pname, code, f"{code}{ch:03d}.txt")
     ap = prose[:-4] + ".align"
-    if not os.path.exists(ap) or not all(os.path.exists(os.path.join(ROOT, LAYOUTS[l], f"{code}{ch:03d}.txt")) for l in LAYOUTS):
+    have = [l for l in LAYOUTS if os.path.exists(os.path.join(ROOT, LAYOUTS[l], f"{code}{ch:03d}.txt"))]
+    if not os.path.exists(ap) or not have:  # the views for the layouts on this machine (a commercial user has no BHSA)
         return None
     head, title, verses = draft_verses(prose)
     h, rows = FULL.read_chapter(ap)
@@ -352,7 +353,7 @@ def clauses(pname, code, ch, linked=LINKED):
     conj = {t for (e, t), sh in lexE.items() if e in CONJ and sh >= 0.08}
     sc = AL.scaffold(code, ch)["tokens"]
     keys = {k: FULL.index(book, k) for k in ("keys", "fn_keys")}
-    files = {lay: head + ([title] if title else []) + ["", ""] for lay in LAYOUTS}
+    files = {lay: head + ([title] if title else []) + ["", ""] for lay in have}
     for v, raw, headings in verses:
         H = sorted([t for t in sc if t["verse"] == v], key=lambda t: t["key"])
         col = {t["key"]: j for j, t in enumerate(H)}
@@ -367,9 +368,9 @@ def clauses(pname, code, ch, linked=LINKED):
                         for i in ids:
                             if i < len(D):
                                 S[i][col[k]] = linked
-        for lay, out in lay_out_verse(code, ch, v, raw, headings, D, H, S, conj).items():
+        for lay, out in lay_out_verse(code, ch, v, raw, headings, D, H, S, conj, have).items():
             files[lay] += out
-    return {lay: fix_leading_merges(files[lay]) for lay in LAYOUTS}
+    return {lay: fix_leading_merges(files[lay]) for lay in have}
 
 
 def build(pname, code, ch, out_dir=None):
