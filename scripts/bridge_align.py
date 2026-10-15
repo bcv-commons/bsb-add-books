@@ -49,8 +49,16 @@ OPENERS = "»„“‚‘›(>[\"'"
 def get(url, path):
     if not os.path.exists(path):
         os.makedirs(os.path.dirname(path), exist_ok=True)
-        with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=300) as r:
-            open(path, "wb").write(r.read())
+        for attempt in range(4):  # Hugging Face drops a connection now and then
+            try:
+                with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=300) as r:
+                    data = r.read()
+                break
+            except OSError:
+                if attempt == 3:
+                    raise
+        open(path + ".part", "wb").write(data)
+        os.replace(path + ".part", path)
     return path
 
 

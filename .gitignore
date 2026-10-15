@@ -47,3 +47,7 @@ build/
 scratch/
 __pycache__/
 .DS_Store
+# the drafting agents' interim tagged files (scripts/full_align.py split makes the .txt and .align from them)
+export/**/*.tagged
+# the project's target-language database (scripts/lang.py): bulk, built locally from the imported edition
+export/**/_learn/*.sqlite

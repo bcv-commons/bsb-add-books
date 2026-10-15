@@ -13,6 +13,8 @@ Writes export/<project>/_learn/:
   lexicon_eng.tsv, lexicon_grc.tsv   source, target, count, share (top 8 per source word)
   lexicon_hbo.tsv                    lexeme, lemma, gloss, target, count, share
   links_<side>.tsv                   ref, target token, source token: the symmetrised links of the OT books
+  links_grc_pos.tsv                  ref, target position, source position: every NT link (the Greek side), for
+                                     scripts/lang.py's occurrence index
   align_report.txt                   the checks: glossary terms, OT names (where the corpus has OT books)
 Lexicons are statistics about the edition (words with counts), ours and CC0 for any edition (docs/licensing.md);
 the links files list a verse's words in order and stay local (.gitignore). lexicon_hbo's lemmas and glosses are
@@ -247,6 +249,13 @@ def main():
                 for p, s in ot:
                     for i, j in sorted(s, key=lambda x: x[1]):
                         fh.write(f"{p[2]}\t{p[1][j]}\t{p[0][i]}\n")
+        if side == "grc":  # every NT link by position, for the occurrence index (scripts/lang.py: positions -> MACULA keys)
+            with open(os.path.join(P.learn, "links_grc_pos.tsv"), "w", encoding="utf-8") as fh:
+                fh.write(f"# nt_basis {P.p['nt_basis']}: source positions in {GREEK[P.p['nt_basis']]} (letters only), "
+                         "target positions in the project's tokens\nref\ttarget_pos\tsource_pos\n")
+                for p, s in zip(pairs, sym):
+                    for i, j in sorted(s, key=lambda x: (x[1], x[0])):
+                        fh.write(f"{p[2]}\t{j}\t{i}\n")
         rep.append(f"{side}: {len(pairs)} verse pairs, {len(by)} source words")
         if side == "eng":
             ok, tot = glossary_check(P, by)

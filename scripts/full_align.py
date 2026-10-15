@@ -32,6 +32,14 @@ The published layer, one file set per book, as on Hugging Face (`export` below):
 
 The agent's step (STEP below, in every OT chapter prompt): run `listing`, correct the chapter's .align line by line
 from it, mark each verse it checked with profile b, then `check`.
+
+The tagged format (an agent's interim file, `<code>NNN.tagged`, git-ignored; internal-docs plan, section 6): the draft
+in its usual layout with the Hebrew token numbers right after the letters of each word, `Synerzyt^2,3, wo^4 d^5`.
+The numbers count every token of the verse in the compact-alignments index (content and function) in source order,
+from 0 (`numbering`); an untagged word renders no token of its own.
+    python3 scripts/full_align.py tag <project> <code> <ch>     prose + .align -> <code>NNN.tagged
+    python3 scripts/full_align.py split <project> <code> <ch>   <code>NNN.tagged -> prose .txt + .align (profile b),
+                                                                and the content tokens left untagged per verse
 """
 import hashlib, json, os, re, sys, unicodedata, urllib.request
 
@@ -54,8 +62,16 @@ def index(book, kind):
     path = os.path.join(INDEX, f"{book}_{kind}.json")
     if not os.path.exists(path):
         os.makedirs(INDEX, exist_ok=True)
-        with urllib.request.urlopen(urllib.request.Request(f"{HF_INDEX}/{book}_{kind}.json", headers=UA), timeout=300) as r:
-            open(path, "wb").write(r.read())
+        for attempt in range(4):
+            try:
+                with urllib.request.urlopen(urllib.request.Request(f"{HF_INDEX}/{book}_{kind}.json", headers=UA), timeout=300) as r:
+                    data = r.read()
+                break
+            except OSError:
+                if attempt == 3:
+                    raise
+        open(path + ".part", "wb").write(data)  # never leave a half-written cache file
+        os.replace(path + ".part", path)
     return json.load(open(path, encoding="utf-8"))
 
 
@@ -218,6 +234,129 @@ def check(pname, only=None, quiet=False, ch=None):
     return problems
 
 
+TAG = re.compile(r"\^(\d+(?:,\d+)*)")
+VMARK = re.compile(r"(?<![\w>.])v(\d+)(?=\s)")
+
+
+def numbering(book, ref):
+    """The verse-local token numbers of the tagged format: every token of the compact-alignments index (content and
+    function) in source order, numbered 0, 1, 2 ... -> [(n, 'c'|'f', ordinal, [MACULA keys])]."""
+    toks = []
+    for kind, c in (("keys", "c"), ("fn_keys", "f")):
+        for o, k in enumerate(index(book, kind).get(ref, [])):
+            parts = k.split("+") if k else []
+            if parts:
+                toks.append((parts[0], c, o, parts))
+    return [(n, c, o, parts) for n, (_, c, o, parts) in enumerate(sorted(toks))]
+
+
+def file_tokens(text):
+    """The translatable tokens of a draft file in order, as [(verse, start, end)] in the file text: letter runs
+    outside header lines, titles, headings and inline notes, the verse markers left out (as draft_verses and
+    tokens_of read them). Tags (^n) and digits are separators, so a tagged file gives the same tokens."""
+    out, verse, pos = [], None, 0
+    flat = list(text)
+    for m in NOTE.finditer(text):  # notes may wrap over lines
+        flat[m.start():m.end()] = [c if c == "\n" else " " for c in text[m.start():m.end()]]
+    flat = "".join(flat)
+    for line in flat.splitlines(keepends=True):
+        body = line.rstrip("\n")
+        if body.startswith("!!<") or re.match(r"^==.*==\s*$", body):
+            pos += len(line)
+            continue
+        blank = list(body)
+        marks = {m.start(): (m.end(), int(m[1])) for m in VMARK.finditer("".join(blank) + " ")}  # a marker may end the line
+        i, cur = 0, None
+        while i <= len(blank):
+            if i in marks and cur is None:
+                end, verse = marks[i]
+                i = end
+                continue
+            ch = blank[i] if i < len(blank) else " "
+            if unicodedata.category(ch)[0] in ("L", "M"):
+                cur = i if cur is None else cur
+            elif cur is not None:
+                if verse is not None:
+                    out.append((verse, pos + cur, pos + i))
+                cur = None
+            i += 1
+        pos += len(line)
+    return out
+
+
+def tag(pname, code, ch):
+    """prose draft + its .align -> the tagged text (verse-local numbers after the words), and the profile per verse."""
+    draft = os.path.join(ROOT, "export", pname, code, f"{code}{ch:03d}.txt")
+    text = open(draft, encoding="utf-8").read()
+    h, rows = read_chapter(draft[:-4] + ".align")
+    if h != text_hash(ch, draft_texts(draft)):
+        raise SystemExit(f"{os.path.relpath(draft, ROOT)}: the .align is stale; realign first")
+    book = code.upper()
+    toks = file_tokens(text)
+    nums = {}  # (verse, token index) -> [n]
+    for v, (m, f, _) in rows.items():
+        back = {(c, o): n for n, c, o, _ in numbering(book, f"{book} {ch}:{v}")}
+        for c, st in (("c", m), ("f", f)):
+            for o, ids in parse(st).items():
+                for i in ids:
+                    nums.setdefault((v, i), []).append(back[(c, o)])
+    out, last, k = [], 0, {}
+    for v, a, b in toks:
+        i = k.get(v, 0)
+        k[v] = i + 1
+        out.append(text[last:b])
+        if (v, i) in nums:
+            out.append("^" + ",".join(map(str, sorted(set(nums[(v, i)])))))
+        last = b
+    out.append(text[last:])
+    return "".join(out), {v: r[2] for v, r in rows.items()}
+
+
+def split(pname, code, ch, profile="b", write=True, tagged=None):
+    """The tagged file -> the prose draft (tags removed) and the .align (profile `profile`); returns the report:
+    problems (tags in the wrong place, unknown numbers) and, per verse, the content tokens left untagged."""
+    base = os.path.join(ROOT, "export", pname, code, f"{code}{ch:03d}")
+    tagged = tagged if tagged is not None else open(base + ".tagged", encoding="utf-8").read()
+    problems, untagged = [], {}
+    prose = TAG.sub("", tagged)
+    if "^" in prose:
+        n = prose.index("^")
+        problems.append(f"a ^ not after a word or not followed by numbers: …{prose[max(0, n - 20):n + 10]}…")
+    toks = file_tokens(tagged)
+    ends = {b: (v, a) for v, a, b in toks}
+    idx, k = {}, {}
+    for v, a, b in toks:
+        idx[(v, a)] = k.get(v, 0)
+        k[v] = idx[(v, a)] + 1
+    book = code.upper()
+    links = {}  # verse -> {(c, o): [token index]}
+    for m in TAG.finditer(tagged):
+        if m.start() not in ends:
+            problems.append(f"tag ^{m[1]} not right after the letters of a word: …{tagged[max(0, m.start() - 20):m.end()]}…")
+            continue
+        v, a = ends[m.start()]
+        num = {n: (c, o) for n, c, o, _ in numbering(book, f"{book} {ch}:{v}")}
+        for n in map(int, m[1].split(",")):
+            if n not in num:
+                problems.append(f"v{v}: ^{n} is not a token number of the verse (0-{len(num) - 1})")
+                continue
+            links.setdefault(v, {}).setdefault(num[n], []).append(idx[(v, a)])
+    if write and not problems:
+        open(base + ".txt", "w", encoding="utf-8").write(prose)
+    verses = draft_texts(base + ".txt") if write and not problems else None
+    rows = []
+    for v in sorted({t[0] for t in toks}):
+        L = links.get(v, {})
+        fmt = lambda c: " ".join(f"{o}:{span(ids)}" for (cc, o), ids in sorted(L.items()) if cc == c)
+        rows.append((v, fmt("c"), fmt("f"), profile if L else "a"))
+        miss = [n for n, c, o, _ in numbering(book, f"{book} {ch}:{v}") if c == "c" and (c, o) not in L]
+        if miss:
+            untagged[v] = miss
+    if write and not problems:
+        write_chapter(base + ".align", ch, rows, verses)
+    return problems, untagged, rows
+
+
 POINTS = re.compile(r"[\u0591-\u05AF\u05BD\u05C0\u05C3-\u05C6]")  # accents and marks; vowels and dagesh stay
 
 
@@ -354,8 +493,23 @@ def export(pname, out=None):
 
 def main():
     a = sys.argv[1:]
-    if len(a) < 2 or a[0] not in ("check", "export", "listing", "prompt"):
+    if len(a) < 2 or a[0] not in ("check", "export", "listing", "prompt", "tag", "split"):
         raise SystemExit(__doc__)
+    if a[0] == "tag":
+        text, _ = tag(a[1], a[2], int(a[3]))
+        out = os.path.join(ROOT, "export", a[1], a[2], f"{a[2]}{int(a[3]):03d}.tagged")
+        open(out, "w", encoding="utf-8").write(text)
+        print(f"wrote {os.path.relpath(out, ROOT)}")
+        return
+    if a[0] == "split":
+        problems, untagged, rows = split(a[1], a[2], int(a[3]))
+        for p in problems:
+            print("problem: " + p)
+        if not problems:
+            print(f"wrote {a[2]}{int(a[3]):03d}.txt and .align; " + (
+                "content tokens untagged: " + "; ".join(f"v{v}: {' '.join(map(str, n))}" for v, n in untagged.items())
+                if untagged else "every content token tagged"))
+        sys.exit(1 if problems else 0)
     if a[0] == "prompt":
         print(prompt(a[1], a[2], int(a[3])))
         return
