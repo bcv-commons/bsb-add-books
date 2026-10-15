@@ -1201,10 +1201,11 @@
   {
    "id": "spell_variants",
    "kind": "letter",
-   "value": "Die Erkennungsfehler der gescannten Vorlage (c für e wie »cm« für »em«, »gcischtlechc«; »Böll« für »söll«; ein überzähliges c) sind seit 2026-10-15 im Korpus berichtigt (fix_ocr.py in der Ausgabe, 348 Wörter). Offen ist Lk 24:28–29 (verderbt). Eine Einzelform nur übernehmen, wenn sie mehrfach belegt ist.",
+   "value": "Die Erkennungsfehler der gescannten Vorlage (c für e wie »cm« für »em«; »Böll« für »söll«; ein überzähliges c; getrennte Wörter wie »st ärbe«; kyrillische Buchstaben) sind seit 2026-10-15 im Korpus berichtigt (fix_ocr.py in der Ausgabe, rund 460 Stellen); 24 nicht zu rettende Verse sind ausgesondert. Eine Einzelform nur übernehmen, wenn sie mehrfach belegt ist.",
    "evidence": [
     {
-     "ref": "LUK 24:29",
+     "ref": "ROM 15:33",
+     "form": "söll",
      "n": 1
     }
    ],

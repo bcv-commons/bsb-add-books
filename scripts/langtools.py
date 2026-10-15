@@ -83,7 +83,8 @@ def usfm_verses(text):
 
 def published_verses(ed):
     """The published text of an edition, for checking quotations: its `published_text` (a USFM zip or folder)
-    or else its text/ folder. {"BOOK c:v": text}; None if the published text named isn't there."""
+    or else its text/ folder, plus `published_also` (further USFM files or folders: books published elsewhere, such as
+    Kuni Genesis). {"BOOK c:v": text}; None if a published text named isn't there."""
     import zipfile
     src = ed.get("published_text")
     out = {}
@@ -102,6 +103,12 @@ def published_verses(ed):
         files = [(n, z.read(n).decode("utf-8", "replace")) for n in z.namelist() if n.lower().endswith((".usfm", ".sfm"))]
     else:
         files = [(f, open(f, encoding="utf-8").read()) for f in glob.glob(os.path.join(path, "*.*sfm"))]
+    for extra in ed.get("published_also") or []:
+        xp = os.path.join(ROOT, extra)
+        if not os.path.exists(xp):
+            return None
+        files += [(f, open(f, encoding="utf-8-sig").read()) for f in ([xp] if os.path.isfile(xp) else
+                                                                     glob.glob(os.path.join(xp, "*.*sfm")))]
     for _, t in files:
         out.update({f"{b} {c}:{v}": x for (b, c, v), x in usfm_verses(t).items()})
     return out

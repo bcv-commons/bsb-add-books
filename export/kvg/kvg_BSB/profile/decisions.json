@@ -15399,6 +15399,5468 @@
     "judea"
    ],
    "note": "NT form: in 42 of 44 verses whose BSB names Judea. From study run v2. Zudia is the Roman province; the tribe and kingdom are Zuda (name:judah)."
+  },
+  {
+   "id": "formula:evening_morning.g",
+   "kind": "formula",
+   "source": "וַיְהִי־עֶרֶב וַיְהִי־בֹקֶר / and there was evening, and there was morning",
+   "value": "Yaq qapøis, vøndōpave.",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:5",
+     "form": "Yaq qapøis, vøndōpave.",
+     "n": 6
+    },
+    {
+     "ref": "GEN 1:8",
+     "form": "Yaq qapøis, vøndōpave."
+    },
+    {
+     "ref": "GEN 1:31",
+     "form": "Yaq qapøis, vøndōpave."
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "formula:evening_morning",
+   "words": [
+    "and there was evening",
+    "and there was morning",
+    "there was evening, and there was morning"
+   ],
+   "note": "All six day-formulas of Gen 1 (1:5, 8, 13, 19, 23, 31) use this pair, not khagus / qanaqanus (our draft). qapøis = night falls, vøndōpave = day dawns. Ordinary \"evening\" stays khagus (GEN 19:1, 24:11, 29:23), \"morning\" qanaqanus (19:27, 20:8)."
+  },
+  {
+   "id": "formula:nth_day.g",
+   "kind": "formula",
+   "source": "יוֹם שֵׁנִי / the second (third ...) day",
+   "value": "Ndakin khøuwa gè-<N>.",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:8",
+     "form": "Ndakin khøuwa gè-menás",
+     "n": 5
+    },
+    {
+     "ref": "GEN 1:13",
+     "form": "khøuwa gè-misiká"
+    },
+    {
+     "ref": "GEN 1:19",
+     "form": "khøuwa gè-foá"
+    },
+    {
+     "ref": "GEN 1:23",
+     "form": "khøuwa gè-fáev"
+    },
+    {
+     "ref": "GEN 1:31",
+     "form": "khøuwa gè-síks"
+    },
+    {
+     "ref": "GEN 1:5",
+     "form": "Khøuwa qa-kopo, nqánek"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "formula:nth_day",
+   "words": [
+    "the second day",
+    "the third day",
+    "the fourth day",
+    "the fifth day",
+    "the sixth day",
+    "the first day"
+   ],
+   "note": "\"Now the day has become the Nth\": gè- + the numeral (menás 2, misiká 3, foá 4, fáev 5, síks 6). The first day is \"Khøuwa qa-kopo, nqánek\" (1:5). Not the NT's \"khøuwa mø̀ndømø-N-éz\" (Luk 24:21), which our draft used."
+  },
+  {
+   "id": "term:H3117daytime.g",
+   "kind": "term",
+   "source": "H3117 יוֹם as daylight, opposite of night",
+   "value": "paveat",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:5",
+     "form": "paveat",
+     "n": 7
+    },
+    {
+     "ref": "GEN 1:16",
+     "form": "paveat"
+    },
+    {
+     "ref": "GEN 7:12",
+     "form": "paveat foti-a, lova foti"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "called the light day",
+    "day and night",
+    "forty days and forty nights",
+    "the day and the night"
+   ],
+   "note": "\"God called the light Day\" = iz \"paveat\" (1:5); daylight against lova (night) in 1:14, 1:16, 1:18 and \"forty days and forty nights\" = \"paveat foti-a, lova foti\" (7:4, 7:12). For \"day\" as a unit of time keep khøuwa (term:H3117). Our draft had khøuwa for the named Day."
+  },
+  {
+   "id": "term:H8064.g",
+   "kind": "term",
+   "source": "H8064 שָׁמַיִם (heavens, sky)",
+   "value": "khaiya",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "yan",
+     "note": "heaven as God's place: from heaven (GEN 19:24, 21:17, 22:11), God of heaven (24:3, 24:7), the gate of heaven (28:17): term:H8064heaven.g"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 1:1",
+     "form": "khaiya neká manqei-qape",
+     "n": 29
+    },
+    {
+     "ref": "GEN 1:8",
+     "form": "khaiya"
+    },
+    {
+     "ref": "GEN 2:4",
+     "form": "Khaiya neka manqei-qape"
+    },
+    {
+     "ref": "GEN 15:5",
+     "form": "khaiya-te"
+    },
+    {
+     "ref": "GEN 22:17",
+     "form": "khaiya-te"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H8064",
+   "words": [
+    "heavens",
+    "the heavens and the earth",
+    "sky",
+    "stars in the sky",
+    "birds of the air"
+   ],
+   "note": "The created heavens and the visible sky are khaiya (29 verses in Gen 1-30); yan (8 verses) only where heaven is where God and the angels are. Our draft (term:H8064 yan) had it the other way for Gen 1:1."
+  },
+  {
+   "id": "term:H8064heaven.g",
+   "kind": "term",
+   "source": "H8064 שָׁמַיִם as the place of God",
+   "value": "yan",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 21:17",
+     "form": "yan-te ndo꞉go",
+     "n": 8
+    },
+    {
+     "ref": "GEN 22:11",
+     "form": "yan-te ndo꞉go"
+    },
+    {
+     "ref": "GEN 19:24",
+     "form": "Yan-té"
+    },
+    {
+     "ref": "GEN 28:17",
+     "form": "yan-gí mboqóg"
+    },
+    {
+     "ref": "GEN 24:3",
+     "form": "yan neka manqei-qape-ge"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "from heaven",
+    "out of the heavens",
+    "gate of heaven",
+    "god of heaven",
+    "reaching up to heaven"
+   ],
+   "note": "\"from heaven\" = yan-te ndo꞉go (21:17, 22:11, 22:15); \"the gate of heaven\" = yan-gí mboqóg (28:17); the ladder reaches yan (28:12)."
+  },
+  {
+   "id": "term:H7549.g",
+   "kind": "term",
+   "source": "H7549 רָקִיעַ (expanse)",
+   "value": "løvøzu",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:7",
+     "form": "ta løvøzu ndøgo",
+     "n": 3
+    },
+    {
+     "ref": "GEN 1:8",
+     "form": "ta løvøzu ndøgo"
+    },
+    {
+     "ref": "GEN 1:6",
+     "form": "Løvøzumba betéfakhan"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H7549",
+   "words": [
+    "expanse",
+    "the expanse"
+   ],
+   "note": "The expanse is løvøzu (\"let there be an expanse\" = Løvøzumba betéfakhan, 1:6), named khaiya (sky) in 1:8. \"the expanse of the sky\" (1:14, 1:15, 1:17, 1:20) is just khaiya-te / khaiya ova. Our draft used khaiya for the expanse itself."
+  },
+  {
+   "id": "formula:god_saw_good.g",
+   "kind": "formula",
+   "source": "וַיַּרְא אֱלֹהִים כִּי־טוֹב / God saw that it was good",
+   "value": "Mbumbukiam āv geneqeív nqǽgo, ndøgo qanimáv.",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:10",
+     "form": "āv geneqeív nqǽgo, ndøgo",
+     "n": 6
+    },
+    {
+     "ref": "GEN 1:12",
+     "form": "ndøgo qanimáv"
+    },
+    {
+     "ref": "GEN 1:25",
+     "form": "ndøgo qanimáv"
+    },
+    {
+     "ref": "GEN 1:4",
+     "form": "waev ndøgo, qanimáv"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "formula:god_saw_good",
+   "words": [
+    "god saw that it was good",
+    "saw that it was good",
+    "that it was good",
+    "saw that the light was good"
+   ],
+   "note": "The perception frame \"āv geneqeív nqǽgo\" (he saw thus) + the content; \"good\" here is qanimáv (25 verses in Gen), not eqeieqei."
+  },
+  {
+   "id": "formula:very_good.g",
+   "kind": "formula",
+   "source": "טוֹב מְאֹד / very good",
+   "value": "qanimáv tantáv",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:31",
+     "form": "Ndøgo qanimáv tantáv",
+     "n": 3
+    },
+    {
+     "ref": "GEN 13:10",
+     "form": "qanimáv tantáv"
+    },
+    {
+     "ref": "GEN 30:20",
+     "form": "qanimáv tantáv"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "formula:very_good",
+   "words": [
+    "very good",
+    "indeed, it was very good",
+    "good gift",
+    "well watered"
+   ]
+  },
+  {
+   "id": "formula:and_it_was_so.g",
+   "kind": "formula",
+   "source": "וַיְהִי־כֵן / and it was so",
+   "value": "Yaq matev āv tønefakhán.",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:7",
+     "form": "Yaq matev āv tønefakhán.",
+     "n": 6
+    },
+    {
+     "ref": "GEN 1:9",
+     "form": "Yaq matev āv tønefakhán."
+    },
+    {
+     "ref": "GEN 1:30",
+     "form": "Yaq matev āv tønefakhán."
+    },
+    {
+     "ref": "GEN 30:16",
+     "form": "matev, āv tønefakhán"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "formula:and_it_was_so",
+   "words": [
+    "and it was so",
+    "it was so"
+   ],
+   "note": "\"And the thing happened thus\" (1:7, 9, 11, 15, 24, 30). Our draft built \"Yaq ate av-té qafakhan\" from the NT."
+  },
+  {
+   "id": "formula:let_there_be.g",
+   "kind": "formula",
+   "source": "יְהִי <X> (jussive) / let there be X",
+   "value": "<X> betéfakhan",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:6",
+     "form": "Løvøzumba betéfakhan"
+    },
+    {
+     "ref": "GEN 1:14",
+     "form": "Waev beté-fakhanam"
+    },
+    {
+     "ref": "GEN 1:3",
+     "form": "Waev betékha."
+    },
+    {
+     "ref": "GEN 1:9",
+     "form": "bēfakhan"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "formula:let_there_be",
+   "words": [
+    "let there be",
+    "let there be light",
+    "let there be lights",
+    "may appear"
+   ],
+   "note": "Jussive of fakhan (appear, come about) with bete- (feature optative_bete): betéfakhan, plural beté-fakhanam; light \"shines\": Waev betékha, then \"Yaq waev vø̄kha\" (and there was light, 1:3). Not \"<X> begó\" (our draft)."
+  },
+  {
+   "id": "term:H914.g",
+   "kind": "term",
+   "source": "H914 בָּדַל (separate)",
+   "value": "tøqatatat",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:6",
+     "form": "ibøkha tøqatatat"
+    },
+    {
+     "ref": "GEN 1:14",
+     "form": "tøqatatat"
+    },
+    {
+     "ref": "GEN 1:18",
+     "form": "betē-qatoat"
+    },
+    {
+     "ref": "GEN 1:4",
+     "form": "gunumu-qatá"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H914",
+   "words": [
+    "separate",
+    "separated",
+    "to separate",
+    "distinguish",
+    "distinguish between"
+   ],
+   "note": "The stem qat- (divide): purpose \"tøqatatat\" (to separate, 1:6, 1:14), jussive \"betē-qatoat\" (1:18), past \"livin-mbá gunumu-qatá\" (1:4). Not the NT geqatøzo."
+  },
+  {
+   "id": "term:H8414.g",
+   "kind": "term",
+   "source": "H8414 + H922 תֹהוּ וָבֹהוּ (formless and void)",
+   "value": "bugug eqeieqei mbaín",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:2",
+     "form": "bugug eqeieqei mbaín"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H8414",
+   "words": [
+    "formless",
+    "void",
+    "formless and void"
+   ],
+   "note": "\"had no good shape\". 1:2 is expanded by the team (seven short sentences for two clauses: dark, water, nothing living): the model for explaining inside the text."
+  },
+  {
+   "id": "term:H7363.g",
+   "kind": "term",
+   "source": "H7363 רָחַף (hover)",
+   "value": "mo꞉-yogumám",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:2",
+     "form": "mo꞉-yogumám"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H7363",
+   "words": [
+    "hovering",
+    "hovering over"
+   ]
+  },
+  {
+   "id": "term:H2822cover.g",
+   "kind": "term",
+   "source": "H2822 + עַל־פְּנֵי (darkness over the surface)",
+   "value": "bøivun mbá sugumu-veát",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:2",
+     "form": "bøivun mbá sugumu-veát"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H2822cover",
+   "words": [
+    "darkness was over the surface",
+    "darkness over the deep"
+   ]
+  },
+  {
+   "id": "term:H6960.g",
+   "kind": "term",
+   "source": "H6960 קָוָה (be gathered; מִקְוֶה gathering)",
+   "value": "kopo-té qabenø-píz",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:9",
+     "form": "kopo-té qabenø-píz"
+    },
+    {
+     "ref": "GEN 1:10",
+     "form": "manqei kopo-te qapiz"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H6960",
+   "words": [
+    "gathered",
+    "be gathered",
+    "gathering",
+    "gathering of waters",
+    "into one place"
+   ],
+   "note": "\"let the waters go together into one place\": manqei kopo-té qabenø-píz (1:9); the gathering of waters = \"ibøkha ndøgo, manqei kopo-te qapiz\" (1:10). Not pind- (people assembling)."
+  },
+  {
+   "id": "term:H1877.g",
+   "kind": "term",
+   "source": "H1877 דֶּשֶׁא (vegetation)",
+   "value": "avøeavøe",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "gagayag",
+     "note": "plant, herb: seed-bearing plants = gagayag nanga-us (1:11, 1:12); green plants for food = gagayag neka esokho qaza (1:30)"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 1:11",
+     "form": "avøeavøe bugug vinivinimba"
+    },
+    {
+     "ref": "GEN 1:12",
+     "form": "avøeavøe"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H1877",
+   "words": [
+    "vegetation"
+   ]
+  },
+  {
+   "id": "term:H6212.g",
+   "kind": "term",
+   "source": "H6212 עֵשֶׂב (plants; seed-bearing plants)",
+   "value": "gagayag nanga-us",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:11",
+     "form": "gagayag nanga-us"
+    },
+    {
+     "ref": "GEN 1:12",
+     "form": "gagayag nanga-us"
+    },
+    {
+     "ref": "GEN 1:29",
+     "form": "avøe gigiap nanga-us"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H6212",
+   "words": [
+    "seed-bearing plants",
+    "seed-bearing plant",
+    "plants",
+    "every green plant"
+   ],
+   "note": "\"plant with seed\" = gagayag nanga-us (1:11, 1:12) or avøe gigiap nanga-us (1:29). nanga = seed/fruit, -us = having (feature having_suffix)."
+  },
+  {
+   "id": "term:H2233seed.g",
+   "kind": "term",
+   "source": "H2233 זֶרַע (seed of plants)",
+   "value": "nanga",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:11",
+     "form": "gagayag nanga-us"
+    },
+    {
+     "ref": "GEN 1:29",
+     "form": "tae nanga vinivinimba"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H2233seed",
+   "words": [
+    "seed",
+    "with seed",
+    "whose fruit contains seed",
+    "yielding seed"
+   ],
+   "note": "nanga covers seed and fruit; \"with seed\" = nanga-us. \"tae nanga\" (our draft) is the fruit of a tree (1:29, 3:6). For human offspring see term:H2233.g (-zi)."
+  },
+  {
+   "id": "term:H6529.g",
+   "kind": "term",
+   "source": "H6529 פְּרִי + עֵץ (fruit, fruit trees)",
+   "value": "tae nanga-us",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:11",
+     "form": "tae nanga-us"
+    },
+    {
+     "ref": "GEN 1:12",
+     "form": "tae vinivinimba nanga-us"
+    },
+    {
+     "ref": "GEN 3:6",
+     "form": "nanga"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H6529",
+   "words": [
+    "fruit trees",
+    "trees bearing fruit",
+    "bearing fruit",
+    "fruit"
+   ],
+   "note": "bear fruit = \"nanga ... bembøē-fakhanam\" (let it bring out fruit, 1:11; 1:12)."
+  },
+  {
+   "id": "term:H4475.g",
+   "kind": "term",
+   "source": "H4475 / H4910 / H7287 (rule, dominion)",
+   "value": "nøzøwat",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "kawaezat",
+     "note": "rule over living beings: bezømbē-kawaezat (1:26), zozømbó-kawaeztát (1:28), gezømbó-kawaez-tát (27:29)"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 1:16",
+     "form": "paveat nøzøwat nonqó"
+    },
+    {
+     "ref": "GEN 1:18",
+     "form": "betē-nøzøwat"
+    },
+    {
+     "ref": "GEN 1:26",
+     "form": "bezømbē-kawaezat"
+    },
+    {
+     "ref": "GEN 1:28",
+     "form": "zozømbó-kawaeztát"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H4475",
+   "words": [
+    "to rule the day",
+    "to rule the night",
+    "preside over",
+    "rule over",
+    "rule",
+    "dominion"
+   ],
+   "note": "The lights \"watch over\" the day (nøzøwat, 1:16, 1:18); man rules over animals and brothers with the kawa- stem (kawa = chief)."
+  },
+  {
+   "id": "term:H3533.g",
+   "kind": "term",
+   "source": "H3533 כָּבַשׁ (subdue)",
+   "value": "vømbø̄e-kawaezat",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:28",
+     "form": "vømbø̄e-kawaezat"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H3533",
+   "words": [
+    "subdue",
+    "subdue it"
+   ],
+   "note": "Subdue and rule share the kawa- stem in 1:28."
+  },
+  {
+   "id": "term:H226.g",
+   "kind": "term",
+   "source": "H226 אוֹת (sign)",
+   "value": "khakhatap",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:14",
+     "form": "taqá khakhatáp"
+    },
+    {
+     "ref": "GEN 9:12",
+     "form": "khakhatap nqánek"
+    },
+    {
+     "ref": "GEN 17:10",
+     "form": "poev-qa khakhatap"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H226",
+   "words": [
+    "signs",
+    "sign",
+    "sign of the covenant",
+    "to mark the seasons"
+   ],
+   "note": "Sign of the lights (1:14) and of the covenant (9:12-17, 17:11) alike. umingiap (our draft) is a vision (15:1)."
+  },
+  {
+   "id": "term:H215.g",
+   "kind": "term",
+   "source": "H215 הֵאִיר (give light)",
+   "value": "waev vømbó-etoumāt",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:15",
+     "form": "waev vømbó-etoumāt"
+    },
+    {
+     "ref": "GEN 1:17",
+     "form": "waev betē-sanqatøve"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H215",
+   "words": [
+    "shine",
+    "to shine upon",
+    "give light",
+    "shine upon the earth"
+   ],
+   "note": "\"give light to it\" (1:15) / \"let them pour light on\" (1:17)."
+  },
+  {
+   "id": "term:H8317.g",
+   "kind": "term",
+   "source": "H8317 שָׁרַץ / H4390 מָלֵא (teem, fill)",
+   "value": "beté-khazem",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:20",
+     "form": "ibøkha beté-khazem"
+    },
+    {
+     "ref": "GEN 1:22",
+     "form": "bēkhazem"
+    },
+    {
+     "ref": "GEN 1:28",
+     "form": "vø̀khazém"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H8317",
+   "words": [
+    "teem",
+    "teemed",
+    "swarm",
+    "fill",
+    "fill the waters"
+   ],
+   "note": "The khaz- stem (fill, crowd) carries both \"let the waters teem\" (1:20) and \"fill the waters / the earth\" (1:22, 1:28)."
+  },
+  {
+   "id": "formula:fill_the_earth.g",
+   "kind": "formula",
+   "source": "וּמִלְאוּ אֶת־הָאָרֶץ / fill the earth",
+   "value": "Manqei-qape, vø̀khazém",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:28",
+     "form": "Manqei-qape, vø̀khazém"
+    },
+    {
+     "ref": "GEN 1:22",
+     "form": "ndaola ibøkha bēkhazem"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "formula:fill_the_earth",
+   "words": [
+    "fill the earth",
+    "fill the waters",
+    "fill the waters of the seas"
+   ]
+  },
+  {
+   "id": "term:H8577.g",
+   "kind": "term",
+   "source": "H8577 תַּנִּינִם (great sea creatures)",
+   "value": "khandi gigiap kandakanda",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:21",
+     "form": "khandi gigiap kandakanda"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H8577",
+   "words": [
+    "great sea creatures",
+    "sea creatures"
+   ],
+   "note": "\"big living things\" (1:21); seas = ndaola (1:10, 1:22, 1:26)."
+  },
+  {
+   "id": "term:H1288god.g",
+   "kind": "term",
+   "source": "H1288 (God blessed them)",
+   "value": "gèkhakheinøvém. Zenda zømbové",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:22",
+     "form": "gèkhakheinøvém. Zenda zømbové"
+    },
+    {
+     "ref": "GEN 1:28",
+     "form": "Zenda zømbové"
+    },
+    {
+     "ref": "GEN 5:2",
+     "form": "zenda"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H1288god",
+   "words": [
+    "god blessed them",
+    "blessed them",
+    "and blessed them"
+   ],
+   "note": "\"God blessed them\" = he made them well and put his hand on them (1:22, 1:28; 5:2). See term:H1288.g for \"bless you\"."
+  },
+  {
+   "id": "formula:be_fruitful.g",
+   "kind": "formula",
+   "source": "פְּרוּ וּרְבוּ / be fruitful and multiply",
+   "value": "vø̀mønøzumít … bawan bezø̄-khouwev",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:28",
+     "form": "vø̀mønøzumít",
+     "n": 4
+    },
+    {
+     "ref": "GEN 1:22",
+     "form": "Vø̀mønøzumít"
+    },
+    {
+     "ref": "GEN 1:28",
+     "form": "bawan bezø̄-khouwev"
+    },
+    {
+     "ref": "GEN 9:1",
+     "form": "vø̀mønøzumít"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "formula:be_fruitful",
+   "words": [
+    "be fruitful and multiply",
+    "be fruitful",
+    "multiply",
+    "increase in number"
+   ],
+   "note": "\"be fruitful\" = vø̀mønøzumít (1:22, 1:28, 9:1, 9:7); \"multiply\" = \"let your people group grow\" bawan bezø̄-khouwev (1:28) / bawan bèzø-khouwevtét (1:22); \"men began to multiply\" = \"Ezoqam-qa bawan qakhouwevtat\" (6:1). God multiplying descendants: \"qazi kopoav-qape nøtaqá-etoám\" (17:2, 12:2, 22:17)."
+  },
+  {
+   "id": "term:H6754.g",
+   "kind": "term",
+   "source": "H6754 + H1823 צֶלֶם / דְּמוּת (image, likeness)",
+   "value": "bugug",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:27",
+     "form": "Ekeza bugug me꞉qeív"
+    },
+    {
+     "ref": "GEN 1:26",
+     "form": "niqá bugug ndǿkewagát"
+    },
+    {
+     "ref": "GEN 5:3",
+     "form": "andé ekeza bugúg"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H6754",
+   "words": [
+    "image",
+    "in our image",
+    "likeness",
+    "after our likeness",
+    "in his own image",
+    "in the image of god",
+    "in his own likeness"
+   ],
+   "note": "bugug = shape, appearance (also face: \"bugug até manqei-té\" face to the ground, 18:2). \"in our image\" = \"they will look after our shape\" (1:26); 5:1 \"av ekezan nde꞉go\" (as he himself is)."
+  },
+  {
+   "id": "formula:let_us_make.g",
+   "kind": "formula",
+   "source": "נַעֲשֶׂה / let us make",
+   "value": "zíkhakheinøvém",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:26",
+     "form": "Ndakin ezoqam zíkhakheinøvém."
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "formula:let_us_make",
+   "words": [
+    "let us make",
+    "let us make man"
+   ],
+   "note": "Attested 1pl hortative zí- + khakheinøv (make, with a plural object). Our draft had zíkhakheinám by the pattern."
+  },
+  {
+   "id": "formula:behold_i_have_given.g",
+   "kind": "formula",
+   "source": "הִנֵּה נָתַתִּי לָכֶם / Behold, I have given you",
+   "value": "Nqáe! No zo <X> nøzø-etøomít",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:29",
+     "form": "nøzø-etøomít"
+    },
+    {
+     "ref": "GEN 1:30",
+     "form": "nøzø-etøomít"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "formula:behold_i_have_given",
+   "words": [
+    "behold, i have given you",
+    "i have given you",
+    "i have given"
+   ],
+   "note": "God's gift is given in the future-like form nøzø-etøomít (I give to you pl), not the perfect of our draft."
+  },
+  {
+   "id": "formula:for_food.g",
+   "kind": "formula",
+   "source": "לָכֶם יִהְיֶה לְאָכְלָה / for food",
+   "value": "zoqá loge gigiap ndǿgoát",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:29",
+     "form": "zoqá loge gigiap ndǿgoát"
+    },
+    {
+     "ref": "GEN 1:30",
+     "form": "tiqa loge nonqo"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "formula:for_food",
+   "words": [
+    "for food",
+    "they will be yours for food",
+    "yours for food"
+   ]
+  },
+  {
+   "id": "term:H5414set.g",
+   "kind": "term",
+   "source": "H5414 (set, place)",
+   "value": "genø-awám",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:17",
+     "form": "genø-awám"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H5414set",
+   "words": [
+    "set",
+    "god set",
+    "placed"
+   ]
+  },
+  {
+   "id": "name:genesis_title.g",
+   "kind": "name",
+   "source": "בְּרֵאשִׁית (book title, Genesis)",
+   "value": "Iqandengaz",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 1:1",
+     "form": "Ibugukhokhof"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "name:genesis_title",
+   "words": [
+    "genesis"
+   ],
+   "note": "The team's book heading is \"Iqandengaz (Genesis)\" (the heading line of gen001.txt, not a verse, so cited by rule); Ibugukhokhof is \"In the beginning\" (1:1), not the title."
+  },
+  {
+   "id": "term:H3068.g",
+   "kind": "term",
+   "source": "H3068",
+   "value": "Evezøza",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "Yawe",
+     "note": "Ruth only (18 verses); Genesis 0, Jonah 0"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 2:4",
+     "form": "Evezøza",
+     "n": 153
+    },
+    {
+     "ref": "GEN 12:7",
+     "form": "Evezøza"
+    },
+    {
+     "ref": "GEN 29:32",
+     "form": "Evezøza"
+    },
+    {
+     "ref": "JON 1:3",
+     "form": "Evezøza"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H3068.h",
+   "words": [
+    "lord",
+    "the lord",
+    "the lord god",
+    "o lord"
+   ],
+   "note": "Settled by Genesis: YHWH = Evezøza in 153 verses of Gen 1-30, Yawe in none; Yawe is Ruth's alone. LORD God = \"Evezøza Mbumbukiam\" (17 verses, GEN 2:7) or \"Evezøza, ndego Mbumbukiam\" (2:4); vocative \"Evézøza, Mbumbukiam!\" (Lord GOD, 15:2)."
+  },
+  {
+   "id": "name:yahweh.g",
+   "kind": "name",
+   "source": "יְהוָה",
+   "value": "Evezøza",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 2:4",
+     "form": "Evezøza"
+    },
+    {
+     "ref": "GEN 15:2",
+     "form": "Evézøza"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "name:yahweh_ruth",
+   "words": [
+    "lord",
+    "the lord"
+   ],
+   "note": "See term:H3068.g. Ruth's Yawe is not used for Genesis 31-50."
+  },
+  {
+   "id": "formula:blessed_be_the_lord.g",
+   "kind": "formula",
+   "source": "בָּרוּךְ יְהוָה / blessed be the LORD",
+   "value": "Evezøza-qa iz, yàbeto-eqawát",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 9:26",
+     "form": "Evezøza-qa iz, yàbeto-eqawát",
+     "n": 3
+    },
+    {
+     "ref": "GEN 24:27",
+     "form": "Evezøza-qa iz, yàbeto-eqawát"
+    },
+    {
+     "ref": "GEN 14:20",
+     "form": "teqa iz, yàbeto-eqawát"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "formula:blessed_be_the_lord.h",
+   "words": [
+    "blessed be the lord",
+    "blessed be god",
+    "blessed be god most high"
+   ],
+   "note": "\"May the LORD's name be lifted up\", then \"ndego <X>-ge Mbumbukiam\" (the God of Shem, 9:26; of my master Abraham, 24:27). Ruth's \"Khanakhanákh Yawe-te\" is not in Genesis."
+  },
+  {
+   "id": "term:H1288.g",
+   "kind": "term",
+   "source": "H1288 בָּרַךְ (bless someone)",
+   "value": "bèkhakheinøqavém",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "zenda <obj>-ve",
+     "note": "put the hand on: a father's or priest's blessing, 'zenda mbøevé' (he blessed him, 14:19, 27:27), 'zenda bàtaqambøkhæ-vé' (that I may bless you, 27:4)"
+    },
+    {
+     "value": "zenda awam matev",
+     "note": "a blessing (noun), 27:36, 27:38"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 14:19",
+     "form": "qo bèkhakheinøqavém",
+     "n": 9
+    },
+    {
+     "ref": "GEN 28:3",
+     "form": "qo bèkhakheinøqavém"
+    },
+    {
+     "ref": "GEN 12:2",
+     "form": "ndæ̀khakheinøqavém"
+    },
+    {
+     "ref": "GEN 24:31",
+     "form": "gèkhakheinøqavém"
+    },
+    {
+     "ref": "GEN 26:29",
+     "form": "mø̀ndø-khakheinøqavém"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H1288.h",
+   "words": [
+    "bless",
+    "bless you",
+    "blessed",
+    "may god bless you",
+    "i will bless you",
+    "blessed by the lord"
+   ],
+   "note": "The verb khakheinøqav- (make well, for you) with the usual prefixes: bè- may (14:19, 28:3), ndæ̀- I will (12:2, 22:17), gè- he did (24:31), mø̀ndø- has (26:29). Ruth's \"zenda ndò꞉vé\" is the hand-laying wording; Genesis uses both."
+  },
+  {
+   "id": "formula:blessed_be_he.g",
+   "kind": "formula",
+   "source": "בָּרוּךְ <X> לַיהוָה / blessed be X by the LORD",
+   "value": "<X> bèkhakheinøqavém",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 14:19",
+     "form": "qo bèkhakheinøqavém"
+    },
+    {
+     "ref": "GEN 24:31",
+     "form": "Evezøza gèkhakheinøqavém"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "formula:blessed_be_he.h",
+   "words": [
+    "blessed be the man",
+    "blessed be",
+    "you who are blessed by the lord",
+    "blessed be abram"
+   ],
+   "note": "Wish: \"Mbumbukiam Eqeiwat-Qape, qo bèkhakheinøqavém\" (14:19); state: \"Qo Evezøza gèkhakheinøqavém\" (24:31). Ruth's Yawe form is not used."
+  },
+  {
+   "id": "formula:repay_your_work.g",
+   "kind": "formula",
+   "source": "יְשַׁלֵּם יְהוָה פָּעֳלֵךְ",
+   "value": "Qo Evezøza yaq-fia ndø̀qagó",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "RUT 2:12",
+     "form": "yaq-fia"
+    },
+    {
+     "ref": "GEN 15:1",
+     "form": "yaq-fia kandambaqape"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "formula:repay_your_work",
+   "words": [
+    "may the lord repay your work",
+    "repay",
+    "reward",
+    "great reward"
+   ],
+   "note": "Ruth's wording with Evezøza for Yawe (term:H3068.g). \"your very great reward\" = \"yaq-fia kandambaqape\" (15:1)."
+  },
+  {
+   "id": "term:H7121curse.g",
+   "kind": "term",
+   "source": "H779 אָרַר / H7043 קָלַל (curse)",
+   "value": "soqain-té qatǿvé",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "soqain-te geve",
+     "note": "the ground the LORD has cursed (5:29)"
+    },
+    {
+     "value": "matev soqøsoqa nøzǿ-matønumát",
+     "note": "I will curse (do bad things to) those who curse you, 12:3"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 3:14",
+     "form": "soqain-té qatǿvé",
+     "n": 3
+    },
+    {
+     "ref": "GEN 3:17",
+     "form": "soqain-té qatǿvé"
+    },
+    {
+     "ref": "GEN 4:11",
+     "form": "soqain-té qatǿvé"
+    },
+    {
+     "ref": "GEN 9:25",
+     "form": "bèsoqoév"
+    },
+    {
+     "ref": "GEN 27:29",
+     "form": "bèsoqoezát"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "cursed",
+    "curse",
+    "cursed are you",
+    "cursed be",
+    "cursed is the ground"
+   ],
+   "note": "\"I put you into the bad\" = you are cursed (God speaking, 3:14, 3:17, 4:11); a wish \"may he be cursed\" = bèsoqoév / pl bèsoqoezát (9:25, 27:29). The noun soqain is also \"left (hand)\" (Jonah 4:11)."
+  },
+  {
+   "id": "formula:make_covenant.g",
+   "kind": "formula",
+   "source": "כָּרַת / הֵקִים בְּרִית (make, establish a covenant)",
+   "value": "poev <...>-unimanqatin",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 9:9",
+     "form": "poev no-unimanqatintét"
+    },
+    {
+     "ref": "GEN 15:18",
+     "form": "poev āv tini-unimanqatiním"
+    },
+    {
+     "ref": "GEN 17:2",
+     "form": "qazi-unimanqatinim"
+    },
+    {
+     "ref": "GEN 9:11",
+     "form": "nqate-unimanqatintet"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "covenant",
+    "establish my covenant",
+    "made a covenant",
+    "my covenant",
+    "everlasting covenant"
+   ],
+   "note": "The covenant is poev (will, wish) made true (unimanqatin-) between the parties: \"Poev ndøgo, zo namba nqate-unimanqatintet\" (9:11). Its content is often a promise, manqa mbusa (17:7, 17:10: \"Zo nqanek manqa mbusa, oskia ndøkhatiwí\" keep it forever). poev alone is also love, want (29:20, 29:32). term:H1285 (poev) stands."
+  },
+  {
+   "id": "term:H2233.g",
+   "kind": "term",
+   "source": "H2233 זֶרַע (offspring, descendants)",
+   "value": "qogi qazi",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 12:7",
+     "form": "qogí qazi",
+     "n": 22
+    },
+    {
+     "ref": "GEN 13:15",
+     "form": "qogi qazi"
+    },
+    {
+     "ref": "GEN 15:5",
+     "form": "Qogi qazi-qa bawan"
+    },
+    {
+     "ref": "GEN 9:9",
+     "form": "zogi zøzi"
+    },
+    {
+     "ref": "GEN 5:1",
+     "form": "tegi zi"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H2233.h",
+   "words": [
+    "offspring",
+    "descendants",
+    "your offspring",
+    "your descendants",
+    "seed"
+   ],
+   "note": "Offspring in the promises is the possessed noun -zi with a possessor prefix: qogi qazi (your sg, 12:7, 13:15, 13:16, 15:5, 17:7, 22:17), zogi zøzi (your pl, 9:9), tegi zi (his, 5:1, 10:13), nøzi (my, 21:23). nakheis = children of one's own (Ruth's choice, also 21:23 \"nogi nakheis\"). Plant seed: term:H2233seed.g."
+  },
+  {
+   "id": "term:H1062.g",
+   "kind": "term",
+   "source": "H1062 בְּכֹרָה (birthright)",
+   "value": "yo-khøuwa touzu iz",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 25:34",
+     "form": "Yo-khøuwa touzu iz",
+     "n": 4
+    },
+    {
+     "ref": "GEN 25:31",
+     "form": "touzu iz"
+    },
+    {
+     "ref": "GEN 25:33",
+     "form": "yo-khøuwa touzu iz"
+    },
+    {
+     "ref": "GEN 27:36",
+     "form": "yo-khøuwa iz"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "birthright",
+    "my birthright",
+    "sell me your birthright"
+   ],
+   "note": "\"the firstborn's inheritance name\": yo-khøuwa (firstborn) + touzu iz (25:31-34); short \"yo-khøuwa iz\" (27:36)."
+  },
+  {
+   "id": "term:H1060.g",
+   "kind": "term",
+   "source": "H1060 בְּכוֹר (firstborn); also the older son",
+   "value": "yo-khøuwa",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 10:15",
+     "form": "Yo-khøuwa Saedón",
+     "n": 12
+    },
+    {
+     "ref": "GEN 22:21",
+     "form": "Yo-khøuwa"
+    },
+    {
+     "ref": "GEN 25:13",
+     "form": "Yo-khøuwa"
+    },
+    {
+     "ref": "GEN 27:15",
+     "form": "yo-khøuwa Isao-qa"
+    },
+    {
+     "ref": "GEN 19:33",
+     "form": "yu khøuwa"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "firstborn",
+    "the firstborn",
+    "older son",
+    "elder",
+    "older daughter"
+   ],
+   "note": "yo (son) + khøuwa; for a daughter yu khøuwa (19:33). The younger son = \"yo okho-qase\" (27:15). Firstborn of a flock (4:4) is told as \"the first-born young\" (sip nakheis, bugukhokhof qaniap)."
+  },
+  {
+   "id": "term:H7939.g",
+   "kind": "term",
+   "source": "H7939 / H4909 שָׂכָר / מַשְׂכֹּרֶת (wages, reward)",
+   "value": "yaq-fia",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 29:15",
+     "form": "Qo gekha yaq-fia qápoev?"
+    },
+    {
+     "ref": "GEN 30:28",
+     "form": "yaq-fiā"
+    },
+    {
+     "ref": "GEN 30:32",
+     "form": "noqa yaq-fia"
+    },
+    {
+     "ref": "GEN 15:1",
+     "form": "yaq-fia"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "wages",
+    "my wages",
+    "your wages",
+    "reward",
+    "hire"
+   ],
+   "note": "\"pay, return gift\": what is your wages = \"Qo gekha yaq-fia qápoev?\" (what pay do you want, 29:15). \"servant of servants\" = \"yaq-fia mbain sasae ezoqam\" (unpaid servant, 9:25-27)."
+  },
+  {
+   "id": "term:H5650.g",
+   "kind": "term",
+   "source": "H5650 עֶבֶד (servant)",
+   "value": "sasae ezoqam",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "sasae mbasønakam",
+     "note": "maidservant (14 verses: 16:1-3, 29:24, 30:3), term:H8198"
+    },
+    {
+     "value": "sasae kawa ezoqam",
+     "note": "the chief servant, steward of a household (24:2)"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 24:9",
+     "form": "sasae ezoqam",
+     "n": 55
+    },
+    {
+     "ref": "GEN 9:25",
+     "form": "sasae ezoqam"
+    },
+    {
+     "ref": "GEN 24:2",
+     "form": "sasae kawa ezoqam"
+    },
+    {
+     "ref": "GEN 16:1",
+     "form": "sasae mbasønakam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H5650",
+   "words": [
+    "servant",
+    "servants",
+    "menservants",
+    "chief servant",
+    "slave"
+   ],
+   "note": "\"work person\". The NT form stands; Genesis confirms it (55 verses) and adds the chief servant. A servant's self-reference \"your servant\" before a superior is \"No ezoqam khapúmbá\" (formula:humble_self) or just no."
+  },
+  {
+   "id": "term:H6629.g",
+   "kind": "term",
+   "source": "H6629 צֹאן (flock, sheep and goats)",
+   "value": "sip",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "naningus",
+     "note": "goats (18 verses; 27:9, 30:32)"
+    },
+    {
+     "value": "søvakha gigiap",
+     "note": "animals, livestock in general: 'all your flocks' (30:32), cattle (13:2)"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 4:4",
+     "form": "sip",
+     "n": 43
+    },
+    {
+     "ref": "GEN 29:2",
+     "form": "sip"
+    },
+    {
+     "ref": "GEN 30:32",
+     "form": "Sip neka naningus"
+    },
+    {
+     "ref": "GEN 30:32",
+     "form": "qogi søvakha gigiap"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H6629",
+   "words": [
+    "flock",
+    "flocks",
+    "sheep",
+    "lamb",
+    "lambs"
+   ],
+   "note": "sheep = sip (43 verses); a mixed flock of sheep and goats = \"sip neka naningus\" (30:32-33); \"flocks and herds\" = \"sip neka kao\" (cattle, 12:16, 13:5, 20:14). A ram = \"sip anganeam\" (22:13)."
+  },
+  {
+   "id": "term:H251.g",
+   "kind": "term",
+   "source": "H251 אָח (brother)",
+   "value": "eveqase",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "zapikia-za",
+     "note": "brothers (a man's, plural): 9:22, 9:25; Joseph's brothers in ACT 7:13 'ekeza zapikia-za'"
+    },
+    {
+     "value": "anganømeo",
+     "note": "a woman's brother: Laban to Rebekah (24:29, 24:55), Abram presented as Sarai's brother (12:19, 20:5)"
+    },
+    {
+     "value": "nøfu",
+     "note": "fellow believer, brother in the church (NT, 202 verses); in Gen only 29:4 (Jacob greeting strangers)"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 4:8",
+     "form": "eveqase",
+     "n": 16
+    },
+    {
+     "ref": "GEN 4:9",
+     "form": "Qoge qaveqase"
+    },
+    {
+     "ref": "GEN 9:25",
+     "form": "zapikia-za-gé"
+    },
+    {
+     "ref": "GEN 24:55",
+     "form": "tuge anganømeo"
+    },
+    {
+     "ref": "GEN 20:5",
+     "form": "anganømeo"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H251",
+   "words": [
+    "brother",
+    "his brother",
+    "your brother",
+    "brothers",
+    "her brother",
+    "my brother"
+   ],
+   "note": "Kin nouns take the possessor prefix: eveqase (his brother), qaveqase (your brother, 4:9, 22:20), zøveqase (your pl, ACT 7:13). A man's sister = sævømiu (12:13, 20:2); kinsman = nøzeo (13:8 \"Qo nogé nøzeó\"); relative = \"nogé ezoqám\" (my person, 29:15)."
+  },
+  {
+   "id": "term:H3701.g",
+   "kind": "term",
+   "source": "H3701 כֶּסֶף (silver, money)",
+   "value": "silva",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "moni",
+     "note": "money, bought with money (17:12, 17:13, 17:23); 'N shekels of silver' = '<N> silva moni (mokho)' (23:16, 20:16)"
+    },
+    {
+     "value": "fia",
+     "note": "price, payment (23:9, 23:16)"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 13:2",
+     "form": "gol neka silva",
+     "n": 6
+    },
+    {
+     "ref": "GEN 23:16",
+     "form": "fo andled silva moni"
+    },
+    {
+     "ref": "GEN 20:16",
+     "form": "silva moni mokho"
+    },
+    {
+     "ref": "GEN 17:12",
+     "form": "moni"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H3701",
+   "words": [
+    "silver",
+    "shekels of silver",
+    "pieces of silver",
+    "money",
+    "price"
+   ],
+   "note": "Silver as metal is silva (with gold, gol, 13:2, 24:35, 24:53); money is moni. Weighed silver coins: \"fo andled silva moni mokho\" (400 shekels, 23:16)."
+  },
+  {
+   "id": "term:H3117today.g",
+   "kind": "term",
+   "source": "H3117 הַיּוֹם (today)",
+   "value": "nqægo",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 30:32",
+     "form": "No nqægo"
+    },
+    {
+     "ref": "GEN 24:12",
+     "form": "nqægo mba"
+    },
+    {
+     "ref": "GEN 24:42",
+     "form": "No nqægo"
+    },
+    {
+     "ref": "GEN 19:37",
+     "form": "ndakin khøuwa-te"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H3117today",
+   "words": [
+    "today",
+    "this day",
+    "now"
+   ],
+   "note": "Genesis has \"today\" as nqægo (24:12, 24:42, 30:32; Ruth \"nqægo khøuwa\", formula:matter_settled); nqægo khaiya (the NT-based entry) is not in Genesis. \"of today, to this day\" = \"ndakin khøuwa-te\" (19:37, 19:38); \"until today\" = ndakin (now, 21:26)."
+  },
+  {
+   "id": "name:jacob.g",
+   "kind": "name",
+   "source": "יַעֲקֹב hbo:3290 (H3290)",
+   "value": "Zekop",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 25:26",
+     "form": "Zekop",
+     "n": 67
+    },
+    {
+     "ref": "GEN 27:36",
+     "form": "Zekóp"
+    },
+    {
+     "ref": "ACT 7:12",
+     "form": "Zekop"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "name:jacob",
+   "words": [
+    "jacob"
+   ],
+   "note": "Genesis 1-30: 67 verses. NT the same. Meaning given at 25:26 \"(Taqa manqa mokho: Zenda-tu geawát.)\" and 27:36."
+  },
+  {
+   "id": "name:esau.g",
+   "kind": "name",
+   "source": "עֵשָׂו hbo:6215 (H6215)",
+   "value": "Isao",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 25:25",
+     "form": "Isao",
+     "n": 30
+    },
+    {
+     "ref": "GEN 27:34",
+     "form": "Isao"
+    },
+    {
+     "ref": "HEB 12:16",
+     "form": "Isao"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "name:esau",
+   "words": [
+    "esau"
+   ],
+   "note": "Genesis 1-30: 30 verses. NT the same."
+  },
+  {
+   "id": "name:isaac.g",
+   "kind": "name",
+   "source": "יִצְחָק hbo:3327 (H3327)",
+   "value": "Aezek",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 21:4",
+     "form": "Aezek",
+     "n": 70
+    },
+    {
+     "ref": "GEN 25:20",
+     "form": "Aezek"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "name:isaac",
+   "words": [
+    "isaac"
+   ],
+   "note": "Genesis 1-30: 70 verses. NT the same."
+  },
+  {
+   "id": "name:abraham.g",
+   "kind": "name",
+   "source": "אַבְרָהָם hbo:0085 (H85)",
+   "value": "Eibleem",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 17:24",
+     "form": "Eibleem",
+     "n": 115
+    },
+    {
+     "ref": "GEN 22:1",
+     "form": "Éibleem"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "name:abraham",
+   "words": [
+    "abraham"
+   ],
+   "note": "Genesis 1-30: 115 verses. NT the same; vocative Éibleem (22:1, 22:11). Before 17:5 he is Eiblam (name:abram.g)."
+  },
+  {
+   "id": "name:abram.g",
+   "kind": "name",
+   "source": "אַבְרָם hbo:0087 (H87)",
+   "value": "Eiblam",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 12:4",
+     "form": "Eiblam",
+     "n": 58
+    },
+    {
+     "ref": "GEN 15:1",
+     "form": "Éiblam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "abram"
+   ],
+   "note": "Genesis 1-30: 58 verses. Not in the NT. Vocative Éiblam (15:1)."
+  },
+  {
+   "id": "name:sarah.g",
+   "kind": "name",
+   "source": "שָׂרָה hbo:8283 (H8283)",
+   "value": "Sæla",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 23:1",
+     "form": "Sæla",
+     "n": 29
+    },
+    {
+     "ref": "GEN 25:12",
+     "form": "Sæla-gu"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "name:sarah",
+   "words": [
+    "sarah"
+   ],
+   "note": "Genesis 1-30: 29 verses. NT the same."
+  },
+  {
+   "id": "name:sarai.g",
+   "kind": "name",
+   "source": "שָׂרַי hbo:8297 (H8297)",
+   "value": "Salai",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 16:2",
+     "form": "Salai",
+     "n": 14
+    },
+    {
+     "ref": "GEN 16:3",
+     "form": "Salai"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "sarai"
+   ],
+   "note": "Genesis 1-30: 14 verses. Not in the NT."
+  },
+  {
+   "id": "name:rachel.g",
+   "kind": "name",
+   "source": "רָחֵל hbo:7354 (H7354)",
+   "value": "Laisol",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 30:6",
+     "form": "Laisol",
+     "n": 24
+    },
+    {
+     "ref": "GEN 29:11",
+     "form": "Laisol"
+    },
+    {
+     "ref": "MAT 2:18",
+     "form": "Laisol"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "name:rachel",
+   "words": [
+    "rachel"
+   ],
+   "note": "Genesis 1-30: 24 verses. NT the same; also Laisól (3 verses)."
+  },
+  {
+   "id": "name:leah.g",
+   "kind": "name",
+   "source": "לֵאָה hbo:3812 (H3812)",
+   "value": "Lia",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 29:32",
+     "form": "Lia",
+     "n": 22
+    },
+    {
+     "ref": "GEN 30:11",
+     "form": "Lia"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "name:leah",
+   "words": [
+    "leah"
+   ],
+   "note": "Genesis 1-30: 22 verses. Ruth 4:11 the same."
+  },
+  {
+   "id": "name:laban.g",
+   "kind": "name",
+   "source": "לָבָן hbo:3837 (H3837)",
+   "value": "Leiben",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 29:15",
+     "form": "Leiben",
+     "n": 32
+    },
+    {
+     "ref": "GEN 24:29",
+     "form": "Leibén"
+    },
+    {
+     "ref": "GEN 28:2",
+     "form": "Leiben-gi"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "laban"
+   ],
+   "note": "Genesis 1-30: 32 verses. Not in the NT. Letter rule: long a → ei (letter:long_a)."
+  },
+  {
+   "id": "name:rebekah.g",
+   "kind": "name",
+   "source": "רִבְקָה hbo:7259 (H7259)",
+   "value": "Lebeka",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 25:20",
+     "form": "Lebeka",
+     "n": 27
+    },
+    {
+     "ref": "GEN 27:15",
+     "form": "Lebeka"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "rebekah"
+   ],
+   "note": "Genesis 1-30: 27 verses. Not in the NT text."
+  },
+  {
+   "id": "name:nahor.g",
+   "kind": "name",
+   "source": "נָחוֹר hbo:5152 (H5152)",
+   "value": "Nao",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 11:27",
+     "form": "Nao",
+     "n": 15
+    },
+    {
+     "ref": "GEN 22:20",
+     "form": "Nao"
+    },
+    {
+     "ref": "LUK 3:34",
+     "form": "Nao"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "nahor"
+   ],
+   "note": "Genesis 1-30: 15 verses. NT the same."
+  },
+  {
+   "id": "name:bilhah.g",
+   "kind": "name",
+   "source": "בִּלְהָה hbo:1090 (H1090)",
+   "value": "Bila",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 30:3",
+     "form": "Bila",
+     "n": 5
+    },
+    {
+     "ref": "GEN 29:29",
+     "form": "Bila"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "bilhah"
+   ],
+   "note": "Genesis 1-30: 5 verses. h before a consonant and final h drop."
+  },
+  {
+   "id": "name:zilpah.g",
+   "kind": "name",
+   "source": "זִלְפָּה hbo:2153 (H2153)",
+   "value": "Zilpa",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 29:24",
+     "form": "Zilpa",
+     "n": 4
+    },
+    {
+     "ref": "GEN 30:9",
+     "form": "Zilpa"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "zilpah"
+   ],
+   "note": "Genesis 1-30: 4 verses."
+  },
+  {
+   "id": "name:reuben.g",
+   "kind": "name",
+   "source": "רְאוּבֵן hbo:7205 (H7205)",
+   "value": "Luben",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 29:32",
+     "form": "Luben",
+     "n": 2
+    },
+    {
+     "ref": "REV 7:5",
+     "form": "Luben"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "name:reuben",
+   "words": [
+    "reuben"
+   ],
+   "note": "Genesis 1-30: 2 verses. NT the same. Meaning at 29:32."
+  },
+  {
+   "id": "name:simeon.g",
+   "kind": "name",
+   "source": "שִׁמְעוֹן H8095",
+   "value": "Simeon",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 29:33",
+     "form": "Simeon",
+     "n": 1
+    },
+    {
+     "ref": "LUK 2:25",
+     "form": "Simeon"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "simeon"
+   ],
+   "note": "Genesis 1-30: 1 verses. NT the same (also the NT Simeon of Luke 2). Not \"Saemon\" (Simon)."
+  },
+  {
+   "id": "name:levi.g",
+   "kind": "name",
+   "source": "לֵוִי hbo:3878 (H3878)",
+   "value": "Livai",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 29:34",
+     "form": "Livai",
+     "n": 1
+    },
+    {
+     "ref": "HEB 7:5",
+     "form": "Livai"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "name:levi",
+   "words": [
+    "levi"
+   ],
+   "note": "Genesis 1-30: 1 verses. NT the same."
+  },
+  {
+   "id": "name:judah.g",
+   "kind": "name",
+   "source": "יְהוּדָה hbo:3063 (H3063)",
+   "value": "Zuda",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 29:35",
+     "form": "Zuda",
+     "n": 1
+    },
+    {
+     "ref": "HEB 7:14",
+     "form": "Zuda"
+    },
+    {
+     "ref": "RUT 1:1",
+     "form": "Zuda"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "name:judah",
+   "words": [
+    "judah"
+   ],
+   "note": "Genesis 1-30: 1 verses. NT and Ruth the same. The Roman province Judea is Zudia (name:judea)."
+  },
+  {
+   "id": "name:dan.g",
+   "kind": "name",
+   "source": "דָּן hbo:1835 (H1835)",
+   "value": "Den",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 30:6",
+     "form": "Den",
+     "n": 2
+    },
+    {
+     "ref": "GEN 14:14",
+     "form": "Den"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "dan"
+   ],
+   "note": "Genesis 1-30: 2 verses. Son and town alike (14:14). Short a varies: Den, Gad, Hæga (letter:short_a.g)."
+  },
+  {
+   "id": "name:naphtali.g",
+   "kind": "name",
+   "source": "נַפְתָּלִי hbo:5321 (H5321)",
+   "value": "Naftali",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 30:8",
+     "form": "Naftali",
+     "n": 1
+    },
+    {
+     "ref": "MAT 4:13",
+     "form": "Naftali"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "name:naphtali",
+   "words": [
+    "naphtali"
+   ],
+   "note": "Genesis 1-30: 1 verses. NT the same."
+  },
+  {
+   "id": "name:gad.g",
+   "kind": "name",
+   "source": "גָּד hbo:1410 (H1410)",
+   "value": "Gad",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 30:11",
+     "form": "Gad",
+     "n": 1
+    },
+    {
+     "ref": "REV 7:5",
+     "form": "Gad"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "gad"
+   ],
+   "note": "Genesis 1-30: 1 verses. NT the same."
+  },
+  {
+   "id": "name:asher.g",
+   "kind": "name",
+   "source": "אָשֵׁר hbo:0836 (H836)",
+   "value": "Asa",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 30:13",
+     "form": "Asa",
+     "n": 1
+    },
+    {
+     "ref": "LUK 2:36",
+     "form": "Asa"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "asher"
+   ],
+   "note": "Genesis 1-30: 1 verses. NT the same."
+  },
+  {
+   "id": "name:issachar.g",
+   "kind": "name",
+   "source": "יִשָּׂשכָר hbo:3485 (H3485)",
+   "value": "Isaka",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 30:18",
+     "form": "Isaka",
+     "n": 1
+    },
+    {
+     "ref": "REV 7:7",
+     "form": "Isaka"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "issachar"
+   ],
+   "note": "Genesis 1-30: 1 verses. NT the same."
+  },
+  {
+   "id": "name:zebulun.g",
+   "kind": "name",
+   "source": "זְבוּלֻן hbo:2074 (H2074)",
+   "value": "Zebulon",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 30:20",
+     "form": "Zebulon",
+     "n": 1
+    },
+    {
+     "ref": "MAT 4:13",
+     "form": "Zebulon"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "name:zebulun",
+   "words": [
+    "zebulun"
+   ],
+   "note": "Genesis 1-30: 1 verses. NT the same."
+  },
+  {
+   "id": "name:dinah.g",
+   "kind": "name",
+   "source": "דִּינָה hbo:1783 (H1783)",
+   "value": "Daina",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 30:21",
+     "form": "Daina",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "dinah"
+   ],
+   "note": "Genesis 1-30: 1 verses. Long i → ai (letter:long_i)."
+  },
+  {
+   "id": "name:joseph.g",
+   "kind": "name",
+   "source": "יוֹסֵף hbo:3130 (H3130)",
+   "value": "Zosef",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 30:24",
+     "form": "Zosef",
+     "n": 2
+    },
+    {
+     "ref": "GEN 30:25",
+     "form": "Zosef"
+    },
+    {
+     "ref": "ACT 7:13",
+     "form": "Zosef"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "name:joseph",
+   "words": [
+    "joseph"
+   ],
+   "note": "Genesis 1-30: 2 verses. NT the same; vocative Zósef (MAT 1:20)."
+  },
+  {
+   "id": "name:edom.g",
+   "kind": "name",
+   "source": "אֱדוֹם hbo:0123 (H123)",
+   "value": "Edom",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 25:30",
+     "form": "Edom",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "edom"
+   ],
+   "note": "Genesis 1-30: 1 verses. Esau's other name, with its meaning in brackets (25:30 \"Køkoúk\", red). The land: \"Edom manqei\" by the place-class rule (feature place_class_noun)."
+  },
+  {
+   "id": "name:seir.g",
+   "kind": "name",
+   "source": "שֵׂעִיר H8165",
+   "value": "Sia",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 14:6",
+     "form": "Sia manqei popotap-te",
+     "n": 1
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "seir",
+    "mount seir",
+    "hill country of seir"
+   ],
+   "note": "Genesis 1-30: 1 verses. \"the hill country of Seir\" = \"Sia manqei popotap\" (14:6). Medium: one verse."
+  },
+  {
+   "id": "name:canaan.g",
+   "kind": "name",
+   "source": "כְּנַעַן hbo:3667 (H3667)",
+   "value": "Keinan",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 23:2",
+     "form": "Keinan manqei-té",
+     "n": 15
+    },
+    {
+     "ref": "GEN 9:25",
+     "form": "Keinan"
+    },
+    {
+     "ref": "ACT 7:11",
+     "form": "Keinan"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "name:canaan",
+   "words": [
+    "canaan",
+    "land of canaan"
+   ],
+   "note": "Genesis 1-30: 15 verses. NT the same; the land = Keinan manqei (23:2, 28:1)."
+  },
+  {
+   "id": "name:canaanites.g",
+   "kind": "name",
+   "source": "כְּנַעֲנִי H3669",
+   "value": "Keinan-ak",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 12:6",
+     "form": "Keinan-ak",
+     "n": 7
+    },
+    {
+     "ref": "GEN 24:3",
+     "form": "Keinan-ak-gi"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "canaanites",
+    "canaanite"
+   ],
+   "note": "Genesis 1-30: 7 verses. Origin suffix -ak (feature suffix_origin)."
+  },
+  {
+   "id": "name:egypt.g",
+   "kind": "name",
+   "source": "מִצְרַיִם hbo:4714 (H4714)",
+   "value": "Izip",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 12:10",
+     "form": "Izip manqei-té",
+     "n": 20
+    },
+    {
+     "ref": "ACT 7:10",
+     "form": "Izip manqei"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "name:egypt",
+   "words": [
+    "egypt",
+    "land of egypt",
+    "mizraim"
+   ],
+   "note": "Genesis 1-30: 20 verses. NT the same; the land = Izip manqei; \"the king of Egypt\" = \"Izip kawa ezoqam\" (12:16); Mizraim the person = Izip (10:13)."
+  },
+  {
+   "id": "name:egyptian.g",
+   "kind": "name",
+   "source": "מִצְרִי hbo:4713 (H4713)",
+   "value": "Izip manqei-ak",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 16:1",
+     "form": "Izip manqei-ak",
+     "n": 3
+    },
+    {
+     "ref": "GEN 25:12",
+     "form": "Izip manqei-ak"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "egyptian",
+    "egyptians"
+   ],
+   "note": "Genesis 1-30: 3 verses. Hagar the Egyptian (16:1, 16:3, 25:12); ACT 7:24 the same pattern."
+  },
+  {
+   "id": "name:pharaoh.g",
+   "kind": "name",
+   "source": "פַּרְעֹה hbo:6547 (H6547)",
+   "value": "Felo",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 12:15",
+     "form": "Felo",
+     "n": 4
+    },
+    {
+     "ref": "ACT 7:10",
+     "form": "Felo"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "name:pharaoh",
+   "words": [
+    "pharaoh"
+   ],
+   "note": "Genesis 1-30: 4 verses. NT the same; he is \"Izip kawa ezoqam\" (the king of Egypt, 12:16; ACT 7:10 \"Izip manqei-ak-ge kawa\")."
+  },
+  {
+   "id": "name:bethel.g",
+   "kind": "name",
+   "source": "בֵּית־אֵל hbo:1008 (H1008)",
+   "value": "Betel",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 28:19",
+     "form": "Betel",
+     "n": 3
+    },
+    {
+     "ref": "GEN 12:8",
+     "form": "Betel"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "bethel"
+   ],
+   "note": "Genesis 1-30: 3 verses. Meaning in brackets at 28:19 \"(Taqa manqa mokho: Mbumbukiam-qá khoév.)\"; older name Luz (28:19)."
+  },
+  {
+   "id": "name:luz.g",
+   "kind": "name",
+   "source": "לוּז H3870",
+   "value": "Luz",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 28:19",
+     "form": "Luz",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "luz"
+   ],
+   "note": "Genesis 1-30: 1 verses."
+  },
+  {
+   "id": "name:haran.g",
+   "kind": "name",
+   "source": "חָרָן hbo:2771a (H2771)",
+   "value": "Elan",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 12:4",
+     "form": "Elan taon",
+     "n": 11
+    },
+    {
+     "ref": "GEN 11:31",
+     "form": "Elan taon"
+    },
+    {
+     "ref": "ACT 7:4",
+     "form": "Elan"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "haran"
+   ],
+   "note": "Genesis 1-30: 11 verses. Town: \"Elan taon\" (11:31, 12:4, 29:4 \"Elan taon-ák\" from Haran); Abram's brother Haran is Elan too (11:27). NT the same. Initial h drops here (letter:h.g)."
+  },
+  {
+   "id": "name:paddan_aram.g",
+   "kind": "name",
+   "source": "פַּדַּן אֲרָם hbo:6307 (H6307)",
+   "value": "Padan-Alam",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 28:2",
+     "form": "Padan-Alam manqei-té",
+     "n": 5
+    },
+    {
+     "ref": "GEN 25:20",
+     "form": "Padan-Alam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "paddan-aram",
+    "paddan aram"
+   ],
+   "note": "Genesis 1-30: 5 verses. With the place class noun manqei (28:2)."
+  },
+  {
+   "id": "name:aram.g",
+   "kind": "name",
+   "source": "אֲרָם hbo:0758 (H758)",
+   "value": "Alam",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 22:21",
+     "form": "Alam-gé",
+     "n": 3
+    },
+    {
+     "ref": "GEN 25:20",
+     "form": "Alam manqei-ák"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "aram",
+    "aramean",
+    "the aramean"
+   ],
+   "note": "Genesis 1-30: 3 verses. The Aramean = \"Alam manqei-ák\" (25:20 of Bethuel and Laban)."
+  },
+  {
+   "id": "name:beersheba.g",
+   "kind": "name",
+   "source": "בְּאֵר שֶׁבַע hbo:0884 (H884)",
+   "value": "Besiba",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 21:31",
+     "form": "Besiba",
+     "n": 8
+    },
+    {
+     "ref": "GEN 21:14",
+     "form": "Besiba taon"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "beersheba"
+   ],
+   "note": "Genesis 1-30: 8 verses. Meaning in brackets at 21:31 \"(Taqa manqa mokho: Manqa mbusa ibøkha ozú.)\". The wilderness of Beersheba = \"leg-av manqei ... Besiba taon ... avønin-te\" (21:14)."
+  },
+  {
+   "id": "name:ishmael.g",
+   "kind": "name",
+   "source": "יִשְׁמָעֵאל hbo:3458 (H3458)",
+   "value": "Ismael",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 16:11",
+     "form": "Ismael",
+     "n": 16
+    },
+    {
+     "ref": "GEN 25:17",
+     "form": "Ismael"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "ishmael"
+   ],
+   "note": "Genesis 1-30: 16 verses. Ishmaelites (37:25 ff.) by rule: \"Ismael-ak\" or \"Ismael-gi zi\"."
+  },
+  {
+   "id": "name:hagar.g",
+   "kind": "name",
+   "source": "הָגָר hbo:1904 (H1904)",
+   "value": "Hæga",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 16:1",
+     "form": "Hæga",
+     "n": 13
+    },
+    {
+     "ref": "GEN 21:17",
+     "form": "Hǽga"
+    },
+    {
+     "ref": "GAL 4:24",
+     "form": "Hega"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "name:hagar",
+   "words": [
+    "hagar"
+   ],
+   "note": "Genesis 1-30: 13 verses. Genesis Hæga (17 verses with Hǽga), the NT Hega (GAL 4:24, 4:25): Genesis wins for the OT."
+  },
+  {
+   "id": "name:lot.g",
+   "kind": "name",
+   "source": "לוֹט hbo:3876 (H3876)",
+   "value": "Lot",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 13:8",
+     "form": "Lot",
+     "n": 30
+    },
+    {
+     "ref": "LUK 17:28",
+     "form": "Lot"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "name:lot",
+   "words": [
+    "lot"
+   ],
+   "note": "Genesis 1-30: 30 verses. NT the same."
+  },
+  {
+   "id": "name:bethuel.g",
+   "kind": "name",
+   "source": "בְּתוּאֵל hbo:1328 (H1328)",
+   "value": "Betuel",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 28:2",
+     "form": "Betuel",
+     "n": 9
+    },
+    {
+     "ref": "GEN 25:20",
+     "form": "Betuel"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "bethuel"
+   ],
+   "note": "Genesis 1-30: 9 verses."
+  },
+  {
+   "id": "name:milcah.g",
+   "kind": "name",
+   "source": "מִלְכָּה hbo:4435 (H4435)",
+   "value": "Milka",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 22:20",
+     "form": "Milká-ya",
+     "n": 5
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "milcah"
+   ],
+   "note": "Genesis 1-30: 5 verses."
+  },
+  {
+   "id": "name:abimelech.g",
+   "kind": "name",
+   "source": "אֲבִימֶלֶךְ hbo:0040 (H40)",
+   "value": "Abimelek",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 20:8",
+     "form": "Abimelek",
+     "n": 24
+    },
+    {
+     "ref": "GEN 26:8",
+     "form": "Abimelek"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "abimelech"
+   ],
+   "note": "Genesis 1-30: 24 verses."
+  },
+  {
+   "id": "name:gerar.g",
+   "kind": "name",
+   "source": "גְּרָר hbo:1642 (H1642)",
+   "value": "Gela",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 26:1",
+     "form": "Gela manqei-te",
+     "n": 8
+    },
+    {
+     "ref": "GEN 20:2",
+     "form": "Gela"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "gerar"
+   ],
+   "note": "Genesis 1-30: 8 verses. Final r drops, inner r → l."
+  },
+  {
+   "id": "name:philistines.g",
+   "kind": "name",
+   "source": "פְּלִשְׁתִּים hbo:6430 (H6430)",
+   "value": "Filistai ezoqam",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 26:1",
+     "form": "Filistai ezoqam-ge kawa",
+     "n": 7
+    },
+    {
+     "ref": "GEN 26:8",
+     "form": "Filistai ezoqam-gi"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "philistines",
+    "philistine"
+   ],
+   "note": "Genesis 1-30: 7 verses. With ezoqam (people), not -ak."
+  },
+  {
+   "id": "name:hittites.g",
+   "kind": "name",
+   "source": "חֵת / חִתִּי hbo:2845 (H2845)",
+   "value": "Hit-ak",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 23:16",
+     "form": "Hit-ak",
+     "n": 14
+    },
+    {
+     "ref": "GEN 26:34",
+     "form": "Hit-ak"
+    },
+    {
+     "ref": "GEN 10:15",
+     "form": "Hit"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "hittites",
+    "hittite",
+    "heth",
+    "sons of heth"
+   ],
+   "note": "Genesis 1-30: 14 verses. Heth the man = Hit (10:15); the Hittites = Hit-ak (23:3-20, 26:34); \"Ephron the Hittite\" = \"Hit-ak ezoqam\" (25:9). Initial h kept (letter:h.g). Closes gap:peoples for the Hittites."
+  },
+  {
+   "id": "name:hebron.g",
+   "kind": "name",
+   "source": "חֶבְרוֹן hbo:2275 (H2275)",
+   "value": "Hiblon",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 23:2",
+     "form": "Hiblón",
+     "n": 3
+    },
+    {
+     "ref": "GEN 23:19",
+     "form": "Hiblon"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "hebron"
+   ],
+   "note": "Genesis 1-30: 3 verses. Explained as the other name of Kiriath-arba (23:2 \"Iz nøme nqambógo, Hiblón\")."
+  },
+  {
+   "id": "name:mamre.g",
+   "kind": "name",
+   "source": "מַמְרֵא hbo:4471a (H4471)",
+   "value": "Mamle",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 25:9",
+     "form": "Mamle",
+     "n": 7
+    },
+    {
+     "ref": "GEN 23:19",
+     "form": "Mamle"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "mamre"
+   ],
+   "note": "Genesis 1-30: 7 verses."
+  },
+  {
+   "id": "name:machpelah.g",
+   "kind": "name",
+   "source": "מַכְפֵּלָה hbo:4375 (H4375)",
+   "value": "Makpela",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 23:9",
+     "form": "Makpela",
+     "n": 4
+    },
+    {
+     "ref": "GEN 25:9",
+     "form": "Makpela nandi nqa-té"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "machpelah",
+    "cave of machpelah"
+   ],
+   "note": "Genesis 1-30: 4 verses. \"the cave of Machpelah\" = \"Makpela nandi nqa\" (25:9; 49:30, 50:13 will need it)."
+  },
+  {
+   "id": "name:ephron.g",
+   "kind": "name",
+   "source": "עֶפְרוֹן hbo:6085 (H6085)",
+   "value": "Eflon",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 23:16",
+     "form": "Eflon",
+     "n": 7
+    },
+    {
+     "ref": "GEN 25:9",
+     "form": "Eflon-qa"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "ephron"
+   ],
+   "note": "Genesis 1-30: 7 verses."
+  },
+  {
+   "id": "name:shechem.g",
+   "kind": "name",
+   "source": "שְׁכֶם H7927",
+   "value": "Sekem",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 12:6",
+     "form": "Sekem",
+     "n": 1
+    },
+    {
+     "ref": "ACT 7:16",
+     "form": "Sekem"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "shechem"
+   ],
+   "note": "Genesis 1-30: 1 verses. Place (12:6, ACT 7:16 \"Sekem manqei\"); the man Shechem of Gen 34 by the same form. Hamor = Hamo (ACT 7:16)."
+  },
+  {
+   "id": "name:terah.g",
+   "kind": "name",
+   "source": "תֶּרַח hbo:8646 (H8646)",
+   "value": "Tela",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 11:27",
+     "form": "Tela",
+     "n": 8
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "terah"
+   ],
+   "note": "Genesis 1-30: 8 verses."
+  },
+  {
+   "id": "formula:after_these_things.g",
+   "kind": "formula",
+   "source": "אַחַר הַדְּבָרִים הָאֵלֶּה / after these things, some time later",
+   "value": "Taqa zita-te, khøuwa nøme,",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 15:1",
+     "form": "Taqa zita-te, khøuwa nøme,",
+     "n": 3
+    },
+    {
+     "ref": "GEN 22:1",
+     "form": "Taqa zita-te, khøuwa nøme,"
+    },
+    {
+     "ref": "GEN 22:20",
+     "form": "Taqa zita-te, khøuwa nøme,"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "after these events",
+    "after these things",
+    "some time later",
+    "after this"
+   ],
+   "note": "\"Taqa zita-te\" (after that) alone 42× in Gen 1-30, also as \"then\" between days (1:6, 1:9, 1:11) and in genealogies. Gen 39:7, 40:1, 48:1 need the full form."
+  },
+  {
+   "id": "formula:it_came_to_pass.g",
+   "kind": "formula",
+   "source": "וַיְהִי / and it came to pass; in the course of time",
+   "value": "Khøuwa nøme,",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 4:3",
+     "form": "Yaq khøuwa nøme",
+     "n": 22
+    },
+    {
+     "ref": "GEN 4:8",
+     "form": "Yaq khøuwa nøme"
+    },
+    {
+     "ref": "GEN 26:1",
+     "form": "Khøuwa nøme"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "in the course of time",
+    "some time later",
+    "one day",
+    "it came to pass"
+   ],
+   "note": "וַיְהִי is mostly not rendered; where the BSB marks a new scene, \"Khøuwa nøme,\" (one day, 22 verses) opens it; a time clause opens \"Ta khøuwa-te ndøgo,\" (12:4, 17:24)."
+  },
+  {
+   "id": "formula:here_i_am.g",
+   "kind": "formula",
+   "source": "הִנֵּנִי / Here I am",
+   "value": "No nqǽya.",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 22:1",
+     "form": "No nqǽya.",
+     "n": 6
+    },
+    {
+     "ref": "GEN 22:7",
+     "form": "No nqǽya"
+    },
+    {
+     "ref": "GEN 22:11",
+     "form": "No nqǽya."
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "here i am",
+    "here i am, my son"
+   ],
+   "note": "The reply to a call by name (22:1, 22:7, 22:11, 27:1); also \"here I am, standing by the spring\" (24:13, 24:43). Gen 31:11, 37:13, 46:2 need it. ACT 9:10 the same."
+  },
+  {
+   "id": "formula:generations_of.g",
+   "kind": "formula",
+   "source": "אֵלֶּה תּוֹלְדֹת <X> / This is the account of X",
+   "value": "<X> neka tegi zi, tiqa emanqat nqánek:",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 5:1",
+     "form": "tiqa emanqat nqánek:",
+     "n": 7
+    },
+    {
+     "ref": "GEN 11:10",
+     "form": "neka tegi zi, tiqa"
+    },
+    {
+     "ref": "GEN 11:27",
+     "form": "tiqa emanqat nqánek:"
+    },
+    {
+     "ref": "GEN 6:9",
+     "form": "Noa-qa emanqat nqánek:"
+    },
+    {
+     "ref": "GEN 25:19",
+     "form": "tiqa emanqat nqánek:"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "formula:generations_of",
+   "words": [
+    "this is the account of",
+    "these are the generations of",
+    "the generations of",
+    "this is the book of the generations of"
+   ],
+   "note": "\"X and his descendants, their story is this:\" (5:1, 11:10, 11:27, 25:19); a person alone \"<X>-qa emanqat nqánek:\" (6:9); \"<X>, teqa emanqat nqánek:\" (25:12). Gen 36:1, 36:9, 37:2 need it. Ruth's \"Deivid-qa zapa av nqǽgo qande-itán\" (4:18) is not used in Genesis."
+  },
+  {
+   "id": "formula:lived_and_fathered.g",
+   "kind": "formula",
+   "source": "וַיְחִי <X> <N> שָׁנָה וַיּוֹלֶד אֶת־<Y> / When X was N years old, he became the father of Y",
+   "value": "<X> viav <N> qamømbo-ndap, nakhasa anganeam tèmbøe-fakhán, <Y>.",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 5:6",
+     "form": "nakhasa anganeam tèmbøe-fakhán",
+     "n": 17
+    },
+    {
+     "ref": "GEN 11:12",
+     "form": "nakhasa anganeam tèmbøe-fakhán"
+    },
+    {
+     "ref": "GEN 5:3",
+     "form": "qamømbo-ndap"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "became the father of",
+    "had a son",
+    "when he was years old, he became the father of"
+   ],
+   "note": "\"X reached N years, a male child came out to him: Y\" (5:6-32, 11:12-26). The name follows as its own word or \"Teqa iz <Y>.\" (5:6)."
+  },
+  {
+   "id": "formula:lived_after.g",
+   "kind": "formula",
+   "source": "וַיְחִי <X> אַחֲרֵי הוֹלִידוֹ אֶת־<Y> ... וַיּוֹלֶד בָּנִים וּבָנוֹת",
+   "value": "<Y> geqan, taqa zita-te, <X> viav <N> … nakhei angana neka nakhei sakheis nøme vømbō-fakhaz.",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 5:4",
+     "form": "geqan, taqa zita-te",
+     "n": 17
+    },
+    {
+     "ref": "GEN 5:7",
+     "form": "nakhei angana neka nakhei"
+    },
+    {
+     "ref": "GEN 11:11",
+     "form": "nøme vømbō-fakhaz"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "had other sons and daughters",
+    "after he had become the father of",
+    "sons and daughters"
+   ],
+   "note": "\"Y was born; after that X lived N years more ... other sons and daughters came out to him.\" 11:11 adds \"yageap nøme mø̀ndøndáp\" (lived on)."
+  },
+  {
+   "id": "formula:and_he_died.g",
+   "kind": "formula",
+   "source": "וַיָּמֹת / and then he died",
+   "value": "Yaq até khæ ndønaním.",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 5:5",
+     "form": "Yaq até khæ ndønaním.",
+     "n": 9
+    },
+    {
+     "ref": "GEN 5:8",
+     "form": "Yaq até khæ ndønaním."
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "and then he died",
+    "and he died",
+    "then he died"
+   ],
+   "note": "Closes each life in the genealogies (5:5-31). A narrative death is \"gènaním\" / \"gunaním\" (she, 23:2)."
+  },
+  {
+   "id": "formula:gathered_to_his_people.g",
+   "kind": "formula",
+   "source": "וַיֵּאָסֶף אֶל־עַמָּיו / and was gathered to his people",
+   "value": "ekeza ezoqam zøpaév, ndigu bugukhokhof go꞉pakhaez",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 25:8",
+     "form": "ekeza ezoqam zøpaév",
+     "n": 2
+    },
+    {
+     "ref": "GEN 25:17",
+     "form": "ekeza ezoqam zøpaév"
+    },
+    {
+     "ref": "GEN 25:8",
+     "form": "Yage outap-ús"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "gathered to his people",
+    "was gathered to his people",
+    "breathed his last",
+    "old and contented",
+    "ripe old age"
+   ],
+   "note": "\"he followed his people who died before\"; \"breathed his last and died\" = \"ùnime꞉-lawaqape-év, genanim\" (25:8); \"old and full of days\" = \"Yage outap-ús\" (25:8). Gen 35:29, 49:29, 49:33 need it."
+  },
+  {
+   "id": "formula:x_father_of_y.g",
+   "kind": "formula",
+   "source": "<X> יָלַד אֶת־<Y> / X was the father of Y",
+   "value": "<X>, ndego <Y>-gé eve",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 10:24",
+     "form": "Sela-gé eve"
+    },
+    {
+     "ref": "GEN 11:27",
+     "form": "Lot-gé evé"
+    },
+    {
+     "ref": "GEN 22:21",
+     "form": "Alam-gé evé"
+    },
+    {
+     "ref": "GEN 4:18",
+     "form": "gemanaz"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "was the father of",
+    "the father of"
+   ],
+   "note": "Genesis uses three wordings in lists: \"<X>, ndego <Y>-gé eve\" (X, he is Y's father, 10:24, 11:27, 22:21), Ruth's \"<X> gemanaz, <Y> vø̄qan\" (formula:x_father_of_y.h, 4:18, 10:3, 7×), and \"<X>, tegi nakheis ngínik: ...\" (10:15)."
+  },
+  {
+   "id": "formula:conceived_and_bore.g",
+   "kind": "formula",
+   "source": "וַתַּהַר וַתֵּלֶד בֵּן / she conceived and gave birth to a son",
+   "value": "kha viniv ndøndáp, nakhasa anganeam vømbō-fakhan",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 29:32",
+     "form": "kha viniv ndøndáp",
+     "n": 19
+    },
+    {
+     "ref": "GEN 4:1",
+     "form": "kha viniv ndøndáp"
+    },
+    {
+     "ref": "GEN 16:4",
+     "form": "kha viniv vø̄ndap"
+    },
+    {
+     "ref": "GEN 29:33",
+     "form": "nakhasa anganeam nøme"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "conceived",
+    "conceived and gave birth",
+    "gave birth to a son",
+    "she conceived",
+    "became pregnant"
+   ],
+   "note": "\"she took a body-child (got pregnant), a male child came out\" (29:32-35, 30:5-23); \"you are pregnant\" = \"Qo ndakin kha viniv-ús\" (16:11); \"again\" = nqawa (29:33). A daughter: \"nakhasa sævam\" (30:21)."
+  },
+  {
+   "id": "formula:she_named_him.g",
+   "kind": "formula",
+   "source": "וַתִּקְרָא שְׁמוֹ <Y> / she named him Y",
+   "value": "Yaq ndugu iz <Y> mbo-akhá.",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 29:33",
+     "form": "iz, Simeon mbo-akhá",
+     "n": 31
+    },
+    {
+     "ref": "GEN 30:21",
+     "form": "Yaq iz Daina mbo-akhá."
+    },
+    {
+     "ref": "GEN 4:1",
+     "form": "Yaq iz, Kein mbo-akhá."
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "named him",
+    "she named him",
+    "he named him",
+    "so he was named",
+    "called his name"
+   ],
+   "note": "The same for he and she (iz ... mbo-akhá); the meaning follows in brackets (feature name_meaning_brackets). Passive \"so he was named\" = \"iz ... mbo-akhaém\" (25:25, 25:26). NB in 29:33 the form is \"iz, Simeon mbo-akhá\" (comma after iz in 29:33, 29:35, 30:6)."
+  },
+  {
+   "id": "formula:took_as_wife.g",
+   "kind": "formula",
+   "source": "וַיִּקַּח אֶת־<X> לוֹ לְאִשָּׁה / took X as his wife",
+   "value": "<woman> vø̄-okɨ, vø̄-tegu-sævam-ev",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 24:67",
+     "form": "vø̄-tegu-sævam-ev"
+    },
+    {
+     "ref": "GEN 16:3",
+     "form": "vø̄-tegu-sævam-ev"
+    },
+    {
+     "ref": "GEN 25:20",
+     "form": "Lebeka gu-okɨ"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "took her as his wife",
+    "took as his wife",
+    "married",
+    "to be his wife",
+    "took rebekah as his wife"
+   ],
+   "note": "okɨ = take a woman in marriage (24:67, 25:20); \"she became his wife\" = vø̄-tegu-sævam-ev; \"wife\" = sævam / with the possessive \"tegu sævam\" (20:14), short zas (25 verses: \"zas namba\" with his wife, 4:1)."
+  },
+  {
+   "id": "formula:swear_oath.g",
+   "kind": "formula",
+   "source": "נִשְׁבַּע / שְׁבוּעָה (swear, oath)",
+   "value": "manqa mbusa <obj>-ve",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 21:23",
+     "form": "manqa mbusa qonǿvé",
+     "n": 13
+    },
+    {
+     "ref": "GEN 24:9",
+     "form": "manqa mbusa vømbō-ve"
+    },
+    {
+     "ref": "GEN 25:33",
+     "form": "Manqa mbusa vø̀khævé"
+    },
+    {
+     "ref": "GEN 22:16",
+     "form": "nøkeza iz-té qatøveét"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "swear",
+    "swore",
+    "oath",
+    "swear to me",
+    "i swear it",
+    "by myself i have sworn",
+    "swore an oath"
+   ],
+   "note": "\"put a firm word\": swear to me = \"manqa mbusa qonǿvé\" (21:23); he swore = \"manqa mbusa vømbō-ve\" (24:9); \"by Myself I have sworn\" = \"manqa mbusa nøkeza iz-té qatøveét\" (by my own name, 22:16); \"swear by the LORD\" = \"Evezøza-qa iz-te ... manqa mbusa\" (24:3). \"I swear it\" = \"Manqa mbusa nò-unimanqatintét\" (21:24). manqa mbusa is also a promise (15:18, 24:7). Gen 47:31, 50:5 need it."
+  },
+  {
+   "id": "formula:bowed_down.g",
+   "kind": "formula",
+   "source": "וַיִּשְׁתַּחוּ אָרְצָה / bowed low to the ground",
+   "value": "gèkhafutáv, tiqa megemege-te. Bugug até manqei-té.",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 18:2",
+     "form": "gèkhafutáv, tiqa megemege-te."
+    },
+    {
+     "ref": "GEN 19:1",
+     "form": "Bugug até manqei-té."
+    },
+    {
+     "ref": "GEN 24:52",
+     "form": "khafutáv"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "bowed low to the ground",
+    "bowed down",
+    "bowed facedown",
+    "bowed"
+   ],
+   "note": "\"he knelt before them, the face to the ground\" (18:2, 19:1). Ruth \"katuk gumø̀kuī\" (formula:fell_on_her_face.h) is the woman's form. Gen 33:3, 37:7-10, 42:6, 43:26 need it."
+  },
+  {
+   "id": "formula:rose_early.g",
+   "kind": "formula",
+   "source": "וַיַּשְׁכֵּם בַּבֹּקֶר / got up early in the morning",
+   "value": "Khøuwa nøme qandopave, qæwaemat,",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 21:14",
+     "form": "Khøuwa nøme qandopave, qæwaemat,"
+    },
+    {
+     "ref": "GEN 22:3",
+     "form": "qæwaemat"
+    },
+    {
+     "ref": "GEN 20:8",
+     "form": "qanaqanus qandopave"
+    },
+    {
+     "ref": "GEN 19:27",
+     "form": "qanaqanus ndøgo, lovølova-ús"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "early in the morning",
+    "got up early",
+    "early the next morning",
+    "rose early"
+   ],
+   "note": "\"the next day dawned, early\" (21:14, 22:3); \"qanaqanus qandopave\" (20:8); still dark \"qanaqanus lovølova-ús\" (19:27, 26:31; formula:early_still_dark). The verb \"got up\" (gesuzam) is often left out. Gen 28:18, 31:55 need it."
+  },
+  {
+   "id": "formula:kissed.g",
+   "kind": "formula",
+   "source": "נָשַׁק (kiss)",
+   "value": "vø̄ngenøtam",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 27:27",
+     "form": "vø̄ngenøtam"
+    },
+    {
+     "ref": "GEN 29:11",
+     "form": "gèngenøtám"
+    },
+    {
+     "ref": "RUT 4:16",
+     "form": "ngenøt"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H5401.h",
+   "words": [
+    "kissed",
+    "kiss",
+    "kissed him"
+   ],
+   "note": "Greeting and family kiss in Genesis (27:26-27, 29:11, 29:13). Ruth's farewell kiss \"sège-møvøiú\" (1:9, 1:14) is for leave-taking only: use it for Gen 31:28, 31:55."
+  },
+  {
+   "id": "formula:wept_aloud.g",
+   "kind": "formula",
+   "source": "וַיִּשָּׂא קֹלוֹ וַיֵּבְךְּ / wept aloud",
+   "value": "gèvín. Eiv gèmbøe-eqavát.",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 27:38",
+     "form": "Eiv gèmbøe-eqavát"
+    },
+    {
+     "ref": "GEN 29:11",
+     "form": "vø̄vin"
+    },
+    {
+     "ref": "GEN 21:16",
+     "form": "vø̄vin"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "wept",
+    "wept aloud",
+    "weep",
+    "lifted up his voice and wept"
+   ],
+   "note": "weep = vin- (gèvín he wept, vø̄vin chained); \"aloud\" = \"his crying went up\" (27:38). Many in Gen 33, 42-46, 50."
+  },
+  {
+   "id": "term:H2472.g",
+   "kind": "term",
+   "source": "H2472 / H2492 חֲלוֹם / חָלַם (dream)",
+   "value": "venanqei tam-te",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 20:3",
+     "form": "Venanqei tam-té"
+    },
+    {
+     "ref": "GEN 28:12",
+     "form": "venanqei ndøtám"
+    },
+    {
+     "ref": "MAT 1:20",
+     "form": "Venanqei-tam-té"
+    },
+    {
+     "ref": "MAT 2:13",
+     "form": "venanqei-tam-té"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "dream",
+    "dreams",
+    "dreamed",
+    "had a dream",
+    "in a dream"
+   ],
+   "note": "\"in sleep-seeing\": in a dream = venanqei tam-te (20:3, 20:6; MAT 1:20, 2:13 written venanqei-tam-te); \"he dreamed\" = \"venanqei ndøtám\" (28:12) and what he saw follows with \"Yaq nqáe!\". venanqei alone is sleep (also in \"venanqei nonqo\" of marital relations). Gen 37, 40-42 need \"my dream\", \"dreams\" (plural by context)."
+  },
+  {
+   "id": "term:H7458.g",
+   "kind": "term",
+   "source": "H7458 רָעָב (famine)",
+   "value": "vikia seke ndømát",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "lou lou-av matev",
+     "note": "the famine as a thing, 'food-lack matter' (26:1, 12:10 'lou lou-av matev qagoam ndøgo, ùnime꞉-soqá' the famine was severe)"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 12:10",
+     "form": "vikia seke ndømát"
+    },
+    {
+     "ref": "ACT 7:11",
+     "form": "vikia sekeqape ndømát"
+    },
+    {
+     "ref": "RUT 1:1",
+     "form": "vikia sekeqape ndømát"
+    },
+    {
+     "ref": "GEN 26:1",
+     "form": "lou lou-av matev"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "famine",
+    "there was a famine",
+    "the famine was severe",
+    "famine in the land"
+   ],
+   "note": "\"a great hunger fell\" (12:10, ACT 7:11 for Joseph's famine, RUT 1:1); the hunger of a person = ifin (25:32 \"No ifin khàpe-nømbe-khouwév\" I am famished). Gen 41-47 use it about 25 times: vary with lou lou-av matev as the team does."
+  },
+  {
+   "id": "term:H1250.g",
+   "kind": "term",
+   "source": "H1250 / H1715 / H7668 בָּר / דָּגָן / שֶׁבֶר (grain)",
+   "value": "wit",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "lou",
+     "note": "food: 'there was grain in Egypt' = 'Izip manqei-te, lou zua ndøgō' (there was food, ACT 7:12)"
+    },
+    {
+     "value": "bali nanga",
+     "note": "barley, heads of grain (Ruth, term:H8184grain)"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 27:28",
+     "form": "wit neka waen"
+    },
+    {
+     "ref": "GEN 27:37",
+     "form": "wit"
+    },
+    {
+     "ref": "JHN 12:24",
+     "form": "wit nanga"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "grain",
+    "wheat",
+    "grain and new wine",
+    "buy grain"
+   ],
+   "note": "\"grain and new wine\" = \"wit neka waen\" (27:28, 27:37). For the grain bought in Egypt (Gen 41-47) the NT's account of the same story says lou (ACT 7:12); heads of grain in Pharaoh's dream: \"wit nanga\" (JHN 12:24 kernel)."
+  },
+  {
+   "id": "term:H5470.g",
+   "kind": "term",
+   "source": "H5470 / H1004 בֵּית הַסֹּהַר (prison)",
+   "value": "ndimbula khoev",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 16:23",
+     "form": "ndimbula khoev-té"
+    },
+    {
+     "ref": "ACT 5:18",
+     "form": "ndimbula-te"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "prison",
+    "jail",
+    "into prison",
+    "the prison",
+    "in prison",
+    "prisoners"
+   ],
+   "note": "NT only (111 verses; Genesis 1-30 has no prison). \"put in prison\" = \"ndimbula-te vø̄nqeitaz\" (ACT 5:18); the jailer = \"ndimbula keoge ezoqam\" (ACT 16:23) for the warden of Gen 39:21-23."
+  },
+  {
+   "id": "term:steward.g",
+   "kind": "term",
+   "source": "H5921 + H1004 אֲשֶׁר עַל־בֵּיתוֹ (steward, the man over his house)",
+   "value": "sasae kawa ezoqam",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 24:2",
+     "form": "sasae kawa ezoqam"
+    },
+    {
+     "ref": "LUK 16:1",
+     "form": "sasae ezoqam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "steward",
+    "chief servant",
+    "in charge of his household",
+    "manager",
+    "over his house"
+   ],
+   "note": "Abraham's chief servant \"who managed all he owned\" = \"ekeza sasae kawa ezoqam ... teqa gigiap ate ndægo go꞉kawaevtam\" (24:2); the NT manager \"kewagám\" (watched over all, LUK 16:1). Joseph over Potiphar's house (39:4) and Joseph's steward (43:16, 44:1) by these."
+  },
+  {
+   "id": "term:H56.g",
+   "kind": "term",
+   "source": "H56 / H5594 / H1058 אָבַל / סָפַד / בָּכָה (mourn, lament, weep)",
+   "value": "mutøkhop neka eiv matev",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 23:2",
+     "form": "mutøkhop neka eiv matev"
+    },
+    {
+     "ref": "JON 3:5",
+     "form": "mutøkhop"
+    },
+    {
+     "ref": "ACT 8:2",
+     "form": "eiv"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "mourn",
+    "mourned",
+    "mourning",
+    "to mourn and to weep",
+    "lament"
+   ],
+   "note": "\"mourning and crying\" (23:2 Abraham for Sarah; JON 3:5 mutøkhop for fasting grief). \"the days of mourning for my father\" are told as \"my father will die soon\" (27:41). Gen 37:34-35, 50:3-11 need it; weep: formula:wept_aloud.g."
+  },
+  {
+   "id": "term:H6912.g",
+   "kind": "term",
+   "source": "H6912 / H6913 קָבַר / קֶבֶר (bury, tomb)",
+   "value": "manqei pakha <...>-upa",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "otøv- / otamb-",
+     "note": "put in (the grave): 'ginø-otøvém' they buried him (25:9), 'tinø-otøvém' he was buried (25:10); Ruth 'tǽ-otambát' I will be buried (1:17)"
+    },
+    {
+     "value": "manqei pakha",
+     "note": "a grave, burial place (23:4, 23:6, 23:9 'manqei pakha upøgim nonqo' a burial site)"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 23:4",
+     "form": "manqei pakha batē-upa"
+    },
+    {
+     "ref": "GEN 23:19",
+     "form": "manqei pakha me꞉-upá"
+    },
+    {
+     "ref": "GEN 25:9",
+     "form": "ginø-otøvém"
+    },
+    {
+     "ref": "GEN 25:10",
+     "form": "tinø-otøvém"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H6912.h",
+   "words": [
+    "bury",
+    "buried",
+    "burial site",
+    "tomb",
+    "grave",
+    "bury my dead"
+   ],
+   "note": "\"carry (him) to the earth-hole\" (23:4, 23:6, 23:19) or \"put (him) in\" with otøv- (25:9-10). Both stems are attested in Gen 23-25; the Ruth entry stands as the passive. Gen 35, 47:30, 49:29-31, 50 need it."
+  },
+  {
+   "id": "term:H4631.g",
+   "kind": "term",
+   "source": "H4631 מְעָרָה (cave)",
+   "value": "nandi nqa",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 23:9",
+     "form": "teqa nandi nqa"
+    },
+    {
+     "ref": "GEN 25:9",
+     "form": "Makpela nandi nqa-té"
+    },
+    {
+     "ref": "GEN 19:30",
+     "form": "Nandi nqa-té"
+    },
+    {
+     "ref": "HEB 11:38",
+     "form": "nandi nqa"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "cave",
+    "the cave",
+    "cave of machpelah",
+    "in a cave"
+   ],
+   "note": "\"stone hole\" (19:30, 23:9-19, 25:9; NT the same). Gen 49:29-32, 50:13."
+  },
+  {
+   "id": "term:H251brothers.g",
+   "kind": "term",
+   "source": "אֶחָיו (his brothers; Joseph's brothers, Gen 37-50)",
+   "value": "zapikia-za",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 7:13",
+     "form": "ekeza zapikia-za"
+    },
+    {
+     "ref": "GEN 9:25",
+     "form": "zapikia-za-gé"
+    },
+    {
+     "ref": "GEN 9:22",
+     "form": "zapikia"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "his brothers",
+    "brothers",
+    "joseph's brothers",
+    "your brothers",
+    "my brothers",
+    "twelve brothers"
+   ],
+   "note": "The NT tells Joseph's story with zapikia-za (ACT 7:13 \"Zosef ekeza zapikia-za tènezømás\" made himself known to his brothers). One brother: term:H251.g (eveqase). Addressing them \"brothers!\": Jacob to strangers \"Nǿfuap\" (29:4), so nøfu is the polite address, not kinship."
+  },
+  {
+   "id": "term:H1581.g",
+   "kind": "term",
+   "source": "H1581 גָּמָל (camel)",
+   "value": "kemol",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 24:10",
+     "form": "kemol"
+    },
+    {
+     "ref": "GEN 12:16",
+     "form": "kemol"
+    },
+    {
+     "ref": "MAT 19:24",
+     "form": "kemol"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "camel",
+    "camels"
+   ],
+   "note": "20 verses in Gen 1-30. Donkey = donki (12:16, 22:3), cattle = kao (12:16, 13:5), goats = naningus (27:9, 30:32), sheep = sip (term:H6629.g)."
+  },
+  {
+   "id": "term:H168.g",
+   "kind": "term",
+   "source": "H168 אֹהֶל (tent)",
+   "value": "palai khoev",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 13:5",
+     "form": "palai khoev"
+    },
+    {
+     "ref": "GEN 4:20",
+     "form": "palai"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "tent",
+    "tents",
+    "his tent",
+    "pitched his tent"
+   ],
+   "note": "palai (13 verses in Gen 1-30); \"tents\" with khoev (house): palai khoev (13:5)."
+  },
+  {
+   "id": "term:H1777.g",
+   "kind": "term",
+   "source": "H1777 דִּין (judge, vindicate)",
+   "value": "Mbumbukiam noqa matev, mø̀ndø-geveá",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 30:6",
+     "form": "mø̀ndø-geveá"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "vindicated",
+    "has vindicated me",
+    "judge",
+    "judge between"
+   ],
+   "note": "\"God has judged my matter (in my favour)\" (30:6, explained as the meaning of Dan). Gen 31:53, 49:16 need it."
+  },
+  {
+   "id": "term:H1.g",
+   "kind": "term",
+   "source": "H1 אָב (father)",
+   "value": "eve",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "tat",
+     "note": "my father, and the vocative 'Tát!' (27:34, 27:38, 27:41; 19:31-34 the daughters of Lot: 'our father'); also God the Father in the NT"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 25:19",
+     "form": "tege eve",
+     "n": 48
+    },
+    {
+     "ref": "GEN 2:24",
+     "form": "eve"
+    },
+    {
+     "ref": "GEN 27:34",
+     "form": "Tát!"
+    },
+    {
+     "ref": "GEN 27:41",
+     "form": "Tat avønín"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H1",
+   "words": [
+    "father",
+    "his father",
+    "her father",
+    "the father of",
+    "my father",
+    "your father"
+   ],
+   "note": "A third person's father is eve with the possessor: tege eve (his, 25:19), tugé eve (hers, 29:12), \"Lot-gé evé\" (11:27), \"qogu qavo-ge eve\" (your mother's father, 28:2). tat (the NT form of term:H1) is \"my/our father\" and the address. mother = evo (21 verses; \"qogu qavo\" your mother, 28:2)."
+  },
+  {
+   "id": "term:H1121sons.g",
+   "kind": "term",
+   "source": "H1121 בָּנִים (sons)",
+   "value": "nakhei angana",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 5:4",
+     "form": "nakhei angana",
+     "n": 59
+    },
+    {
+     "ref": "GEN 29:34",
+     "form": "nakhei angana misiká"
+    },
+    {
+     "ref": "GEN 10:1",
+     "form": "Noa-gi nakhei angana"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "sons",
+    "his sons",
+    "other sons and daughters",
+    "three sons",
+    "sons of"
+   ],
+   "note": "\"male children\": sons = nakhei angana (59 verses), daughters = nakhei sakheis / nakhei mbasi (term:H1323pl); one son = yo (term:H1121) or nakhasa anganeam (a male child, at birth). children = nakheis (30:3)."
+  },
+  {
+   "id": "term:H157.g",
+   "kind": "term",
+   "source": "H157 אָהַב (love)",
+   "value": "poev",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "kuku matev",
+     "note": "kindness, grace (H2617 חֶסֶד: 24:27 'Teqa kuku matev'); kuku alone is the NT's love/grace"
+    },
+    {
+     "value": "nqanømbe-khaneat",
+     "note": "like (a taste): 'av no nqanømbe-khaneat' that I love (27:4)"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 24:67",
+     "form": "poev kandambá"
+    },
+    {
+     "ref": "GEN 29:20",
+     "form": "poev"
+    },
+    {
+     "ref": "GEN 29:32",
+     "form": "poev ndakin ndǿvé"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H157",
+   "words": [
+    "love",
+    "loved",
+    "loved her",
+    "will love me",
+    "his love for her"
+   ],
+   "note": "A man's love for a woman is poev (\"Aezek poev kandambá, tu-te\" 24:67; Jacob for Rachel 29:20, 29:30); \"my husband will love me\" = \"Noge anganeam, poev ndakin ndǿvé, no-te\" (29:32). Gen 37:3-4 (Israel loved Joseph) and 44:20 need it."
+  },
+  {
+   "id": "term:H7706.g",
+   "kind": "term",
+   "source": "H7706 שַׁדַּי (El Shaddai, God Almighty)",
+   "value": "Bazaføgakh-Qape",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 17:1",
+     "form": "Bazaføgakh-Qape"
+    },
+    {
+     "ref": "GEN 28:3",
+     "form": "ndego Bazaføgakh-Qape"
+    },
+    {
+     "ref": "RUT 1:20",
+     "form": "Bazaføgakh-Qape"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "term:H7706",
+   "words": [
+    "god almighty",
+    "almighty",
+    "the almighty"
+   ],
+   "note": "\"I am God Almighty\" = \"No Mbumbukiam ndégo, Bazaføgakh-Qape\" (17:1); \"God Almighty\" in a wish = \"Mbumbukiam, ndego Bazaføgakh-Qape\" (28:3). Gen 35:11, 43:14, 48:3, 49:25 need it."
+  },
+  {
+   "id": "term:H5945.g",
+   "kind": "term",
+   "source": "H5945 + H410 אֵל עֶלְיוֹן (God Most High)",
+   "value": "Mbumbukiam Eqeiwat-Qape",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 14:19",
+     "form": "Mbumbukiam Eqeiwat-Qape"
+    },
+    {
+     "ref": "GEN 14:20",
+     "form": "ndego Eqeiwat-Qape"
+    },
+    {
+     "ref": "ACT 7:48",
+     "form": "Eqeiwat-Qape"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "god most high",
+    "most high"
+   ],
+   "note": "14:18-22 (5 verses); NT the same."
+  },
+  {
+   "id": "term:H1254.g",
+   "kind": "term",
+   "source": "H1254 בָּרָא (create)",
+   "value": "khakhein-",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:1",
+     "form": "tekhakheinám"
+    },
+    {
+     "ref": "GEN 1:27",
+     "form": "tene-khakheinøvém"
+    },
+    {
+     "ref": "GEN 2:4",
+     "form": "gekhakheinam"
+    },
+    {
+     "ref": "GEN 14:19",
+     "form": "gekhakheinam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "created",
+    "create",
+    "creator",
+    "when they were created",
+    "god created"
+   ],
+   "note": "Create and make are the same verb khakhein- (97 verses in Gen 1-30); with a plural or living object khakheinøv- (1:21, 1:27). \"Creator of heaven and earth\" = \"ndego khaiya neka manqei-qape gekhakheinam\" (14:19)."
+  },
+  {
+   "id": "term:H776earth.g",
+   "kind": "term",
+   "source": "H776 הָאָרֶץ (the earth, the world)",
+   "value": "manqei-qape",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "manqei",
+     "note": "land, country, ground, a place (363 verses): 'Keinan manqei' (the land of Canaan), term:H776"
+    },
+    {
+     "value": "manqei pap",
+     "note": "the dry land (1:9, 1:10), named manqei"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 1:1",
+     "form": "manqei-qape",
+     "n": 62
+    },
+    {
+     "ref": "GEN 1:28",
+     "form": "Manqei-qape"
+    },
+    {
+     "ref": "GEN 12:3",
+     "form": "manqei-qape-te"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "the earth",
+    "earth",
+    "all the earth",
+    "face of the earth",
+    "on the earth",
+    "families of the earth"
+   ],
+   "note": "The whole earth = manqei-qape; a land or the ground = manqei. \"the families of the earth\" = \"bawabawan ate nqægo, manqei-qape-te nqago\" (12:3)."
+  },
+  {
+   "id": "term:H5930.g",
+   "kind": "term",
+   "source": "H5930 עֹלָה (burnt offering)",
+   "value": "søvakha gigiap løvusam matev",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 22:3",
+     "form": "søvakha gigiap løvusam matev"
+    },
+    {
+     "ref": "GEN 22:13",
+     "form": "søvakha gigiap løvusam matev"
+    },
+    {
+     "ref": "GEN 8:20",
+     "form": "løvusam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "burnt offering",
+    "burnt offerings",
+    "offered it as a burnt offering",
+    "sacrifice"
+   ],
+   "note": "\"animal-burning act\" (22:2-13); an offering in general = \"etoam matev\" (gift act, 4:3-5); altar = lou-qase (term:H4196). Gen 46:1 \"offered sacrifices\" = term:H2077."
+  },
+  {
+   "id": "formula:explain_name.g",
+   "kind": "formula",
+   "source": "the meaning of a name",
+   "value": "(Taqa manqa mokho: <meaning>.)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 29:33",
+     "form": "Taqa manqa mokho: Mø̀ndø-ewág.",
+     "n": 31
+    },
+    {
+     "ref": "GEN 30:11",
+     "form": "Taqa manqa mokho:"
+    },
+    {
+     "ref": "RUT 1:20",
+     "form": "Taqa manqa mokho"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "formula:explain_name",
+   "words": [
+    "means",
+    "that is why",
+    "so he was named",
+    "because she said",
+    "for she said"
+   ],
+   "note": "Genesis gives the meaning in brackets after \"iz <Y> mbo-akhá\" (feature name_meaning_brackets), with a colon; Ruth inside the speech with ‘ ’. For Genesis use the brackets."
+  },
+  {
+   "id": "term:H3004pap.g",
+   "kind": "term",
+   "source": "H3004 יַבָּשָׁה (dry land)",
+   "value": "manqei pap",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 1:9",
+     "form": "manqei pap"
+    },
+    {
+     "ref": "GEN 1:10",
+     "form": "manqei pap"
+    },
+    {
+     "ref": "HEB 11:29",
+     "form": "manqei pap"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "dry land",
+    "the dry land",
+    "dry ground"
+   ],
+   "note": "Gen 1:9-10 and the Red Sea crossing (HEB 11:29); Jonah's \"dry land\" as the shore is manqei-qape (term:H3004). The earth was dry = \"manqei ùni-tønepáp\" (8:14)."
+  },
+  {
+   "id": "term:H1589.g",
+   "kind": "term",
+   "source": "H1589 גָּנַב (steal)",
+   "value": "aqon- (gu-aqonøvem she stole them; nø-aqonøvem I stole them)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 30:33",
+     "form": "nø-aqonøvém"
+    },
+    {
+     "ref": "EPH 4:28",
+     "form": "aqonam matev"
+    },
+    {
+     "ref": "JHN 10:10",
+     "form": "Aqona ezoqam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "stole",
+    "stolen",
+    "steal",
+    "stealing"
+   ],
+   "note": "Rachel stole the household gods = Laisol … gu-aqonøvem (gen031, built on nø-aqonøvém with gu- for a woman). A thief = aqona ezoqam. 'stole the heart' (31:20, 26, 27) is deceive, term:H7411.g."
+  },
+  {
+   "id": "term:H7411.g",
+   "kind": "term",
+   "source": "H7411 רִמָּה / גָּנַב לֵב (deceive, cheat)",
+   "value": "khavoz- (qoqonømbe-khavoz you deceived me; gènømbe-khavozám he deceived me)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 29:25",
+     "form": "qoqonømbe-khavoz"
+    },
+    {
+     "ref": "GEN 27:35",
+     "form": "gènømbe-khavozám"
+    },
+    {
+     "ref": "GEN 3:13",
+     "form": "gènømbe-khavóz"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "deceived",
+    "deceive",
+    "cheated",
+    "tricked"
+   ],
+   "note": "Jacob to Laban (29:25) and Laban to Jacob (31:26-27) with the same verb; 'he deceived Laban' = Leiben gembøe-khavozám (gen031:20, built on the same pattern)."
+  },
+  {
+   "id": "term:H7291.g",
+   "kind": "term",
+   "source": "H7291 רָדַף (pursue)",
+   "value": "pav- (follow): Zekop vømbō-pavat; heading Leiben, Zekop gembopavát",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 14:14",
+     "form": "gezøpavát"
+    },
+    {
+     "ref": "MAT 9:19",
+     "form": "vømbō-paevem"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "pursued",
+    "pursue",
+    "chased"
+   ],
+   "note": "Abram pursued the kings = gezøpavát (followed them, 14:14); 'hotly pursued me' (31:36) = nakhamas-té qoqonø-pavat (followed me quickly)."
+  },
+  {
+   "id": "term:H5381.g",
+   "kind": "term",
+   "source": "H5381 הִשִּׂיג / H1692 הִדְבִּיק (overtake, catch up with)",
+   "value": "<X>-te gemøfakhan (reached X)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 12:5",
+     "form": "vømø̄fakhaz"
+    },
+    {
+     "ref": "ACT 10:24",
+     "form": "gimøfakhaz"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "overtook",
+    "overtake",
+    "caught up"
+   ],
+   "note": "No verb 'overtake' in the corpus; 'arrived, reached' (møfakhan) with -te on the one reached (gen031:23, 25). The store's built 'gèmø-tøkenøvém' is 'cling' (gap:stay_close) and was not used."
+  },
+  {
+   "id": "term:H5674river.g",
+   "kind": "term",
+   "source": "H5674 עָבַר (cross a river, go past)",
+   "value": "qantav- (Yuflatis kea ndøqantav; 'I will not go past this heap' = nóqantavák)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "JHN 6:1",
+     "form": "ginøqantáv"
+    },
+    {
+     "ref": "MAT 9:1",
+     "form": "sasa ndøqantav"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "crossed",
+    "cross",
+    "go past",
+    "past"
+   ],
+   "note": "Used for crossing the Euphrates (31:21) and for not passing the boundary stones (31:52, negative future nó-/qó-…-ák)."
+  },
+  {
+   "id": "term:H1494.g",
+   "kind": "term",
+   "source": "H1494 גָּזַז (shear)",
+   "value": "su qogem- (cut the wool): sip su qogem-qa gewav (he went to shear the sheep)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 8:32",
+     "form": "su gimbo-qogemɨn"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "shearing",
+    "shear",
+    "shearer",
+    "shearers"
+   ],
+   "note": "The NT's sheep before its shearers (ACT 8:32). Gen 38:12-13 (Judah's sheepshearers) need it."
+  },
+  {
+   "id": "term:H4376.g",
+   "kind": "term",
+   "source": "H4376 מָכַר (sell)",
+   "value": "wi (buy and sell): ndego ni gèwí (he sold us)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 7:9",
+     "form": "gèwiím"
+    },
+    {
+     "ref": "GEN 23:9",
+     "form": "tewi"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "sold",
+    "sell"
+   ],
+   "note": "ACT 7:9 tells Joseph sold into Egypt with gèwiím; the same stem buys (GEN 23:19 gewi). Gen 37:27-28, 45:4-5 need it; who buys from whom is shown with -te."
+  },
+  {
+   "id": "formula:judge_between.g",
+   "kind": "formula",
+   "source": "יִשְׁפֹּט יְהוָה בֵּינִי וּבֵינֶךָ (may the LORD judge between you and me)",
+   "value": "<God> segé-geveá, … eqeieqei gekha ezoqam ndǿmatanam, qô o nô",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 16:5",
+     "form": "segé-geveá"
+    },
+    {
+     "ref": "GEN 30:6",
+     "form": "mø̀ndø-geveá"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "judge between",
+    "judge",
+    "may the lord judge",
+    "rendered judgment"
+   ],
+   "note": "Sarai's wish (16:5) is the model for 31:37 and 31:53 ('let them / may God judge between us'); 'God has judged (rendered judgment)' = mø̀ndø-geveá (30:6, 31:42)."
+  },
+  {
+   "id": "formula:between_you_and_me.g",
+   "kind": "formula",
+   "source": "בֵּינִי וּבֵינֶךָ (between me and you)",
+   "value": "yaq qo-a, yaq no",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 13:8",
+     "form": "yaq qo-a, yaq no"
+    },
+    {
+     "ref": "GEN 23:15",
+     "form": "Yaq qo-a, yaq no"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "between you and me",
+    "between me and you",
+    "between us"
+   ],
+   "note": "Used five times in gen031 (44, 48-51). Three parties add 'o yaq X-a, yaq Y' (13:8)."
+  },
+  {
+   "id": "formula:set_up_pillar.g",
+   "kind": "formula",
+   "source": "וַיָּשֶׂם אֹתָהּ מַצֵּבָה / וַיְרִימֶהָ מַצֵּבָה (set up a stone as a pillar)",
+   "value": "<nandi> … sasa ndøwuab. Andé uk me me꞉wuáb.",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 28:18",
+     "form": "Andé uk me me꞉wuáb"
+    },
+    {
+     "ref": "GEN 28:22",
+     "form": "ande uk me qatewuab"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "pillar",
+    "set it up as a pillar",
+    "set up a pillar",
+    "set up"
+   ],
+   "note": "'stood it up like a post'. Reused verbatim in gen031:45 and 51 (qatewuab: I set up). Gen 35:14, 35:20 need it."
+  },
+  {
+   "id": "term:H6440face.g",
+   "kind": "term",
+   "source": "H6440 פָּנִים (face, countenance; 'his face was not toward him')",
+   "value": "bugug (face): Leiben-qá bugug ndøqeív (he saw Laban's face)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 4:6",
+     "form": "bugug avus-mba"
+    },
+    {
+     "ref": "GEN 4:5",
+     "form": "Avus-mba mbovoé"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "countenance",
+    "face",
+    "attitude"
+   ],
+   "note": "Cain's fallen face (4:5-6) is bugug; 31:2 and 31:5 'his attitude had changed' = 'his face was not good to me, as before' (eqeieqei mbaín, av bugukhokhof ndægo), built."
+  },
+  {
+   "id": "term:fourteen.g",
+   "kind": "term",
+   "source": "אַרְבַּע־עֶשְׂרֵה (fourteen)",
+   "value": "fotin (viav fotin, fourteen years)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 14:5",
+     "form": "viav qamø-fotin"
+    },
+    {
+     "ref": "GAL 2:1",
+     "form": "viav 14-qá"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "fourteen"
+   ],
+   "note": "Genesis writes the English loan (feature numerals.g); the NT writes the digits."
+  },
+  {
+   "id": "term:H570.g",
+   "kind": "term",
+   "source": "H570 אֶמֶשׁ (last night)",
+   "value": "lova qagoam",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 19:34",
+     "form": "Lova qagoam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "last night"
+   ],
+   "note": "'the night that was' (19:34); gen031:29, 42."
+  },
+  {
+   "id": "term:H1121grand.g",
+   "kind": "term",
+   "source": "בָּנִים of a grandfather (grandchildren); grandson",
+   "value": "zeo (grandson: Nao-ge zeo); grandchildren of Laban = 'nogi nakhei mbasi neka tigi nakheis' (my daughters and their children)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 29:5",
+     "form": "Nao-ge zeo"
+    },
+    {
+     "ref": "GEN 11:31",
+     "form": "zeo vø̄khato"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "grandchildren",
+    "grandson",
+    "grandsons"
+   ],
+   "note": "No plural of zeo found; gen031:28 says 'their children'."
+  },
+  {
+   "id": "term:H1497.g",
+   "kind": "term",
+   "source": "H1497 גָּזַל (take by force, seize)",
+   "value": "vimbum- (gèvimbumém they seized; toqo-vimbumem you would seize)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 21:25",
+     "form": "gèvimbumém"
+    },
+    {
+     "ref": "GEN 30:15",
+     "form": "mòqote-vimbám"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "by force",
+    "take by force",
+    "seized",
+    "take away by force"
+   ],
+   "note": "gen031:31 'lest you take your daughters from me by force' = Soqaín ndøgo, … toqo-vimbumem."
+  },
+  {
+   "id": "term:H3950gather.g",
+   "kind": "term",
+   "source": "H3950 לָקַט (gather stones, sticks)",
+   "value": "pizum- (Nandi vø̀pizømém! gather stones; vø̄pizumem they gathered)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "JHN 6:12",
+     "form": "vø̀pizømém"
+    },
+    {
+     "ref": "ACT 28:3",
+     "form": "ndøpizumát"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "gather",
+    "gathered",
+    "gather some stones"
+   ],
+   "note": "Things gathered; people assembling is pind- / møvab-."
+  },
+  {
+   "id": "term:H2664.g",
+   "kind": "term",
+   "source": "H2664 חָפַשׂ / H4959 מִשֵּׁשׁ (search, feel through)",
+   "value": "vawa- (look for): ndøvawát (he searched), qoqo-vawat (you searched)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 2:49",
+     "form": "qazonø-vawat"
+    },
+    {
+     "ref": "ACT 10:19",
+     "form": "vawa"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "searched",
+    "search",
+    "felt"
+   ],
+   "note": "gen031:34-37; Gen 44:12 (the steward searched) needs it. Not found: qeiviáv (did not find, LUK 24:3)."
+  },
+  {
+   "id": "formula:invite_to_eat.g",
+   "kind": "formula",
+   "source": "וַיִּקְרָא לְאֶחָיו לֶאֱכָל־לָחֶם (invited them to eat)",
+   "value": "<guests> lou loge-qa zø-akhá",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 29:22",
+     "form": "lou loge-qa zø-akhá"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "invited",
+    "invited his relatives to eat",
+    "to eat a meal"
+   ],
+   "note": "Laban's wedding feast (29:22); gen031:54."
+  },
+  {
+   "id": "formula:spent_night.g",
+   "kind": "formula",
+   "source": "וַיָּלִינוּ (they spent the night)",
+   "value": "lova kopo vø̄sømbi",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 24:54",
+     "form": "lova kopo vø̄sømbi"
+    },
+    {
+     "ref": "GEN 28:11",
+     "form": "gebuv"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "spent the night",
+    "lodged",
+    "stayed the night"
+   ],
+   "note": "'slept one night' (24:54); alone ge-buv (28:11)."
+  },
+  {
+   "id": "term:H7140.g",
+   "kind": "term",
+   "source": "H2721 חֹרֶב / H7140 קֶרַח (heat, cold, frost)",
+   "value": "khøuwa tatas-qape (great heat), qozaq (cold)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 18:1",
+     "form": "Khøuwa tatas-qape"
+    },
+    {
+     "ref": "GEN 8:22",
+     "form": "qozaq khøuwa"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "heat",
+    "frost",
+    "cold"
+   ],
+   "note": "gen031:40 'heat by day, frost by night' = Paveat-te, khøuwa tatas-qape … lova-te, qozaq …"
+  },
+  {
+   "id": "term:H5348.g",
+   "kind": "term",
+   "source": "H5348 / H6124 / H1261 נָקֹד עָקֹד בָּרֹד (speckled, streaked, mottled)",
+   "value": "løvugiap (speckled), bokhotap-us (streaked, spotted), khagi papaqa-qasis (with white on the body, mottled)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 30:32",
+     "form": "løvugiap o bokhotap-us"
+    },
+    {
+     "ref": "GEN 30:35",
+     "form": "khagi papaqa-qasis"
+    },
+    {
+     "ref": "GEN 30:39",
+     "form": "khagi løvugiáp o bokhotap-ús"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "speckled",
+    "streaked",
+    "spotted",
+    "mottled"
+   ],
+   "note": "Genesis 30 has only two colour words for three Hebrew ones; gen031:8-12 gives the third as 'with white on it' (30:35). Question for the team."
+  },
+  {
+   "id": "term:H3658.g",
+   "kind": "term",
+   "source": "H3658 כִּנּוֹר (lyre, harp); שִׁיר (song)",
+   "value": "gita (harp, lyre); ouv (song): ouv neka gita namba",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 4:21",
+     "form": "gita"
+    },
+    {
+     "ref": "1CO 14:7",
+     "form": "Pøinda neka gita"
+    },
+    {
+     "ref": "ACT 16:25",
+     "form": "ouv"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "harps",
+    "harp",
+    "lyre",
+    "songs",
+    "singing"
+   ],
+   "note": "Gen 4:21 has gita and pøinda (flute). Tambourine: gap:tambourine.g."
+  },
+  {
+   "id": "name:gilead.g",
+   "kind": "name",
+   "source": "גִּלְעָד (Gilead)",
+   "value": "Gilead (Gilead manqei popotap, the hill country of Gilead)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 12:8",
+     "form": "Betel manqei popotap"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "gilead"
+   ],
+   "note": "Not in the corpus; kept as spelled (no r, no h; vowels close to the spelling). Place class noun for hill country as GEN 12:8, LUK 1:39."
+  },
+  {
+   "id": "name:galeed.g",
+   "kind": "name",
+   "source": "גַּלְעֵד (Galeed)",
+   "value": "Galed",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 21:31",
+     "form": "iz Besiba mbo-akhayám"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "galeed"
+   ],
+   "note": "Built: the double vowel written single like double consonants. Meaning in brackets (Khakhatap nandí, 'sign stones')."
+  },
+  {
+   "id": "name:jegar_sahadutha.g",
+   "kind": "name",
+   "source": "יְגַר שָׂהֲדוּתָא (Jegar-sahadutha, Aramaic)",
+   "value": "Zega-Saaduta",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 21:31",
+     "form": "iz Besiba mbo-akhayám"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "jegar",
+    "sahadutha",
+    "jegar-sahadutha"
+   ],
+   "note": "Built by the letter rules: j → z, final r drops, inner h drops, th → t. Marked '(Alam manqat-te.)' (in Aramaic) after Iblu manqat-te (GEN 29:32 note)."
+  },
+  {
+   "id": "name:mizpah.g",
+   "kind": "name",
+   "source": "מִצְפָּה (Mizpah)",
+   "value": "Mizpa",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 16:14",
+     "form": "mbo-akhayám"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "decided",
+   "words": [
+    "mizpah"
+   ],
+   "note": "Built: final -ah → -a (letter rule). Meaning in brackets: Kewagam manqei (watching place)."
   }
  ]
 }

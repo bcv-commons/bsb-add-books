@@ -11,8 +11,8 @@ format: >-
   'Chapter N' lines and 'C:V<TAB>text' lines; reader notes in brackets inside the text
 
 # OCR: the .docx files came from a scan (e read as c: hct, cm; Böll for söll). fix_ocr.py corrects text/ (348 words,
-# 2026-10-15; 34 of them reviewed by hand) and must run again after text/ is rebuilt from source/. Luke 24:28-29 is
-# still garbled in the source.
+# 2026-10-15; then a review of split words and fragments, about 110 more) and must run again after text/ is rebuilt
+# from source/. 24 verses too damaged to repair without the printed book are quarantined (quarantined/verses/).
 # Translated "diräkt us em Griechischen … nach em Tägscht vom Nestle-Aland, Novum
 # Testamentum Graece, Stuttgart 1981" (preface, source/…67 Produktinformation.docx).
 # Mt 17:21, 18:11 and 23:14 are absent or bracketed, as in NA.

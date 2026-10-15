@@ -5344,6 +5344,863 @@
     "cushite"
    ],
    "note": "From study-v2b."
+  },
+  {
+   "id": "ordinal.g",
+   "kind": "feature",
+   "value": "ordinals in Genesis: the creation days \"khøuwa gè-<N>\" (1:8-31); \"on the Nth day\" = \"khøuwa <N>-te ndøgo\" (misika-te 22:4, seven-te 2:2); in dates the month and day take gimø-<N>-ez / qamø-<N> (\"løvøyak gimø-menas-ez\" the second month, 7:11, 8:14); \"first\" = bugukhokhof before the noun (8:13); \"N days old\" = \"khøuwa gimømbo-<N>-ez\" (21:4)",
+   "evidence": [
+    {
+     "ref": "GEN 1:13",
+     "form": "khøuwa gè-misiká"
+    },
+    {
+     "ref": "GEN 22:4",
+     "form": "khøuwa misika-te ndøgo"
+    },
+    {
+     "ref": "GEN 2:2",
+     "form": "khøuwa seven-te ndøgo"
+    },
+    {
+     "ref": "GEN 7:11",
+     "form": "løvøyak gimø-menas-ez"
+    },
+    {
+     "ref": "GEN 8:4",
+     "form": "khøuwa gimø-seventin-ez"
+    },
+    {
+     "ref": "GEN 8:13",
+     "form": "bugukhokhof khøuwa"
+    },
+    {
+     "ref": "GEN 21:4",
+     "form": "khøuwa gimømbo-eit-ez"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "observed",
+   "supersedes": "ordinal",
+   "words": [
+    "the third day",
+    "on the third day",
+    "seventh day",
+    "month",
+    "first day",
+    "days old"
+   ],
+   "note": "Supersedes the NT-based entry (gè-N-éz, mø̀ndømø-N-éz): Genesis drops -éz in the day formula and keeps -ez only in dates."
+  },
+  {
+   "id": "gap:let_us_make.g",
+   "kind": "gap",
+   "source": "נַעֲשֶׂה אָדָם (GEN 1:26)",
+   "value": "attested: zíkhakheinøvém (GEN 1:26); the gap is closed",
+   "evidence": [
+    {
+     "ref": "GEN 1:26",
+     "form": "zíkhakheinøvém"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "gap:let_us_make.h",
+   "words": [
+    "let us make"
+   ]
+  },
+  {
+   "id": "gap:waters_gather.g",
+   "kind": "gap",
+   "source": "יִקָּווּ הַמַּיִם (GEN 1:9)",
+   "value": "attested: \"manqei kopo-té qabenø-píz\" (go together into one place, GEN 1:9); the gap is closed (term:H6960.g)",
+   "evidence": [
+    {
+     "ref": "GEN 1:9",
+     "form": "qabenø-píz"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "gap:waters_gather.h",
+   "words": [
+    "gathered",
+    "gathering"
+   ]
+  },
+  {
+   "id": "gap:birds_fly.g",
+   "kind": "gap",
+   "source": "וְעוֹף יְעוֹפֵף (GEN 1:20)",
+   "value": "attested: birds fly = ndiløvuvam (\"pipisi khaiya-te ndiløvuvam\" birds of the air, GEN 1:26, 1:28, 1:30); \"let birds fly above the earth\" = \"pipisi ... khaiya ova nqo꞉go bēkhazem\" (let them fill the sky above, 1:20)",
+   "evidence": [
+    {
+     "ref": "GEN 1:26",
+     "form": "khaiya-te ndiløvuvam"
+    },
+    {
+     "ref": "GEN 1:20",
+     "form": "bēkhazem"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "gap:birds_fly.h",
+   "words": [
+    "fly",
+    "let birds fly",
+    "birds of the air",
+    "birds of the sky"
+   ]
+  },
+  {
+   "id": "gap:fruitful_multiply.g",
+   "kind": "gap",
+   "source": "פְּרוּ וּרְבוּ (GEN 1:22, 28)",
+   "value": "attested: formula:be_fruitful.g (vø̀mønøzumít; bawan bezø̄-khouwev, GEN 1:22, 1:28, 9:1)",
+   "evidence": [
+    {
+     "ref": "GEN 1:28",
+     "form": "vø̀mønøzumít"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "gap:fruitful_multiply.h",
+   "words": [
+    "be fruitful",
+    "multiply",
+    "fruitful"
+   ]
+  },
+  {
+   "id": "gap:rule_over.g",
+   "kind": "gap",
+   "source": "מֶמְשֶׁלֶת / רָדָה (GEN 1:16, 26, 28)",
+   "value": "attested: the lights nøzøwat (watch over) the day (GEN 1:16, 1:18); man kawaezat (rules) over animals (1:26, 1:28) (term:H4475.g)",
+   "evidence": [
+    {
+     "ref": "GEN 1:16",
+     "form": "nøzøwat"
+    },
+    {
+     "ref": "GEN 1:28",
+     "form": "kawaeztát"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "gap:rule_over.h",
+   "words": [
+    "rule",
+    "rule over",
+    "preside"
+   ]
+  },
+  {
+   "id": "gap:bless_you_2sg.g",
+   "kind": "gap",
+   "source": "יְבָרֶכְךָ (bless you)",
+   "value": "not a gap: the optative \"bèkhakheinøqavém\" (may he bless you) is attested (GEN 14:19, 28:3); term:H1288.g",
+   "evidence": [
+    {
+     "ref": "GEN 28:3",
+     "form": "bèkhakheinøqavém"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "decided",
+   "supersedes": "gap:bless_you_2sg.h",
+   "words": [
+    "the lord bless you",
+    "bless you",
+    "may god almighty bless you"
+   ]
+  },
+  {
+   "id": "letter:h.g",
+   "kind": "letter",
+   "value": "h at the start of a name: kept in most Genesis names (Hæga Hagar, Hæm Ham, Hiblon Hebron, Hit Heth, Hol Horites), dropped in Elan (Haran) and the Ruth name Ezlon (Hezron); h inside or at the end drops (Bila Bilhah, Zilpa Zilpah, Lebeka Rebekah, Nao Nahor)",
+   "evidence": [
+    {
+     "ref": "GEN 16:1",
+     "form": "Hæga"
+    },
+    {
+     "ref": "GEN 23:19",
+     "form": "Hiblon"
+    },
+    {
+     "ref": "GEN 10:15",
+     "form": "Hit"
+    },
+    {
+     "ref": "GEN 11:31",
+     "form": "Elan"
+    },
+    {
+     "ref": "GEN 30:3",
+     "form": "Bila"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "observed",
+   "supersedes": "letter:h.2",
+   "note": "Supersedes letter:h.2 (\"h drops at the start\"), which rested on Ruth's Ezlon alone. For a new name with initial h follow the NT or Genesis form if any; otherwise keep the h."
+  },
+  {
+   "id": "letter:short_a.g",
+   "kind": "letter",
+   "value": "English short a varies: æ in Hæga (Hagar), Hæm (Ham), Sæla (Sarah); e in Den (Dan); a kept in Gad, Asa (Asher), Alam (Aram), Padan, Naftali",
+   "evidence": [
+    {
+     "ref": "GEN 16:1",
+     "form": "Hæga"
+    },
+    {
+     "ref": "GEN 5:32",
+     "form": "Hæm"
+    },
+    {
+     "ref": "GEN 23:1",
+     "form": "Sæla"
+    },
+    {
+     "ref": "GEN 30:6",
+     "form": "Den"
+    },
+    {
+     "ref": "GEN 30:11",
+     "form": "Gad"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "No rule settles it; build a new name with a, and list it in the chapter notes for the team."
+  },
+  {
+   "id": "letter:r_l.g",
+   "kind": "letter",
+   "value": "r → l holds through Genesis: Lebeka (Rebekah), Laisol (Rachel), Luben (Reuben), Alam (Aram), Gela (Gerar: final r drops), Mamle (Mamre), Hiblon (Hebron), Eflon (Ephron), Tela (Terah), Besiba (Beersheba: r before a consonant drops)",
+   "evidence": [
+    {
+     "ref": "GEN 25:20",
+     "form": "Lebeka"
+    },
+    {
+     "ref": "GEN 29:32",
+     "form": "Luben"
+    },
+    {
+     "ref": "GEN 26:1",
+     "form": "Gela"
+    },
+    {
+     "ref": "GEN 25:9",
+     "form": "Mamle"
+    },
+    {
+     "ref": "GEN 21:31",
+     "form": "Besiba"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Confirms letter:r.2 with 10 Genesis names; no counter-case in Gen 1-30."
+  },
+  {
+   "id": "name_meaning_brackets",
+   "kind": "feature",
+   "value": "the meaning of a Hebrew name is given in brackets right after the naming: \"(Taqa manqa mokho: <meaning>.)\" (its meaning is: ...), 31 times in Gen 1-30; for a Hebrew pun \"(<name>, taqa manqa wag, Iblu manqat-te, ...)\" (the word sounds in Hebrew like ..., 3 times); a second meaning \"(Taqa manqa mokho nøme: ...)\" (27:36)",
+   "pattern": "Yaq ndugu iz <Name> mbo-akhá. (Taqa manqa mokho: <meaning>.)",
+   "evidence": [
+    {
+     "ref": "GEN 29:32",
+     "form": "Taqa manqa mokho",
+     "n": 31
+    },
+    {
+     "ref": "GEN 30:24",
+     "form": "Taqa manqa mokho"
+    },
+    {
+     "ref": "GEN 28:19",
+     "form": "Taqa manqa mokho"
+    },
+    {
+     "ref": "GEN 5:29",
+     "form": "taqa manqa wag"
+    },
+    {
+     "ref": "GEN 27:36",
+     "form": "Taqa manqa mokho nøme"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Every naming of the sons of Jacob (29:32-30:24) has it, with the key word of the mother's speech as the meaning (Luben 29:32 \"Zotékeogēm. Nakhasám ngé.\"). Also places (Betel 28:19, Besiba 21:31) and Edom (25:30). For Genesis 31-50: Mahanaim, Peniel, Israel, Benjamin/Ben-oni, Manasseh, Ephraim, Abel-mizraim."
+  },
+  {
+   "id": "explanation_in_text",
+   "kind": "feature",
+   "value": "the team explains inside the text, not in footnotes: brackets for name meanings and asides (36 verses with brackets in Gen 1-30: 3:20, 4:25, 16:11, 28:19 ...; the BSB's own aside in 13:10 becomes a plain sentence), and expanded verses where the Hebrew is compressed (1:2 seven short sentences; 12:10 the cause of the famine and its effect; 23:2 \"Iz nøme nqambógo, Hiblón\" for \"that is, Hebron\")",
+   "evidence": [
+    {
+     "ref": "GEN 1:2",
+     "form": "Ùnime꞉-igián"
+    },
+    {
+     "ref": "GEN 13:10",
+     "form": "Ta khøuwa-te ndøgo"
+    },
+    {
+     "ref": "GEN 23:2",
+     "form": "Iz nøme nqambógo, Hiblón"
+    },
+    {
+     "ref": "GEN 12:10",
+     "form": "lou até vømū-navøem"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "observed",
+   "supersedes": "explicitation",
+   "words": [
+    "that is",
+    "this was before"
+   ],
+   "note": "Supersedes explicitation (Ruth) with the Genesis evidence. Genesis draft verses may be up to twice the BSB length where the team would explain; gen001_report: our Gen 1:2 scored 38.6 for being too short."
+  },
+  {
+   "id": "speech_frame.g",
+   "kind": "feature",
+   "value": "Genesis speech frames (871 verses): long frame \"<speaker> āv g<obj>-eín nqǽgo, “...”\" 64×; short \"<addressee> gembo-ein\" (to him) 44×, \"gezø-ein\" (to them) 18×, \"gumbo-ein\" (to her) 13×, she said \"guni-ein\"; answered \"gembo-qavøiu\" / \"gendo-qavøiu\" (52× -qavøi-); asked \"gembobevap\"",
+   "evidence": [
+    {
+     "ref": "GEN 1:3",
+     "form": "āv gene-eín nqǽgo",
+     "n": 64
+    },
+    {
+     "ref": "GEN 4:9",
+     "form": "gembo-qavøiu"
+    },
+    {
+     "ref": "GEN 3:16",
+     "form": "gumbo-ein"
+    },
+    {
+     "ref": "GEN 29:33",
+     "form": "āv guni-eín nqǽgo"
+    },
+    {
+     "ref": "GEN 4:9",
+     "form": "gembobevap"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Confirms speech_frame.2 on OT narrative. God speaking to someone: \"Evezøza <X> gembo-ein\" (12:7) or \"āv gembøe-eín nqǽgo\" (15:1). Speech inside speech in ‘ ’ (24:7)."
+  },
+  {
+   "id": "numerals.g",
+   "kind": "feature",
+   "value": "numbers above three are English loans written as said: faev 5, siks 6, seven 7, eit 8, nain 9, ten 10, tuelv 12, tuenti 20, teti 30, foti 40, siksti 60, seventi 70, nainti 90, wan andled 100, fo andled 400, faev andled 500, siks andled 600, wan taosén 1000; compounds with a hyphen (teti-faev 35, tuenti-sevén 27, nainti-nain 99) or juxtaposition (wan andled teti 130, eit andled seven 807)",
+   "evidence": [
+    {
+     "ref": "GEN 5:3",
+     "form": "wan andled teti"
+    },
+    {
+     "ref": "GEN 5:7",
+     "form": "eit andled seven"
+    },
+    {
+     "ref": "GEN 11:12",
+     "form": "teti-faev"
+    },
+    {
+     "ref": "GEN 17:1",
+     "form": "nainti-nain"
+    },
+    {
+     "ref": "GEN 23:16",
+     "form": "fo andled"
+    },
+    {
+     "ref": "GEN 20:16",
+     "form": "wan taosén"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "observed",
+   "supersedes": "numerals.2",
+   "note": "54 verses with andled in Gen 1-30. kopo 1, menas 2, misika 3 stay Kuni (29:34 \"nakhei angana misiká\"). \"101st\" = \"siks andled-wan\" (8:13: six hundred and one)."
+  },
+  {
+   "id": "age_and_years",
+   "kind": "feature",
+   "value": "\"N years old\" = \"<X> viav <N> qamømbo-ndap\" (when he reached N years, 22 times) or \"viav <N> mbogoám\" (he was N years, 12:4, 17:24, 25:26); \"lived N years in all\" = \"viav ate qambøegoam, <N> geyagam\" (5:5, 25:7); \"for N years\" = \"Viav <N>\" as its own phrase (29:20)",
+   "evidence": [
+    {
+     "ref": "GEN 5:6",
+     "form": "qamømbo-ndap",
+     "n": 22
+    },
+    {
+     "ref": "GEN 12:4",
+     "form": "viav seventi-faev mbogoám"
+    },
+    {
+     "ref": "GEN 25:7",
+     "form": "viav ate qambøegoam"
+    },
+    {
+     "ref": "GEN 29:20",
+     "form": "Viav sevén"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "years old",
+    "was years old",
+    "lived a total of",
+    "years"
+   ]
+  },
+  {
+   "id": "look_up_and_see",
+   "kind": "feature",
+   "value": "\"lifted up his eyes and saw\" = \"bøi ge-eqa, nqáe! <what he saw>\" (he raised his eyes: behold!), 4 times (13:10, 18:2, 22:13); the team drops the eyes where they add nothing (22:4 \"manqei tèneqeív\"; 24:64 \"Aezek gu-omet\")",
+   "evidence": [
+    {
+     "ref": "GEN 18:2",
+     "form": "bøi ge-eqa, nqáe!"
+    },
+    {
+     "ref": "GEN 22:13",
+     "form": "bøi ge-eqa, nqáe!"
+    },
+    {
+     "ref": "GEN 22:4",
+     "form": "tèneqeív"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "looked up and saw",
+    "lifted up his eyes",
+    "looked up",
+    "looked out"
+   ],
+   "note": "For a woman bøi gu-eqa by the subject-prefix rule (by rule, not attested in Gen 1-30). (\"Nqáe!\" 65× in Gen 1-30 for הִנֵּה.)"
+  },
+  {
+   "id": "gap:interpret_dream.g",
+   "kind": "gap",
+   "source": "פָּתַר / פִּתְרוֹן (GEN 40:8, 41:8-15)",
+   "value": "interpret (a dream) has no model. Build from \"taqa manqa mokho\" (its meaning, used for names, 31× in Gen) and the NT \"explain to us\": \"... mokho toqoti-nømand?\" (MAT 15:15) / \"taqa manqa mokho gekhâm?\" (what is its meaning, MAT 13:36); an interpreter = \"<...> mokho nømand ezoqam\" (by the agent_noun rule)",
+   "evidence": [
+    {
+     "ref": "MAT 15:15",
+     "form": "mokho toqoti-nømand"
+    },
+    {
+     "ref": "MAT 13:36",
+     "form": "taqa manqa mokho gekhâm"
+    },
+    {
+     "ref": "GEN 29:32",
+     "form": "Taqa manqa mokho"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "interpret",
+    "interpreted",
+    "interpretation",
+    "interprets",
+    "no one can interpret",
+    "meaning"
+   ],
+   "note": "lang.py hbo H6622: no NT model (one LXX link only). Mark each use in the chapter notes for the team."
+  },
+  {
+   "id": "gap:coat.g",
+   "kind": "gap",
+   "source": "כְּתֹנֶת פַּסִּים (GEN 37:3, 23, 31-33); שַׂלְמָה / שִׂמְלָה (clothes, 37:34, 41:14, 44:13, 45:22)",
+   "value": "Joseph's robe of many colours / ornate robe has no model: build \"ndabua <...>\" (cloth, clothes: 27:15 \"ndabua eqeieqei-qape\" the finest clothes; 21× NT); colour words from gap:colours",
+   "evidence": [
+    {
+     "ref": "GEN 27:15",
+     "form": "ndabua eqeieqei-qape"
+    },
+    {
+     "ref": "LUK 15:22",
+     "form": "Ndabua eqeieqei"
+    },
+    {
+     "ref": "JHN 19:2",
+     "form": "ndabua køkouk"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "robe",
+    "ornate robe",
+    "robe of many colors",
+    "tunic",
+    "coat",
+    "garments",
+    "clothes",
+    "changes of clothes"
+   ],
+   "note": "lang.py hbo H3801: tunic → ndabua (7 of 10 NT links). Tear one's clothes (37:29, 37:34, 44:13): MRK 14:63 \"ekeza ndabua vø̄keqa\" (he tore his clothes). Royal robes for Joseph (41:42): term:royal_robe."
+  },
+  {
+   "id": "gap:household_gods.g",
+   "kind": "gap",
+   "source": "תְּרָפִים (GEN 31:19, 31:34-35); אֱלֹהֵי הַנֵּכָר (35:2, 35:4)",
+   "value": "household gods (Rachel's teraphim) have no model: use \"khape mbumbuk\" (false gods, idols: term:H6456) or \"tae khøuwiap\" (carved image, ACT 7:41), with \"tuge eve-qa\" (her father's, as \"tugé eve-gé\" 29:12) for \"her father's household gods\"",
+   "evidence": [
+    {
+     "ref": "ACT 7:41",
+     "form": "tae khøuwiap"
+    },
+    {
+     "ref": "1CO 8:4",
+     "form": "khape mbumbuk"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "household gods",
+    "idols",
+    "my gods",
+    "foreign gods",
+    "gods"
+   ],
+   "note": "lang.py hbo H8655: LXX εἴδωλον → tae khøuwiap / mbumbuk. Laban calls them \"my gods\" (31:30): \"nogi mbumbuk\" by rule. Ask the team (questions page)."
+  },
+  {
+   "id": "gap:heap.g",
+   "kind": "gap",
+   "source": "גַּל (heap, mound of stones; Gen 31:46-52)",
+   "value": "no noun for heap or cairn found (searched BSB 'heap|pile of|mound', Kuni nandi + popotap): rendered 'they gathered stones into one place' (nandi vø̄pizumem, manqei kopo-te, after GEN 1:9 'kopo-té qabenø-píz') and then 'these stones' (nginik nandi)",
+   "evidence": [
+    {
+     "ref": "GEN 1:9",
+     "form": "kopo-té qabenø-píz"
+    },
+    {
+     "ref": "JHN 6:12",
+     "form": "vø̀pizømém"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "mound",
+    "heap",
+    "cairn",
+    "pile"
+   ],
+   "note": "gen031. Question for the team: a word for a heap of stones?"
+  },
+  {
+   "id": "gap:witness_thing.g",
+   "kind": "gap",
+   "source": "עֵד / עֵדָה of a thing (the heap and the pillar are a witness, Gen 31:44-52)",
+   "value": "a thing as witness has no model; used khakhatap (sign), as the covenant sign of GEN 9:12-17 ('Nqanek nandi, khakhatap ndǿgoát'); a person or God as witness = bøi vizu ezoqam (ACT 26:16, 1TI 5:19)",
+   "evidence": [
+    {
+     "ref": "GEN 9:12",
+     "form": "taqa khakhatap nqánek"
+    },
+    {
+     "ref": "1TI 5:19",
+     "form": "bøi vizu ezoqam"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "witness",
+    "a witness",
+    "serve as a witness"
+   ],
+   "note": "gen031:44, 48, 50, 52. GEN 21:30 renders 'as my witness' as 'you will believe that …' (unimanqatin)."
+  },
+  {
+   "id": "gap:ten_times.g",
+   "kind": "gap",
+   "source": "עֲשֶׂרֶת מֹנִים (ten times, Gen 31:7, 41)",
+   "value": "no 'N times' found (searched 'ten times|seven times'; NT counts the acts with the numeral, LUK 17:4); built gèmbo-ten on gèmbo-menás (the second time, GEN 27:36)",
+   "evidence": [
+    {
+     "ref": "GEN 27:36",
+     "form": "Ndakin gèmbo-menás"
+    },
+    {
+     "ref": "LUK 17:4",
+     "form": "seven"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "ten times",
+    "times"
+   ],
+   "note": "gen031:7, 41."
+  },
+  {
+   "id": "gap:saddlebag.g",
+   "kind": "gap",
+   "source": "כַּר הַגָּמָל (the camel's saddle, Gen 31:34)",
+   "value": "no saddle or saddlebag found; built 'kemol-qa ndis' (the camel's basket; ndis MRK 4:21)",
+   "evidence": [
+    {
+     "ref": "MRK 4:21",
+     "form": "ndis"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "saddlebag",
+    "saddle"
+   ],
+   "note": "gen031:34. Gen 22:3 'saddled his donkey' is in the team's text: check it before Gen 44:13."
+  },
+  {
+   "id": "gap:tambourine.g",
+   "kind": "gap",
+   "source": "תֹּף (tambourine, timbrel)",
+   "value": "not found (searched 'tambourine|timbrel|drum|lyre|harp'): left out in gen031:27; songs and harps (ouv, gita) kept",
+   "evidence": [
+    {
+     "ref": "GEN 4:21",
+     "form": "gita"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "tambourines",
+    "tambourine",
+    "timbrel"
+   ],
+   "note": "Exod 15:20 and the Psalms will need it; a local drum word (kundu in Tok Pisin) is a question for the team."
+  },
+  {
+   "id": "gap:way_of_women.g",
+   "kind": "gap",
+   "source": "דֶּרֶךְ נָשִׁים לִי (I am having my period, Gen 31:35)",
+   "value": "not found; built 'sakheis-qa matev, no-te ndøfakhán' (the women's matter has come to me); GEN 18:11 renders Sarah's past childbearing as nakhei upøgim … navøem",
+   "evidence": [
+    {
+     "ref": "GEN 18:11",
+     "form": "nakhei upøgim viav"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "period",
+    "having my period",
+    "the way of women"
+   ],
+   "note": "gen031:35."
+  },
+  {
+   "id": "gap:miscarry.g",
+   "kind": "gap",
+   "source": "שִׁכֵּל (miscarry, lose young, Gen 31:38)",
+   "value": "not found (searched 'miscarr|barren|lost young'; barren = nakheis mbaín, GEN 11:30); rendered by meaning 'none of their young died' (tiqa nakheis kopo nanimateáv)",
+   "evidence": [
+    {
+     "ref": "GEN 11:30",
+     "form": "nakheis mbaín"
+    },
+    {
+     "ref": "GEN 25:21",
+     "form": "Sóg"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "miscarried",
+    "miscarry"
+   ],
+   "note": "gen031:38."
+  },
+  {
+   "id": "gap:bore_loss.g",
+   "kind": "gap",
+   "source": "טְרֵפָה … אָנֹכִי אֲחַטֶּנָּה (what was torn by beasts I bore the loss, Gen 31:39)",
+   "value": "no model for 'torn' or 'bear the loss': 'if wild animals killed a sheep, I did not bring it to you; I paid that price myself' (søvakha gigiap lozokhak … tizø-khanaz; ta fia ndøgo qægó)",
+   "evidence": [
+    {
+     "ref": "ACT 11:6",
+     "form": "lozokhák"
+    },
+    {
+     "ref": "GEN 23:9",
+     "form": "fia"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "torn",
+    "torn by wild beasts",
+    "bore the loss",
+    "loss"
+   ],
+   "note": "gen031:39. Gen 37:33, 44:28 (torn to pieces) need it."
+  },
+  {
+   "id": "gap:squander.g",
+   "kind": "gap",
+   "source": "אָכַל כֶּסֶף (eat up money, squander, Gen 31:15)",
+   "value": "rendered by meaning: 'he took the price for himself; he gave us nothing' (ekeza nonqo mba ndøndáp. Ni-te etopøteáv); squander in JAS 4:3 is a long paraphrase",
+   "evidence": [
+    {
+     "ref": "LUK 15:29",
+     "form": "etopøteáv"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "squandered",
+    "squander",
+    "used up"
+   ],
+   "note": "gen031:15."
+  },
+  {
+   "id": "gap:household_gods.g31",
+   "kind": "gap",
+   "source": "תְּרָפִים (GEN 31:19, 31:34-35); Laban's אֱלֹהָי (my gods, 31:30, 32)",
+   "value": "gen031 used tae khøuwiap (carved images, ACT 7:41) for the narrator ('tuge eve-gi tae khøuwiap', her father's household gods) and mbumbuk (pagan gods, term:H430 pagan) in Laban's and Jacob's speech ('nogi mbumbuk', 'qogi mbumbuk')",
+   "evidence": [
+    {
+     "ref": "ACT 7:41",
+     "form": "tae khøuwiap"
+    },
+    {
+     "ref": "ACT 14:11",
+     "form": "mbumbuk"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen031",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "household gods",
+    "household idols",
+    "idols",
+    "my gods",
+    "your gods",
+    "gods"
+   ],
+   "note": "Still a question for the team (word, and whether to explain them in brackets). Gen 35:2-4 need it.",
+   "supersedes": "gap:household_gods.g"
   }
  ]
 }

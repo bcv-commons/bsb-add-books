@@ -1,0 +1,142 @@
+# Genesis 31 (gen031), Kuni: notes on the draft
+
+**What this is.** A machine draft of Genesis 31 (54 verses, Hebrew numbering; the BSB's 31:55 is
+Hebrew 32:1 and belongs to the next chapter) in Kuni, translated from the Hebrew
+(`orig/heb/gen031.txt`) with the BSB as the only assisting translation. The agent does not know
+Kuni: every word and construction was looked up in the Kuni team's Genesis 1–30, Ruth, Jonah and the
+NT, the verse pack and the wiki. Status: experiment, not reviewed. Source of the text:
+`gen031.tagged` (the `.txt` and `.align` are generated from it).
+
+**Style model.** No earlier chapter of our own exists, so the team's Genesis 29 and 30 (the same
+Jacob–Laban story, read in full) and Genesis 21:22–33, 26:26–31 (covenants), 28:10–22 (Bethel) are
+the models. Short sentences opened by *Yaq*, verb last; the long frame *āv … -eín nqǽgo* for solemn
+speech, short frames (*gembo-ein*, *gendo-qavøiu*, *gindu-qavøinam*) elsewhere; name meanings in
+brackets (feature name_meaning_brackets).
+
+## Fixed renderings used in this chapter
+
+| Hebrew / BSB | Kuni | Model |
+|---|---|---|
+| Laban's sons said | Leiben-gi nakhei angana | GEN 29:16 (nakhei mbasi), term:H1121.g |
+| has taken away | me꞉vimbám | GEN 27:36 |
+| became rich | vømø̄-gigiap-kopoav-ezoqam-ev | GEN 30:43 |
+| what have you done (to me)? | Gekha zapâ, matev av nqægo qoqonø-matanam? | GEN 12:18 |
+| you deceived me | qoqonømbe-khavoz | GEN 29:25 |
+| Here I am | No nqǽya. | GEN 22:11 |
+| God came to X in a dream | X Mbumbukiam mbofakhán. Venanqei tam-té genø-omét | GEN 20:3 |
+| be careful | Aiyá qagó. | MAT 6:1, 1CO 8:9 |
+| lest | Soqaín ndøgo, + clause without negator | feature negative_purpose |
+| between you and me | yaq qo-a, yaq no | GEN 13:8, 23:15 |
+| May (God) judge between | segé-geveá, … eqeieqei gekha ezoqam ndǿmatanam | GEN 16:5 |
+| set up a stone as a pillar | sasa ndøwuab. Andé uk me me꞉wuáb. | GEN 28:18 (verbatim) |
+| make a covenant | poev … unimanqatin- | GEN 21:27, 9:12 |
+| swore | manqa mbusa ndøvé | ACT 18:18, GEN 21:31 |
+| invited to eat | lou loge-qa zø-akhá | GEN 29:22 |
+| spent the night | lova kopo vø̄sømbi | GEN 24:54 |
+| the third day | khøuwa misika-te ndøgo | GEN 22:4 |
+| fourteen | fotin | GEN 14:5 (qamø-fotin) |
+| last night | lova qagoam | GEN 19:34 |
+| witness (heap, pillar) | khakhatap (sign) | GEN 9:12 (covenant sign); see open questions |
+| witness (person, God) | bøi vizu ezoqam | ACT 26:16, 1TI 5:19 |
+
+## Verse by verse
+
+| Verse | Hebrew | Kuni | BSB | Comment |
+|---|---|---|---|---|
+| 1 | וַיִּשְׁמַע … לָקַח יַעֲקֹב | Yaq Zekop, Leiben-gi nakhei angana-qa manqat ge-ewag. … me꞉vimbám … vømø̄-gigiap-kopoav-ezoqam-ev. | Jacob heard … taken away … built all this wealth | Frame "āv gini-manqatám nqǽgo" MRK 6:14; "nikeza tat" (our father) GEN 19:34. Models GEN 27:36, 30:43. **Medium.** |
+| 2 | וַיַּרְא … פְּנֵי לָבָן … אֵינֶנּוּ עִמּוֹ כִּתְמוֹל שִׁלְשׁוֹם | Leiben-qá bugug ndøqeív. Nqáe! … eqeieqei mbaín, av bugukhokhof ndægo. | his attitude toward him had changed | Face = bugug (GEN 4:5–6 the fallen face); "as before" built with "av … ndægo" + bugukhokhof. **Medium.** |
+| 3 | שׁוּב אֶל־אֶרֶץ אֲבוֹתֶיךָ | … nango mòqoveséz … No nqæ̂gó, qo namba. | Go back … I will be with you | Return GEN 16:9; "I am with you" GEN 26:24, 28:15. YHWH = Evezøza. **High.** |
+| 4 | וַיִּשְׁלַח … וַיִּקְרָא | manqat ndøkhofotáv, Laisol neka Lia vøzø̄-akha, khae-te … | sent word and called | GEN 12:18 (sent word), relative "ma … gi꞉goam" RUT 1:7. **Medium.** |
+| 5 | רֹאֶה אָנֹכִי … וֵאלֹהֵי אָבִי הָיָה עִמָּדִי | No āv qateqeiví nqǽgo: … Geté noge tat-ge Mbumbukiam, ndego no namba ndøgoám. | I can see … God of my father has been with me | ACT 27:10 (I see that); -ge for God as possessed person (GEN 28:13); "God was with" GEN 21:20, ACT 7:9. **Medium.** |
+| 6 | בְּכָל־כֹּחִי עָבַדְתִּי | Zo mø̀zøte-zøtéz, no sasae kandambá qægoam … | served your father with all my strength | GEN 30:26 nearly verbatim; ACT 20:34. **High.** |
+| 7 | הֵתֶל בִּי … עֲשֶׂרֶת מֹנִים | gènømbe-khavozám … gèmbo-ten gè-enénd … takeáv qagoam … matev soqaqape tematanam | cheated me, changed my wages ten times, God has not allowed him to harm me | Deceive GEN 27:35; "let" GEN 20:6; harm GEN 26:11. **gèmbo-ten built** on gèmbo-menás (GEN 27:36). **Medium/low.** |
+| 8 | אִם־כֹּה יֹאמַר נְקֻדִּים | Zoge zøve tenø-ein, ‘Ndigu løvugiap …’ yaq … nakheis løvugiap vøzø̄-fakhazɨn. | If he said, 'The speckled …' | Habitual -ɨn GEN 30:39–40; "yaq-fia, ndígu tígoát" GEN 30:32. Speckled = løvugiap, streaked = bokhotap-us (GEN 30:32–39 have only these two words). **Medium.** |
+| 9 | וַיַּצֵּל אֱלֹהִים | Yaq nakémbá, Mbumbukiam … me꞉vimbám. Yaq no genø-etoam. | God has taken away your father's livestock | JHN 10:29 (gave me). **Medium.** |
+| 10 | בְּעֵת יַחֵם הַצֹּאן … בַּחֲלוֹם | … mønæv-qa ginduzavɨn, no venanqei notamát. Yaq nqáe! Naningus angana … vø̄mønaɨn … | When the flocks were breeding, I saw in a dream | GEN 30:38, 30:41; dream MAT 27:19 (notamát), GEN 28:12. Eyes dropped (feature look_up_and_see). Mottled = khagi papaqa-qasis (GEN 30:35, "white on it"). **Medium.** |
+| 11 | מַלְאַךְ הָאֱלֹהִים … הִנֵּנִי | Mbumbukiam-ge enzol ezoqam, āv genømbe-eín nqǽgo, ‘Zékop!’ Yaq no qambo-qavøiu, ‘No nqǽya.’ | the angel of God said … Here I am | Vocative accent as Éibleem (GEN 22:11); 1sg reply ACT 22:8. **High.** |
+| 12 | שָׂא־נָא עֵינֶיךָ וּרְאֵה | ‘Qotéqēiv! … Zapa ndǿgo, no matev ate ndægo mø̀eqeív …’ | Look up and see … for I have seen all | MRK 13:1, JHN 1:34. **Medium.** |
+| 13 | אָנֹכִי הָאֵל בֵּית־אֵל | No ndego Mbumbukiam, Betel-te ndøgo, ma qo nandi-te oil qoqo-qouz, neka manqa mbusa qoqonø-ve. … qó-iváv … nango mòqoveséz. | I am the God of Bethel … get up, leave, return | Oil GEN 28:18; vow = manqa mbusa (term:H5088); leave GEN 12:1; get up ACT 9:6. **Medium.** |
+| 14 | הַעוֹד לָנוּ חֵלֶק וְנַחֲלָה | “Gê, nikeza tat-qa khoev-te, gigiap nøme mbaîn, ni nonqo? | Do we have any portion or inheritance left? | Question modelled on GEN 27:36 ("is there no other … for me?"). Portion and inheritance in one word gigiap. **Medium.** |
+| 15 | נָכְרִיּוֹת נֶחְשַׁבְנוּ … מְכָרָנוּ | Tat-qa bøi-te, ni manqei vini-ák. Ndego ni gèwí. Geté fia ndøgo … ndøndáp. Ni-te etopøteáv. | regarded as outsiders … sold us … squandered | Rhetorical question → statement (feature rhetorical_question); foreigner RUT 2:10; sell ACT 7:9 (gèwiím); "never gave me" LUK 15:29. "ate our money" rendered by meaning (took it for himself). **Low.** |
+| 16 | כִּי כָל־הָעֹשֶׁר | Unimanqatín. … ndøgo niqá neka nigi nakheis-qa. … āv qotégó, av Mbumbukiam qo manqa geqambe-løvua ndægo. | Surely all the wealth … belongs to us … do whatever God told you | ACT 2:39 (belongs to you and your children), GEN 27:43 (do as I say), ACT 10:33. **Medium.** |
+| 17 | וַיָּקָם … עַל־הַגְּמַלִּים | Yaq Zekop gè-itán. Ekeza nakheis neka sakheis, kemol-te genø-áb. | got up and put his children and wives on camels | MAT 9:19 (gè-itán); put GEN 30:35 (genø-áb). **Medium.** |
+| 18 | וַיִּנְהַג … בְּפַדַּן אֲרָם | … Padan-Alam manqei-te qambøegoam, vø̄-itub. … okho-qa ndøgoám. | drove all his livestock … to go to his father Isaac | GEN 12:5, 30:36 (itub flocks); purpose JON 1:3. **Medium.** |
+| 19 | לִגְזֹז … הַתְּרָפִים | Leiben ekeza sip su qogem-qa gewav. Yaq Laisol tuge eve-gi tae khøuwiap gu-aqonøvem. | shearing his sheep … household idols | Shearing = cutting the wool (ACT 8:32); steal GEN 30:33 (nø-aqonøvem). Household gods = tae khøuwiap (ACT 7:41): **gap settled provisionally**, see open questions. **Low/medium.** |
+| 20 | וַיִּגְנֹב … אֶת־לֵב לָבָן | … gembøe-khavozám. Ndego Leiben einiáv, av nqægo, ndego khokhon-qa ndøgó. | deceived Laban … by not telling him | "stole the heart" = deceived (BSB); GEN 25:20 (Alam manqei-ak); GEN 21:26 (einiáv). **Medium.** |
+| 21 | וַיִּבְרַח … הַנָּהָר … הַר הַגִּלְעָד | … ndøkhokhonát. Ndego gè-itán, Yuflatis kea ndøqantav, yaq Gilead manqei popotap-té genøwáv. | fled … crossed the Euphrates … hill country of Gilead | JON 1:3 (flee), GEN 2:14 (Yuflatís), JHN 6:1 (cross), GEN 12:8 (hill country). **Medium.** |
+| 22 | וַיֻּגַּד … בַּיּוֹם הַשְּׁלִישִׁי | Yaq khøuwa misika-te ndøgo, ezoqa nøme Leiben gimbo-einim, av nqægo … | On the third day Laban was informed | GEN 22:4; impersonal "they told him". **High.** |
+| 23 | וַיִּרְדֹּף … וַיַּדְבֵּק | … vø̄khatob, Zekop vømbō-pavat, khøuwa seven. … Zekop-te gemøfakhan. | pursued … overtook | follow (pav-, GEN 14:14 gezøpavát); overtook = reached him (gemøfakhan, GEN 29 heading). The store's "gèmø-tøkenøvém" is a built form for "cling", not used. **Medium.** |
+| 24 | הִשָּׁמֶר לְךָ פֶּן־תְּדַבֵּר … מִטּוֹב עַד־רָע | Mbumbukiam mbofakhán. Venanqei tam-té genø-omét, gembo-ein, “Aiyá qagó. Soqaín ndøgo, … toqombo-ein, eqeieqei o soqain.” | Be careful not to say anything … good or bad | GEN 20:3 template; good or bad ROM 9:11. **Medium.** |
+| 25 | וַיַּשֵּׂג … תָּקַע אֶת־אָהֳלוֹ | … teqa palai khoev … mø̀ndø-puán. Yaq até Leibén-a … palai khoev vø̄puan. | pitched his tent … camped | GEN 26:25, 13:12; "até X-a" GEN 25:20. **Medium.** |
+| 26 | מֶה עָשִׂיתָ … כִּשְׁבֻיוֹת חָרֶב | “Gekha zapâ, matev av nqægo qoqonø-matanam? … nakhei mbasi qoqo-geanem, av nakhag-te ezoqa ginøndafém ndægo. | What have you done? … like captives of war | GEN 12:18, 29:25, 14:12 (geanem carry off), 14:14 (captured in war). **Medium.** |
+| 27 | נַחְבֵּאתָ … בְּתֹף וּבְכִנּוֹר | Gekha zapâ, aiyav-tē qoqo-khokhon … No ambá qo, khanakhanakh-ús, ouv neka gita namba, sasa tøtaqa-khofotavɨn. | Why did you run away secretly … tambourines and harps | Secretly RUT 3:7; hypothetical -ɨn (feature suffix_in). **Tambourine left out (gap).** Lyre = gita (NT). **Low.** |
+| 28 | לְנַשֵּׁק לְבָנַי וְלִבְנֹתָי | … nogi nakhei mbasi neka tigi nakheis, sège-møvøiú, ouo manqat tæzø-ein. … andé matavap livilivis-us ezoqam me … | kiss my grandchildren and my daughters goodbye … foolish | Farewell kiss RUT 1:14 (as the store's formula says); grandchildren as "their children". Foolish 1CO 1:27, MAT 7:26. **Low/medium.** |
+| 29 | יֶשׁ־לְאֵל יָדִי | No bazaføgakh nqanø̂gó … Geté lova qagoam, zoge zøve-ge Mbumbukiam, āv genømbe-eín nqǽgo, ‘…’ | I have power to do you great harm | "I have" JHN 4:32 (nqanø̂gó); repeats v24's warning verbatim. **Medium.** |
+| 30 | נִכְסֹף נִכְסַפְתָּה … גָנַבְתָּ אֶת־אֱלֹהָי | … qave-qa khoev-te nqawa okho-qa kandambá qápoev. Geté gekha zapâ, nogi mbumbuk qoqo-aqonøvem? | you long for your father's house … stolen my gods | Want GEN 29:15 (qápoev); "my gods" = mbumbuk (term:H430 pagan, ACT 14:11). **Medium.** |
+| 31 | יָרֵאתִי … פֶּן־תִּגְזֹל | “No møe nogoám. No āv qate-matøvém nqǽgo: Soqaín ndøgo … toqo-vimbumem.” | I was afraid … take your daughters by force | MAT 25:25, RUT 4:4; seize GEN 21:25 (gèvimbumém). **Medium.** |
+| 32 | לֹא יִחְיֶה … וְלֹא־יָדַע יַעֲקֹב | Gekha ezoqām ndego … toqozømet, ndego pakhapakha bembo-khanaé. … Sègekhatíb. … Zekop otevateáv … | he shall not live … Jacob did not know | GEN 26:11 (be put to death); GEN 21:30 (Sègekhatíb). **Medium.** |
+| 33 | וַיָּבֹא לָבָן בְּאֹהֶל | … palai khoev mokho-te gemø-on … Geté qeiviáv. … vømø̄-on. | went into Jacob's tent … found nothing | MRK 11:11 (gemø-on), LUK 24:3 (qeiviáv). Maids = sasae mbasønakheis. **Medium.** |
+| 34 | בְּכַר הַגָּמָל … וַיְמַשֵּׁשׁ | … kemol-qa ndis mokho-te vø̄-awam, neka ova vømø̄qom. … ndøvawát. | saddlebag … searched | **Saddlebag built** as "the camel's basket" (ndis MRK 4:21); sat MRK 13:3; search = look for (vawa). **Low.** |
+| 35 | אַל־יִחַר בְּעֵינֵי אֲדֹנִי … דֶּרֶךְ נָשִׁים לִי | “Tát. Qo qaqa ndø̀go᷄. No kopømba mbaín, tæ-itan … Zapa ndǿgo, sakheis-qa matev, no-te ndøfakhán.” | Sir, do not be angry … I am having my period | Address "Tát!" GEN 27:18; prohibitive GEN 26:24 pattern; cannot RUT 4:6. **"the way of women" built** (women's matter has come to me). **Low.** |
+| 36 | וַיִּחַר לְיַעֲקֹב … מַה־פִּשְׁעִי | Yaq Zekop mbøni mbonqosøgím. … manqa itumbam vø̄go. … “Gê, no gekha manqa-zapa qæ-matanam? …” | incensed … What is my crime? | GEN 30:2 (Jacob angry, verbatim), GEN 13:8 (strife), JHN 18:35 (what have you done?). **Medium.** |
+| 37 | מִשַּׁשְׁתָּ … וְיוֹכִיחוּ | … qoqo-vawat. Gê, … qoqoqeîv? … segé-geveá … eqeieqei gekha ezoqam ndǿmatanam, qô o nô. | searched all my goods … judge between us | GEN 16:5 verbatim ending. "qotøndó-upøném" built on LUK 15:22 (zotøndó-upøném). **Medium.** |
+| 38 | לֹא שִׁכֵּלוּ … לֹא אָכָלְתִּי | Nqanek viav tuenti … tiqa nakheis kopo nanimateáv. … no logeáv. | twenty years … not miscarried … not eaten the rams | Ram = sip anganeam (GEN 22:13), here sip angana (pl). **Miscarried rendered by meaning** (none of their young died). **Low/medium.** |
+| 39 | טְרֵפָה … אָנֹכִי אֲחַטֶּנָּה | Søvakha gigiap lozokhak, sip kopo tizø-khanaz ndøgo, no qo-te upøzoateáv. No nøkezan, ta fia ndøgo qægó. … | torn by wild beasts … bore the loss myself | Wild animals ACT 11:6; "did not bring" MAT 16:7. **Bore the loss built** ("I paid that price myself"). **Low.** |
+| 40 | בַיּוֹם אֲכָלַנִי חֹרֶב וְקֶרַח בַּלָּיְלָה | Paveat-te, khøuwa tatas-qape ndønø-ngiú. Neka lova-te, qozaq ndønø-ngiú. Yaq venanqei … mbaín. | heat by day, frost by night, sleep fled | Heat GEN 18:1, cold GEN 8:22 (qozaq); "afflicted me" RUT 1:21 (mø̀ndønø-ngiú). **Medium.** |
+| 41 | עֶשְׂרִים שָׁנָה … אַרְבַּע־עֶשְׂרֵה שָׁנָה | … Viav fotin … qogi nakhei mbasi menas zapaya. Neka viav siks … gèmbo-ten qoqo-enend. | fourteen years for your two daughters | Fourteen GEN 14:5; "for" = zapaya (GEN 29:25). Repeats v7. **Medium.** |
+| 42 | לוּלֵי … וּפַחַד יִצְחָק … רֵיקָם | … ndego Aezek gèmbo-vizupám, amba no namba mbain tegonɨn, yaq qo ndakin, no zenda-zenda mba, ambá sègenø-khofotavɨ́n. … noqa yage føgakh … mø̀ndøqeív. … mø̀ndø-geveá. | If the God … the Fear of Isaac … empty-handed … God has seen my affliction | Counterfactual JHN 15:24; empty-handed RUT 3:17; affliction GEN 29:32 verbatim; judged GEN 30:6. Fear of Isaac = "God whom Isaac worshipped" (term:H3372 fear God = vizap). **Medium/low.** |
+| 43 | הַבָּנוֹת בְּנֹתַי … וּמָה אֶעֱשֶׂה | “Nginik nakhei mbasi, nogi nakhei mbasí. … Gigiap ate ndægo, qo qoqoqeiv, nogí. Geté nqægo … gekha matev tæmatanam?” | These daughters are my daughters … what can I do today? | JHN 17:10 (qogí / nogí); today = nqægo (term:H3117 today). **Medium.** |
+| 44 | לְכָה נִכְרְתָה בְרִית | Yaq ndakin, qotøndéqāv. Qo neka no, poev zí-unimanqatiním. Yaq ndøgo, khakhatap betegó, yaq qo-a, yaq no. | Come, let us make a covenant … a witness | Come RUT 2:14; hortative zí- GEN 26:28; covenant GEN 21:27. **Medium.** |
+| 45 | וַיְרִימֶהָ מַצֵּבָה | Yaq Zekop nandi kopo ndøndáp, sasa ndøwuab. Andé uk me me꞉wuáb. | set it up as a pillar | GEN 28:18 verbatim. **High.** |
+| 46 | לִקְטוּ אֲבָנִים … גָל | “Nandi vø̀pizømém.” Yaq ndigu nandi vø̄pizumem, manqei kopo-te. … lou gilog. | Gather stones … made a mound … ate | JHN 6:12 (gather!); "into one place" GEN 1:9. **Mound rendered as stones gathered in one place** (no word for heap). **Medium.** |
+| 47 | יְגַר שָׂהֲדוּתָא … גַּלְעֵד | … iz Zega-Saaduta mbo-akhá. (Alam manqat-te.) … iz Galed mbo-akhá. (Iblu manqat-te. … Khakhatap nandí.) | Jegar-sahadutha … Galeed | Naming MAT 1:25; "Iblu manqat-te" from the team's note at GEN 29:32; meaning brackets. **New names.** **Medium.** |
+| 48 | הַגַּל הַזֶּה עֵד … עַל־כֵּן | “Nqanek nandi, nqægo, khakhatap ndǿgoát, yaq qo-a, yaq no.” Yaq nakémbá, ta manqei, iz Galed mbo-akhayám. | This mound is a witness … Therefore | GEN 21:31, 16:14 (Yaq nakémbá … mbo-akhayám). **Medium.** |
+| 49 | וְהַמִּצְפָּה … יִצֶף יְהוָה | Neka iz nøme Mizpa mbo-akhayám. (Taqa manqa mokho: Kewagam manqei.) … “Evezøza segé-kewagát … manqei vini-te tiziyagat. | Mizpah … May the LORD keep watch | Wish with segé- as GEN 16:5; watch = kewag. **YHWH (open question).** **Low/medium.** |
+| 50 | אִם־תְּעַנֶּה … אֵין אִישׁ עִמָּנוּ | … matev soqøsoqa toqozø-matanam, o sakheis nøme toqozøkɨm … Mbumbukiam ndego, bøi vizu ezoqám … | If you mistreat my daughters … God is a witness | GEN 21:23 (matev soqøsoqa); wives RUT 1:4 (zøkɨm). **Medium.** |
+| 51 | הִנֵּה הַגַּל … הַמַּצֵּבָה | “Nqáe! Nginik nandi. Neka nqáe! Nqanek nandi, ndego uk me qatewuab …” | Here is the mound, and here is the pillar | GEN 28:22 (ande uk me qatewuab). **Medium.** |
+| 52 | עֵד הַגַּל הַזֶּה … אִם־אָנִי לֹא־אֶעֱבֹר | … No nginik nandi nóqantavák … Neka qo … qóqantavák … | I will not go past this mound | Negative future nó-…-ák / qó-…-ák (feature negative_future: nólogák GEN 24:33, qóviamák MAT 21:19); cross = qantav. **Medium.** |
+| 53 | אֱלֹהֵי אַבְרָהָם וֵאלֹהֵי נָחוֹר … וַיִּשָּׁבַע | Eibleem-ge Mbumbukiam neka Nao-ge Mbumbukiam, ndego tige eve-ge Mbumbukiam, segé-geveá … Yaq Zekop manqa mbusa ndøvé, Mbumbukiam-qa iz-te, ndego tege eve Aezek gèmbo-vizupám. | May the God of Abraham … judge … Jacob swore by the Fear of Isaac | GEN 16:5, 22:16 (by my name), ACT 18:18. **Medium.** |
+| 54 | וַיִּזְבַּח … וַיִּקְרָא לְאֶחָיו לֶאֱכָל־לָחֶם | … søvakha gigiap ndølaváo, Mbumbukiam-te etoam matev vø̄go. … lou loge-qa zø-akhá. … lova kopo vø̄sømbi. | offered a sacrifice … invited … spent the night | GEN 22:13 (ndølaváo), GEN 4:4 (etoam matev), GEN 29:22, GEN 24:54. **Medium.** |
+
+## Not found in the corpus (built or left out)
+
+- *gèmbo-ten* (ten times, v7, v41): built on *gèmbo-menás* (GEN 27:36).
+- saddlebag (v34): "kemol-qa ndis" (camel's basket), built.
+- "the way of women" (v35): "sakheis-qa matev … ndøfakhán", built.
+- tambourine (v27): left out; lyre = *gita* (NT); songs = *ouv*.
+- miscarried (v38): by meaning ("their young did not die").
+- bore the loss (v39): by meaning ("I paid that price myself").
+- mound (v46–52): no noun found; "the stones gathered in one place", then *nandi* (stones).
+- witness for a thing (v44, 48, 52): *khakhatap* (sign), as the covenant sign of GEN 9:12; for God *bøi vizu ezoqam*.
+- squandered (v15): by meaning ("took it for himself").
+- Verb forms built on attested patterns (not seen as such): *qoqo-qouz*, *qoqonø-ve*, *qoqo-geanem*, *qoqo-khokhon*, *qoqo-wav*, *qoqonø-pavat*, *qoqo-vawat*, *qoqo-enend*, *qoqo-aqonøvem* (2sg past qoqo-); *gu-aqonøvem*, *gi-aqonøvem* (on *nø-aqonøvem*); *toqo-vimbumem*, *toqozøkɨm*, *toqombo-ein*; *tenø-ein*; *segé-kewagát* (on *segé-geveá*); *nóqantavák*, *qóqantavák*; *zí-unimanqatiním*; *mø̀ndø-puán*; *vømbō-pavat*; *ndønø-ngiú*; *takeáv qoqogoam*; *qotøndó-upøném*.
+
+## New name forms
+
+- **Gilead** (גִּלְעָד, v21, 23, 25): not in the corpus; kept close to the spelling (letter rules: no r, no h).
+- **Zega-Saaduta** (Jegar-sahadutha, v47): j → z, final r drops, inner h drops, th → t.
+- **Galed** (Galeed, v47–48): double vowel written single, as double consonants are.
+- **Mizpa** (Mizpah, v49): final -ah → -a.
+- Vocative **Zékop** (v11), accent on the first syllable as *Éibleem* (GEN 22:11).
+
+## Open questions for the Kuni team
+
+1. **YHWH** = Evezøza in v3 and v49 (the team's Genesis has Evezøza; question kept open as instructed).
+2. **Household gods** (teraphim, v19, 34, 35; Laban's "my gods", v30, 32): we wrote *tae khøuwiap*
+   (carved images, ACT 7:41) for the narrator and *mbumbuk* for Laban's own word. Is there a better
+   word, or should the text explain them in brackets as the team does elsewhere?
+3. **A heap of stones as witness** (v44–52): *khakhatap* (sign) or a person-like *bøi vizu*? And is
+   there a word for a heap or cairn?
+4. **Speckled, streaked, mottled** (v8, 10, 12): Genesis 30 has two words (*løvugiap*, *bokhotap-us*);
+   we added *khagi papaqa-qasis* for the third. Right?
+5. **"The Fear of Isaac"** (v42, 53): rendered "God whom Isaac worshipped". Keep, or something closer?
+6. **Ten times** (*gèmbo-ten*), **saddlebag**, **the way of women**: built forms, please check.
+7. **Explanation in brackets** for Jegar-sahadutha / Galeed (Aramaic and Hebrew): is "(Alam manqat-te.)"
+   the right way to say "in Aramaic"?
+
+## Least sure
+
+v15, v27, v34, v35, v39 (built constructions); v2/v5 (the changed face).
+
+Quotations above are short forms from the Kuni team's Genesis and the Kuni NT (Mbumbukiam-qa Manqat
+Mbomambaqape, Kuni; credit in `../CREDITS.md`).

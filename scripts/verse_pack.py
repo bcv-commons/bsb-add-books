@@ -71,6 +71,9 @@ def strip_marks(s, marks=None):
     return unicodedata.normalize("NFC", s)
 
 
+COMMON_HEB = {"אשר", "את", "אל", "על", "כי", "לא", "כל", "גם", "עם", "אם", "מה", "מי", "זה", "הוא", "היא"}
+
+
 def heb_consonants(s):
     return re.sub(r"[֑-ׇ‍]", "", s).replace("־", " ").replace("׃", "").strip()
 
@@ -148,7 +151,10 @@ def main():
     assist = verses_of(os.path.join(ROOT, assist_dir, f"{code}{nnn}.txt"))
     LP = LT.Project(pname)                         # the style corpus, paired with the BSB (scripts/langtools.py)
     glossary = LP.glossary()
-    corpus = [(r[0], r[3], r[4]) for r in LP.corpus(exclude={code}) if r[3]]   # never the book being drafted
+    # never the chapter being drafted; the book's other chapters are the best models when the edition has them (Kuni
+    # Genesis 1-30 for Genesis 31). When the edition has the chapter itself, make_prompt.py demands a quarantine, which
+    # takes the whole book out of the corpus.
+    corpus = [(r[0], r[3], r[4]) for r in LP.corpus() if r[3] and not (r[1] == code and r[2][0] == int(nnn))]
     df = collections.Counter(t for r in corpus for t in set(tokens(r[1])))
     N = len(corpus)
     stoks = [[stem(t) for t in tokens(r[1])] for r in corpus]
@@ -213,12 +219,35 @@ def main():
         return hits
 
     def name_hits(heb_text, bsb_text):
-        hc, bw = heb_consonants(heb_text), set(tokens(bsb_text))
+        """Names of the chapter: a Hebrew word of the entry's source as a whole word of the chapter (after up to two
+        one-letter prefixes: ו ה ב ל מ כ ש), or its English (`words`, else the id without a .suffix) in the BSB text."""
+        seq = re.findall(r"[א-ת]+", heb_consonants(heb_text))
+        hw = set(seq)
+        bw = set(tokens(bsb_text))
+        pre = "והבלמכש"
         hits = []
         for e in names:
-            src = heb_consonants(e.get("source") or "")
-            eng = e["id"].split(":", 1)[-1].replace("_", " ")
-            if (src and src in hc) or eng in bw:
+            src = re.findall(r"[א-ת]+", heb_consonants(e.get("source") or ""))
+            eng = e.get("words") or [e["id"].split(":", 1)[-1].split(".")[0].replace("_", " ")]
+            def prefixed(w, n):                    # w is n, or n after one or two one-letter prefixes
+                return w == n or (len(n) > 2 and len(w) - len(n) in (1, 2) and w.endswith(n)    # a 2-letter name: whole
+                                  and all(c in pre for c in w[:len(w) - len(n)]))                     # words only (חת)
+
+            def found(n):
+                return any(prefixed(w, n) for w in hw)
+            # every word of a name of several words (בית לחם), the alternatives of "X / Y" each on its own; a name
+            # spelt like a common word (אשר, the relative 'who') counts only with its English
+            alts = [re.findall(r"[א-ת]+", a) for a in heb_consonants(e.get("source") or "").split("/")]
+            def together(a):                       # a name of several words: consecutive in the chapter
+                if len(a) == 1:
+                    return found(a[0]) and a[0] not in COMMON_HEB
+                return any(prefixed(seq[i], a[0]) and seq[i + 1:i + len(a)] == a[1:] for i in range(len(seq) - len(a) + 1))
+            heb = any(a and together(a) for a in alts)
+            en = any(x in bw for x in eng)
+            # unpointed, one Hebrew word can be another word (עשו Esau = עָשׂוּ 'they did'): an entry with English words
+            # needs its English too when only a one-word name matched
+            one_word = all(len(a) == 1 for a in alts if a)
+            if en or (heb and not (e.get("words") and one_word)):
                 hits.append(e)
         return hits
 

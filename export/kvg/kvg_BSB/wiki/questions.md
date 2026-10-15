@@ -4,7 +4,7 @@ kind: questions
 ---
 # Questions for the Kuni team
 
-Numbered questions where two findings disagree. The store keeps the entry based on the human
+Numbered questions where two findings disagree or the corpus has no model (4–10 added from Genesis 1–30, 15.10.2026). The store keeps the entry based on the human
 Ruth and Jonah; the other reading is written here with its evidence. Answers go into the store as
 a new entry (with `supersedes` where the answer changes a fact). Further questions are marked on
 the pages as "Question for the Kuni team".
@@ -25,6 +25,25 @@ the pages as "Question for the Kuni team".
    human Ruth keeps names new in the OT close to the spelling: Naomi (not Neomi), Elimelek,
    Kilion (letter:vowels.2). The store follows Ruth for names the NT lacks and the NT form for
    names it has. Is that the rule the team wants?
+
+4. **Household gods (GEN 31:19–35): what word?** Neither Genesis 1–30 nor the NT has Rachel's
+   teraphim. The store proposes *khape mbumbuk* (false gods, 1CO 8:4) or *tae khøuwiap* (a carved
+   image, ACT 7:41), gap:household_gods.g. Which fits a small image a woman can hide in a saddle?
+5. **Interpreting dreams (GEN 40–41).** No model for "interpret". Is "taqa manqa mokho" (its
+   meaning, as for names in brackets, GEN 29:32) with *nømand* (explain, MAT 15:15) right, or is
+   there a word for reading a dream? (gap:interpret_dream.g)
+6. **Joseph's robe (GEN 37:3).** Clothes are *ndabua* (27:15). How should "a robe of many colours"
+   (or "an ornate robe") be said? (gap:coat.g)
+7. **Blessing: khakheinøqav- or zenda … ve?** Genesis uses both: the verb *khakheinøqav-* (may God
+   bless you, 28:3) and "zenda … ve" (put the hand on) for Isaac's blessing (27:27). The store
+   uses the hand form for a father's blessing (Gen 48–49) and the verb for God's. Is that the
+   difference the team makes?
+8. **Initial h in new names.** Genesis keeps it (Hæga, Hiblon, Hit) but Haran is Elan. For new
+   names in Gen 31–50 (Hamor, Hirah) the store keeps the h (letter:h.g). Right?
+9. **Hagar: Hæga or Hega?** Genesis writes Hæga, Galatians Hega. The store follows Genesis for
+   the OT (name:hagar.g). Should the NT be aligned at its next revision?
+10. **Ruth's Yawe.** Genesis and Jonah have Evezøza only; Ruth has Yawe. Is Ruth's Yawe to stay
+    as a deliberate choice, or will Ruth be aligned to Evezøza? (term:H3068.g)
 
 ## Store entries
 

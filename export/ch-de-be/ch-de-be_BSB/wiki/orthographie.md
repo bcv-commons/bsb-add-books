@@ -29,7 +29,7 @@ folgen ihr. Regeln, wo sie regelmässig sind:
 
 Die Formen »Vater«, »Himmel«, »Christus« stehen fast nur in MAT und MRK (andere Druckvorlage).
 Massgebend sind Vatter, Himel, Chrischtus. Die Erkennungsfehler der gescannten Vorlage (»cm« für »em«,
-»Böll« für »söll«) sind seit 2026-10-15 berichtigt; nur Lk 24:28–29 ist noch verderbt. Eine Form nur übernehmen,
+»Böll« für »söll«) sind seit 2026-10-15 berichtigt; 24 nicht zu rettende Verse sind ausgesondert. Eine Form nur übernehmen,
 wenn sie mehrfach belegt ist.
 
 ## Store entries
@@ -67,7 +67,7 @@ wenn sie mehrfach belegt ist.
   - NT: 1CO 8:5 *Himel*; 1CO 1:3 *Vatter*
   - Die Formen »Vater«, »Himmel«, »Christus« stehen fast nur in MAT und MRK (Druckvorlage); massgebend sind Vatter, Himel, Chrischtus.
   - agent:memory-setup, 2026-10-14
-- **`spell_variants`** **Die Erkennungsfehler der gescannten Vorlage (c für e wie »cm« für »em«, »gcischtlechc«; »Böll« für »söll«; ein überzähliges c) sind seit 2026-10-15 im Korpus berichtigt (fix_ocr.py in der Ausgabe, 348 Wörter). Offen ist Lk 24:28–29 (verderbt). Eine Einzelform nur übernehmen, wenn sie mehrfach belegt ist.** [medium, observed]
-  - NT: LUK 24:29
+- **`spell_variants`** **Die Erkennungsfehler der gescannten Vorlage (c für e wie »cm« für »em«; »Böll« für »söll«; ein überzähliges c; getrennte Wörter wie »st ärbe«; kyrillische Buchstaben) sind seit 2026-10-15 im Korpus berichtigt (fix_ocr.py in der Ausgabe, rund 460 Stellen); 24 nicht zu rettende Verse sind ausgesondert. Eine Einzelform nur übernehmen, wenn sie mehrfach belegt ist.** [medium, observed]
+  - NT: ROM 15:33 *söll*
   - agent:ocr-review, 2026-10-15
-<!-- store:end sha=3be9106b -->
+<!-- store:end sha=8ed1563f -->

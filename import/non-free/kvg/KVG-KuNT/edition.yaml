@@ -35,4 +35,5 @@ licence: >-
   Switzerland: credit, no sale, no change to the words); this newer working copy: private use only
 attribution: ""
 credit: "Kuni NT © 2015 Wycliffe Switzerland, CC BY-NC-ND 4.0 (https://ebible.org/kvg/); quoted from the published text"
+published_also: ["import/non-free/kvg/KVG-KuNT/source/KVG-01GEN-Kuni 1-30.sfm"]  # Genesis 1-30, published by the team (not on eBible)
 published_text: download/editions/kvg/kvg_usfm.zip   # text/ is a newer working copy; quotations must match the published text
