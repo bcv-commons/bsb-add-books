@@ -50,8 +50,11 @@ def drafting_layout(code, ch):
 
 
 def memory(pname, con, skip):
-    """{lexeme: Counter(draft word)} from the project's .align files (all OT chapters but `skip`)."""
+    """{lexeme: Counter(draft word)} and {(lexeme, sense): Counter} from the project's .align files (all OT chapters
+    but `skip`); the sense is MACULA's sensenumber (measured: in about half of the lexemes with several senses the
+    project's top rendering differs by sense, e.g. אִשָּׁה wife / women, ראה see / appear)."""
     out = collections.defaultdict(collections.Counter)
+    by_sense = collections.defaultdict(collections.Counter)
     for code, ch, draft, ap in FULL.chapters(pname):
         if (code, ch) == skip or not os.path.exists(ap):
             continue
@@ -69,10 +72,13 @@ def memory(pname, con, skip):
             for o, ids in FULL.parse(m).items():
                 if o >= len(keys) or not keys[o]:
                     continue
-                lex = con.execute("select lexeme from tokens where key=?", (keys[o].split("+")[0],)).fetchone()
+                lex = con.execute("select lexeme, sensenumber from tokens where key=?", (keys[o].split("+")[0],)).fetchone()
                 if lex and lex[0]:
-                    out[lex[0]][" ".join(words[v][i] for i in ids if i < len(words[v]))] += 1
-    return out
+                    w = " ".join(words[v][i] for i in ids if i < len(words[v]))
+                    out[lex[0]][w] += 1
+                    if lex[1]:
+                        by_sense[(lex[0], lex[1])][w] += 1
+    return out, by_sense
 
 
 def store_terms(pname):
@@ -138,7 +144,7 @@ def build(pname, code, ch, level=None):
         "select l.key, l.line, l.level from layout l join tokens t on t.key=l.key where t.book=? and t.ch=? and l.layout=?",
         (book, ch, lay))}
     by_key = {t["key"]: t for t in toks}
-    mem = memory(pname, con, (code, ch))
+    mem, mem_sense = memory(pname, con, (code, ch))
     terms = store_terms(pname)
     lexemes = sorted({t["lexeme"] for t in toks if t["kind"] == "c" and t["lexeme"]})
     bridge = nt_bridge(pname, lexemes) if level == "unknown" else {}
@@ -228,7 +234,15 @@ def build(pname, code, ch, level=None):
             bits = []
             if lex in terms:
                 bits.append(f"store={terms[lex]}")
-            if mem.get(lex):
+            ms = mem_sense.get((lex, t["sensenumber"])) if t["sensenumber"] else None
+            if ms and sum(ms.values()) >= 2:  # this sense's renderings first; the lexeme's top one if it differs
+                tot = sum(ms.values())
+                here = [(w, c) for w, c in ms.most_common(2) if c >= 2 and c / tot >= 0.2]
+                bits += [f"{w}×{c}" for w, c in here]
+                top = mem[lex].most_common(1)[0] if mem.get(lex) else None
+                if top and here and top[0] != here[0][0]:
+                    bits.append(f"(other senses: {top[0]}×{top[1]})")
+            elif mem.get(lex):
                 tot = sum(mem[lex].values())
                 bits += [f"{w}×{c}" for w, c in mem[lex].most_common(2) if c >= 2 and c / tot >= 0.2]
             if bridge.get(lex):

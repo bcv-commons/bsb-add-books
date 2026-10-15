@@ -1,6 +1,6 @@
 ---
 title: Wortschatz
-entries: [term:see, term:look, term:listen, term:weep, term:marry, term:girl, term:boy, term:brothers, term:church, term:money, term:always, term:only, term:also, term:now, term:nothing, term:why, term:because, term:today, term:tomorrow, term:evening, term:king, term:servant, term:heaven, term:earth, term:world, term:blessed, term:glory, term:love, term:repent, term:pray, term:faith, term:field, term:wine, term:house, term:woman, term:husband, term:child, term:eat, term:give, term:go, term:come, term:know, term:speak, term:heart, term:darkness, term:light, term:fire, term:time, term:people, term:tomb, term:father, term:mother, term:sister, term:son, term:eye, term:famine, term:sheep, term:priest, term:temple, term:law, term:gospel, term:sin, term:wilderness]
+entries: [term:see, term:look, term:listen, term:weep, term:marry, term:girl, term:boy, term:brothers, term:church, term:money, term:always, term:only, term:also, term:now, term:nothing, term:why, term:because, term:today, term:tomorrow, term:evening, term:king, term:servant, term:heaven, term:earth, term:world, term:blessed, term:glory, term:love, term:repent, term:pray, term:faith, term:field, term:wine, term:house, term:woman, term:husband, term:child, term:eat, term:give, term:go, term:come, term:know, term:speak, term:heart, term:darkness, term:light, term:fire, term:time, term:people, term:tomb, term:father, term:mother, term:sister, term:son, term:eye, term:famine, term:sheep, term:priest, term:temple, term:law, term:gospel, term:sin, term:wilderness, term:holy_spirit, term:kingdom_of_god, term:son_of_man, term:disciples, term:grace, term:H7965, term:H5315, term:high_priest, term:chief_priests, term:caesar, term:widow, term:prison, term:church_elders, term:centurion, term:governor, term:devil, term:hell, term:cross, term:baptize, term:mouth, term:body, term:pigs, term:lion, term:honey, term:vineyard, term:angry, term:wise, term:unclean, term:worship, term:cup, term:cloud, term:wind, term:horse, term:sword, term:snow, term:chariot, term:fine_linen, term:pharisees, formula:do_not_be_afraid, formula:as_it_is_written]
 ---
 # Wortschatz: wo das Korpus anders spricht als das Hochdeutsche
 
@@ -31,6 +31,12 @@ Schwöschter, Gloube, Gsetz, Sünd, Tämpel, Prieschter, di gueti Botschaft.
 
 Vor einer eigenen Bildung immer suchen: `python3 scripts/concord.py ch-de-be/ch-de-be_BSB lex <englisches Wort>`
 und `… forms <Muster>`. Wörter, die nicht im Korpus sind, im Notizfile als »nicht belegt« melden.
+
+
+Fallen, die das Hochdeutsche stellt: ›Wind‹ heisst »Luft« (der Luft, ACT 27:13), ›Mund‹ »Muul«,
+›Honig‹ »Hung« (nicht Hund), ›zornig‹ »toub«, ›weise‹ »gschyd«. »Hoheprieschter« ist der eine
+Hohepriester, »Oberprieschter« die Oberpriester (je 41×). Die Ältesten der Gemeinde sind
+»Gmeindsvorstand«, die jüdischen »Ratsherre«.
 
 ## Store entries
 
@@ -313,4 +319,191 @@ und `… forms <Muster>`. Wörter, die nicht im Korpus sind, im Notizfile als »
   - answers: wilderness, desert
   - Joh-Entwurf: »Einsamkeit« (Joh 1); Wüeschti v. a. Hebr.
   - agent:memory-setup, 2026-10-14
-<!-- store:end sha=7299274c -->
+- **`term:holy_spirit`** πνεῦμα ἅγιον → **der heilig Geischt** [high, observed, attested]
+  - NT: 1CO 6:19 *heilige Geischt*; 1JN 2:20 *heilig Geischt*
+  - answers: holy spirit
+  - »heilig(e) Geischt« 92×; »Geist« 1× (LUK 1:15, Druckform).
+  - agent:curation-study, 2026-10-15
+- **`term:kingdom_of_god`** βασιλεία τοῦ θεοῦ / τῶν οὐρανῶν → **Gottes Rych** [high, observed, attested]
+  - NT: 1CO 4:20 *Gottes Rych*; 1CO 6:9 *Gottes Rych*
+  - answers: kingdom of god, kingdom of heaven
+  - Auch für ›Himmelreich‹ in MAT; »Himelrych« 0×. Einer der wenigen Genitive (case_marking).
+  - agent:curation-study, 2026-10-15
+- **`term:son_of_man`** υἱὸς τοῦ ἀνθρώπου → **Mönschesuhn** [high, observed, attested]
+  - NT: ACT 7:56 *Mönschesuhn*; JHN 1:51 *Mönschesuhn*
+  - answers: son of man
+  - agent:curation-study, 2026-10-15
+- **`term:disciples`** μαθητής → **Jünger** [high, observed, attested]
+  - NT: ACT 6:1 *Jünger*; ACT 6:2 *Jünger*
+  - answers: disciple, disciples
+  - Nicht verwechseln mit »jünger« (jünger, Komparativ).
+  - agent:curation-study, 2026-10-15
+- **`term:grace`** χάρις → **Gnad** [high, observed, attested]
+  - NT: 1CO 1:3 *Gnad*; 1CO 3:10 *Gnad*
+  - answers: grace
+  - agent:curation-study, 2026-10-15
+- **`term:H7965`** שָׁלוֹם → **Fride** [high, observed, attested]
+  - NT: 1CO 1:3 *Fride*; 1CO 7:15 *Fride*
+  - answers: peace
+  - Für εἰρήνη, auch in Grussformeln.
+  - agent:curation-study, 2026-10-15
+- **`term:H5315`** נֶפֶשׁ → **Seel / Läbe** [medium, observed, attested]
+  - NT: 1PE 1:9 *Seele*; 1CO 14:7 *Seel*
+  - answers: soul, life
+  - Lexikon ›soul‹: seel 48 %, läbe 15 %. Für ›life‹ Läbe; »Seel/Seele« beide Schreibungen.
+  - agent:curation-study, 2026-10-15
+- **`term:high_priest`** ἀρχιερεύς (Sg.) → **Hoheprieschter** [high, observed, attested]
+  - NT: ACT 4:6 *Hoheprieschter*; ACT 5:17 *Hoheprieschter*
+  - answers: high priest
+  - Plural ›chief priests‹ dagegen »Oberprieschter« (term:chief_priests).
+  - agent:curation-study, 2026-10-15
+- **`term:chief_priests`** ἀρχιερεῖς (Pl.) → **Oberprieschter** [high, observed, attested]
+  - NT: ACT 4:23 *Oberprieschter*; ACT 5:24 *Oberprieschter*
+  - answers: chief priests
+  - agent:curation-study, 2026-10-15
+- **`term:caesar`** Καῖσαρ → **Cheiser** [high, observed, attested]
+  - NT: 1PE 2:13 *Cheiser*; ACT 25:8 *Cheiser*
+  - answers: caesar, emperor
+  - »Kaiser« 0×.
+  - agent:curation-study, 2026-10-15
+- **`term:widow`** χήρα / אַלְמָנָה → **Witfrou** [high, observed, attested]
+  - NT: 1TI 5:4 *Witfrou*; 1CO 7:8 *Witfroue*
+  - answers: widow, widows
+  - Plural Witfroue; »Witwe« 1×.
+  - agent:curation-study, 2026-10-15
+- **`term:prison`** φυλακή → **Chefi** [high, observed, attested]
+  - NT: ACT 4:3 *Chefi*; 2TI 1:12 *Chefi*
+  - answers: prison, jail
+  - »Gfängnis« 2×.
+  - agent:curation-study, 2026-10-15
+- **`term:church_elders`** πρεσβύτεροι (Gemeinde) → **Gmeindsvorstand** [high, observed, attested]
+  - NT: 1PE 5:1 *Gmeindsvorstand*; 1TI 5:17 *Gmeindsvorstand*
+  - answers: elders
+  - Für die Ältesten der Gemeinde; die jüdischen Ältesten sind »Ratsherre« (term:H2205).
+  - agent:curation-study, 2026-10-15
+- **`term:centurion`** ἑκατοντάρχης → **Houpme** [high, observed, attested]
+  - NT: ACT 10:1 *Houpme*; ACT 22:25 *Houpme*
+  - answers: centurion
+  - agent:curation-study, 2026-10-15
+- **`term:governor`** ἡγεμών → **Landvogt** [high, observed, attested]
+  - NT: ACT 23:24 *Landvogt*; 1PE 2:14 *Landvögt*
+  - answers: governor
+  - Plural Landvögt.
+  - agent:curation-study, 2026-10-15
+- **`term:devil`** διάβολος → **Tüüfel** [high, observed, attested]
+  - NT: 1JN 3:8 *Tüüfel*; 1PE 5:8 *Tüüfel*
+  - answers: devil
+  - agent:curation-study, 2026-10-15
+- **`term:hell`** γέεννα → **Füürhöll** [high, observed, attested]
+  - NT: LUK 12:5 *Füürhöll*; MAT 10:28 *Füürhöll*
+  - answers: hell
+  - »Höll« 2× (JAS 3:6, MAT 5:30). Für ᾅδης / שְׁאוֹל »Toterych« (term:H3247).
+  - agent:curation-study, 2026-10-15
+- **`term:cross`** σταυρός → **Chrüz** [high, observed, attested]
+  - NT: 1CO 1:17 *Chrüz*; 1CO 1:18 *Chrüz*
+  - answers: cross
+  - Verb: gchrüziget.
+  - agent:curation-study, 2026-10-15
+- **`term:baptize`** βαπτίζω → **toufe** [high, observed, attested]
+  - NT: 1CO 1:13 *touft*; 1CO 1:17 *toufe*
+  - answers: baptize, baptized
+  - Partizip »touft« (ohne g-, verb_forms).
+  - agent:curation-study, 2026-10-15
+- **`term:mouth`** στόμα / פֶּה → **Muul** [high, observed, attested]
+  - NT: 1CO 9:9 *Muul*; 1JN 3:18 *Muul*
+  - answers: mouth
+  - »Mund« 0×.
+  - agent:curation-study, 2026-10-15
+- **`term:body`** σῶμα → **Lyb** [high, observed, attested]
+  - NT: 1CO 6:16 *Lyb*; 1CO 11:24 *Lyb*
+  - answers: body
+  - Der Leichnam ist »Lychnam« (term:G4983_corpse).
+  - agent:curation-study, 2026-10-15
+- **`term:pigs`** χοῖρος → **Söu** [high, observed, attested]
+  - NT: LUK 8:32 *Söu*; MAT 7:6 *Söu*
+  - answers: pigs, swine, pig
+  - agent:curation-study, 2026-10-15
+- **`term:lion`** λέων / אַרְיֵה → **Löi** [high, observed, attested]
+  - NT: 1PE 5:8 *Löi*; REV 4:7 *Löi*
+  - answers: lion, lions
+  - agent:curation-study, 2026-10-15
+- **`term:honey`** μέλι / דְּבַשׁ → **Hung** [high, observed, attested]
+  - NT: MAT 3:4 *Hung*; MRK 1:6 *Hung*
+  - answers: honey
+  - »Hung« ist Honig, nicht Hund (»Hund« 1×).
+  - agent:curation-study, 2026-10-15
+- **`term:vineyard`** ἀμπελών / כֶּרֶם → **Räbbärg** [high, observed, attested]
+  - NT: 1CO 9:7 *Räbbärg*; LUK 20:9 *Wybärg*
+  - answers: vineyard
+  - Daneben »Wybärg« (7×, LUK 13; 20).
+  - agent:curation-study, 2026-10-15
+- **`term:angry`** ὀργίζομαι → **toub** [high, observed, attested]
+  - NT: EPH 4:26 *toub*; HEB 3:10 *toub*
+  - answers: angry, anger
+  - »zornig« 0×.
+  - agent:curation-study, 2026-10-15
+- **`term:wise`** σοφός → **gschyd** [high, observed, attested]
+  - NT: 1CO 1:17 *gschyde*; 1CO 1:19 *Gschydi*
+  - answers: wise, wisdom
+  - Nomen »Gschydi« (Weisheit).
+  - agent:curation-study, 2026-10-15
+- **`term:unclean`** ἀκάθαρτος / טָמֵא → **usuber** [high, observed, attested]
+  - NT: 1TH 4:7 *usubere*; 1TI 1:9 *Usuberi*
+  - answers: unclean, impure
+  - Auch »uusber-« geschrieben; Nomen »Usuberi«.
+  - agent:curation-study, 2026-10-15
+- **`term:worship`** προσκυνέω / הִשְׁתַּחֲוָה → **aabätte** [high, observed, attested]
+  - NT: ACT 7:42 *aabätte*; JHN 4:20 *aabätte*
+  - answers: worship, bowed down
+  - agent:curation-study, 2026-10-15
+- **`term:cup`** ποτήριον / כּוֹס → **Bächer** [high, observed, attested]
+  - NT: 1CO 10:16 *Bächer*; 1CO 11:25 *Bächer*
+  - answers: cup
+  - agent:curation-study, 2026-10-15
+- **`term:cloud`** νεφέλη / עָנָן → **Wulche** [high, observed, attested]
+  - NT: 1CO 10:1 *Wulche*; 1TH 4:17 *Wulche*
+  - answers: cloud, clouds
+  - agent:curation-study, 2026-10-15
+- **`term:wind`** ἄνεμος / רוּחַ (Wind) → **Luft** [high, observed, attested]
+  - NT: ACT 27:7 *Luft*; ACT 27:13 *Luft*
+  - answers: wind, winds
+  - ›Wind‹ heisst »Luft« (der Luft, m.); »Wind« 0× (nur »Windschatte«). Sturm daneben.
+  - agent:curation-study, 2026-10-15
+- **`term:horse`** ἵππος / סוּס → **Ross** [high, observed, attested]
+  - NT: JAS 3:3 *Ross*; REV 6:2 *Ross*
+  - answers: horse, horses
+  - agent:curation-study, 2026-10-15
+- **`term:sword`** μάχαιρα / חֶרֶב → **Schwärt** [high, observed, attested]
+  - NT: ACT 12:2 *Schwärt*; EPH 6:17 *Schwärt*
+  - answers: sword
+  - agent:curation-study, 2026-10-15
+- **`term:snow`** χιών / שֶׁלֶג → **Schnee** [medium, observed, attested]
+  - NT: REV 1:14 *Schnee*; MAT 28:3 *schneewyss*
+  - answers: snow
+  - Belegt, keine Lücke; »schneewyss« für ›weiss wie Schnee‹.
+  - agent:curation-study, 2026-10-15
+- **`term:chariot`** ἅρμα / מֶרְכָּבָה, עֲגָלָה → **Wage** [medium, observed, attested]
+  - NT: ACT 8:28 *Wage*; ACT 8:38 *Wage*
+  - answers: chariot, chariots, cart, wagons
+  - Nur ACT 8 (Wagen des Kämmerers). Nicht verwechseln mit »wäge« (wegen).
+  - agent:curation-study, 2026-10-15
+- **`term:fine_linen`** βύσσινος / שֵׁשׁ → **fyns Lynigs / fyne Lyne** [medium, observed, attested]
+  - NT: REV 18:12 *fyns Lynigs*; REV 19:14 *fynem Lyne*; ACT 10:11 *Lyntuech*
+  - answers: fine linen, linen
+  - Adjektiv »lynig« (lynigi Chleider, REV 19:8); Tuch »Lyntuech«. ›gezwirnt‹ ohne Vorlage (gap:twisted_linen).
+  - agent:curation-study, 2026-10-15
+- **`term:pharisees`** Φαρισαῖος → **Pharisäer** [high, observed, attested]
+  - NT: ACT 5:34 *Pharisäer*; ACT 15:5 *Pharisäer*
+  - answers: pharisee, pharisees
+  - agent:curation-study, 2026-10-15
+- **`formula:do_not_be_afraid`** μὴ φοβεῖσθε / μὴ φοβοῦ → **Heit nid Angscht / Häb nid Angscht** [high, observed, attested]
+  - NT: LUK 2:10 *Heit nid Angscht*; LUK 1:30 *Häb nid Angscht*
+  - answers: do not be afraid, fear not
+  - Plural »Heit«, Singular »Häb«; »häbet nid Angscht« 1× (MAT 10:28).
+  - agent:curation-study, 2026-10-15
+- **`formula:as_it_is_written`** καθὼς γέγραπται → **win es gschribe steit** [high, observed, attested]
+  - NT: 1CO 1:31 *win es gschribe steit*; ROM 1:17 *win es gschribe steit*
+  - answers: as it is written, it is written
+  - »gschribe steit« 11×, »steit gschribe« 5× (MAT 4:10).
+  - agent:curation-study, 2026-10-15
+<!-- store:end sha=ec20fb97 -->

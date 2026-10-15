@@ -1630,6 +1630,534 @@
    "date": "2026-10-15",
    "status": "decided",
    "note": "2Mo 1,16."
+  },
+  {
+   "id": "constituent_order",
+   "kind": "feature",
+   "value": "Verbzweit im Hauptsatz: das finite Verb steht an zweiter Stelle, auch nach »Da«, »Du«, »Jitz« oder einem Nebensatz; Partizip und Infinitiv stehen am Satzende. Im Nebensatz steht das finite Verb am Ende oder im Verbalkomplex (siehe subordinate_order, subordinate_modal_order).",
+   "pattern": "<X> <finites Verb> <Subjekt> … <Partizip/Infinitiv>",
+   "codes": [
+    "WALS:81A"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 2:14",
+     "form": "Da isch"
+    },
+    {
+     "ref": "1CO 2:12",
+     "form": "dass mir chönne begryffe"
+    },
+    {
+     "ref": "1CO 1:17",
+     "form": "z predige"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Daher die Mischung OV/VO in Wortstellungsstatistiken: OV durch Partizip und Infinitiv am Satzende, VO durch das finite Verb an zweiter Stelle. Keine freie Wortstellung."
+  },
+  {
+   "id": "subordinate_modal_order",
+   "kind": "feature",
+   "value": "Im Nebensatz steht das Modalverb vor dem Infinitiv: »dass mir chönne begryffe« (1CO 2:12), »dass er … cha erkläre« (1CO 12:10). Nebensatz auf Modalverb + Infinitiv 118×, auf Infinitiv + Modalverb 5×.",
+   "pattern": "dass/wo/we <Subjekt> … <Modalverb> <Infinitiv>",
+   "evidence": [
+    {
+     "ref": "1CO 2:12",
+     "form": "chönne begryffe"
+    },
+    {
+     "ref": "1CO 9:23",
+     "form": "darf ghöre"
+    },
+    {
+     "ref": "1CO 12:10",
+     "form": "cha erkläre"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Zählung über Nebensätze nach dass/wo/won/we/wen/wil/öb bis zum nächsten Satzzeichen. Beim Partizip ist es umgekehrt (meist Partizip vor Hilfsverb, subordinate_order). Also »dass er’s cha mache«, nicht »mache cha«."
+  },
+  {
+   "id": "ersatzinfinitiv_aafa",
+   "kind": "feature",
+   "value": "Modalverben und »aafa« haben im Perfekt kein Partizip: »het aafa« + Infinitiv (»hei aafa … rede«, ACT 2:4; het/hei aafa 26×; »aagfange« 8×, nur ohne Infinitiv); »gwellt«, »gmüesst«, »gchönnt« 0×.",
+   "pattern": "<Subjekt> het/hei aafa <Infinitiv>",
+   "evidence": [
+    {
+     "ref": "ACT 2:4",
+     "form": "hei aafa"
+    },
+    {
+     "ref": "ACT 18:26",
+     "form": "het aafa"
+    },
+    {
+     "ref": "2CO 8:6",
+     "form": "aagfange"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Ergänzt verb_cluster (Ersatzinfinitiv) um »aafa«: nicht »het aagfange z rede«."
+  },
+  {
+   "id": "adversative_nei",
+   "kind": "feature",
+   "value": "›nicht …, sondern …‹ heisst »nid …, nei, …« (97 Verse); »sondern« 1× (MAT 22:32).",
+   "pattern": "nid <X>, nei, <Y>",
+   "evidence": [
+    {
+     "ref": "1CO 2:5",
+     "form": "nei,"
+    },
+    {
+     "ref": "1CO 3:7",
+     "form": "nei,"
+    },
+    {
+     "ref": "1CO 2:13",
+     "form": "nei,"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Für ἀλλά nach Verneinung. Sonst ›aber‹ = »aber«."
+  },
+  {
+   "id": "verb_endings",
+   "kind": "feature",
+   "value": "Präsens: i säge, du seisch/bisch (-sch), er seit (-t), mir säge, dihr säget/heit/syt (-et/-t), si säge. Imperativ Singular = Stamm (»chumm«, »gib«, »lue«), Plural auf -et (»lueget«, »loset«).",
+   "evidence": [
+    {
+     "ref": "JHN 1:22",
+     "form": "seisch",
+     "n": 17
+    },
+    {
+     "ref": "JHN 4:20",
+     "form": "säget",
+     "n": 51
+    },
+    {
+     "ref": "1CO 1:26",
+     "form": "dihr syt",
+     "n": 46
+    },
+    {
+     "ref": "JHN 11:43",
+     "form": "chumm",
+     "n": 20
+    },
+    {
+     "ref": "ACT 7:2",
+     "form": "loset",
+     "n": 17
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "1. und 3. Person Plural gleich dem Infinitiv (mir säge, si säge). »dihr heit« 72×."
+  },
+  {
+   "id": "numerals",
+   "kind": "feature",
+   "value": "›drei‹: »drü« beim Neutrum (»drü Zält«, »drü Mal«, »drü Määs«), »drei« bei Maskulinum und Femininum (»drei Manne«, »drei Tag«, »drei Stund«). Zehner auf -zg: zwänzg, dryssg, vierzg (12×), füfzg.",
+   "evidence": [
+    {
+     "ref": "LUK 9:33",
+     "form": "drü Zält"
+    },
+    {
+     "ref": "ACT 10:19",
+     "form": "drei Manne"
+    },
+    {
+     "ref": "ACT 5:7",
+     "form": "drei Stund"
+    },
+    {
+     "ref": "ACT 1:3",
+     "form": "vierzg",
+     "n": 12
+    },
+    {
+     "ref": "MAT 13:8",
+     "form": "dryssg"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "drü 17×, drei 26×; nach dem folgenden Nomen ausgezählt. Ergänzt number_gender (zwee/zwo/zwöi)."
+  },
+  {
+   "id": "article_ne",
+   "kind": "feature",
+   "value": "Nach »wi« und »i« (in) heisst der unbestimmte Artikel »ne«: »wi ne Löi« (wi ne + Nomen 56×, »wi e« 0×), »i ne Stadt« (9×). Nach »für« beides (für ne 39×, für e 57×).",
+   "evidence": [
+    {
+     "ref": "1PE 5:8",
+     "form": "wi ne Löi"
+    },
+    {
+     "ref": "LUK 1:39",
+     "form": "i ne"
+    },
+    {
+     "ref": "1CO 6:20",
+     "form": "für ne"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Das n ist das Bindungs-n (hiatus_n) vor dem Artikel e."
+  },
+  {
+   "id": "reflexive",
+   "kind": "feature",
+   "value": "Reflexivpronomen »sech« (769×); »sich« (106×) fast nur nach Präposition: »für sich«, »vo sich«, »mit sich«, »a sich«.",
+   "evidence": [
+    {
+     "ref": "1CO 1:29",
+     "form": "sech"
+    },
+    {
+     "ref": "1CO 10:24",
+     "form": "a sich"
+    },
+    {
+     "ref": "1CO 11:29",
+     "form": "sich"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Nach Verb (»het sich«) nur selten (6×); Regel für Entwürfe: sech, nach Präposition sich."
+  },
+  {
+   "id": "letter_greek_os",
+   "kind": "letter",
+   "value": "Namen: griechisch -ος → -us (Paulus, Petrus, Pilatus, Philippus).",
+   "evidence": [
+    {
+     "ref": "1CO 1:1",
+     "form": "Paulus",
+     "n": 186
+    },
+    {
+     "ref": "1TI 6:13",
+     "form": "Pilatus",
+     "n": 58
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed"
+  },
+  {
+   "id": "letter_greek_ph",
+   "kind": "letter",
+   "value": "Namen: griechisch φ → ph (Pharisäer, Philippus, Pharao); aber Kafarnaum.",
+   "evidence": [
+    {
+     "ref": "ACT 5:34",
+     "form": "Pharisäer",
+     "n": 101
+    },
+    {
+     "ref": "ACT 6:5",
+     "form": "Philippus"
+    },
+    {
+     "ref": "JHN 2:12",
+     "form": "Kafarnaum"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Gilt für Namen aus dem Griechischen; hebräische Namen ohne NT-Form schreiben f (name:shiphrah Schifra, name:ephraim Efraim)."
+  },
+  {
+   "id": "letter_greek_ai",
+   "kind": "letter",
+   "value": "Namen: griechisch αι → ä (Pharisäer, Galiläa, Judäa); Achaia bleibt.",
+   "evidence": [
+    {
+     "ref": "ACT 9:31",
+     "form": "Galiläa",
+     "n": 61
+    },
+    {
+     "ref": "ACT 1:8",
+     "form": "Judäa",
+     "n": 38
+    },
+    {
+     "ref": "1CO 16:15",
+     "form": "Achaia"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed"
+  },
+  {
+   "id": "letter_greek_ia",
+   "kind": "letter",
+   "value": "Ländernamen auf -ία → -ie: Samarie, Syrie, Mazedonie, Asie (18×; »Asia« 1×). Aber Galiläa, Judäa, Achaia.",
+   "evidence": [
+    {
+     "ref": "ACT 8:1",
+     "form": "Samarie",
+     "n": 11
+    },
+    {
+     "ref": "ACT 15:41",
+     "form": "Syrie"
+    },
+    {
+     "ref": "1CO 16:5",
+     "form": "Mazedonie"
+    },
+    {
+     "ref": "2CO 1:8",
+     "form": "Asie",
+     "n": 18
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed"
+  },
+  {
+   "id": "letter_greek_ky",
+   "kind": "letter",
+   "value": "Namen: griechisch κυ- → Zy- (Zypere, Zyrene).",
+   "evidence": [
+    {
+     "ref": "ACT 4:36",
+     "form": "Zypere",
+     "n": 9
+    },
+    {
+     "ref": "ACT 2:10",
+     "form": "Zyrene",
+     "n": 7
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed"
+  },
+  {
+   "id": "letter_greek_y",
+   "kind": "letter",
+   "value": "Namen: griechisch υ → y (Lydia, Pamphylie, Zypere).",
+   "evidence": [
+    {
+     "ref": "ACT 16:14",
+     "form": "Lydia"
+    },
+    {
+     "ref": "ACT 13:13",
+     "form": "Pamphylie"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed"
+  },
+  {
+   "id": "letter_th",
+   "kind": "letter",
+   "value": "Namen: th → t (Nazaret, Betlehem 7× gegen Bethlehem 1×).",
+   "evidence": [
+    {
+     "ref": "JHN 1:45",
+     "form": "Nazaret",
+     "n": 19
+    },
+    {
+     "ref": "LUK 2:4",
+     "form": "Betlehem",
+     "n": 7
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Stimmt mit name:pithom (Pitom) und name:bethel (Betel) überein."
+  },
+  {
+   "id": "gap:blue",
+   "kind": "gap",
+   "value": "Blau (תְּכֵלֶת, Stiftshütte, Priesterkleider): »blau« 0× im Korpus; nur »Purpur« (9×).",
+   "words": [
+    "blue"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 16:14",
+     "form": "Purpur"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "open",
+   "note": "Vom Sprachteam zu entscheiden; Farbwort ohne Vorlage."
+  },
+  {
+   "id": "gap:pomegranate",
+   "kind": "gap",
+   "value": "Granatapfel (רִמּוֹן): kein Beleg (»Granat« 0×).",
+   "words": [
+    "pomegranate",
+    "pomegranates"
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "open"
+  },
+  {
+   "id": "gap:peoples_canaan",
+   "kind": "gap",
+   "value": "Völker Kanaans (Hetiter, Amoriter, Perisiter, Hiwiter, Jebusiter): keine Belege. Muster für die Endung: »Kanaanitere« (f., MAT 15:22), »d Pharisäer«.",
+   "words": [
+    "hittites",
+    "amorites",
+    "perizzites",
+    "hivites",
+    "jebusites",
+    "canaanites"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 15:22",
+     "form": "Kanaanitere"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "open",
+   "note": "Namen nach den Buchstabenregeln bilden (letter_*), Endung -iter, f. -itere."
+  },
+  {
+   "id": "gap:weight",
+   "kind": "gap",
+   "value": "Gewicht als Mass (מִשְׁקָל): nur bildlich »Gwicht« (2CO 10:10, 1×).",
+   "words": [
+    "weight",
+    "weighed"
+   ],
+   "evidence": [
+    {
+     "ref": "2CO 10:10",
+     "form": "Gwicht"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "open"
+  },
+  {
+   "id": "gap:glean",
+   "kind": "gap",
+   "value": "Ähren lesen (לָקַט, Rut 2): kein Vorbild; »läse« heisst im Korpus ›lesen‹ (2CO 1:13), »usgläse« ›auserwählt‹. Die Rut-Entwürfe brauchen »Ähri läse«, »ufläse«, »zämeläse«.",
+   "words": [
+    "glean",
+    "gleaned",
+    "gleaning"
+   ],
+   "evidence": [
+    {
+     "ref": "2CO 1:13",
+     "form": "läse"
+    },
+    {
+     "ref": "LUK 6:1",
+     "form": "Ähri"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "open",
+   "note": "Rut 2,2-23; als feste Wahl noch nicht entschieden."
+  },
+  {
+   "id": "gap:twisted_linen",
+   "kind": "gap",
+   "value": "Gezwirnter Leinen (שֵׁשׁ מָשְׁזָר, Stiftshütte): »gezwirnt« ohne Vorlage. Leinen selbst ist belegt: »fyns Lynigs« (REV 18:12), »us fynem Lyne« (REV 19:14), »Lyntuech« (ACT 10:11).",
+   "words": [
+    "twisted linen",
+    "fine linen"
+   ],
+   "evidence": [
+    {
+     "ref": "REV 18:12",
+     "form": "fyns Lynigs"
+    },
+    {
+     "ref": "REV 19:14",
+     "form": "fynem Lyne"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "open",
+   "note": "Siehe term:fine_linen."
   }
  ]
 }

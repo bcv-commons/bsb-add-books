@@ -6192,6 +6192,1418 @@
    "date": "2026-10-15",
    "status": "decided",
    "note": "Wie Gen 47,11."
+  },
+  {
+   "id": "term:holy_spirit",
+   "kind": "term",
+   "value": "der heilig Geischt",
+   "source": "πνεῦμα ἅγιον",
+   "attested": "attested",
+   "words": [
+    "holy spirit"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 6:19",
+     "form": "heilige Geischt",
+     "n": 92
+    },
+    {
+     "ref": "1JN 2:20",
+     "form": "heilig Geischt"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "»heilig(e) Geischt« 92×; »Geist« 1× (LUK 1:15, Druckform)."
+  },
+  {
+   "id": "term:kingdom_of_god",
+   "kind": "term",
+   "value": "Gottes Rych",
+   "source": "βασιλεία τοῦ θεοῦ / τῶν οὐρανῶν",
+   "attested": "attested",
+   "words": [
+    "kingdom of god",
+    "kingdom of heaven"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 4:20",
+     "form": "Gottes Rych",
+     "n": 101
+    },
+    {
+     "ref": "1CO 6:9",
+     "form": "Gottes Rych"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Auch für ›Himmelreich‹ in MAT; »Himelrych« 0×. Einer der wenigen Genitive (case_marking)."
+  },
+  {
+   "id": "term:son_of_man",
+   "kind": "term",
+   "value": "Mönschesuhn",
+   "source": "υἱὸς τοῦ ἀνθρώπου",
+   "attested": "attested",
+   "words": [
+    "son of man"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 7:56",
+     "form": "Mönschesuhn",
+     "n": 76
+    },
+    {
+     "ref": "JHN 1:51",
+     "form": "Mönschesuhn"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed"
+  },
+  {
+   "id": "term:disciples",
+   "kind": "term",
+   "value": "Jünger",
+   "source": "μαθητής",
+   "attested": "attested",
+   "words": [
+    "disciple",
+    "disciples"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 6:1",
+     "form": "Jünger",
+     "n": 289
+    },
+    {
+     "ref": "ACT 6:2",
+     "form": "Jünger"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Nicht verwechseln mit »jünger« (jünger, Komparativ)."
+  },
+  {
+   "id": "term:grace",
+   "kind": "term",
+   "value": "Gnad",
+   "source": "χάρις",
+   "attested": "attested",
+   "words": [
+    "grace"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 1:3",
+     "form": "Gnad",
+     "n": 139
+    },
+    {
+     "ref": "1CO 3:10",
+     "form": "Gnad"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed"
+  },
+  {
+   "id": "term:H7965",
+   "kind": "term",
+   "value": "Fride",
+   "source": "שָׁלוֹם",
+   "attested": "attested",
+   "words": [
+    "peace"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 1:3",
+     "form": "Fride",
+     "n": 107
+    },
+    {
+     "ref": "1CO 7:15",
+     "form": "Fride"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Für εἰρήνη, auch in Grussformeln."
+  },
+  {
+   "id": "term:H5315",
+   "kind": "term",
+   "value": "Seel / Läbe",
+   "source": "נֶפֶשׁ",
+   "attested": "attested",
+   "words": [
+    "soul",
+    "life"
+   ],
+   "evidence": [
+    {
+     "ref": "1PE 1:9",
+     "form": "Seele",
+     "n": 37
+    },
+    {
+     "ref": "1CO 14:7",
+     "form": "Seel"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Lexikon ›soul‹: seel 48 %, läbe 15 %. Für ›life‹ Läbe; »Seel/Seele« beide Schreibungen."
+  },
+  {
+   "id": "term:high_priest",
+   "kind": "term",
+   "value": "Hoheprieschter",
+   "source": "ἀρχιερεύς (Sg.)",
+   "attested": "attested",
+   "words": [
+    "high priest"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 4:6",
+     "form": "Hoheprieschter",
+     "n": 41
+    },
+    {
+     "ref": "ACT 5:17",
+     "form": "Hoheprieschter"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Plural ›chief priests‹ dagegen »Oberprieschter« (term:chief_priests)."
+  },
+  {
+   "id": "term:chief_priests",
+   "kind": "term",
+   "value": "Oberprieschter",
+   "source": "ἀρχιερεῖς (Pl.)",
+   "attested": "attested",
+   "words": [
+    "chief priests"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 4:23",
+     "form": "Oberprieschter",
+     "n": 41
+    },
+    {
+     "ref": "ACT 5:24",
+     "form": "Oberprieschter"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed"
+  },
+  {
+   "id": "term:caesar",
+   "kind": "term",
+   "value": "Cheiser",
+   "source": "Καῖσαρ",
+   "attested": "attested",
+   "words": [
+    "caesar",
+    "emperor"
+   ],
+   "evidence": [
+    {
+     "ref": "1PE 2:13",
+     "form": "Cheiser",
+     "n": 36
+    },
+    {
+     "ref": "ACT 25:8",
+     "form": "Cheiser"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "»Kaiser« 0×."
+  },
+  {
+   "id": "term:widow",
+   "kind": "term",
+   "value": "Witfrou",
+   "source": "χήρα / אַלְמָנָה",
+   "attested": "attested",
+   "words": [
+    "widow",
+    "widows"
+   ],
+   "evidence": [
+    {
+     "ref": "1TI 5:4",
+     "form": "Witfrou",
+     "n": 27
+    },
+    {
+     "ref": "1CO 7:8",
+     "form": "Witfroue"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Plural Witfroue; »Witwe« 1×."
+  },
+  {
+   "id": "term:prison",
+   "kind": "term",
+   "value": "Chefi",
+   "source": "φυλακή",
+   "attested": "attested",
+   "words": [
+    "prison",
+    "jail"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 4:3",
+     "form": "Chefi",
+     "n": 59
+    },
+    {
+     "ref": "2TI 1:12",
+     "form": "Chefi"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "»Gfängnis« 2×."
+  },
+  {
+   "id": "term:church_elders",
+   "kind": "term",
+   "value": "Gmeindsvorstand",
+   "source": "πρεσβύτεροι (Gemeinde)",
+   "attested": "attested",
+   "words": [
+    "elders"
+   ],
+   "evidence": [
+    {
+     "ref": "1PE 5:1",
+     "form": "Gmeindsvorstand",
+     "n": 11
+    },
+    {
+     "ref": "1TI 5:17",
+     "form": "Gmeindsvorstand"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Für die Ältesten der Gemeinde; die jüdischen Ältesten sind »Ratsherre« (term:H2205)."
+  },
+  {
+   "id": "term:centurion",
+   "kind": "term",
+   "value": "Houpme",
+   "source": "ἑκατοντάρχης",
+   "attested": "attested",
+   "words": [
+    "centurion"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 10:1",
+     "form": "Houpme",
+     "n": 22
+    },
+    {
+     "ref": "ACT 22:25",
+     "form": "Houpme"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed"
+  },
+  {
+   "id": "term:governor",
+   "kind": "term",
+   "value": "Landvogt",
+   "source": "ἡγεμών",
+   "attested": "attested",
+   "words": [
+    "governor"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 23:24",
+     "form": "Landvogt",
+     "n": 21
+    },
+    {
+     "ref": "1PE 2:14",
+     "form": "Landvögt",
+     "n": 5
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Plural Landvögt."
+  },
+  {
+   "id": "term:devil",
+   "kind": "term",
+   "value": "Tüüfel",
+   "source": "διάβολος",
+   "attested": "attested",
+   "words": [
+    "devil"
+   ],
+   "evidence": [
+    {
+     "ref": "1JN 3:8",
+     "form": "Tüüfel",
+     "n": 35
+    },
+    {
+     "ref": "1PE 5:8",
+     "form": "Tüüfel"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed"
+  },
+  {
+   "id": "term:hell",
+   "kind": "term",
+   "value": "Füürhöll",
+   "source": "γέεννα",
+   "attested": "attested",
+   "words": [
+    "hell"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 12:5",
+     "form": "Füürhöll",
+     "n": 8
+    },
+    {
+     "ref": "MAT 10:28",
+     "form": "Füürhöll"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "»Höll« 2× (JAS 3:6, MAT 5:30). Für ᾅδης / שְׁאוֹל »Toterych« (term:H3247)."
+  },
+  {
+   "id": "term:cross",
+   "kind": "term",
+   "value": "Chrüz",
+   "source": "σταυρός",
+   "attested": "attested",
+   "words": [
+    "cross"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 1:17",
+     "form": "Chrüz",
+     "n": 39
+    },
+    {
+     "ref": "1CO 1:18",
+     "form": "Chrüz"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Verb: gchrüziget."
+  },
+  {
+   "id": "term:baptize",
+   "kind": "term",
+   "value": "toufe",
+   "source": "βαπτίζω",
+   "attested": "attested",
+   "words": [
+    "baptize",
+    "baptized"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 1:13",
+     "form": "touft",
+     "n": 72
+    },
+    {
+     "ref": "1CO 1:17",
+     "form": "toufe"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Partizip »touft« (ohne g-, verb_forms)."
+  },
+  {
+   "id": "term:mouth",
+   "kind": "term",
+   "value": "Muul",
+   "source": "στόμα / פֶּה",
+   "attested": "attested",
+   "words": [
+    "mouth"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 9:9",
+     "form": "Muul",
+     "n": 43
+    },
+    {
+     "ref": "1JN 3:18",
+     "form": "Muul"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "»Mund« 0×."
+  },
+  {
+   "id": "term:body",
+   "kind": "term",
+   "value": "Lyb",
+   "source": "σῶμα",
+   "attested": "attested",
+   "words": [
+    "body"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 6:16",
+     "form": "Lyb",
+     "n": 114
+    },
+    {
+     "ref": "1CO 11:24",
+     "form": "Lyb"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Der Leichnam ist »Lychnam« (term:G4983_corpse)."
+  },
+  {
+   "id": "term:pigs",
+   "kind": "term",
+   "value": "Söu",
+   "source": "χοῖρος",
+   "attested": "attested",
+   "words": [
+    "pigs",
+    "swine",
+    "pig"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 8:32",
+     "form": "Söu",
+     "n": 11
+    },
+    {
+     "ref": "MAT 7:6",
+     "form": "Söu"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed"
+  },
+  {
+   "id": "term:lion",
+   "kind": "term",
+   "value": "Löi",
+   "source": "λέων / אַרְיֵה",
+   "attested": "attested",
+   "words": [
+    "lion",
+    "lions"
+   ],
+   "evidence": [
+    {
+     "ref": "1PE 5:8",
+     "form": "Löi",
+     "n": 6
+    },
+    {
+     "ref": "REV 4:7",
+     "form": "Löi"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed"
+  },
+  {
+   "id": "term:honey",
+   "kind": "term",
+   "value": "Hung",
+   "source": "μέλι / דְּבַשׁ",
+   "attested": "attested",
+   "words": [
+    "honey"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 3:4",
+     "form": "Hung",
+     "n": 4
+    },
+    {
+     "ref": "MRK 1:6",
+     "form": "Hung"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "»Hung« ist Honig, nicht Hund (»Hund« 1×)."
+  },
+  {
+   "id": "term:vineyard",
+   "kind": "term",
+   "value": "Räbbärg",
+   "source": "ἀμπελών / כֶּרֶם",
+   "attested": "attested",
+   "words": [
+    "vineyard"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 9:7",
+     "form": "Räbbärg",
+     "n": 16
+    },
+    {
+     "ref": "LUK 20:9",
+     "form": "Wybärg",
+     "n": 7
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Daneben »Wybärg« (7×, LUK 13; 20)."
+  },
+  {
+   "id": "term:angry",
+   "kind": "term",
+   "value": "toub",
+   "source": "ὀργίζομαι",
+   "attested": "attested",
+   "words": [
+    "angry",
+    "anger"
+   ],
+   "evidence": [
+    {
+     "ref": "EPH 4:26",
+     "form": "toub",
+     "n": 16
+    },
+    {
+     "ref": "HEB 3:10",
+     "form": "toub"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "»zornig« 0×."
+  },
+  {
+   "id": "term:wise",
+   "kind": "term",
+   "value": "gschyd",
+   "source": "σοφός",
+   "attested": "attested",
+   "words": [
+    "wise",
+    "wisdom"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 1:17",
+     "form": "gschyde",
+     "n": 61
+    },
+    {
+     "ref": "1CO 1:19",
+     "form": "Gschydi"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Nomen »Gschydi« (Weisheit)."
+  },
+  {
+   "id": "term:unclean",
+   "kind": "term",
+   "value": "usuber",
+   "source": "ἀκάθαρτος / טָמֵא",
+   "attested": "attested",
+   "words": [
+    "unclean",
+    "impure"
+   ],
+   "evidence": [
+    {
+     "ref": "1TH 4:7",
+     "form": "usubere",
+     "n": 36
+    },
+    {
+     "ref": "1TI 1:9",
+     "form": "Usuberi"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Auch »uusber-« geschrieben; Nomen »Usuberi«."
+  },
+  {
+   "id": "term:worship",
+   "kind": "term",
+   "value": "aabätte",
+   "source": "προσκυνέω / הִשְׁתַּחֲוָה",
+   "attested": "attested",
+   "words": [
+    "worship",
+    "bowed down"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 7:42",
+     "form": "aabätte",
+     "n": 19
+    },
+    {
+     "ref": "JHN 4:20",
+     "form": "aabätte"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed"
+  },
+  {
+   "id": "term:cup",
+   "kind": "term",
+   "value": "Bächer",
+   "source": "ποτήριον / כּוֹס",
+   "attested": "attested",
+   "words": [
+    "cup"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 10:16",
+     "form": "Bächer",
+     "n": 31
+    },
+    {
+     "ref": "1CO 11:25",
+     "form": "Bächer"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed"
+  },
+  {
+   "id": "term:cloud",
+   "kind": "term",
+   "value": "Wulche",
+   "source": "νεφέλη / עָנָן",
+   "attested": "attested",
+   "words": [
+    "cloud",
+    "clouds"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 10:1",
+     "form": "Wulche",
+     "n": 23
+    },
+    {
+     "ref": "1TH 4:17",
+     "form": "Wulche"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed"
+  },
+  {
+   "id": "term:wind",
+   "kind": "term",
+   "value": "Luft",
+   "source": "ἄνεμος / רוּחַ (Wind)",
+   "attested": "attested",
+   "words": [
+    "wind",
+    "winds"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 27:7",
+     "form": "Luft",
+     "n": 32
+    },
+    {
+     "ref": "ACT 27:13",
+     "form": "Luft"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "›Wind‹ heisst »Luft« (der Luft, m.); »Wind« 0× (nur »Windschatte«). Sturm daneben."
+  },
+  {
+   "id": "term:horse",
+   "kind": "term",
+   "value": "Ross",
+   "source": "ἵππος / סוּס",
+   "attested": "attested",
+   "words": [
+    "horse",
+    "horses"
+   ],
+   "evidence": [
+    {
+     "ref": "JAS 3:3",
+     "form": "Ross",
+     "n": 15
+    },
+    {
+     "ref": "REV 6:2",
+     "form": "Ross"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed"
+  },
+  {
+   "id": "term:sword",
+   "kind": "term",
+   "value": "Schwärt",
+   "source": "μάχαιρα / חֶרֶב",
+   "attested": "attested",
+   "words": [
+    "sword"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 12:2",
+     "form": "Schwärt",
+     "n": 26
+    },
+    {
+     "ref": "EPH 6:17",
+     "form": "Schwärt"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed"
+  },
+  {
+   "id": "term:snow",
+   "kind": "term",
+   "value": "Schnee",
+   "source": "χιών / שֶׁלֶג",
+   "attested": "attested",
+   "words": [
+    "snow"
+   ],
+   "evidence": [
+    {
+     "ref": "REV 1:14",
+     "form": "Schnee",
+     "n": 1
+    },
+    {
+     "ref": "MAT 28:3",
+     "form": "schneewyss"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Belegt, keine Lücke; »schneewyss« für ›weiss wie Schnee‹."
+  },
+  {
+   "id": "term:chariot",
+   "kind": "term",
+   "value": "Wage",
+   "source": "ἅρμα / מֶרְכָּבָה, עֲגָלָה",
+   "attested": "attested",
+   "words": [
+    "chariot",
+    "chariots",
+    "cart",
+    "wagons"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 8:28",
+     "form": "Wage",
+     "n": 3
+    },
+    {
+     "ref": "ACT 8:38",
+     "form": "Wage"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Nur ACT 8 (Wagen des Kämmerers). Nicht verwechseln mit »wäge« (wegen)."
+  },
+  {
+   "id": "term:fine_linen",
+   "kind": "term",
+   "value": "fyns Lynigs / fyne Lyne",
+   "source": "βύσσινος / שֵׁשׁ",
+   "attested": "attested",
+   "words": [
+    "fine linen",
+    "linen"
+   ],
+   "evidence": [
+    {
+     "ref": "REV 18:12",
+     "form": "fyns Lynigs"
+    },
+    {
+     "ref": "REV 19:14",
+     "form": "fynem Lyne"
+    },
+    {
+     "ref": "ACT 10:11",
+     "form": "Lyntuech"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Adjektiv »lynig« (lynigi Chleider, REV 19:8); Tuch »Lyntuech«. ›gezwirnt‹ ohne Vorlage (gap:twisted_linen)."
+  },
+  {
+   "id": "term:pharisees",
+   "kind": "term",
+   "value": "Pharisäer",
+   "source": "Φαρισαῖος",
+   "attested": "attested",
+   "words": [
+    "pharisee",
+    "pharisees"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 5:34",
+     "form": "Pharisäer",
+     "n": 101
+    },
+    {
+     "ref": "ACT 15:5",
+     "form": "Pharisäer"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed"
+  },
+  {
+   "id": "formula:do_not_be_afraid",
+   "kind": "formula",
+   "value": "Heit nid Angscht / Häb nid Angscht",
+   "source": "μὴ φοβεῖσθε / μὴ φοβοῦ",
+   "attested": "attested",
+   "words": [
+    "do not be afraid",
+    "fear not"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 2:10",
+     "form": "Heit nid Angscht",
+     "n": 5
+    },
+    {
+     "ref": "LUK 1:30",
+     "form": "Häb nid Angscht",
+     "n": 4
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Plural »Heit«, Singular »Häb«; »häbet nid Angscht« 1× (MAT 10:28)."
+  },
+  {
+   "id": "formula:as_it_is_written",
+   "kind": "formula",
+   "value": "win es gschribe steit",
+   "source": "καθὼς γέγραπται",
+   "attested": "attested",
+   "words": [
+    "as it is written",
+    "it is written"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 1:31",
+     "form": "win es gschribe steit",
+     "n": 4
+    },
+    {
+     "ref": "ROM 1:17",
+     "form": "win es gschribe steit"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "»gschribe steit« 11×, »steit gschribe« 5× (MAT 4:10)."
+  },
+  {
+   "id": "name:jesus",
+   "kind": "name",
+   "value": "Jesus",
+   "source": "Ἰησοῦς",
+   "attested": "attested",
+   "words": [
+    "jesus"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 1:2",
+     "form": "Jesus",
+     "n": 974
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Ohne Artikel (article_names)."
+  },
+  {
+   "id": "name:christ",
+   "kind": "name",
+   "value": "Chrischtus",
+   "source": "Χριστός",
+   "attested": "attested",
+   "words": [
+    "christ"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 1:2",
+     "form": "Chrischtus",
+     "n": 510
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Nicht »Christus« (16×, nur MAT/MRK-Druck)."
+  },
+  {
+   "id": "name:paul",
+   "kind": "name",
+   "value": "Paulus",
+   "source": "Παῦλος",
+   "attested": "attested",
+   "words": [
+    "paul"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 1:1",
+     "form": "Paulus",
+     "n": 186
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Mit Artikel: der Paulus."
+  },
+  {
+   "id": "name:peter",
+   "kind": "name",
+   "value": "Petrus",
+   "source": "Πέτρος",
+   "attested": "attested",
+   "words": [
+    "peter"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 1:13",
+     "form": "Petrus",
+     "n": 165
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "Mit Artikel: der Petrus."
+  },
+  {
+   "id": "name:john",
+   "kind": "name",
+   "value": "Johannes",
+   "source": "Ἰωάννης",
+   "attested": "attested",
+   "words": [
+    "john"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 1:13",
+     "form": "Johannes",
+     "n": 140
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed"
+  },
+  {
+   "id": "name:jerusalem",
+   "kind": "name",
+   "value": "Jerusalem",
+   "source": "יְרוּשָׁלַיִם / Ἱερουσαλήμ",
+   "attested": "attested",
+   "words": [
+    "jerusalem"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 1:4",
+     "form": "Jerusalem",
+     "n": 148
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "»z Jerusalem« (place_z)."
+  },
+  {
+   "id": "name:moses",
+   "kind": "name",
+   "value": "Mose",
+   "source": "מֹשֶׁה",
+   "attested": "attested",
+   "words": [
+    "moses"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 9:9",
+     "form": "Mose",
+     "n": 80
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "»Moses« 0×."
+  },
+  {
+   "id": "name:elijah",
+   "kind": "name",
+   "value": "Elija",
+   "source": "אֵלִיָּהוּ",
+   "attested": "attested",
+   "words": [
+    "elijah"
+   ],
+   "evidence": [
+    {
+     "ref": "JAS 5:17",
+     "form": "Elija",
+     "n": 29
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed"
+  },
+  {
+   "id": "name:solomon",
+   "kind": "name",
+   "value": "Salomo",
+   "source": "שְׁלֹמֹה",
+   "attested": "attested",
+   "words": [
+    "solomon"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 7:47",
+     "form": "Salomo",
+     "n": 12
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed"
+  },
+  {
+   "id": "name:samaria",
+   "kind": "name",
+   "value": "Samarie",
+   "source": "שֹׁמְרוֹן / Σαμάρεια",
+   "attested": "attested",
+   "words": [
+    "samaria"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 8:1",
+     "form": "Samarie",
+     "n": 11
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed",
+   "note": "»Samaria« 0× (letter_greek_ia). Für die Stadt im AT zu prüfen."
+  },
+  {
+   "id": "name:nazareth",
+   "kind": "name",
+   "value": "Nazaret",
+   "source": "Ναζαρέτ",
+   "attested": "attested",
+   "words": [
+    "nazareth"
+   ],
+   "evidence": [
+    {
+     "ref": "JHN 1:45",
+     "form": "Nazaret",
+     "n": 19
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed"
+  },
+  {
+   "id": "name:capernaum",
+   "kind": "name",
+   "value": "Kafarnaum",
+   "source": "Καφαρναούμ",
+   "attested": "attested",
+   "words": [
+    "capernaum"
+   ],
+   "evidence": [
+    {
+     "ref": "JHN 2:12",
+     "form": "Kafarnaum",
+     "n": 16
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed"
+  },
+  {
+   "id": "name:caiaphas",
+   "kind": "name",
+   "value": "Kajaphas",
+   "source": "Καϊάφας",
+   "attested": "attested",
+   "words": [
+    "caiaphas"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 4:6",
+     "form": "Kajaphas",
+     "n": 8
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed"
+  },
+  {
+   "id": "name:cyprus",
+   "kind": "name",
+   "value": "Zypere",
+   "source": "Κύπρος",
+   "attested": "attested",
+   "words": [
+    "cyprus"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 4:36",
+     "form": "Zypere",
+     "n": 9
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:curation-study",
+   "date": "2026-10-15",
+   "status": "observed"
   }
  ]
 }

@@ -27,6 +27,15 @@ Was die Belege nicht entscheiden. Antworten bitte direkt hier eintragen
     hat 46 bzw. 35 Belege)?
 11. Die offenen Wörter der Übersichten: Süüle oder Gedänkstei; Zouberer; Gröiel; sech kümmere oder
     heisueche; Gäld oder Silber; Efrat oder Efrata; der fein Duft als Opferformel; Lychnam.
+12. **חֶסֶד: »Tröiji« oder »Erbarme«?** Entschieden ist »Tröiji« (term:H2617, Rut A 2). Das Korpus
+    gibt ἔλεος, die LXX-Entsprechung von חֶסֶד, fast immer mit »Erbarme« wieder (62×, z. B. 1PE 1:3;
+    »häb Erbarme«, MAT 15:22); »Tröiji« steht dort nur 5× und für πίστις (›Treue‹, MAT 23:23, ROM 3:3).
+    Bleibt »Tröiji« für die Bundestreue (Rut, Psalmen), und »Erbarme« dort, wo חֶסֶד Gnade meint?
+13. **›Amen, ich sage euch‹.** Entschieden ist »Würklech, würklech, i cha nech säge:« für Joh
+    (formula:amen_amen), und »Lueget« soll für ἰδού reserviert sein (term:H2009). Das Korpus sagt in
+    Joh und Mt »Lueget, i cha nech säge« (43×, auch JHN 1:51 für ἀμὴν ἀμήν), Singular »Lue, i cha der
+    säge« (5×, JHN 3:3), in Lk »Würklech, i säge nech« (5×, LUK 12:44); »Würklech, würklech« 0×.
+    Gilt der Projektentscheid, oder folgen die Entwürfe Bietenhards »Lueget, …«?
 
 ## Store entries
 

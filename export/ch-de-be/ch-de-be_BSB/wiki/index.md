@@ -39,16 +39,16 @@ Verlag, Bern 1984. Zitate sind kurz, unverändert und nicht CC0 (siehe `../CREDI
 - [Entscheide AT-Wortschatz](entscheide-at.md) — 76 store entries
 - [Entscheide des Projekts](entscheide.md) — 14 store entries
 - [Fragen an das Sprachteam](fragen.md) — 0 store entries
-- [Artikel, Kasus, Besitz](grammar/artikel-kasus-besitz.md) — 8 store entries
+- [Artikel, Kasus, Besitz](grammar/artikel-kasus-besitz.md) — 10 store entries
 - [Erzählung, Rede, Partikeln](grammar/erzaehlung.md) — 7 store entries
-- [Pronomen und n-Einschub](grammar/pronomen.md) — 4 store entries
-- [Satzbau, Relativsätze, Infinitive](grammar/satzbau.md) — 8 store entries
+- [Pronomen und n-Einschub](grammar/pronomen.md) — 5 store entries
+- [Satzbau, Relativsätze, Infinitive](grammar/satzbau.md) — 12 store entries
 - [Tempus und Modus](grammar/tempus-modus.md) — 7 store entries
-- [Verneinung und Vergleich](grammar/verneinung-vergleich.md) — 3 store entries
-- [Lücken](luecken.md) — 13 store entries
-- [Namen](namen.md) — 79 store entries
+- [Verneinung und Vergleich](grammar/verneinung-vergleich.md) — 4 store entries
+- [Lücken](luecken.md) — 19 store entries
+- [Namen](namen.md) — 100 store entries
 - [Rechtschreibung](orthographie.md) — 11 store entries
-- [Wortschatz](wortschatz.md) — 63 store entries
+- [Wortschatz](wortschatz.md) — 103 store entries
 - [Inbox](inbox.md) — 0 unplaced entries
 - [Log](log.md) — who changed what, newest last
-<!-- store:end sha=eced3737 -->
+<!-- store:end sha=243aa189 -->

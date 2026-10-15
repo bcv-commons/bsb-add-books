@@ -78,4 +78,31 @@ Bildung nach berndeutschem Muster (Komposita wie »Himelsgwölb«, Umschreibung)
   - answers: birthstools
   - 2Mo 1,16.
   - agent:exo001, 2026-10-15
-<!-- store:end sha=41c5a4e0 -->
+- **`gap:blue`** **Blau (תְּכֵלֶת, Stiftshütte, Priesterkleider): »blau« 0× im Korpus; nur »Purpur« (9×).** [medium, open]
+  - NT: ACT 16:14 *Purpur*
+  - answers: blue
+  - Vom Sprachteam zu entscheiden; Farbwort ohne Vorlage.
+  - agent:curation-study, 2026-10-15
+- **`gap:pomegranate`** **Granatapfel (רִמּוֹן): kein Beleg (»Granat« 0×).** [medium, open]
+  - answers: pomegranate, pomegranates
+  - agent:curation-study, 2026-10-15
+- **`gap:peoples_canaan`** **Völker Kanaans (Hetiter, Amoriter, Perisiter, Hiwiter, Jebusiter): keine Belege. Muster für die Endung: »Kanaanitere« (f., MAT 15:22), »d Pharisäer«.** [medium, open]
+  - NT: MAT 15:22 *Kanaanitere*
+  - answers: hittites, amorites, perizzites, hivites, jebusites, canaanites
+  - Namen nach den Buchstabenregeln bilden (letter_*), Endung -iter, f. -itere.
+  - agent:curation-study, 2026-10-15
+- **`gap:weight`** **Gewicht als Mass (מִשְׁקָל): nur bildlich »Gwicht« (2CO 10:10, 1×).** [medium, open]
+  - NT: 2CO 10:10 *Gwicht*
+  - answers: weight, weighed
+  - agent:curation-study, 2026-10-15
+- **`gap:glean`** **Ähren lesen (לָקַט, Rut 2): kein Vorbild; »läse« heisst im Korpus ›lesen‹ (2CO 1:13), »usgläse« ›auserwählt‹. Die Rut-Entwürfe brauchen »Ähri läse«, »ufläse«, »zämeläse«.** [medium, open]
+  - NT: 2CO 1:13 *läse*; LUK 6:1 *Ähri*
+  - answers: glean, gleaned, gleaning
+  - Rut 2,2-23; als feste Wahl noch nicht entschieden.
+  - agent:curation-study, 2026-10-15
+- **`gap:twisted_linen`** **Gezwirnter Leinen (שֵׁשׁ מָשְׁזָר, Stiftshütte): »gezwirnt« ohne Vorlage. Leinen selbst ist belegt: »fyns Lynigs« (REV 18:12), »us fynem Lyne« (REV 19:14), »Lyntuech« (ACT 10:11).** [medium, open]
+  - NT: REV 18:12 *fyns Lynigs*; REV 19:14 *fynem Lyne*
+  - answers: twisted linen, fine linen
+  - Siehe term:fine_linen.
+  - agent:curation-study, 2026-10-15
+<!-- store:end sha=558adab0 -->
