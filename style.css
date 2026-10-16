@@ -40,6 +40,12 @@ code { font-size:90%; } .path { font-family:ui-monospace,monospace; font-size:90
 .modes button:disabled { opacity:.45; cursor:default; }
 .view[hidden] { display:none; }
 .banner .tm { background:var(--q-line); color:#1f2328; font-weight:700; padding:1px 8px; border-radius:4px; text-transform:uppercase; font-size:13px; letter-spacing:.04em; }
+.vv { border-bottom:1px solid var(--line); padding:10px 0; }
+.vv-t { font-size:17px; }
+.vv-o { font-family:'SBL Hebrew','Ezra SIL','Times New Roman',serif; font-size:19px; color:var(--muted); margin:4px 0; }
+.vv-e, .vv-c { font-size:14px; margin:3px 0; }
+.vv-c { border-left:3px solid var(--accent-soft); padding-left:8px; }
+.vv-more { margin-top:24px; }
 .lic { background:var(--q); border:2px solid var(--q-line); border-radius:6px; padding:10px 14px; margin:0 0 14px; font-size:14px; font-weight:600; }
 .cls .l { padding-left:min(calc(var(--lv) * 1.6em), calc(var(--lv) * 3.5vw)); text-indent:-0.6em; margin:0 0 2px 0.6em; }
 .cls h2 { font-size:17px; margin:22px 0 6px; color:var(--muted); }
