@@ -6443,6 +6443,173 @@
     "beneath"
    ],
    "note": "Deborah was buried below Bethel (downhill). If the team has a word for 'downhill from', use it."
+  },
+  {
+   "id": "genealogy_list.g",
+   "kind": "feature",
+   "value": "genealogies list the sons after one header: '<X>-gi nakhei angana ngínik: A neka B neka C.' (neka before every name, no final accent); 'X became the father of' = 'X gemanaz, tegi nakhei angana ngínik:' (10:3, 10:23); 'these are the descendants of X' at the end = 'Nginik ate gigoam / ngi꞉gu, X-gí zí.' (25:4, 10:20); a person's wives or daughters one by one as 'Nømu ndugu, <Name>. Ndugu <Father>-gú yú.' (26:34); 'their names' = 'tiqa iziz nqánek:' (MAT 10:2, RUT 1:2)",
+   "evidence": [
+    {
+     "ref": "GEN 10:2",
+     "form": "nakhei angana gimbo-fakhaz, ngínik:"
+    },
+    {
+     "ref": "GEN 25:4",
+     "form": "Ketula-gí zí."
+    },
+    {
+     "ref": "GEN 26:34",
+     "form": "Nømu ndugu, Zudít."
+    },
+    {
+     "ref": "GEN 10:23",
+     "form": "Alam gemanaz"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen036",
+   "date": "2026-10-15",
+   "status": "observed",
+   "words": [
+    "these are the sons",
+    "the sons of",
+    "these are the names",
+    "grandsons",
+    "descendants"
+   ],
+   "note": "Used throughout gen036. The style check flags nginik, neka and -gi as far above the human mean: that is the genre (a whole chapter of lists), not a fault; the human Genesis 10 and 25:12-16 are as dense."
+  },
+  {
+   "id": "gap:torn_pieces.g",
+   "kind": "gap",
+   "source": "טָרֹף טֹרַף יוֹסֵף (Joseph has surely been torn to pieces)",
+   "value": "no model for tearing a body to pieces (searched BSB torn|devoured|pieces, Kuni keqa, mbegeap): used 'Unimanqatín, Zosef-qa kha, gè-keqasám' (keqas- pierce, tear, 1CO 15:55)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "1CO 15:55",
+     "form": "qoqote-keqasam"
+    },
+    {
+     "ref": "ACT 1:18",
+     "form": "sège-keqavøemát"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen037",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "torn to pieces",
+    "torn",
+    "surely been torn"
+   ],
+   "note": "mbegeap (pieces) is only for bread (JHN 6:12). gen037:33; 44:28 needs it. Question for the Kuni team."
+  },
+  {
+   "id": "gap:spill_seed.g",
+   "kind": "gap",
+   "source": "שִׁחֵת אַרְצָה (spilled his seed on the ground)",
+   "value": "no model (searched BSB poured out on|spilled|on the ground): used 'teqa nanga manqei-te sasa genqagim' (threw his seed on the ground), then 'Soqaín ndøgo, …' (so that not)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "LUK 3:9",
+     "form": "vǿnqagimēm"
+    },
+    {
+     "ref": "MRK 4:26",
+     "form": "wit nanga"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen038",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "spill",
+    "spill his seed",
+    "seed on the ground"
+   ],
+   "note": "nanga = seed (of plants); genqagim (he threw, 1×). Question for the Kuni team: how plainly may this be said? gen038:9."
+  },
+  {
+   "id": "gap:breach.g",
+   "kind": "gap",
+   "source": "מַה־פָּרַצְתָּ עָלֶיךָ פָּרֶץ (what a breach you have made for yourself; Perez)",
+   "value": "no model (searched BSB broke through|break through|burst out|broke out): used 'Qo ekeza nakhoa mòqo-keqá!' (you have torn open your own way) and the meaning '(Taqa manqa mokho: Gè-keqá.)'",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "MRK 14:63",
+     "form": "ndabua vø̄keqa"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen038",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "broken out",
+    "breaking out",
+    "perez means"
+   ],
+   "note": "keqa = tear (clothes, MRK 14:63; a body burst open, ACT 1:18). gen038:29; also 2 Sam 5:20, 6:8."
+  },
+  {
+   "id": "gap:pull_back_hand.g",
+   "kind": "gap",
+   "source": "כְּמֵשִׁיב יָדוֹ (as he drew back his hand)",
+   "value": "no model: built 'pingim nqawa sègendaf' (took his arm back)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "LUK 6:10",
+     "form": "pingim gè-ovøyám"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen038",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "pulled his hand back",
+    "pulled"
+   ],
+   "note": "gen038:29."
+  },
+  {
+   "id": "gap:confined.g",
+   "kind": "gap",
+   "source": "אֲשֶׁר־אֲסִירֵי הַמֶּלֶךְ אֲסוּרִים (where the king's prisoners were confined)",
+   "value": "no word for \"confined\" as such (searched BSB confined|kept in prison|in chains): used \"ma kawa ezoqam-gi ndimbula ezoqa gi꞉goam\" (where the king's prisoners were); ACT 12:5 \"ge-utavam\" (was kept in) is the model for a closer rendering",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "ACT 12:5",
+     "form": "ndimbula mokho-te ge-utavam"
+    },
+    {
+     "ref": "ACT 16:25",
+     "form": "ndimbula ezoqa nøme"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen039",
+   "date": "2026-10-15",
+   "status": "open",
+   "words": [
+    "confined",
+    "were confined",
+    "king's prisoners"
+   ],
+   "note": "gen039:20; 40:3, 5."
   }
  ]
 }

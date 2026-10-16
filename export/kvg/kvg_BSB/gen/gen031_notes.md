@@ -140,3 +140,7 @@ v15, v27, v34, v35, v39 (built constructions); v2/v5 (the changed face).
 
 Quotations above are short forms from the Kuni team's Genesis and the Kuni NT (Mbumbukiam-qa Manqat
 Mbomambaqape, Kuni; credit in `../CREDITS.md`).
+
+## Coordinator's fixes (consistency pass, 2026-10-16)
+
+- v3, v13 *nango mòqoveséz* → *nango qonǿveséz*: God's command שׁוּב "return", which 32:10 quotes; the store's decided form (term:H7725ret.g, from the team's Genesis 3:19), as in gen032:10. *mòqoveséz* is not in the corpus.

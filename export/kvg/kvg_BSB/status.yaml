@@ -1,0 +1,43 @@
+# Draft status per chapter (scripts/status.py; docs/workflow.md, Draft status).
+# A chapter not listed here is a draft. Change it with scripts/status.py, not by hand.
+chapters:
+  gen031:
+    status: in-review
+    by: the Kuni team
+    date: '2026-10-16'
+  gen032:
+    status: in-review
+    by: the Kuni team
+    date: '2026-10-16'
+  gen033:
+    status: in-review
+    by: the Kuni team
+    date: '2026-10-16'
+  gen034:
+    status: in-review
+    by: the Kuni team
+    date: '2026-10-16'
+  gen035:
+    status: in-review
+    by: the Kuni team
+    date: '2026-10-16'
+  gen036:
+    status: in-review
+    by: the Kuni team
+    date: '2026-10-16'
+  gen037:
+    status: in-review
+    by: the Kuni team
+    date: '2026-10-16'
+  gen038:
+    status: in-review
+    by: the Kuni team
+    date: '2026-10-16'
+  gen039:
+    status: in-review
+    by: the Kuni team
+    date: '2026-10-16'
+  gen040:
+    status: in-review
+    by: the Kuni team
+    date: '2026-10-16'

@@ -813,4 +813,199 @@ gumbo-ein (to her) 13; she says "āv guni-eín nqǽgo" (29:33); answers with -qa
   - answers: old, full of years, old and full of years
   - Abraham's death (25:8), reused verbatim with 'ùnime꞉-lawaqape-év, genanim' for Isaac, gen035:29.
   - agent:gen035, 2026-10-15
-<!-- store:end sha=0f9eb992 -->
+- **`formula:reigned_in_his_place.g`** וַיָּמָת <X> וַיִּמְלֹךְ תַּחְתָּיו <Y> (X died, and Y reigned in his place) → **Yaq <X> genanim. Yaq <X>-qa iziz, <Y> ndøndáp, kawa ezoqam vø̄go.** [medium, decided, by-rule]
+  - NT: ACT 24:27 *Filiks-qa iziz … ndøndáp*; GEN 4:25 *Eibol-qá iziz ndøndáp*; GEN 22:13 *matev vø̄go*
+  - answers: reigned in his place, in his place, succeeded, reigned
+  - 'take X's place' = X-qa iziz ndøndáp (Festus succeeded Felix, ACT 24:27; Seth in place of Abel, GEN 4:25); 'became king' chained with vø̄go. MAT 2:22 has Archelaus 'reigning in place of his father' as 'Kawa, Elod-gé yo Akileus ndø-itán'. gen036:33-39.
+  - agent:gen036, 2026-10-15
+- **`formula:reigned_in.g`** מָלַךְ בְּ<land> (reign in a land) → **<land> manqei-te kawa ezoqam ndøgoám** [medium, decided, attested]
+  - NT: HEB 7:1 *kawa ezoqam ndøgoám*
+  - answers: reigned in, reigned, reigned over
+  - Melchizedek was king of Salem (HEB 7:1). 'There were kings' = 'kawakawa-za mø̀ndøgoám' (GEN 14:1). gen036:31-32.
+  - agent:gen036, 2026-10-15
+- **`formula:no_king_yet.g`** לִפְנֵי מְלָךְ־מֶלֶךְ לִבְנֵי יִשְׂרָאֵל (before any king reigned over the Israelites) → **Ta khøuwa-te ndøgo, Izlael ezoqam-ge kawa ezoqam mbain qagoam.** [medium, decided, by-rule]
+  - NT: 1TI 5:10 *mivi mbain qagoam*; ACT 13:23 *Izlael ezoqam-gé*
+  - answers: before any king reigned, before, israelites
+  - 'At that time the Israelites had no king': 'mbain qagoam' (there was none) after 1TI 5:10; the time phrase opens the sentence (feature time_setting.2). gen036:31.
+  - agent:gen036, 2026-10-15
+- **`formula:father_of_people.g`** <X> אֲבִי <people> (X the father of a people, ancestor) → **<X> ndego, <people>-gé zozokha.** [high, decided, attested]
+  - NT: GEN 4:20 *tigé zozokha*; GEN 10:14 *Filistai ezoqam-gí zozokha-zá*; GEN 19:37 *tige zozokha Lót*
+  - answers: father of the edomites, father of, ancestor
+  - The ancestor of a people is zozokha (4:20, 10:14, 19:37); the father of a person is eve (formula:x_father_of_y.g). gen036:9, 43 'Isao ndego, Edom-ak-gé zozokha'.
+  - agent:gen036, 2026-10-15
+- **`formula:passing_by.g`** וַיַּעַבְרוּ (they passed by, were passing on the road) → **nakhoa-te ate av-té gi꞉-apat, yaq …** [medium, decided, attested]
+  - NT: LUK 17:14 *ate av-té gi꞉-apat*
+  - answers: passed by, passing by, were passing
+  - 'while they were on the road' (the lepers on their way). gen037:28.
+  - agent:gen037, 2026-10-15
+- **`formula:tore_clothes.g`** וַיִּקְרַע אֶת־בְּגָדָיו / שִׂמְלֹתָיו (he tore his clothes) → **ekeza ndabua vø̄keqa** [high, decided, attested]
+  - NT: MRK 14:63 *ekeza ndabua vø̄keqa*; MAT 26:65 *ekeza ndabua vø̄keqa*
+  - answers: tore his clothes, tore, tore their clothes
+  - The high priest (MRK 14:63); plural 'ekeza ndabua ndøkeqagím' (ACT 14:14). gen037:29, 34; 44:13.
+  - agent:gen037, 2026-10-15
+- **`formula:around_waist.g`** וַיָּשֶׂם שַׂק בְּמָתְנָיו (put sackcloth around his waist) → **ndabua soqøsoqa, bøndim-te vø̄løvøen** [high, decided, attested]
+  - NT: JHN 13:4 *bøndim-te vø̄løvøen*; JON 3:5 *ndabua soqøsoqa*
+  - answers: around his waist, waist, sackcloth
+  - Jesus tying the towel round his waist (JHN 13:4); sackcloth = bad clothes (term:H8242). gen037:34.
+  - agent:gen037, 2026-10-15
+- **`formula:spices.g`** נְכֹאת וּצְרִי וָלֹט (spices, balm and myrrh) → **gigiap sisip mbomømboma neka tae et neka mel tae et** [medium, decided, by-rule]
+  - NT: MAT 2:11 *gigiap sisip mbomømboma*; MAT 2:11 *mel tae et*
+  - answers: spices, balm, myrrh, aromatic gum
+  - The magi's gifts (MAT 2:11; mel = myrrh, glossary). balm has no word: 'tae et' (tree oil) is built. gen037:25; 43:11.
+  - agent:gen037, 2026-10-15
+- **`formula:carrying.g`** נֹשְׂאִים (camels carrying goods) → **<goods> ndi-upøgim** [medium, decided, by-rule]
+  - NT: MRK 16:18 *Waza ti-upøgimat*
+  - answers: carrying, were carrying, carried
+  - upøgim = carry, pick up (MRK 16:18; GEN 14:11 carried off). gen037:25.
+  - agent:gen037, 2026-10-15
+- **`formula:wandering.g`** תֹעֶה בַּשָּׂדֶה (wandering in the field) → **<place>-té gunu꞉-yageapám** [medium, decided, attested]
+  - NT: GEN 21:14 *gunu꞉-yageapám*
+  - answers: wandering, wandered
+  - Hagar wandering in the wilderness (21:14); gu꞉- is the durative (verb_subject_prefix.2), not feminine, so it stands for Joseph too. gen037:15.
+  - agent:gen037, 2026-10-15
+- **`formula:moved_on.g`** נָסְעוּ מִזֶּה (they have moved on from here) → **nqanek manqei mø̀ndø-ivøvém** [medium, decided, by-rule]
+  - NT: MAT 12:9 *ta manqei ndøgo ge-ivav*
+  - answers: moved on, left
+  - 'left that place' (MAT 12:9); perfective mø̀ndø-. gen037:17.
+  - agent:gen037, 2026-10-15
+- **`formula:faring.g`** רְאֵה אֶת־שְׁלוֹם אַחֶיךָ (see how your brothers are faring) → **<X> qomǿ-zømét, ndigu ande āv kinīgut** [medium, decided, by-rule]
+  - NT: ACT 15:36 *ndigu ande āv kinīgut*
+  - answers: faring, how they are, welfare, see how
+  - Paul's 'let us visit the brothers, to see how they are' (ACT 15:36); the 2sg qomǿ-zømét is built from zimǿ-zømét. gen037:14.
+  - agent:gen037, 2026-10-15
+- **`formula:sending_you.g`** וְאֶשְׁלָחֲךָ אֲלֵיהֶם (I will send you to them) → **No ti-te qatǿ-khofotáq.** [high, decided, attested]
+  - NT: ACT 26:17 *qatǿ-khofotáq*
+  - answers: i am sending you, sending you, i will send you
+  - gen037:13.
+  - agent:gen037, 2026-10-15
+- **`formula:plotted_kill.g`** וַיִּתְנַכְּלוּ אֹתוֹ לַהֲמִיתוֹ (they plotted to kill him) → **voqoe ndøngazém, av nqægo, <X> gēlaēm** [high, decided, attested]
+  - NT: JHN 11:53 *voqoe ndøngazém*
+  - answers: plotted, plotted to kill, conspired
+  - The council's plot against Jesus (JHN 11:53). gen037:18.
+  - agent:gen037, 2026-10-15
+- **`formula:from_afar.g`** וַיִּרְאוּ אֹתוֹ מֵרָחֹק (they saw him in the distance) → **<X> qámbá gegoam. Yaq … gi-ometam** [high, decided, attested]
+  - NT: MRK 5:6 *Yesu qámbá gegoam.*
+  - answers: in the distance, from a distance, from afar, far off
+  - MRK 5:6; 'before he reached them' = 'ti-te fakhaneav ndøgoám' (JHN 11:30). gen037:18.
+  - agent:gen037, 2026-10-15
+- **`formula:what_profit.g`** מַה־בֶּצַע כִּי … (what profit is it if …) → **…, yaq ndøgo áv khanimbé-tøkē?** [medium, decided, by-rule]
+  - NT: 1CO 15:32 *áv khanømbé-tøkē*; LUK 9:25 *áv khambøé-tøkē*
+  - answers: what profit, profit, gain
+  - 'how does it help me / him' (1CO 15:32, LUK 9:25), here with the 1pl object (khanimbé-, built). gen037:26.
+  - agent:gen037, 2026-10-15
+- **`formula:or_not.g`** הֲ … אִם־לֹא (whether … or not) → **Gê, ndøgo unimanqatin, <X>, o teokā?** [high, decided, attested]
+  - NT: GEN 27:21 *o teokā ndego*
+  - answers: or not, whether
+  - Isaac feeling Jacob (27:21). gen037:32.
+  - agent:gen037, 2026-10-15
+- **`formula:examine.g`** הַכֶּר־נָא (examine it, please recognize) → **Qotéqēiv.** [low, decided, by-rule]
+  - NT: 2CO 13:5 *gèqeiví*; GEN 26:28 *qatiqeiví*
+  - answers: examine, look closely
+  - 2sg imperative of qeiv (see) as in gen031:12; 'we found this' = 'Nqanek qatiqeiví' (1pl, 26:28). 'he recognized it' = gèmatøvém (built on gimatøvemem, ACT 3:10). gen037:32-33.
+  - agent:gen037, 2026-10-15
+- **`formula:lay_no_hand_pl.g`** אַל־תִּשְׁפְּכוּ־דָם … וְיָד אַל־תִּשְׁלְחוּ־בוֹ (do not shed blood; do not lay a hand on him, pl) → **Zo ndego pakhapakha mbokhanø̀e᷄m … Geté ndego, matev nøme mbomatønòme᷄m.** [low, decided, by-rule]
+  - NT: GEN 22:12 *matev nøme mbomatàna᷄m*; RUT 2:15 *mbøe-khafène᷄m*
+  - answers: do not shed, shed his blood, do not lay a hand, lay a hand
+  - Plural prohibitives built on the pattern of RUT 2:15 (prohibitive.3); 'let us not take his life' = 'Ndego pakhapakha bizi-làe᷄m' (1pl as GAL 5:26 'bizi-khambùva᷄p'), 'let us not lay a hand' = 'matev nøme bizi-matønòme᷄m'. 'shed blood' = kill (image_to_meaning). gen037:21-22, 27.
+  - agent:gen037, 2026-10-15
+- **`formula:cover_blood.g`** וְכִסִּינוּ אֶת־דָּמוֹ (and cover up his blood) → **teqa kouk zí-khonáb** [low, decided, by-rule]
+  - NT: MAT 25:25 *nòkhonáb*
+  - answers: cover up, cover up his blood
+  - khonab = hide (MAT 25:25; gen035:4), 1pl zí- built. gen037:26.
+  - agent:gen037, 2026-10-15
+- **`formula:valley_hebron.g`** עֵמֶק חֶבְרוֹן (the Valley of Hebron) → **Hiblon manqei tømbuiv** [medium, decided, by-rule]
+  - NT: GEN 26:17 *Gela manqei tømbuiv-té*
+  - answers: valley of hebron, valley
+  - As the Valley of Gerar (26:17). gen037:14.
+  - agent:gen037, 2026-10-15
+- **`formula:here_comes.g`** הִנֵּה … בָּא (here comes …) → **Ndǽ! Ngenek <X> ngegeav.** [medium, decided, by-rule]
+  - NT: GEN 29:6 *Ndǽ, qoté-kewāg!*
+  - answers: here comes
+  - gen037:19.
+  - agent:gen037, 2026-10-15
+- **`formula:grow_up.g`** גָּדַל (grow up) → **<X> gumu-khouwev (grew up); 'until X grows up' = 'atema <X> vumúfīs'** [medium, decided, attested]
+  - NT: GEN 21:8 *Aezek gumu-khouwev ndøgo*; RUT 1:13 *atema nginik nakheis vumúfīs*
+  - answers: grows up, grown up, grown, grow up, grew up
+  - Also 'mø̀ndømu-khouwév' (has grown, 2×), HEB 11:24, RUT 4:17. gen038:11, 14.
+  - agent:gen038, 2026-10-15
+- **`formula:take_off_put_on.g`** הֵסִיר / לָבַשׁ בִּגְדֵי (take off / put on garments) → **ndabua ge-uzupam, gekhòfoē (took off the clothes he wore); put on = ndabua vø̄-uzam** [medium, decided, attested]
+  - NT: JON 3:6 *ge-uzupam, gekhòfoē*; JON 3:6 *ndabua soqøsoqa vø̄-uzam*
+  - answers: removed, took off, put on, removed her widow's garments
+  - Feminine gu-uzupam, gukhòfoē (built, gu- for she). 'widow's garments' = 'tuqa ngæmam ndabua' (built). gen038:14, 19.
+  - agent:gen038, 2026-10-15
+- **`formula:veil_cover.g`** וַתְּכַס בַּצָּעִיף וַתִּתְעַלָּף (covered herself with a veil) → **ndabua ndøkhafúi, bugug vø̄khonao** [high, decided, attested]
+  - NT: GEN 24:65 *bugug vø̄khonao*
+  - answers: veil, covered her face, disguise, herself, her veil
+  - Rebekah's veil (24:65). 'because she had covered her face' = 'ndugu bugug mø̀ndø-khonáo' (built perfective); the veil as a thing = 'ndabua bugug khonao nonqo' (built). gen038:14-15, 19.
+  - agent:gen038, 2026-10-15
+- **`formula:burn_her.g`** וְתִשָּׂרֵף (let her be burned) → **gøinam-te <...>-nqagim (throw into the fire); 'fire burns her' = gøinám guní-lonqotøvém** [medium, decided, attested]
+  - NT: MAT 7:19 *gøinam-té ginǿ-nqagimém*; REV 18:8 *gøinám guní-lonqotøvém*
+  - answers: burned, burned to death, let her be burned
+  - Judah's order 'Bring her out! Let her be burned' = 'Ndugu bavokho zó-itú. Gøinam-te vø̄-nqagimém!' (2pl commands built: zó- + itu, chain vø̄-). gen038:24.
+  - agent:gen038, 2026-10-15
+- **`formula:laughingstock.g`** פֶּן נִהְיֶה לָבוּז (lest we become a laughingstock) → **Soqaín ndøgo, ezoqa ewaqape ni gévøngi꞉namát** [medium, decided, attested]
+  - NT: LUK 14:29 *gévøngi꞉namát*; LUK 8:53 *gèvøngi꞉nám*
+  - answers: laughingstock, otherwise we will become
+  - LUK 14:29 (everyone will ridicule him); the object ni (us) as a free pronoun. gen038:23.
+  - agent:gen038, 2026-10-15
+- **`formula:where_is_she.g`** אַיֵּה (where is X?) → **<X> gekham-tē gégo? (he); she = gúgo (built)** [medium, decided, attested]
+  - NT: JHN 7:11 *Ngenek gekham-tē gégo?*
+  - answers: where is
+  - Also JHN 9:12 'Gê, ndego ndakin kenáqape?'. gen038:21.
+  - agent:gen038, 2026-10-15
+- **`formula:not_here.g`** לֹא־הָיְתָה בָזֶה <X> (there has been no X here) → **<X> nøme, nqanek mbaín** [high, decided, attested]
+  - NT: MRK 16:6 *Ndego nqanek mbaín.*
+  - answers: has been here, no shrine prostitute has been here
+  - gen038:21-22.
+  - agent:gen038, 2026-10-15
+- **`formula:let_her_keep.g`** תִּקַּח־לָהּ (let her keep it) → **<X> sà bendáp** [medium, decided, attested]
+  - NT: MAT 27:58 *sà bendáp*
+  - answers: let her keep, keep
+  - Pilate's 'let it be given to him' (MAT 27:58). gen038:23.
+  - agent:gen038, 2026-10-15
+- **`formula:what_will_you_give.g`** מַה־תִּתֶּן־לִּי (what will you give me?) → **Yaq-fia gekha qonǿ-etoām? (built sg of MAT 26:15)** [medium, decided, attested]
+  - NT: MAT 26:15 *Yaq-fia gekha zønǿ-etøomēm*
+  - answers: what will you give me
+  - MAT 26:15 is plural (you pl give me); the 2sg qonǿ- is built. gen038:16.
+  - agent:gen038, 2026-10-15
+- **`formula:please_let_me.g`** הָבָה־נָּא אָבוֹא (come now, let me …) → **Kopømbâ, <…> tæ-<verb>?** [medium, decided, attested]
+  - NT: GEN 24:17 *Kopømbâ,*; GEN 24:43 *Kopømbâ, ibøkha-qasi tæ-iz*
+  - answers: come now, let me, let me sleep with you
+  - The servant's polite request (24:17, 24:43). 'let me sleep with you' = 'Kopømbâ, no qo namba tæ-sømbi?' with sømbi as GEN 30:15. gen038:16.
+  - agent:gen038, 2026-10-15
+- **`formula:no_relations_again.g`** וְלֹא־יָסַף עוֹד לְדַעְתָּהּ (he did not know her again) → **<X> neka <Y> venanqei nonqo nøme tøkuateáv** [high, decided, attested]
+  - NT: MAT 1:25 *venanqei nonqo tøkuateáv*
+  - answers: relations, did not have relations, have relations with her again
+  - The negative of formula 'venanqei nonqo vø̄tøkuanem'. gen038:26.
+  - agent:gen038, 2026-10-15
+- **`formula:about_n_months.g`** כְּמִשְׁלֹשׁ חֳדָשִׁים (about three months) → **løvøyak ande āv misiká ndi꞉gú** [high, decided, attested]
+  - NT: LUK 1:56 *løvøyak ande āv misiká*
+  - answers: about three months, three months later
+  - Mary stayed about three months (LUK 1:56). gen038:24.
+  - agent:gen038, 2026-10-15
+- **`formula:was_told.g`** וַיֻּגַּד לְ<X> לֵאמֹר (X was told) → **ezoqa nøme, <X> āv gimbøe-einím nqǽgo, “…”** [high, decided, attested]
+  - NT: GEN 22:20 *āv gimbøe-einím nqǽgo*; LUK 8:20 *āv gimbøe-einím nqǽgo*
+  - answers: was told, when tamar was told
+  - Abraham was told (22:20); used for a woman too (a plural subject wins, verb_subject_prefix.2). gen038:13, 24.
+  - agent:gen038, 2026-10-15
+- **`formula:after_long_time.g`** וַיִּרְבּוּ הַיָּמִים (after a long time) → **møi-mbá sege-awám** [medium, decided, attested]
+  - NT: MAT 25:19 *møi-mbá sege-awám*
+  - answers: after a long time
+  - gen038:12.
+  - agent:gen038, 2026-10-15
+- **`formula:stretched_hand.g`** וַיִּתֶּן־יָד (put out his hand) → **pingim gè-ovøyám** [medium, decided, attested]
+  - NT: LUK 6:10 *pingim gè-ovøyám*
+  - answers: put out his hand, stretched out
+  - The newborn's arm; 'on his wrist' = 'teqa pingim-te' (ACT 12:7). gen038:28.
+  - agent:gen038, 2026-10-15
+- **`formula:tied_on_wrist.g`** וַתִּקְשֹׁר עַל־יָדוֹ (tied on his wrist) → **teqa pingim-te vø̄løvøtup** [low, decided, attested]
+  - NT: ACT 12:7 *pingim-te giløvøtupam*
+  - answers: tied, around his wrist, wrist
+  - Peter's chains fastened on his wrists (ACT 12:7); the chain form vø̄løvøtup is built. gen038:28, 30.
+  - agent:gen038, 2026-10-15
+- **`formula:more_righteous.g`** צָדְקָה מִמֶּנִּי (she is more righteous than I) → **Ndugu ndaføyamba-qapú. Ndugu, no mø̀ndøløvú.** [low, decided, by-rule]
+  - NT: 1JN 3:20 *mø̀ndøløvú*
+  - answers: more righteous, righteous than i
+  - Comparative 'A, B mø̀ndøløvú' (feature comparative) after the plain statement; feminine -qapú as kandambaqapu (REV 19:2). gen038:26.
+  - agent:gen038, 2026-10-15
+<!-- store:end sha=7509ccd8 -->

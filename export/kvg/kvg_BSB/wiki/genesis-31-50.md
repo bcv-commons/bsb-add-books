@@ -1,6 +1,6 @@
 ---
 title: Looking ahead: Genesis 31–50
-entries: [term:H2472.g, gap:interpret_dream.g, term:H7458.g, term:H1250.g, term:H3701.g, term:H5470.g, term:steward.g, term:H56.g, term:H6912.g, term:H4631.g, gap:coat.g, gap:household_gods.g, term:H251.g, term:H251brothers.g, term:H1581.g, term:H168.g, term:H1777.g, name:pharaoh.g, name:egypt.g, name:egyptian.g, name:machpelah.g, name:canaan.g]
+entries: [term:H2472.g, gap:interpret_dream.g, term:H7458.g, term:H1250.g, term:H3701.g, term:H5470.g, term:steward.g, term:H56.g, term:H6912.g, term:H4631.g, gap:coat.g, gap:household_gods.g, term:H251.g, term:H251brothers.g, term:H1581.g, term:H168.g, term:H1777.g, name:pharaoh.g, name:egypt.g, name:egyptian.g, name:machpelah.g, name:canaan.g, genealogy_list.g, term:coat_ornate.g, formula:dream_had.g, term:dreamer.g, term:pit.g, term:lift_out.g, formula:wild_animal_devoured.g, gap:torn_pieces.g, name:ishmaelites.g, name:dothan.g, name:potiphar.g, name:medanites.g, term:traders.g, term:officer_eunuch.g, term:captain_guard.g, formula:jealous.g, formula:kept_in_mind.g, formula:loved_more.g, formula:hated_more.g, term:our_brother.g, formula:own_flesh.g, formula:comfort_refused.g, formula:to_sheol.g, formula:reign_over_us.g, formula:sold_price.g, formula:binding_sheaves.g, term:pledge.g, term:signet_seal.g, term:cord_thread.g, formula:raise_offspring.g, gap:spill_seed.g, gap:breach.g, gap:pull_back_hand.g, formula:prostituted.g, term:shrine_prostitute.g, term:father_in_law.g, term:H6743.g, formula:lord_with_him.g, term:H6711.g, term:H7121cry.g, term:H8610.g, term:H2820.g, term:handsome.g, formula:knew_nothing.g, term:H5127run.g, term:H2617god.g, formula:found_favor_with.g, formula:into_his_hand.g, term:H6485charge.g, term:attendant.g, term:warden.g, term:prison_throw.g, term:day_after_day.g, formula:sin_against_god.g, formula:he_refused.g, gap:confined.g, term:cupbearer.g, term:baker.g, term:basket.g, term:cup.g, term:grapes.g, term:blossom_ripen.g, term:squeeze.g, formula:sad_face.g, formula:birthday.g, formula:feast_for.g, formula:remember_forget.g, formula:interpretation.g, formula:within_days.g, formula:lift_head.g, term:hang.g, formula:kidnapped.g, formula:did_wrong_to.g, formula:restore_position.g, formula:assigned_to.g, formula:show_kindness_when_well.g]
 ---
 # Looking ahead: Genesis 31–50
 
@@ -38,8 +38,9 @@ Shechem bought with silver (7:16). Read those verses before Gen 37, 41–45 and 
 - **mourn, weep**: "mutøkhop neka eiv matev" (23:2); weep *vin-* (gèvín, 27:38).
 - **bury, tomb, cave**: "manqei pakha … upa" (23:4, 23:19) or *otøv-* (25:9); the cave "nandi
   nqa", "Makpela nandi nqa" (25:9) for 49:29–32 and 50:13.
-- **coat** (Joseph's robe): a gap; clothes are *ndabua* (27:15), torn clothes "ndabua vø̄keqa"
-  (MRK 14:63).
+- **coat** (Joseph's robe): built in Genesis 37 as "ndabua sekeqape, khagi vinivinimba-ús" (a long
+  garment with many colours; term:coat_ornate.g, a question for the team); clothes are *ndabua* (27:15),
+  torn clothes "ndabua vø̄keqa" (MRK 14:63).
 - **household gods** (31:19–35): still a gap. Our Genesis 31 draft used *tae khøuwiap* (carved images, ACT 7:41) for the narrator and *mbumbuk* (pagan gods) in Laban's "my gods" (gap:household_gods.g31).
 - **animals and camp**: camel *kemol*, donkey *donki*, cattle *kao*, goats *naningus*, sheep
   *sip*, tent *palai (khoev)*.
@@ -192,9 +193,180 @@ What the chapter needed and where the models are:
 - **Built forms** to check: *vø̀khakheinám*, *ndæ̀khakheinám*, *vø̀-eqeieqei-éz*, *qoqo-khokhon*,
   *gemø-otáz*, *zøpavateáv*, *gunanimtát*, *qazø-etoam* (I gave them).
 
+## Genesis 36 (drafted 15.10.2026, agent:gen036)
+
+A chapter of lists: Esau's wives and sons, the chiefs of Edom, the Horites of Seir and the kings of
+Edom. The team's own genealogies are the models, and they are close enough to follow line by line:
+
+- **Lists of sons** follow 10:2–4, 10:22–29 and 25:13–15: "<X>-gi nakhei angana ngínik: A neka B neka C."
+  with *neka* before every name; children of both sexes are *nakheis* (36:25). The closing "these are
+  the sons of Adah" (Hebrew "sons" for grandsons) is 25:4's "Nginik ate gigoam, … -gí zí" (descendants).
+  The style check flags *nginik*, *neka* and *-gi* far above the human mean: that is the genre, as
+  dense as Genesis 10 (feature genealogy_list.g).
+- **Wives one by one** after 26:34: "Nømu ndugu, Eidá. Ndugu Elon-gú yú." A granddaughter is *ziu*
+  (24:48).
+- **"Esau, that is Edom"** is 25:30's other name, "teqa iz nøme Edóm"; the people are *Edom-ak* and
+  Esau their *zozokha* (ancestor, 4:20, 10:14, 19:37), not *eve*.
+- **Chiefs** (*ʾallûp*): *megetapak*, the word for Ishmael's princes of their tribes (25:16, "bawabawan-gi-
+  megetapak") and for the NT's authorities. The Hebrew repeats "chief" before every name; the draft
+  says it once, "tegi nakhei angana ndigu megetapák: A neka B", as Kuni lists do.
+- **Kings**: "there were kings in Edom" is 14:1's "kawakawa-za mø̀ndøgoám"; "before any king reigned
+  over the Israelites" became "at that time the Israelites had no king" (*mbain qagoam*). The refrain
+  "X died, and Y reigned in his place" takes the NT's succession, Festus in Felix's place (ACT 24:27,
+  "Filiks-qa iziz … ndøndáp"), then "kawa ezoqam vø̄go" (became king); "from Bozrah" is the origin
+  suffix, "Bozla taon-ák". "Defeated Midian" is 14:5's *zøkhaná*.
+- **Anah and the hot springs** (36:24): no hot spring in the corpus; the draft builds "ibøkha tatas"
+  with 2:6's water that came up out of the ground (gap:hot_springs.g, a question for the team).
+  Pasturing donkeys is Jacob's *kewag-* (30:36).
+- **Names**: the team's forms where Genesis 1–30 has them (Eida 4:19, Basømat 26:34, Nebayot 28:9,
+  Amalek 14:7, Zobab 10:29, Hadad 25:15, Bela 14:2, Uz 10:23, Leobot 26:22, Midian 25:2, Hol 14:6);
+  the rest by the letter rules. Open: Olibama (strictly Oolibama), Shaul as *Sol* (= King Saul),
+  Hadar/Hadad in 36:39 (the draft follows the BSB).
+
+## Genesis 37 (drafted 15.10.2026, agent:gen037)
+
+Joseph's dreams and his sale. The NT's own account (ACT 7:9) gives the key words, and the team's Jacob
+chapters give the voices:
+
+- **Love and hate.** "Israel loved Joseph more than all his sons" follows Jacob's love for Rachel above
+  Leah (29:30): "poev kandambaqape, X-té qambogoám", with "among all his sons" as "… ate gi꞉goam
+  mokho-te". "They hated him" is the citizens of LUK 19:14, "gèmbo-sanqaupám"; "even more" is "nøme
+  mba" (MRK 10:26). "His brothers were jealous of him" is ACT 7:9 word for word ("ova ndø-einím"),
+  and Jacob "kept the matter in mind" as Mary did (LUK 2:19, "matavap mba ndø-aumát").
+- **Dreams.** "He dreamed" = "venanqei ndøtám" (28:12); "the dream he had" = "venanqei ge꞉tamat"
+  (20:8). The 1sg "qate-tamat" and 2sg "qoqo-tamat" are built. Each scene inside the dream opens with
+  "Yaq nqáe!", as the team's dream of 28:12. The sheaves are Ruth's bundles (*løvøtap*, RUT 2:15);
+  the upright sheaf takes 28:18's "Andé uk me me꞉wuáb"; bowing is the plural formula
+  "ekeza kha, manqei me꞉laém". The dreamer is an agent noun, "venanqei tam ezoqam".
+- **The brothers' plot** borrows the NT's plots: "they plotted to kill him" = JHN 11:53 ("voqoe
+  ndøngazém, av nqægo, … gēlaēm"); "let us kill him" = the tenants' "Zílaém" (MRK 12:7); "we shall see
+  what becomes of his dreams" = the soldiers' "Yaq zíqeivím, ande gekha … me ndǿfakhān" (JHN 19:24).
+  The pit is MAT 12:11's *manqei ozu*; "throw him into it" REV 20:15's "ginø-oginám", and "pulled
+  him out" the shepherd's *liv-* (MAT 12:11, JON 2:7).
+- **Prohibitions in the plural** (do not shed blood, do not lay a hand on him, let us not take his
+  life) have no plural model in the corpus: they are built on the tone pattern of RUT 2:15 and
+  GAL 5:26 (prohibitive.3). "Shed blood" is rendered as "kill" (image_to_meaning).
+- **"He is our brother, our own flesh"** is Laban's 29:14 in the 1pl ("Uni-nikeza-kouk-ín"). No
+  1pl form of the kin noun *eveqase* was found, so "our brother" is "nigi nøfu" (1CO 1:1).
+- **Traders and the sale.** Traders are the NT's *bisnis ezoqam* (REV 18); the Ishmaelites and
+  Midianites are "Ismael bawan", "Midian bawan" (as the store's Midian); the price stands as its
+  own sentence, after 23:15 ("Fia ndøgo, silva moni mokho tuentí"). In 37:36 the Hebrew has the
+  *Medanites* (Medan, 25:2), the BSB "Midianites": the draft follows the Hebrew.
+- **Jacob's grief.** Tearing clothes = MRK 14:63; sackcloth round the waist = JON 3:5 + JHN 13:4;
+  mourning = 23:2's "mutøkhop neka eiv matev". "They tried to comfort him, but he refused" follows
+  Rachel in MAT 2:18 ("tiqa mokho-te tizø-khakheinam"); "I will go down to Sheol" is told as "until I
+  die" (MRK 14:34 "nǿnaním").
+- **Still open:** the coloured robe, "torn to pieces" (gap:torn_pieces.g), balm, the eunuch-officer
+  (*gaman ezoqam*, ACT 8:27) and the captain of the guard (ACT 4:1 without "temple").
+
+## Genesis 38 (drafted 15.10.2026, agent:gen038)
+
+Judah and Tamar. The team's birth chapters (29:31–30:24, 25:24–26) give the births and namings; the
+NT gives the levirate law and much of the vocabulary of the pledge:
+
+- **Births and names.** The three sons follow Leah's sons word for word ("kha viniv ndøndáp, nakhasa
+  anganeam vømbō-fakhan", 29:32; "nqawa gundap … nøme", 29:33; Judah names the first, Bathshua the
+  others). The twins are Rebekah's twins (25:24 "nakhei angana menás"); "his brother came out" is
+  25:26 word for word ("eveqase ndøfakhán"). The midwife keeps gen035's description "the woman who
+  helped Tamar". Perez gets a bracketed meaning, because the midwife's words explain it; Zerah does
+  not (the Hebrew text gives no reason for the name).
+- **The levirate duty.** The NT tells the same law (MRK 12:19, LUK 20:28: "patu bembō-qatayat",
+  let him raise children for the dead brother). Judah's order takes "Mòqokható" (take her, 24:51)
+  and a chained "patu vømbō-qatayat" (built). Onan's knowledge uses constituent negation ("ambá
+  tegī zī ndǿgoát", they would not be his line). The spilled seed has no model
+  (gap:spill_seed.g): "he threw his seed on the ground", then "Soqaín ndøgo" (so that not) for
+  לְבִלְתִּי. **Question for the Kuni team:** how plainly may this be told?
+- **Widow, veil, prostitute.** Tamar's veil is Rebekah's (24:65 "ndabua ndøkhafúi, bugug
+  vø̄khonao"); taking off and putting on clothes the king of Nineveh's (JON 3:6). "Prostitute" stays
+  *mambe sævam* (gen034), also for Hirah's קְדֵשָׁה (shrine prostitute), so the chapter keeps one word;
+  "she has prostituted herself" is what the NT says of the woman caught in adultery, "mambe
+  me꞉wáv" (JHN 8:3).
+- **Bargain and pledge.** "Let me sleep with you" is the polite request of 24:17 ("Kopømbâ, … tæ-…?")
+  with *sømbi* (30:15); "what will you give me" is Judas's question (MAT 26:15) in the singular; the
+  pledge is *khakhatap* (sign, 2CO 5:5), the seal "khakhatap gone nonqo" (REV 7:2), the cord
+  *mevoat* (the thread of 14:23), the staff *tatuag* (LUK 9:3). "Whose are these?" follows MRK 12:16
+  ("gekha ezoqam-qâ").
+- **The search.** "He could not find her" is LUK 2:45's "ometeáv"; "where is she?" JHN 7:11 ("gekham-tē
+  gégo?", feminine gúgo built); "no prostitute has been here" the angel's "nqanek mbaín" (MRK 16:6);
+  "lest we become a laughingstock" LUK 14:29 ("gévøngi꞉namát"); "let her keep them" Pilate's "sà
+  bendáp" (MAT 27:58).
+- **Judgement and recognition.** "About three months" is LUK 1:56; "Judah was told" Abraham's
+  22:20 ("āv gimbøe-einím nqǽgo"); "let her be burned" throws her into the fire (MAT 7:19; REV 18:8
+  has "gøinám guní-lonqotøvém"). "She is more righteous than I" uses the comparative
+  "mø̀ndøløvú" (built). "He did not know her again" is MAT 1:25 ("venanqei nonqo tøkuateáv").
+- **Still open:** the father-in-law's 2nd-person form (JHN 18:13 *zimui* only), the breach of Perez
+  (gap:breach.g), the drawing back of the hand (gap:pull_back_hand.g), the spilled seed.
+
+## Genesis 39 (drafted 15.10.2026, agent:gen039)
+
+Joseph in Potiphar's house and in prison. The chapter repeats a few Hebrew key phrases ("the LORD was
+with him", "in his hand", "he left his garment and fled"), and the draft keeps one wording for each:
+
+- **The LORD with Joseph.** The team's 21:20 ("God was with the boy") gives "Evezøza mø̀ndøgoám, Zosef
+  namba" (39:2, 21, 23); the nominal "the LORD is with him" of 39:3 is "Evezøza ndøgoám, te namba".
+  Success is the servant's journey of 24:21 and 24:56 ("mokho qafakhan", it came to fruit), with
+  "Evezøza ndego gembo-tøke" (the LORD helped him) for the causative (built on 24:56 "mø̀ndønø-tøké").
+- **Into his hand.** Everything Potiphar, and later the warden, gave into Joseph's hand is Abraham's
+  gift to Isaac: "gigiap ate qambøegoam, Zosef-qá zenda-té genø-vé" (24:36); "left in his hand" uses
+  25:5's *genø-iváv*. "Made him overseer" is built on "No ndego kawa nøvé" (27:37) and LUK 12:44
+  ("keoge ezoqam ndégo tévé") as "keoge ezoqam ndøvé".
+- **Favour.** "Find favour in X's eyes" turns the subject round, as ACT 27:3 does ("Zulies, Pol tanakh
+  mbogó", Julius was kind to Paul): the master, then the warden, "Zosef tanakh mbogó". God's חֶסֶד is
+  *kuku matev* (Jonah 4:2), phrased as the servant's "teqa kuku matev … kandambá" (24:27).
+- **Handsome.** Rachel's description (29:17, the same Hebrew pair) with the masculine *tentév*:
+  "Zosef, ndego bugug keogé. Qanimáv tentév."
+- **The temptation.** "Sleep with me" is Rachel's imperative to Jacob (30:3 *qanesømbí*). Joseph's
+  refusal is MAT 18:30's "gèmbøeqasí"; "he has withheld nothing from me" is Abraham's *keaeqateáv*
+  (22:12); "sin against God" God's words to Abimelech (20:6: "manqa-zapa toqogo, noqa bøi-te"). The
+  rhetorical "how could I …?" is built as "Gê, no kopømbâ, … ? Āv taoká."
+- **The garment and the cry.** "Grabbed" is the angels' grip on Lot (19:16 *geagim*, feminine gu-
+  built); "he fled outside" follows ACT 19:16 ("gèbǿin", they ran out) with *bavokhó genøfakhán*.
+  "To make sport of us" is Ishmael's mocking (21:9 "otøotam me꞉vewát"; the purpose form *vewe-qa* is
+  built). Her screaming is Paul's "qæ-akhá" (ACT 24:21) and Jonah's "noqa akhayam" (JON 2:3); "with a
+  loud voice" ACT 14:10 "manqat bazaføgakh-ús".
+- **Prison.** "Took him and put him in prison" is MAT 18:30 ("ndimbula-te vø̄-utav"); the warden is the
+  Philippian jailer "ndimbula keoge ezoqam" (ACT 16:23). "Confined" has no word (gap:confined.g);
+  ACT 12:5's "ndimbula mokho-te ge-utavam" (was kept in prison) is the model for a closer rendering.
+- **Still open:** the personal attendant (built as "his servant, near him"), the warden's "did not
+  look into anything" (rendered with "did not know", as Potiphar in 39:6), and "confined".
+
+## Genesis 40 (drafted 16.10.2026, agent:gen040)
+
+The cupbearer's and the baker's dreams. Most words of the chapter are not in the corpus as such;
+the draft builds them from the NT's patterns and keeps each one fixed through the chapter:
+
+- **Cupbearer and baker.** No court titles in the NT. Both are agent nouns (feature agent_noun):
+  the waterer of 1CO 3:8 ("ibøkha etoam ezoqam") gives *waen etoam ezoqam* (the wine-giving man),
+  and Lot's and Sarah's baking (19:3, 18:6, *løvus-*) gives *flawa løvusam ezoqam*. "Chief" is the
+  high priest's *kandambaqape* (ACT 5:17), not *kawa*, because *kawa* (head) carries the chapter's
+  word play. The chief title is given in 40:2 and then dropped, as the style check asked (the human
+  translators name a known participant briefly).
+- **Interpretation.** The open gap (gap:interpret_dream.g) is applied as it proposes: "Taqa manqa
+  mokho nqánek:" (its meaning is this, after the name brackets of 29:32), "no one to interpret" on
+  RUT 4:4 ("ezoqa nøme mbaín, …", there is no one else to …) with *nømand* (explain, MAT 15:15).
+  Joseph's rhetorical "Don't interpretations belong to God?" is built (feature rhetorical_question).
+  Still a question for the team.
+- **Faces and moods.** Cain's fallen face (4:5-6 "bugug avus-mba ndoqote-keoge") is the model for
+  "why are your faces downcast"; "distraught" is 2CO 7:6's "mbøni ndøzøvaev".
+- **Vine and baskets.** The vine and its grapes are the NT's *waen tae* and *waen tae nanga* (LUK
+  22:18, REV 14:18), branches *tang* (JHN 15:6), the blossoms the loan *flawas* (JAS 1:10), the buds
+  HEB 9:4's "mbusa … fakhan", ripe *qakhatøkhatoam* (MAT 9:37). Baskets are *yakhav* (JHN 6:13), the
+  cup the loan *kap* (LUK 11:39). "Squeezed" is built from the winepress, "waen nanga pesegim nonqo"
+  (MAT 21:33): a question for the team.
+- **Remember and forget.** The thief's "No gènøndo-matøvém" (LUK 23:42, remember me when …) fits
+  Joseph's plea in 40:14 exactly. Forgetting is "manqa mate … navøem" (2PE 1:9); the team's 8:1 says
+  "God remembered Noah" as "manqa mate navøepøteáv" (his memory did not end).
+- **Lift up the head.** The word play is kept with LUK 21:28's "kawa … eqá" for the cupbearer (40:13,
+  20); the baker's "lift your head off you" is told by its meaning, John's beheading (MRK 6:27 "monqo
+  … kepaz"). Hanging on a tree follows ACT 10:39 ("Tae mutui-té ginø-tøkewém"), with plain *tae*.
+- **Feast and birthday** are Herod's (MRK 6:21: "ge꞉qan, ta khøuwa iz gemø-khantaz") and Abraham's
+  (21:8 "lou kandambaqape ndølóg").
+- **Built and open:** future forms *ndø̀qa-vé*, *ndø̀qanø-tøkéw*, *ndø̀nø-itú*, *soqo-vé*, the 2pl
+  *ndozote-keoge*, *toqoyage*, *vø̄pesegim*, *gi-aqonømem* (kidnapped), *ginø-nqeitan* (they put me).
+
 ## Not in Genesis 1–30 nor in the NT
 
-Checked and not found as Kuni words: Potiphar, Goshen, Mahanaim, Peniel, Gilead, the Ishmaelite
+Checked and not found as Kuni words (Genesis 37 built forms for some: see above): Potiphar, Goshen, Mahanaim, Peniel, Gilead, the Ishmaelite
 and Midianite traders, sackcloth in Genesis (Jonah has "ndabua soqøsoqa", term:H8242). Names go
 by the letter table ([names](names.md)); Benjamin has the NT form *Benzamin* (ACT 13:21).
 
@@ -253,11 +425,6 @@ Quotations on this page are from the Kuni team's Genesis and the Kuni NT (credit
   - answers: cave, the cave, cave of machpelah, in a cave
   - "stone hole" (19:30, 23:9-19, 25:9; NT the same). Gen 49:29-32, 50:13.
   - agent:memory-setup, 2026-10-15
-- **`gap:coat.g`** כְּתֹנֶת פַּסִּים (GEN 37:3, 23, 31-33); שַׂלְמָה / שִׂמְלָה (clothes, 37:34, 41:14, 44:13, 45:22) → **Joseph's robe of many colours / ornate robe has no model: build "ndabua <...>" (cloth, clothes: 27:15 "ndabua eqeieqei-qape" the finest clothes; 21× NT); colour words from gap:colours** [low, open]
-  - NT: GEN 27:15 *ndabua eqeieqei-qape*; LUK 15:22 *Ndabua eqeieqei*; JHN 19:2 *ndabua køkouk*
-  - answers: robe, ornate robe, robe of many colors, tunic, coat, garments, clothes, changes of clothes
-  - lang.py hbo H3801: tunic → ndabua (7 of 10 NT links). Tear one's clothes (37:29, 37:34, 44:13): MRK 14:63 "ekeza ndabua vø̄keqa" (he tore his clothes). Royal robes for Joseph (41:42): term:royal_robe.
-  - agent:memory-setup, 2026-10-15
 - **`term:H251.g`** H251 אָח (brother) → **eveqase** [high, decided, attested]
   - NT: GEN 4:8 *eveqase*; GEN 4:9 *Qoge qaveqase*; GEN 9:25 *zapikia-za-gé*; GEN 24:55 *tuge anganømeo*
   - answers: brother, his brother, your brother, brothers, her brother, my brother
@@ -308,4 +475,384 @@ Quotations on this page are from the Kuni team's Genesis and the Kuni NT (credit
   - answers: canaan, land of canaan
   - Genesis 1-30: 15 verses. NT the same; the land = Keinan manqei (23:2, 28:1).
   - agent:memory-setup, 2026-10-15, supersedes `name:canaan`
-<!-- store:end sha=0dc5901e -->
+- **`genealogy_list.g`** **genealogies list the sons after one header: '<X>-gi nakhei angana ngínik: A neka B neka C.' (neka before every name, no final accent); 'X became the father of' = 'X gemanaz, tegi nakhei angana ngínik:' (10:3, 10:23); 'these are the descendants of X' at the end = 'Nginik ate gigoam / ngi꞉gu, X-gí zí.' (25:4, 10:20); a person's wives or daughters one by one as 'Nømu ndugu, <Name>. Ndugu <Father>-gú yú.' (26:34); 'their names' = 'tiqa iziz nqánek:' (MAT 10:2, RUT 1:2)** [high, observed]
+  - NT: GEN 10:2 *nakhei angana gimbo-fakhaz, ngínik:*; GEN 25:4 *Ketula-gí zí.*; GEN 26:34 *Nømu ndugu, Zudít.*; GEN 10:23 *Alam gemanaz*
+  - answers: these are the sons, the sons of, these are the names, grandsons, descendants
+  - Used throughout gen036. The style check flags nginik, neka and -gi as far above the human mean: that is the genre (a whole chapter of lists), not a fault; the human Genesis 10 and 25:12-16 are as dense.
+  - agent:gen036, 2026-10-15
+- **`term:coat_ornate.g`** כְּתֹנֶת פַּסִּים (Joseph's ornate robe, robe of many colours; GEN 37:3, 23, 31-33) → **ndabua sekeqape, khagi vinivinimba-ús (a long garment with many colours)** [low, decided, by-rule]
+  - NT: REV 19:13 *ndabua sekeqape*; REV 9:17 *Taqa khagi, køkóuk.*; ACT 25:23 *agiwa-qasis khagi-us*; GEN 1:11 *bugug vinivinimba*
+  - answers: robe, robe of many colors, ornate robe, tunic, coat
+  - Built: ndabua sekeqape (long robe, the seamless tunic and the rider's robe) + khagi (colour, skin: REV 9:17, REV 4:3) + vinivinimba (of different kinds) + -us (having). The robe alone later in the chapter = 'Zosef-qa ndabua', 'ta ndabua'. Tearing one's clothes = 'ekeza ndabua vø̄keqa' (MRK 14:63). gen037:3, 23, 31-33. Question for the Kuni team: a better word for a coloured garment?
+  - agent:gen037, 2026-10-15, supersedes `gap:coat.g`
+- **`formula:dream_had.g`** חָלַם חֲלוֹם / הַחֲלוֹם אֲשֶׁר חָלָמְתִּי (dream a dream; the dream I had) → **<X> venanqei ndøtám; the dream he had = venanqei ge꞉tamat; I had = no venanqei qate-tamat; you had = qoqo-tamat** [medium, decided, attested]
+  - NT: GEN 28:12 *venanqei ndøtám*; GEN 20:8 *av venanqei ge꞉tamat ndægo*
+  - answers: had a dream, dream i had, another dream, dreamed
+  - 'another dream' = 'venanqei nøme'. The 1sg qate-tamat (after qate-manqatam) and 2sg qoqo-tamat (second_person_past) are built. gen037:5-10.
+  - agent:gen037, 2026-10-15
+- **`term:dreamer.g`** בַּעַל הַחֲלֹמוֹת (master of dreams, dreamer) → **venanqei tam ezoqam** [medium, decided, by-rule]
+  - NT: GEN 20:3 *Venanqei tam-té genø-omét*; JUD 1:8 *venanqei-tam-te gi꞉manqatatun*
+  - answers: dreamer, that dreamer
+  - Agent noun (feature agent_noun) on 'venanqei tam' (dream). 'Here comes that dreamer' = 'Ndǽ! Ngenek venanqei tam ezoqam ngegeav.' (GEN 29:6 'Ndǽ'). gen037:19.
+  - agent:gen037, 2026-10-15
+- **`term:pit.g`** בּוֹר (pit, cistern, Gen 37:20-29; 40:15; 41:14) → **manqei ozu** [high, decided, attested]
+  - NT: MAT 12:11 *manqei ozu-tē gunūbøiāv*; GEN 14:10 *manqei nqa-nqa*
+  - answers: pit, pits, cistern, dungeon
+  - A sheep falling 'into a pit' (MAT 12:11); REV 9:1 the Abyss is 'manqei ozu vaev mbain' (pit without end). 'throw him into a pit' = 'manqei ozu-té ginø-oginám' (REV 20:15 'ginø-oginám'). After the first mention gen037 says 'ta ozu'.
+  - agent:gen037, 2026-10-15
+- **`term:lift_out.g`** מָשַׁךְ / הֶעֱלָה מִן־הַבּוֹר (pull up, lift out of the pit) → **vø̄livav (and lifted him out)** [medium, decided, by-rule]
+  - NT: MAT 12:11 *Ndø̀liváv.*; JON 2:7 *mòqoliván*
+  - answers: pulled, pulled up, lifted out, drew up
+  - The man lifts his sheep out of the pit (MAT 12:11); God raised Jonah from the pit (JON 2:7). The chain form vø̄livav is built (imperative_chain). gen037:28.
+  - agent:gen037, 2026-10-15
+- **`formula:wild_animal_devoured.g`** חַיָּה רָעָה אֲכָלָתְהוּ (a vicious animal has devoured him) → **søvakha gigiap lozokhak soqøsoqa, pakhapakha mbokhanøém, kha vø̄log** [medium, decided, by-rule]
+  - NT: REV 17:16 *søvakha gigiap lozokhak*; MRK 12:5 *pakhapakha mbokhanøém*; REV 17:16 *kha mbólogém*; GEN 27:25 *eve vø̄log*
+  - answers: vicious animal, wild animal, ferocious animal, devoured, has devoured him
+  - 'wild animals killed him and ate his body': lozokhak = wild, soqøsoqa = bad; the verbs plural as REV 17:16 (the beast and the horns eat her flesh). gen037:20, 33; also 44:28.
+  - agent:gen037, 2026-10-15
+- **`gap:torn_pieces.g`** טָרֹף טֹרַף יוֹסֵף (Joseph has surely been torn to pieces) → **no model for tearing a body to pieces (searched BSB torn|devoured|pieces, Kuni keqa, mbegeap): used 'Unimanqatín, Zosef-qa kha, gè-keqasám' (keqas- pierce, tear, 1CO 15:55)** [low, open, by-rule]
+  - NT: 1CO 15:55 *qoqote-keqasam*; ACT 1:18 *sège-keqavøemát*
+  - answers: torn to pieces, torn, surely been torn
+  - mbegeap (pieces) is only for bread (JHN 6:12). gen037:33; 44:28 needs it. Question for the Kuni team.
+  - agent:gen037, 2026-10-15
+- **`name:ishmaelites.g`** יִשְׁמְעֵאלִים (the Ishmaelites; a caravan of Ishmaelites) → **Ismael bawan (ezoqa); a caravan = Ismael bawan ezoqa kopoav, kemol namba** [medium, decided, by-rule]
+  - NT: GEN 16:15 *iz Ismael mbo-akhá*; GEN 14:5 *Lefai bawan zøkhaná*
+  - answers: ishmaelites, ishmaelite, caravan
+  - As the store's Midian bawan (Midianites): the people of Ishmael = Ismael bawan. No word for a caravan: 'many Ishmaelites with camels'. gen037:25, 27, 28; 39:1.
+  - agent:gen037, 2026-10-15
+- **`name:dothan.g`** דֹּתָן (Dothan) → **Dotan (Dotan taon)** [medium, decided, by-rule]
+  - NT: ACT 9:30 *Sæzalia taon-té ginø-ituím*
+  - answers: dothan
+  - Not in the corpus. th → t (letter rule); a town takes taon (place_class_noun). gen037:17.
+  - agent:gen037, 2026-10-15
+- **`name:potiphar.g`** פּוֹטִיפַר (Potiphar) → **Potifa** [low, decided, by-rule]
+  - NT: GEN 12:15 *Felo*
+  - answers: potiphar
+  - Not in the corpus. ph → f, a final r drops (Tama, Asa). gen037:36; 39:1.
+  - agent:gen037, 2026-10-15
+- **`name:medanites.g`** מְדָנִים (the Medanites, Gen 37:36 Hebrew; the BSB has Midianites) → **Medan bawan** [medium, decided, attested]
+  - NT: GEN 25:2 *Medan neka Midian*
+  - answers: medanites
+  - Medan, Abraham's son, is in the team's 25:2. The Hebrew of 37:36 has הַמְּדָנִים (Medanites), the BSB 'Midianites' (as 37:28 and 39:1); the draft follows the Hebrew and the notes give the BSB form.
+  - agent:gen037, 2026-10-15
+- **`term:traders.g`** סֹחֲרִים (traders, merchants) → **bisnis ezoqam** [high, decided, attested]
+  - NT: REV 18:3 *bisnis ezoqam*; REV 18:11 *bisnis ezoqam*
+  - answers: traders, merchants, merchant, midianite traders
+  - The merchants of the earth (REV 18). 'Midianite traders' = 'Midian bawan bisnis ezoqam'. gen037:28.
+  - agent:gen037, 2026-10-15
+- **`term:officer_eunuch.g`** סְרִיס (officer, official, eunuch of a king) → **gaman ezoqam** [medium, decided, attested]
+  - NT: ACT 8:27 *Gaman iz akhae ezoqám.*; ACT 8:34 *gaman ezoqam*
+  - answers: officer, official, eunuch
+  - The Ethiopian eunuch, the queen's court official (ACT 8:27-39). 'an officer of Pharaoh' = 'Felo-ge gaman ezoqam'. gen037:36; 39:1; 40:2.
+  - agent:gen037, 2026-10-15
+- **`term:captain_guard.g`** שַׂר הַטַּבָּחִים (captain of the guard) → **vos keoge ezoqam-ge kawa (the chief of the guards)** [medium, decided, by-rule]
+  - NT: ACT 4:1 *vos keoge ezoqam-ge kawa*; ACT 5:24 *vos keoge ezoqam-ge kawa*
+  - answers: captain of the guard, captain
+  - The captain of the temple guard (ACT 4:1, 5:24) without 'temple': 'Felo-gi vos keoge ezoqam-ge kawa'. gen037:36; 39:1; 40:3-4.
+  - agent:gen037, 2026-10-15
+- **`formula:jealous.g`** וַיְקַנְאוּ בוֹ (they were jealous of him) → **<X>-te ova ndø-einím** [high, decided, attested]
+  - NT: ACT 7:9 *Zosef, ova ndø-einím*
+  - answers: jealous, were jealous
+  - The NT's own words for Joseph's brothers (ACT 7:9). gen037:11.
+  - agent:gen037, 2026-10-15
+- **`formula:kept_in_mind.g`** שָׁמַר אֶת־הַדָּבָר (kept the matter in mind) → **matavap mba ndø-aumát** [high, decided, attested]
+  - NT: LUK 2:19 *matavap mba ndø-aumát*; LUK 2:51 *matavap mba ndø-aumát*
+  - answers: kept in mind, kept the matter, pondered, treasured
+  - Mary treasured these things (LUK 2:19, 2:51). gen037:11.
+  - agent:gen037, 2026-10-15
+- **`formula:loved_more.g`** אָהַב אֶת־<X> מִכָּל־<Y> (loved X more than all Y) → **<Y> ate gi꞉goam mokho-te, poev kandambaqape, <X>-té qambogoám** [high, decided, attested]
+  - NT: GEN 29:30 *Laisol-té qambogoám*
+  - answers: loved more, loved him more, more than, loved
+  - Jacob's love for Rachel above Leah (29:30). gen037:3-4.
+  - agent:gen037, 2026-10-15
+- **`formula:hated_more.g`** וַיִּשְׂנְאוּ אֹתוֹ / וַיּוֹסִפוּ עוֹד שְׂנֹא אֹתוֹ (they hated him; hated him even more) → **gèmbo-sanqaupám; even more = nøme mba gèmbo-sanqaupám** [high, decided, attested]
+  - NT: LUK 19:14 *ezoqa gèmbo-sanqaupám*; MRK 10:26 *nqova nøme mba*
+  - answers: hated, hated him, even more
+  - gen037:4, 5, 8.
+  - agent:gen037, 2026-10-15
+- **`term:our_brother.g`** אָחִינוּ (our brother) → **nigi nøfu** [medium, decided, by-rule]
+  - NT: 1CO 1:1 *nigi Klisten nøfu*
+  - answers: our brother
+  - 'our brother Sosthenes'. The kin noun eveqase has the possessor in its stem (e- his, qa- your, zø- your pl); no 1pl form was found, so gen037:26-27 use nøfu. 'he is our own flesh' = 29:14 in the 1pl: 'Ndego unimanqatin nigí nøfú. Uni-nikeza-kouk-ín.' (GEN 29:14 'Uni-nøkeza-kouk-ín'). Question for the Kuni team.
+  - agent:gen037, 2026-10-15
+- **`formula:own_flesh.g`** כִּי־אָחִינוּ בְשָׂרֵנוּ הוּא (for he is our brother, our own flesh) → **Ndego unimanqatin nigí nøfú. Uni-nikeza-kouk-ín.** [medium, decided, by-rule]
+  - NT: GEN 29:14 *Uni-nøkeza-kouk-ín.*
+  - answers: our own flesh, flesh and blood, own flesh
+  - Laban's words to Jacob in the 1pl (nikeza, reflexive_possessive). gen037:27.
+  - agent:gen037, 2026-10-15
+- **`formula:comfort_refused.g`** וַיָּקֻמוּ … לְנַחֲמוֹ וַיְמָאֵן לְהִתְנַחֵם (they tried to comfort him, but he refused to be comforted) → **teqa mokho khakheinam-qa ndøgoám. Geté ndego poeveáv.** [low, decided, by-rule]
+  - NT: MAT 2:18 *tiqa mokho-te tizø-khakheinam*; ACT 7:26 *tøkuzuat-qa ndøgoám*
+  - answers: comfort, comforted, refused to be comforted, tried to comfort
+  - Rachel 'refusing to be comforted' = no one could set right their insides (MAT 2:18); 'tried to' = purpose -qa ndøgoám (ACT 7:26). gen037:35.
+  - agent:gen037, 2026-10-15
+- **`formula:to_sheol.g`** אֵרֵד … שְׁאֹלָה (I will go down to Sheol, mourning) → **… mutøkhop neka eiv matev ndæ̀goát, atema nǿnaním** [medium, decided, by-rule]
+  - NT: MRK 14:34 *nǿnaním*; MAT 18:20 *no ndæ̀goát*
+  - answers: sheol, go down to sheol, to the grave
+  - Sheol as 'until I die' (term:H7585 løvøte avønin-te is 'close to death', JON 2:3). 'I will go to my son' = 'noge yo-te ndæ̀náv' (JHN 8:21 'No ndæ̀náv'). gen037:35; 42:38, 44:29-31 need it.
+  - agent:gen037, 2026-10-15
+- **`formula:reign_over_us.g`** הֲמָלֹךְ תִּמְלֹךְ עָלֵינוּ אִם־מָשׁוֹל תִּמְשֹׁל בָּנוּ (do you intend to reign over us, will you actually rule us?) → **Gê, qo nigi kawa ezoqam qógoât? Gê, qo ni qonimbó-kawaevât?** [low, decided, by-rule]
+  - NT: LUK 19:14 *nigi kawa tegoat*; GEN 27:40 *geqambó-kawaevaták*
+  - answers: intend, reign over us, rule us, actually, reign, rule
+  - The doubling of the Hebrew verb is rendered by two questions; qógoât (2sg future of go 'be', 27:39 qógoák) and qonimbó-kawaevât (built on 27:40 with 2sg qo- and 1pl ni-) are not attested as such. gen037:8.
+  - agent:gen037, 2026-10-15
+- **`formula:sold_price.g`** וַיִּמְכְּרוּ … בְּעֶשְׂרִים כָּסֶף (sold him for twenty pieces of silver) → **<seller> <X>, <buyer>-te gèwiím. Fia ndøgo, silva moni mokho <N>.** [medium, decided, attested]
+  - NT: ACT 7:9 *Yaq ndego gèwiím.*; GEN 23:15 *silva moni mokhó*
+  - answers: sold him, twenty shekels, shekels of silver, sold
+  - The price as its own sentence (23:15). gen037:28, 36.
+  - agent:gen037, 2026-10-15
+- **`formula:binding_sheaves.g`** מְאַלְּמִים אֲלֻמִּים (binding sheaves) → **wit løvøtap … -abap (tie up the bundles)** [medium, decided, by-rule]
+  - NT: RUT 2:15 *bali løvøtap ndi-abap*; RUT 2:16 *bali løvøtap ndi-abap*
+  - answers: binding, binding sheaves, sheaf, sheaves
+  - In Joseph's dream the grain is wit (term:H2406); 1pl past 'qati-abap' is built. 'My sheaf stood upright' = 'gè-itán. Andé uk me me꞉wuáb' (GEN 28:18 the stone set up). gen037:7.
+  - agent:gen037, 2026-10-15
+- **`term:pledge.g`** עֵרָבוֹן (pledge) → **khakhatap** [medium, decided, attested]
+  - NT: 2CO 5:5 *andé khakhatáp*; 2CO 1:22 *andé khakhatáp*
+  - answers: pledge, as a pledge, what pledge
+  - khakhatap = sign; the Spirit 'as a pledge' (2CO 5:5). gen038:17-18, 20.
+  - agent:gen038, 2026-10-15
+- **`term:signet_seal.g`** חֹתָם / חֹתֶמֶת (seal, signet) → **khakhatap gone nonqo (sign-making thing)** [medium, decided, attested]
+  - NT: REV 7:2 *khakhatap gone nonqo*
+  - answers: seal, signet, your seal
+  - The angel's 'seal of the living God' (REV 7:2). 'put a seal on' = 'mbusa ndømøpá' (JHN 6:27, 2CO 1:22). gen038:18, 25; 41:42 needs it.
+  - agent:gen038, 2026-10-15
+- **`term:cord_thread.g`** פְּתִיל / שָׁנִי (cord; scarlet thread) → **mevoat; the scarlet thread = mevoat køkouk** [low, decided, attested]
+  - NT: GEN 14:23 *mevoat o tamak*
+  - answers: cord, thread, scarlet thread
+  - One model: Abram will not take 'even a thread' (14:23). Red = køkouk (gap:colours). gen038:18, 25, 28, 30.
+  - agent:gen038, 2026-10-15
+- **`formula:raise_offspring.g`** יַבֵּם / הָקֵם זֶרַע לְאָחִיךָ (do the duty of a brother-in-law, raise up offspring for your brother) → **patu <...>-qatayat (raise children for the dead brother)** [medium, decided, attested]
+  - NT: MRK 12:19 *patu bembō-qatayat*; MAT 22:24 *patu bembøē-qatayat*
+  - answers: raise up offspring, duty, brother-in-law, perform your duty, offspring for your brother
+  - The NT tells the levirate law (MRK 12:19). Judah's order: 'Qaveqase-gu zas mòqokható (24:51). … neka qaveqase-te, patu vømbō-qatayat' (chain built). gen038:8-9.
+  - agent:gen038, 2026-10-15
+- **`gap:spill_seed.g`** שִׁחֵת אַרְצָה (spilled his seed on the ground) → **no model (searched BSB poured out on|spilled|on the ground): used 'teqa nanga manqei-te sasa genqagim' (threw his seed on the ground), then 'Soqaín ndøgo, …' (so that not)** [low, open, by-rule]
+  - NT: LUK 3:9 *vǿnqagimēm*; MRK 4:26 *wit nanga*
+  - answers: spill, spill his seed, seed on the ground
+  - nanga = seed (of plants); genqagim (he threw, 1×). Question for the Kuni team: how plainly may this be said? gen038:9.
+  - agent:gen038, 2026-10-15
+- **`gap:breach.g`** מַה־פָּרַצְתָּ עָלֶיךָ פָּרֶץ (what a breach you have made for yourself; Perez) → **no model (searched BSB broke through|break through|burst out|broke out): used 'Qo ekeza nakhoa mòqo-keqá!' (you have torn open your own way) and the meaning '(Taqa manqa mokho: Gè-keqá.)'** [low, open, by-rule]
+  - NT: MRK 14:63 *ndabua vø̄keqa*
+  - answers: broken out, breaking out, perez means
+  - keqa = tear (clothes, MRK 14:63; a body burst open, ACT 1:18). gen038:29; also 2 Sam 5:20, 6:8.
+  - agent:gen038, 2026-10-15
+- **`gap:pull_back_hand.g`** כְּמֵשִׁיב יָדוֹ (as he drew back his hand) → **no model: built 'pingim nqawa sègendaf' (took his arm back)** [low, open, by-rule]
+  - NT: LUK 6:10 *pingim gè-ovøyám*
+  - answers: pulled his hand back, pulled
+  - gen038:29.
+  - agent:gen038, 2026-10-15
+- **`formula:prostituted.g`** זָנְתָה (she has prostituted herself) → **mambe me꞉wáv** [medium, decided, attested]
+  - NT: JHN 8:3 *Mambe me꞉wáv.*
+  - answers: prostituted, prostituted herself, played the harlot
+  - Said of the woman caught in adultery (JHN 8:3); of men 'mambe mé꞉wáv' (LUK 16:18). 'pregnant from it' = 'kha viniv-ús, mambe matev-te'. gen038:24.
+  - agent:gen038, 2026-10-15
+- **`term:shrine_prostitute.g`** קְדֵשָׁה (cult prostitute) → **mambe sævam** [medium, decided, by-rule]
+  - NT: 1CO 6:16 *Mambe okho sævam*
+  - answers: shrine prostitute
+  - No word for a temple prostitute; the same word as זוֹנָה (term for prostitute, gen034:31), so Hirah's word and Judah's thought (38:15) stay one. gen038:21-22.
+  - agent:gen038, 2026-10-15
+- **`term:father_in_law.g`** חָם / חָמִיךְ / חָמִיהָ (father-in-law) → **zimui (Kayafas-gé zimuí); your = qoge zimui (built), her = tuge zimui** [low, decided, attested]
+  - NT: JHN 18:13 *Kayafas-gé zimuí*
+  - answers: father-in-law, your father-in-law, her father-in-law
+  - One NT model, a man's father-in-law. Kin nouns may change their stem with the possessor's person (zakhapuka/qakhapuka, ziwap/qæwap): the 2nd-person form is unknown. Question for the Kuni team. gen038:13, 25.
+  - agent:gen038, 2026-10-15
+- **`term:H6743.g`** מַצְלִיחַ / הִצְלִיחַ (prosper, make successful) → **mokho qafakhan (it came to fruit, it succeeded); "the LORD made all he did succeed" = "matev ate ndægo, ndego gematanam, Evezøza ndego gembo-tøke, yaq mokho qafakhan"** [medium, decided, attested]
+  - NT: GEN 24:21 *mokho qafakhan*; GEN 24:56 *mokho mø̀ndøfakhán*
+  - answers: successful, success, prosper, gave him success, made him prosper
+  - The servant's journey made successful (24:21, 24:40, 24:56: "Evezøza, mø̀ndønø-tøké … mokho mø̀ndøfakhán"). gembo-tøke (helped him) is built on 24:56. gen039:2, 3, 23; 24:40.
+  - agent:gen039, 2026-10-15
+- **`formula:lord_with_him.g`** וַיְהִי יְהוָה אֶת־<X> (the LORD was with X) → **Evezøza mø̀ndøgoám, <X> namba.** [high, decided, attested]
+  - NT: GEN 21:20 *Mbumbukiam mø̀ndøgoám, opønakam namba*; GEN 26:28 *Evezøza ngêgó, qo namba*
+  - answers: the lord was with, was with joseph, lord was with him
+  - God was with the boy (21:20). A nominal clause "the LORD is with him" (39:3, 23) = "Evezøza ndøgoám, te namba" / "mø̀ndøgoám". gen039:2, 3, 21, 23.
+  - agent:gen039, 2026-10-15
+- **`term:H6711.g`** צַחֵק בְּ (make sport of, mock) → **otøotam vewe- (make fun of): "ni otøotam vewe-qa" (to mock us)** [medium, decided, attested]
+  - NT: GEN 21:9 *Aezek otøotam me꞉vewát*; ACT 13:41 *otøotam ndøzøte-vewe*
+  - answers: sport, make sport, mock, mocking
+  - Ishmael mocking Isaac (21:9, the same Hebrew verb). The purpose form vewe-qa (feature suffix_purpose) is built. gen039:14, 17.
+  - agent:gen039, 2026-10-15
+- **`term:H7121cry.g`** קָרָא בְּקוֹל גָּדוֹל / הֵרִים קוֹל (cry out, scream, raise the voice) → **qæ-akhá (I cried out); "noqa akhayam" (my crying); loudly = "manqat bazaføgakh-ús"** [medium, decided, attested]
+  - NT: ACT 24:21 *qæ-akhá*; JON 2:3 *noqa akhayam*; ACT 14:10 *manqat bazaføgakh-ús*
+  - answers: screamed, scream, cried out, raised my voice
+  - Jonah's "you heard my voice" = "noqa akhayam mòqo-ewág" (JON 2:3); a loud call = "with strong words" (ACT 14:10). gen039:14, 15, 18.
+  - agent:gen039, 2026-10-15
+- **`term:H8610.g`** תָּפַשׂ (seize, grab hold of) → **geagim (grab, hold): "the men grabbed his hand" = "pingi vøzø̄geagim"; she grabbed him by his cloak = "Zosef-qa ndabua gu-geagim" (built)** [medium, decided, attested]
+  - NT: GEN 19:16 *pingi vøzø̄geagim*; GEN 14:16 *gizøgeagim*
+  - answers: grabbed, seized, caught
+  - gu-geagim (she grabbed) is built with gu- (verb_subject_prefix.2). gen039:12.
+  - agent:gen039, 2026-10-15
+- **`term:H2820.g`** חָשַׂךְ מִן (withhold from) → **keaeqateáv (did not withhold): "ndego gigiap-qase keaeqateáv, no-te"** [medium, decided, attested]
+  - NT: GEN 22:12 *qo keaeqateáv*; GEN 22:16 *keaeqateav voqōgoam*
+  - answers: withheld, withhold
+  - Abraham did not withhold his son (22:12, 22:16); the same form for 3sg in gen039:9.
+  - agent:gen039, 2026-10-15
+- **`term:handsome.g`** יְפֵה־תֹאַר וִיפֵה מַרְאֶה (handsome in form and appearance) → **<X>, ndego bugug keogé. Qanimáv tentév. (he looked fine; he was very good)** [high, decided, attested]
+  - NT: GEN 29:17 *ndugu bugug keogé*; GEN 29:17 *Qanimáv tuntúv*
+  - answers: handsome, well-built, well built, beautiful
+  - Rachel shapely and beautiful (29:17, the same Hebrew pair) with the masculine tentév (attested 2×) for tuntúv. gen039:6.
+  - agent:gen039, 2026-10-15
+- **`formula:knew_nothing.g`** לֹא־יָדַע אִתּוֹ מְאוּמָה / אֵין רֹאֶה אֶת־כָּל־מְאוּמָה (he did not concern himself with anything) → **<X> gigiap-qase otevateáv (he knew nothing at all)** [medium, decided, by-rule]
+  - NT: ACT 11:8 *søvakha gigiap-qase kopo*; ACT 12:9 *otevateáv*
+  - answers: concern, concern himself, did not concern himself, anything
+  - gigiap-qase + negative verb = nothing (ACT 11:8, ACT 23:14); otevateáv (did not know, 24×). The warden's "did not see to anything" (39:23) takes the same wording. gen039:6, 8, 23.
+  - agent:gen039, 2026-10-15
+- **`term:H5127run.g`** וַיָּנָס וַיֵּצֵא הַחוּצָה (he fled and ran outside) → **gèbǿin, bavokhó genøfakhán (he ran, he went out outside)** [medium, decided, attested]
+  - NT: ACT 19:16 *ndigu gèbǿin, khoev vø̄-ivøvem*; ACT 9:40 *bavokhó genø-khofotáz*
+  - answers: escaped, ran outside, ran out, fled, run
+  - ACT 19:16 the men ran out of the house; flee from a person = khokhon (16:6). genøfakhán (9× genøfakhan) with the tones of the model verbs. gen039:12, 13, 15, 18.
+  - agent:gen039, 2026-10-15
+- **`term:H2617god.g`** וַיֵּט אֵלָיו חֶסֶד (the LORD showed him kindness) → **Teqa kuku matev, <X>-te kandambá. (his kindness to X was great)** [medium, decided, attested]
+  - NT: GEN 24:27 *Teqa kuku matev*; JON 4:2 *kuku matev-us Mbumbukiám*
+  - answers: extended kindness, kindness, showed him kindness
+  - God's loving devotion = kuku matev (gap:loving_devotion); the servant's "his kindness to my master" (24:27). gen039:21.
+  - agent:gen039, 2026-10-15
+- **`formula:found_favor_with.g`** מָצָא חֵן בְּעֵינֵי <X> / נָתַן חִנּוֹ בְּעֵינֵי <X> (find favour in X's eyes) → **<X>, <Y> tanakh mbogó (X was kind to Y)** [medium, decided, attested]
+  - NT: ACT 27:3 *Zulies, Pol tanakh mbogó*; LUK 7:13 *tanakh mbogó*
+  - answers: found favor, favor, granting him favor, found favor in his sight
+  - The subject turns: the one in whose eyes favour is found is kind to the other (Julius kind to Paul, ACT 27:3); term:H2580 (tanakh). God giving the favour = "Evezøza <Y> gembo-tøke, yaq …" (built). gen039:4, 21.
+  - agent:gen039, 2026-10-15
+- **`formula:into_his_hand.g`** נָתַן / עָזַב בְּיַד <X> (put / leave in X's hand, entrust to X) → **gigiap ate qambøegoam, <X>-qá zenda-té genø-vé (gave) / genø-iváv (left)** [high, decided, attested]
+  - NT: GEN 24:36 *yo-qá zenda-té genø-vé*; GEN 25:5 *Aezek-qá zenda-té genø-iváv*
+  - answers: entrusted, in joseph's care, under joseph's care, left all, everything he owned, my care
+  - Abraham gave / left everything he owned to Isaac (24:36, 25:5). gen039:4, 6, 8, 22.
+  - agent:gen039, 2026-10-15
+- **`term:H6485charge.g`** הִפְקִיד עַל (put in charge of, make overseer) → **<X>, teqa khoev-te keoge ezoqam ndøvé (made him keeper of his house)** [medium, decided, by-rule]
+  - NT: GEN 27:37 *No ndego kawa nøvé*; LUK 12:44 *keoge ezoqam ndégo tévé*
+  - answers: put him in charge, charge, in charge of
+  - "I have made him master" (27:37) and "he will make him keeper" (LUK 12:44) with the narrative past ndøvé (16×). gen039:4, 5; 41:41.
+  - agent:gen039, 2026-10-15
+- **`term:attendant.g`** שֵׁרֵת (attend, serve as personal attendant) → **tege sasae ezoqam ndøgoám, te avønin-te (he was his servant, near him)** [low, decided, by-rule]
+  - NT: GEN 24:2 *ekeza sasae kawa ezoqam*; ACT 22:13 *noqa avønin-te*
+  - answers: personal attendant, attendant, served, attended
+  - No word for a personal attendant; "servant near him" built. gen039:4; 40:4.
+  - agent:gen039, 2026-10-15
+- **`term:warden.g`** שַׂר בֵּית הַסֹּהַר (the prison warden) → **ndimbula keoge ezoqam** [high, decided, attested]
+  - NT: ACT 16:23 *ndimbula keoge ezoqam*; ACT 16:36 *ndimbula keoge ezoqam*
+  - answers: warden, prison warden, jailer
+  - The Philippian jailer. Prisoners = ndimbula ezoqa (ACT 16:25); the king's prisoners = kawa ezoqam-gi ndimbula ezoqa. gen039:21-23; 40:3.
+  - agent:gen039, 2026-10-15
+- **`term:prison_throw.g`** וַיִּתְּנֵהוּ אֶל־בֵּית הַסֹּהַר (put him in prison) → **<X> ndøndáf, ndimbula-te vø̄-utav** [high, decided, attested]
+  - NT: MAT 18:30 *ndimbula-te vø̄-utav*; ACT 12:5 *ndimbula mokho-te ge-utavam*
+  - answers: thrown into the prison, had him thrown, prison, confined
+  - "was kept in prison" = "ndimbula mokho-te ge-utavam" (ACT 12:5), a model for "where the prisoners were confined" (gen039 wrote "gi꞉goam", were there). gen039:20; 40:3, 15; 41:10.
+  - agent:gen039, 2026-10-15
+- **`term:day_after_day.g`** יוֹם יוֹם (day after day) → **khøuwa kopoav (many days)** [medium, decided, attested]
+  - NT: 2PE 2:8 *khøuwa kopoav*; HEB 10:11 *khøuwa kopoav*
+  - answers: day after day, although
+  - "living among them day after day" (2PE 2:8); "although … he refused" = two sentences joined by Geté. gen039:10.
+  - agent:gen039, 2026-10-15
+- **`formula:sin_against_god.g`** וְחָטָאתִי לֵאלֹהִים (and sin against God) → **manqa-zapa tægo, Mbumbukiam-qa bøi-te (that I sin in God's eyes)** [medium, decided, attested]
+  - NT: GEN 20:6 *manqa-zapa toqogo, noqa bøi-te*
+  - answers: sin against god, sin against
+  - God to Abimelech: "so that you would not sin against me" (20:6). The question "how could I …?" = "Gê, no kopømbâ, … tæ-…? Āv taoká." (ability + interjection, built). gen039:9.
+  - agent:gen039, 2026-10-15
+- **`formula:he_refused.g`** וַיְמָאֵן (but he refused) → **Geté ndego gèmbøeqasí.** [high, decided, attested]
+  - NT: MAT 18:30 *Geté ndego gèmbøeqasí*
+  - answers: refused, but he refused
+  - The same BSB words. "refused to (do)" with a following verb = poeveáv + irrealis (LUK 15:28, gen039:10). gen039:8; 48:19.
+  - agent:gen039, 2026-10-15
+- **`gap:confined.g`** אֲשֶׁר־אֲסִירֵי הַמֶּלֶךְ אֲסוּרִים (where the king's prisoners were confined) → **no word for "confined" as such (searched BSB confined|kept in prison|in chains): used "ma kawa ezoqam-gi ndimbula ezoqa gi꞉goam" (where the king's prisoners were); ACT 12:5 "ge-utavam" (was kept in) is the model for a closer rendering** [medium, open, by-rule]
+  - NT: ACT 12:5 *ndimbula mokho-te ge-utavam*; ACT 16:25 *ndimbula ezoqa nøme*
+  - answers: confined, were confined, king's prisoners
+  - gen039:20; 40:3, 5.
+  - agent:gen039, 2026-10-15
+- **`term:cupbearer.g`** מַשְׁקֶה / שַׂר הַמַּשְׁקִים (cupbearer; chief cupbearer) → **waen etoam ezoqam (wine-giving man); the chief one = waen etoam ezoqam kandambaqape** [medium, decided, by-rule]
+  - NT: 1CO 3:8 *ibøkha etoam ezoqam*; ACT 5:17 *iziz ezoqam kandambaqape*
+  - answers: cupbearer, chief cupbearer, cupbearer s
+  - No cupbearer in the corpus (searched cupbearer|master of the banquet|wine steward: only JHN 2:8-9 'lou loge megeat ezoqam', the banquet master). Agent noun (feature agent_noun) on the waterer of 1CO 3:8; a single chief as the high priest 'iziz ezoqam kandambaqape' (ACT 5:17), so that kawa (head, also chief) stays free for 'lift up the head'. gen040 names them 'kandambaqape' once (40:2) and then by the plain title, as the BSB's 'the cupbearer'. Gen 41:9 needs it.
+  - agent:gen040, 2026-10-16
+- **`term:baker.g`** אֹפֶה / שַׂר הָאֹפִים (baker; chief baker); מַעֲשֵׂה אֹפֶה (baked goods) → **flawa løvusam ezoqam (bread-baking man); chief = flawa løvusam ezoqam kandambaqape; baked goods = 'lou … flawa løvusam ezoqam gi꞉løvusumatun' (food the bakers bake)** [medium, decided, by-rule]
+  - NT: GEN 19:3 *flawa vø̄løvusømem*; GEN 18:6 *voqó-løvusām*
+  - answers: baker, chief baker, baked, baked goods
+  - løvus- = bake bread (Lot 19:3, Sarah 18:6) and roast offerings (8:20 'søvakha gigiap løvusam nonqo'); agent noun as term:cupbearer.g. Gen 41:10 needs it.
+  - agent:gen040, 2026-10-16
+- **`term:basket.g`** סַל (basket) → **yakhav** [high, decided, attested]
+  - NT: JHN 6:13 *Yakhav tuélv*; LUK 11:33 *yakhav mokho-te*
+  - answers: basket, baskets
+  - The twelve baskets of leftovers (JHN 6:13, LUK 9:17) and the basket over a lamp. Paul's basket down the wall is ava (bag, 2CO 11:33). gen040:16-18.
+  - agent:gen040, 2026-10-16
+- **`term:cup.g`** כּוֹס (cup, Pharaoh's cup; Joseph's silver cup) → **kap** [high, decided, attested]
+  - NT: LUK 11:39 *kap neka melek*; MRK 7:4 *kap neka pot*
+  - answers: cup
+  - The loan kap (cup and dish). The 'cup' of suffering is ibøkha khaqain-qape (JHN 18:11), not this. gen040:11, 13, 21; 44:2-17 (the silver cup: silva kap, by rule).
+  - agent:gen040, 2026-10-16
+- **`term:grapes.g`** גֶּפֶן / עֲנָבִים / אַשְׁכֹּל (vine, grapes, clusters) → **waen tae (vine); waen tae nanga (grapes, clusters); branches = tang** [high, decided, attested]
+  - NT: LUK 22:18 *waen tae nanga-qa et*; REV 14:18 *waen tae nanga*; JHN 15:6 *tang*
+  - answers: vine, grapes, clusters, branches
+  - The fruit of the vine (LUK 22:18, MAT 26:29), the grapes of the earth (REV 14:18-19). gen040:9-11; 49:11 needs it.
+  - agent:gen040, 2026-10-16
+- **`term:blossom_ripen.g`** פָּרַח / נֵץ / הִבְשִׁיל (bud, blossom, ripen) → **mbusa qafakhan (buds came out); flawas (flowers); qakhatøkhatoam (it is ripe)** [medium, decided, by-rule]
+  - NT: HEB 9:4 *mbusa ekezan mba qambo-fakhan*; JAS 1:10 *flawas*; MAT 9:37 *qakhatøkhatoam*
+  - answers: budded, blossoms, ripened, opened
+  - Aaron's staff that budded (HEB 9:4), the flower of the field (JAS 1:10-11, the loan flawas), the harvest that is ripe (MAT 9:37, LUK 10:2). Put together in gen040:10.
+  - agent:gen040, 2026-10-16
+- **`term:squeeze.g`** שָׂחַט (squeeze, press grapes) → **pesegim (press): vø̄pesegim (and pressed them)** [low, decided, by-rule]
+  - NT: MAT 21:33 *waen nanga pesegim nonqo*; REV 14:19 *waen pesegim nonqo*
+  - answers: squeezed, squeeze
+  - Only the noun 'pressing thing' (winepress) is attested; the verb is built from it. A question for the team. gen040:11.
+  - agent:gen040, 2026-10-16
+- **`formula:sad_face.g`** מַדּוּעַ פְּנֵיכֶם רָעִים / זֹעֲפִים (why are your faces downcast; distraught) → **Gekha zapâ, … bugug avus-mba ndozote-keoge? (why do you look with a fallen face, pl); distraught = mbøni ndøzøvaev (their hearts are sad)** [medium, decided, attested]
+  - NT: GEN 4:6 *bugug avus-mba ndoqote-keoge*; 2CO 7:6 *mbøni ndøzøvaev*
+  - answers: downcast, distraught, why are your faces so downcast
+  - Cain's fallen face (4:5-6) is the team's model; the 2pl ndozote- is built on ndoqote- (2sg) and ndozo- (ndozo-matavap). gen040:6-7; Neh 2:2.
+  - agent:gen040, 2026-10-16
+- **`formula:birthday.g`** יוֹם הֻלֶּדֶת אֶת־פַּרְעֹה (Pharaoh's birthday) → **<X> ge꞉qan, ta khøuwa iz gemø-khantaz (the day of his birth came)** [high, decided, attested]
+  - NT: MRK 6:21 *ta khøuwa iz gemø-khantaz*
+  - answers: birthday
+  - Herod's birthday banquet (MRK 6:21). gen040:20.
+  - agent:gen040, 2026-10-16
+- **`formula:feast_for.g`** וַיַּעַשׂ מִשְׁתֶּה לְ<X> (held a feast for X) → **lou kandambaqape ndølóg, <guests> namba** [high, decided, attested]
+  - NT: GEN 21:8 *lou kandambaqape ndølóg*; MRK 6:21 *lou kandambaqape ndølóg*
+  - answers: feast, held a feast, a feast for
+  - Abraham's feast for Isaac (21:8) and Herod's banquet 'with his nobles' (MRK 6:21, guests with namba). gen040:20; 43:16-34.
+  - agent:gen040, 2026-10-16
+- **`formula:remember_forget.g`** זָכַר / שָׁכַח (remember, remember me; not remember; forget) → **remember me = No gènøndo-matøvém; did not remember = <X> matavapøteáv; forgot him = teqa yaq-te, manqa mate mø̀ndømbøe-navøém** [high, decided, attested]
+  - NT: LUK 23:42 *No gènøndo-matøvém*; 1CO 1:16 *no matavapøteáv*; 2PE 1:9 *manqa mate mø̀ndømbøe-navøém*; GEN 8:1 *manqa mate navøepøteáv*
+  - answers: remember, remember me, did not remember, forgot, forgot all about him, forget
+  - The thief's 'remember me when you come into your kingdom' (LUK 23:42) fits 40:14 word for word. 'God remembered Noah' = 'God's memory did not end' (8:1): manqa mate + navøem is forgetting. gen040:14, 23; 41:9, 41:30, 41:51.
+  - agent:gen040, 2026-10-16
+- **`formula:interpretation.g`** פִּתְרוֹן / פָּתַר (interpretation; interpret a dream) → **This is its interpretation = 'Taqa manqa mokho nqánek:'; no one to interpret = 'ezoqa nøme mbaín, taqa manqa mokho tenømand'; as Joseph interpreted = 'av Zosef venanqei-qa manqa mokho gezø-ein ndægo'** [medium, decided, by-rule]
+  - NT: GEN 29:32 *Taqa manqa mokho*; MAT 15:15 *mokho toqoti-nømand*; RUT 4:4 *ezoqa nøme mbaín*
+  - answers: interpret, interpretation, interpretations, interpreted, no one to interpret, described, favorable
+  - Applies gap:interpret_dream.g as it proposes (the gap stays open as the team's question). 'the interpretation was favorable' = 'Zosef-qa manqa mokho ndøgo, qanimáv' (on 1:4 'āv geneqeív nqǽgo, … qanimáv'). 'Don't interpretations belong to God?' = 'Gê, venanqei-qa manqa mokho, Mbumbukiam-qâ mbà?' (rhetorical_question, built). gen040:5, 8, 12, 16, 18, 22; 41.
+  - agent:gen040, 2026-10-16
+- **`formula:within_days.g`** בְּעוֹד שְׁלֹשֶׁת יָמִים (within three days) → **khøuwa misika mokho-te** [high, decided, attested]
+  - NT: JHN 2:20 *khøuwa misika mokho-te*; MRK 14:58 *khøuwa misika mokho-te*
+  - answers: within three days, within
+  - The temple raised in three days. gen040:13, 19.
+  - agent:gen040, 2026-10-16
+- **`formula:lift_head.g`** יִשָּׂא אֶת־רֹאשְׁךָ (lift up your head: restore); יִשָּׂא אֶת־רֹאשְׁךָ מֵעָלֶיךָ (lift your head off you: behead) → **restore = 'qo kawa ndø̀qa-eqá' (he will lift your head); behead = 'qo monqo ndø̀qa-kepáz' (he will cut your neck); 'lifted up the heads of A and B' = 'A-qa kawa ndø-eqá, neka B-qa kawa ndø-eqá'** [medium, decided, by-rule]
+  - NT: LUK 21:28 *Kawa mba zotó-eqá*; MRK 6:27 *monqo vømø̄kepaz*; GEN 3:15 *qo kawa ndø̀qa-tokhóm*
+  - answers: lift up your head, lift off your head, lifted up the heads, lift
+  - The Hebrew word play is kept in 40:13 and 20 with the attested 'lift up the head' (LUK 21:28, of hope); the baker's 'lift off your head' is told by its meaning, the NT's beheading of John (MRK 6:27). Future 3sg-on-you ndø̀qa- as 3:15. gen040:13, 19, 20.
+  - agent:gen040, 2026-10-16
+- **`term:hang.g`** תָּלָה עַל־עֵץ (hang on a tree) → **tae-té <…>-tøkew: genø-tøkéw (he hanged him), ndø̀qanø-tøkéw (he will hang you)** [medium, decided, by-rule]
+  - NT: ACT 10:39 *Tae mutui-té ginø-tøkewém*; ACT 5:30 *tae mutui-te qazo-tøkewem*
+  - answers: hang, hanged, hang you on a tree
+  - Jesus hanged on a tree (ACT 5:30, 10:39; tae mutui is the cross). Plain tae (tree) for עֵץ. The 3sg forms are built on the 3pl ginø-tøkewém. Judas hanging himself is 'ekeza monqo møfók' (MAT 27:5). gen040:19, 22; 41:13.
+  - agent:gen040, 2026-10-16
+- **`formula:kidnapped.g`** גֻּנֹּב גֻּנַּבְתִּי (I was stolen, kidnapped) → **ezoqa nøme, no <place>-te ndøgo, gi-aqonømem (some people stole me from …)** [low, decided, by-rule]
+  - NT: GEN 14:16 *gi-aqonømem*; GEN 30:33 *nø-aqonøvém*
+  - answers: kidnapped, stolen
+  - aqon- = steal (term:H1589.g); the passive is told with 'some people' as subject, as formula:was_told.g. The object marking of gi-aqonømem (14:16, of captives) is not certain. gen040:15.
+  - agent:gen040, 2026-10-16
+- **`formula:did_wrong_to.g`** חָטָא לְ<X> (offend, sin against X); לֹא־עָשִׂיתִי מְאוּמָה (I have done nothing) → **<X>-te manqa-zapa gigonem (they did wrong to X); I have done nothing = no manqa-zapa-qase goneáv** [high, decided, attested]
+  - NT: ACT 25:10 *manqa-zapa-qase goneáv*; 2CO 7:12 *manqa-zapa gego*
+  - answers: offended, done nothing, i have done nothing
+  - Paul's 'I have done nothing wrong to the Jews' (ACT 25:10). gen040:1, 15; 41:9 (my faults).
+  - agent:gen040, 2026-10-16
+- **`formula:restore_position.g`** הֵשִׁיב עַל־כַּנּוֹ / עַל־מַשְׁקֵהוּ (restore to his position) → **nqawa teqa sasae-te ndøvé (put him back in his work); 'he will restore you' = 'qo nqawa qoqa sasae-te ndø̀qa-vé'** [medium, decided, by-rule]
+  - NT: ACT 1:20 *Teqa sasae*; MRK 8:25 *zenda nqawá genøvé*
+  - answers: restore, restored, position, restore your position
+  - ACT 1:20 'may another take his position' = teqa sasae; nqawa = again (MRK 8:25). gen040:13, 21; 41:13.
+  - agent:gen040, 2026-10-16
+- **`formula:assigned_to.g`** וַיִּפְקֹד אֶת־<X> אִתָּם (assigned X to them) → **<X> ndøvé, ti namba (he put X with them)** [medium, decided, by-rule]
+  - NT: GEN 27:37 *ndøvé*; RUT 1:2 *namba*
+  - answers: assigned, assigned them
+  - ndøvé (put, made, 16×) with the company phrase after the verb (constituent_order.2). The attendant is term:attendant.g in the plural (tige sasae ezoqam … ti avønin-te). gen040:4.
+  - agent:gen040, 2026-10-16
+- **`formula:show_kindness_when_well.g`** כַּאֲשֶׁר יִיטַב לָךְ וְעָשִׂיתָ־נָּא עִמָּדִי חָסֶד וְהִזְכַּרְתַּנִי (when it goes well for you, show me kindness and mention me) → **qo mbomambá toqoyage ndøgo (when you live well) … Matev mbomømboma, no-te vø̀matanám. <X> noqa yaq-te, manqat vømbō-ein (tell X about me)** [medium, decided, by-rule]
+  - NT: RUT 3:1 *mbomambá tøneyagé*; GEN 24:12 *vø̀matanám*; RUT 1:8 *matev mbomømboma*
+  - answers: goes well, show me kindness, mentioning, mentioning me
+  - toqoyage is built (2sg irrealis of yage, on the 3sg tøneyagé of RUT 3:1). Human kindness = matev mbomømboma (term:H2617.h). gen040:14.
+  - agent:gen040, 2026-10-16
+<!-- store:end sha=4eadc0d6 -->

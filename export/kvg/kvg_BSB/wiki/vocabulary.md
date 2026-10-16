@@ -1779,4 +1779,59 @@ successor, the successor is the one the verse packs use.
   - answers: drink offering, poured out, drink
   - The NT's drink offering is wine poured out (2TI 4:6, PHP 2:17); the Hebrew does not name the liquid. gen035:14. Question for the Kuni team whether 'waen' should stand.
   - agent:gen035, 2026-10-15
-<!-- store:end sha=a8372f73 -->
+- **`term:H441.g`** אַלּוּף (chief, clan chief; pl. chiefs) → **megetapak** [medium, decided, attested]
+  - NT: GEN 25:16 *bawabawan-gi-megetapak*; 1PE 2:13 *megetapak-qá mokho-té*
+  - answers: chief, chiefs
+  - Ishmael's twelve princes of their tribes are 'bawabawan-gi-megetapak' (25:16); megetapak = leaders, authorities (155× in the NT). A single chief = 'megeat ezoqam' (23:6). gen036 lists the chiefs after one header ('tegi nakhei angana ndigu megetapák: A neka B') instead of repeating the title before each name.
+  - agent:gen036, 2026-10-15
+- **`term:H7462tend.g`** רָעָה (pasture, tend animals) → **gezø-kewagám (he tended them)** [high, decided, attested]
+  - NT: GEN 30:36 *até gezø-kewagám*; GEN 30:31 *até bazøkeogé*
+  - answers: pasturing, tending, shepherding, pasture
+  - Jacob tending Laban's flocks (30:31, 30:36). gen036:24 'tege eve Zibeon-gi donki gezø-kewagám'.
+  - agent:gen036, 2026-10-15
+- **`term:H4672found.g`** מָצָא (find, found something) → **geqeivi (he found); they found = ndø-qeivím** [high, decided, attested]
+  - NT: GEN 26:19 *ibøkha bæbæs-qape ndø-qeivím*; GEN 26:32 *ibøkha mø̀iqeivím*
+  - answers: found, find
+  - Isaac's servants found water (26:19, 26:32); geqeivi 3sg (10× in the corpus). gen036:24.
+  - agent:gen036, 2026-10-15
+- **`term:seventeen.g`** שְׁבַע־עֶשְׂרֵה (seventeen); אַחַד עָשָׂר (eleven) → **seventin (17); ileven (11)** [high, decided, attested]
+  - NT: GEN 7:11 *khøuwa qamø-seventin*; GEN 8:4 *gimø-seventin-ez*; ACT 1:26 *u-anim ileven-te*
+  - answers: seventeen, eleven
+  - Numbers as English loans (numerals.g). 'Joseph was seventeen years old' = 'Zosef viav seventin qamømbo-ndap' (age_and_years). gen037:2, 9.
+  - agent:gen037, 2026-10-15
+- **`term:daughter_in_law_your.h`** כַּלָּתֶךָ / כַּלָּתוֹ (your / his daughter-in-law) → **qogu qæwap-pakha (your); ekeza ziwap-pakha (his)** [high, decided, attested]
+  - NT: RUT 4:15 *Qogu qæwap-pakha*; RUT 2:22 *ziwap-pakha*
+  - answers: your daughter-in-law, his daughter-in-law, daughter-in-law
+  - Kin form with -pakha and the 2nd-person stem qæwap (feature kin_pakha). gen038:11, 16, 24.
+  - agent:gen038, 2026-10-15
+- **`term:staff.g`** מַטֶּה (staff) → **tatuag** [high, decided, attested]
+  - NT: LUK 9:3 *tatuag neka moqos*; HEB 11:21 *Tatuág genø-tøpafám*
+  - answers: staff, the staff
+  - gen038:18, 25.
+  - agent:gen038, 2026-10-15
+- **`term:items.g`** עֵרָבוֹן / אֵלֶּה (the items, these things) → **gigiap (ndigu / nginik)** [medium, decided, attested]
+  - NT: GEN 20:14 *sip neka kao*
+  - answers: items, the items, these items
+  - The BSB's 'items' (the pledge) are 'gigiap ndigu' (those things), 'nginik gigiap' (these things). gen038:20, 23, 25-26.
+  - agent:gen038, 2026-10-15
+- **`term:friend_his.g`** רֵעֵהוּ (his friend) → **tege zifu** [medium, decided, attested]
+  - NT: LUK 11:5 *zifu-qa khoev-te*
+  - answers: friend, his friend
+  - zifu / zifuap (JHN 15:13); the address 'friend!' is Khanánqa (term:H7453friend.h). tege zifu (his) is built on the possessive series. gen038:12, 20.
+  - agent:gen038, 2026-10-15
+- **`term:twins.g`** תְּאוֹמִים (twins) → **nakhei angana menás** [high, decided, attested]
+  - NT: GEN 25:24 *nakhei angana menás*
+  - answers: twins
+  - 'there were twins in her womb' (25:24). gen038:27.
+  - agent:gen038, 2026-10-15
+- **`term:young_goat.g`** גְּדִי עִזִּים (a young goat, kid) → **naningus-yu** [high, decided, attested]
+  - NT: LUK 15:29 *naningus-yu kopó-a*
+  - answers: young goat, a young goat, kid
+  - Young goats in the plural = naningus nakheis (27:9, 27:16). gen038:17, 20, 23.
+  - agent:gen038, 2026-10-15
+- **`term:sheepshearers.g`** גֹּזְזֵי צֹאנוֹ (his sheepshearers) → **tegi sip su qogem ezoqam** [low, decided, by-rule]
+  - NT: ACT 8:32 *sip*
+  - answers: sheepshearers, shearers
+  - Agent noun (feature agent_noun) on term H1494 (su qogem-, shear). gen038:12.
+  - agent:gen038, 2026-10-15
+<!-- store:end sha=6e012b60 -->
