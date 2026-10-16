@@ -46,6 +46,13 @@ code { font-size:90%; } .path { font-family:ui-monospace,monospace; font-size:90
 .vv-e, .vv-c { font-size:14px; margin:3px 0; }
 .vv-c { border-left:3px solid var(--accent-soft); padding-left:8px; }
 .vv-more { margin-top:24px; }
+.step { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:14px 16px; margin:12px 0; }
+.step h3 { margin:0 0 6px; font-size:17px; }
+.step.done { border-left:4px solid #4a9a5b; } .step.todo { border-left:4px solid var(--accent); }
+.say { display:flex; gap:8px; align-items:center; background:var(--bg); border:1px solid var(--line); border-radius:6px;
+  padding:6px 10px; margin:8px 0; font-family:ui-monospace,Menlo,monospace; font-size:14px; }
+.say code { flex:1; } .say button { font-size:13px; padding:3px 10px; border:1px solid var(--line); border-radius:5px;
+  background:var(--panel); color:var(--ink); cursor:pointer; }
 .lic { background:var(--q); border:2px solid var(--q-line); border-radius:6px; padding:10px 14px; margin:0 0 14px; font-size:14px; font-weight:600; }
 .cls .l { padding-left:min(calc(var(--lv) * 1.6em), calc(var(--lv) * 3.5vw)); text-indent:-0.6em; margin:0 0 2px 0.6em; }
 .cls h2 { font-size:17px; margin:22px 0 6px; color:var(--muted); }
