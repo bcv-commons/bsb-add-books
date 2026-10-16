@@ -92,6 +92,11 @@ def build(pname, links=None):
             continue
         rows.append((m[1], int(m[2]), int(m[3]), int(tpos), k, "eflomal"))
     con.executemany("insert into nt_links values(?,?,?,?,?,?)", rows)
+    if P.p.get("lexeme_aligner"):
+        have = {r[:5] for r in rows}                    # a link both alignments found counts once
+        la = [r for r in lexeme_aligner_links(con, P, P.p["lexeme_aligner"]) if r[:5] not in have]
+        con.executemany("insert into nt_links values(?,?,?,?,?,?)", la)
+        print(f"  + {len(la)} links from lexeme-aligner's layer {P.p['lexeme_aligner']} (compact-alignments, CC0)")
     con.executemany("insert or replace into meta values(?,?)", [("nt_basis", P.p["nt_basis"]), ("links", os.path.relpath(links, ROOT)),
                                                                ("raw_mismatch_verses", str(mismatch))])
     con.commit()
@@ -99,6 +104,92 @@ def build(pname, links=None):
     linked = con.execute("select count(*) from (select distinct book, ch, v, pos from nt_links)").fetchone()[0]
     print(f"{pname}: {n} NT tokens, {linked} linked to a MACULA Greek token ({100 * linked / max(n, 1):.0f}%); "
           f"{len(rows)} links, {miss} on Greek tokens without a MACULA key (variants)")
+
+
+CA = "https://huggingface.co/datasets/bcv-commons/compact-alignments"
+
+
+def lexeme_aligner_links(con, P, layer):
+    """A second NT alignment: lexeme-aligner's compact layer for this language (bcv-commons/compact-alignments, CC0:
+    token positions only) decoded onto our NT tokens -> [(book, ch, v, pos, MACULA key, 'lexeme-aligner')].
+    Their positions count the words of the layer's source text (its tokenizer: runs of letters and marks) in that
+    text's verses; our copy may be newer, so words are matched verse by verse and a word our copy lacks is left out.
+    Kuni (kvg_wbt): 71,843 tokens linked, together with ours 58% of the NT (ours alone 46%), the same Greek key on 64% of
+    the tokens both link; the NT bridge's hits 41% -> 46% of content words (plan, section 26). Only the helloAO provider
+    is read for now (the source of most layers)."""
+    import difflib, json, unicodedata, urllib.request
+    import full_align as FA
+    from fetch_edition import getjson, HELLOAO, DL
+    iso = P.p.get("language") or layer.split("_")[0]
+    d = os.path.join(ROOT, "download", "compact-alignments", iso[0], iso, layer)
+    os.makedirs(d, exist_ok=True)
+    man = getjson(f"{CA}/resolve/main/manifest.json", os.path.join(ROOT, "download", "compact-alignments", "manifest.json"), False)
+    ed = man["languages"].get(iso, {}).get("editions", {}).get(layer)
+    if not ed:
+        raise SystemExit(f"lexeme_aligner: no layer {layer} for {iso} in compact-alignments")
+    src = ed.get("source", {})
+    if src.get("provider") != "bible.helloao.org":
+        print(f"  lexeme_aligner: source provider {src.get('provider')} not read yet; skipped")
+        return []
+    listing = getjson(f"https://huggingface.co/api/datasets/bcv-commons/compact-alignments/tree/main/{iso[0]}/{iso}/{layer}",
+                      os.path.join(d, "_listing.json"), False)
+    files = {}
+    for x in listing:
+        name = os.path.basename(x["path"])
+        if name.endswith(".json") and not name.endswith(".meta.json"):
+            f = os.path.join(d, name)
+            for attempt in range(4):                     # Hugging Face resets connections now and then
+                if os.path.exists(f):
+                    break
+                try:
+                    req = urllib.request.Request(f"{CA}/resolve/main/{x['path']}", headers={"User-Agent": "bsb-add-books"})
+                    body = urllib.request.urlopen(req, timeout=120).read()
+                    open(f + ".part", "wb").write(body)
+                    os.replace(f + ".part", f)
+                except OSError:
+                    if attempt == 3:
+                        raise
+                    import time
+                    time.sleep(5 * (attempt + 1))
+            files[name.split("_")[0]] = f
+    data = getjson(f"{HELLOAO}/{src['edition']}/complete.json", os.path.join(DL, src["edition"], "complete.json"), False)
+    fold = lambda s: "".join(c for c in unicodedata.normalize("NFD", s.lower()) if not unicodedata.combining(c))
+    ours = collections.defaultdict(list)
+    for b, c, v, pos, surf in con.execute("select book, ch, v, pos, surface from nt_tokens order by book, ch, v, pos"):
+        for sub in FA.tokenize(surf) or [surf]:        # their tokenizer splits at hyphens and other marks; ours may not
+            ours[(b, c, v)].append((pos, fold(sub)))
+    out = []
+    for book in data["books"]:
+        b = book["id"]
+        if b not in files or BY_CODE.get(b.lower(), (None, None, None))[2] != "nt":
+            continue
+        verses = []
+        for ch in book["chapters"]:
+            c = ch["chapter"]
+            for blk in c["content"]:
+                if blk.get("type") == "verse":
+                    parts = [x if isinstance(x, str) else x["text"] for x in blk["content"] if isinstance(x, str) or "text" in x]
+                    verses.append((c["number"], blk["number"], re.sub(r"\s+", " ", " ".join(parts)).strip()))
+        verses.sort()
+        h = FA.book_hash(verses)[-5:]
+        if not os.path.basename(files[b]).startswith(f"{b}_{h}"):
+            print(f"  lexeme_aligner: {b}: the source text changed since the layer was made (hash {h}); skipped")
+            continue
+        keys = FA.index(b, "keys")
+        for (c, v, t), s in zip(verses, json.load(open(files[b], encoding="utf-8"))):
+            mine = ours.get((b, c, v), [])
+            if not s or not mine:
+                continue
+            sm = difflib.SequenceMatcher(None, [fold(x) for x in FA.tokenize(t)], [m[1] for m in mine], autojunk=False)
+            pmap = {}
+            for tag, i1, i2, j1, j2 in sm.get_opcodes():
+                if tag == "equal":
+                    pmap.update({i1 + k: mine[j1 + k][0] for k in range(i2 - i1)})
+            ks = keys.get(f"{b} {c}:{v}", [])
+            for o, ids in FA.parse(s.split("|")[0]).items():
+                if o < len(ks) and ks[o]:
+                    out += [(b, c, v, pmap[i], key, "lexeme-aligner") for i in ids if i in pmap for key in ks[o].split("+")]
+    return list(dict.fromkeys(out))
 
 
 def connect(pname):

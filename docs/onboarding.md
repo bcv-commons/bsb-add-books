@@ -17,7 +17,7 @@ language**, and **how free the existing translations are**. The three pilots cov
 questions and runs it) walks a new team through the steps below:
 
 1. **AI work:** how the probes run. Through the API when `ANTHROPIC_API_KEY` is set (billed per token; the key is
-   read from the environment, never stored), else through Claude Code (`claude -p` with no tools: the
+   read from the environment or from the git-ignored `.env`, and never stored by the scripts), else through Claude Code (`claude -p` with no tools: the
    subscription's usage). Drafting itself always runs in Claude Code, on a subscription or with a key behind it.
 2. **The language:** code, dialect id, name (from the catalogue), school language.
 3. **The editions** the bcv-commons/bibles catalogue and its sources (helloAO, openbible, eBible) have, with
@@ -37,6 +37,19 @@ questions and runs it) walks a new team through the steps below:
 `--answers FILE.yaml` takes the answers from a file (`--yes`: no questions), `--dry-run` shows what it would do;
 the answers used are saved as `_onboard_answers.yaml`. An edition that isn't in these sources is brought in with
 the `import-edition` skill first, and named to the wizard by its id.
+
+### Editions on the Digital Bible Platform (DBT)
+
+Some languages are only on DBT (the source behind Bible.is), which needs a personal API key (free to register at
+https://4.dbt.io). Put it where the scripts find it and git never sees it: a line `DBT_API_KEY=...` in the file `.env`
+in the working copy (git-ignored), or the environment variable `DBT_API_KEY`.
+
+The same file can hold `ANTHROPIC_API_KEY=...` for the model through the API (the probes, the priors); the
+environment wins when both are set. Other secrets (`NETLIFY_AUTH_TOKEN`) come from the environment only.
+
+`fetch_edition.py --find <iso>` and the wizard then list the language's DBT texts, and fetch them like the other
+sources. DBT's texts are licensed for display in apps, so they are filed as non-free: the text stays local, quoted only
+within the limits, and any book it has is drafted in quarantine.
 
 ## 1. What we ask a team
 

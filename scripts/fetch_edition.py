@@ -11,17 +11,21 @@ Sources, in the order --find lists them:
     openbible  cdn.bibel.wiki/openbible/ (bcv-commons/bibles 'o')  per book as USJ
     ebible     ebible.org/Scriptures/                               per book as USFM (zip), parsed with usfmtc
                                                                     as bcv-commons/bibles does (usfm_usj.py)
+    dbt        4.dbt.io (Digital Bible Platform, bcv-commons/bibles 'd') per chapter as JSON; needs your own API
+               key (free to register at https://4.dbt.io): the environment variable DBT_API_KEY, or a line
+               DBT_API_KEY=... in .env in the working copy (git-ignored). The key is read only to make a
+               request: it is never printed, logged, cached or written into a file name.
 
 bcv-commons/bibles (cdn.bibel.wiki/catalog/) is the official discovery layer; eBible comes
 after it for texts the catalogue doesn't carry yet. Two catalogue sources are listed but
-not fetched: DBT ('d', needs your own API key) and PKF ('p', needs the Node decoder in
-bcv-commons/bibles/tools/pkf-decode/).
+not fetched: PKF ('p', needs the Node decoder in bcv-commons/bibles/tools/pkf-decode/). DBT ('d') is fetched when
+a key is set (see dbt above); without one, --find says that the catalogue has the language on DBT.
 
 The recipe is a 'fetch:' block in import/<licence>/<language>/<edition>/edition.yaml:
 
     fetch:
-      source: helloao      # helloao | openbible | ebible
-      id: dan_det          # helloAO translation id | openbible '<iso>/<edition>' | eBible id
+      source: helloao      # helloao | openbible | ebible | dbt
+      id: dan_det          # helloAO translation id | openbible '<iso>/<edition>' | eBible id | DBT text fileset id
       books: [mat, mrk]    # optional: only these books (BSB codes)
 
 The fetched text goes to the edition's text/, one file per chapter (<code>NNN.txt) in the
@@ -66,6 +70,84 @@ def get(url, cache=None, force=False):
 
 def getjson(url, cache=None, force=False):
     return json.loads(get(url, cache, force))
+
+
+# ---------- DBT (Digital Bible Platform) ----------
+
+def dbt_base():
+    import localenv
+    return (localenv.key("DBT_API_BASE_URL") or "https://4.dbt.io/api").rstrip("/")
+def dbt_key():
+    """The user's DBT key: DBT_API_KEY from the environment, else from .env (git-ignored; scripts/localenv.py)."""
+    import localenv
+    return localenv.key("DBT_API_KEY")
+
+
+def dbt_get(path, cache=None, force=False, **params):
+    """GET {dbt_base()}/{path} as JSON. The key goes only into the request; errors are reported without the URL."""
+    if cache and os.path.exists(cache) and not force:
+        return json.load(open(cache, encoding="utf-8"))
+    key = dbt_key()
+    if not key:
+        raise SystemExit("  DBT needs your API key: set DBT_API_KEY, or put DBT_API_KEY=... in .env (git-ignored); "
+                         "a key is free at https://4.dbt.io")
+    import urllib.parse, time
+    q = urllib.parse.urlencode({**params, "v": "4", "key": key})
+    for attempt in range(4):
+        try:
+            with urllib.request.urlopen(urllib.request.Request(f"{dbt_base()}/{path}?{q}", headers=UA), timeout=120) as r:
+                data = json.loads(r.read())
+            break
+        except urllib.error.HTTPError as e:
+            if e.code == 404:
+                return None
+            if e.code in (401, 403):
+                raise SystemExit(f"  DBT refused the key for {path} (HTTP {e.code}): check the key, or whether it covers this text")
+            err = f"HTTP {e.code}"
+        except (urllib.error.URLError, OSError) as e:
+            err = type(e).__name__
+        if attempt == 3:
+            raise SystemExit(f"  DBT {path}: {err} after 4 tries")
+        time.sleep(3 * (attempt + 1))
+    if cache:
+        os.makedirs(os.path.dirname(cache), exist_ok=True)
+        json.dump(data, open(cache, "w", encoding="utf-8"), ensure_ascii=False)
+    return data
+
+
+def dbt_bibles(iso):
+    """DBT's bibles of a language with a plain-text fileset: [{id (the fileset), bible, title, books}]."""
+    out = []
+    for b in (dbt_get("bibles", language_code=iso) or {}).get("data", []):
+        for fs in (b.get("filesets") or {}).get("dbp-prod", []):
+            if fs.get("type") == "text_plain":
+                out.append({"id": fs["id"], "bible": b.get("abbr"), "size": fs.get("size"),
+                            "title": b.get("vname") or b.get("name") or b.get("abbr")})
+    return out
+
+
+def dbt_books(fileset, bible, force):
+    """[(BOOK, title, items)] of a DBT text fileset, chapter by chapter, in the item shape of the other sources."""
+    from books import chapters as n_chapters
+    out = []
+    for code, (_, title, part, _u) in BY_CODE.items():
+        book, items = code.upper(), []
+        for c in range(1, n_chapters(code) + 1):
+            d = dbt_get(f"bibles/filesets/{fileset}/{book}/{c}", os.path.join(DL, fileset, f"{book}_{c:03d}.json"), force)
+            verses = (d or {}).get("data") or []
+            if not verses:
+                if c == 1:
+                    break                          # the book isn't in this fileset
+                continue
+            items.append({"type": "chapter", "number": str(c)})
+            para = {"type": "para", "marker": "p", "content": []}
+            for v in verses:
+                para["content"] += [{"type": "verse", "number": str(v["verse_start"])}, (v.get("verse_text") or "").strip() + " "]
+            items.append(para)
+        if items:
+            out.append((book, title, items))
+            print(f"  {book}: {sum(1 for i in items if i['type'] == 'chapter')} chapters")
+    return out
 
 
 # ---------- licences ----------
@@ -244,7 +326,18 @@ def fetch_source(rec, force):
                 title = next((para_title(c) for c in content if c.get("type") == "para" and c.get("marker") == "h"), code)
                 books.append((code, title, content))
         return row["title"], row["publicationURL"] or f"https://ebible.org/{sid}/", statement, found, row["UpdateDate"], books
-    raise SystemExit(f"  unknown source {src!r} (helloao, openbible, ebible)")
+    if src == "dbt":
+        iso = rec.get("language") or sid[:3].lower()
+        fs = next((b for b in dbt_bibles(iso) if b["id"] == sid), None)
+        if not fs:
+            raise SystemExit(f"  DBT has no plain-text fileset {sid!r} for {iso!r}")
+        cp = dbt_get(f"bibles/{fs['bible']}/copyright", os.path.join(DL, sid, "copyright.json"), force)
+        lines = [x.get("copyright", {}).get("copyright") for x in (cp if isinstance(cp, list) else [cp])
+                 if isinstance(x, dict) and str(x.get("type", "text")).startswith("text")]      # not the audio / video
+        statement = "; ".join(dict.fromkeys(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", l)).strip() for l in lines if l)) or "see DBT"
+        # DBT texts are licensed for display in apps: kept local (non-free) unless the copyright says otherwise
+        return fs["title"], f"https://www.bible.is/ ({fs['bible']})", statement, "non-free", fs.get("size"), dbt_books(sid, fs["bible"], force)
+    raise SystemExit(f"  unknown source {src!r} (helloao, openbible, ebible, dbt)")
 
 
 def fetch_edition(name, force=False, update=False, checked=False):
@@ -327,6 +420,16 @@ def candidates(iso):
                         "cls": cls, "licence": f"{r['Copyright']}; redistributable {r['Redistributable']}",
                         "books": ot + nt, "nt": nt > 0, "ot": ot > 0, "ot_books": ot, "nt_books": nt,
                         "url": f"https://ebible.org/{r['translationId']}/"})
+    if any(src == "d" for _, src in catalog) or dbt_key():
+        if dbt_key():
+            for b in dbt_bibles(iso):
+                out.append({"source": "dbt", "id": b["id"], "title": b["title"], "cls": "non-free",
+                            "licence": "DBT: licensed for display; kept local", "books": None, "nt": True, "ot": None,
+                            "url": "https://www.bible.is/", "language": iso})
+        else:
+            out.append({"source": "dbt", "id": None, "title": "on the Digital Bible Platform (DBT)", "cls": "non-free",
+                        "licence": "needs your API key", "books": None, "nt": None, "ot": None, "url": "https://4.dbt.io",
+                        "note": "set DBT_API_KEY, or DBT_API_KEY=... in .env (git-ignored), to list and fetch it"})
     return out, catalog
 
 
@@ -336,7 +439,8 @@ def find(iso):
     print("bcv-commons/bibles catalogue:", ", ".join(f"{s}:{c}" for c, s in catalog) or "nothing",
           "  (h = helloAO, o = openbible, d = DBT: needs an API key, p = PKF: needs the Node decoder)")
     for c in found:
-        print(f"  {c['source']:10} {c['id']:24} {c['title']}  [{c['cls'] or '?'}: {c['licence']}] {c['books']} books"
+        print(f"  {c['source']:10} {c['id'] or '(no key)':24} {c['title']}  [{c['cls'] or '?'}: {c['licence']}] "
+              f"{str(c['books']) + ' books' if c.get('books') else 'books: read when fetched'}"
               + (f"  {c['note']}" if c.get("note") else ""))
     print("\nCrossWire (SWORD modules) isn't searched; see https://www.crosswire.org/sword/modules/")
 

@@ -9,7 +9,7 @@
 The common case is a language that has an NT and no (or only part of the) OT, and a team that wants OT books.
 The steps:
 
- 1. how the AI work runs: the API (ANTHROPIC_API_KEY, billed per token) or Claude Code (claude -p, no tools);
+ 1. how the AI work runs: the API (ANTHROPIC_API_KEY in the environment or .env, billed per token) or Claude Code (claude -p, no tools);
  2. the language: code, name, the team's school language;
  3. the existing editions of the language, from the bcv-commons/bibles catalogue and the sources behind it
     (helloAO, openbible, eBible; scripts/fetch_edition.py): pick the ones to use as style corpus;
@@ -151,7 +151,8 @@ def pick_editions(iso, listed):
     say("  catalogue coverage: " + (", ".join(cov) or "nothing listed")
         + ("  (otp = part of the OT)" if "otp" in cov else ""))
     for i, c in enumerate(found, 1):
-        parts = (f"OT {c['ot_books']} NT {c['nt_books']} books" if "ot_books" in c else f"{c['books']} books")
+        parts = (f"OT {c['ot_books']} NT {c['nt_books']} books" if "ot_books" in c else
+                 f"{c['books']} books" if c.get("books") else "books: read when fetched")
         say(f"  {i}. {c['source']}:{c['id']}  {c['title'][:90]}\n       [{c['cls'] or '? (read when fetched)'}: {c['licence'][:80]}] {parts}"
             + (f"  {c['note']}" if c.get("note") else ""))
     here = sorted(e for e in existing_ids())
@@ -159,7 +160,8 @@ def pick_editions(iso, listed):
         say(f"  already in import/: {', '.join(here)}")
     default = []
     if found:   # prefer an edition with an NT; among them the most open, then the most books
-        best = sorted(found, key=lambda c: (not c.get("nt"), OPEN.index(c["cls"]) if c["cls"] else 3, -c["books"]))[0]
+        usable = [c for c in found if c.get("id")] or found   # a DBT line without a key can't be fetched
+        best = sorted(usable, key=lambda c: (not c.get("nt"), OPEN.index(c["cls"]) if c["cls"] else 3, -(c["books"] or 0)))[0]
         default = [f"{best['source']}:{best['id']}"]
         for c in found:
             if c is not best and c.get("ot") and not best.get("ot"):
@@ -173,6 +175,9 @@ def pick_editions(iso, listed):
     for p in picked:
         p = str(p)
         if p.isdigit() and 1 <= int(p) <= len(found):
+            if not found[int(p) - 1].get("id"):
+                say(f"  {p}: {found[int(p) - 1].get('note') or 'not fetchable'}; skipped")
+                continue
             out.append(found[int(p) - 1])
         elif ":" in p:
             src, sid = p.split(":", 1)
@@ -246,7 +251,7 @@ def import_edition(c, iso, lang_dir):
         "source": f"{c['source']} {c['id']}" + (f", {c['url']}" if c.get("url") else ""),
         "licence": c["licence"] or "unknown: check on the source", "attribution": credit if cls in ("CC-BY", "CC-BY-SA") else "",
         "credit": credit,
-        "fetch": {"source": c["source"], "id": c["id"]},
+        "fetch": {"source": c["source"], "id": c["id"], **({"language": c["language"]} if c.get("language") else {})},
     }
     path = os.path.join(ROOT, rel)
     head = (f"# Imported {datetime.date.today().isoformat()} by scripts/onboard.py from {c['source']} ({c['id']}).\n"

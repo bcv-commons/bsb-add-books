@@ -12,7 +12,7 @@ no files; their scores set `familiarity` (scripts/modes.py, docs/onboarding.md, 
       place of the corpus form they stand for: Bernese *öich* -> *euch*), a word ending (another corpus form of the
       same stem), and two neighbouring words swapped. Chance is 50%.
   python3 scripts/probe_language.py <project> run [--route api|claude-code] [--model M]
-      all three, each sent to a fresh model with no tools: through the API when ANTHROPIC_API_KEY is set (billed per
+      all three, each sent to a fresh model with no tools: through the API when ANTHROPIC_API_KEY is set (environment or .env) (billed per
       token), else through Claude Code (claude -p, no tools, your subscription); scores, the suggested familiarity and
       the model's slips. Prompts and answers go to _eval/local/probes/ (local: they print corpus verses).
   ... --score ANSWER.txt
@@ -340,9 +340,15 @@ KNOWN_BY_VERSE = 58.0     # Danish 64.4, Bern German 48.2
 
 # ---------- running them: the API (ANTHROPIC_API_KEY) or Claude Code (claude -p, no tools) ----------
 
+def api_key():
+    """ANTHROPIC_API_KEY from the environment, else from .env (git-ignored; scripts/localenv.py)."""
+    import localenv
+    return localenv.key("ANTHROPIC_API_KEY")
+
+
 def route_available():
     import shutil
-    return [r for r, ok in (("api", bool(os.environ.get("ANTHROPIC_API_KEY"))), ("claude-code", bool(shutil.which("claude")))) if ok]
+    return [r for r, ok in (("api", bool(api_key())), ("claude-code", bool(shutil.which("claude")))) if ok]
 
 
 def ask_model(prompt, route, model=None):
@@ -352,7 +358,7 @@ def ask_model(prompt, route, model=None):
         body = json.dumps({"model": model or DEFAULT_MODEL, "max_tokens": 8000,
                            "messages": [{"role": "user", "content": prompt}]}).encode()
         req = urllib.request.Request("https://api.anthropic.com/v1/messages", data=body, headers={
-            "x-api-key": os.environ["ANTHROPIC_API_KEY"], "anthropic-version": "2023-06-01", "content-type": "application/json"})
+            "x-api-key": api_key(), "anthropic-version": "2023-06-01", "content-type": "application/json"})
         with urllib.request.urlopen(req, timeout=600) as r:
             d = json.load(r)
         text = "".join(b.get("text", "") for b in d.get("content", []) if b.get("type") == "text")

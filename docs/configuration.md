@@ -76,3 +76,8 @@ If an edition follows the TR closely, consider adding a TR text as
 `orig/grc-tr` and a third basis.
 
 `python3 scripts/project.py <project>` shows the resolved setup.
+
+- **`lexeme_aligner`** (project, optional): the id of lexeme-aligner's compact-alignments layer for the style
+  edition's language (Kuni: `kvg_wbt`). `scripts/lang.py build` decodes it onto the project's NT tokens as a second
+  alignment beside eflomal's (CC0 positions; the layer's source text is fetched from its provider, so far helloAO).
+

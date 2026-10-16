@@ -99,6 +99,22 @@ def store_terms(pname):
     return out
 
 
+def team_ot(pname):
+    """{lexeme: [(word, count)]}: how the style edition's own OT renders each Hebrew lexeme (the human text: for Kuni
+    Genesis 1-30, Ruth, Jonah), from the aligner's links (_learn/lexicon_hbo.tsv, scripts/align.py --sides hbo). Measured
+    on Kuni Genesis 24, 27, 29 left out of the alignment: a top-3 word in the team's verse for 55% of content words (floor
+    27%), against 44% (24%) for the NT bridge; both together 58% of all content words, against 41% (plan, section 26)."""
+    import csv
+    f = os.path.join(ROOT, "export", pname, "_learn", "lexicon_hbo.tsv")
+    out = collections.defaultdict(list)
+    if os.path.exists(f):
+        for r in csv.DictReader(open(f, encoding="utf-8"), delimiter="\t"):
+            lex, n = r["lexeme"].replace("hbo:", ""), int(r["count"])
+            if n >= 2 and len(out[lex]) < 3:
+                out[lex].append((r["target"], n))
+    return out
+
+
 def nt_bridge(pname, lexemes):
     """{lexeme: [(form, count)]}: how the project's NT renders each lexeme's LXX equivalents (scripts/lang.py)."""
     import lang as L
@@ -124,7 +140,49 @@ def nt_bridge(pname, lexemes):
                     c[form] = max(c.get(form, (0, 0)), (dice, k))
         if c:
             out[lex] = [(f, k) for f, (d, k) in sorted(c.items(), key=lambda x: -x[1][0])[:3]]
+    widen(con, lexemes, out)
     return out
+
+
+def widen(con, lexemes, out, sparse=5):
+    """Where the LXX route gives fewer than `sparse` NT renderings (the LXX word is rare or absent in the NT: goat עֵז ->
+    αἴξ, while the NT has ἔριφος), the NT Greek words with the Hebrew word's English gloss, kept to one Louw-Nida sense
+    (the largest group), and their renderings. Measured on Kuni Genesis 24, 27, 29: candidates 96% -> 98%, hits +1 point
+    (plan, section 26). Louw-Nida is UBS material inside MACULA Greek: used here locally (packages are git-ignored)."""
+    import lang as L
+    heb = sqlite3.connect(HEB)
+    gloss = {}
+    for lex, g, n in heb.execute("select lexeme, coalesce(english, gloss), count(*) from tokens where kind='c' and lexeme in (%s) "
+                                 "group by lexeme, coalesce(english, gloss)" % ",".join("?" * len(lexemes)), list(lexemes)):
+        if g and n > gloss.get(lex, ("", 0))[1]:
+            gloss[lex] = (g.lower().strip("[]. ").split(" ")[-1], n)
+    need = {lex: gloss[lex][0] for lex in lexemes if lex in gloss and sum(k for _, k in out.get(lex, [])) < sparse}
+    if not need:
+        return
+    by_gloss, ln_of = collections.defaultdict(collections.Counter), collections.defaultdict(collections.Counter)
+    for strong, g, ln in con.execute("select strong, gloss, ln from g.tokens where kind is null or kind <> 'f'"):
+        if strong and g:
+            w = g.lower().strip("[]. ").split(" ")[-1]
+            if w in need.values():
+                by_gloss[w][strong.lstrip("0")] += 1
+                if ln:
+                    ln_of[strong.lstrip("0")][ln.split()[0]] += 1
+    for lex, w in need.items():
+        groups = collections.Counter()
+        for s, n in by_gloss.get(w, {}).items():
+            if ln_of[s]:
+                groups[ln_of[s].most_common(1)[0][0]] += n
+        if not groups:
+            continue
+        best = groups.most_common(1)[0][0]
+        strongs = [s for s in by_gloss[w] if ln_of[s] and ln_of[s].most_common(1)[0][0] == best]
+        r, _ = L.renderings(con, strongs)
+        c = collections.Counter()
+        for s in strongs:
+            c.update(r.get(s, {}))
+        extra = [(f, k) for f, k in c.most_common(6) if k >= 2 and not f.startswith("-")]
+        if extra:
+            out[lex] = list(dict.fromkeys(out.get(lex, []) + extra))[:3]
 
 
 def morph(t):
@@ -154,6 +212,7 @@ def build(pname, code, ch, level=None):
     terms = store_terms(pname)
     lexemes = sorted({t["lexeme"] for t in toks if t["kind"] == "c" and t["lexeme"]})
     bridge = nt_bridge(pname, lexemes) if level == "unknown" else {}
+    ot = team_ot(pname) if level in ("unknown", "partial") else {}   # the edition's own OT, when it has one
     # the BSB verses (tables positions are in the BSB verse's compact tokens)
     bsb_cache = {}
 
@@ -175,7 +234,8 @@ def build(pname, code, ch, level=None):
            ("# Per line: §verse.line L(level) rule / tokens: n Hebrew (function words with a gloss) / had: this "
             "project's renderings (count) and the store's decisions" if lean else
             "# Per line: §verse.line L(level) rule / tokens: n Hebrew gloss [morph; ref=referent] / BSB words^n /"
-            " had: this project's renderings (count), store decisions, the NT's words (unknown languages)"), ""]
+            " had: this project's renderings (count), store decisions, OT: the edition's own OT (the human text; its"
+            " words for this Hebrew word), NT: the NT's words through the LXX (unknown languages)"), ""]
     lines = collections.OrderedDict()
     for t in toks:
         if t["n"] is None:
@@ -259,6 +319,8 @@ def build(pname, code, ch, level=None):
             elif mem.get(lex):
                 tot = sum(mem[lex].values())
                 bits += [f"{w}×{c}" for w, c in mem[lex].most_common(2) if c >= 2 and c / tot >= 0.2]
+            if ot.get(lex):
+                bits.append("OT:" + "/".join(f"{w}×{c}" for w, c in ot[lex]))
             if bridge.get(lex):
                 bits.append("NT:" + "/".join(f"{w}×{c}" for w, c in bridge[lex]))
             if bits:

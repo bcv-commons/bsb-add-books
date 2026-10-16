@@ -58,3 +58,7 @@ rules:
   - "**Divine names:** God (ʔĕlōhîm) = Mbumbukiam. YHWH is an open question for the Kuni team (the human Ruth writes *Yawe, Jonah and the NT Evezøza; see the wiki's names page): until they decide, use Evezøza and list every YHWH verse under open questions."
 
 style_notes: "The Kuni NT, Ruth and Jonah are the only models; Ruth and Jonah show how the translators render Hebrew narrative. Kuni is not in your training data, so recall nothing: look everything up. Prefer the most frequent construction in the NT over a rarer one."
+
+# A second NT alignment for the occurrence index (scripts/lang.py build): lexeme-aligner's compact layer for Kuni
+# (bcv-commons/compact-alignments, CC0), from the eBible text via helloAO. Measured: the NT bridge 41% -> 46%.
+lexeme_aligner: kvg_wbt

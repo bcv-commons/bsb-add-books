@@ -53,3 +53,7 @@ __pycache__/
 export/**/*.tagged
 # the project's target-language database (scripts/lang.py): bulk, built locally from the imported edition
 export/**/_learn/*.sqlite
+
+# personal API keys (scripts/fetch_edition.py reads DBT_API_KEY from it); never in git
+.env
+.env.*
