@@ -16,14 +16,20 @@ language**, and **how free the existing translations are**. The three pilots cov
 `python3 scripts/onboard.py` (or, in Claude Code, "set up a new language": the `new-project` skill asks the same
 questions and runs it) walks a new team through the steps below:
 
-1. **AI work:** how the probes run. Through the API when `ANTHROPIC_API_KEY` is set (billed per token; the key is
+1. **The language** to translate into: its ISO 639-3 code, or its name, which the wizard looks up in SIL's code table
+   (downloaded once into `download/`); a dialect id where a variety has no code of its own; the name; the school language.
+2. **The editions** the bcv-commons/bibles catalogue and its sources (helloAO, openbible, eBible, DBT) have, with
+   licence class and coverage; the user picks. A language only on the Digital Bible Platform needs your DBT key (below): without one the
+   wizard says so and waits until `DBT_API_KEY` is in `.env`. The team's own files (USFM or SFM, one per book, e.g. a Paratext
+   project) are a choice too (`m`): the wizard creates the edition, says where to copy them (its `source/`, git-ignored)
+   and converts them (`fetch_edition.py`, source `local`).
+3. **Import and fetch** into the right licence folder, texts git-ignored; NT basis and quote marks read from the text.
+4. **The project:** `export/<language>/<language>_BSB/` (always on the BSB), and the first chapter to draft (a book and
+   a chapter); a book a non-free edition has is quarantined now, before the probes. The quote marks are read from the
+   text, the word for 'chapter' is set later by the language memory. A stopped onboarding is continued, not refused.
+5. **AI work:** how the probes run. Through the API when `ANTHROPIC_API_KEY` is set (billed per token; the key is
    read from the environment or from the git-ignored `.env`, and never stored by the scripts), else through Claude Code (`claude -p` with no tools: the
    subscription's usage). Drafting itself always runs in Claude Code, on a subscription or with a key behind it.
-2. **The language:** code, dialect id, name (from the catalogue), school language.
-3. **The editions** the bcv-commons/bibles catalogue and its sources (helloAO, openbible, eBible) have, with
-   licence class and coverage; the user picks.
-4. **Import and fetch** into the right licence folder, texts git-ignored; NT basis and quote marks read from the text.
-5. **The project:** id and books to draft; a book a non-free edition has is quarantined now, before the probes.
 6. **The probes** (write, read, tell apart; about a minute, ~15k tokens): the scores beside their floors, the
    model's slips, one verse beside the edition, and a suggested familiarity with the reason. The user (best: a
    speaker) accepts or overrides it; for `partial` the wizard asks `close_to`.
@@ -31,7 +37,8 @@ questions and runs it) walks a new team through the steps below:
    (`scripts/usage.py`); the user confirms.
 8. **Set-up:** sources and the Hebrew layout, lexicons, the empty store and wiki, the probe's slips as the first
    store entries (to be checked), `CREDITS.md`, `STATUS.md`.
-9. **What comes next:** the memory, the style guide, a reference chapter, then waves, each asked for in Claude Code
+9. **What comes next:** the memory, the style guide, a reference chapter, then the chapters: in waves for a known
+   language, one after another for a partly known or unknown one (`scripts/modes.py`), each asked for in Claude Code
    in plain words.
 
 `--answers FILE.yaml` takes the answers from a file (`--yes`: no questions), `--dry-run` shows what it would do;
@@ -133,7 +140,8 @@ every prompt, `CREDITS.md`, and which generated files stay local (`docs/licensin
      out of its hypotheses, and `priors.py check` tests every item against the corpus; for a partial language it shows
      where the standard language or another dialect leaks in (Bern German: the model's *dr*, *wüu*, *u* for "and" are
      absent from Bietenhard, who writes *der*, *wil*, *und*).
-5. **Draft**: a reference chapter first, reviewed with the team; then waves (`draft-chapter` skill). Per
+5. **Draft**: a reference chapter first, reviewed with the team; then waves for a known language, one chapter after
+   another for a partly known or unknown one (`draft-chapter` skill). Per
    chapter the pack (`verse_pack.py`, level by the mode), for the OT the clause packages (`package.py`: per Hebrew
    clause line the tokens with their numbers, the BSB words, the project's earlier renderings, and for an unknown
    language the NT's words through the LXX bridge) and the prompt (`make_prompt.py`, rules by the mode) are

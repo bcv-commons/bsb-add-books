@@ -8,6 +8,35 @@ language as **style** models.
 `docs/workflow.md` describes the way of working, which comes from earlier drafting
 projects (Bern German and Danish) done in the same way.
 
+## Start here: a new language
+
+```
+git clone https://github.com/bcv-commons/bsb-add-books.git && cd bsb-add-books
+pip install pyyaml usfmtc
+python3 scripts/onboard.py
+```
+
+The wizard sets up a language project step by step, asking as it goes:
+
+1. **The language** you will translate into: its ISO 639-3 code (`jam` for Jamaican Creole), or its name to look
+   the code up; the team's school language.
+2. **The existing translations** in that language, from the bcv-commons/bibles catalogue and its sources
+   (helloAO, openbible, eBible, the Digital Bible Platform), with their licences; you pick the style corpus. A
+   language only on the Digital Bible Platform needs your DBT key: the wizard says so and waits for it. Your own
+   files (USFM or SFM, e.g. from Paratext) work too: the wizard says where to copy them and converts them.
+3. **Import and fetch** them into `import/`, filed by licence; texts never go into git.
+4. **The project** (`<language>_BSB`) and the first chapter to draft: a book and a chapter.
+5. **How the AI work runs:** through Claude Code (your subscription) or an Anthropic API key.
+6. **The probes:** how well the model knows the language (about a minute); a speaker accepts or overrides the result.
+7. **The tools** that this switches on, with what a chapter has cost so far in that mode.
+8. **The set-up:** sources, lexicons, the language memory, credits and status.
+9. **What comes next**, asked for in Claude Code in plain words: the memory, the style guide, a first chapter.
+
+**What you need:** Python 3, and [Claude Code](https://claude.com/claude-code) or an Anthropic API key. Keys go in
+the git-ignored `.env` in the repository folder (or the environment): `ANTHROPIC_API_KEY=…` for the API route,
+`DBT_API_KEY=…` for languages only on the Digital Bible Platform (a key is free at https://4.dbt.io). The full
+guide, with what we ask a team and how the tools adapt to the language: [`docs/onboarding.md`](docs/onboarding.md).
+
 ## Layout
 
 ```
@@ -32,7 +61,7 @@ export/         our drafts, public domain (CC0, export/README.md)
                 status.yaml + STATUS.md (draft status), CREDITS.md (quoted editions)
       <code>/   <code>NNN.txt, <code>NNN_notes.md, <code>NNN_footnotes.txt,
                 <code>_style_guide.md, <code>_review_overview.md
-      quarantine/  drafts of chapters a published translation covers           *
+      _eval/    test drafts (e.g. chapters an edition has published since), reports; _eval/local/ *
 books.tsv       book codes, names, chapter counts
 docs/           onboarding, workflow, configuration, sources, licensing, prompt templates
 scripts/        conversion, prompt generation, checks
@@ -53,23 +82,15 @@ The chapter prompt points the drafting agent to them.
 All files use the **BSB book codes** (`gen`, `1ki`, `jhn`, …) plus a three-digit
 chapter number.
 
-## Quick start
+## Working on an existing project
 
 Requirements: Python 3 and PyYAML (`pip install pyyaml`); for USFM sources (eBible editions,
 Den Frie Bibel's `sfm/`) also `usfmtc` (`pip install usfmtc`); numpy and scipy for the style check
 (`scripts/style.py`); eflomal, if installed, gives better alignment lexicons (`scripts/align.py`).
 
-**A new language project starts with [`docs/onboarding.md`](docs/onboarding.md):** what we ask a team,
-the two settings that decide how the tools work (how well the model knows the language, how free the
-existing translations are), and the steps from the first edition to published chapters.
-
 With [Claude Code](https://claude.com/claude-code), `CLAUDE.md` gives the rules and four skills in
 `.claude/skills/` guide the main tasks: `import-edition`, `new-project`, `learn-language` (a language
 the model doesn't know) and `draft-chapter` (also callable as `/draft-chapter` etc.).
-
-**A new language:** `python3 scripts/onboard.py`, a step-by-step setup: it finds the language's editions in
-the bcv-commons/bibles catalogue, fetches them into `import/`, creates the project and its memory, and says
-what comes next.
 
 After cloning:
 

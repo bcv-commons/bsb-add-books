@@ -35,9 +35,9 @@ quote_hint: "Where it quotes the chapter being translated (marked like `(1Mo 22,
 # Optional: fetch the text from a Bible source instead of copying it in (scripts/fetch_edition.py;
 # --find <iso> lists the editions of a language). The text then stays out of git.
 # fetch:
-#   source: helloao    # helloao | openbible | ebible
-#   id: dan_det        # helloAO id | openbible '<iso>/<edition>' | eBible id
-#   books: [mat, mrk]  # optional subset (BSB codes)
+#   source: helloao    # helloao | openbible | ebible | dbt
+#   id: dan_det        # helloAO id | openbible '<iso>/<edition>' | eBible id | DBT text fileset id
+# Every book the source has is fetched: all of it is corpus for the drafts.
 
 source: ""       # where the edition comes from (URL, publisher, file)
 licence: ""      # licence or permission; state 'private use only' if unclear.

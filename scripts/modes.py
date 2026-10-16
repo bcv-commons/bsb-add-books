@@ -28,7 +28,9 @@ FAMILIARITY = ("known", "partial", "unknown")
 FEATURES = {
     "known": {"pack": "memory", "style_check": False, "drafting": "waves",
               "summary": "drafts from the model's own command of the language; the memory keeps decisions consistent"},
-    "partial": {"pack": "dialect", "style_check": True, "drafting": "waves",
+    # partial, like unknown: one chapter after another (decided by the user, 2026-10-16, Jamaican pilot): its drafts drift in
+    # forms and spelling, and each chapter's decisions reach the next one's pack
+    "partial": {"pack": "dialect", "style_check": True, "drafting": "sequential",
                 "summary": "drafts in the variety, not the standard language: forms checked against the corpus"},
     # unknown: one chapter after another (decided by the user, 2026-10-15, Kuni Genesis 31-40): each chapter's store
     # entries reach the next chapter's pack, which is built just in time; no waves

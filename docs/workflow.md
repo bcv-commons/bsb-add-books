@@ -29,8 +29,9 @@ Bern German; Genesis and Daniel in Danish), written down as the way of working h
 3. Draft the rest in **waves of about ten chapters**, one **fresh agent per
    chapter** with the prompt from `scripts/make_prompt.py`. Later waves can then
    reuse name forms and formulas from earlier ones.
-   **Not for an unknown language** (`scripts/modes.py`: `drafting: sequential`; decided 2026-10-15 with Kuni Genesis
-   31–40): there the chapters are drafted **one after another**, and each chapter's verse pack is built just in time,
+   **Not for an unknown or a partly known language** (`scripts/modes.py`: `drafting: sequential`; decided 2026-10-15 with Kuni Genesis
+   31–40, and for partly known languages 2026-10-16 with the Jamaican pilot: their drafts drift in forms and spelling):
+   there the chapters are drafted **one after another**, and each chapter's verse pack is built just in time,
    after the previous chapter has written its store entries, so what one chapter learns reaches the next. A wave would
    build the packs in advance, and they would miss everything the wave learns; `make_prompt.py` refuses a pack older
    than the store. The consistency pass (step 5) then runs after a run of chapters instead of after a wave.

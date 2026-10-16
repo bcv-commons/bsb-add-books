@@ -11,7 +11,8 @@ Sources, in the order --find lists them:
     openbible  cdn.bibel.wiki/openbible/ (bcv-commons/bibles 'o')  per book as USJ
     ebible     ebible.org/Scriptures/                               per book as USFM (zip), parsed with usfmtc
                                                                     as bcv-commons/bibles does (usfm_usj.py)
-    dbt        4.dbt.io (Digital Bible Platform, bcv-commons/bibles 'd') per chapter as JSON; needs your own API
+    dbt        4.dbt.io (Digital Bible Platform, bcv-commons/bibles 'd') per chapter: the Sofria document (text_json,
+               paragraphs, headings, footnotes; decoded here) where the text has one, else plain verses; needs your own API
                key (free to register at https://4.dbt.io): the environment variable DBT_API_KEY, or a line
                DBT_API_KEY=... in .env in the working copy (git-ignored). The key is read only to make a
                request: it is never printed, logged, cached or written into a file name.
@@ -24,9 +25,8 @@ a key is set (see dbt above); without one, --find says that the catalogue has th
 The recipe is a 'fetch:' block in import/<licence>/<language>/<edition>/edition.yaml:
 
     fetch:
-      source: helloao      # helloao | openbible | ebible | dbt
+      source: helloao      # helloao | openbible | ebible | dbt | local (the team's files in the edition's source/)
       id: dan_det          # helloAO translation id | openbible '<iso>/<edition>' | eBible id | DBT text fileset id
-      books: [mat, mrk]    # optional: only these books (BSB codes)
 
 The fetched text goes to the edition's text/, one file per chapter (<code>NNN.txt) in the
 format of the BSB files, with the source's own verse numbering. text/ is git-ignored (the
@@ -57,8 +57,10 @@ EBIBLE = "https://ebible.org/Scriptures"
 OPEN = ["CC0", "CC-BY", "CC-BY-SA", "non-free"]      # most open first; a folder may be less open than the licence
 
 
-def get(url, cache=None, force=False):
-    if cache and os.path.exists(cache) and not force:
+def get(url, cache=None, force=False, max_age=None):
+    """The URL's body, from the cache when it is there (and younger than max_age seconds, if given)."""
+    import time
+    if cache and os.path.exists(cache) and not force and (max_age is None or time.time() - os.path.getmtime(cache) < max_age):
         return open(cache, "rb").read()
     with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=600) as r:
         data = r.read()
@@ -68,8 +70,12 @@ def get(url, cache=None, force=False):
     return data
 
 
-def getjson(url, cache=None, force=False):
-    return json.loads(get(url, cache, force))
+def getjson(url, cache=None, force=False, max_age=None):
+    return json.loads(get(url, cache, force, max_age))
+
+
+DAY = 24 * 3600            # the listings --find reads are cached for a day (download/editions/_listings/)
+LISTINGS = os.path.join(DL, "_listings")
 
 
 # ---------- DBT (Digital Bible Platform) ----------
@@ -119,34 +125,138 @@ def dbt_bibles(iso):
     """DBT's bibles of a language with a plain-text fileset: [{id (the fileset), bible, title, books}]."""
     out = []
     for b in (dbt_get("bibles", language_code=iso) or {}).get("data", []):
-        for fs in (b.get("filesets") or {}).get("dbp-prod", []):
+        sets = (b.get("filesets") or {}).get("dbp-prod", [])
+        sofria = {fs["id"] for fs in sets if fs.get("type") == "text_json"}
+        for fs in sets:
             if fs.get("type") == "text_plain":
                 out.append({"id": fs["id"], "bible": b.get("abbr"), "size": fs.get("size"),
-                            "title": b.get("vname") or b.get("name") or b.get("abbr")})
+                            "title": b.get("vname") or b.get("name") or b.get("abbr"),
+                            "sofria": fs["id"] + "-json" if fs["id"] + "-json" in sofria else None})
     return out
 
 
-def dbt_books(fileset, bible, force):
-    """[(BOOK, title, items)] of a DBT text fileset, chapter by chapter, in the item shape of the other sources."""
+def sofria_items(doc):
+    """A Proskomma Sofria document (DBT's text_json filesets) -> the item shape of the other sources: chapter items,
+    paragraphs with their USFM marker, verse markers, text, footnotes (grafts of type footnote) and headings (title and
+    heading grafts as paragraphs of their own). Cross references are left out, as in the other sources."""
+    items = []
+
+    def kind(g):                                       # a graft's kind: its subtype, or its sequence's type (DBT)
+        return g.get("subtype") or (g.get("sequence") or {}).get("type")
+
+    def text_of(seq):
+        out = []
+        for b in (seq or {}).get("blocks", []):
+            walk(b.get("content", []), out, notes=None)
+        return re.sub(r"\s+", " ", "".join(x for x in out if isinstance(x, str))).strip()
+
+    def walk(content, out, notes):
+        for x in content:
+            if isinstance(x, str):
+                out.append(x)
+            elif x.get("type") == "mark" and x.get("subtype") == "chapter_label":
+                items.append({"type": "chapter", "number": str(x["atts"]["number"])})
+            elif x.get("type") == "mark" and x.get("subtype") == "verses_label":
+                out.append({"type": "verse", "number": str(x["atts"]["number"])})
+            elif x.get("type") == "wrapper":
+                walk(x.get("content", []), out, notes)
+            elif x.get("type") == "graft" and kind(x) == "footnote" and notes is not None:
+                t = text_of(x.get("sequence"))
+                if t:
+                    out.append({"type": "note", "content": [t]})
+    for b in doc["sequence"]["blocks"]:
+        if b.get("type") == "graft":
+            if kind(b) == "heading":                   # a book title (kind "title") is not part of the chapter text
+                t = text_of(b.get("sequence"))
+                if t:
+                    items.append({"type": "para", "marker": "s1", "content": [t]})
+            continue
+        marker = (b.get("subtype") or "usfm:p").split(":")[-1]
+        content = []
+        walk(b.get("content", []), content, notes=True)
+        items.append({"type": "para", "marker": marker if re.fullmatch(r"(p|m|pi\d?|q\d?|li\d?|nb|pc|mi)", marker) else "p",
+                "content": content})
+    return items
+
+
+def dbt_books(fileset, bible, force, sofria=None, workers=6):
+    """[(BOOK, title, items)] of a DBT text fileset, in the item shape of the other sources. With a Sofria fileset
+    (`<fileset>-json`), its documents (paragraphs, headings, footnotes); else the plain verses. Downloads run six at a
+    time (DBT answers in 1-13 s): chapter 1 of every book first (which books the text has), then the rest. Every answer
+    is cached in download/editions/<fileset>/, a missing chapter too, so a stopped run continues where it stopped."""
     from books import chapters as n_chapters
+    from concurrent.futures import ThreadPoolExecutor
+    import urllib.request as UR
+    set_id = sofria or fileset
+    cache = os.path.join(DL, set_id)
+    os.makedirs(cache, exist_ok=True)
+    print(f"  downloading {set_id} ({'Sofria: paragraphs, headings, footnotes' if sofria else 'plain verses'}) "
+          f"into {os.path.relpath(cache, ROOT)}/; a stopped run continues from there")
+
+    def path(book, c):
+        return os.path.join(cache, f"{book}_{c:03d}.json")
+
+    def fetch(task):
+        """Download one chapter into the cache (or mark it missing). -> True if it exists."""
+        book, c = task
+        f = path(book, c)
+        if not force and (os.path.exists(f) or os.path.exists(f[:-5] + ".none")):
+            return os.path.exists(f)
+        r = dbt_get(f"bibles/filesets/{set_id}/{book}/{c}")
+        rows = (r or {}).get("data") or []
+        tf = os.path.join(cache, f"{book}.title")
+        if rows and rows[0].get("book_name") and not os.path.exists(tf):          # the book's own name (Matyu)
+            open(tf, "w", encoding="utf-8").write(rows[0]["book_name"])
+        data = rows or None
+        if sofria and rows and rows[0].get("path"):
+            try:              # a signed, short-lived link to the chapter's document (never printed or kept)
+                with UR.urlopen(UR.Request(rows[0]["path"], headers=UA), timeout=120) as resp:
+                    data = json.loads(resp.read())
+            except Exception as e:
+                raise SystemExit(f"  {book} {c}: the Sofria document could not be downloaded ({type(e).__name__}); "
+                                 "run again to continue")
+        if data:
+            json.dump(data, open(f + ".part", "w", encoding="utf-8"), ensure_ascii=False)
+            os.replace(f + ".part", f)
+        else:
+            open(f[:-5] + ".none", "w").close()
+        return bool(data)
+
+    books = [(code, code.upper(), title) for code, (_, title, _p, _u) in BY_CODE.items()]   # always every book
+    with ThreadPoolExecutor(workers) as pool:
+        first = dict(zip([b for _, b, _ in books], pool.map(fetch, [(b, 1) for _, b, _ in books])))
+        rest = [(b, c) for code, b, _ in books if first[b] for c in range(2, n_chapters(code) + 1)]
+        done = 0
+        for _ in pool.map(fetch, rest):
+            done += 1
+            if done % 25 == 0:
+                print(f"  {done + sum(first.values())} of {len(rest) + sum(first.values())} chapters")
     out = []
-    for code, (_, title, part, _u) in BY_CODE.items():
-        book, items = code.upper(), []
+    for code, book, title in books:
+        if not first[book]:
+            continue
+        tf = os.path.join(cache, f"{book}.title")
+        if os.path.exists(tf):
+            title = open(tf, encoding="utf-8").read().strip() or title
+        items, got = [], 0
         for c in range(1, n_chapters(code) + 1):
-            d = dbt_get(f"bibles/filesets/{fileset}/{book}/{c}", os.path.join(DL, fileset, f"{book}_{c:03d}.json"), force)
-            verses = (d or {}).get("data") or []
-            if not verses:
-                if c == 1:
-                    break                          # the book isn't in this fileset
+            if not os.path.exists(path(book, c)):
                 continue
-            items.append({"type": "chapter", "number": str(c)})
-            para = {"type": "para", "marker": "p", "content": []}
-            for v in verses:
-                para["content"] += [{"type": "verse", "number": str(v["verse_start"])}, (v.get("verse_text") or "").strip() + " "]
-            items.append(para)
-        if items:
-            out.append((book, title, items))
-            print(f"  {book}: {sum(1 for i in items if i['type'] == 'chapter')} chapters")
+            data = json.load(open(path(book, c), encoding="utf-8"))
+            got += 1
+            if sofria:
+                ch_items = sofria_items(data)
+                if not any(i["type"] == "chapter" for i in ch_items):
+                    ch_items.insert(0, {"type": "chapter", "number": str(c)})
+                items += ch_items
+            else:
+                items.append({"type": "chapter", "number": str(c)})
+                para = {"type": "para", "marker": "p", "content": []}
+                for v in data:
+                    para["content"] += [{"type": "verse", "number": str(v["verse_start"])}, (v.get("verse_text") or "").strip() + " "]
+                items.append(para)
+        out.append((book, title, items))
+        print(f"  {book}: {got} chapters")
     return out
 
 
@@ -285,7 +395,26 @@ def para_title(item):
 
 # ---------- sources ----------
 
-def fetch_source(rec, force):
+def local_books(folder):
+    """The team's own USFM / SFM files in an edition's source/ -> [(BOOK, title, items)] (NFC; usfm_usj.py)."""
+    import unicodedata
+    if not os.path.isdir(folder):
+        raise SystemExit(f"  no folder {os.path.relpath(folder, ROOT)}: copy the files (.usfm, .sfm, one per book) there")
+    books = []
+    for f in sorted(os.listdir(folder)):
+        if f.lower().endswith((".usfm", ".sfm")):
+            raw = open(os.path.join(folder, f), encoding="utf-8-sig", errors="replace").read()
+            content = usfm_to_usj(unicodedata.normalize("NFC", raw))["content"]
+            code = next((c.get("code") for c in content if c.get("type") == "book"), None)
+            title = next((para_title(c) for c in content if c.get("type") == "para" and c.get("marker") == "h"), code)
+            if code:
+                books.append((code, title, content))
+    if not books:
+        raise SystemExit(f"  no .usfm or .sfm files in {os.path.relpath(folder, ROOT)}: copy them there and run again")
+    return books
+
+
+def fetch_source(rec, force, edition_path=None):
     """-> (name, url, licence statement, licence class, version, [(BOOK, title, items)])"""
     src, sid = rec["source"], rec["id"]
     if src == "helloao":
@@ -326,6 +455,9 @@ def fetch_source(rec, force):
                 title = next((para_title(c) for c in content if c.get("type") == "para" and c.get("marker") == "h"), code)
                 books.append((code, title, content))
         return row["title"], row["publicationURL"] or f"https://ebible.org/{sid}/", statement, found, row["UpdateDate"], books
+    if src == "local":
+        folder = os.path.join(edition_path or ROOT, rec.get("id") or "source")
+        return ("", "the team's own files", None, None, None, local_books(folder))
     if src == "dbt":
         iso = rec.get("language") or sid[:3].lower()
         fs = next((b for b in dbt_bibles(iso) if b["id"] == sid), None)
@@ -336,8 +468,23 @@ def fetch_source(rec, force):
                  if isinstance(x, dict) and str(x.get("type", "text")).startswith("text")]      # not the audio / video
         statement = "; ".join(dict.fromkeys(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", l)).strip() for l in lines if l)) or "see DBT"
         # DBT texts are licensed for display in apps: kept local (non-free) unless the copyright says otherwise
-        return fs["title"], f"https://www.bible.is/ ({fs['bible']})", statement, "non-free", fs.get("size"), dbt_books(sid, fs["bible"], force)
-    raise SystemExit(f"  unknown source {src!r} (helloao, openbible, ebible, dbt)")
+        return (fs["title"], f"https://www.bible.is/bible/{fs['bible']}", statement, "non-free", fs.get("size"),
+                dbt_books(sid, fs["bible"], force, fs.get("sofria")))
+    raise SystemExit(f"  unknown source {src!r} (helloao, openbible, ebible, dbt, local)")
+
+
+def set_licence(yaml_path, ed, statement, url):
+    """licence and credit from the source's own copyright line, in an edition.yaml marked `licence_source: fetched`
+    (the wizard's editions; a hand-written licence is never touched). Only those two lines change; comments stay."""
+    name = ed.get("name") or ""
+    credit = f"{name}, {statement}" + (f" ({url})" if url and url not in statement else "")
+    text = open(yaml_path, encoding="utf-8").read()
+    for key, value in (("licence", statement), ("credit", credit)):
+        text = re.sub(rf"^{key}:.*(?:\n[ \t]+.*)*$", f"{key}: {json.dumps(value, ensure_ascii=False)}", text, count=1, flags=re.M)
+    if ed.get("attribution"):
+        text = re.sub(r"^attribution:.*(?:\n[ \t]+.*)*$", f"attribution: {json.dumps(credit, ensure_ascii=False)}", text, count=1, flags=re.M)
+    open(yaml_path, "w", encoding="utf-8").write(text)
+    print(f"  licence from the source: {statement}")
 
 
 def fetch_edition(name, force=False, update=False, checked=False):
@@ -348,16 +495,22 @@ def fetch_edition(name, force=False, update=False, checked=False):
     if not rec:
         raise SystemExit(f"{name}: edition.yaml has no fetch: block")
     print(f"{rel}: {rec['source']} {rec['id']}")
-    title, url, statement, found, version, books = fetch_source(rec, force)
-    check_licence(rel.split(os.sep)[1], found, statement, checked)
-    want = set(rec.get("books") or [])
+    title, url, statement, found, version, books = fetch_source(rec, force, path)
+    if rec["source"] != "local":          # the team's own files: their licence is what edition.yaml states
+        check_licence(rel.split(os.sep)[1], found, statement, checked)
+    statement = statement or ed.get("licence", "")
+    if ed.get("licence_source") == "fetched" and statement:
+        set_licence(os.path.join(path, "edition.yaml"), ed, statement, url)
+    if rec.get("books"):
+        raise SystemExit(f"{name}: the recipe limits the books (books: ...); an edition is always fetched whole: every book "
+                         "the source has is corpus for the drafts. Remove the line.")
     tmp = os.path.join(path, ".text.new")
     shutil.rmtree(tmp, ignore_errors=True)
     os.makedirs(tmp)
     files = {}
     for book_id, btitle, items in books:
         code = (book_id or "").lower()
-        if code not in BY_CODE or (want and code not in want):
+        if code not in BY_CODE:
             continue
         for number, chapter in split_chapters(items):
             fname = "%s%03d.txt" % (code, number)
@@ -390,17 +543,18 @@ def candidates(iso):
     bcv-commons/bibles catalogue's coverage rows for the language (nt / ot / otp = part of the OT)."""
     out, catalog = [], []
     try:
-        catalog = [(cov, src) for e in getjson(CATALOG)["entries"] if e[0] == iso for _, cov, src in [e[:3]]]
+        catalog = [(cov, src) for e in getjson(CATALOG, os.path.join(LISTINGS, "catalog.json"), max_age=DAY)["entries"]
+                   if e[0] == iso for _, cov, src in [e[:3]]]
     except Exception as e:  # the listings below still work
         catalog = [("unreachable", str(e))]
-    for t in getjson(f"{HELLOAO}/available_translations.json")["translations"]:
+    for t in getjson(f"{HELLOAO}/available_translations.json", os.path.join(LISTINGS, "helloao.json"), max_age=DAY)["translations"]:
         if t.get("language") == iso:
             nb = t.get("numberOfBooks") or 0
             out.append({"source": "helloao", "id": t["id"], "title": t.get("englishName") or t["name"],
                         "cls": class_from_helloao(t.get("license")), "licence": helloao_statement(t.get("license")),
                         "books": nb, "nt": nb >= 27 or None, "ot": nb > 27 or None, "url": t.get("licenseUrl") or t.get("website") or "",
                         "language_name": t.get("languageEnglishName") or t.get("languageName")})
-    for e in getjson(f"{OPENBIBLE}/catalog/openbible-editions.json")["entries"].values():
+    for e in getjson(f"{OPENBIBLE}/catalog/openbible-editions.json", os.path.join(LISTINGS, "openbible.json"), max_age=DAY)["entries"].values():
         if e.get("iso") == iso:
             lics = e.get("licenses", [])
             classes = [class_from_text(f"{l.get('type')} {l.get('url', '')}") for l in lics]
@@ -412,7 +566,7 @@ def candidates(iso):
                         "nt": any(BY_CODE.get(c, ("", "", ""))[2] == "nt" for c in codes) or None,
                         "ot": any(BY_CODE.get(c, ("", "", ""))[2] == "ot" for c in codes) or None,
                         "note": "" if e.get("published") else "not published: " + e.get("reason", ""), "url": ""})
-    for r in csv.DictReader(io.StringIO(get(f"{EBIBLE}/translations.csv").decode("utf-8-sig"))):
+    for r in csv.DictReader(io.StringIO(get(f"{EBIBLE}/translations.csv", os.path.join(LISTINGS, "ebible.csv"), max_age=DAY).decode("utf-8-sig"))):
         if r["languageCode"] == iso:
             cls = "non-free" if r["Redistributable"] != "True" else class_from_text(r["Copyright"])
             ot, nt = int(r["OTbooks"] or 0), int(r["NTbooks"] or 0)
@@ -423,8 +577,12 @@ def candidates(iso):
     if any(src == "d" for _, src in catalog) or dbt_key():
         if dbt_key():
             for b in dbt_bibles(iso):
+                size = str(b.get("size") or "")
                 out.append({"source": "dbt", "id": b["id"], "title": b["title"], "cls": "non-free",
-                            "licence": "DBT: licensed for display; kept local", "books": None, "nt": True, "ot": None,
+                            "licence": "DBT: licensed for display; kept local", "books": None,
+                            "nt": size in ("NT", "NTP", "C") or None, "ot": size in ("OT", "OTP", "C") or None,
+                            "coverage": {"NT": "New Testament", "NTP": "part of the New Testament", "OT": "Old Testament",
+                                         "OTP": "part of the Old Testament", "C": "whole Bible"}.get(size),
                             "url": "https://www.bible.is/", "language": iso})
         else:
             out.append({"source": "dbt", "id": None, "title": "on the Digital Bible Platform (DBT)", "cls": "non-free",

@@ -1,0 +1,15 @@
+# The answers of scripts/onboard.py; a new run uses them (--fresh: ask again)
+first_book: gen
+first_chapter: 1
+familiarity: partial
+close_to: English
+write_priors: true
+run_setup: true
+run_align: true
+init_memory: true
+language: jam
+dialect_id: null
+language_name: Jamaican Creole English
+school_language: English
+ai_route: claude-code
+go_ahead: true

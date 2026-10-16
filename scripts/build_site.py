@@ -14,30 +14,31 @@ Usage: python3 scripts/build_site.py [--out DIR] [--preview]   (default build/si
        --preview: also new files not yet committed, for a local look; never deployed
 Deploy: scripts/deploy_site.py builds it and stages it on the `site` branch, which Netlify publishes.
 """
-import html as H, json, os, re, shutil, subprocess, sys
+import glob, html as H, json, os, re, shutil, subprocess, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 import wiki  # noqa: E402
 import status  # noqa: E402
 from project import project, edition, LICENCE_CLASS  # noqa: E402
+project_edition = edition
 
 UI = {   # interface strings by school language; the content stays as written
-    "English": {"projects": "Projects", "status": "Status", "memory": "Language memory", "credits": "Credits",
+    "English": {"next_steps": "Next steps", "projects": "Projects", "status": "Status", "memory": "Language memory", "credits": "Credits",
                 "chapters": "chapters", "draft": "draft", "review": "in review", "published": "published",
                 "built": "Built from commit", "all": "All projects", "mode": "Model knowledge",
                 "read": "Read", "language": "Language", "book": "Book", "chapter": "Chapter", "prev": "Previous", "next": "Next", "notes": "Notes", "tests": "Test drafts", "test": "Test draft", "test_banner": "An experiment with the drafting method, kept for comparison: not the project's draft of this chapter.", "reports": "Reports", "tests_intro": "Chapters drafted to test the method (held-out books, variants of the tools). They are separate from the project's drafts and are never published as its text.", "nodrafts": "no drafts yet", "choose": "Choose a language", "status_word": "Status",
                 "v_verse": "Verse by verse", "n_verse": "Hebrew: Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible); Greek: Berean Greek Bible; English: Berean Standard Bible (both public domain). The comments are the drafting agent's notes.", "notes_more": "More from the notes", "v_std": "Text", "v_bhsa": "BHSA clauses", "v_hcl": "MACULA/UHB clauses", "v_none": "no clause layout for this chapter",
                 "n_bhsa": "Clause layout: ETCBC, BHSA 2021, licensed CC BY-NC 4.0. This view of our draft on that layout is CC BY-NC 4.0 too: non-commercial use only, with credit to the ETCBC.",
                 "n_hcl": "Clause layout: bcv-commons Hebrew clause layout v0.22 (MACULA Hebrew, UHB), CC BY-SA 4.0. This view of our draft on that layout is CC BY-SA 4.0."},
-    "Standard German": {"projects": "Projekte", "status": "Stand", "memory": "Sprachgedächtnis", "credits": "Nachweise",
+    "Standard German": {"next_steps": "Nächste Schritte", "projects": "Projekte", "status": "Stand", "memory": "Sprachgedächtnis", "credits": "Nachweise",
                         "chapters": "Kapitel", "draft": "Entwurf", "review": "in Prüfung", "published": "veröffentlicht",
                         "built": "Erstellt aus Commit", "all": "Alle Projekte", "mode": "Sprachkenntnis des Modells",
                 "read": "Lesen", "language": "Sprache", "book": "Buch", "chapter": "Kapitel", "prev": "Zurück", "next": "Weiter", "notes": "Anmerkungen", "tests": "Testentwürfe", "test": "Testentwurf", "test_banner": "Ein Versuch mit der Arbeitsweise, zum Vergleich aufbewahrt: nicht der Entwurf des Projekts für dieses Kapitel.", "reports": "Berichte", "tests_intro": "Kapitel, die zum Prüfen der Arbeitsweise übersetzt wurden (zurückgehaltene Bücher, Varianten der Werkzeuge). Sie sind von den Entwürfen des Projekts getrennt und werden nie als sein Text veröffentlicht.", "nodrafts": "noch keine Entwürfe", "choose": "Sprache wählen", "status_word": "Stand",
                 "v_verse": "Vers für Vers", "n_verse": "Hebräisch: Westminster Leningrad Codex (gemeinfrei), über MACULA Hebrew (CC BY 4.0, Clear Bible); Griechisch: Berean Greek Bible; Englisch: Berean Standard Bible (beide gemeinfrei). Die Kommentare sind die Notizen des Übersetzungsagenten.", "notes_more": "Weiteres aus den Notizen", "v_std": "Fliesstext", "v_bhsa": "BHSA-Sätze", "v_hcl": "MACULA/UHB-Sätze", "v_none": "für dieses Kapitel kein Satzlayout",
                 "n_bhsa": "Satzlayout: ETCBC, BHSA 2021, Lizenz CC BY-NC 4.0. Diese Darstellung unseres Entwurfs auf diesem Layout steht ebenfalls unter CC BY-NC 4.0: nur nicht kommerzielle Nutzung, mit Nennung des ETCBC.",
                 "n_hcl": "Satzlayout: bcv-commons Hebrew clause layout v0.22 (MACULA Hebrew, UHB), CC BY-SA 4.0. Diese Darstellung unseres Entwurfs auf diesem Layout steht unter CC BY-SA 4.0."},
-    "Danish": {"projects": "Projekter", "status": "Status", "memory": "Sproghukommelse", "credits": "Kilder",
+    "Danish": {"next_steps": "Næste skridt", "projects": "Projekter", "status": "Status", "memory": "Sproghukommelse", "credits": "Kilder",
                "chapters": "kapitler", "draft": "udkast", "review": "til gennemsyn", "published": "udgivet",
                "built": "Bygget fra commit", "all": "Alle projekter", "mode": "Modellens kendskab",
                 "read": "Læs", "language": "Sprog", "book": "Bog", "chapter": "Kapitel", "prev": "Forrige", "next": "Næste", "notes": "Noter", "tests": "Testudkast", "test": "Testudkast", "test_banner": "Et forsøg med arbejdsmetoden, gemt til sammenligning: ikke projektets udkast til dette kapitel.", "reports": "Rapporter", "tests_intro": "Kapitler oversat for at afprøve metoden (tilbageholdte bøger, varianter af værktøjerne). De er adskilt fra projektets udkast og udgives aldrig som dets tekst.", "nodrafts": "ingen udkast endnu", "choose": "Vælg sprog", "status_word": "Status",
@@ -96,6 +97,13 @@ code { font-size:90%; } .path { font-family:ui-monospace,monospace; font-size:90
 .vv-e, .vv-c { font-size:14px; margin:3px 0; }
 .vv-c { border-left:3px solid var(--accent-soft); padding-left:8px; }
 .vv-more { margin-top:24px; }
+.step { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:14px 16px; margin:12px 0; }
+.step h3 { margin:0 0 6px; font-size:17px; }
+.step.done { border-left:4px solid #4a9a5b; } .step.todo { border-left:4px solid var(--accent); }
+.say { display:flex; gap:8px; align-items:center; background:var(--bg); border:1px solid var(--line); border-radius:6px;
+  padding:6px 10px; margin:8px 0; font-family:ui-monospace,Menlo,monospace; font-size:14px; }
+.say code { flex:1; } .say button { font-size:13px; padding:3px 10px; border:1px solid var(--line); border-radius:5px;
+  background:var(--panel); color:var(--ink); cursor:pointer; }
 .lic { background:var(--q); border:2px solid var(--q-line); border-radius:6px; padding:10px 14px; margin:0 0 14px; font-size:14px; font-weight:600; }
 .cls .l { padding-left:min(calc(var(--lv) * 1.6em), calc(var(--lv) * 3.5vw)); text-indent:-0.6em; margin:0 0 2px 0.6em; }
 .cls h2 { font-size:17px; margin:22px 0 6px; color:var(--muted); }
@@ -169,7 +177,8 @@ def build(out, built, preview=False):
         nav = lambda on: [(ui["read"], f"{pname}/read/index.html", on == "r")] * has_drafts + [
                           (ui["tests"], f"{pname}/tests/index.html", on == "t")] * has_tests + [
                           (ui["status"], f"{pname}/index.html", on == "s"), (ui["memory"], f"{pname}/memory.html", on == "m"),
-                          (ui["credits"], f"{pname}/credits.html", on == "c"), (ui["all"], "index.html", False)]
+                          (ui["credits"], f"{pname}/credits.html", on == "c"), (ui["next_steps"], f"{pname}/next.html", on == "n"),
+                          (ui["all"], "index.html", False)]
         first = re.match(r"([^\s.]+)\.\s*", draft_st)       # the statement's first word ("Draft.", "Udkast.")
         rest = draft_st[first.end():] if first and first[1].lower() in ("draft", ui["draft"].lower()) else draft_st
         banner = f"<strong>{H.escape(ui['draft'].capitalize())}.</strong> {H.escape(rest)}"
@@ -216,6 +225,7 @@ def build(out, built, preview=False):
             h = h.replace("<body>", "<body>" + bar, 1).replace('<html lang="en">', f'<html lang="{lc}">', 1)
             open(mem, "w", encoding="utf-8").write(h)
         rd = reader(pname, p, tracked, od, ui, banner, built, nav, lc, rows)
+        next_steps(pname, p, tracked, od, ui, banner, built, nav, lc, rows, preview)
         if has_tests:
             tests(pname, p, tracked, od, ui, banner, built, nav, lc)
         if rd:
@@ -307,6 +317,96 @@ def tests(pname, p, tracked, od, ui, banner, built, nav, lc):
         page(f"{p.get('language_name')}: {ui['tests']}", body, nav("t"), tb, built, depth + 1, ui, lc))
 
 
+def open_questions(notes_md, limit=6):
+    """The list items under a notes heading about open questions (Open questions, Offene Fragen, Åbne spørgsmål …)."""
+    out, on = [], False
+    for l in notes_md.splitlines():
+        if re.match(r"^#{1,6} ", l):
+            on = bool(re.search(r"open|question|offen|frage|åbne|spørgsm|least sure", l, re.I))
+            continue
+        m = re.match(r"^\s*(?:[-*]|\d+\.)\s+(.*)", l)
+        if on and m:
+            if len(out) >= limit:
+                break
+            out.append(m[1].strip())
+        elif on and out and l.strip() and re.match(r"^\s+\S", l):      # an item wrapped over several lines
+            out[-1] += " " + l.strip()
+    return out
+
+
+def next_steps(pname, p, tracked, od, ui, banner, built, nav, lc, rows, preview):
+    """The project's 'next steps' page: what is done (editions, language memory, chapters) and what comes next, each
+    with the sentence to give Claude Code and a copy button, and how the website is published. The wizard opens it."""
+    import json as J
+    from books import BY_CODE
+    import modes
+    name = p.get("language_name") or pname
+    pdir = os.path.join(ROOT, "export", pname)
+    E = lambda t: H.escape(str(t))
+
+    def say_box(text):
+        return (f'<div class="say"><code>{E(text)}</code><button type="button" onclick="navigator.clipboard.writeText('
+                f'this.previousElementSibling.textContent);this.textContent=\'copied\'">copy</button></div>')
+    done, todo = [], []
+    eds = []
+    for e in p.get("style_from") or []:
+        try:
+            ed = project_edition(e)
+            eds.append(f"<strong>{E(ed.get('name') or e)}</strong> ({E(ed.get('licence_folder', ''))}; {len(ed.get('books') or [])} books)")
+        except SystemExit:
+            eds.append(E(e))
+    if eds:
+        done.append(("The translation the drafts learn from", "<p>" + "<br>".join(eds) + "</p>"))
+    n = 0
+    for part in ("observations", "decisions"):
+        f = os.path.join(pdir, "profile", f"{part}.json")
+        if os.path.exists(f):
+            n += len(J.load(open(f, encoding="utf-8")).get("entries", []))
+    pages = len([f for f in glob.glob(os.path.join(pdir, "wiki", "**", "*.md"), recursive=True)])
+    if n:
+        done.append(("The language memory", f"<p>{n} entries about the language and {pages} wiki pages, each with its "
+                     f"evidence from the corpus. <a href='memory.html'>Read it</a>.</p>"))
+    drafted = [(ch, f, r) for ch, f, r in rows if os.path.exists(f)]
+    if drafted:
+        ch, f, r = drafted[-1]
+        code, k = ch[:3], int(ch[3:])
+        notes = f[:-4] + "_notes.md"
+        qs = open_questions(open(notes, encoding="utf-8").read()) if os.path.exists(notes) else []
+        links = ", ".join(f"<a href='read/{c[:3]}/{int(c[3:]):03d}.html'>{E(BY_CODE[c[:3]][1])} {int(c[3:])}</a>" for c, _, _ in drafted[-6:])
+        done.append((f"{len(drafted)} chapter{'s' if len(drafted) > 1 else ''} drafted", f"<p>{links}. Every chapter is a "
+                     "<strong>draft</strong> until the team publishes it.</p>"))
+        todo.append((f"Read {BY_CODE[code][1]} {k} with someone who knows {name}",
+                     f"<p>Open <a href='read/{code}/{k:03d}.html'>the chapter</a> and switch to <em>Verse by verse</em>: each verse "
+                     "with the Hebrew, the BSB and the drafting agent's comments. The open questions from its notes:</p>"
+                     + ("<ul>" + "".join(f"<li>{inline_md(q)}</li>" for q in qs) + "</ul>" if qs else "<p>(none listed)</p>")
+                     + "<p>Corrections go into the chapter or the language memory; Claude Code makes them when asked:</p>"
+                     + say_box(f"Correct {BY_CODE[code][1]} {k} in {pname}: …")))
+    todo.append(("Write the style guide", "<p>The team's decisions, settled once and binding for every later chapter: how to "
+                 "write the divine names and the names, the quote marks, how formal the language is. Start from the first "
+                 "chapter's open questions. In Claude Code, in this folder:</p>" + say_box(f"Write the style guide for {pname} with me")))
+    seq = modes.mode(p).get("drafting") == "sequential"
+    todo.append(("Draft the next chapters", "<p>" + ("One chapter after another, never several at once: each chapter's "
+                 "agent reads what the earlier chapters decided (names, word forms, spelling) and adds its own decisions to the "
+                 "memory, so the chapters stay consistent. Ask for the next chapter when one is done." if seq else "In waves of about ten chapters, one agent each, in "
+                 "parallel; the shared names and terms are fixed first.") + " In Claude Code:</p>"
+                 + say_box(f"Draft the next chapters of {pname}" if not drafted else
+                           f"Draft {BY_CODE[drafted[-1][0][:3]][1]} {int(drafted[-1][0][3:]) + 1} for {pname}")))
+    todo.append(("Show it to others: the website", "<p>" + ("<strong>This is a local preview</strong> on your computer "
+                 "(built from the files as they are now, including ones not yet in git); nobody else sees it. "
+                 if preview else "") + "The public website shows every project's drafts, marked as drafts, with the "
+                 "language memory and the credits; the text of a non-free translation never appears there, only short quotes "
+                 "within the limits. To put this project there, the files go into git and the site is deployed:</p>"
+                 + say_box("git add export/ import/ && git commit -m \"…\" && git push")
+                 + say_box("python3 scripts/deploy_site.py")
+                 + "<p>Or ask Claude Code to prepare it (it stages the files and gives you a commit message; you commit):</p>"
+                 + say_box(f"Stage {pname} for the website and give me a commit message")))
+    cards = lambda items, cls: "".join(f'<div class="step {cls}"><h3>{"✓ " if cls == "done" else ""}{E(t)}</h3>{b}</div>'
+                                       for t, b in items)
+    body = (f"<h1>{E(name)}: {E(ui['next_steps'])}</h1><h2>Done</h2>{cards(done, 'done')}<h2>Next</h2>{cards(todo, 'todo')}")
+    open(os.path.join(od, "next.html"), "w", encoding="utf-8").write(page(f"{name}: {ui['next_steps']}", body, nav("n"), banner,
+                                                                         built, pname.count("/") + 1, ui, lc))
+
+
 NOTE = re.compile(r"\{([A-Z]):\s*(.*?)\}", re.S)
 VERSE = re.compile(r"(?<![\w>.\x00])v(\d+(?:-\d+)?)(?=\s)")
 
@@ -322,6 +422,7 @@ def quotes_of(p, t):
 
 def inline_md(t):
     t = H.escape(t, quote=False)
+    t = re.sub(r"\*\*(?!\s)(.+?)(?<!\s)\*\*", r"<strong>\1</strong>", t)
     return re.sub(r"(?<![\w*])\*(?!\s)(.+?)(?<!\s)\*(?![\w*])", r"<em>\1</em>", t)
 
 

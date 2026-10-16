@@ -1,0 +1,5553 @@
+{
+ "iso": "jam",
+ "edition": "jam_BSB",
+ "partition": "decisions",
+ "licence": "CC0-1.0 (single words and short phrases with references; quotations credited in ../CREDITS.md)",
+ "orthography": {
+  "normalization": "NFC",
+  "ignore_marks": []
+ },
+ "entries": [
+  {
+   "id": "term:god",
+   "kind": "term",
+   "value": "Gad",
+   "source": "H430",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "gad",
+     "note": "lower case for false gods: faalz gad"
+    }
+   ],
+   "words": [
+    "god"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 4:7",
+     "n": 3828,
+     "form": "Gad"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "Gad 3,763×; lexicon god → gad 87%. Gad is also the tribe Gad (REV 7:5): see questions."
+  },
+  {
+   "id": "term:yhwh",
+   "kind": "term",
+   "value": "di Laad",
+   "source": "H3068",
+   "attested": "attested",
+   "words": [
+    "lord"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 4:7",
+     "n": 333,
+     "form": "di Laad"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Proposal: the LORD (YHWH) = di Laad, as the NT renders κύριος in OT quotations (MAT 4:7, MRK 12:29, HEB 8:8 \"di Laad se\"). project.yaml asks the team to decide the divine names."
+  },
+  {
+   "id": "term:lord_god",
+   "kind": "term",
+   "value": "di Laad Gad",
+   "source": "H3068 H430",
+   "attested": "attested",
+   "words": [
+    "lord god"
+   ],
+   "evidence": [
+    {
+     "ref": "REV 1:8",
+     "n": 10,
+     "form": "Di Laad Gad"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "YHWH Elohim (GEN 2:4 onwards) = di Laad Gad, as in REV 1:8, ACT 3:20 (14×)."
+  },
+  {
+   "id": "term:the_lord_your_god",
+   "kind": "term",
+   "value": "di Laad we a yu Gad",
+   "source": "H3068 H430 + suffix",
+   "attested": "attested",
+   "words": [
+    "lord your god"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 4:7",
+     "n": 5,
+     "form": "we a yu Gad"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "\"the LORD your God\" is a relative construction: di Laad we a yu/unu/fi wi Gad (6× in quotations; MRK 12:29 \"di Laad we a fi wi Gad\")."
+  },
+  {
+   "id": "term:most_high",
+   "kind": "term",
+   "value": "di Muos Ai Gad",
+   "source": "H5945",
+   "attested": "attested",
+   "words": [
+    "most high"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 1:32",
+     "n": 8,
+     "form": "di Muos Ai Gad"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "God Most High (GEN 14:18–22) = di Muos Ai Gad (LUK 1:32, HEB 7:1)."
+  },
+  {
+   "id": "term:almighty",
+   "kind": "term",
+   "value": "di Laad we av aal a di powa",
+   "source": "H7706 H6635",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "di Laad we ruul uova evriting",
+     "note": "JAS 5:4, Lord of Hosts"
+    },
+    {
+     "value": "di Laad we muor powaful dan evri an eniting",
+     "note": "2CO 6:18"
+    }
+   ],
+   "words": [
+    "almighty",
+    "lord of hosts"
+   ],
+   "evidence": [
+    {
+     "ref": "ROM 9:29",
+     "n": 1,
+     "form": "aal a di powa"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "El Shaddai (GEN 17:1) and the Lord of Hosts have no single form; all are relative clauses about power (REV 1:8 \"di wan we av aal a di powa\")."
+  },
+  {
+   "id": "term:spirit_of_god",
+   "kind": "term",
+   "value": "Gad Spirit",
+   "source": "H7307",
+   "attested": "attested",
+   "words": [
+    "spirit of god"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 1:7",
+     "n": 53,
+     "form": "Gad spirit"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "Gad Spirit 39× (possessor first). GEN 1:2 \"the Spirit of God\" = Gad Spirit. Uoli Spirit = Holy Spirit."
+  },
+  {
+   "id": "term:heaven",
+   "kind": "term",
+   "value": "evn",
+   "source": "H8064",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "skai",
+     "note": "the visible sky, birds of the sky"
+    }
+   ],
+   "words": [
+    "heaven",
+    "heavens"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 7:49",
+     "n": 240,
+     "form": "Evn"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "lexicon heaven → evn 77%, skai 6%. GEN 1:1 \"the heavens and the earth\" = di evn an di ort (2PE 3:5)."
+  },
+  {
+   "id": "term:sky",
+   "kind": "term",
+   "value": "skai",
+   "source": "H8064",
+   "attested": "attested",
+   "words": [
+    "sky"
+   ],
+   "evidence": [
+    {
+     "ref": "HEB 11:12",
+     "n": 50,
+     "form": "skai"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:earth",
+   "kind": "term",
+   "value": "ort",
+   "source": "H776",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "worl",
+     "note": "the world, people"
+    },
+    {
+     "value": "grong",
+     "note": "the ground"
+    },
+    {
+     "value": "lan / konchri",
+     "note": "a land, a country"
+    }
+   ],
+   "words": [
+    "earth"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 7:49",
+     "n": 183,
+     "form": "di ort"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "lexicon earth → ort 81%, worl 12%. Land of Canaan etc. = konchri (78×) or lan."
+  },
+  {
+   "id": "term:ground",
+   "kind": "term",
+   "value": "grong",
+   "source": "H127",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "dos",
+     "note": "dust"
+    }
+   ],
+   "words": [
+    "ground"
+   ],
+   "evidence": [
+    {
+     "ref": "JHN 8:6",
+     "n": 72,
+     "form": "grong"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:land",
+   "kind": "term",
+   "value": "konchri",
+   "source": "H776",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "lan",
+     "note": "a piece of land, ACT 7:16"
+    }
+   ],
+   "words": [
+    "land",
+    "country"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 7:4",
+     "n": 78,
+     "form": "konchri"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:light",
+   "kind": "term",
+   "value": "lait",
+   "source": "H216",
+   "attested": "attested",
+   "words": [
+    "light"
+   ],
+   "evidence": [
+    {
+     "ref": "2CO 4:6",
+     "n": 156,
+     "form": "lait"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:darkness",
+   "kind": "term",
+   "value": "daak",
+   "source": "H2822",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "daaknis",
+     "n": 18
+    }
+   ],
+   "words": [
+    "darkness"
+   ],
+   "evidence": [
+    {
+     "ref": "2CO 4:6",
+     "n": 49,
+     "form": "daak"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "lexicon darkness → daak 48%, daaknis 34%; 2CO 4:6 \"iina di daak\" for GEN 1:3's quotation."
+  },
+  {
+   "id": "term:day",
+   "kind": "term",
+   "value": "die",
+   "source": "H3117",
+   "attested": "attested",
+   "words": [
+    "day"
+   ],
+   "evidence": [
+    {
+     "ref": "HEB 4:4",
+     "n": 407,
+     "form": "die"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:night",
+   "kind": "term",
+   "value": "nait",
+   "source": "H3915",
+   "attested": "attested",
+   "words": [
+    "night"
+   ],
+   "evidence": [
+    {
+     "ref": "REV 4:8",
+     "n": 76,
+     "form": "nait"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:evening",
+   "kind": "term",
+   "value": "iivnin",
+   "source": "H6153",
+   "attested": "attested",
+   "words": [
+    "evening"
+   ],
+   "evidence": [
+    {
+     "ref": "MRK 4:35",
+     "n": 22,
+     "form": "iivnin"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:morning",
+   "kind": "term",
+   "value": "maanin",
+   "source": "H1242",
+   "attested": "attested",
+   "words": [
+    "morning"
+   ],
+   "evidence": [
+    {
+     "ref": "MRK 16:2",
+     "n": 32,
+     "form": "maanin"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:sea",
+   "kind": "term",
+   "value": "sii",
+   "source": "H3220",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "liek",
+     "note": "lake (Galilee)"
+    }
+   ],
+   "words": [
+    "sea"
+   ],
+   "evidence": [
+    {
+     "ref": "REV 10:6",
+     "n": 75,
+     "form": "di sii"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:water",
+   "kind": "term",
+   "value": "waata",
+   "source": "H4325",
+   "attested": "attested",
+   "words": [
+    "water"
+   ],
+   "evidence": [
+    {
+     "ref": "2PE 3:5",
+     "n": 120,
+     "form": "waata"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:tree",
+   "kind": "term",
+   "value": "chrii",
+   "source": "H6086",
+   "attested": "attested",
+   "words": [
+    "tree"
+   ],
+   "evidence": [
+    {
+     "ref": "REV 2:7",
+     "n": 203,
+     "form": "chrii"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "chrii = tree and three: context separates them."
+  },
+  {
+   "id": "term:fruit",
+   "kind": "term",
+   "value": "fruut",
+   "source": "H6529",
+   "attested": "attested",
+   "words": [
+    "fruit"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 7:17",
+     "n": 40,
+     "form": "fruut"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:seed",
+   "kind": "term",
+   "value": "siid",
+   "source": "H2233",
+   "attested": "attested",
+   "words": [
+    "seed"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 15:38",
+     "n": 55,
+     "form": "siid"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "Seed of plants = siid; seed as offspring = pikni (GAL 3:16 \"tu im pikni\")."
+  },
+  {
+   "id": "term:offspring",
+   "kind": "term",
+   "value": "pikni",
+   "source": "H2233",
+   "attested": "attested",
+   "words": [
+    "offspring",
+    "descendants",
+    "seed"
+   ],
+   "evidence": [
+    {
+     "ref": "GAL 3:16",
+     "n": 650,
+     "form": "im pikni"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "lexicon descendants → pikni 88%; \"pikni pikni\" grandchildren (ROM 9:7)."
+  },
+  {
+   "id": "term:grass",
+   "kind": "term",
+   "value": "graas",
+   "source": "H1877",
+   "attested": "attested",
+   "words": [
+    "grass"
+   ],
+   "evidence": [
+    {
+     "ref": "1PE 1:24",
+     "n": 15,
+     "form": "graas"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:bird",
+   "kind": "term",
+   "value": "bod",
+   "source": "H5775",
+   "attested": "attested",
+   "words": [
+    "bird",
+    "birds"
+   ],
+   "evidence": [
+    {
+     "ref": "ROM 1:23",
+     "n": 28,
+     "form": "bod"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:fish",
+   "kind": "term",
+   "value": "fish",
+   "source": "H1710",
+   "attested": "attested",
+   "words": [
+    "fish"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 15:39",
+     "n": 40,
+     "form": "fish"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:animal",
+   "kind": "term",
+   "value": "animal",
+   "source": "H2416",
+   "attested": "attested",
+   "words": [
+    "animal",
+    "animals",
+    "beasts",
+    "creatures"
+   ],
+   "evidence": [
+    {
+     "ref": "ROM 1:23",
+     "n": 92,
+     "form": "animal"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:snake",
+   "kind": "term",
+   "value": "siniek",
+   "source": "H5175",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "jragan",
+     "note": "the dragon of Revelation, \"serpent of old\""
+    }
+   ],
+   "words": [
+    "serpent",
+    "snake"
+   ],
+   "evidence": [
+    {
+     "ref": "2CO 11:3",
+     "n": 20,
+     "form": "siniek"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:man_woman",
+   "kind": "term",
+   "value": "man an uman",
+   "source": "H2145 H5347",
+   "attested": "attested",
+   "words": [
+    "male and female"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 19:4",
+     "n": 11,
+     "form": "man an uman"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:make_create",
+   "kind": "term",
+   "value": "mek",
+   "source": "H1254",
+   "attested": "attested",
+   "words": [
+    "create",
+    "created",
+    "made",
+    "make"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 17:24",
+     "n": 2269,
+     "form": "Di Gad we mek"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "created → mek (all 10 in the lexicon); κτίζω → mek 58% (occurrence index H1254). No separate word for create."
+  },
+  {
+   "id": "term:rule",
+   "kind": "term",
+   "value": "ruul",
+   "source": "H7287",
+   "attested": "attested",
+   "words": [
+    "rule",
+    "reign",
+    "dominion"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 17:24",
+     "n": 188,
+     "form": "ruul uova"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "ruul uova (rule over)."
+  },
+  {
+   "id": "term:bless",
+   "kind": "term",
+   "value": "bles",
+   "source": "H1288",
+   "attested": "attested",
+   "words": [
+    "bless"
+   ],
+   "evidence": [
+    {
+     "ref": "HEB 11:20",
+     "n": 113,
+     "form": "bles"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:curse",
+   "kind": "term",
+   "value": "kos",
+   "source": "H779",
+   "attested": "attested",
+   "words": [
+    "curse"
+   ],
+   "evidence": [
+    {
+     "ref": "JAS 3:9",
+     "n": 47,
+     "form": "kos aaf"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "kos (aaf) = curse (someone)."
+  },
+  {
+   "id": "term:good",
+   "kind": "term",
+   "value": "gud",
+   "source": "H2896",
+   "attested": "attested",
+   "words": [
+    "good"
+   ],
+   "evidence": [
+    {
+     "ref": "1TI 4:4",
+     "n": 810,
+     "form": "gud"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:garden",
+   "kind": "term",
+   "value": "gyaadn",
+   "source": "H1588",
+   "attested": "attested",
+   "words": [
+    "garden"
+   ],
+   "evidence": [
+    {
+     "ref": "JHN 18:1",
+     "n": 14,
+     "form": "gyaadn"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:dust",
+   "kind": "term",
+   "value": "dos",
+   "source": "H6083",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "dot",
+     "note": "dirt, soil"
+    }
+   ],
+   "words": [
+    "dust"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 10:14",
+     "n": 6,
+     "form": "dos"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:naked",
+   "kind": "term",
+   "value": "niekid",
+   "source": "H6174",
+   "attested": "attested",
+   "words": [
+    "naked"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 19:16",
+     "n": 7,
+     "form": "niekid"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:ashamed",
+   "kind": "term",
+   "value": "shiem",
+   "source": "H954",
+   "attested": "attested",
+   "words": [
+    "ashamed"
+   ],
+   "evidence": [
+    {
+     "ref": "REV 16:15",
+     "n": 76,
+     "form": "shiem"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:afraid",
+   "kind": "term",
+   "value": "fried",
+   "source": "H3372",
+   "attested": "attested",
+   "words": [
+    "afraid"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 1:13",
+     "n": 153,
+     "form": "fried"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "fried 98% for afraid; fear of God = rispek (fear → rispek 20%)."
+  },
+  {
+   "id": "term:angry",
+   "kind": "term",
+   "value": "beks",
+   "source": "H639",
+   "attested": "attested",
+   "words": [
+    "angry",
+    "anger",
+    "wrath"
+   ],
+   "evidence": [
+    {
+     "ref": "1TH 2:15",
+     "n": 77,
+     "form": "beks"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "anger → beks 48%, wrath → beks 36%."
+  },
+  {
+   "id": "term:wife",
+   "kind": "term",
+   "value": "waif",
+   "source": "H802",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "uman",
+     "note": "woman"
+    }
+   ],
+   "words": [
+    "wife"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 17:32",
+     "n": 93,
+     "form": "waif"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:husband",
+   "kind": "term",
+   "value": "ozban",
+   "source": "H376",
+   "attested": "attested",
+   "words": [
+    "husband"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 2:36",
+     "n": 95,
+     "form": "ozban"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:son",
+   "kind": "term",
+   "value": "bwai pikni",
+   "source": "H1121",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "pikni",
+     "note": "child, son in genealogies (LUK 3:34)"
+    },
+    {
+     "value": "bwai",
+     "note": "boy"
+    }
+   ],
+   "words": [
+    "son",
+    "sons"
+   ],
+   "evidence": [
+    {
+     "ref": "GAL 4:22",
+     "n": 196,
+     "form": "bwai pikni"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "lexicon son → pikni 41%, bwai 34%. \"Son of God\" = Gad pikni (LUK 3:38)."
+  },
+  {
+   "id": "term:daughter",
+   "kind": "term",
+   "value": "daata",
+   "source": "H1323",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "gyal pikni",
+     "n": 10
+    }
+   ],
+   "words": [
+    "daughter"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 2:36",
+     "n": 21,
+     "form": "daata"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:father",
+   "kind": "term",
+   "value": "faada",
+   "source": "H1",
+   "attested": "attested",
+   "words": [
+    "father"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 15:12",
+     "n": 627,
+     "form": "faada"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:forefathers",
+   "kind": "term",
+   "value": "faada faada",
+   "source": "H1",
+   "attested": "attested",
+   "words": [
+    "forefathers",
+    "fathers",
+    "ancestors"
+   ],
+   "evidence": [
+    {
+     "ref": "2PE 3:4",
+     "n": 61,
+     "form": "Wi faada faada"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:mother",
+   "kind": "term",
+   "value": "mada",
+   "source": "H517",
+   "attested": "attested",
+   "words": [
+    "mother"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 19:5",
+     "n": 143,
+     "form": "mada"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:brother",
+   "kind": "term",
+   "value": "breda",
+   "source": "H251",
+   "attested": "attested",
+   "words": [
+    "brother"
+   ],
+   "evidence": [
+    {
+     "ref": "1JN 3:12",
+     "n": 354,
+     "form": "breda"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:firstborn",
+   "kind": "term",
+   "value": "fos pikni",
+   "source": "H1060",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "fos bwai pikni",
+     "note": "HEB 12:16"
+    }
+   ],
+   "words": [
+    "firstborn"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 2:7",
+     "n": 2,
+     "form": "fos pikni"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:give_birth",
+   "kind": "term",
+   "value": "av wan bwai pikni",
+   "source": "H3205",
+   "attested": "attested",
+   "words": [
+    "bore",
+    "gave birth",
+    "give birth"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 1:21",
+     "n": 4,
+     "form": "av wan bwai pikni"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "give birth to a son = av (wan) bwai (pikni); be born = baan (ACT 7:8 \"Aizak did baan\")."
+  },
+  {
+   "id": "term:barren",
+   "kind": "term",
+   "value": "kudn av",
+   "source": "H6135",
+   "attested": "attested",
+   "words": [
+    "barren"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 1:7",
+     "n": 3,
+     "form": "kudn av non"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "No adjective: \"she could not have (children)\"."
+  },
+  {
+   "id": "term:pregnant",
+   "kind": "term",
+   "value": "get biebi",
+   "source": "H2029",
+   "attested": "attested",
+   "words": [
+    "conceived",
+    "pregnant"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 1:24",
+     "n": 4,
+     "form": "get biebi"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:name",
+   "kind": "term",
+   "value": "niem",
+   "source": "H8034",
+   "attested": "attested",
+   "words": [
+    "name"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 5:1",
+     "n": 250,
+     "form": "niem"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:covenant",
+   "kind": "term",
+   "value": "pramis",
+   "source": "H1285",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "plan",
+     "n": 11,
+     "note": "Hebrews: nyuu plan"
+    },
+    {
+     "value": "diil",
+     "n": 4
+    }
+   ],
+   "words": [
+    "covenant"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 3:25",
+     "n": 176,
+     "form": "pramis"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "lexicon covenant → pramis 35%, plan 30%, diil 11%. pramis also renders \"promise\" and \"oath\": the team may want a separate word for בְּרִית."
+  },
+  {
+   "id": "term:altar",
+   "kind": "term",
+   "value": "alta",
+   "source": "H4196",
+   "attested": "attested",
+   "words": [
+    "altar"
+   ],
+   "evidence": [
+    {
+     "ref": "HEB 13:10",
+     "n": 27,
+     "form": "alta"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:sacrifice",
+   "kind": "term",
+   "value": "sakrifais",
+   "source": "H2077",
+   "attested": "attested",
+   "words": [
+    "sacrifice",
+    "offering",
+    "burnt offering"
+   ],
+   "evidence": [
+    {
+     "ref": "HEB 11:4",
+     "n": 80,
+     "form": "sakrifais"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "burnt offering = bon … fi sakrifais (HEB 10:6 \"bon uola animal fi sakrifais\"); offering → sakrifais 47%, aafrin 16%."
+  },
+  {
+   "id": "term:priest",
+   "kind": "term",
+   "value": "priis",
+   "source": "H3548",
+   "attested": "attested",
+   "words": [
+    "priest"
+   ],
+   "evidence": [
+    {
+     "ref": "HEB 7:1",
+     "n": 199,
+     "form": "priis"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:temple",
+   "kind": "term",
+   "value": "Gad ous",
+   "source": "H1964",
+   "attested": "attested",
+   "words": [
+    "temple",
+    "house of god"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 3:2",
+     "n": 131,
+     "form": "Gad ous"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "temple → ous 77%, yaad 19%; \"Gad ous\" 131×."
+  },
+  {
+   "id": "term:sin",
+   "kind": "term",
+   "value": "sin",
+   "source": "H2403",
+   "attested": "attested",
+   "words": [
+    "sin"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 13:38",
+     "n": 431,
+     "form": "sin"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:righteous",
+   "kind": "term",
+   "value": "du wa rait",
+   "source": "H6662",
+   "attested": "attested",
+   "words": [
+    "righteous",
+    "righteousness",
+    "just"
+   ],
+   "evidence": [
+    {
+     "ref": "HEB 11:7",
+     "n": 37,
+     "form": "du wa rait"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "No adjective: a righteous man = \"sumadi we du wa rait\" (HEB 11:4, 11:7). lexicon righteous → rait 36%."
+  },
+  {
+   "id": "term:mercy",
+   "kind": "term",
+   "value": "kain",
+   "source": "H2617",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "gud an kain",
+     "note": "MAT 23:23, GAL 6:16"
+    },
+    {
+     "value": "piti",
+     "note": "pity, compassion"
+    }
+   ],
+   "words": [
+    "mercy",
+    "loving devotion",
+    "kindness",
+    "loving kindness"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 9:13",
+     "n": 117,
+     "form": "kain"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Occurrence index H2617 (חֶסֶד): via ἔλεος, kain 51%, gud 10%; often \"gud an kain tu\". The team decides whether God's חֶסֶד needs a fixed phrase."
+  },
+  {
+   "id": "term:glory",
+   "kind": "term",
+   "value": "brait lait",
+   "source": "H3519",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "priez",
+     "note": "give glory"
+    },
+    {
+     "value": "ou Gad griet",
+     "note": "1CO 11:7"
+    }
+   ],
+   "words": [
+    "glory"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 7:2",
+     "n": 34,
+     "form": "brait brait lait"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "No fixed rendering: glory → brait 17%, priez 17%, big 16%, lait 11%. Shining glory = brait lait; honour = priez/rispek."
+  },
+  {
+   "id": "term:holy",
+   "kind": "term",
+   "value": "uoli",
+   "source": "H6918",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "kliin",
+     "note": "pure"
+    }
+   ],
+   "words": [
+    "holy"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 1:20",
+     "n": 192,
+     "form": "Uoli"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:worship",
+   "kind": "term",
+   "value": "worship",
+   "source": "H7812",
+   "attested": "attested",
+   "words": [
+    "worship"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 4:10",
+     "n": 141,
+     "form": "worship"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:praise",
+   "kind": "term",
+   "value": "priez",
+   "source": "H1984",
+   "attested": "attested",
+   "words": [
+    "praise"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 1:68",
+     "n": 135,
+     "form": "Priez"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:angel",
+   "kind": "term",
+   "value": "ienjel",
+   "source": "H4397",
+   "attested": "attested",
+   "words": [
+    "angel"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 1:20",
+     "n": 208,
+     "form": "ienjel"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:king",
+   "kind": "term",
+   "value": "king",
+   "source": "H4428",
+   "attested": "attested",
+   "words": [
+    "king"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 7:10",
+     "n": 163,
+     "form": "King"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:kingdom",
+   "kind": "term",
+   "value": "kindom",
+   "source": "H4467",
+   "attested": "attested",
+   "words": [
+    "kingdom"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 4:20",
+     "n": 132,
+     "form": "kindom"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:servant",
+   "kind": "term",
+   "value": "sorvant",
+   "source": "H5650",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "sliev",
+     "note": "slave"
+    }
+   ],
+   "words": [
+    "servant"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 8:9",
+     "n": 167,
+     "form": "sorvant"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:foreigner",
+   "kind": "term",
+   "value": "chrienja",
+   "source": "H1616",
+   "attested": "attested",
+   "words": [
+    "foreigner",
+    "stranger",
+    "sojourner",
+    "alien"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 7:6",
+     "n": 8,
+     "form": "chrienja"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:nations",
+   "kind": "term",
+   "value": "konchri",
+   "source": "H1471",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "piipl we a no Juu",
+     "note": "Gentiles, 126×"
+    }
+   ],
+   "words": [
+    "nations",
+    "nation"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 7:4",
+     "n": 78,
+     "form": "konchri"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "nation → piipl 44%, konchri 33%."
+  },
+  {
+   "id": "term:famine",
+   "kind": "term",
+   "value": "staavieshan",
+   "source": "H7458",
+   "attested": "attested",
+   "words": [
+    "famine"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 7:11",
+     "n": 6,
+     "form": "staavieshan"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:wilderness",
+   "kind": "term",
+   "value": "dezot",
+   "source": "H4057",
+   "attested": "attested",
+   "words": [
+    "wilderness"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 3:4",
+     "n": 37,
+     "form": "dezot"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:mountain",
+   "kind": "term",
+   "value": "mountn",
+   "source": "H2022",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "moutn",
+     "n": 7
+    }
+   ],
+   "words": [
+    "mountain"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 17:1",
+     "n": 32,
+     "form": "mountn"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:river",
+   "kind": "term",
+   "value": "riva",
+   "source": "H5104",
+   "attested": "attested",
+   "words": [
+    "river"
+   ],
+   "evidence": [
+    {
+     "ref": "MRK 1:5",
+     "n": 28,
+     "form": "Riva"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:sheep",
+   "kind": "term",
+   "value": "shiip",
+   "source": "H6629",
+   "attested": "attested",
+   "words": [
+    "sheep",
+    "flock"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 15:4",
+     "n": 106,
+     "form": "shiip"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:lamb",
+   "kind": "term",
+   "value": "biebi shiip",
+   "source": "H3532",
+   "attested": "attested",
+   "words": [
+    "lamb"
+   ],
+   "evidence": [
+    {
+     "ref": "JHN 1:29",
+     "n": 46,
+     "form": "biebi shiip"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:goat",
+   "kind": "term",
+   "value": "guot",
+   "source": "H5795",
+   "attested": "attested",
+   "words": [
+    "goat"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 25:32",
+     "n": 8,
+     "form": "guot"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:cattle",
+   "kind": "term",
+   "value": "kou",
+   "source": "H1241",
+   "attested": "attested",
+   "words": [
+    "cattle",
+    "oxen",
+    "cows"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 14:19",
+     "n": 13,
+     "form": "kou"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:camel",
+   "kind": "term",
+   "value": "kyamil",
+   "source": "H1581",
+   "attested": "attested",
+   "words": [
+    "camel"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 19:24",
+     "n": 6,
+     "form": "kyamil"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:donkey",
+   "kind": "term",
+   "value": "dangki",
+   "source": "H2543",
+   "attested": "attested",
+   "words": [
+    "donkey"
+   ],
+   "evidence": [
+    {
+     "ref": "JHN 12:15",
+     "n": 24,
+     "form": "dangki"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:silver",
+   "kind": "term",
+   "value": "silva",
+   "source": "H3701",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "moni",
+     "note": "money"
+    }
+   ],
+   "words": [
+    "silver"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 15:8",
+     "n": 22,
+     "form": "silva"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:gold",
+   "kind": "term",
+   "value": "guol",
+   "source": "H2091",
+   "attested": "attested",
+   "words": [
+    "gold"
+   ],
+   "evidence": [
+    {
+     "ref": "1PE 1:7",
+     "n": 62,
+     "form": "guol"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:flood",
+   "kind": "term",
+   "value": "flod",
+   "source": "H3999",
+   "attested": "attested",
+   "words": [
+    "flood"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 17:27",
+     "n": 13,
+     "form": "flod"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:rainbow",
+   "kind": "term",
+   "value": "rienbuo",
+   "source": "H7198",
+   "attested": "attested",
+   "words": [
+    "rainbow"
+   ],
+   "evidence": [
+    {
+     "ref": "REV 4:3",
+     "n": 2,
+     "form": "rienbuo"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:dream",
+   "kind": "term",
+   "value": "jriim",
+   "source": "H2472",
+   "attested": "attested",
+   "words": [
+    "dream"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 1:20",
+     "n": 7,
+     "form": "jriim"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:well",
+   "kind": "term",
+   "value": "wel",
+   "source": "H875",
+   "attested": "attested",
+   "words": [
+    "well"
+   ],
+   "evidence": [
+    {
+     "ref": "JHN 4:6",
+     "n": 178,
+     "form": "wel"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:city",
+   "kind": "term",
+   "value": "siti",
+   "source": "H5892",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "toun",
+     "n": 102,
+     "note": "town"
+    }
+   ],
+   "words": [
+    "city"
+   ],
+   "evidence": [
+    {
+     "ref": "2PE 2:6",
+     "n": 116,
+     "form": "siti"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:house",
+   "kind": "term",
+   "value": "ous",
+   "source": "H1004",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "yaad",
+     "note": "home, at home"
+    },
+    {
+     "value": "fambili",
+     "note": "household"
+    }
+   ],
+   "words": [
+    "house"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 15:8",
+     "n": 341,
+     "form": "ous"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:tribe",
+   "kind": "term",
+   "value": "chraib",
+   "source": "H7626",
+   "attested": "attested",
+   "words": [
+    "tribe"
+   ],
+   "evidence": [
+    {
+     "ref": "REV 7:5",
+     "n": 34,
+     "form": "chraib"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:circumcise",
+   "kind": "term",
+   "value": "sorkomsaiz",
+   "source": "H4135",
+   "attested": "attested",
+   "words": [
+    "circumcise",
+    "circumcised",
+    "circumcision"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 7:8",
+     "n": 63,
+     "form": "sorkomsaiz"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:sabbath_rest",
+   "kind": "term",
+   "value": "res",
+   "source": "H7673",
+   "attested": "attested",
+   "words": [
+    "rested",
+    "rest"
+   ],
+   "evidence": [
+    {
+     "ref": "HEB 4:4",
+     "n": 79,
+     "form": "res"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:idols",
+   "kind": "term",
+   "value": "faalz gad",
+   "source": "H457",
+   "attested": "attested",
+   "words": [
+    "idols",
+    "idol",
+    "other gods"
+   ],
+   "evidence": [
+    {
+     "ref": "ROM 1:23",
+     "n": 39,
+     "form": "faalz gad"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "idols → faalz 53%; household gods (GEN 31) have no model: see questions."
+  },
+  {
+   "id": "term:soul",
+   "kind": "term",
+   "value": "suol",
+   "source": "H5315",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "laif",
+     "note": "life"
+    },
+    {
+     "value": "aat",
+     "note": "heart"
+    }
+   ],
+   "words": [
+    "soul"
+   ],
+   "evidence": [
+    {
+     "ref": "MRK 12:30",
+     "n": 27,
+     "form": "suol"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:heart",
+   "kind": "term",
+   "value": "aat",
+   "source": "H3820",
+   "attested": "attested",
+   "words": [
+    "heart"
+   ],
+   "evidence": [
+    {
+     "ref": "MRK 12:30",
+     "n": 332,
+     "form": "aat"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:believe",
+   "kind": "term",
+   "value": "biliiv",
+   "source": "H539",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "chos iina",
+     "note": "trust in, faith (HEB 11)"
+    }
+   ],
+   "words": [
+    "believe"
+   ],
+   "evidence": [
+    {
+     "ref": "HEB 11:20",
+     "n": 686,
+     "form": "biliiv"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "faith → biliiv 35%, chos 30%: \"chos iina Gad\" (HEB 11:4–22) for trusting God."
+  },
+  {
+   "id": "term:truth",
+   "kind": "term",
+   "value": "chuut",
+   "source": "H571",
+   "attested": "attested",
+   "words": [
+    "truth"
+   ],
+   "evidence": [
+    {
+     "ref": "JHN 8:32",
+     "n": 113,
+     "form": "chuut"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:peace",
+   "kind": "term",
+   "value": "piis",
+   "source": "H7965",
+   "attested": "attested",
+   "words": [
+    "peace"
+   ],
+   "evidence": [
+    {
+     "ref": "GAL 6:16",
+     "n": 159,
+     "form": "piis"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:save",
+   "kind": "term",
+   "value": "siev",
+   "source": "H3467",
+   "attested": "attested",
+   "words": [
+    "save",
+    "saved",
+    "salvation",
+    "deliver"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 7:10",
+     "n": 265,
+     "form": "siev"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:redeem",
+   "kind": "term",
+   "value": "frii",
+   "source": "H1350",
+   "attested": "attested",
+   "words": [
+    "redeem",
+    "redeemed",
+    "set free"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 1:68",
+     "n": 96,
+     "form": "frii"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:judge",
+   "kind": "term",
+   "value": "joj",
+   "source": "H8199",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "jojment",
+     "note": "judgment"
+    }
+   ],
+   "words": [
+    "judge"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 5:3",
+     "n": 205,
+     "form": "joj"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:forever",
+   "kind": "term",
+   "value": "fi eva",
+   "source": "H5769",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "fi eva an eva",
+     "n": 59
+    }
+   ],
+   "words": [
+    "forever"
+   ],
+   "evidence": [
+    {
+     "ref": "REV 10:6",
+     "n": 186,
+     "form": "fi eva an eva"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:amen",
+   "kind": "term",
+   "value": "iemen",
+   "source": "H543",
+   "attested": "attested",
+   "words": [
+    "amen"
+   ],
+   "evidence": [
+    {
+     "ref": "REV 1:7",
+     "n": 30,
+     "form": "Iemen"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:people",
+   "kind": "term",
+   "value": "piipl",
+   "source": "H5971",
+   "attested": "attested",
+   "words": [
+    "people"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 15:7",
+     "n": 3052,
+     "form": "piipl"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:wise",
+   "kind": "term",
+   "value": "waiz",
+   "source": "H2450",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "sens",
+     "note": "good sense"
+    }
+   ],
+   "words": [
+    "wise"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 1:19",
+     "n": 78,
+     "form": "waiz"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:eat",
+   "kind": "term",
+   "value": "nyam",
+   "source": "H398",
+   "attested": "attested",
+   "words": [
+    "eat",
+    "ate",
+    "eaten"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 15:23",
+     "n": 222,
+     "form": "nyam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "nyam 222×; English \"iit\" is rare (99×)."
+  },
+  {
+   "id": "term:food",
+   "kind": "term",
+   "value": "fuud",
+   "source": "H3899",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "bred",
+     "note": "bread, 64%"
+    }
+   ],
+   "words": [
+    "food",
+    "bread"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 7:11",
+     "n": 170,
+     "form": "fuud"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:want",
+   "kind": "term",
+   "value": "waahn",
+   "source": "H2654",
+   "attested": "attested",
+   "words": [
+    "want",
+    "desire"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 5:4",
+     "n": 770,
+     "form": "waahn"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:child",
+   "kind": "term",
+   "value": "pikni",
+   "source": "H3206",
+   "attested": "attested",
+   "alternatives": [
+    {
+     "value": "biebi",
+     "note": "baby"
+    }
+   ],
+   "words": [
+    "child",
+    "children",
+    "boy"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 1:7",
+     "n": 650,
+     "form": "pikni"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "formula:said_to",
+   "kind": "formula",
+   "value": "<speaker> se tu <X> se, “…”",
+   "source": "וַיֹּאמֶר אֶל / he said to <X>",
+   "attested": "attested",
+   "words": [
+    "said to",
+    "said"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 15:7",
+     "n": 355,
+     "form": "se tu dem se"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "formula:answered",
+   "kind": "formula",
+   "value": "<speaker> ansa <X> se, “…”",
+   "source": "וַיַּעַן … וַיֹּאמֶר / answered",
+   "attested": "attested",
+   "words": [
+    "answered",
+    "replied"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 4:7",
+     "n": 83,
+     "form": "ansa im se"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "formula:asked",
+   "kind": "formula",
+   "value": "<speaker> aks <X> se, “…”",
+   "source": "asked",
+   "attested": "attested",
+   "words": [
+    "asked"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 2:12",
+     "form": "aks dem wan aneda"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "formula:let_us",
+   "kind": "formula",
+   "value": "Mek wi <verb>",
+   "source": "נַעֲשֶׂה / let us",
+   "attested": "attested",
+   "words": [
+    "let us"
+   ],
+   "evidence": [
+    {
+     "ref": "MRK 1:38",
+     "n": 201,
+     "form": "Mek wi go"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "formula:let_there_be",
+   "kind": "formula",
+   "value": "Mek <X> <verb>",
+   "source": "יְהִי / let there be",
+   "attested": "attested",
+   "words": [
+    "let there be",
+    "let"
+   ],
+   "evidence": [
+    {
+     "ref": "2CO 4:6",
+     "form": "Mek di lait shain"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "Jussive commands of God: mek + subject + verb (Mek di lait shain, 2CO 4:6, God's word of GEN 1:3). \"Mek lait de\" (let light be) is built by rule."
+  },
+  {
+   "id": "formula:do_not_fear",
+   "kind": "formula",
+   "value": "No fried",
+   "source": "אַל־תִּירָא / do not be afraid",
+   "attested": "attested",
+   "words": [
+    "do not be afraid",
+    "fear not"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 1:13",
+     "n": 38,
+     "form": "No fried!"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "formula:says_the_lord",
+   "kind": "formula",
+   "value": "di Laad se",
+   "source": "נְאֻם יְהוָה / declares the LORD",
+   "attested": "attested",
+   "words": [
+    "declares the lord",
+    "says the lord"
+   ],
+   "evidence": [
+    {
+     "ref": "HEB 8:8",
+     "n": 22,
+     "form": "di Laad se"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "Placed inside the quotation (HEB 8:8) or before it (ACT 7:49 \"Di Laad se, ‘…’\")."
+  },
+  {
+   "id": "formula:it_is_written",
+   "kind": "formula",
+   "value": "it rait dong",
+   "source": "it is written (NT formula)",
+   "attested": "attested",
+   "words": [
+    "it is written",
+    "written"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 1:19",
+     "n": 41,
+     "form": "it rait dong"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "formula:named",
+   "kind": "formula",
+   "value": "wan <noun> niem <X>",
+   "source": "וּשְׁמוֹ / named <X>",
+   "attested": "attested",
+   "words": [
+    "named",
+    "whose name was"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 8:9",
+     "form": "niem Saiman"
+    },
+    {
+     "ref": "LUK 2:25",
+     "form": "niem Simiyan"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "\"(yu did av) wan man niem X\" (10×); \"we niem X\" 37×; \"we dem kaal X\" 35×."
+  },
+  {
+   "id": "formula:called_his_name",
+   "kind": "formula",
+   "value": "kaal im <X>",
+   "source": "וַיִּקְרָא אֶת־שְׁמוֹ / called his name <X>",
+   "attested": "attested",
+   "words": [
+    "called his name",
+    "named him"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 1:21",
+     "form": "kaal im Jiizas"
+    },
+    {
+     "ref": "LUK 1:13",
+     "form": "kaal im Jan"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "formula:father_of",
+   "kind": "formula",
+   "value": "<X> a did <Y> faada",
+   "source": "הוֹלִיד / became the father of",
+   "attested": "attested",
+   "words": [
+    "became the father of",
+    "fathered",
+    "father of"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 1:2",
+     "form": "did a Aizak faada"
+    },
+    {
+     "ref": "LUK 3:36",
+     "form": "faada a did Shem"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "Genealogy: \"<X> a did <Y> faada\" or \"<Y> a did <X> pikni\" (LUK 3:34–38, MAT 1:2–3). For the Hebrew \"X lived N years and fathered Y\", combine with \"av\" (Iebriyam did av tuu bwai pikni, GAL 4:22)."
+  },
+  {
+   "id": "formula:in_the_beginning",
+   "kind": "formula",
+   "value": "Wen taim did staat",
+   "source": "בְּרֵאשִׁית / in the beginning",
+   "attested": "attested",
+   "words": [
+    "in the beginning"
+   ],
+   "evidence": [
+    {
+     "ref": "JHN 1:1",
+     "form": "Wen taim did staat"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "JHN 1:1 renders \"In the beginning\" (an echo of GEN 1:1) so; \"fram Gad mek di worl\" = from the beginning of creation (MAT 19:4)."
+  },
+  {
+   "id": "formula:forever_and_ever",
+   "kind": "formula",
+   "value": "fi eva an eva",
+   "source": "לְעוֹלָם וָעֶד / forever and ever",
+   "attested": "attested",
+   "words": [
+    "forever and ever",
+    "forever"
+   ],
+   "evidence": [
+    {
+     "ref": "REV 10:6",
+     "n": 59,
+     "form": "fi eva an eva"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "formula:the_lord_said_to",
+   "kind": "formula",
+   "value": "Di Laad se tu <X> se",
+   "source": "וַיֹּאמֶר יְהוָה אֶל / the LORD said to",
+   "attested": "attested",
+   "words": [
+    "the lord said to"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 22:44",
+     "form": "Di Laad se tu"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "formula:the_next_day",
+   "kind": "formula",
+   "value": "di neks die",
+   "source": "מִמָּחֳרָת / the next day",
+   "attested": "attested",
+   "words": [
+    "the next day"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 4:3",
+     "form": "di neks die"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "formula:after_this",
+   "kind": "formula",
+   "value": "Afta dat",
+   "source": "אַחַר הַדְּבָרִים הָאֵלֶּה / after these things",
+   "attested": "attested",
+   "words": [
+    "after this",
+    "after these things"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 1:24",
+     "n": 85,
+     "form": "Afta dat"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "formula:god_saw_good",
+   "kind": "formula",
+   "value": "Gad si se <X> gud",
+   "source": "וַיַּרְא אֱלֹהִים כִּי־טוֹב / God saw that it was good",
+   "attested": "by-rule",
+   "words": [
+    "saw that it was good"
+   ],
+   "evidence": [
+    {
+     "ref": "1TI 4:4",
+     "form": "Gad mek gud"
+    },
+    {
+     "ref": "GEN 1:10",
+     "form": "Gad si se it"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "Built: si se (see that, 126×) + adjective with no copula (1TI 4:4 \"Evriting we Gad mek gud\")."
+  },
+  {
+   "id": "name:adam",
+   "kind": "name",
+   "value": "Adam",
+   "source": "Adam",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1TI 2:13",
+     "n": 16,
+     "form": "Adam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:eve",
+   "kind": "name",
+   "value": "Iiv",
+   "source": "Eve",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "1TI 2:13",
+     "n": 3,
+     "form": "Iiv"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:cain",
+   "kind": "name",
+   "value": "Kien",
+   "source": "Cain",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "HEB 11:4",
+     "n": 4,
+     "form": "Kien"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:abel",
+   "kind": "name",
+   "value": "Iebl",
+   "source": "Abel",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "HEB 11:4",
+     "n": 5,
+     "form": "Iebl"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:seth",
+   "kind": "name",
+   "value": "Set",
+   "source": "Seth",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 3:38",
+     "n": 3,
+     "form": "Set"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:enosh",
+   "kind": "name",
+   "value": "Iinos",
+   "source": "Enosh",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 3:38",
+     "n": 2,
+     "form": "Iinos"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:enoch",
+   "kind": "name",
+   "value": "Iinok",
+   "source": "Enoch",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "HEB 11:5",
+     "n": 4,
+     "form": "Iinok"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:methuselah",
+   "kind": "name",
+   "value": "Metyuuzila",
+   "source": "Methuselah",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 3:37",
+     "n": 2,
+     "form": "Metyuuzila"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:lamech",
+   "kind": "name",
+   "value": "Lamek",
+   "source": "Lamech",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 3:36",
+     "n": 2,
+     "form": "Lamek"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:noah",
+   "kind": "name",
+   "value": "Nowa",
+   "source": "Noah",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "HEB 11:7",
+     "n": 15,
+     "form": "Nowa"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:shem",
+   "kind": "name",
+   "value": "Shem",
+   "source": "Shem",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 3:36",
+     "n": 2,
+     "form": "Shem"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:arphaxad",
+   "kind": "name",
+   "value": "Arfaksad",
+   "source": "Arphaxad",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 3:36",
+     "n": 2,
+     "form": "Arfaksad"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:terah",
+   "kind": "name",
+   "value": "Tera",
+   "source": "Terah",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 3:34",
+     "n": 2,
+     "form": "Tera"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:nahor",
+   "kind": "name",
+   "value": "Nieyar",
+   "source": "Nahor",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 3:34",
+     "n": 2,
+     "form": "Nieyar"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:mahalalel",
+   "kind": "name",
+   "value": "Mayalalel",
+   "source": "Mahalalel",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 3:37",
+     "n": 2,
+     "form": "Mayalalel"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:jared",
+   "kind": "name",
+   "value": "Jared",
+   "source": "Jared",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 3:37",
+     "n": 2,
+     "form": "Jared"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:abraham",
+   "kind": "name",
+   "value": "Iebriyam",
+   "source": "Abraham",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 3:34",
+     "n": 137,
+     "form": "Iebriyam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:sarah",
+   "kind": "name",
+   "value": "Siera",
+   "source": "Sarah",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "HEB 11:11",
+     "n": 4,
+     "form": "Siera"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:lot",
+   "kind": "name",
+   "value": "Lat",
+   "source": "Lot",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 17:32",
+     "n": 4,
+     "form": "Lat"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:isaac",
+   "kind": "name",
+   "value": "Aizak",
+   "source": "Isaac",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 3:34",
+     "n": 29,
+     "form": "Aizak"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:rebekah",
+   "kind": "name",
+   "value": "Ribeka",
+   "source": "Rebekah",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ROM 9:10",
+     "n": 2,
+     "form": "Ribeka"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:jacob",
+   "kind": "name",
+   "value": "Jiekob",
+   "source": "Jacob",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 3:34",
+     "n": 28,
+     "form": "Jiekob"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:esau",
+   "kind": "name",
+   "value": "Iisaa",
+   "source": "Esau",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "HEB 11:20",
+     "n": 4,
+     "form": "Iisaa"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:joseph",
+   "kind": "name",
+   "value": "Juozif",
+   "source": "Joseph",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "HEB 11:22",
+     "n": 56,
+     "form": "Juozif"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:judah",
+   "kind": "name",
+   "value": "Juuda",
+   "source": "Judah",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 3:34",
+     "n": 12,
+     "form": "Juuda"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:reuben",
+   "kind": "name",
+   "value": "Ruuben",
+   "source": "Reuben",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "REV 7:5",
+     "n": 1,
+     "form": "Ruuben"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:simeon",
+   "kind": "name",
+   "value": "Simiyan",
+   "source": "Simeon",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "REV 7:7",
+     "n": 12,
+     "form": "Simiyan"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:levi",
+   "kind": "name",
+   "value": "Liivai",
+   "source": "Levi",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "REV 7:7",
+     "n": 18,
+     "form": "Liivai"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:issachar",
+   "kind": "name",
+   "value": "Isakyar",
+   "source": "Issachar",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "REV 7:7",
+     "n": 1,
+     "form": "Isakyar"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:zebulun",
+   "kind": "name",
+   "value": "Zebyulan",
+   "source": "Zebulun",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "REV 7:8",
+     "n": 3,
+     "form": "Zebyulan"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:benjamin",
+   "kind": "name",
+   "value": "Benjamin",
+   "source": "Benjamin",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "REV 7:8",
+     "n": 4,
+     "form": "Benjamin"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:asher",
+   "kind": "name",
+   "value": "Asha",
+   "source": "Asher",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "REV 7:6",
+     "n": 2,
+     "form": "Asha"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:naphtali",
+   "kind": "name",
+   "value": "Naftali",
+   "source": "Naphtali",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "REV 7:6",
+     "n": 3,
+     "form": "Naftali"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:manasseh",
+   "kind": "name",
+   "value": "Manase",
+   "source": "Manasseh",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "REV 7:6",
+     "n": 3,
+     "form": "Manase"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:hagar",
+   "kind": "name",
+   "value": "Iegar",
+   "source": "Hagar",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GAL 4:24",
+     "n": 3,
+     "form": "Iegar"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:melchizedek",
+   "kind": "name",
+   "value": "Melkizedek",
+   "source": "Melchizedek",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "HEB 7:1",
+     "n": 13,
+     "form": "Melkizedek"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:salem",
+   "kind": "name",
+   "value": "Sielem",
+   "source": "Salem",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "HEB 7:1",
+     "n": 3,
+     "form": "Sielem"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:egypt",
+   "kind": "name",
+   "value": "Iijip",
+   "source": "Egypt",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 7:10",
+     "n": 33,
+     "form": "Iijip"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:pharaoh",
+   "kind": "name",
+   "value": "Fiera",
+   "source": "Pharaoh",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 7:10",
+     "n": 6,
+     "form": "Fiera"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:canaan",
+   "kind": "name",
+   "value": "Kienan",
+   "source": "Canaan",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 7:11",
+     "n": 6,
+     "form": "Kienan"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "Kienan is also Cainan (LUK 3:36–37): a homograph."
+  },
+  {
+   "id": "name:haran",
+   "kind": "name",
+   "value": "Ieran",
+   "source": "Haran",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 7:4",
+     "n": 7,
+     "form": "Ieran"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "Ieran is also Aaron in the corpus (lexicon aaron → ieran): a homograph."
+  },
+  {
+   "id": "name:chaldeans",
+   "kind": "name",
+   "value": "Kaldiya",
+   "source": "Chaldeans",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 7:4",
+     "n": 1,
+     "form": "Kaldiya"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:mesopotamia",
+   "kind": "name",
+   "value": "Mesopotiemiya",
+   "source": "Mesopotamia",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 7:2",
+     "n": 2,
+     "form": "Mesopotiemiya"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:shechem",
+   "kind": "name",
+   "value": "Shekem",
+   "source": "Shechem",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 7:16",
+     "n": 1,
+     "form": "Shekem"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:hamor",
+   "kind": "name",
+   "value": "Iemuor",
+   "source": "Hamor",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "ACT 7:16",
+     "n": 1,
+     "form": "Iemuor"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:sodom",
+   "kind": "name",
+   "value": "Sadam",
+   "source": "Sodom",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MAT 10:15",
+     "n": 10,
+     "form": "Sadam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:gomorrah",
+   "kind": "name",
+   "value": "Gomaro",
+   "source": "Gomorrah",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MAT 10:15",
+     "n": 3,
+     "form": "Gomaro"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "Gomaro 3×, Gomara 1× (ROM 9:29)."
+  },
+  {
+   "id": "name:tamar",
+   "kind": "name",
+   "value": "Tamaar",
+   "source": "Tamar",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MAT 1:3",
+     "n": 1,
+     "form": "Tamaar"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:perez",
+   "kind": "name",
+   "value": "Perez",
+   "source": "Perez",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MAT 1:3",
+     "n": 4,
+     "form": "Perez"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:zerah",
+   "kind": "name",
+   "value": "Ziira",
+   "source": "Zerah",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MAT 1:3",
+     "n": 1,
+     "form": "Ziira"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:hezron",
+   "kind": "name",
+   "value": "Ezran",
+   "source": "Hezron",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MAT 1:3",
+     "n": 4,
+     "form": "Ezran"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:israel",
+   "kind": "name",
+   "value": "Izrel",
+   "source": "Israel",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 1:68",
+     "n": 85,
+     "form": "Izrel"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:moses",
+   "kind": "name",
+   "value": "Muoziz",
+   "source": "Moses",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GAL 4:24",
+     "n": 111,
+     "form": "Muoziz"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:david",
+   "kind": "name",
+   "value": "Dievid",
+   "source": "David",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 1:32",
+     "n": 73,
+     "form": "Dievid"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:babylon",
+   "kind": "name",
+   "value": "Babilan",
+   "source": "Babylon",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "REV 14:8",
+     "n": 11,
+     "form": "Babilan"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:jordan",
+   "kind": "name",
+   "value": "Jaadn",
+   "source": "Jordan",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MRK 1:5",
+     "n": 15,
+     "form": "Jaadn"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:sinai",
+   "kind": "name",
+   "value": "Sainai",
+   "source": "Sinai",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GAL 4:24",
+     "n": 5,
+     "form": "Sainai"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:rachel",
+   "kind": "name",
+   "value": "Riechel",
+   "source": "Rachel",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MAT 2:18",
+     "n": 1,
+     "form": "Riechel"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:satan",
+   "kind": "name",
+   "value": "Sietan",
+   "source": "Satan",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MAT 4:10",
+     "n": 33,
+     "form": "Sietan"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:jesus",
+   "kind": "name",
+   "value": "Jiizas",
+   "source": "Jesus",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MAT 4:7",
+     "n": 2424,
+     "form": "Jiizas"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "name:ishmael",
+   "kind": "name",
+   "value": "Ishmiel",
+   "source": "Ishmael",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "LUK 3:34",
+     "form": "Iebriyam"
+    },
+    {
+     "ref": "HEB 11:4",
+     "form": "Iebl"
+    },
+    {
+     "ref": "LUK 3:38",
+     "form": "Set"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Built from the letter table (letter:names, letter:no_h, letter:ie_uo): a candidate for the team. The cited verses hold the models (a → ie, h dropped, th → t)."
+  },
+  {
+   "id": "name:leah",
+   "kind": "name",
+   "value": "Liiya",
+   "source": "Leah",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "LUK 3:34",
+     "form": "Iebriyam"
+    },
+    {
+     "ref": "HEB 11:4",
+     "form": "Iebl"
+    },
+    {
+     "ref": "LUK 3:38",
+     "form": "Set"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Built from the letter table (letter:names, letter:no_h, letter:ie_uo): a candidate for the team. The cited verses hold the models (a → ie, h dropped, th → t)."
+  },
+  {
+   "id": "name:laban",
+   "kind": "name",
+   "value": "Lieban",
+   "source": "Laban",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "LUK 3:34",
+     "form": "Iebriyam"
+    },
+    {
+     "ref": "HEB 11:4",
+     "form": "Iebl"
+    },
+    {
+     "ref": "LUK 3:38",
+     "form": "Set"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Built from the letter table (letter:names, letter:no_h, letter:ie_uo): a candidate for the team. The cited verses hold the models (a → ie, h dropped, th → t)."
+  },
+  {
+   "id": "name:eden",
+   "kind": "name",
+   "value": "Iidn",
+   "source": "Eden",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "LUK 3:34",
+     "form": "Iebriyam"
+    },
+    {
+     "ref": "HEB 11:4",
+     "form": "Iebl"
+    },
+    {
+     "ref": "LUK 3:38",
+     "form": "Set"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Built from the letter table (letter:names, letter:no_h, letter:ie_uo): a candidate for the team. The cited verses hold the models (a → ie, h dropped, th → t)."
+  },
+  {
+   "id": "name:ham",
+   "kind": "name",
+   "value": "Am",
+   "source": "Ham",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "LUK 3:34",
+     "form": "Iebriyam"
+    },
+    {
+     "ref": "HEB 11:4",
+     "form": "Iebl"
+    },
+    {
+     "ref": "LUK 3:38",
+     "form": "Set"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Built from the letter table (letter:names, letter:no_h, letter:ie_uo): a candidate for the team. The cited verses hold the models (a → ie, h dropped, th → t)."
+  },
+  {
+   "id": "name:japheth",
+   "kind": "name",
+   "value": "Jiefet",
+   "source": "Japheth",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "LUK 3:34",
+     "form": "Iebriyam"
+    },
+    {
+     "ref": "HEB 11:4",
+     "form": "Iebl"
+    },
+    {
+     "ref": "LUK 3:38",
+     "form": "Set"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Built from the letter table (letter:names, letter:no_h, letter:ie_uo): a candidate for the team. The cited verses hold the models (a → ie, h dropped, th → t)."
+  },
+  {
+   "id": "name:abram",
+   "kind": "name",
+   "value": "Iebram",
+   "source": "Abram",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "LUK 3:34",
+     "form": "Iebriyam"
+    },
+    {
+     "ref": "HEB 11:4",
+     "form": "Iebl"
+    },
+    {
+     "ref": "LUK 3:38",
+     "form": "Set"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Built from the letter table (letter:names, letter:no_h, letter:ie_uo): a candidate for the team. The cited verses hold the models (a → ie, h dropped, th → t)."
+  },
+  {
+   "id": "name:sarai",
+   "kind": "name",
+   "value": "Sierai",
+   "source": "Sarai",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "LUK 3:34",
+     "form": "Iebriyam"
+    },
+    {
+     "ref": "HEB 11:4",
+     "form": "Iebl"
+    },
+    {
+     "ref": "LUK 3:38",
+     "form": "Set"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Built from the letter table (letter:names, letter:no_h, letter:ie_uo): a candidate for the team. The cited verses hold the models (a → ie, h dropped, th → t)."
+  },
+  {
+   "id": "name:babel",
+   "kind": "name",
+   "value": "Biebl",
+   "source": "Babel",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "LUK 3:34",
+     "form": "Iebriyam"
+    },
+    {
+     "ref": "HEB 11:4",
+     "form": "Iebl"
+    },
+    {
+     "ref": "LUK 3:38",
+     "form": "Set"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Built from the letter table (letter:names, letter:no_h, letter:ie_uo): a candidate for the team. The cited verses hold the models (a → ie, h dropped, th → t)."
+  },
+  {
+   "id": "name:nimrod",
+   "kind": "name",
+   "value": "Nimrad",
+   "source": "Nimrod",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "LUK 3:34",
+     "form": "Iebriyam"
+    },
+    {
+     "ref": "HEB 11:4",
+     "form": "Iebl"
+    },
+    {
+     "ref": "LUK 3:38",
+     "form": "Set"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Built from the letter table (letter:names, letter:no_h, letter:ie_uo): a candidate for the team. The cited verses hold the models (a → ie, h dropped, th → t)."
+  },
+  {
+   "id": "name:ephraim",
+   "kind": "name",
+   "value": "Iifriyim",
+   "source": "Ephraim",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "LUK 3:34",
+     "form": "Iebriyam"
+    },
+    {
+     "ref": "HEB 11:4",
+     "form": "Iebl"
+    },
+    {
+     "ref": "LUK 3:38",
+     "form": "Set"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Built from the letter table (letter:names, letter:no_h, letter:ie_uo): a candidate for the team. The cited verses hold the models (a → ie, h dropped, th → t)."
+  },
+  {
+   "id": "name:dinah",
+   "kind": "name",
+   "value": "Daina",
+   "source": "Dinah",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "LUK 3:34",
+     "form": "Iebriyam"
+    },
+    {
+     "ref": "HEB 11:4",
+     "form": "Iebl"
+    },
+    {
+     "ref": "LUK 3:38",
+     "form": "Set"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Built from the letter table (letter:names, letter:no_h, letter:ie_uo): a candidate for the team. The cited verses hold the models (a → ie, h dropped, th → t)."
+  },
+  {
+   "id": "name:ur",
+   "kind": "name",
+   "value": "Or",
+   "source": "Ur",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "LUK 3:34",
+     "form": "Iebriyam"
+    },
+    {
+     "ref": "HEB 11:4",
+     "form": "Iebl"
+    },
+    {
+     "ref": "LUK 3:38",
+     "form": "Set"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Built from the letter table (letter:names, letter:no_h, letter:ie_uo): a candidate for the team. The cited verses hold the models (a → ie, h dropped, th → t)."
+  },
+  {
+   "id": "name:bethel",
+   "kind": "name",
+   "value": "Betel",
+   "source": "Bethel",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "LUK 3:34",
+     "form": "Iebriyam"
+    },
+    {
+     "ref": "HEB 11:4",
+     "form": "Iebl"
+    },
+    {
+     "ref": "LUK 3:38",
+     "form": "Set"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Built from the letter table (letter:names, letter:no_h, letter:ie_uo): a candidate for the team. The cited verses hold the models (a → ie, h dropped, th → t)."
+  },
+  {
+   "id": "term:expanse",
+   "kind": "term",
+   "value": "big ruuf",
+   "source": "H7549",
+   "attested": "by-rule",
+   "words": [
+    "expanse",
+    "firmament"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 1:6",
+     "form": "wan big ruuf"
+    },
+    {
+     "ref": "LUK 5:19",
+     "form": "chuu di ruuf"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open",
+   "supersedes": "gap:expanse",
+   "note": "GEN 1:6 'wan big ruuf', then 'di ruuf'; 'di skai ruuf' for 'the expanse of the sky' (1:14-20); 1:8 names it Skai. Built on ruuf (roof, 7x). Footnote gives 'wan big kova'. Proposal for the team."
+  },
+  {
+   "id": "term:separate",
+   "kind": "term",
+   "value": "plit",
+   "source": "H914",
+   "attested": "attested",
+   "words": [
+    "separate",
+    "separated",
+    "distinguish"
+   ],
+   "evidence": [
+    {
+     "ref": "HEB 4:12",
+     "form": "plit op suol fram"
+    },
+    {
+     "ref": "GEN 1:4",
+     "form": "plit di lait fram"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "plit X fram Y (HEB 4:12 has 'plit op … fram'); shier means share, shiep shape."
+  },
+  {
+   "id": "formula:formless_void",
+   "kind": "formula",
+   "value": "neva av no shiep, an it did emti",
+   "source": "תֹהוּ וָבֹהוּ / formless and void",
+   "attested": "by-rule",
+   "words": [
+    "formless",
+    "void"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 1:2",
+     "form": "neva av no shiep"
+    },
+    {
+     "ref": "MAT 12:44",
+     "form": "di ous emti"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open",
+   "supersedes": "gap:formless_void",
+   "note": "Description in the corpus's explicit style; emti attested 3x (MAT 12:44, LUK 24:24, ACT 1:20)."
+  },
+  {
+   "id": "term:deep",
+   "kind": "term",
+   "value": "diip waata",
+   "source": "H8415",
+   "attested": "by-rule",
+   "words": [
+    "deep"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 1:2",
+     "form": "di diip waata"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "תְּהוֹם; lexicon deep → diip 78%."
+  },
+  {
+   "id": "term:hover",
+   "kind": "term",
+   "value": "flai uova",
+   "source": "H7363",
+   "attested": "by-rule",
+   "words": [
+    "hovering"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 1:2",
+     "form": "did a flai uova"
+    },
+    {
+     "ref": "REV 8:13",
+     "form": "flai ai iina"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Piel participle מְרַחֶפֶת (a bird over its young, Deut 32:11): 'did a flai uova di waata' (past progressive). No NT model."
+  },
+  {
+   "id": "term:vegetation",
+   "kind": "term",
+   "value": "griin tingz",
+   "source": "H1877",
+   "attested": "by-rule",
+   "words": [
+    "vegetation"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 1:11",
+     "form": "bier griin tingz"
+    },
+    {
+     "ref": "MAT 6:23",
+     "form": "yu wel daak"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "דֶּשֶׁא as the general category; esev = plaant, ets = chrii. tingz attested 178x, griin 4x."
+  },
+  {
+   "id": "term:plant",
+   "kind": "term",
+   "value": "plaant",
+   "source": "H6212",
+   "attested": "attested",
+   "words": [
+    "plants",
+    "plant",
+    "plants"
+   ],
+   "evidence": [
+    {
+     "ref": "REV 9:4",
+     "form": "di griin plaant"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "עֵשֶׂב; lexicon plants → plaant 100%. 'evri griin plaant' (GEN 1:30)."
+  },
+  {
+   "id": "term:bear_fruit_seed",
+   "kind": "term",
+   "value": "bier",
+   "source": "H2232 H6213",
+   "attested": "attested",
+   "words": [
+    "bearing",
+    "yielding",
+    "contains",
+    "bears"
+   ],
+   "evidence": [
+    {
+     "ref": "JHN 15:2",
+     "form": "no bier fruut"
+    },
+    {
+     "ref": "GEN 1:11",
+     "form": "bier siid"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Plants 'bier siid', trees 'bier fruut' (JHN 15:2, REV 22:2). The earth too: 'Mek di ort bier griin tingz' (GEN 1:11-12, by rule)."
+  },
+  {
+   "id": "formula:according_to_kind",
+   "kind": "formula",
+   "value": "difrant difrant kaina",
+   "source": "לְמִינֵהוּ / according to its kind",
+   "attested": "by-rule",
+   "words": [
+    "according to its kind",
+    "according to their kinds",
+    "after its kind"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 15:38",
+     "form": "di difrant difrant siid"
+    },
+    {
+     "ref": "GEN 1:12",
+     "form": "difrant difrant kaina"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open",
+   "supersedes": "gap:kinds",
+   "note": "Doubled difrant (1CO 15:38) + kaina; used for every לְמִין in GEN 1. 'aal kaina' (ACT 11:6) for 'every kind'."
+  },
+  {
+   "id": "term:gather",
+   "kind": "term",
+   "value": "gyada tugeda",
+   "source": "H6960",
+   "attested": "attested",
+   "words": [
+    "gathered",
+    "gathering"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 5:4",
+     "form": "unu gyada tugeda"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Of the waters (GEN 1:9-10): 'di waata we gyada tugeda'."
+  },
+  {
+   "id": "term:dry_land",
+   "kind": "term",
+   "value": "jrai lan",
+   "source": "H3004",
+   "attested": "attested",
+   "words": [
+    "dry land",
+    "dry ground"
+   ],
+   "evidence": [
+    {
+     "ref": "HEB 11:29",
+     "form": "jrai lan"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:appear",
+   "kind": "term",
+   "value": "kom out",
+   "source": "H7200",
+   "attested": "by-rule",
+   "words": [
+    "appear"
+   ],
+   "evidence": [
+    {
+     "ref": "JAS 4:14",
+     "form": "di son kom out"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Niphal of ראה for the dry land: 'mek di jrai lan kom out' (GEN 1:9)."
+  },
+  {
+   "id": "term:seasons",
+   "kind": "term",
+   "value": "siizn",
+   "source": "H4150",
+   "attested": "by-rule",
+   "words": [
+    "seasons"
+   ],
+   "evidence": [
+    {
+     "ref": "JHN 10:22",
+     "form": "di kuol siizn"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "מוֹעֲדִים in GEN 1:14 (the appointed times); later feasts may want festival (GAL 4:10)."
+  },
+  {
+   "id": "term:sign",
+   "kind": "term",
+   "value": "sain",
+   "source": "H226",
+   "attested": "attested",
+   "words": [
+    "sign",
+    "signs"
+   ],
+   "evidence": [
+    {
+     "ref": "REV 15:1",
+     "form": "impuotant sain"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:greater_lesser",
+   "kind": "term",
+   "value": "di biga lait / di likla lait",
+   "source": "H1419 H6996",
+   "attested": "attested",
+   "words": [
+    "greater",
+    "lesser"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 13:32",
+     "form": "likla dan evri"
+    },
+    {
+     "ref": "GEN 1:16",
+     "form": "di likla lait"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "biga (22x), likla (3x) comparatives."
+  },
+  {
+   "id": "term:star",
+   "kind": "term",
+   "value": "staar",
+   "source": "H3556",
+   "attested": "attested",
+   "words": [
+    "stars",
+    "star"
+   ],
+   "evidence": [
+    {
+     "ref": "REV 12:1",
+     "form": "twelv staar"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:living_creatures",
+   "kind": "term",
+   "value": "sitn we liv",
+   "source": "H5315 H2416",
+   "attested": "by-rule",
+   "words": [
+    "living creatures",
+    "living thing",
+    "creature",
+    "creatures"
+   ],
+   "evidence": [
+    {
+     "ref": "REV 16:3",
+     "form": "evriting we liv"
+    },
+    {
+     "ref": "GEN 1:20",
+     "form": "sitn we liv"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "נֶפֶשׁ חַיָּה of animals; 'nof nof sitn we liv' for the swarms (GEN 1:20); 'evriting we av di bret a laif' (1:30)."
+  },
+  {
+   "id": "term:teem",
+   "kind": "term",
+   "value": "ful op wid nof nof",
+   "source": "H8317",
+   "attested": "by-rule",
+   "words": [
+    "teem",
+    "teemed",
+    "swarm"
+   ],
+   "evidence": [
+    {
+     "ref": "REV 15:8",
+     "form": "ful op wid sumuok"
+    },
+    {
+     "ref": "GEN 1:20",
+     "form": "ful op wid nof"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open"
+  },
+  {
+   "id": "term:sea_creatures",
+   "kind": "term",
+   "value": "big big animal iina di sii",
+   "source": "H8577",
+   "attested": "by-rule",
+   "words": [
+    "sea creatures",
+    "great sea creatures"
+   ],
+   "evidence": [
+    {
+     "ref": "JAS 3:7",
+     "form": "liv iina di sii"
+    },
+    {
+     "ref": "GEN 1:21",
+     "form": "big big animal"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open",
+   "supersedes": "gap:sea_creatures"
+  },
+  {
+   "id": "term:winged_bird",
+   "kind": "term",
+   "value": "bod we av wing",
+   "source": "H5775 H3671",
+   "attested": "by-rule",
+   "words": [
+    "winged bird",
+    "winged"
+   ],
+   "evidence": [
+    {
+     "ref": "REV 12:14",
+     "form": "tuu wing"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open"
+  },
+  {
+   "id": "term:fly",
+   "kind": "term",
+   "value": "flai",
+   "source": "H5774",
+   "attested": "attested",
+   "words": [
+    "fly"
+   ],
+   "evidence": [
+    {
+     "ref": "REV 12:14",
+     "form": "kuda flai go"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:livestock",
+   "kind": "term",
+   "value": "animal we piipl kip",
+   "source": "H929",
+   "attested": "by-rule",
+   "words": [
+    "livestock",
+    "cattle"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 1:24",
+     "form": "animal we piipl kip"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open",
+   "supersedes": "gap:livestock",
+   "note": "בְּהֵמָה as a class; no NT word. kou stays for cattle as cows."
+  },
+  {
+   "id": "term:creeping_things",
+   "kind": "term",
+   "value": "animal we kraal pan di grong",
+   "source": "H7431",
+   "attested": "attested",
+   "words": [
+    "crawlers",
+    "crawls",
+    "creeping",
+    "creeps",
+    "creature that crawls"
+   ],
+   "evidence": [
+    {
+     "ref": "JAS 3:7",
+     "form": "animal we kraal"
+    },
+    {
+     "ref": "ROM 1:23",
+     "form": "animal we kraal"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open",
+   "supersedes": "gap:creeping_things",
+   "note": "JAS 3:7 has the GEN 1 list: wail animal, bod, animal we kraal pan di grong, animal we liv iina di sii. 'evriting we kraal pan di grong/ort'."
+  },
+  {
+   "id": "term:wild_animals",
+   "kind": "term",
+   "value": "wail animal",
+   "source": "H2416",
+   "attested": "attested",
+   "words": [
+    "beasts",
+    "beast",
+    "beasts of the earth"
+   ],
+   "evidence": [
+    {
+     "ref": "JAS 3:7",
+     "form": "wail animal"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "חַיַּת הָאָרֶץ = 'wail animal pan (di) ort'."
+  },
+  {
+   "id": "term:mankind",
+   "kind": "term",
+   "value": "piipl",
+   "source": "H120",
+   "attested": "by-rule",
+   "words": [
+    "man",
+    "mankind"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 1:26",
+     "form": "Mek wi mek piipl"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "אָדָם generic in GEN 1:26-27: piipl (plural, so 'mek dem ruul', 'im mek dem'). 'man' would read as male only. Open: Adam as a name from GEN 2-5."
+  },
+  {
+   "id": "formula:image_likeness",
+   "kind": "formula",
+   "value": "fi luk laik wi, fi bi laik wi",
+   "source": "בְּצַלְמֵנוּ כִּדְמוּתֵנוּ / in our image, after our likeness",
+   "attested": "by-rule",
+   "words": [
+    "image",
+    "likeness",
+    "in our image"
+   ],
+   "evidence": [
+    {
+     "ref": "REV 15:2",
+     "form": "fi luk laik im"
+    },
+    {
+     "ref": "GEN 1:27",
+     "form": "fi luk laik Gad"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open",
+   "supersedes": "gap:image_likeness",
+   "note": "'fi luk laik' (REV 13-16 for the beast's image) + 'fi bi laik' (1CO 11:7 per the wiki). GEN 1:27 'fi luk laik imself', 'fi luk laik Gad'."
+  },
+  {
+   "id": "formula:be_fruitful",
+   "kind": "formula",
+   "value": "Unu av nof nof pikni",
+   "source": "פְּרוּ וּרְבוּ / be fruitful and multiply",
+   "attested": "by-rule",
+   "words": [
+    "be fruitful",
+    "fruitful",
+    "multiply"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 6:5",
+     "form": "nof nof"
+    },
+    {
+     "ref": "LUK 20:28",
+     "form": "av pikni"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open",
+   "supersedes": "gap:be_fruitful",
+   "note": "Used for animals (GEN 1:22) and people (1:28). Birds: 'mek di bod dem ton nof nof' (1:22, juss. of רבה)."
+  },
+  {
+   "id": "term:subdue",
+   "kind": "term",
+   "value": "tek kanchuol a",
+   "source": "H3533",
+   "attested": "by-rule",
+   "words": [
+    "subdue"
+   ],
+   "evidence": [
+    {
+     "ref": "REV 4:2",
+     "form": "tek kanchuol a mi"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "GEN 1:28 'tek kanchuol a it'; lexicon subdue → kanchuol."
+  },
+  {
+   "id": "term:breath_of_life",
+   "kind": "term",
+   "value": "di bret a laif",
+   "source": "H5315 H2416",
+   "attested": "by-rule",
+   "words": [
+    "breath of life",
+    "breath"
+   ],
+   "evidence": [
+    {
+     "ref": "MRK 15:37",
+     "form": "bluo im bret"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open"
+  },
+  {
+   "id": "formula:it_was_so",
+   "kind": "formula",
+   "value": "An a so it apm.",
+   "source": "וַיְהִי כֵן / and it was so",
+   "attested": "by-rule",
+   "words": [
+    "and it was so",
+    "it was so"
+   ],
+   "evidence": [
+    {
+     "ref": "JAS 2:23",
+     "form": "So it apm"
+    },
+    {
+     "ref": "GEN 1:7",
+     "form": "a so it apm"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Focus a + so (as the wiki proposed); the same at every וַיְהִי כֵן in GEN 1 (7, 9, 11, 15, 24, 30)."
+  },
+  {
+   "id": "formula:evening_morning",
+   "kind": "formula",
+   "value": "Iivnin kom, an maanin kom: dat a did di <ordinal> die.",
+   "source": "וַיְהִי עֶרֶב וַיְהִי בֹקֶר יוֹם … / and there was evening, and there was morning, the … day",
+   "attested": "by-rule",
+   "words": [
+    "there was evening",
+    "there was morning",
+    "evening",
+    "morning"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 8:16",
+     "form": "Wen iivnin kom"
+    },
+    {
+     "ref": "GEN 1:5",
+     "form": "maanin kom"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Refrain of GEN 1 (5, 8, 13, 19, 23, 31): 'a did' as the past copula (LUK 3:34)."
+  },
+  {
+   "id": "formula:called_x_y",
+   "kind": "formula",
+   "value": "<subject> kaal <X> “<Y>”",
+   "source": "וַיִּקְרָא … לְ / called X Y",
+   "attested": "by-rule",
+   "words": [
+    "called"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 6:9",
+     "form": "dem kaal demself"
+    },
+    {
+     "ref": "GEN 1:5",
+     "form": "kaal di lait"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Naming: Gad kaal di lait “Die”; a fronted object keeps its place: an di daak im kaal “Nait” (GEN 1:5, 10)."
+  },
+  {
+   "id": "term:ordinals",
+   "kind": "term",
+   "value": "fos, sekan, tord, fuot, fif, siks",
+   "source": "ordinal numbers",
+   "attested": "attested",
+   "words": [
+    "first",
+    "second",
+    "third",
+    "fourth",
+    "fifth",
+    "sixth"
+   ],
+   "evidence": [
+    {
+     "ref": "REV 4:7",
+     "form": "di tord wan"
+    },
+    {
+     "ref": "REV 9:1",
+     "form": "di fif ienjel"
+    },
+    {
+     "ref": "REV 6:12",
+     "form": "di siks chring"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "observed"
+  },
+  {
+   "id": "term:very_good",
+   "kind": "term",
+   "value": "wel gud",
+   "source": "H3966",
+   "attested": "by-rule",
+   "words": [
+    "very good",
+    "very"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 6:23",
+     "form": "yu wel daak"
+    }
+   ],
+   "confidence": "medium",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "wel + adjective intensifies (wel daak, wel torbl, wel glad); GEN 1:31 'it wel gud'. gud gud is mostly 'dear' (gud gud fren)."
+  },
+  {
+   "id": "term:lights_luminaries",
+   "kind": "term",
+   "value": "lait",
+   "source": "H3974",
+   "attested": "by-rule",
+   "words": [
+    "lights",
+    "light"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 1:14",
+     "form": "Mek lait dem de"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "מְאֹרֹת = lait dem; to shine/give light = gi lait (GEN 1:15, 17)."
+  }
+ ]
+}
