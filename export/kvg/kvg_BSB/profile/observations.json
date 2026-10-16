@@ -7148,6 +7148,126 @@
     "full amount"
    ],
    "note": "gen043:15 the double amount = 'moni bawan menás' (gap:double.g43); 43:21 the weight."
+  },
+  {
+   "id": "gap:gray_hair.g44",
+   "kind": "gap",
+   "source": "שֵׂיבָה (gray hair; bring my gray hair down to Sheol in sorrow)",
+   "value": "no word for gray hair (searched BSB gray|grey|white hair|hoary: none): the old man himself, 'no lawaqape ezoqam', with formula:to_sheol.g ('mutøkhop neka eiv matev ndæ̀goát, atema nǿnaním')",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "LUK 1:18",
+     "form": "lawaqape"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen044",
+   "date": "2026-10-16",
+   "status": "open",
+   "words": [
+    "gray",
+    "gray hair",
+    "sheol",
+    "sorrow"
+   ],
+   "note": "As gen042:38 (the same idiom). gen044:29, 31 (3sg: 'ndø̀goát, atema tenanim')."
+  },
+  {
+   "id": "gap:in_place_of.g44",
+   "kind": "gap",
+   "source": "תַּחַת הַנַּעַר (in place of the boy)",
+   "value": "no model for 'in place of' a person in a short clause: used '<X> zapaya' (for X's sake: 'ti zapaya', 'zo zapaya'); GEN 22:13 has the long 'amba X telavaoɨn, yaq sip ndølaváo' (instead of Isaac)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 22:13",
+     "form": "Amba Aezek telavaoɨn"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen044",
+   "date": "2026-10-16",
+   "status": "open",
+   "words": [
+    "in place of",
+    "instead of"
+   ],
+   "note": "gen044:33 'no nakhasam zapaya, nqanek tæyageɨn' (request -ɨn, feature request_permission). Question for the Kuni team."
+  },
+  {
+   "id": "gap:destitution.g45",
+   "kind": "gap",
+   "source": "פֶּן־תִּוָּרֵשׁ (lest you become destitute)",
+   "value": "no word for destitution (searched BSB destitut|poverty|impoverish): 'Soqaín ndøgo, … gigiap-av ezoqam tozogo' (lest you become poor people; gigiap-av ezoqam = the poor)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "LUK 18:22",
+     "form": "gigiap-av ezoqam"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen045",
+   "date": "2026-10-16",
+   "status": "open",
+   "words": [
+    "destitution",
+    "destitute",
+    "come to destitution"
+   ],
+   "note": "negative_purpose 'Soqaín ndøgo' (no negator in the clause); irrealis 2pl tozo- because 'you and your household' is plural. gen045:11."
+  },
+  {
+   "id": "gap:plowing.g45",
+   "kind": "gap",
+   "source": "חָרִישׁ וְקָצִיר (plowing and harvest)",
+   "value": "no word for plowing (searched BSB plow: only LUK 17:7 'khae-te teqa-sasaetat', working in the field): 'khae-te sasae mbaín, neka avøe vingisam mbaín' (no work in the fields, no picking of crops; vingisam from term:H7105.h)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "LUK 17:7",
+     "form": "khae-te teqa-sasaetat"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen045",
+   "date": "2026-10-16",
+   "status": "open",
+   "words": [
+    "plowing",
+    "harvesting",
+    "harvest"
+   ],
+   "note": "gen045:6."
+  },
+  {
+   "id": "gap:remnant.g45",
+   "kind": "gap",
+   "source": "לָשׂוּם לָכֶם שְׁאֵרִית בָּאָרֶץ (to preserve a remnant for you on the earth)",
+   "value": "no noun for remnant (ROM 11:5 says 'ezoqa nøme ndîgú', some people are): 'zogi qazi, manqei-qape-te, zua bezø̄-yagé' (let your offspring still live on the earth; optative bezø̄-, built)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "ROM 11:5",
+     "form": "ezoqa nøme ndîgú"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen045",
+   "date": "2026-10-16",
+   "status": "open",
+   "words": [
+    "remnant",
+    "preserve you as a remnant",
+    "preserve"
+   ],
+   "note": "gen045:7."
   }
  ]
 }
