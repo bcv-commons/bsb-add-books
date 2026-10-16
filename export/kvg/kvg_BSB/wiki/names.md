@@ -999,4 +999,29 @@ Adulam-ak (Adullamite), Kezib vemiav (Chezib), Timna taon (Timnah), Enaim vemiav
   - answers: enaim, entrance to enaim
   - Not in the corpus. 'Entrance' as the village gate (RUT 4:1). gen038:14, 21.
   - agent:gen038, 2026-10-15
-<!-- store:end sha=344e6c19 -->
+- **`name:nile.g`** יְאֹר (the Nile) → **Nael kea** [medium, decided, by-rule]
+  - NT: MRK 1:5 *Zoden kea*
+  - answers: nile
+  - Not in the corpus. By the letter rules (English /ai/ → ae, as Sainai) with the river class noun kea (place_class_noun; Zoden kea, Yuflatis kea). After the first mention 'ta kea'. gen041:1-3, 17-18.
+  - agent:gen041, 2026-10-16
+- **`name:zaphenath.g`** צָפְנַת פַּעְנֵחַ (Zaphenath-paneah) → **Zafenat-Panea** [medium, decided, by-rule]
+  - NT: GEN 30:6 *Den*
+  - answers: zaphenath, paneah, zaphenath-paneah
+  - ph → f, final -ah → -a, th → t (letter rules). gen041:45.
+  - agent:gen041, 2026-10-16
+- **`name:asenath.g`** אָסְנַת (Asenath) → **Asenat** [medium, decided, by-rule]
+  - NT: MAT 1:5 *Bowaz*
+  - answers: asenath
+  - th → t (letter rules). gen041:45, 50; 46:20.
+  - agent:gen041, 2026-10-16
+- **`name:potiphera.g`** פּוֹטִי פֶרַע (Potiphera, priest of On) → **Potifela; priest of On = On taon-ge iziz ezoqam** [medium, decided, by-rule]
+  - NT: GEN 37:36 *Potifa*
+  - answers: potiphera, priest of on
+  - ph → f, r → l (letter rules); kept apart from Potiphar = Potifa (gen037:36, 39:1), whose final r drops. On = 'On taon' (place_class_noun). gen041:45, 50; 46:20.
+  - agent:gen041, 2026-10-16
+- **`name:on.g`** אֹן (On, Heliopolis) → **On taon** [medium, decided, by-rule]
+  - NT: GEN 13:12 *Sodom taon*
+  - answers: on
+  - A town: name + taon (place_class_noun). gen041:45, 50.
+  - agent:gen041, 2026-10-16
+<!-- store:end sha=bdec7e4a -->

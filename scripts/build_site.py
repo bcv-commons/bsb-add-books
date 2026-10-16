@@ -27,21 +27,21 @@ UI = {   # interface strings by school language; the content stays as written
                 "chapters": "chapters", "draft": "draft", "review": "in review", "published": "published",
                 "built": "Built from commit", "all": "All projects", "mode": "Model knowledge",
                 "read": "Read", "language": "Language", "book": "Book", "chapter": "Chapter", "prev": "Previous", "next": "Next", "notes": "Notes", "tests": "Test drafts", "test": "Test draft", "test_banner": "An experiment with the drafting method, kept for comparison: not the project's draft of this chapter.", "reports": "Reports", "tests_intro": "Chapters drafted to test the method (held-out books, variants of the tools). They are separate from the project's drafts and are never published as its text.", "nodrafts": "no drafts yet", "choose": "Choose a language", "status_word": "Status",
-                "v_std": "Text", "v_bhsa": "BHSA clauses", "v_hcl": "MACULA/UHB clauses", "v_none": "no clause layout for this chapter",
+                "v_verse": "Verse by verse", "n_verse": "Hebrew: Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible); Greek: Berean Greek Bible; English: Berean Standard Bible (both public domain). The comments are the drafting agent's notes.", "notes_more": "More from the notes", "v_std": "Text", "v_bhsa": "BHSA clauses", "v_hcl": "MACULA/UHB clauses", "v_none": "no clause layout for this chapter",
                 "n_bhsa": "Clause layout: ETCBC, BHSA 2021, licensed CC BY-NC 4.0. This view of our draft on that layout is CC BY-NC 4.0 too: non-commercial use only, with credit to the ETCBC.",
                 "n_hcl": "Clause layout: bcv-commons Hebrew clause layout v0.22 (MACULA Hebrew, UHB), CC BY-SA 4.0. This view of our draft on that layout is CC BY-SA 4.0."},
     "Standard German": {"projects": "Projekte", "status": "Stand", "memory": "Sprachgedächtnis", "credits": "Nachweise",
                         "chapters": "Kapitel", "draft": "Entwurf", "review": "in Prüfung", "published": "veröffentlicht",
                         "built": "Erstellt aus Commit", "all": "Alle Projekte", "mode": "Sprachkenntnis des Modells",
                 "read": "Lesen", "language": "Sprache", "book": "Buch", "chapter": "Kapitel", "prev": "Zurück", "next": "Weiter", "notes": "Anmerkungen", "tests": "Testentwürfe", "test": "Testentwurf", "test_banner": "Ein Versuch mit der Arbeitsweise, zum Vergleich aufbewahrt: nicht der Entwurf des Projekts für dieses Kapitel.", "reports": "Berichte", "tests_intro": "Kapitel, die zum Prüfen der Arbeitsweise übersetzt wurden (zurückgehaltene Bücher, Varianten der Werkzeuge). Sie sind von den Entwürfen des Projekts getrennt und werden nie als sein Text veröffentlicht.", "nodrafts": "noch keine Entwürfe", "choose": "Sprache wählen", "status_word": "Stand",
-                "v_std": "Fliesstext", "v_bhsa": "BHSA-Sätze", "v_hcl": "MACULA/UHB-Sätze", "v_none": "für dieses Kapitel kein Satzlayout",
+                "v_verse": "Vers für Vers", "n_verse": "Hebräisch: Westminster Leningrad Codex (gemeinfrei), über MACULA Hebrew (CC BY 4.0, Clear Bible); Griechisch: Berean Greek Bible; Englisch: Berean Standard Bible (beide gemeinfrei). Die Kommentare sind die Notizen des Übersetzungsagenten.", "notes_more": "Weiteres aus den Notizen", "v_std": "Fliesstext", "v_bhsa": "BHSA-Sätze", "v_hcl": "MACULA/UHB-Sätze", "v_none": "für dieses Kapitel kein Satzlayout",
                 "n_bhsa": "Satzlayout: ETCBC, BHSA 2021, Lizenz CC BY-NC 4.0. Diese Darstellung unseres Entwurfs auf diesem Layout steht ebenfalls unter CC BY-NC 4.0: nur nicht kommerzielle Nutzung, mit Nennung des ETCBC.",
                 "n_hcl": "Satzlayout: bcv-commons Hebrew clause layout v0.22 (MACULA Hebrew, UHB), CC BY-SA 4.0. Diese Darstellung unseres Entwurfs auf diesem Layout steht unter CC BY-SA 4.0."},
     "Danish": {"projects": "Projekter", "status": "Status", "memory": "Sproghukommelse", "credits": "Kilder",
                "chapters": "kapitler", "draft": "udkast", "review": "til gennemsyn", "published": "udgivet",
                "built": "Bygget fra commit", "all": "Alle projekter", "mode": "Modellens kendskab",
                 "read": "Læs", "language": "Sprog", "book": "Bog", "chapter": "Kapitel", "prev": "Forrige", "next": "Næste", "notes": "Noter", "tests": "Testudkast", "test": "Testudkast", "test_banner": "Et forsøg med arbejdsmetoden, gemt til sammenligning: ikke projektets udkast til dette kapitel.", "reports": "Rapporter", "tests_intro": "Kapitler oversat for at afprøve metoden (tilbageholdte bøger, varianter af værktøjerne). De er adskilt fra projektets udkast og udgives aldrig som dets tekst.", "nodrafts": "ingen udkast endnu", "choose": "Vælg sprog", "status_word": "Status",
-                "v_std": "Løbende tekst", "v_bhsa": "BHSA-sætninger", "v_hcl": "MACULA/UHB-sætninger", "v_none": "intet sætningslayout for dette kapitel",
+                "v_verse": "Vers for vers", "n_verse": "Hebraisk: Westminster Leningrad Codex (fri af ophavsret), via MACULA Hebrew (CC BY 4.0, Clear Bible); græsk: Berean Greek Bible; engelsk: Berean Standard Bible (begge fri af ophavsret). Kommentarerne er oversætteragentens noter.", "notes_more": "Mere fra noterne", "v_std": "Løbende tekst", "v_bhsa": "BHSA-sætninger", "v_hcl": "MACULA/UHB-sætninger", "v_none": "intet sætningslayout for dette kapitel",
                 "n_bhsa": "Sætningslayout: ETCBC, BHSA 2021, licens CC BY-NC 4.0. Denne visning af vores udkast på det layout er også CC BY-NC 4.0: kun ikke-kommerciel brug, med kreditering af ETCBC.",
                 "n_hcl": "Sætningslayout: bcv-commons Hebrew clause layout v0.22 (MACULA Hebrew, UHB), CC BY-SA 4.0. Denne visning af vores udkast på det layout er CC BY-SA 4.0."},
 }
@@ -90,6 +90,12 @@ code { font-size:90%; } .path { font-family:ui-monospace,monospace; font-size:90
 .modes button:disabled { opacity:.45; cursor:default; }
 .view[hidden] { display:none; }
 .banner .tm { background:var(--q-line); color:#1f2328; font-weight:700; padding:1px 8px; border-radius:4px; text-transform:uppercase; font-size:13px; letter-spacing:.04em; }
+.vv { border-bottom:1px solid var(--line); padding:10px 0; }
+.vv-t { font-size:17px; }
+.vv-o { font-family:'SBL Hebrew','Ezra SIL','Times New Roman',serif; font-size:19px; color:var(--muted); margin:4px 0; }
+.vv-e, .vv-c { font-size:14px; margin:3px 0; }
+.vv-c { border-left:3px solid var(--accent-soft); padding-left:8px; }
+.vv-more { margin-top:24px; }
 .lic { background:var(--q); border:2px solid var(--q-line); border-radius:6px; padding:10px 14px; margin:0 0 14px; font-size:14px; font-weight:600; }
 .cls .l { padding-left:min(calc(var(--lv) * 1.6em), calc(var(--lv) * 3.5vw)); text-indent:-0.6em; margin:0 0 2px 0.6em; }
 .cls h2 { font-size:17px; margin:22px 0 6px; color:var(--muted); }
@@ -273,8 +279,9 @@ def tests(pname, p, tracked, od, ui, banner, built, nav, lc):
             nf = f[:-4] + "_notes.md"
             extra = ""
             if nf in tracked:
-                extra += f'<details class="notes"><summary><strong>{H.escape(ui["notes"])}</strong> ({H.escape(os.path.basename(nf))})</summary>' \
-                         + wiki.md_html(wiki.read_page(os.path.join(ROOT, nf))[1], os.path.basename(nf)) + "</details>"
+                vv = verse_view(p, code, n, os.path.join(ROOT, f), open(os.path.join(ROOT, nf), encoding="utf-8").read(), ui)
+                extra += f'<details class="notes"><summary><strong>{H.escape(ui["v_verse"])}</strong> ({H.escape(os.path.basename(nf))})</summary>' \
+                         + (vv or wiki.md_html(wiki.read_page(os.path.join(ROOT, nf))[1], os.path.basename(nf))) + "</details>"
             rf = f"{pre}{code}{n:03d}_report.md"
             if rf in tracked:
                 extra += f'<p><a href="{os.path.basename(rf)[:-3]}.html">{H.escape(ui["reports"])}: {H.escape(os.path.basename(rf))}</a></p>'
@@ -414,6 +421,122 @@ def book_title(p, code, title):
     return m[1] if m else title or code
 
 
+VERSE_HEAD = re.compile(r"^(verse|vers|v\.?|vers\.?)$", re.I)
+
+
+def notes_table(md):
+    """The notes' verse table (the first Markdown table whose first column is Verse/Vers): ([cells], header cells, the
+    notes without it). Kuni notes have a row per verse (verse, Hebrew, Kuni, BSB, comment), the Danish and Bern German
+    ones a row per choice (verse, Hebrew phrase, rendering, BSB phrase, comment)."""
+    lines, rows, head, out, i = md.splitlines(), [], None, [], 0
+    while i < len(lines):
+        l = lines[i]
+        cells = [c.strip() for c in l.strip().strip("|").split("|")] if l.lstrip().startswith("|") else None
+        if head is None and cells and VERSE_HEAD.match(cells[0]) and i + 1 < len(lines) and re.match(r"^\s*\|[\s:|-]+\|\s*$", lines[i + 1]):
+            head, i = cells, i + 2
+            while i < len(lines) and lines[i].lstrip().startswith("|"):
+                rows.append([c.strip() for c in lines[i].strip().strip("|").split("|")])
+                i += 1
+            if out and re.match(r"^#{1,6} ", out[-1].strip() or (out[-2] if len(out) > 1 else "")):
+                k = len(out) - 1                                    # the table's own heading, when nothing else is under it
+                while k >= 0 and not out[k].strip():
+                    k -= 1
+                nxt = next((x for x in lines[i:] if x.strip()), "")
+                if k >= 0 and re.match(r"^#{1,6} ", out[k]) and (not nxt or re.match(r"^#{1,6} ", nxt)):
+                    del out[k:]
+            continue
+        out.append(l)
+        i += 1
+    return rows, head, "\n".join(out)
+
+
+def verse_numbers(cell):
+    """'1' '1.2.6.22' '1–3' '3,5' '16a' 'v3' -> [1, 2, …]"""
+    out = []
+    for part in re.split(r"[.,;/ ]+", re.sub(r"^v", "", cell.strip(), flags=re.I)):
+        m = re.match(r"^(\d+)[a-z]?(?:\s*[-–]\s*(\d+))?", part)
+        if m:
+            a, b = int(m[1]), int(m[2] or m[1])
+            out += list(range(a, min(b, a + 200) + 1))
+    return out
+
+
+def source_verses(code, ch):
+    """{verse: original text}: the Hebrew from MACULA (WLC) in orig/heb.sqlite, the Greek from orig/grc (BGB)."""
+    from books import BY_CODE
+    import langtools as LT
+    if BY_CODE[code][2] == "nt":
+        f = os.path.join(ROOT, "orig", "grc", f"{code}{ch:03d}.txt")
+        return {v: t for (c, v), t in LT.verses_of(f).items()} if os.path.exists(f) else {}
+    db = os.path.join(ROOT, "orig", "heb.sqlite")
+    if not os.path.exists(db):
+        return {}
+    import sqlite3
+    out = {}
+    for v, t, a in sqlite3.connect(db).execute("select v, text, after from tokens where book=? and ch=? order by key",
+                                              (code.upper(), ch)):
+        out[v] = out.get(v, "") + (t or "") + (a or "")
+    return {v: t.strip() for v, t in out.items()}
+
+
+def bsb_verses(p, code, ch, verses):
+    """{verse: (BSB reference, text)} for the draft's verses (OT: Hebrew numbering, mapped through orig/vrs)."""
+    from books import BY_CODE
+    import langtools as LT
+    import vrs
+    from project import sources
+    nt, adir, out, cache = BY_CODE[code][2] == "nt", sources(p, code)[2], {}, {}
+    for v in verses:
+        bc, bv = (ch, v) if nt else vrs.to_bsb(code, ch, v)
+        if bc not in cache:
+            f = os.path.join(ROOT, adir, f"{code}{bc:03d}.txt")
+            cache[bc] = LT.verses_of(f) if os.path.exists(f) else {}
+        if (bc, bv) in cache[bc]:
+            out[v] = (f"{bc}:{bv}", cache[bc][(bc, bv)])
+    return out
+
+
+def verse_view(p, code, n, draft_file, notes_md, ui):
+    """The chapter verse by verse: each verse of the draft with the original, the BSB and the notes' rows for it, then
+    the rest of the notes. -> html ('' without notes)."""
+    import langtools as LT
+    if not notes_md:
+        return ""
+    rows, head, rest = notes_table(notes_md)
+    draft = {v: t for (c, v), t in LT.verses_of(draft_file).items()}
+    src, bsb = source_verses(code, n), bsb_verses(p, code, n, sorted(draft))
+    by_v = {}
+    for r in rows:
+        for v in verse_numbers(r[0]):
+            by_v.setdefault(v, []).append(r)
+    per_verse = rows and len(rows) >= 0.8 * len(draft) and all(len(by_v.get(v, [])) <= 1 for v in draft)
+    rtl = ' dir="rtl" lang="he"'
+    from books import BY_CODE
+    nt = BY_CODE[code][2] == "nt"
+    items = []
+    for v in sorted(draft):
+        cell = [f'<div class="vv-t"><sup class="v">{v}</sup> {inline_md(draft[v])}</div>']
+        if src.get(v):
+            cell.append(f'<div class="vv-o"{"" if nt else rtl}>{H.escape(src[v])}</div>')
+        if bsb.get(v):
+            cell.append(f'<div class="vv-e"><span class="muted">BSB {H.escape(bsb[v][0])}</span> {H.escape(bsb[v][1])}</div>')
+        for r in by_v.get(v, []):
+            if per_verse:
+                cm = r[-1] if len(r) > 1 else ""
+                if cm:
+                    cell.append(f'<div class="vv-c">{inline_md(cm)}</div>')
+            else:
+                heb, tgt = (r[1] if len(r) > 1 else ""), (r[2] if len(r) > 2 else "")
+                eng, cm = (r[3] if len(r) > 4 else ""), (r[-1] if len(r) > 3 else "")
+                line = (f'<span{"" if nt else rtl}>{inline_md(heb)}</span> → <strong>{inline_md(tgt)}</strong>'
+                        + (f' <span class="muted">({inline_md(eng)})</span>' if eng else ""))
+                cell.append(f'<div class="vv-c">{line}' + (f'<br>{inline_md(cm)}' if cm else "") + "</div>")
+        items.append(f'<div class="vv" id="vv{v}">' + "".join(cell) + "</div>")
+    more = wiki.md_html(rest, "notes") if rest.strip() else ""
+    return (f'<div class="lic">{H.escape(ui["n_verse"])}</div><div class="vvs">{"".join(items)}</div>'
+            + (f'<div class="notes vv-more"><h2>{H.escape(ui["notes_more"])}</h2>{more}</div>' if more else ""))
+
+
 def reader(pname, p, tracked, od, ui, banner, built, nav, lc, rows):
     """The project's reader: a page of books and chapters, and one page per chapter."""
     from books import BY_CODE
@@ -437,6 +560,9 @@ def reader(pname, p, tracked, od, ui, banner, built, nav, lc, rows):
             if not views:
                 print(f"  note: no clause views for {pname} {code}{n:03d} (.align stale, or no layouts: setup.py --heb bhsa,bcv-query)")
         books.setdefault(code, {"title": book_title(p, code, title), "chs": []})["chs"].append(n)
+        nf = f[:-4] + "_notes.md"
+        views["verse"] = verse_view(p, code, n, f, open(nf, encoding="utf-8").read()
+                                    if os.path.relpath(nf, ROOT) in tracked else "", ui)
         pages.append((code, n, title, blocks, notes, r, views))
     rd = os.path.join(od, "read")
     os.makedirs(rd, exist_ok=True)
@@ -469,12 +595,14 @@ def reader(pname, p, tracked, od, ui, banner, built, nav, lc, rows):
             body_ = "".join(f"<h2>{x[1]}</h2>" if x[0] == "h" else f'<div class="l" style="--lv:{x[1]}">{x[2]}</div>' for x in rows)
             notice = ui["n_bhsa"] if lay == "bhsa" else ui["n_hcl"]
             return f'<div class="lic">{H.escape(notice)}</div><div class="text cls">{body_}</div>'
-        modes = [("std", ui["v_std"], True), ("bhsa", ui["v_bhsa"], "bhsa" in views), ("hcl", ui["v_hcl"], "bcv-query" in views)]
+        modes = [("std", ui["v_std"], True), ("verse", ui["v_verse"], bool(views.get("verse"))),
+                 ("bhsa", ui["v_bhsa"], "bhsa" in views), ("hcl", ui["v_hcl"], "bcv-query" in views)]
         none = H.escape(ui["v_none"])
         switch = ('<div class="modes" role="tablist">' + "".join(
             f'<button type="button" data-mode="{m}"' + ("" if ok else f' disabled title="{none}"') + f">{H.escape(lab)}</button>"
             for m, lab, ok in modes) + "</div>")
         text = (f'<div class="view" data-view="std">{text}</div>'
+                f'<div class="view" data-view="verse" hidden>{views.get("verse", "")}</div>'
                 f'<div class="view" data-view="bhsa" hidden>{clause_view("bhsa")}</div>'
                 f'<div class="view" data-view="hcl" hidden>{clause_view("bcv-query")}</div>')
         nt = "".join(f'<p id="n{j}"><a class="k" href="#r{j}">{j}</a>{h}</p>' for j, h in enumerate(notes, 1))

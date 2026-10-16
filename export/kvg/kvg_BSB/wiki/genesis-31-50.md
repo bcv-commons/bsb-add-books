@@ -1,6 +1,6 @@
 ---
 title: Looking ahead: Genesis 31–50
-entries: [term:H2472.g, gap:interpret_dream.g, term:H7458.g, term:H1250.g, term:H3701.g, term:H5470.g, term:steward.g, term:H56.g, term:H6912.g, term:H4631.g, gap:coat.g, gap:household_gods.g, term:H251.g, term:H251brothers.g, term:H1581.g, term:H168.g, term:H1777.g, name:pharaoh.g, name:egypt.g, name:egyptian.g, name:machpelah.g, name:canaan.g, genealogy_list.g, term:coat_ornate.g, formula:dream_had.g, term:dreamer.g, term:pit.g, term:lift_out.g, formula:wild_animal_devoured.g, gap:torn_pieces.g, name:ishmaelites.g, name:dothan.g, name:potiphar.g, name:medanites.g, term:traders.g, term:officer_eunuch.g, term:captain_guard.g, formula:jealous.g, formula:kept_in_mind.g, formula:loved_more.g, formula:hated_more.g, term:our_brother.g, formula:own_flesh.g, formula:comfort_refused.g, formula:to_sheol.g, formula:reign_over_us.g, formula:sold_price.g, formula:binding_sheaves.g, term:pledge.g, term:signet_seal.g, term:cord_thread.g, formula:raise_offspring.g, gap:spill_seed.g, gap:breach.g, gap:pull_back_hand.g, formula:prostituted.g, term:shrine_prostitute.g, term:father_in_law.g, term:H6743.g, formula:lord_with_him.g, term:H6711.g, term:H7121cry.g, term:H8610.g, term:H2820.g, term:handsome.g, formula:knew_nothing.g, term:H5127run.g, term:H2617god.g, formula:found_favor_with.g, formula:into_his_hand.g, term:H6485charge.g, term:attendant.g, term:warden.g, term:prison_throw.g, term:day_after_day.g, formula:sin_against_god.g, formula:he_refused.g, gap:confined.g, term:cupbearer.g, term:baker.g, term:basket.g, term:cup.g, term:grapes.g, term:blossom_ripen.g, term:squeeze.g, formula:sad_face.g, formula:birthday.g, formula:feast_for.g, formula:remember_forget.g, formula:interpretation.g, formula:within_days.g, formula:lift_head.g, term:hang.g, formula:kidnapped.g, formula:did_wrong_to.g, formula:restore_position.g, formula:assigned_to.g, formula:show_kindness_when_well.g]
+entries: [term:H2472.g, gap:interpret_dream.g, term:H7458.g, term:H1250.g, term:H3701.g, term:H5470.g, term:steward.g, term:H56.g, term:H6912.g, term:H4631.g, gap:coat.g, gap:household_gods.g, term:H251.g, term:H251brothers.g, term:H1581.g, term:H168.g, term:H1777.g, name:pharaoh.g, name:egypt.g, name:egyptian.g, name:machpelah.g, name:canaan.g, genealogy_list.g, term:coat_ornate.g, formula:dream_had.g, term:dreamer.g, term:pit.g, term:lift_out.g, formula:wild_animal_devoured.g, gap:torn_pieces.g, name:ishmaelites.g, name:dothan.g, name:potiphar.g, name:medanites.g, term:traders.g, term:officer_eunuch.g, term:captain_guard.g, formula:jealous.g, formula:kept_in_mind.g, formula:loved_more.g, formula:hated_more.g, term:our_brother.g, formula:own_flesh.g, formula:comfort_refused.g, formula:to_sheol.g, formula:reign_over_us.g, formula:sold_price.g, formula:binding_sheaves.g, term:pledge.g, term:signet_seal.g, term:cord_thread.g, formula:raise_offspring.g, gap:spill_seed.g, gap:breach.g, gap:pull_back_hand.g, formula:prostituted.g, term:shrine_prostitute.g, term:father_in_law.g, term:H6743.g, formula:lord_with_him.g, term:H6711.g, term:H7121cry.g, term:H8610.g, term:H2820.g, term:handsome.g, formula:knew_nothing.g, term:H5127run.g, term:H2617god.g, formula:found_favor_with.g, formula:into_his_hand.g, term:H6485charge.g, term:attendant.g, term:warden.g, term:prison_throw.g, term:day_after_day.g, formula:sin_against_god.g, formula:he_refused.g, gap:confined.g, term:cupbearer.g, term:baker.g, term:basket.g, term:cup.g, term:grapes.g, term:blossom_ripen.g, term:squeeze.g, formula:sad_face.g, formula:birthday.g, formula:feast_for.g, formula:remember_forget.g, formula:interpretation.g, formula:within_days.g, formula:lift_head.g, term:hang.g, formula:kidnapped.g, formula:did_wrong_to.g, formula:restore_position.g, formula:assigned_to.g, formula:show_kindness_when_well.g, term:magician.g, term:cow.g, term:graze.g, term:fat_thin.g, term:wither.g, term:swallow.g, formula:i_remembered.g, formula:told_us.g, term:chariot.g, term:chain_neck.g, term:signet_ring.g, formula:bow_knee.g, formula:go_to_pl.g, term:storehouse.g, term:abundance.g, term:shave.g, formula:without_your_word.g, formula:years_began.g, formula:cried_for.g, formula:no_one_could_know.g, gap:fifth_part.g, gap:keep_track.g, gap:discerning.g, term:spy.g, term:honest.g, term:youngest.g, term:sack.g, term:provisions.g, formula:spoke_harshly.g, formula:pretended.g, formula:where_from.g, formula:oath_lives.g, formula:test_you.g, formula:you_will_live.g, formula:they_consented.g, formula:did_not_listen.g, formula:told_you.g, term:plead.g, term:bind.g, formula:load_donkeys.g, term:interpreter.g, gap:land_nakedness.g, gap:harm_befall.g, gap:lodging_place.g, gap:empty_sacks.g, gap:accuse.g, gap:bereave.g, gap:relieve_hunger.g]
 ---
 # Looking ahead: Genesis 31–50
 
@@ -363,6 +363,73 @@ the draft builds them from the NT's patterns and keeps each one fixed through th
   (21:8 "lou kandambaqape ndølóg").
 - **Built and open:** future forms *ndø̀qa-vé*, *ndø̀qanø-tøkéw*, *ndø̀nø-itú*, *soqo-vé*, the 2pl
   *ndozote-keoge*, *toqoyage*, *vø̄pesegim*, *gi-aqonømem* (kidnapped), *ginø-nqeitan* (they put me).
+
+## Genesis 41 (drafted 16.10.2026, agent:gen041)
+
+Pharaoh's dreams, Joseph's rise and the start of the famine. The chapter retells each dream twice,
+so the renderings were fixed at the first telling and repeated:
+
+- **Cows and grain.** Cows are *kao sakheis* (cattle with the female marker, as the team's 12:16 and
+  30:35); grazing among the reeds is the pigs' feeding in the NT, *givagimám* (LUK 8:32), with
+  *gagayag* (grass, the reed of LUK 7:24). The heads of grain are *wit nanga*; they come up
+  (*gi-eqanat*) and wither (*gèkusíz*) like the sower's seed (LUK 8:6, 8:8), and the east wind is
+  Jonah's *khamøe tatas-qape* (JON 4:8). "On one stalk" became "on one branch" (*tang*): there is
+  no stalk in the corpus. Swallowing is *khoug* (REV 12:16, the earth swallowing the river).
+- **Fat and thin.** No word for fat or thin cattle was found. The draft uses Paul's weak body
+  (1CO 2:3 "kha bazaføgakh mbaín") for thin and its opposite with *-us* for fat; sleek and ugly are
+  *bugug keogé* / *bugug soqøsoqa* (shape). After the first description the cows are just
+  "good" and "bad", as the style check asked. **Question for the Kuni team.**
+- **Magicians** are the NT's sorcerers (*manqa-sisi ezoqam*, ACT 13:6, 13:8).
+- **Abundance** is built: *avøe kopoav* (many crops; *avøe gigiap* as in REV 14:15), so that *lou*
+  (food) stays for the food Joseph stores. The famine keeps *vikia seke*, once *lou lou-av* (12:10)
+  in 41:55. Storehouses are the rich fool's barns, *lou nqeitam khoev* (LUK 12:18).
+- **Joseph's investiture.** The ring is the prodigal's *mbimak* (LUK 15:22) with the seal of
+  term:signet_seal.g; the chain is the loan *sen* (ACT 12:6) in gold; the chariot is the Ethiopian's
+  *manqei khagua wil-us* (ACT 8:28); "Bow the knee!" is built on EPH 3:14 ("katuk nomøkuiám").
+  "Without your permission" is PHM 1:14 ("qo bevøpøteav tøgoat").
+- **Speech.** "We told him" / "he told us" are 2CO 7:14 *qeimbo-einim* and 1TH 3:6 *ginimbi-eín*;
+  "Go to Joseph and do whatever he tells you" follows LUK 17:14 and JHN 2:5 (Mary's words at Cana).
+- **Names.** New: *Nael kea* (the Nile), *Zafenat-Panea*, *Asenat*, *Potifela* (kept apart from
+  Potiphar = *Potifa*), *On taon*. Manasseh and Ephraim have the NT forms *Manase*, *Eflaim*, with
+  the meaning in brackets in the team's pun form (4:25 "taqa manqa wag, Iblu manqat-te").
+- **Built and open:** the fifth part (gap:fifth_part.g), "he stopped keeping track"
+  (gap:keep_track.g), "discerning" (gap:discerning.g); built verbs *bèvawá*, *bèmbo-vé*, *bèpisám*,
+  *ndǿpaevemát*, *nøtaqá-løvú*, *gípakhaenák*, *qæsuzám*, *ndøqatáz*.
+
+## Genesis 42 (drafted 16.10.2026, agent:gen042)
+
+The brothers' first journey to Egypt. The NT tells it in ACT 7:11–13, so the frame comes from
+there: Jacob "heard that there was food in Egypt" (*Zekop ge-ewag, av nqægo, … zua ndøgō*), the
+famine *vikia sekeqape ndømát*, the brothers *zapikia-za*. The chapter repeats Joseph's charge and
+the brothers' answer three times, so the renderings were fixed at the first telling:
+
+- **Spies and honest men.** Spies are the NT's *bøibøi ezoqam* (LUK 20:20, HEB 11:31); honest men
+  are *unimanqatin ezoqam* (MRK 12:14, said of Jesus). "We are not spies" follows John the
+  Baptist's "I am not (Elijah)", *No Ilaizá mbá* (JHN 1:21), with *mbá* after the noun.
+- **Joseph as a stranger.** "He treated them as strangers" is told as pretending: *ambá
+  gezø-matemateamɨ́n, av nqægo, …* (the sailors' pretence, ACT 27:30); "harshly" is Paul's
+  "strong words", *manqat bazaføgakh-us* (TIT 1:13). "Where are you from?" is word for word the
+  team's 29:4 (*Zo gekha manqei-âk?* / *Ni Elan taon-ák*).
+- **The oath** "as surely as Pharaoh lives" is Boaz's oath by the LORD's body (RUT 3:13, *Yawe-qá
+  bugug-té …*), moved to Felo. **Question for the Kuni team:** is an oath by a pagan king's body
+  natural, or does Kuni have another form?
+- **Testing, living and dying.** Testing is God testing Abraham (22:1, *unimanqatin mbøekhamás*);
+  "you will live" is the team's 20:7 *qo qóyagét* in the plural; "and not die" is a negative
+  purpose clause, *Soqaín ndøgo, …* (1CO 1:17), with the irrealis.
+- **The brothers' guilt.** "We would not listen" is ACT 7:39 (*teqa manqat upøgimáv*), Reuben's
+  "Didn't I tell you?" is Jesus's statement to Martha (JHN 11:40) rather than a question, and his
+  prohibition repeats his own words of 37:22. "His blood is required" became "we receive the
+  payback" (*yaq-fia*, ACT 7:7), and the interpreter is an agent noun built on the interpreting of
+  tongues (1CO 12:30, 14:13): term:interpreter.g.
+- **Sacks and silver.** Sacks and bags are the travel bag *moqos* (LUK 9:3); the silver is *moni*;
+  provisions are food *okho nonqo* (MRK 6:8). Loading the donkeys is the Samaritan's "on his own
+  donkey's back" (LUK 10:34); "their hearts sank and they trembled" is Ruth's *nqova zøndáf*
+  (RUT 1:19). "Returned to me" became "(someone) gave it back to me", *nø-etoám*.
+- **Built and open:** the nakedness of the land (gap:land_nakedness.g), harm (gap:harm_befall.g),
+  lodging place, emptying, accusing, bereaving, relieving hunger (gaps on this page); built verbs
+  *nqazo-qeivîm*, *nqazø-khamás*, *zóyagét*, *tozo-ivøvem*, *gènimbø-vi꞉mám*, *qǽ-otevát*, *itueav*,
+  *ndæ̀-itú*. Jacob's "you will bring my gray hair down to Sheol" uses formula:to_sheol.g with "I, an
+  old man" (*lawaqape*, 19:31).
 
 ## Not in Genesis 1–30 nor in the NT
 
@@ -855,4 +922,244 @@ Quotations on this page are from the Kuni team's Genesis and the Kuni NT (credit
   - answers: goes well, show me kindness, mentioning, mentioning me
   - toqoyage is built (2sg irrealis of yage, on the 3sg tøneyagé of RUT 3:1). Human kindness = matev mbomømboma (term:H2617.h). gen040:14.
   - agent:gen040, 2026-10-16
-<!-- store:end sha=4eadc0d6 -->
+- **`term:magician.g`** חַרְטֹם (magician, Gen 41:8, 24) → **manqa-sisi ezoqam** [high, decided, attested]
+  - NT: ACT 13:6 *manqa-sisi ezoqám*; ACT 8:9 *manqa-sisi matev*
+  - answers: magicians, magician, sorcerer
+  - The NT's sorcerer Bar-Jesus / Elymas (ACT 13:6, 13:8); glossary Manqa-sisi = magic, sorcery. 'all the magicians of Egypt' = 'Izip manqei-gi manqa-sisi ezoqam ate gi꞉goam'. gen041:8, 24.
+  - agent:gen041, 2026-10-16
+- **`term:cow.g`** פָּרָה (cow, pl. cows) → **kao sakheis** [high, decided, attested]
+  - NT: GEN 12:16 *sip neka kao*; HEB 9:13 *kao-yu*
+  - answers: cows, cow, heifer
+  - kao (cattle, 12:16, 20:14) with sakheis for females (store: female / male animals). gen041:2-4, 18-20, 26-27.
+  - agent:gen041, 2026-10-16
+- **`term:graze.g`** רָעָה בָּאָחוּ (graze among the reeds) → **gagayag-te givagimám (they were feeding in the grass)** [medium, decided, attested]
+  - NT: LUK 8:32 *givagimám*; LUK 7:24 *gagayag*
+  - answers: graze, grazing, reeds, began to graze
+  - The herd of pigs feeding (LUK 8:32, MRK 5:11); reeds = gagayag (grass; the reed of LUK 7:24). gen041:2, 18.
+  - agent:gen041, 2026-10-16
+- **`term:fat_thin.g`** יְפֵה מַרְאֶה / בְּרִיא בָשָׂר; רַע מַרְאֶה / דַּק / רַק בָּשָׂר (sleek, fat; ugly, thin, gaunt) → **sleek = bugug keogé; fat = kha bazaføgakh-ús (strong body); ugly = bugug soqøsoqa; thin = kha bazaføgakh mbaín (body without strength); later references just eqeieqei / soqøsoqa** [medium, decided, by-rule]
+  - NT: 1CO 2:3 *kha bazaføgakh mbaín*; GEN 29:17 *Bugug keogé*
+  - answers: sleek, well-fed, fat, plump, thin, sickly, ugly, gaunt, lean
+  - No word for fat or thin animals in the corpus (searched thin|lean|fat|plump). Built from 1CO 2:3 (weak body) and -us (having). Thin heads of grain = wit nanga khasøkhasis (small). gen041:2-7, 18-27. Question for the Kuni team: words for fat and thin cattle?
+  - agent:gen041, 2026-10-16
+- **`term:wither.g`** צָנַם / שְׁדוּפֹת קָדִים / צָמַח (withered, scorched by the east wind, sprouted) → **sprouted, grew = gi-eqanat; withered, scorched = gèkusíz; by the east wind = khamøe tatas-qape-te** [medium, decided, attested]
+  - NT: LUK 8:6 *gèkusíz*; LUK 8:8 *gi-eqanat*; JON 4:8 *khamøe tatas-qape*
+  - answers: sprouted, growing, withered, scorched, came up
+  - The sower's seed that sprang up (LUK 8:8) and withered (LUK 8:6); the hot east wind of JON 4:8. On one stalk = tang kopo-te (tang branch, JHN 15:6; no word for stalk). gen041:5-6, 22-23, 27.
+  - agent:gen041, 2026-10-16
+- **`term:swallow.g`** בָּלַע (swallow up) → **ndøkhoug (narrative); vø̄khoug (chain)** [high, decided, attested]
+  - NT: 2CO 5:4 *ndǿkhóug*; REV 12:16 *ibøkha vø̄khoug*
+  - answers: swallowed, swallowed up, swallow
+  - The earth swallowing the river (REV 12:16). gen041:7, 24.
+  - agent:gen041, 2026-10-16
+- **`formula:i_remembered.g`** אֶת־חֲטָאַי אֲנִי מַזְכִּיר (I recall my faults) → **No … noqa manqa-zapazapa nombo-matøvém (I remembered my sins)** [high, decided, attested]
+  - NT: ACT 11:16 *nombo-matøvém*; ACT 11:16 *Evezøza-qá manqat*
+  - answers: recall, i recall, remember, failures, faults
+  - Peter: 'I remembered the word of the Lord' (ACT 11:16). For a person forgetting see formula:remember_forget.g. gen041:9.
+  - agent:gen041, 2026-10-16
+- **`formula:told_us.g`** וַנְּסַפֶּר־לוֹ וַיִּפְתָּר־לָנוּ (we told him, he interpreted for us) → **we told him = qeimbo-einim; he told us = ni … ginimbi-ein** [high, decided, attested]
+  - NT: 2CO 7:14 *qeimbo-einim*; 1TH 3:6 *ginimbi-eín*
+  - answers: we told him, told him, for us, interpreted for us, individually
+  - 1pl subject on 3sg (2CO 7:14) and 3sg subject on 1pl (1TH 3:6, ACT 13:47). Each one = kopokopo (LUK 8:8 kopokopo-te). gen041:12-13.
+  - agent:gen041, 2026-10-16
+- **`term:chariot.g`** מֶרְכָּבָה / הִרְכִּיב בְּמִרְכֶּבֶת (chariot; had him ride in a chariot) → **manqei khagua wil-us (a land vessel with wheels); 'had him ride in his second chariot' = 'ekeza manqei khagua wil-us nøme-te, ndøvé'** [high, decided, attested]
+  - NT: ACT 8:28 *Manqei khagua wil-us-té*; ACT 8:29 *hos manqei khagua*
+  - answers: chariot, chariots, ride, second chariot
+  - The Ethiopian's chariot (ACT 8:28-29, drawn by a horse, hos). 'put him in' = ndøvé (formula:assigned_to.g). Gen 46:29, 50:9 need it too. gen041:43.
+  - agent:gen041, 2026-10-16
+- **`term:chain_neck.g`** רְבִד הַזָּהָב עַל־צַוָּארוֹ (a gold chain around his neck) → **gol sen, teqa monqo-te vømbō-møpøtøz (built)** [medium, decided, by-rule]
+  - NT: ACT 12:6 *auli sén*; LUK 17:2 *monqo-te timbo-møpøtøzemɨn*
+  - answers: chain, gold chain, neck, around his neck
+  - sen = chain (loan; auli sen iron chains, ACT 12:6-7); gol = gold; the millstone hung around the neck (LUK 17:2). The 3sg chain form vømbō-møpøtøz is built. gen041:42.
+  - agent:gen041, 2026-10-16
+- **`term:signet_ring.g`** טַבַּעַת (signet ring) removed and put on another's hand → **mbimak, khakhatap gone nonqo; took off = ndøkhofoe; put it on X's hand = X-qa zenda-te vømbō-utøz (built)** [medium, decided, by-rule]
+  - NT: LUK 15:22 *kokosov-te mbimak*; REV 7:2 *khakhatap*
+  - answers: signet ring, ring, removed, finger
+  - The father's ring for the prodigal (LUK 15:22, mbimak; vozombó-utøzēm put it on); seal = term:signet_seal.g. The Hebrew says hand: zenda. gen041:42.
+  - agent:gen041, 2026-10-16
+- **`formula:bow_knee.g`** אַבְרֵךְ (Bow the knee! shouted before Joseph) → **Katuk zó-møkuiám! (2pl command, built)** [medium, decided, by-rule]
+  - NT: EPH 3:14 *katuk nomøkuiám*; RUT 2:10 *katuk gumø̀kuī*
+  - answers: bow the knee, bow, knee
+  - Paul 'I bow my knees' (EPH 3:14) and Ruth's bowing (2:10); 2pl zó- as in zó-uzám (COL 3:12). The cry is framed 'āv gini-akhaém nqǽgo'. gen041:43.
+  - agent:gen041, 2026-10-16
+- **`formula:go_to_pl.g`** לְכוּ אֶל־<X> (go to X, plural) → **<X>-té qazonǿzáv** [high, decided, attested]
+  - NT: LUK 17:14 *iziz ezoqam-té qazonǿzáv*; MAT 20:4 *khae-té qazonǿzáv*
+  - answers: go to, go
+  - 2pl 'go' (LUK 17:14, GEN 22:2). 'Do whatever he tells you' = JHN 2:5 'Gekha manqāt ndøgo, tezø-ein, sègembo-paevém'. gen041:55.
+  - agent:gen041, 2026-10-16
+- **`term:storehouse.g`** אֲשֶׁר בָּהֶם / אוֹצָרוֹת (storehouses); צָבַר (store up grain) → **lou nqeitam khoev (storehouse); store up = vø̄-nqeitaz / ndø-nqeitáz** [high, decided, attested]
+  - NT: LUK 12:18 *Lou nqeitam khoev*; LUK 12:18 *tøtú꞉-nqeitám*
+  - answers: storehouses, storehouse, stored, stored up, store up, barns, lay up
+  - The rich fool's barns (LUK 12:18). nqeitaz = put in (also prison, ACT 5:18). gen041:35, 48-49, 56.
+  - agent:gen041, 2026-10-16
+- **`term:abundance.g`** שָׂבָע (abundance, the years of plenty) → **avøe kopoav (plenty of crops); the years of plenty = viav seven, avøe kopoav ndøgo** [medium, decided, by-rule]
+  - NT: REV 14:15 *Avøe gigiap*; JHN 3:23 *kandambá*
+  - answers: abundance, plenty, years of abundance, bountifully, excess
+  - No word for abundance (searched plenty|plentiful|abundant|surplus). avøe gigiap = crops (REV 14:15) + kopoav (many). The land produced = 'avøe gigiap kopoav-qapé ndøqatáz' (qataz bear fruit, LUK 8:8 'nanga vø̄qataz'). Chosen over 'lou kopoav' to keep lou (food) for food. gen041:29-31, 34, 47, 53.
+  - agent:gen041, 2026-10-16
+- **`term:shave.g`** גִּלַּח (shave) → **izu ndøqogáz (cut his hair)** [high, decided, attested]
+  - NT: ACT 18:18 *izu ndøqogáz*
+  - answers: shaved, shave
+  - Paul cut his hair at Cenchrea (ACT 18:18). Changed his clothes = 'ndabua ndakinak vø̄-uzam' (formula of gen035:2). gen041:14.
+  - agent:gen041, 2026-10-16
+- **`formula:without_your_word.g`** בִּלְעָדֶיךָ (without you, without your permission) → **qo bevøpøteav tøgoat (if he has not asked you)** [high, decided, attested]
+  - NT: PHM 1:14 *qo bevøpøteav tøgoat*
+  - answers: without your permission, without your consent, without you
+  - Paul 'did not want to do anything without your consent' (PHM 1:14). 'lift hand or foot' = 'zenda o bov gemǿ-eqák' (negative future, built). gen041:44.
+  - agent:gen041, 2026-10-16
+- **`formula:years_began.g`** וַתְּחִלֶּינָה שֶׁבַע שְׁנֵי הָרָעָב (the years of famine began) → **<season> ndø-ogitát** [high, decided, attested]
+  - NT: RUT 1:22 *viav ndø-ogitát*
+  - answers: began, years began, to come
+  - The barley harvest season began (RUT 1:22). gen041:54.
+  - agent:gen041, 2026-10-16
+- **`formula:cried_for.g`** וַיִּצְעַק … אֶל־<X> לַלָּחֶם (cried out to X for food) → **<X>-te <thing>-qa ndø-akhayám** [high, decided, attested]
+  - NT: JON 1:5 *tøke-qa ndø-akhayám*
+  - answers: cried out, cried out to, for food
+  - The sailors cried to their gods for help (JON 1:5). gen041:55.
+  - agent:gen041, 2026-10-16
+- **`formula:no_one_could_know.g`** וְלֹא נוֹדַע (no one could tell) → **ezoqa nøme kopømba mbaín, ti꞉zøtez** [high, decided, attested]
+  - NT: REV 14:3 *kopømba mbaín ti꞉zøtez*
+  - answers: no one could tell, not known, could not tell
+  - No one could learn the song (REV 14:3). Future 'it will not be known' = 'Ezoqa mè꞉-otevák' (negative_future). gen041:21, 31.
+  - agent:gen041, 2026-10-16
+- **`gap:fifth_part.g`** וְחִמֵּשׁ אֶת־אֶרֶץ מִצְרַיִם (take a fifth of the land's produce) → **no model for a fraction (searched fifth): built 'møvøyap faev, møvøyap kopo' (of five parts, one part) on JHN 19:23 'Møvøyap foá' (four parts)** [low, open, by-rule]
+  - NT: JHN 19:23 *Møvøyap foá*
+  - answers: fifth, a fifth, one-fifth
+  - gen041:34; Gen 47:24, 26 need it. Question for the Kuni team.
+  - agent:gen041, 2026-10-16
+- **`gap:keep_track.g`** עַד כִּי־חָדַל לִסְפֹּר כִּי־אֵין מִסְפָּר (until he stopped measuring, for it was beyond count) → **no model for 'keep track, beyond measure': used 'wit qoutaz ndøvøitáv' (he stopped measuring the grain; qoutaz RUT 3:15, vøitav stop) and 'Ezoqa kopømba mbaín, ti꞉zøtez' (no one could know it, REV 14:3)** [low, open, by-rule]
+  - NT: RUT 3:15 *qoutaz*; REV 14:3 *kopømba mbaín ti꞉zøtez*
+  - answers: keeping, track, keeping track, beyond, measure, beyond measure
+  - Like the sand of the sea = 'andé ndivind me, ndaola-qa ndøgeg-te ndigu' (REV 20:8). gen041:49.
+  - agent:gen041, 2026-10-16
+- **`gap:discerning.g`** נָבוֹן (discerning) → **no separate word: 'matavap loloakh-ús neka zøtezat kandambá' (wise and with much knowledge; zøtezat 1CO 1:20)** [medium, open, by-rule]
+  - NT: MAT 7:24 *matavap loloakh ezoqám*; 1CO 1:20 *zøtezat ezoqam*
+  - answers: discerning, discerning and wise
+  - gen041:33, 39.
+  - agent:gen041, 2026-10-16
+- **`term:spy.g`** מְרַגְּלִים (spies) → **bøibøi ezoqam** [high, decided, attested]
+  - NT: LUK 20:20 *bøibøi ezoqam*; HEB 11:31 *bøibøi ezoqa*
+  - answers: spies, spy, spying
+  - The spies sent to trap Jesus (LUK 20:20) and Rahab's spies (HEB 11:31, JAS 2:25 bøibøi-anim). 'You are spies!' = 'Zo bøibøi ezoqám!'; 'we are not spies' = 'Ni bøibøi ezoqam mbá' (JHN 1:21 'No Ilaizá mbá'). gen042:9-34; 42-44 repeat it.
+  - agent:gen042, 2026-10-16
+- **`term:honest.g`** כֵּנִים (honest, upright men) → **unimanqatin ezoqam** [high, decided, attested]
+  - NT: MRK 12:14 *unimanqatin ezoqám*; MAT 22:16 *unimanqatin ezoqám*
+  - answers: honest, honest men
+  - 'You are honest' said to Jesus (MRK 12:14). 'We are honest men' = 'Ni unimanqatin ezoqám'; 'if you are honest' = 'Zo unimanqatin ezoqam tozogoat' (built conditional). gen042:11, 19, 31, 33, 34.
+  - agent:gen042, 2026-10-16
+- **`term:youngest.g`** הַקָּטֹן (the youngest son, brother) → **okhov-qase** [medium, decided, attested]
+  - NT: GEN 9:24 *yo okhov-qase*
+  - answers: youngest, youngest brother, youngest son
+  - Ham as Noah's youngest son (9:24); feminine okhov-qasu (1×). 'your youngest brother' = 'zøveqase okhov-qase' (zø- your pl, term:H251.g). gen042:13, 15, 20, 32, 34; 43:29, 44.
+  - agent:gen042, 2026-10-16
+- **`term:sack.g`** שַׂק / אַמְתַּחַת / כְּלִי / צְרוֹר (sack, bag) → **moqos** [medium, decided, attested]
+  - NT: LUK 9:3 *moqos*; MRK 6:8 *moqos*
+  - answers: sack, sacks, bag, bags
+  - The travel bag the disciples were not to take (LUK 9:3, MAT 10:10, MRK 6:8). Used for the grain sacks and the bags of Gen 42-44; 'in his sack' = 'moqos mokho-te'; 'the mouth of the sack' not rendered. The money bag of JHN 12:6 has no word ('moni'), so the 'bag of silver' (42:35) is just 'teqa moni'. Sackcloth is ndabua soqøsoqa (another word).
+  - agent:gen042, 2026-10-16
+- **`term:provisions.g`** צֵדָה לַדָּרֶךְ (provisions for the journey) → **okho nonqo lou** [medium, decided, attested]
+  - NT: MRK 6:8 *okho nonqo*; LUK 9:12 *lou neka venanqei nonqo*
+  - answers: provisions, provisions for their journey, for the journey
+  - 'take nothing for the journey' (MRK 6:8 'okho nonqo'). gen042:25; 45:21.
+  - agent:gen042, 2026-10-16
+- **`formula:spoke_harshly.g`** וַיְדַבֵּר אִתָּם קָשׁוֹת (spoke harshly to them) → **manqat bazaføgakh-us gezø-ein** [medium, decided, attested]
+  - NT: TIT 1:13 *Manqat bazaføgakh-us*
+  - answers: harshly, spoke harshly, sternly
+  - 'rebuke them sharply' (TIT 1:13: strong words). 'spoke harshly to us' = 'ni-te manqat bazaføgakh-us ginimbi-ein'. gen042:7, 30. Warned sternly = gèzømbe-khafén (MRK 3:12).
+  - agent:gen042, 2026-10-16
+- **`formula:pretended.g`** וַיִּתְנַכֵּר אֲלֵיהֶם (he acted as a stranger to them) → **ambá gezø-matemateamɨ́n, av nqægo, ndego ndigu otevateáv** [medium, decided, attested]
+  - NT: ACT 27:30 *ambá gezø-matemateamɨ́n*; LUK 20:20 *ambá gembo-matemateømemín*
+  - answers: treated them as strangers, treated, strangers, pretended
+  - The sailors pretending to lower anchors (ACT 27:30), the spies pretending to be sincere (LUK 20:20): ambá + matemate- + -ɨn (suffix_in), then 'av nqægo' and what was pretended. gen042:7.
+  - agent:gen042, 2026-10-16
+- **`formula:where_from.g`** מֵאַיִן בָּאתֶם (where have you come from?) → **Zo gekha manqei-âk? — Ni <place>-ák.** [high, decided, attested]
+  - NT: GEN 29:4 *Zo gekha manqei-âk?*; GEN 29:4 *Ni Elan taon-ák.*
+  - answers: where have you come from, where are you from
+  - Jacob asks the shepherds (the team's 29:4); also JON 1:8, JHN 19:9 (sg 'Qo gekha manqei-âk?'). 'we have come to buy food' = 'Ni lou wi-qa qazigeavun' (qazigeavun built on GEN 26:27 qazogeavun). gen042:7.
+  - agent:gen042, 2026-10-16
+- **`formula:oath_lives.g`** חֵי פַרְעֹה (as surely as Pharaoh lives) → **No Felo-qá bugug-té nqazø-manqate: …** [medium, decided, by-rule]
+  - NT: RUT 3:13 *Yawe-qá bugug-té qataqambø-manqaté*
+  - answers: as surely as pharaoh lives, as surely as, lives
+  - Boaz's oath 'as surely as the LORD lives' = 'I speak to you by the LORD's body' (RUT 3:13); here with Felo and the present nqazø-manqate (I tell you pl, present_nq). Also ROM 14:11 'No khandi miav-ak Evezøza' (as I live). gen042:15, 16.
+  - agent:gen042, 2026-10-16
+- **`formula:test_you.g`** בְּזֹאת תִּבָּחֵנוּ (by this you will be tested) → **No zo nqanek matev-te unimanqatin nqazø-khamás** [medium, decided, by-rule]
+  - NT: GEN 22:1 *unimanqatin mbøekhamás*
+  - answers: tested, test, be tested
+  - God tested Abraham (22:1: 'tried his truth'); 1sg present to 2pl built. 'so that your words may be tested' = 'zoqa manqat qeivi-qa, unimanqatín o teoká' (to see whether true or not). gen042:15-16.
+  - agent:gen042, 2026-10-16
+- **`formula:you_will_live.g`** וִחְיוּ / וְנִחְיֶה (and you will live; that we may live) → **Yaq zo zóyagét / Yaq ni qabizi-yagé** [medium, decided, by-rule]
+  - NT: GEN 20:7 *Yaq qo qóyagét.*; 1PE 2:24 *qabizi-yagé*
+  - answers: live, you will live, we may live
+  - God to Abimelech 'you will live' (20:7) put in the 2pl; 1PE 2:24 'that we might live'. 'and not die' = 'Soqaín ndøgo, ni tizi-nanim' (negative purpose). gen042:2, 18, 20.
+  - agent:gen042, 2026-10-16
+- **`formula:they_consented.g`** וַיַּעֲשׂוּ־כֵן (and they did so, consented) → **Yaq ndigu teqa manqat vømbō-paevem** [medium, decided, attested]
+  - NT: GEN 37:27 *vømbō-paevem*
+  - answers: consented, agreed, did so
+  - vømbō-paevem 8× in the corpus (they obeyed his word); our gen037:27. An order carried out with no actor (42:25) = the team's 1:7 'Yaq matev āv tønefakhán'.
+  - agent:gen042, 2026-10-16
+- **`formula:did_not_listen.g`** וְלֹא שָׁמַעְנוּ / שְׁמַעְתֶּם (we / you would not listen) → **teqa manqat upøgimáv** [high, decided, attested]
+  - NT: ACT 7:39 *teqa manqat upøgimáv*
+  - answers: would not listen, did not listen
+  - The fathers 'refused to obey' Moses (ACT 7:39). 'you did not listen to me' = 'zo noqa manqat upøgimáv'. gen042:21-22.
+  - agent:gen042, 2026-10-16
+- **`formula:told_you.g`** הֲלוֹא אָמַרְתִּי אֲלֵיכֶם (didn't I tell you?) → **No mø̀zø-eín, ‘…’** [medium, decided, by-rule]
+  - NT: JHN 11:40 *No mø̀taqa-eín.*
+  - answers: didn't i tell you, did i not tell you
+  - Jesus to Martha (JHN 11:40) as a statement; mø̀taqa- (I to you sg) → mø̀zø- (to you pl), built. gen042:22.
+  - agent:gen042, 2026-10-16
+- **`term:plead.g`** הִתְחַנֵּן (plead, beg for mercy) → **vi꞉mam (mø̀embo-vi꞉mám I pleaded with him; qeimbøe-viømém we pleaded with him)** [medium, decided, attested]
+  - NT: 2CO 12:8 *mø̀embo-vi꞉mám*; ACT 21:12 *qeimbøe-viømém*
+  - answers: pleaded, plead, begged
+  - 'when he pleaded with us' = 'ndego ni gènimbø-vi꞉mám ndøgo' (built, ni- us). gen042:21.
+  - agent:gen042, 2026-10-16
+- **`term:bind.g`** אָסַר (bind, tie up a prisoner) → **mboløvønam (he bound him); mboløvønem (they bound him)** [high, decided, attested]
+  - NT: JHN 18:12 *sasa mboløvønem*; LUK 10:34 *sasa mboløvønam*
+  - answers: bound, bind, had him bound
+  - The soldiers bound Jesus (JHN 18:12); ACT 21:11 bound hands and feet (løvøn-). 'before their eyes' = 'tiqa bøi-te'. gen042:24.
+  - agent:gen042, 2026-10-16
+- **`formula:load_donkeys.g`** וַיִּשְׂאוּ … עַל־חֲמֹרֵיהֶם (they loaded it on their donkeys) → **<load> tigi donki-qa zita-te vø̄veem** [medium, decided, attested]
+  - NT: LUK 10:34 *ekeza donki-qa zita-te*
+  - answers: loaded, loaded the grain, on their donkeys
+  - The Samaritan put the man on his own donkey's back (LUK 10:34 vō꞉ve); plural put = vø̄veem (ACT 7:9). gen042:26; 44:13.
+  - agent:gen042, 2026-10-16
+- **`term:interpreter.g`** הַמֵּלִיץ (the interpreter) → **manqat vini-qa mokho ovøyam ezoqam** [medium, decided, by-rule]
+  - NT: 1CO 12:30 *manqat vini-qa mokho*; 1CO 14:13 *bezømbē-ovøyam*
+  - answers: interpreter, an interpreter
+  - Agent noun (feature agent_noun) on the interpreting of tongues: 'the meaning of a foreign word explaining person'. Built. gen042:23.
+  - agent:gen042, 2026-10-16
+- **`gap:land_nakedness.g`** עֶרְוַת הָאָרֶץ (the nakedness of the land: where it is unprotected) → **no idiom; built 'nqanek manqei-qa, ma bazaføgakh mbaín ndøgo, qeivi-qa' (to see this land's place without strength)** [low, open, by-rule]
+  - NT: ACT 7:31 *qeivi-qa*; 1CO 2:3 *bazaføgakh mbaín*
+  - answers: vulnerable, nakedness, if our land is vulnerable
+  - Searched BSB vulnerable|undefended|exposed: nothing. image_to_meaning. gen042:9, 12. Question for the Kuni team.
+  - agent:gen042, 2026-10-16
+- **`gap:harm_befall.g`** פֶּן־יִקְרָאֶנּוּ אָסוֹן (lest harm befall him) → **no word for 'harm, disaster': 'Soqaín ndøgo, matev soqøsoqa tømbo-fakhán' (lest a bad thing come to him)** [medium, open, by-rule]
+  - NT: 1CO 1:17 *Soqaín ndøgo*; 1PE 3:13 *ndǿngenøzotat*
+  - answers: harm, befall, harm might befall him, harm comes to him
+  - Searched harm|disaster|befall: only 'who can harm you' (1PE 3:13, ngenøzot-). matev soqøsoqa + fakhan as term:distress.g (ROM 2:9). gen042:4, 38; 44:29.
+  - agent:gen042, 2026-10-16
+- **`gap:lodging_place.g`** מָלוֹן (lodging place for the night) → **no word: 'lova-te, venanqei nonqo manqei-te ndøgo' (at night, at the place for sleeping)** [medium, open, by-rule]
+  - NT: LUK 9:12 *lou neka venanqei nonqo*
+  - answers: lodged, lodging, place where they lodged
+  - Searched lodg|inn: LUK 9:12 'for food and sleep'; the inn of LUK 10:34 is 'okha ezoqam-qá venanqei nonqo khoev' (a house for travellers to sleep, could serve). gen042:27; 43:21.
+  - agent:gen042, 2026-10-16
+- **`gap:empty_sacks.g`** מְרִיקִים שַׂקֵּיהֶם (emptying their sacks) → **no verb for emptying a bag: used 'tiqa moqos ti-mboqogimat ndøgo' (when they opened their sacks; mboqogim gen041:56)** [low, open, by-rule]
+  - NT: ACT 5:19 *vøzø̄-mboqogim*
+  - answers: emptying, emptied, empty
+  - Searched empt: only abstract 'empty' (1CO 1:17, 1PE 1:18). gen042:35; 43:21; 44:11.
+  - agent:gen042, 2026-10-16
+- **`gap:accuse.g`** וַיִּתֵּן אֹתָנוּ כִּמְרַגְּלִים (he took us for spies, accused us) → **no verb 'accuse of': 'Ndego ginimbi-ein, av nqægo, ni bøibøi ezoqám' (he told us that we are spies)** [medium, open, by-rule]
+  - NT: ACT 22:30 *manqât ndimøvøemet*
+  - answers: accused, accused us, accused us of spying
+  - Searched accus: ACT 22:30 'what they accused him of' uses a different stem (møvøem-); the plain report is clearer. gen042:30.
+  - agent:gen042, 2026-10-16
+- **`gap:bereave.g`** שִׁכַּלְתֶּם (you have bereaved me, deprived me of my sons) → **no verb: 'Zo zapayá, no nakheis mbaín!' (because of you I have no children)** [medium, open, by-rule]
+  - NT: GEN 15:2 *No nakhasam mbaín.*
+  - answers: deprived, deprived me of my sons, bereaved
+  - Searched deprived|bereaved|childless: Abram 'I am childless' (15:2). zapayá = because of (gen037:8). gen042:36; 43:14.
+  - agent:gen042, 2026-10-16
+- **`gap:relieve_hunger.g`** שֶׁבֶר רַעֲבוֹן בָּתֵּיכֶם (grain for the famine of your households) → **no 'relieve': 'zogi khoev ezoqam-qa vikia seke nonqo' (for your households' famine)** [low, open, by-rule]
+  - NT: MRK 6:8 *okho nonqo*
+  - answers: relieve, relieve the hunger, to relieve the hunger of your households
+  - nonqo = for (feature); khoev ezoqam = household. gen042:19, 33.
+  - agent:gen042, 2026-10-16
+<!-- store:end sha=f380ac4b -->

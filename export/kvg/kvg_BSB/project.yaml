@@ -42,7 +42,7 @@ book_title_rule: "Kuni has no title for this book yet: the NT titles a book by a
 # The prompt's own parts (scripts/make_prompt.py)
 footnotes: false
 report_items: number of searches you ran, store entries added
-notes_structure: "what the draft is; a table Verse · Hebrew · Kuni · BSB · Comment; for every verse, the corpus verses you modelled it on (references) and how sure you are (high / medium / low); new name forms; open questions. Mark every word or construction you could not find in the corpus."
+notes_structure: "what the draft is; a table Verse · Hebrew · Kuni · BSB · Comment (in the Hebrew column only the key phrase, at most five words, never the whole verse: the website shows each verse from the open Hebrew text); for every verse, the corpus verses you modelled it on (references) and how sure you are (high / medium / low); new name forms; open questions. Mark every word or construction you could not find in the corpus."
 header:
   - "!!<Translation: machine draft from the Hebrew ({file}), checked against the BSB, Kuni learned from the Kuni NT, Ruth and Jonah>!!"
   - "!!<Status: experiment, not reviewed>!!"

@@ -6610,6 +6610,265 @@
     "king's prisoners"
    ],
    "note": "gen039:20; 40:3, 5."
+  },
+  {
+   "id": "gap:fifth_part.g",
+   "kind": "gap",
+   "source": "וְחִמֵּשׁ אֶת־אֶרֶץ מִצְרַיִם (take a fifth of the land's produce)",
+   "value": "no model for a fraction (searched fifth): built 'møvøyap faev, møvøyap kopo' (of five parts, one part) on JHN 19:23 'Møvøyap foá' (four parts)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "JHN 19:23",
+     "form": "Møvøyap foá"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen041",
+   "date": "2026-10-16",
+   "status": "open",
+   "words": [
+    "fifth",
+    "a fifth",
+    "one-fifth"
+   ],
+   "note": "gen041:34; Gen 47:24, 26 need it. Question for the Kuni team."
+  },
+  {
+   "id": "gap:keep_track.g",
+   "kind": "gap",
+   "source": "עַד כִּי־חָדַל לִסְפֹּר כִּי־אֵין מִסְפָּר (until he stopped measuring, for it was beyond count)",
+   "value": "no model for 'keep track, beyond measure': used 'wit qoutaz ndøvøitáv' (he stopped measuring the grain; qoutaz RUT 3:15, vøitav stop) and 'Ezoqa kopømba mbaín, ti꞉zøtez' (no one could know it, REV 14:3)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "RUT 3:15",
+     "form": "qoutaz"
+    },
+    {
+     "ref": "REV 14:3",
+     "form": "kopømba mbaín ti꞉zøtez"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen041",
+   "date": "2026-10-16",
+   "status": "open",
+   "words": [
+    "keeping",
+    "track",
+    "keeping track",
+    "beyond",
+    "measure",
+    "beyond measure"
+   ],
+   "note": "Like the sand of the sea = 'andé ndivind me, ndaola-qa ndøgeg-te ndigu' (REV 20:8). gen041:49."
+  },
+  {
+   "id": "gap:discerning.g",
+   "kind": "gap",
+   "source": "נָבוֹן (discerning)",
+   "value": "no separate word: 'matavap loloakh-ús neka zøtezat kandambá' (wise and with much knowledge; zøtezat 1CO 1:20)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "MAT 7:24",
+     "form": "matavap loloakh ezoqám"
+    },
+    {
+     "ref": "1CO 1:20",
+     "form": "zøtezat ezoqam"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen041",
+   "date": "2026-10-16",
+   "status": "open",
+   "words": [
+    "discerning",
+    "discerning and wise"
+   ],
+   "note": "gen041:33, 39."
+  },
+  {
+   "id": "gap:land_nakedness.g",
+   "kind": "gap",
+   "source": "עֶרְוַת הָאָרֶץ (the nakedness of the land: where it is unprotected)",
+   "value": "no idiom; built 'nqanek manqei-qa, ma bazaføgakh mbaín ndøgo, qeivi-qa' (to see this land's place without strength)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "ACT 7:31",
+     "form": "qeivi-qa"
+    },
+    {
+     "ref": "1CO 2:3",
+     "form": "bazaføgakh mbaín"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen042",
+   "date": "2026-10-16",
+   "status": "open",
+   "words": [
+    "vulnerable",
+    "nakedness",
+    "if our land is vulnerable"
+   ],
+   "note": "Searched BSB vulnerable|undefended|exposed: nothing. image_to_meaning. gen042:9, 12. Question for the Kuni team."
+  },
+  {
+   "id": "gap:harm_befall.g",
+   "kind": "gap",
+   "source": "פֶּן־יִקְרָאֶנּוּ אָסוֹן (lest harm befall him)",
+   "value": "no word for 'harm, disaster': 'Soqaín ndøgo, matev soqøsoqa tømbo-fakhán' (lest a bad thing come to him)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "1CO 1:17",
+     "form": "Soqaín ndøgo"
+    },
+    {
+     "ref": "1PE 3:13",
+     "form": "ndǿngenøzotat"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen042",
+   "date": "2026-10-16",
+   "status": "open",
+   "words": [
+    "harm",
+    "befall",
+    "harm might befall him",
+    "harm comes to him"
+   ],
+   "note": "Searched harm|disaster|befall: only 'who can harm you' (1PE 3:13, ngenøzot-). matev soqøsoqa + fakhan as term:distress.g (ROM 2:9). gen042:4, 38; 44:29."
+  },
+  {
+   "id": "gap:lodging_place.g",
+   "kind": "gap",
+   "source": "מָלוֹן (lodging place for the night)",
+   "value": "no word: 'lova-te, venanqei nonqo manqei-te ndøgo' (at night, at the place for sleeping)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "LUK 9:12",
+     "form": "lou neka venanqei nonqo"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen042",
+   "date": "2026-10-16",
+   "status": "open",
+   "words": [
+    "lodged",
+    "lodging",
+    "place where they lodged"
+   ],
+   "note": "Searched lodg|inn: LUK 9:12 'for food and sleep'; the inn of LUK 10:34 is 'okha ezoqam-qá venanqei nonqo khoev' (a house for travellers to sleep, could serve). gen042:27; 43:21."
+  },
+  {
+   "id": "gap:empty_sacks.g",
+   "kind": "gap",
+   "source": "מְרִיקִים שַׂקֵּיהֶם (emptying their sacks)",
+   "value": "no verb for emptying a bag: used 'tiqa moqos ti-mboqogimat ndøgo' (when they opened their sacks; mboqogim gen041:56)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "ACT 5:19",
+     "form": "vøzø̄-mboqogim"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen042",
+   "date": "2026-10-16",
+   "status": "open",
+   "words": [
+    "emptying",
+    "emptied",
+    "empty"
+   ],
+   "note": "Searched empt: only abstract 'empty' (1CO 1:17, 1PE 1:18). gen042:35; 43:21; 44:11."
+  },
+  {
+   "id": "gap:accuse.g",
+   "kind": "gap",
+   "source": "וַיִּתֵּן אֹתָנוּ כִּמְרַגְּלִים (he took us for spies, accused us)",
+   "value": "no verb 'accuse of': 'Ndego ginimbi-ein, av nqægo, ni bøibøi ezoqám' (he told us that we are spies)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "ACT 22:30",
+     "form": "manqât ndimøvøemet"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen042",
+   "date": "2026-10-16",
+   "status": "open",
+   "words": [
+    "accused",
+    "accused us",
+    "accused us of spying"
+   ],
+   "note": "Searched accus: ACT 22:30 'what they accused him of' uses a different stem (møvøem-); the plain report is clearer. gen042:30."
+  },
+  {
+   "id": "gap:bereave.g",
+   "kind": "gap",
+   "source": "שִׁכַּלְתֶּם (you have bereaved me, deprived me of my sons)",
+   "value": "no verb: 'Zo zapayá, no nakheis mbaín!' (because of you I have no children)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 15:2",
+     "form": "No nakhasam mbaín."
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen042",
+   "date": "2026-10-16",
+   "status": "open",
+   "words": [
+    "deprived",
+    "deprived me of my sons",
+    "bereaved"
+   ],
+   "note": "Searched deprived|bereaved|childless: Abram 'I am childless' (15:2). zapayá = because of (gen037:8). gen042:36; 43:14."
+  },
+  {
+   "id": "gap:relieve_hunger.g",
+   "kind": "gap",
+   "source": "שֶׁבֶר רַעֲבוֹן בָּתֵּיכֶם (grain for the famine of your households)",
+   "value": "no 'relieve': 'zogi khoev ezoqam-qa vikia seke nonqo' (for your households' famine)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "MRK 6:8",
+     "form": "okho nonqo"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen042",
+   "date": "2026-10-16",
+   "status": "open",
+   "words": [
+    "relieve",
+    "relieve the hunger",
+    "to relieve the hunger of your households"
+   ],
+   "note": "nonqo = for (feature); khoev ezoqam = household. gen042:19, 33."
   }
  ]
 }

@@ -14,12 +14,12 @@ sentences opened by *Yaq*, verb last, the long frame *āv gene-eín nqǽgo* for 
 
 | Hebrew | Kuni | Models |
 |---|---|---|
-| וַיֹּאמֶר אֱלֹהִים | Yaq Mbumbukiam āv gene-eín nqǽgo, “…” | MAT 15:4 |
+| וַיֹּאמֶר אֱלֹהִים | Yaq Mbumbukiam āv gene-eín … | MAT 15:4 |
 | יְהִי X | X begó. | HEB 9:23 |
 | וַיְהִי־כֵן | Yaq ate av-té qafakhan. | LUK 2:21, JON 1:8 (by rule) |
-| וַיַּרְא אֱלֹהִים כִּי־טוֹב | Yaq ndego geqeiv av nqægo, ndøgo eqeieqeí. | JON 3:10 |
+| וַיַּרְא אֱלֹהִים כִּי־טוֹב | Yaq ndego geqeiv av … | JON 3:10 |
 | וַיְהִי־עֶרֶב וַיְהִי־בֹקֶר | Yaq qakhagus ndøgo, qanaqanus qandopave. | MAT 14:15, ACT 27:39 |
-| יוֹם N | Khøuwa mø̀ndømø-N-éz. (day 1: Ndøgo bugukhokhof khøuwá.) | LUK 24:21, JHN 11:39, LUK 19:18 |
+| יוֹם N | Khøuwa mø̀ndømø-N-éz. (day 1: … | LUK 24:21, JHN 11:39, LUK 19:18 |
 | וַיִּקְרָא ... לְX Y | X, iz Y mbo-akhá | MAT 1:25 |
 
 ## Verse by verse
