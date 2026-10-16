@@ -68,3 +68,5 @@ Datum: 02.10.2026 · Status: **Entwurf** (Maschinenentwurf aus dem Grundtext, no
 2. **»Acherbode«** für *ʾădāmāh*: konsequent (Entwurf) oder je nach Zusammenhang »Bode« / »Ärde«?
 3. **V. 2-3 »gruebet«**: geläufig genug? Alternative »het ufghört mit …« (näher an *šābat* »aufhören«).
 4. **V. 20 »für e Mönsch«** oder schon hier Eigenname »für e Adam« (BSB)?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

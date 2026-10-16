@@ -108,3 +108,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 5. v24: »syvoghalvfjerds« med bogstaver (som Matt 18,22) – godkendes undtagelsen fra talreglen?
 6. Silla (צ → s efter translitterationsreglen) eller den kendte form »Zilla«?
 7. Skal Hebr 12,24 (v10) og Hebr 11,4 (v4) have `{H:}`, selv om de ikke er citater?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

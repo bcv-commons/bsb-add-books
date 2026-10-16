@@ -182,3 +182,5 @@ None. Boaz = Boáz (glossary, Mat 1:5), as predicate name with the high tone ("T
 10. The store's reading of gu- as feminine (chapter 1, open question 10): the ꞉-forms gu꞉-/gunu꞉-
     are durative/locative with any subject (Peter "gu꞉qotam" Mat 26:69, Jesus "gunu꞉-apát" Mat 12:1,
     God "gunu꞉gú" 1Jn 4:12); only the plain gu- forms pattern with women. Recorded in the store.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

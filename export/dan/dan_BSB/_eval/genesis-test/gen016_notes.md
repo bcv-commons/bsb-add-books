@@ -103,3 +103,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 6. v13b: Følge MT (spørgsmål, som nu) eller BSB's udråb?
 7. v11-12 som poesi (som BSB) eller som prosa?
 8. v2 »lukket mit moderliv« (efter 20,18) eller det mere ordrette »hindret mig i at føde«?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

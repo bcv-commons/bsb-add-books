@@ -61,3 +61,5 @@ Datum: 02.10.2026 · Status: **Entwurf** (Maschinenentwurf aus dem Grundtext, no
 2. **V. 6 *bāʾādām***: »dür Mönsche« (Entwurf, BSB) oder »für dä Mönsch« (Ersatz/Preis)?
 3. **V. 25 »Chnächt«** oder »Sklav«?
 4. **V. 20 »als erschte«** (Erfinder des Weinbaus) oder »het aagfange als Bur … und het e Wybärg aagleit«?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

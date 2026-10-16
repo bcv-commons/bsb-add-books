@@ -130,3 +130,5 @@ Bereits verwendet: Laban, Jakob, Esau, Abraham, Isaak.
 7. **V. 23 »elf Chinder«** oder BSB-nah »elf Sühn« (Dina nicht mitgezählt)?
 8. **V. 16 *ʿăyārîm*** »Eselhängschte« oder »jungi Esel«?
 9. **V. 1 Fussnote zur Verszählung** – für Leser beibehalten (wie hier) oder nur im Notizfile?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

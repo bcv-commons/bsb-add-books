@@ -79,3 +79,5 @@ Alt andet er identisk i de to spor.
 6. **v. 7 *hišbîaʿ*** – »sværge ved dem« (gængs) eller ordret kausativt »lade sværge ved dem« (dvs. tage ed i deres navn); udkastet har det gængse i teksten og det ordrette i T.
 7. **`{N: Hjerte}`/`{N: Sjæl}` ved v. 14** – skal glossenoterne sættes her, når 5 Mos 6,5 i `import/CC0/dan/den-frie-bibel/text/` ikke har dem?
 8. **v. 3.10 »der kæmper for jer«** – præsens (participiets varighed) eller »har kæmpet for jer« (SVK »har stridit«), som gør v. 3 tilbageskuende og v. 10 fremadskuende.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

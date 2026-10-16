@@ -101,3 +101,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 ## Inline-noter flyttet til noterne
 
 Ingen; tætheden er holdt inden for rammerne fra start (8 `{T:}`, 4 `{E:}`).
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

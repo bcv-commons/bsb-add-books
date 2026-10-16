@@ -1,6 +1,6 @@
 ---
 title: Looking ahead: Genesis 31–50
-entries: [term:H2472.g, gap:interpret_dream.g, term:H7458.g, term:H1250.g, term:H3701.g, term:H5470.g, term:steward.g, term:H56.g, term:H6912.g, term:H4631.g, gap:coat.g, gap:household_gods.g, term:H251.g, term:H251brothers.g, term:H1581.g, term:H168.g, term:H1777.g, name:pharaoh.g, name:egypt.g, name:egyptian.g, name:machpelah.g, name:canaan.g, genealogy_list.g, term:coat_ornate.g, formula:dream_had.g, term:dreamer.g, term:pit.g, term:lift_out.g, formula:wild_animal_devoured.g, gap:torn_pieces.g, name:ishmaelites.g, name:dothan.g, name:potiphar.g, name:medanites.g, term:traders.g, term:officer_eunuch.g, term:captain_guard.g, formula:jealous.g, formula:kept_in_mind.g, formula:loved_more.g, formula:hated_more.g, term:our_brother.g, formula:own_flesh.g, formula:comfort_refused.g, formula:to_sheol.g, formula:reign_over_us.g, formula:sold_price.g, formula:binding_sheaves.g, term:pledge.g, term:signet_seal.g, term:cord_thread.g, formula:raise_offspring.g, gap:spill_seed.g, gap:breach.g, gap:pull_back_hand.g, formula:prostituted.g, term:shrine_prostitute.g, term:father_in_law.g, term:H6743.g, formula:lord_with_him.g, term:H6711.g, term:H7121cry.g, term:H8610.g, term:H2820.g, term:handsome.g, formula:knew_nothing.g, term:H5127run.g, term:H2617god.g, formula:found_favor_with.g, formula:into_his_hand.g, term:H6485charge.g, term:attendant.g, term:warden.g, term:prison_throw.g, term:day_after_day.g, formula:sin_against_god.g, formula:he_refused.g, gap:confined.g, term:cupbearer.g, term:baker.g, term:basket.g, term:cup.g, term:grapes.g, term:blossom_ripen.g, term:squeeze.g, formula:sad_face.g, formula:birthday.g, formula:feast_for.g, formula:remember_forget.g, formula:interpretation.g, formula:within_days.g, formula:lift_head.g, term:hang.g, formula:kidnapped.g, formula:did_wrong_to.g, formula:restore_position.g, formula:assigned_to.g, formula:show_kindness_when_well.g, term:magician.g, term:cow.g, term:graze.g, term:fat_thin.g, term:wither.g, term:swallow.g, formula:i_remembered.g, formula:told_us.g, term:chariot.g, term:chain_neck.g, term:signet_ring.g, formula:bow_knee.g, formula:go_to_pl.g, term:storehouse.g, term:abundance.g, term:shave.g, formula:without_your_word.g, formula:years_began.g, formula:cried_for.g, formula:no_one_could_know.g, gap:fifth_part.g, gap:keep_track.g, gap:discerning.g, term:spy.g, term:honest.g, term:youngest.g, term:sack.g, term:provisions.g, formula:spoke_harshly.g, formula:pretended.g, formula:where_from.g, formula:oath_lives.g, formula:test_you.g, formula:you_will_live.g, formula:they_consented.g, formula:did_not_listen.g, formula:told_you.g, term:plead.g, term:bind.g, formula:load_donkeys.g, term:interpreter.g, gap:land_nakedness.g, gap:harm_befall.g, gap:lodging_place.g, gap:empty_sacks.g, gap:accuse.g, gap:bereave.g, gap:relieve_hunger.g]
+entries: [term:H2472.g, gap:interpret_dream.g, term:H7458.g, term:H1250.g, term:H3701.g, term:H5470.g, term:steward.g, term:H56.g, term:H6912.g, term:H4631.g, gap:coat.g, gap:household_gods.g, term:H251.g, term:H251brothers.g, term:H1581.g, term:H168.g, term:H1777.g, name:pharaoh.g, name:egypt.g, name:egyptian.g, name:machpelah.g, name:canaan.g, genealogy_list.g, term:coat_ornate.g, formula:dream_had.g, term:dreamer.g, term:pit.g, term:lift_out.g, formula:wild_animal_devoured.g, gap:torn_pieces.g, name:ishmaelites.g, name:dothan.g, name:potiphar.g, name:medanites.g, term:traders.g, term:officer_eunuch.g, term:captain_guard.g, formula:jealous.g, formula:kept_in_mind.g, formula:loved_more.g, formula:hated_more.g, term:our_brother.g, formula:own_flesh.g, formula:comfort_refused.g, formula:to_sheol.g, formula:reign_over_us.g, formula:sold_price.g, formula:binding_sheaves.g, term:pledge.g, term:signet_seal.g, term:cord_thread.g, formula:raise_offspring.g, gap:spill_seed.g, gap:breach.g, gap:pull_back_hand.g, formula:prostituted.g, term:shrine_prostitute.g, term:father_in_law.g, term:H6743.g, formula:lord_with_him.g, term:H6711.g, term:H7121cry.g, term:H8610.g, term:H2820.g, term:handsome.g, formula:knew_nothing.g, term:H5127run.g, term:H2617god.g, formula:found_favor_with.g, formula:into_his_hand.g, term:H6485charge.g, term:attendant.g, term:warden.g, term:prison_throw.g, term:day_after_day.g, formula:sin_against_god.g, formula:he_refused.g, gap:confined.g, term:cupbearer.g, term:baker.g, term:basket.g, term:cup.g, term:grapes.g, term:blossom_ripen.g, term:squeeze.g, formula:sad_face.g, formula:birthday.g, formula:feast_for.g, formula:remember_forget.g, formula:interpretation.g, formula:within_days.g, formula:lift_head.g, term:hang.g, formula:kidnapped.g, formula:did_wrong_to.g, formula:restore_position.g, formula:assigned_to.g, formula:show_kindness_when_well.g, term:magician.g, term:cow.g, term:graze.g, term:fat_thin.g, term:wither.g, term:swallow.g, formula:i_remembered.g, formula:told_us.g, term:chariot.g, term:chain_neck.g, term:signet_ring.g, formula:bow_knee.g, formula:go_to_pl.g, term:storehouse.g, term:abundance.g, term:shave.g, formula:without_your_word.g, formula:years_began.g, formula:cried_for.g, formula:no_one_could_know.g, gap:fifth_part.g, gap:keep_track.g, gap:discerning.g, term:spy.g, term:honest.g, term:youngest.g, term:sack.g, term:provisions.g, formula:spoke_harshly.g, formula:pretended.g, formula:where_from.g, formula:oath_lives.g, formula:test_you.g, formula:you_will_live.g, formula:they_consented.g, formula:did_not_listen.g, formula:told_you.g, term:plead.g, term:bind.g, formula:load_donkeys.g, term:interpreter.g, gap:land_nakedness.g, gap:harm_befall.g, gap:lodging_place.g, gap:empty_sacks.g, gap:accuse.g, gap:bereave.g, gap:relieve_hunger.g, term:n_times.g43, formula:finished_eating.g43, formula:how_could_we_know.g43, formula:as_he_asked.g43, formula:slaughter_animal.g43, term:dine.g43, term:private_room.g43, formula:is_he_well.g43, formula:still_alive.g43, formula:do_you_have.g43, formula:counterfactual.g43, term:delay.g43, term:detestable.g43, term:separately.g43, formula:astonished_looked.g43, formula:it_is_fine.g43, term:treasure.g43, term:donkey.g43, term:elderly.g43, term:additional.g43, gap:surety.g43, gap:mistake.g43, gap:double.g43, gap:nuts.g43, gap:best_products.g43, gap:composure.g43, gap:portions.g43, gap:drank_freely.g43, gap:intend_overpower.g43, gap:received_money.g43, gap:amount.g43]
 ---
 # Looking ahead: Genesis 31–50
 
@@ -430,6 +430,35 @@ the brothers' answer three times, so the renderings were fixed at the first tell
   *nqazo-qeivîm*, *nqazø-khamás*, *zóyagét*, *tozo-ivøvem*, *gènimbø-vi꞉mám*, *qǽ-otevát*, *itueav*,
   *ndæ̀-itú*. Jacob's "you will bring my gray hair down to Sheol" uses formula:to_sheol.g with "I, an
   old man" (*lawaqape*, 19:31).
+
+## Genesis 43 (drafted 16.10.2026, agent:gen043)
+
+The second journey, with Benjamin, and the meal in Joseph's house. Much of it is dialogue that the team's
+Genesis 1–30 already has a model for:
+
+- **Asking after someone.** "Is your father well?" is Jacob's question about Laban at the well (29:6,
+  *Ndego kopømbâ tego?*), and the answer is the shepherds' *Ndego kopømbá ngeyage.* "He is still alive" is Paul's
+  word over Eutychus (ACT 20:10, *ngekhandî꞉vát*) with *zua*; "do you have another brother?" follows LUK 24:41
+  (*tøzǿgo*) and the angels' question to Lot (19:12). Genesis 44–46 ask the same questions.
+- **Hospitality.** Water to wash the feet and food for the animals are word for word the team's 24:32 (Laban's
+  welcome); the steward is *sasae kawa ezoqam* (24:2); "slaughter an animal" is the father's command in LUK 15:23
+  (*vø̀ndolaém*); "he did as Joseph said" is MAT 1:24; the gifts are presented and the brothers bow as the magi do
+  (MAT 2:11). "Peace to you" became *Ság.* (fine, 30:15), a question for the team.
+- **Counting and comparing.** "N times" is *khøuwa* + the numeral (2CO 11:24 *Khøuwa faev*): this settles the
+  open "ten times" / "seven times" gaps of Genesis 31 and 33. Benjamin's portion uses the comparative
+  *mø̀ndøløvú*. The lexicon gives *khobos* for "double", but *khobos* means fierce (a roaring lion, 1PE 5:8), so
+  "double the silver" is built as *moni bawan menás* (two lots of money).
+- **Judah's pledge and the counterfactual.** No word for being surety was found; Paul's offer to pay Onesimus's debt
+  (PHM 1:19) is the nearest model, and the draft says "I will look after him; you may ask me about him"
+  (gap:surety.g43). "If we had not delayed, we would have come back twice" follows JHN 15:22 (*okhoeav tøgonɨn …
+  ambá …-ɨ́n*) with *føløtaz* (delay, HEB 10:37).
+- **The meal.** Separately = *yakhapús* (2:18); "detestable to the Egyptians" = forbidden, *khafeáp* (MAT 12:4);
+  the inner room is *khoev mokho* (MAT 6:6); the brothers' astonishment is *nqova zøndáf* (MRK 9:15). "They drank
+  freely (became drunk) with him" is told as eating, drinking and great joy, since the NT's drinking words describe
+  drunkenness as a vice (EPH 5:18).
+- **Built and open:** surety, mistake, double, pistachios and almonds, best products, "intend to overpower",
+  "received", full weight, composure, portions, drinking freely (gaps above); built verbs *ndæ̀kewág*,
+  *qazindu-qavazɨ́n*, *ginigeanemɨ́n*, *ndønøzøgím*, *betaqagó*, *gilógát*.
 
 ## Not in Genesis 1–30 nor in the NT
 
@@ -1162,4 +1191,159 @@ Quotations on this page are from the Kuni team's Genesis and the Kuni NT (credit
   - answers: relieve, relieve the hunger, to relieve the hunger of your households
   - nonqo = for (feature); khoev ezoqam = household. gen042:19, 33.
   - agent:gen042, 2026-10-16
-<!-- store:end sha=f380ac4b -->
+- **`term:n_times.g43`** פְּעָמִים / יָדוֹת (N times: twice, five times) → **khøuwa <N> (khøuwa menás twice, khøuwa faev five times)** [medium, decided, attested]
+  - NT: 2CO 11:24 *Khøuwa faev*
+  - answers: twice, five times, times, seven times, ten times
+  - Paul's 'Five times I received …' (2CO 11:24) counts with khøuwa + numeral. Settles the open gaps for 'N times' (gen031 built gèmbo-ten, gen033 put the bare numeral). gen043:10 'khøuwa menás', 43:34 'khøuwa faev'. Also settles gap:n_times.g33.
+  - agent:gen043, 2026-10-16, supersedes `gap:ten_times.g`
+- **`formula:finished_eating.g43`** כִּלּוּ לֶאֱכֹל (they had finished eating) → **lou loge qamezømbe-navøem (when they had finished eating); a stock eaten up = '<X> ndølouz, atema qame-navøem'** [medium, decided, attested]
+  - NT: JHN 21:15 *lou loge qamezømbe-navøem*; RUT 3:3 *ùni bembøe-navøém*
+  - answers: eaten, had eaten all, finished eating
+  - navøem = end, be finished (gen041:1 'Viav menás qame-navøem'). gen043:2 tells the grain eaten up with ndølouz + qame-navøem.
+  - agent:gen043, 2026-10-16
+- **`formula:how_could_we_know.g43`** הֲיָדוֹעַ נֵדַע (how could we possibly know?) → **Gê, ni áv khatínøtēn, av nqægo, …** [high, decided, attested]
+  - NT: JHN 14:5 *ni nakhoa áv khatínøtēn*
+  - answers: how could we possibly know, possibly, how could we know
+  - Thomas's 'how can we know the way?'. gen043:7.
+  - agent:gen043, 2026-10-16
+- **`formula:as_he_asked.g43`** עַל־פִּי הַדְּבָרִים הָאֵלֶּה (accordingly, in answer to these questions) → **av <X> ginibevap ndægo (as he asked us)** [medium, decided, by-rule]
+  - NT: GEN 27:19 *qoqonømbe-ein ndægo*
+  - answers: accordingly
+  - The similative 'av … ndægo' (as you told me, 27:19) with the asking verb. gen043:7.
+  - agent:gen043, 2026-10-16
+- **`formula:slaughter_animal.g43`** טְבֹחַ טֶבַח (slaughter an animal) → **søvakha gigiap nøme vø̀ndolaém (kill an animal, command)** [medium, decided, attested]
+  - NT: LUK 15:23 *vø̀ndolaém*
+  - answers: slaughter, slaughter an animal, animal
+  - The father's 'bring the fattened calf and kill it' (LUK 15:23); the animal as søvakha gigiap (term H929). gen043:16.
+  - agent:gen043, 2026-10-16
+- **`term:dine.g43`** אָכַל לֶחֶם (eat a meal, dine) → **lou log- (lou + the eating verb: 'no namba lou gilógát' they will eat with me)** [high, decided, attested]
+  - NT: GEN 26:30 *lou sasa ndølog*; LUK 13:26 *Ni lou zilogám*
+  - answers: dine, eat a meal, meal, feasted
+  - The future gilógát is built (future = high tone). gen043:16, 25, 32.
+  - agent:gen043, 2026-10-16
+- **`term:private_room.g43`** חֶדֶר (inner, private room) → **khoev mokho (inside the house); 'he went into a private room' = 'khoev mokho-té genø-ón'** [high, decided, attested]
+  - NT: MAT 6:6 *khoev mokho-té*; LUK 12:3 *khoev mokho-te*
+  - answers: private room, inner room, room
+  - MAT 6:6 'go into your inner room'. kouwat (room, HEB 9:7) is the temple's room. gen043:30.
+  - agent:gen043, 2026-10-16
+- **`formula:is_he_well.g43`** הֲשָׁלוֹם … / שָׁלוֹם (is he well? he is well) → **Ndego kopømbâ tego? — Ndego kopømbá ngeyage.** [high, decided, attested]
+  - NT: GEN 29:6 *Ndego kopømbâ tego?*; GEN 29:6 *Ndego kopømbá ngeyage.*
+  - answers: is he well, well, welfare, asked if they were well, your servant our father is well
+  - Jacob asks the shepherds about Laban (the team's 29:6). 'Are you well?' (pl) = 'Zo kopømbâ tozogo?' (built). gen043:27-28.
+  - agent:gen043, 2026-10-16
+- **`formula:still_alive.g43`** הַעוֹד … חָי / עוֹדֶנּוּ חָי (is he still alive? he is still alive) → **(Ndego) zua ngekhandî꞉vát** [medium, decided, by-rule]
+  - NT: ACT 20:10 *ngekhandî꞉vát*
+  - answers: still alive, alive, is your father still alive
+  - Paul's 'He is still alive!' (ACT 20:10) with zua (still); in a question the same with '?'. gen043:7, 27, 28; Gen 45:3, 26, 28 and 46:30 need it.
+  - agent:gen043, 2026-10-16
+- **`formula:do_you_have.g43`** הֲיֵשׁ לָכֶם אָח (do you have another brother?) → **Ge zô, <X> nøme tøzǿgo?** [medium, decided, attested]
+  - NT: LUK 24:41 *lou loge nonqo tøzǿgo*; GEN 19:12 *Ge qô, qakeza ezoqa*
+  - answers: do you have another brother, another brother, you had another brother
+  - Jesus's 'Do you have anything here to eat?' (pl, LUK 24:41) and the angels' 'Do you have anyone else here?' (sg, GEN 19:12). gen043:6-7; 44:19.
+  - agent:gen043, 2026-10-16
+- **`formula:counterfactual.g43`** לוּלֵא … כִּי־עַתָּה (if we had not …, by now we would have …) → **<protasis>-eav tøgonɨn, yaq <subject> ambá … -ɨ́n** [medium, decided, attested]
+  - NT: JHN 15:22 *No okhoeav tøgonɨn*
+  - answers: if we had not delayed, could have, would have
+  - JHN 15:22 'If I had not come …, they would not be guilty' (ambá … sègegonɨ́n). Delay = føløtaz (HEB 10:37 'khøuwa géføløtazák', 1TI 3:15 'khøuwa tæføløtaz'). gen043:10.
+  - agent:gen043, 2026-10-16
+- **`term:delay.g43`** הִתְמַהְמַהּ (delay, linger) → **føløtaz- (khøuwa føløtaz, delay)** [high, decided, attested]
+  - NT: HEB 10:37 *khøuwa géføløtazák*; 1TI 3:15 *khøuwa tæføløtaz*
+  - answers: delayed, delay, linger
+  - gen043:10 'Ni føløtazeav tøgonɨn' (built negative counterfactual); Gen 19:16 lingered is the same verb in Hebrew.
+  - agent:gen043, 2026-10-16
+- **`term:detestable.g43`** תּוֹעֵבָה (detestable, abomination to someone) → **khafeáp (forbidden): 'Matev av nqægo, <X>-te khafeáp'** [medium, decided, attested]
+  - NT: MAT 12:4 *Matev av nqægo khafeáp*
+  - answers: detestable, abomination, that was detestable to them
+  - The bread not lawful for David's men (MAT 12:4). gen043:32; 46:34 (shepherds detestable to the Egyptians) needs it.
+  - agent:gen043, 2026-10-16
+- **`term:separately.g43`** לְבַדּוֹ / לְבַדָּם (by himself, by themselves, separately) → **yakhapús (alone)** [high, decided, attested]
+  - NT: GEN 2:18 *yakhapus teyagat*
+  - answers: separately, alone, by themselves
+  - 'It is not good for the man to be alone' (2:18). gen043:32.
+  - agent:gen043, 2026-10-16
+- **`formula:astonished_looked.g43`** וַיִּתְמְהוּ … אִישׁ אֶל־רֵעֵהוּ (they looked at one another in astonishment) → **nqova zøndáf (they were amazed). Ndigu yaqyaq-a giqeivim.** [medium, decided, attested]
+  - NT: MRK 9:15 *ndigu nqova zøndáf*
+  - answers: astonishment, looked at one another, amazed
+  - nqova zøndáf is the store's 'amazed' (RUT 1:19 for alarm); yaqyaq-a = one another (gen042:1). gen043:33.
+  - agent:gen043, 2026-10-16
+- **`formula:it_is_fine.g43`** שָׁלוֹם לָכֶם (peace to you; it is fine) → **Ság.** [medium, decided, attested]
+  - NT: GEN 30:15 *Ság.*
+  - answers: it is fine, peace to you, fine
+  - The interjection 'good, enough' (Rachel's 'Very well', 30:15) for the steward's reassurance; the NT greeting 'sambi matev … zo-te' (1CO 1:3) is a letter blessing. gen043:23.
+  - agent:gen043, 2026-10-16
+- **`term:treasure.g43`** מַטְמוֹן (hidden treasure) → **gigiap qaniqanim (precious things)** [high, decided, attested]
+  - NT: MAT 13:52 *gigiap qaniqanim*
+  - answers: treasure
+  - The householder's treasures (MAT 13:52). gen043:23.
+  - agent:gen043, 2026-10-16
+- **`term:donkey.g43`** חֲמוֹר (donkey) → **donki** [high, decided, attested]
+  - NT: LUK 10:34 *ekeza donki-qa*
+  - answers: donkeys, donkey
+  - Loan donki (4 NT verses); 'their donkeys' = tigi donki; fodder for them = lou (the team's 24:32 'gagayag neka lou' for camels). gen042:26-27; 43:18, 24; 44:3, 13.
+  - agent:gen043, 2026-10-16
+- **`term:elderly.g43`** זָקֵן (old, elderly) → **lawaqape** [high, decided, attested]
+  - NT: LUK 1:18 *No lawaqapé.*
+  - answers: elderly, old, your elderly father
+  - Zechariah 'I am an old man'; the team's 24:1 'ùnime꞉-lawaqape-év'. gen042:38; 43:27; 44:20.
+  - agent:gen043, 2026-10-16
+- **`term:additional.g43`** אַחֵר (other, additional) → **nøme (another, other): 'moni nøme' (more money), 'zøveqase nøme' (your other brother)** [high, decided, attested]
+  - NT: GEN 19:12 *qakeza ezoqa nøme*
+  - answers: additional, other, another
+  - gen043:14, 22.
+  - agent:gen043, 2026-10-16
+- **`gap:surety.g43`** עָרַב / מִיָּדִי תְּבַקְשֶׁנּוּ (be surety for him; require him from my hand) → **no word for surety: 'No ndego ndæ̀kewág' (I will look after him) + 'Qo kopømbaqapé, noqa yaq-te ndego toqonø-bevap' (you may ask me about him)** [low, open, by-rule]
+  - NT: PHM 1:19 *no teqa fia ndæ̀gó*; RUT 4:4 *Manqei ndæ̀wí*
+  - answers: guarantee, safety, personally, responsible, surety, pledge
+  - Searched charge it to me|I will repay: PHM 1:19 (Paul pays Onesimus's debt) is the nearest model of standing for someone, but it is about money. ndæ̀kewág built on the 1sg future ndæ̀- (RUT 4:4) and kewag (look after). gen043:9; 44:32 repeats it. Question for the Kuni team.
+  - agent:gen043, 2026-10-16
+- **`gap:mistake.g43`** מִשְׁגֶּה (a mistake, oversight) → **no word: 'Éisa, ezoqa nøme ndøgo ndøvé, ndego otevateáv' (perhaps someone put it there and did not know)** [medium, open, by-rule]
+  - NT: JON 1:6 *Éisa*; ACT 3:17 *Zo zøtezateáv*
+  - answers: mistake, perhaps it was a mistake, by mistake
+  - Searched by mistake|unintentional|unknowingly|in ignorance: acting in ignorance (ACT 3:17, 1TI 1:13) is the nearest. gen043:12.
+  - agent:gen043, 2026-10-16
+- **`gap:double.g43`** מִשְׁנֶה כֶּסֶף (double the silver) → **no word: 'moni bawan menás' (two lots of money, built on 'bawan menás' two groups)** [low, open, by-rule]
+  - NT: JHN 19:23 *Møvøyap foá*
+  - answers: double, double the silver, double the amount
+  - The lexicon's khobos for 'double' is wrong: khobos means fierce (1PE 5:8 'layon khobos-qape'). gen043:12, 15. Question for the Kuni team.
+  - agent:gen043, 2026-10-16
+- **`gap:nuts.g43`** בָּטְנִים וּשְׁקֵדִים (pistachios and almonds) → **no names: 'tae nanga vinivinimba menás' (two kinds of tree fruit)** [low, open, by-rule]
+  - NT: GEN 1:11 *tae nanga-us*
+  - answers: pistachios, almonds, almond
+  - Not in the corpus. Aaron's staff of HEB 9:4 bore almonds in Numbers, but the NT text does not name them. gen043:11. Question for the Kuni team.
+  - agent:gen043, 2026-10-16
+- **`gap:best_products.g43`** זִמְרַת הָאָרֶץ (the best products of the land) → **built 'manqei-qa avøe eqeieqei' (the land's good crops)** [medium, open, by-rule]
+  - NT: REV 14:15 *avøe gigiap*
+  - answers: best products, products, best products of the land
+  - avøe = crops, as gen041 (abundance 'avøe kopoav'). gen043:11.
+  - agent:gen043, 2026-10-16
+- **`gap:composure.g43`** וַיִּתְאַפַּק (he controlled himself) → **built 'ekeza eiv ndønøzøgím' (he held back his weeping)** [low, open, by-rule]
+  - NT: 1CO 7:5 *kha nøzøgim*
+  - answers: composure, regaining his composure, controlled himself, restrain
+  - Searched restrain|controlled himself|self-control: self-control = 'kha nøzøgim' (1CO 7:5). gen043:31; 45:1 needs it ('could no longer control himself').
+  - agent:gen043, 2026-10-16
+- **`gap:portions.g43`** מַשְׂאֹת (portions served from his table) → **no word for portion: 'Zosef lou ti-te ndøkhofotáv' (Joseph sent them food); 'larger than' = mø̀ndøløvú (feature comparative)** [medium, open, by-rule]
+  - NT: 2CO 11:24 *Khøuwa faev*
+  - answers: portions, portion, larger, table
+  - gen043:34: 'Benzamin-qa lou, ezoqa nøme-qa mø̀ndøløvú, khøuwa faev'.
+  - agent:gen043, 2026-10-16
+- **`gap:drank_freely.g43`** וַיִּשְׁכְּרוּ עִמּוֹ (they drank freely, became drunk with him) → **'ndølouz neka vø̄-iz, khanakhanakh kandambá' (they ate and drank, very glad); drunkenness 'ibøkha soqa izam' (EPH 5:18) not used for this** [medium, open, by-rule]
+  - NT: GEN 26:30 *lou sasa ndølog*; EPH 5:18 *ibøkha soqa*
+  - answers: drank freely, feasted, drunk
+  - Searched drunk|drink their fill: the NT's drinking words are for drunkenness as a vice. The BSB reads a feast. gen043:34.
+  - agent:gen043, 2026-10-16
+- **`gap:intend_overpower.g43`** לְהִתְגֹּלֵל עָלֵינוּ וּלְהִתְנַפֵּל עָלֵינוּ (to attack and fall upon us) → **built 'Ndigu amba ni ginigeanemɨ́n' (they want to seize us; amba … -ɨn, feature suffix_in)** [low, open, by-rule]
+  - NT: LUK 5:18 *ginø-ndafemɨ́n*
+  - answers: intend, overpower, they intend to overpower us
+  - gean = seize (store: captives vøzø̄-geanem). gen043:18.
+  - agent:gen043, 2026-10-16
+- **`gap:received_money.g43`** כַּסְפְּכֶם בָּא אֵלָי (your silver came to me: I received it) → **built 'Zoqa moni, no-te mø̀ndøfakhán' (your money has come to me)** [low, open, by-rule]
+  - NT: GEN 26:1 *ndøfakhán*
+  - answers: received, i received your silver
+  - The Hebrew image kept; perfective mø̀ndø- + fakhan (come). gen043:23.
+  - agent:gen043, 2026-10-16
+- **`gap:amount.g43`** בְּמִשְׁקָלוֹ (in its full weight) → **'Moni ate ndøgoám, taqa viniv até kopó' (all the money was there, its weight the same; viniv weight, RUT 3:15)** [low, open, by-rule]
+  - NT: RUT 3:15 *Taqa viniv*
+  - answers: amount, full amount
+  - gen043:15 the double amount = 'moni bawan menás' (gap:double.g43); 43:21 the weight.
+  - agent:gen043, 2026-10-16
+<!-- store:end sha=2e5e1108 -->

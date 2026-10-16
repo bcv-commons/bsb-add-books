@@ -150,3 +150,5 @@ glossary Balam), Betliem (Luk 2:4), Zuda (Mat 2:6), Izlael.
    began reaping the barley) is a paraphrase; check whether "avøe" alone means harvest.
 10. The gender prefix gu- when a man speaks to a woman (gumbo-ein) and when a woman acts
     (guzø-, gunø-): the sketch assumes gu- marks a feminine participant; worth confirming.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

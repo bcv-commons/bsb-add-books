@@ -55,3 +55,5 @@ Datum: 02.10.2026 · Status: **Entwurf** (Maschinenentwurf aus dem Grundtext, no
 2. **V. 7**: schwieriger Text – Lesart BSB (kurze Rast) beibehalten?
 3. **V. 17**: Umrechnung »öppe zwänzg Liter« oder Masseinheit »es Efa« beibehalten?
 4. **Überschriften**: zwei Abschnitte (V. 1-17 / 18-23). BSB hat nur eine Überschrift für das ganze Kapitel.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

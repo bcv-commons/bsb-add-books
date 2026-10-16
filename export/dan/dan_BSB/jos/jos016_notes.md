@@ -77,3 +77,5 @@ Begge: `{E:}` ved v1 (ét lod for Josef → delt i to), v2 (Betel/Luz + `{H: 1 M
 4. Skal »havet« glosseres (»Middelhavet«) én gang i bogen (fx 1,4 eller her), eller slet ikke som i `import/CC0/dan/den-frie-bibel/text/`?
 5. v10: »blev sat til tvangsarbejde« (`_svk`) eller »er tvangsarbejdere« (`_BSB`)? Hebraisk er kollektivt/abstrakt (»blev til hoveri«).
 6. Skal grænsebeskrivelserne i kap. 15-19 have én fælles `{E:}` (fx ved 15,1) der forklarer grænseverberne, i stedet for spredte `{T:}`?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

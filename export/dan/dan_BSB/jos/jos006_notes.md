@@ -87,3 +87,5 @@ Begge udkast har: `{T:}` v1 (figura etymologica), v5 (»falde under sig selv«),
 ## Harmonisering efter samlet gennemgang (17.08.2026)
 
 - v22.25 *riggēl*: »udspejde« ændret til »udspionere« (husterm, 11× i `import/CC0/dan/den-frie-bibel/text/`; »udspejde« 0×), som i kap. 2 og 7.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

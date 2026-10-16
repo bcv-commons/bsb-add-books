@@ -119,3 +119,5 @@ Synoptische Passionsberichte (Mt 26-27, Mk 14-15, Lk 22-23) nur als Wortquelle; 
 3. **v18 ἀνθρακιά** *Cholefüür* (0×) oder einfach *es Füür*? Die Entsprechung zu 21,9 spricht für ein eigenes Wort.
 4. **v40 λῃστής:** *Röuber* (Konkordanz zu 10,1.8) im Text und *Ufständische* in der Fussnote, oder umgekehrt nach BSB (*insurrectionist*)?
 5. **v28 *unrein*:** im Korpus nicht gefunden; Alternative *für dass si sech nid verunsubere*?
+
+*Original text in these notes: Greek from the Berean Greek Bible (public domain, CC0), filled in by scripts/notes_hebrew.py.*

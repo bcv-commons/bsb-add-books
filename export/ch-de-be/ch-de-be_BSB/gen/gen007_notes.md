@@ -56,3 +56,5 @@ Datum: 02.10.2026 · Status: **Entwurf** (Maschinenentwurf aus dem Grundtext, no
 2. **Rein/unrein**: »subere Tier / Tier, wo nid suber sy« oder kultisch deutlicher »reini / unreini Tier«?
 3. **V. 11 Datum**: Ordinalzahlen ausgeschrieben (Entwurf) oder Ziffern (»am 17. Tag vom 2. Monet«) für die Chronologie in Kap. 7-8?
 4. **V. 23**: aktiv »So het er … usglöscht« (MT, Entwurf) oder passiv wie BSB?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

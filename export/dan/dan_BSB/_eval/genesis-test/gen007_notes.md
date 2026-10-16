@@ -95,3 +95,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 6. v1 »for mit ansigt«: skal der sættes `{N: Ansigt}`?
 7. v13: Er Matt 24,38 nok et direkte citat til `{H:}`, eller hører det under hentydninger?
 8. *gāvar* »fik overhånd« (fast) – eller varieret (»steg«, »tog til«) for bedre dansk flow?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

@@ -104,3 +104,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 5. v13.32: »var 12 brødre« (datid, valgt) eller »er 12 brødre« (hebraisk nominalsætning, BSB)?
 6. v34 *tisḥārû*: »drage frit om i landet« eller »handle i landet« (BSB)?
 7. v21: »bad os om nåde« – kolliderer det med `{N: nåde}`-ordet (*ḥæsæd*)? Alternativ: »tryglede os«.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

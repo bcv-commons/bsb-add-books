@@ -69,3 +69,5 @@ Separat in `gen018_footnotes.txt` (berndeutsch): V. 12 »glachet« – Wortspiel
 2. **V. 3 *ʾădōnāy***: »My Herr« (Entwurf, offen) oder schon als Gottesanrede kennzeichnen?
 4. **V. 18** mit 12,3 abgleichen (»Völker« vs. »Sippe«), sobald `gen012.txt` vorliegt.
 5. **V. 8 »Dickmilch«** oder traditionell »Anke« (Butter)?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

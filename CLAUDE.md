@@ -80,6 +80,9 @@ working; this file adds the rules that hold for any task here.
   structure for open reuse is built on the bcv-query layout (`orig/heb-bcv-query/`, CC BY-SA 4.0; the site's
   MACULA/UHB view); `scripts/relayout.py` moves a clause-line draft between layouts. The BHSA copy itself may be used only non-commercially: a commercial user of
   this repo drafts on `bcv-query` (`--drafting bcv-query`) or asks the ETCBC.
+  **Its text is never copied either:** the Hebrew quoted in notes, store and wiki is the WLC (MACULA Hebrew in
+  `orig/heb.sqlite`, the clause packages; public domain); `scripts/notes_hebrew.py` fills the notes' verses from it and adds
+  the credit line, and `quotes.py` reports accented Hebrew that isn't the WLC word for word (2026-10-16).
 - **Don't use BSB text files from other converters:** older ones dropped verse markers and
   footnotes inside `\wj` (words of Jesus). Use the files `setup.py` builds.
 - **Quarantine is required for non-free text.** A book that a non-free style edition has
@@ -110,6 +113,7 @@ python3 scripts/memory_prompt.py <project>           # prompt for an agent that 
 python3 scripts/make_prompt.py <project> <code> <ch> [--end-align] # chapter prompt for a fresh agent (OT: tagged drafting)
 python3 scripts/package.py <project> <code> <ch>   # clause packages for an OT chapter (orig/heb.sqlite, the project's .align, store, NT bridge)
 python3 scripts/check_draft.py <project> [code]      # verse/format checks of drafts
+python3 scripts/notes_hebrew.py <project> <code> <ch> | --all | show <code> <ch>:<v> # the notes' Hebrew/Greek from the WLC/BGB, with the credit line
 python3 scripts/quarantine.py <project> <code> [--release] # quarantine a book (required for non-free editions)
 python3 scripts/status.py <project> [set|publish|check] # draft status per chapter; writes STATUS.md
 python3 scripts/quotes.py <project> [--credits|--rule] # quotations within docs/licensing.md; CREDITS.md; the agents' rule

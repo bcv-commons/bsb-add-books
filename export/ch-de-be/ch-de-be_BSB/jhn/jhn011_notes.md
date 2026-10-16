@@ -110,3 +110,5 @@ Nicht belegt (eigene Bildungen, geläufiges Berndeutsch): *Höli* (Singular), *s
 3. Umschreibung wie Joh 7,39 (»i sy Herrlechkeit chunt«) wäre einheitlicher mit Kapitel 7, verliert aber das Echo auf δόξα im selben Vers. Mit den späteren Kapiteln (12,16.23.28; 13,31f; 17) abgleichen.
 4. **11,39 »er stinkt scho«:** zu drastisch für den Vorlesegebrauch?
 5. **11,44 Grabtücher:** »i Tüecher yglyret … mit emene Tuech verbunde« – genügt das für κειρίαι (Binden) und σουδάριον (Schweisstuch)?
+
+*Original text in these notes: Greek from the Berean Greek Bible (public domain, CC0), filled in by scripts/notes_hebrew.py.*

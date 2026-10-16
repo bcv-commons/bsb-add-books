@@ -93,3 +93,5 @@ Nicht belegt (eigene Bildungen, berndeutsch geläufig): *zmorge ässe*, *Cholef�
 4. **v15 πλέον τούτων:** Fussnote »Oder: meh als das da« behalten, obwohl die BSB keine hat?
 5. **v8 Mass:** *(öppe 90 m)* im Text plus Fussnote zur Elle – beides oder nur eines (vgl. 6,19, offene Frage dort)?
 6. **v12.15 *zmorge ässe*:** im Korpus nicht belegt; Alternative *Chömet cho ässe!* (neutraler, verliert aber »Frühstück«).
+
+*Original text in these notes: Greek from the Berean Greek Bible (public domain, CC0), filled in by scripts/notes_hebrew.py.*

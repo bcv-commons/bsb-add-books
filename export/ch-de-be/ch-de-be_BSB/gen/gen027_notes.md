@@ -109,3 +109,5 @@ Separat in `gen027_footnotes.txt` (berndeutsch):
 6. **V. 1.18 »Hie bin i«** mit Kap. 22 (*hinnēnî* 22,1.7.11) abgleichen.
 
 - Konsistenzdurchgang 09.10.2026: *hinnēnî* V. 1.18 »Da bin i« wie 22,1.11; 31,11; 37,13; 46,2 (statt »Hie bin i«).
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

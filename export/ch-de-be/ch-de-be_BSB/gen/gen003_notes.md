@@ -72,3 +72,5 @@ Namensdeutungen stehen seit dem 2.10.2026 nicht mehr im Text, sondern wie in der
 2. **V. 15 »Är«**: Einzeldeutung offen lassen (Entwurf) oder kollektiv »Si (d Nachkomme) wärde …«?
 3. **V. 24 *šāmar***: 2,15 »hüete«, 3,24 »bewache« – vereinheitlichen, damit die Entsprechung hörbar wird?
 4. **V. 5 »wi Gott«** oder »wi Götter«?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

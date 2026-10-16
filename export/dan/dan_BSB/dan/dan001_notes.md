@@ -93,3 +93,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 5. v5.8 *pat-bag*: »kongens fine mad« eller »kongens bord« / »mad fra kongens bord«?
 6. v7 Etymologierne i `{T:}`: er »formentlig« og »usikker« tilstrækkelig forsigtigt, især for Beltshassar (jf. 4,5 »efter min guds navn«, dvs. Bel)?
 7. v10 »forkomne«: dækker det *zōʕăpîm* (»triste, nedslåede«), eller er »magre« (BSB) for fortolkende?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

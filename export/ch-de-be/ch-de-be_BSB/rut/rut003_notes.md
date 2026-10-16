@@ -67,3 +67,5 @@ Das Kapitel ist textlich auffällig dicht an Ketiv/Qere-Stellen. Übersetzt wurd
 2. **V. 16 »Wer bist du, meine Tochter?«**: sinngemäss (Entwurf) oder wörtlich »Wär bisch du jitz, my Tochter?«, das die Doppeldeutigkeit (Identität/Status) bewahrt?
 3. **V. 15**: MT »er ging in die Stadt« (Entwurf) oder Versionen »sie ging«?
 4. **V. 4.7**: Ist »deck ne bi de Füess ab« für die Vorlesepraxis zurückhaltend genug bzw. verständlich genug?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

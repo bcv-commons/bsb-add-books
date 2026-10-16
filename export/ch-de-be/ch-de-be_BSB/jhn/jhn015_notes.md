@@ -83,3 +83,5 @@ Nicht belegt (eigene Bildungen): *Ascht* (Singular), *schnydet … ab* (*abghoue
 4. **δοῦλος** hier *Chnächt*, in 8,33-35 *Sklav*: Ist der Wechsel tragbar, oder soll Johannes einheitlich übersetzt werden? Abgleich mit 13,16.
 5. **15,8 δοξάζω:** »Dadermit git me mym Vatter d Ehr« (unpersönlich) – oder näher am Passiv »Dadermit überchunt my Vatter Ehr«?
 6. **15,27:** Imperativ (BSB) im Text, Indikativ in der Fussnote – oder umgekehrt?
+
+*Original text in these notes: Greek from the Berean Greek Bible (public domain, CC0), filled in by scripts/notes_hebrew.py.*

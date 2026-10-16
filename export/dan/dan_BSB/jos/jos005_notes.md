@@ -70,3 +70,5 @@ Dato: 17.08.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 4. »Fører for HERRENS hær« vs. »HERRENS hærfører« – tjek om der findes en gengivelse af שַׂר־צָבָא andetsteds i `import/CC0/dan/den-frie-bibel/text/` (fx om Sisera, Dom 4,2 »hærfører«).
 5. »Egyptens skændsel« – ønskes en `{E:}` med de tre tolkninger?
 6. »Jerikos sletter« (plur., ordret) eller »Jerikosletten«?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

@@ -104,3 +104,5 @@ Separat in `gen022_footnotes.txt` (berndeutsch):
 4. **V. 18 »Nachfahr«** (25, Singular) neben »Nachkomme« in V. 17 – so lassen (NT-Bezug, 16) oder einheitlich »Nachkomme« wie 12,7; 13,15; 15,18?
 5. **V. 2 *lek-lᵉkā***: die Verbindung zu 12,1 sichtbar machen (»gang furt i ds Land Morija«)?
 6. **V. 24 Gacham / Gaham** – Umschriftregel (ḥ im Wortinnern → ch, Entwurf) gegen gewohnte Form; ebenso **Bus** (ז → s) gegen BSB »Buz«.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

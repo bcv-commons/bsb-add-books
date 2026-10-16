@@ -138,3 +138,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 6. v. 1 *bānāyw*: »børnebørn« (fortolkende, som BSB) eller ordret »sønner« med `{T:}`?
 7. v. 33 »Israels børn« eller »israelitterne«? Bør afgøres for hele 1 Mos (første gang her; jf. 2 Mos 1 i `import/CC0/dan/den-frie-bibel/text/`).
 8. v. 1 som egen overskrift (»Laban drager hjem«), eller skal verset høre til foregående afsnit og overskriften udelades (kapitlet begynder så med »Guds engle møder Jakob«)?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

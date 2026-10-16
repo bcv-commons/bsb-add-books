@@ -116,3 +116,5 @@ Bereits verwendet: Jakob, Israel, Josef, Bilha, Silpa, Kanaan, Sichem, Ruben, Ju
 5. **V. 36 »Chef vo der Lybwach«, »Hofmaa«, V. 20ff »Zischtärne«** – vorgegeben für Kap. 37-41; »Chef« als Fremdwort in einem Bibeltext prüfen.
 6. **V. 20.22.24 »schiesse«** für *hišlîk* – berndeutsch üblich (»wärfe«), aber evtl. zu salopp?
 7. **V. 10** – Soll eine Fussnote erklären, dass Rahel (Josefs Mutter) nach 35,19 schon gestorben ist? Derzeit nur Notiz.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

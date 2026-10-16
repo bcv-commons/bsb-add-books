@@ -110,3 +110,5 @@ Bereits verwendet: Josef, Jakob, Israel, Manasse, Efraim (41,51-52), Lus, Betel 
 5. **V. 7 Efrat** – wie 35,16.19; die buchübergreifende Frage »Efrat / Efrata« (Rut 4,11) aus Kap. 35 bleibt offen und betrifft nun auch 48,7 (zwei hebräische Formen).
 6. **V. 16 »vo allem Böse«** oder »vo allem Unglück« (näher an *raʿ* »Unheil«)?
 7. **V. 19 »het nid wölle«** – mit 37,35 (*waymāʾēn*) abgleichen.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

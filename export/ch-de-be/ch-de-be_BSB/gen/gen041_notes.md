@@ -134,3 +134,5 @@ Bereits verwendet: Pharao, Ägypte, d Ägypter, Josef, Hebräer.
 6. **V. 43** »Uf d Chnöi!« im Text (wie BSB) oder »Abrek!« im Text mit Deutung in der Fussnote?
 7. **V. 45** »Poti-Fera« mit Bindestrich oder »Potifera« (BSB)? Verhältnis zu »Potifar« (Kap. 37/39).
 8. **»Eländ« / »Elend«** – 29,32 an 31,42 und 41,52 angleichen.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

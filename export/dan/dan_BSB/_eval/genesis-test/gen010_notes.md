@@ -171,3 +171,5 @@ Faste former fra stilarket brugt uændret: Noa, Sem, Ham, Jafet, Kana'an, Nimrod
 7. v21: »Jafets ældre bror« (BSB) eller »bror til Jafet, den ældste«?
 8. v24: Skal LXX/Luk 3,36's Kainan nævnes inline (`{T:}`)?
 9. Overskrifter: Er »Hams efterkommere og Nimrods riger« acceptabel, eller skal Nimrod-afsnittet (v8-12) have egen overskrift?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

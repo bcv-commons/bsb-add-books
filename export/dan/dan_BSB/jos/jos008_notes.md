@@ -90,3 +90,5 @@ Begge spor: `{E:}` ved v12 (30.000/5.000), v26 (*ḥērem*, henviser til noten i
 6. *šəlāmîm* (v31): »måltidsofre« (husstil) – bekræft.
 7. v33 *bārīʾšōnāh*: »tidligere« (til befalingen) eller »først« (til velsignelsen)?
 8. Skal citatet fra 5 Mos 27,5-6 i v31 markeres med `>>…<<`?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

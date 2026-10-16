@@ -147,3 +147,5 @@ Bereits verwendet: Esau, Jakob, Ismael, Kanaan, Hetiter, Israelite, Eufrat.
 6. **V. 2 Hiwiter** (MT) oder »Horiter« (vgl. V. 20; viele Ausleger)? Evtl. Fussnote ergänzen.
 7. **V. 24 *hayyēmim***: »warmi Quelle« (BSB) mit Fussnote »Maultier« – oder umgekehrt?
 8. **Grosschinder / Grosstochter** – die Fussnote zu V. 2 gilt auch V. 14; für V. 12-17 (»Grosschinder« für hebr. »Söhne«) keine Fussnote gesetzt. Genügt das?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

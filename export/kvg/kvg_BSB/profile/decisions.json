@@ -28973,6 +28973,511 @@
     "an interpreter"
    ],
    "note": "Agent noun (feature agent_noun) on the interpreting of tongues: 'the meaning of a foreign word explaining person'. Built. gen042:23."
+  },
+  {
+   "id": "term:n_times.g43",
+   "kind": "term",
+   "source": "פְּעָמִים / יָדוֹת (N times: twice, five times)",
+   "value": "khøuwa <N> (khøuwa menás twice, khøuwa faev five times)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "2CO 11:24",
+     "form": "Khøuwa faev"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "decided",
+   "words": [
+    "twice",
+    "five times",
+    "times",
+    "seven times",
+    "ten times"
+   ],
+   "note": "Paul's 'Five times I received …' (2CO 11:24) counts with khøuwa + numeral. Settles the open gaps for 'N times' (gen031 built gèmbo-ten, gen033 put the bare numeral). gen043:10 'khøuwa menás', 43:34 'khøuwa faev'. Also settles gap:n_times.g33.",
+   "supersedes": "gap:ten_times.g"
+  },
+  {
+   "id": "formula:finished_eating.g43",
+   "kind": "formula",
+   "source": "כִּלּוּ לֶאֱכֹל (they had finished eating)",
+   "value": "lou loge qamezømbe-navøem (when they had finished eating); a stock eaten up = '<X> ndølouz, atema qame-navøem'",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "JHN 21:15",
+     "form": "lou loge qamezømbe-navøem"
+    },
+    {
+     "ref": "RUT 3:3",
+     "form": "ùni bembøe-navøém"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "decided",
+   "words": [
+    "eaten",
+    "had eaten all",
+    "finished eating"
+   ],
+   "note": "navøem = end, be finished (gen041:1 'Viav menás qame-navøem'). gen043:2 tells the grain eaten up with ndølouz + qame-navøem."
+  },
+  {
+   "id": "formula:how_could_we_know.g43",
+   "kind": "formula",
+   "source": "הֲיָדוֹעַ נֵדַע (how could we possibly know?)",
+   "value": "Gê, ni áv khatínøtēn, av nqægo, …",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "JHN 14:5",
+     "form": "ni nakhoa áv khatínøtēn"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "decided",
+   "words": [
+    "how could we possibly know",
+    "possibly",
+    "how could we know"
+   ],
+   "note": "Thomas's 'how can we know the way?'. gen043:7."
+  },
+  {
+   "id": "formula:as_he_asked.g43",
+   "kind": "formula",
+   "source": "עַל־פִּי הַדְּבָרִים הָאֵלֶּה (accordingly, in answer to these questions)",
+   "value": "av <X> ginibevap ndægo (as he asked us)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 27:19",
+     "form": "qoqonømbe-ein ndægo"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "decided",
+   "words": [
+    "accordingly"
+   ],
+   "note": "The similative 'av … ndægo' (as you told me, 27:19) with the asking verb. gen043:7."
+  },
+  {
+   "id": "formula:slaughter_animal.g43",
+   "kind": "formula",
+   "source": "טְבֹחַ טֶבַח (slaughter an animal)",
+   "value": "søvakha gigiap nøme vø̀ndolaém (kill an animal, command)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 15:23",
+     "form": "vø̀ndolaém"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "decided",
+   "words": [
+    "slaughter",
+    "slaughter an animal",
+    "animal"
+   ],
+   "note": "The father's 'bring the fattened calf and kill it' (LUK 15:23); the animal as søvakha gigiap (term H929). gen043:16."
+  },
+  {
+   "id": "term:dine.g43",
+   "kind": "term",
+   "source": "אָכַל לֶחֶם (eat a meal, dine)",
+   "value": "lou log- (lou + the eating verb: 'no namba lou gilógát' they will eat with me)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 26:30",
+     "form": "lou sasa ndølog"
+    },
+    {
+     "ref": "LUK 13:26",
+     "form": "Ni lou zilogám"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "decided",
+   "words": [
+    "dine",
+    "eat a meal",
+    "meal",
+    "feasted"
+   ],
+   "note": "The future gilógát is built (future = high tone). gen043:16, 25, 32."
+  },
+  {
+   "id": "term:private_room.g43",
+   "kind": "term",
+   "source": "חֶדֶר (inner, private room)",
+   "value": "khoev mokho (inside the house); 'he went into a private room' = 'khoev mokho-té genø-ón'",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MAT 6:6",
+     "form": "khoev mokho-té"
+    },
+    {
+     "ref": "LUK 12:3",
+     "form": "khoev mokho-te"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "decided",
+   "words": [
+    "private room",
+    "inner room",
+    "room"
+   ],
+   "note": "MAT 6:6 'go into your inner room'. kouwat (room, HEB 9:7) is the temple's room. gen043:30."
+  },
+  {
+   "id": "formula:is_he_well.g43",
+   "kind": "formula",
+   "source": "הֲשָׁלוֹם … / שָׁלוֹם (is he well? he is well)",
+   "value": "Ndego kopømbâ tego? — Ndego kopømbá ngeyage.",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 29:6",
+     "form": "Ndego kopømbâ tego?"
+    },
+    {
+     "ref": "GEN 29:6",
+     "form": "Ndego kopømbá ngeyage."
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "decided",
+   "words": [
+    "is he well",
+    "well",
+    "welfare",
+    "asked if they were well",
+    "your servant our father is well"
+   ],
+   "note": "Jacob asks the shepherds about Laban (the team's 29:6). 'Are you well?' (pl) = 'Zo kopømbâ tozogo?' (built). gen043:27-28."
+  },
+  {
+   "id": "formula:still_alive.g43",
+   "kind": "formula",
+   "source": "הַעוֹד … חָי / עוֹדֶנּוּ חָי (is he still alive? he is still alive)",
+   "value": "(Ndego) zua ngekhandî꞉vát",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "ACT 20:10",
+     "form": "ngekhandî꞉vát"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "decided",
+   "words": [
+    "still alive",
+    "alive",
+    "is your father still alive"
+   ],
+   "note": "Paul's 'He is still alive!' (ACT 20:10) with zua (still); in a question the same with '?'. gen043:7, 27, 28; Gen 45:3, 26, 28 and 46:30 need it."
+  },
+  {
+   "id": "formula:do_you_have.g43",
+   "kind": "formula",
+   "source": "הֲיֵשׁ לָכֶם אָח (do you have another brother?)",
+   "value": "Ge zô, <X> nøme tøzǿgo?",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 24:41",
+     "form": "lou loge nonqo tøzǿgo"
+    },
+    {
+     "ref": "GEN 19:12",
+     "form": "Ge qô, qakeza ezoqa"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "decided",
+   "words": [
+    "do you have another brother",
+    "another brother",
+    "you had another brother"
+   ],
+   "note": "Jesus's 'Do you have anything here to eat?' (pl, LUK 24:41) and the angels' 'Do you have anyone else here?' (sg, GEN 19:12). gen043:6-7; 44:19."
+  },
+  {
+   "id": "formula:counterfactual.g43",
+   "kind": "formula",
+   "source": "לוּלֵא … כִּי־עַתָּה (if we had not …, by now we would have …)",
+   "value": "<protasis>-eav tøgonɨn, yaq <subject> ambá … -ɨ́n",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "JHN 15:22",
+     "form": "No okhoeav tøgonɨn"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "decided",
+   "words": [
+    "if we had not delayed",
+    "could have",
+    "would have"
+   ],
+   "note": "JHN 15:22 'If I had not come …, they would not be guilty' (ambá … sègegonɨ́n). Delay = føløtaz (HEB 10:37 'khøuwa géføløtazák', 1TI 3:15 'khøuwa tæføløtaz'). gen043:10."
+  },
+  {
+   "id": "term:delay.g43",
+   "kind": "term",
+   "source": "הִתְמַהְמַהּ (delay, linger)",
+   "value": "føløtaz- (khøuwa føløtaz, delay)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "HEB 10:37",
+     "form": "khøuwa géføløtazák"
+    },
+    {
+     "ref": "1TI 3:15",
+     "form": "khøuwa tæføløtaz"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "decided",
+   "words": [
+    "delayed",
+    "delay",
+    "linger"
+   ],
+   "note": "gen043:10 'Ni føløtazeav tøgonɨn' (built negative counterfactual); Gen 19:16 lingered is the same verb in Hebrew."
+  },
+  {
+   "id": "term:detestable.g43",
+   "kind": "term",
+   "source": "תּוֹעֵבָה (detestable, abomination to someone)",
+   "value": "khafeáp (forbidden): 'Matev av nqægo, <X>-te khafeáp'",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MAT 12:4",
+     "form": "Matev av nqægo khafeáp"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "decided",
+   "words": [
+    "detestable",
+    "abomination",
+    "that was detestable to them"
+   ],
+   "note": "The bread not lawful for David's men (MAT 12:4). gen043:32; 46:34 (shepherds detestable to the Egyptians) needs it."
+  },
+  {
+   "id": "term:separately.g43",
+   "kind": "term",
+   "source": "לְבַדּוֹ / לְבַדָּם (by himself, by themselves, separately)",
+   "value": "yakhapús (alone)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 2:18",
+     "form": "yakhapus teyagat"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "decided",
+   "words": [
+    "separately",
+    "alone",
+    "by themselves"
+   ],
+   "note": "'It is not good for the man to be alone' (2:18). gen043:32."
+  },
+  {
+   "id": "formula:astonished_looked.g43",
+   "kind": "formula",
+   "source": "וַיִּתְמְהוּ … אִישׁ אֶל־רֵעֵהוּ (they looked at one another in astonishment)",
+   "value": "nqova zøndáf (they were amazed). Ndigu yaqyaq-a giqeivim.",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MRK 9:15",
+     "form": "ndigu nqova zøndáf"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "decided",
+   "words": [
+    "astonishment",
+    "looked at one another",
+    "amazed"
+   ],
+   "note": "nqova zøndáf is the store's 'amazed' (RUT 1:19 for alarm); yaqyaq-a = one another (gen042:1). gen043:33."
+  },
+  {
+   "id": "formula:it_is_fine.g43",
+   "kind": "formula",
+   "source": "שָׁלוֹם לָכֶם (peace to you; it is fine)",
+   "value": "Ság.",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 30:15",
+     "form": "Ság."
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "decided",
+   "words": [
+    "it is fine",
+    "peace to you",
+    "fine"
+   ],
+   "note": "The interjection 'good, enough' (Rachel's 'Very well', 30:15) for the steward's reassurance; the NT greeting 'sambi matev … zo-te' (1CO 1:3) is a letter blessing. gen043:23."
+  },
+  {
+   "id": "term:treasure.g43",
+   "kind": "term",
+   "source": "מַטְמוֹן (hidden treasure)",
+   "value": "gigiap qaniqanim (precious things)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "MAT 13:52",
+     "form": "gigiap qaniqanim"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "decided",
+   "words": [
+    "treasure"
+   ],
+   "note": "The householder's treasures (MAT 13:52). gen043:23."
+  },
+  {
+   "id": "term:donkey.g43",
+   "kind": "term",
+   "source": "חֲמוֹר (donkey)",
+   "value": "donki",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 10:34",
+     "form": "ekeza donki-qa"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "decided",
+   "words": [
+    "donkeys",
+    "donkey"
+   ],
+   "note": "Loan donki (4 NT verses); 'their donkeys' = tigi donki; fodder for them = lou (the team's 24:32 'gagayag neka lou' for camels). gen042:26-27; 43:18, 24; 44:3, 13."
+  },
+  {
+   "id": "term:elderly.g43",
+   "kind": "term",
+   "source": "זָקֵן (old, elderly)",
+   "value": "lawaqape",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "LUK 1:18",
+     "form": "No lawaqapé."
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "decided",
+   "words": [
+    "elderly",
+    "old",
+    "your elderly father"
+   ],
+   "note": "Zechariah 'I am an old man'; the team's 24:1 'ùnime꞉-lawaqape-év'. gen042:38; 43:27; 44:20."
+  },
+  {
+   "id": "term:additional.g43",
+   "kind": "term",
+   "source": "אַחֵר (other, additional)",
+   "value": "nøme (another, other): 'moni nøme' (more money), 'zøveqase nøme' (your other brother)",
+   "attested": "attested",
+   "evidence": [
+    {
+     "ref": "GEN 19:12",
+     "form": "qakeza ezoqa nøme"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "decided",
+   "words": [
+    "additional",
+    "other",
+    "another"
+   ],
+   "note": "gen043:14, 22."
   }
  ]
 }

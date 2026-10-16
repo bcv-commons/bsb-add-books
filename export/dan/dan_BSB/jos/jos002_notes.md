@@ -69,3 +69,5 @@ Dato: 17.08.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 ## Harmonisering efter samlet gennemgang (17.08.2026)
 
 - v1 *zônāh*: ændret fra »prostitueret« (kun 2× i `import/CC0/dan/den-frie-bibel/text/`, NT) til »skøge« (17× i `import/CC0/dan/den-frie-bibel/text/`, bl.a. Dom 11,1; 16,1) i begge udkast, så Rahab betegnes ens i kap. 2 og 6.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

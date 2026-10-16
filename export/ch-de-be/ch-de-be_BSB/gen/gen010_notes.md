@@ -95,3 +95,5 @@ Namensdeutungen stehen seit dem 2.10.2026 nicht mehr im Text, sondern wie in der
 3. **V. 21**: Sem als »älterer Bruder Jafets« (Entwurf, BSB) oder Jafet als der Ältere?
 4. **Aufzählungen ohne Artikel** (V. 2-7.22-23) – passt das zum Berndeutschen, oder auch dort »der Gomer, der Magog …«?
 5. **»Philister«** (Umschrift *š* → sch) oder »Philister«?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

@@ -68,3 +68,5 @@ Namensdeutungen stehen wie in der BSB als Fussnoten in der separaten Datei `gen0
 2. **V. 14**: Hagar trägt auch das Kind (wörtliche Wortstellung) – so lassen oder mit BSB »und het se mit em Bueb furtgschickt«?
 3. **V. 23 »Grosschinder«** oder »Änkel«?
 4. **V. 22 »Heerfüerer«**.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

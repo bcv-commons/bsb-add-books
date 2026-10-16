@@ -120,3 +120,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 6. Skal bønnen v4-19 sættes som poesi (`//N`)? Udkastet: prosa, som BSB.
 7. **v1** Ingen `{E:}` om Darius/Ahasverus (behandlet i 6,1). Bør en kort `{T:}` henvise til 6,1?
 8. **v27 »midt i ugen«** eller »i en halv uge«?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

@@ -104,3 +104,5 @@ Dato: 15.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 5. v3-4: Ønskeform med konjunktiv (»Gud … velsigne dig«, »Han give dig«) som 27,28 – eller »Må Gud …«?
 6. v21 *bᵊšālôm*: »i fred« (ordret, som nu) eller »uskadt« / »i god behold« (jf. 33,18)?
 7. Skal ApG 3,25 have `{H:}` ved v. 14 (citatet blander 12,3, 22,18 og 28,14; 22,18 har allerede `{H: ApG 3,25.}`)?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

@@ -66,3 +66,5 @@ Datum: 02.10.2026 · Status: **Entwurf** (Maschinenentwurf aus dem Grundtext, no
 3. **V. 16 *ṣōhar***: »Dach« (BSB, Entwurf) oder »Liechtöffnig/Fänschter« (Luther)?
 4. **כָּל־בָּשָׂר**: »alli Läbewäse« (Entwurf) oder wörtlicher »alls Fleisch«?
 5. **Masse**: Meterangaben jedes Mal in Klammern (Entwurf: auch bei »e Elle (ungefähr füfzg cm)«) oder nur bei den grossen Massen in V. 15?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

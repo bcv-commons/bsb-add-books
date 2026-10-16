@@ -65,3 +65,5 @@ Datum: 02.10.2026 · Status: **Entwurf** (Maschinenentwurf aus dem Grundtext, no
 2. ~~V. 6~~.
 3. **V. 19-20 *z***: »Kenasiter / Perisiter« (Entwurf, Luther-Tradition) oder »Kenisiter / Perisiter«?
 4. **V. 1**: zwei Sätze (Entwurf) oder BSB »I bi dy Schild, dy sehr grosse Lohn«?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

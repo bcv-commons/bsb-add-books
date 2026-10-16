@@ -139,6 +139,12 @@ def main():
                       "  - what the draft is;\n"
                       f"  - a table *Verse · {NAMES[orig_dir][1]} · {lang_name} · {NAMES[assist_dir][1]} · Comment*;\n"
                       "  - exegetical observations;\n  - dialect/style (with corpus counts);\n  - new name forms;\n  - open questions.")
+    orig_word = "Greek" if nt else "Hebrew"
+    notes_rule += (f"\n- **The {orig_word} in the notes** comes from the open text, never from `orig/heb/` (our BHSA copy, "
+                   f"not free: consult its clause lines, don't copy its text): a phrase from the clause package, or a verse "
+                   f"from `python3 scripts/notes_hebrew.py show {code} {chapter}:<verse>`. In a table with a row per verse, leave "
+                   f"the {orig_word} cell empty. When the notes are written, run `python3 scripts/notes_hebrew.py {pname} "
+                   f"{code} {chapter}`: it fills the verses from the WLC (or the BGB) and adds the credit line.")
     footnotes = p.get("footnotes", True)
     fh = p.get("footnotes_header")
     fh = (" It starts with " + ", ".join(f"`{l.format(file=f'{code}{nnn}.txt', date=date)}`" for l in fh)

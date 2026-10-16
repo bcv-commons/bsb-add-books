@@ -148,7 +148,10 @@ def main():
                         + ", ".join(f"`{g}`" for g in guides) if guides else ""),
         do_not_open="".join(f", `{d}`" for d in (p.get("do_not_open") or []) if d not in ("download/", "scratch/")),
         pages_hint=PAGES[m["familiarity"]],
-        quotation_rule=(f"- {qr}" if qr else "- The corpus is public domain: quote it as you need, with references."))
+        quotation_rule=(f"- {qr}" if qr else "- The corpus is public domain: quote it as you need, with references.")
+        + "\n- Hebrew and Greek in the store and the wiki come from the open text, never from `orig/heb/` (our BHSA copy, not "
+          "free): a phrase from a clause package, or a verse from `python3 scripts/notes_hebrew.py show <code> <ch>:<v>` (the "
+          "WLC, or the BGB).")
     print(out.strip())
 
 

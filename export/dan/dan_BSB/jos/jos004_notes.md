@@ -72,3 +72,5 @@ Dato: 17.08.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 6. v9: skal `{E:}`-noten om de to stensætninger blive stående inline, eller flyttes helt hertil?
 7. Overskrifter: to eller tre afsnit?
 8. Skal `{H:}`-henvisningerne til exodus-parallellerne (2 Mos 12,26; 13,14; 14,21-22; 5 Mos 6,20) sættes inline, eller er `{E:}`-noternes »jf.« nok?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

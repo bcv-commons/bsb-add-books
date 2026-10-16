@@ -92,3 +92,5 @@ Dato: 15.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 4. v20-22: Skal hovedsætningen begynde i v21b (valgt) eller i v22?
 5. v8 »mishagede« eller den ordrette »var onde i hans far Isaks øjne« i teksten (nu i `{T:}`)?
 6. Skal ApG 3,25 have `{H:}` også ved 28,14 (samme ordlyd »alle jordens slægter«), eller kun ved 22,18?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

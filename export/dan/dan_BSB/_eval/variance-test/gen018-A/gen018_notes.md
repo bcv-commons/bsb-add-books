@@ -118,3 +118,5 @@ Dato: 15.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 5. v. 10 *wᵊhûʔ ʔaḥărāyw*: teltåbningen bag ham (valgt) eller Sara bag ham (BSB)?
 6. v. 29-32 »de 40's skyld«: genitiv af tal med cifre er korrekt, men tungt; alternativt »for de 40 retfærdiges skyld« (tilføjelse) eller »på grund af de 40«.
 7. v. 18 `{H: Gal 3,8.}`: Gal 3,8 citerer især 12,3; skal noten stå her, eller kun ved 12,3?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

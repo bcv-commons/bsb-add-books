@@ -94,3 +94,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 5. v20: Har kapitlet for mange `{T:}` om ordspillet (tre)? En mulighed er at samle forklaringen i v13 og kun henvise i v19-20.
 6. v8: »Fortæl mig den dog« (ental, efter »en drøm«) eller »Fortæl mig dem« (BSB, de er to drømme)?
 7. v16 *sallê ḥōrî*: »kurve med hvidt brød« (valgt) eller »flettede kurve« i teksten?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

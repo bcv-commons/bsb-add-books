@@ -178,3 +178,5 @@ Bereits verwendet: Israel, Jakob, Isaak, Ägypte / d Ägypter, Pharao, Kanaan / 
 8. **V. 7 »Grossühn / Grosstöchtere«** gegen die Vermeidung von »Grossühn« in 36 (dort »Grosschinder«) – hier wegen der Geschlechtertrennung nötig; einverstanden?
 
 - Konsistenzdurchgang 09.10.2026: Zochar (V. 10) wie 23,8; 25,9.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

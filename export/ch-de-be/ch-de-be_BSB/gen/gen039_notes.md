@@ -93,3 +93,5 @@ Bereits verwendet: Josef, Pharao, Ägypte, Ägypter.
 4. **V. 3** »dass der HERR mit ihm gsi isch« (Vergangenheit, Refrain-Gleichklang) oder buchüblich »dass der HERR mit ihm isch«?
 5. **V. 14.17 *ṣaḥēq*** »sech luschtig mache« (Echo 21,9) oder deutlicher »üüs z belästige / sech a üüs vergryffe«?
 6. **V. 1 Fussnote** »Hofmaa« / »Eunuch« – nötig, oder nur hier im Notizfile?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

@@ -130,3 +130,5 @@ I alt 71 navneformer i tabellen (horitten/horitterne regnet som én). Heraf er 6
 7. v37 »ved floden« uden note – eller »ved Eufrat« i teksten (som BSB)?
 8. Bosra (flertal i `import/CC0/dan/den-frie-bibel/text/`) – `import/CC0/dan/den-frie-bibel/text/isa063.txt` har »Bozra«; bør ensrettes.
 9. Kongelisten: ét afsnit (valgt) eller én konge pr. afsnit (som BSB)?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

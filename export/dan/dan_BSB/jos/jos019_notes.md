@@ -101,3 +101,5 @@ I alt ca. 75 nye former; ca. 25 var allerede belagt.
 7. Skal tællemisforholdene (v15.30.38) have hver sin `{T:}` i stedet for én samlet `{E:}` ved v15?
 8. v49-51: Bør Kaleb/Josva-rammen (14,6-15 ↔ 19,49-50) nævnes i en `{E:}`, evt. i stedet for v1's Simeon-note, så tallet holdes på fem?
 9. Overskriftsstil: `_svk`'s »Zebulons stamme får sin arvelod« eller `_BSB`'s kortere »Zebulons arvelod« – ét mønster for kap. 13-19?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

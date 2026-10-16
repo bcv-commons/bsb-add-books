@@ -128,3 +128,5 @@ Efter piloten er notetætheden tilpasset de færdige Mosebøger i `tekst/`: `{T:
 | 28 | jorden | H | Sl 8,7-9. |
 | 29 | giver | T | Ordret: >>har givet<<. |
 | 30 | sig | T | Ordret: >>som der er levende sjæl i<<. |
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

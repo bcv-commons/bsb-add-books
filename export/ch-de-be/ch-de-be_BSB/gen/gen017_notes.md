@@ -63,3 +63,5 @@ In `gen017_footnotes.txt` (berndeutsch, wie BSB): El-Schaddai (V. 1), Abram/Abra
 2. **V. 1 »Gang dy Wäg vor mir«**: so (unterschieden von »mit Gott«) oder freier »Läb vor mir«?
 3. **V. 14 »usgschlosse«** oder wörtlicher »usgrottet«?
 4. **Fussnote V. 5**: »erhabene Vatter« / »Vatter vo vilne« – genügt die BSB-Deutung, oder soll der Volksetymologie-Charakter (*ʾab hămôn*) erwähnt werden?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

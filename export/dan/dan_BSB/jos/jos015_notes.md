@@ -95,3 +95,5 @@ I alt ca. 110 navneformer, heraf ca. 90 nye i projektet.
 6. v59: skal LXX's ekstra 11 byer nævnes i en note?
 7. v62 »Saltbyen« (oversat) eller »Ir-Melah« (translittereret)?
 8. Skal by-lister sættes med linjeskift pr. distrikt (som nu) eller som ét sammenhængende afsnit?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

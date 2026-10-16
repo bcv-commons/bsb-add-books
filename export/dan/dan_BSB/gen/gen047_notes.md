@@ -112,3 +112,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 6. v31 »bøjede sig« eller »tilbad« (som Hebr 11,21)? Valget påvirker om Jakob bøjer sig for Josef (37,9-10) eller for Gud.
 7. v12 og v24 *ṭaf*: »børn«/»små børn« – `import/CC0/dan/den-frie-bibel/text/exo012.txt` v37 har note om at *ṭaf* kan dække »familier«; BSB har »families« i v12. Ensrettes?
 8. Ramses-`{T:}` (v11): bør dateringsspørgsmålet (anakronisme) med i en `{E:}`, eller holdes ude af teksten som nu?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

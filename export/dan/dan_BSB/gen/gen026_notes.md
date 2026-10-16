@@ -145,3 +145,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 6. v12: Skal LXX-læsningen »byg« nævnes inline (`{T:}`)?
 7. Skal obs. 12 (Esaus hustruer, navneforskellen i 36,2-3) have en `{E:}` (ville give 5)?
 8. Pikol med *p* (DA 1871) – eller »Fikol«, da פ uden dagesh efter vokal udtales *f* (jf. Josva-reglerne)? Afstemmes med 21,22.32.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

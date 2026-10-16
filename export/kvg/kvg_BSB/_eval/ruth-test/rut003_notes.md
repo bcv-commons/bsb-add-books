@@ -193,3 +193,5 @@ follows "Saemon-gu zimpuka" (Luk 4:38).
     today" is rendered "until he has finished this matter today".
 11. "Until morning" = "atema qanaqanús" (after "atema khagús"); the NT's own "until daybreak"
     is "atema꞉ vøndōpave" (Act 20:11), whose spelling (꞉ after atema) I did not copy.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

@@ -85,3 +85,5 @@ Keine. Bereits verwendet: Josef, Benjamin, Juda, Kanaan, Pharao.
 4. **V. 29 *bᵉrāʿāh*** »mit Eländ« (Entwurf, vom Hebräischen unterschieden) oder angleichen an »mit Chummer« (V. 31, 42,38; BSB beide »in sorrow«)?
 5. **V. 5.15 »wahrsäge«** – Text wie BSB, Fussnote zum Becherorakel ausreichend?
 - Konsistenzdurchgang 09.10.2026: V. 29 und 31 »… i ds Toterych abe« wie 42,38 (V. 31 damit wortgleich mit 42,38; V. 29 »mit Eländ« bleibt wegen *bᵉrāʿāh*).
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

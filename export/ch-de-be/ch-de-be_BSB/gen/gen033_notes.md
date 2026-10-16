@@ -98,3 +98,5 @@ Bereits verwendet: Jakob, Esau, Lea, Rahel, Josef, Paddan-Aram, Kanaan.
 5. **V. 19 Hamor**.
 6. **V. 17 »Hütte«** Alternative »Ställ« / »Ungerständ« für das Vieh?
 7. **V. 20** – »en Altar ufgstellt« (wörtlicher, *hiṣṣîv*) oder Formel »en Altar bbout« wie 12,7; 26,25?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

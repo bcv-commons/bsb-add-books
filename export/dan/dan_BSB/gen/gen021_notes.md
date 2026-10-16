@@ -119,3 +119,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 5. v33 »Gud den Evige« – bekræftes som fast form (også Es 40,28 i `import/CC0/dan/den-frie-bibel/text/` har »En evig Gud«)?
 6. v14: Indskuddet i tankestreger (MT-ordstilling) eller omskrevet som BSB (»… og sendte hende bort med drengen«)?
 7. v28-30 »hunlam« eller »gimmerlam« / »lam af hunkøn«?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

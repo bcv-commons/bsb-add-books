@@ -116,3 +116,5 @@ Ingen helt nye former.
 5. v3-4: Ønskeform med konjunktiv (»Gud den Almægtige velsigne dig«, »Han give dig«) som 27,28 – eller »Må Gud …«?
 6. v22 infinitiv absolut *ʕaśśēr ʔăʕaśśᵊrænnû*: skal forstærkningen med (»vil jeg trofast give dig tiende«)?
 7. v8 *rāʕôt … bᵊʕênê*: »var ilde set af« (valgt, ordret i `{T:}`) eller den mere ordrette »var onde i … øjne«, som ligner formlen »handlede ondt i HERRENS øjne« (`formula:evil_eyes`)?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

@@ -96,3 +96,5 @@ Nicht belegt (eigene Bildungen, korrekt berndeutsch): *Gärtner*, *aaghuucht*, *
 4. **v22 aaghuucht** – im Korpus nicht belegt; Alternative *het er se aagblase* (*aablase* 2Tim 1, 6 bildlich).
 5. **v27 *bis nid ungläubig, sondern gloub*:** Wortspiel ἄπιστος/πιστός nur halb erhalten; Alternative BSB-nah *Zwyfle nümm, gloub!*
 6. **v29** Frage (BGB) oder Aussage (BSB) im Text?
+
+*Original text in these notes: Greek from the Berean Greek Bible (public domain, CC0), filled in by scripts/notes_hebrew.py.*

@@ -170,3 +170,5 @@ I alt **48** navneformer nye i 1 Mos-udkastene (rækker mærket »ja«); heraf *
 7. v28: »for at få vejledning om vejen til Goshen« (Josef vejleder) eller »for at vise vejen foran ham« (Juda viser vej)? Hebraisken er tvetydig.
 8. v15 tallet 33: Skal regnestykket (obs. 5) have en `{E:}`, eller er v27-noten nok?
 9. v7 »sønnedøtre«: ordret »sine sønners døtre«; »sønnedøtre« er korrekt, men sjældent dansk. Alternativ: »barnebørn«.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

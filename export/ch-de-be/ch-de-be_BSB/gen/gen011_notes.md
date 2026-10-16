@@ -105,3 +105,5 @@ Namensdeutungen stehen seit dem 2.10.2026 nicht mehr im Text, sondern wie in der
 2. **Haran / Haran**: Bruder (הָרָן) und Stadt (חָרָן) gleich schreiben oder unterscheiden (z. B. Stadt »Charan« nach der Umschriftregel *ḥ* → ch)?
 3. **V. 3 Wortspiele** (*lᵉbēnāh/ʾæbæn*, *ḥēmār/ḥōmær*): nur im Notizfile (Entwurf) oder Versuch einer berndeutschen Nachbildung?
 4. **Grossuhn** (V. 31) – Berner Alternative »Änkel«?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

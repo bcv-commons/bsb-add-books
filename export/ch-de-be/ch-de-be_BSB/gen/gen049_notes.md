@@ -132,3 +132,5 @@ Bereits verwendet: Jakob, Israel, Ruben, Simeon, Levi, Juda, Sebulon, Issachar, 
 7. **V. 24** *ʾæbæn* »Felse« (BSB Rock) oder wörtlich »Stei vo Israel«?
 8. **V. 26** *nᵉzîr* »Fürscht« (BSB) oder »dä Usgsunderete«? Vgl. 5Mo 33,16.
 9. Mundartwörter prüfen: Äcke, Löiin, Hirschchue, chlättere, Büt, Fronchnächt, Läckerbisse.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

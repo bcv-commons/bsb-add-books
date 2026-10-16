@@ -112,3 +112,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 5. v11.14.23-25 *bᵊśar ʕorlāh*: »forhud« (mundret) eller »forhudens kød« (ordret, bevarer forbindelsen til »min pagt i jeres kød«, v13)?
 6. v2 *nātan bᵊrît*: »give min pagt« (ordret, som her) eller »sætte min pagt« (mere naturligt dansk)?
 7. v14 »fra sit folk« eller »af sit folk« – husformen er delt 2:2 i `tekst/`; bør fastlægges for hele Mosebøgerne.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

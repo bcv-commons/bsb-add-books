@@ -89,3 +89,5 @@ In `gen029_footnotes.txt` (berndeutsch): »Oder«-Alternative zu V. 17 (*rakkôt
 4. **V. 25** »hindergange« oder »bschisse«?
 5. **V. 27-28** »Hochzytswuche« ergänzt »Hochzeit«, das im Hebräischen nur implizit ist (»die Woche dieser«) – so lassen?
 6. **V. 17** *rakkôt* »schwach« (BSB) oder »zart« (Fussnote) – evtl. umkehren?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

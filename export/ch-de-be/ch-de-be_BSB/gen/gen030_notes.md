@@ -128,3 +128,5 @@ Die Unterscheidung Schafe (dunkel) / Ziegen (gefleckt, getüpfelt) ist in V. 32-
 5. **V. 3 »uf myne Chnöi gebäre«**: wörtlich mit Fussnote (Entwurf) oder umschreiben wie BSB?
 6. **V. 20 *yizbᵉlēnî***: »ehre« (BSB) oder »bi mir wohne«?
 7. **V. 38-41 »brünschtig« / »sech paare«**: für einen Bibeltext zu derb? Alternative »sech bespringe la« (Zürcher-Nähe) oder neutral »Jungi zügle«.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

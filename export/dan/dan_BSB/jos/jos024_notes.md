@@ -109,3 +109,5 @@ Genbrugt uændret: Sikem, Abraham, Isak, Jakob, Esau, Egypten, Sivhavet, Moses, 
 6. **Apg 7,16 / Hebr 11,22 som `{H:}` ved v. 32?** Udeladt af forsigtighed (Apg 7,16 harmoniserer 1 Mos 23 og 33,19).
 7. **»vores«/»vor«** – se konsistenspunkt 2; berører kap. 18, 22 og 24.
 8. **`>…<` vs `>>…<<` i andet niveau** – se konsistenspunkt 3; berører stilarket og kap. 4.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

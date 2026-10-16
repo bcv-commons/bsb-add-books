@@ -134,3 +134,5 @@ Efter piloten er notetætheden tilpasset de færdige Mosebøger i `tekst/`: `{T:
 | 22 | træ | H | Åb 2,7; 22,2.14 |
 | 22 | evigt | T | Ordret: >>Og nu, for at han ikke skal række sin hånd ud …<<. Sætningen brydes af og fuldendes af handlingen i v23. |
 | 24 | tilbage | T | Ordret: >>sværdets flamme, som drejer sig<<. |
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

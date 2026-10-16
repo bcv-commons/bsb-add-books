@@ -120,3 +120,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 5. v26 »Fred og lykke være med jer i rigt mål!« – for udførligt? Alternativ: »Fred være med jer i rigt mål!« (afstemmes med 3,31).
 6. v29: forklarende »det vil sige« i teksten (Darius = Kyros) eller kun i `{T:}` som nu?
 7. Bør overskriften til v1-10 i stedet begynde ved v2, så v1 står for sig (som afslutning på kap. 5)?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

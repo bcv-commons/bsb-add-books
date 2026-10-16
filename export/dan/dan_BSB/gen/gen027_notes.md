@@ -125,3 +125,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 6. v1.18 *hinnēnî*: »Her er jeg« eller husformen »Se, her er jeg« (`import/CC0/dan/den-frie-bibel/text/exo003.txt` v4)? Bør fastlægges for 22,1.7.11; 31,11; 46,2.
 7. v31: Bevares Esaus høflige tredjeperson (»Far må rejse sig«), eller glattes til »Rejs dig, far«?
 8. Skal Hebr 11,20 have `{H:}` ved v27 eller v39 (BSB markerer det ikke; det er en hentydning)? Udkastet følger instruksen: kun i noterne.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

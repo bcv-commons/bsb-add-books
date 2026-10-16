@@ -113,3 +113,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 5. v20 »rigets prydelse« – tolke som »det herlige land« (som v16) eller lade stå ordret?
 6. v37 »sine fædres guder« eller »sine fædres Gud«?
 7. Antal `{T:}` (10) er i øvre ende; kandidater til at flytte til noterne: v13, v40.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

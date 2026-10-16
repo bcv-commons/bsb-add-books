@@ -121,3 +121,5 @@ Bereits verwendet: Josef, Benjamin, Jakob, Israel, Pharao, Ägypte / d Ägypter,
 6. **V. 21 *ṣēdāh*** »Proviant« – mit 42,25 abgleichen (dort dasselbe Wort).
 7. **V. 24** »Zanget nid« (BSB) oder »Häbet ke Angscht« (Fussnote)?
 8. **V. 26** »ds Härz fasch stillgstande« – Bild passend für *pûg* (»erkalten, erlahmen«)?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

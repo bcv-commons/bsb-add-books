@@ -88,3 +88,5 @@ Jabin, Hasor, Jobab, Madon, Shimron, Akshaf, Kinneret (som by/egn), Dors højlan
 ## Harmonisering efter samlet gennemgang (17.08.2026)
 
 - v8 `_BSB` »Storsidon« → »det store Sidon«, så begge spor og kap. 19,28 bruger samme form for צִידוֹן רַבָּה.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

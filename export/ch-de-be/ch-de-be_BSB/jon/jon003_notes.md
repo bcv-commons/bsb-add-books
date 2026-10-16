@@ -46,3 +46,5 @@ Datum: 02.10.2026 · Status: **Entwurf** (Maschinenentwurf aus dem Grundtext, no
 1. ~~V. 3~~ – entschieden 02.10.2026: »risegross«.
 2. ~~V. 4~~ – entschieden 02.10.2026: »uf e Chopf gstellt« bleibt.
 3. ~~Königsmantel~~ – entschieden 02.10.2026: »Chünigsmantel«.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

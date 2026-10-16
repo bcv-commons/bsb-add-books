@@ -82,3 +82,5 @@ MT-form vs. tidligere/parallel form – håndteret med MT i teksten + `{T:}`: Es
 6. **v25 Gat-Rimmon** – teksten følger MT; ønskes »Jibleam« i teksten med MT i note (som ved Jebus 18,28)?
 7. **בְּנֵי אַהֲרֹן »Arons efterkommere«** – eller »Arons sønner« som `import/CC0/dan/den-frie-bibel/text/`'s bogstavelige brug? Her er det klart slægten (præsterne), så »efterkommere« er valgt.
 8. **v45 ordlyd** er lagt fast for genbrug i 23,14 (se obs. 25).
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

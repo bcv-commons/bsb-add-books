@@ -147,3 +147,5 @@ Wo das Hebräische dieselben Worte wiederholt, steht im Berndeutschen derselbe W
 5. **V. 63 *lāśûaḥ***: »nachedänke« (BSB) oder »spaziere« / »bätte«?
 6. **V. 60** »du söllsch wärde zu tuusig mal zächetuusig« – BSB ergänzt »Mutter«; ergänzen (»Mueter vo tuusig mal zächetuusig«)?
 7. **V. 10 Aram-Naharajim** im Text oder »Mesopotamie«?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

@@ -72,3 +72,5 @@ Eva, Kain, Abel, Henoch, Irad, Mehujael (V. 18 Ketiv-Variante *Mᵉḥiyyāʾēl
 3. **V. 13** *ʿāwōn*: »Schuld« (Entwurf) oder »Straf« (BSB)?
 4. **V. 7**: Mit 3,16 abgleichen (gleiche Verben *tᵉšûqāh* / *māšal*) – welche Wiedergabe wählt Kap. 3?
 5. **V. 1.17.25** »zäme gsi« für *yāda‘* – passend, oder wörtlich »erchennt«?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

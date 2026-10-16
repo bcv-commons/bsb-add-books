@@ -81,3 +81,5 @@ Nicht belegt bzw. eigene Formen: *verherrlech* (Imperativ), *verherrlechet*, *he
 3. **v15 »vor em Böse«**: Text offen lassen (wie Mt 6, 13) oder mit BSB personal *vor em Bös* / *vor em Satan* und Neutrum in die Fussnote?
 4. **γινώσκω = erchenne** in ganz Joh 17, während Joh 10,14-15 *gchenne* hat – angleichen?
 5. **v12 Fussnote** zu υἱὸς τῆς ἀπωλείας: Judas nennen oder offen lassen?
+
+*Original text in these notes: Greek from the Berean Greek Bible (public domain, CC0), filled in by scripts/notes_hebrew.py.*

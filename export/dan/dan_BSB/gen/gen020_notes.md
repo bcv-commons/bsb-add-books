@@ -97,3 +97,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 4. v5-6: Godkendes »med rent hjerte« for *bᵊtom-lᵊbāb* (egentlig »uskyld/helhed«) og »uskyldige hænder« for *niqyôn kappayim* (egentlig »renhed«), dvs. at adjektiverne bytter plads af hensyn til dansk idiomatik?
 5. v13 *hitʕû*: »lod mig drage omkring« (neutralt) eller »lod mig flakke om« (nærmere hebraisk, med negativ klang)?
 6. v3 »Du er en død mand«: for mundret? Alternativ: »Du skal dø«.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

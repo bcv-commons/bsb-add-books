@@ -104,3 +104,5 @@ Neue Funktionsbezeichnungen (gemeinsam mit Kap. 37-41 zu genehmigen): der Obersc
 3. **V. 19.22 *tālāh ʿal-ʿēṣ***: »a ne Boum hänke« (BSB) oder »a ds Holz hänke« oder »pfähle« (Fussnote) im Text?
 4. **V. 2.7 *sārîs***: »Beamte« (Entwurf) – mit 37,36; 39,1 (Potifar) abgleichen; dort evtl. »Hofbeamte«.
 6. gemeinsame Vorgabe für Kap. 39-41 bestätigen.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

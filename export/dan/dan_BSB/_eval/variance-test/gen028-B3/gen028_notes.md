@@ -125,3 +125,5 @@ Dato: 15.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 6. v. 3-4 ønskeform med konjunktiv (»Gud … velsigne dig«, »Han give dig«) som 27,28 – eller »Må Gud …«?
 7. v. 11.18 *mᵊraʔăšōtāyw*: »under sit hoved« (BSB) eller »ved sit hoved« (ordret)?
 8. Store-indgangen `term:H7706` henviser til DFB's egen 1 Mos 28,3, som er i karantæne for dette udkast. Udkastet har ikke slået den op; formen »Gud den Almægtige« følger stilarket og 35,11; 48,3.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

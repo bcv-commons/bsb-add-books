@@ -65,3 +65,5 @@ Nicht belegt: „Bünd“ (Plural), „mit ufbbouet“ (ufbbouet 3×).
 
 - **κεφαλή** (Christus als Haupt der Gemeinde, 1,22; 4,15; 5,23) = **ds Houpt**; »Chopf« nur für den wörtlichen Kopf.
 - **ἅγιοι** = **d Chrischte** überall (auch 1,18; 2,19, vorher »Heilige«).
+
+*Original text in these notes: Greek from the Berean Greek Bible (public domain, CC0), filled in by scripts/notes_hebrew.py.*

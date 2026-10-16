@@ -47,6 +47,8 @@ store the previous ones wrote); the consistency pass and the review below come a
    - When an agent finishes, log what it cost from its usage report: `python3 scripts/usage.py <project> add
      <code><NNN> --tokens N --calls N --minutes M`. The wizard's estimates per mode come from these logs.
 3. **Check each result** when the agent reports:
+   - `python3 scripts/notes_hebrew.py <project> <code> <chapter>` (the agent runs it too): the notes' verses from the WLC /
+     BGB and the credit line; never text copied from `orig/heb/`;
    - `python3 scripts/check_draft.py <project> <code>`: verse markers against the original,
      no inline notes, balanced quotes, line length, notes and footnote files;
    - `python3 scripts/wrap_draft.py export/<project>/<code>/<code>NNN.txt` if lines are long;

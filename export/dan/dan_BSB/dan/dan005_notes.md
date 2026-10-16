@@ -107,3 +107,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 6. v28: »Medien og Persien« (stilarket) eller »mederne og perserne« (folkenavne, som BSB)? Ordspillet med *pārās* fungerer begge veje.
 7. v13: spørgsmål (valgt) eller konstatering »Du er altså den Daniel …«?
 8. v3: skal sølv tilføjes efter v. 2 (Theodotion, Vulgata)? Valgt: nej, MT fulgt.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

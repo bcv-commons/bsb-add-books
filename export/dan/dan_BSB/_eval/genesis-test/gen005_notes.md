@@ -108,3 +108,5 @@ Alle efter stilarkets tabel »Navne og faste gengivelser, kap. 4-20«; ingen nye
 7. v29: »Han skal trøste os« eller »Han vil give os trøst« / »Gid han må trøste os« (ønskeform)?
 8. Skal Elias-parallellen (2 Kong 2) og/eller de to Lamek'er (obs. 8 og 14) have `{E:}`? Det ville give 5-6 `{E:}`.
 9. Overskrifterne: tre (som nu) eller én samlet (»Adams slægt fra Adam til Noa«)?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

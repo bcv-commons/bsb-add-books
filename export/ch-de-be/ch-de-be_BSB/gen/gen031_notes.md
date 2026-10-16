@@ -119,3 +119,5 @@ Bereits verwendet: Jakob, Laban, Rahel, Lea, Isaak, Abraham, Betel, Kanaan, Eufr
 5. **V. 20.26.27 »hinders Liecht füere«** – idiomatisch, aber das Leitwort »stehlen« geht verloren. Alternative wörtlich »het em Laban ds Härz gstole«?
 6. **»Härde« / »Herde«** – buchweit vereinheitlichen (21,28 hat »Herde«).
 7. **V. 47** – Soll die Fussnote ausdrücklich sagen, dass Laban Aramäisch spricht (so jetzt), oder zusätzlich, dass dies die einzige aramäische Wendung der Tora ist (nur Notiz)?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

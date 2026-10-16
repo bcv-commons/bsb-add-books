@@ -6869,6 +6869,285 @@
     "to relieve the hunger of your households"
    ],
    "note": "nonqo = for (feature); khoev ezoqam = household. gen042:19, 33."
+  },
+  {
+   "id": "gap:surety.g43",
+   "kind": "gap",
+   "source": "עָרַב / מִיָּדִי תְּבַקְשֶׁנּוּ (be surety for him; require him from my hand)",
+   "value": "no word for surety: 'No ndego ndæ̀kewág' (I will look after him) + 'Qo kopømbaqapé, noqa yaq-te ndego toqonø-bevap' (you may ask me about him)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "PHM 1:19",
+     "form": "no teqa fia ndæ̀gó"
+    },
+    {
+     "ref": "RUT 4:4",
+     "form": "Manqei ndæ̀wí"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "open",
+   "words": [
+    "guarantee",
+    "safety",
+    "personally",
+    "responsible",
+    "surety",
+    "pledge"
+   ],
+   "note": "Searched charge it to me|I will repay: PHM 1:19 (Paul pays Onesimus's debt) is the nearest model of standing for someone, but it is about money. ndæ̀kewág built on the 1sg future ndæ̀- (RUT 4:4) and kewag (look after). gen043:9; 44:32 repeats it. Question for the Kuni team."
+  },
+  {
+   "id": "gap:mistake.g43",
+   "kind": "gap",
+   "source": "מִשְׁגֶּה (a mistake, oversight)",
+   "value": "no word: 'Éisa, ezoqa nøme ndøgo ndøvé, ndego otevateáv' (perhaps someone put it there and did not know)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "JON 1:6",
+     "form": "Éisa"
+    },
+    {
+     "ref": "ACT 3:17",
+     "form": "Zo zøtezateáv"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "open",
+   "words": [
+    "mistake",
+    "perhaps it was a mistake",
+    "by mistake"
+   ],
+   "note": "Searched by mistake|unintentional|unknowingly|in ignorance: acting in ignorance (ACT 3:17, 1TI 1:13) is the nearest. gen043:12."
+  },
+  {
+   "id": "gap:double.g43",
+   "kind": "gap",
+   "source": "מִשְׁנֶה כֶּסֶף (double the silver)",
+   "value": "no word: 'moni bawan menás' (two lots of money, built on 'bawan menás' two groups)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "JHN 19:23",
+     "form": "Møvøyap foá"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "open",
+   "words": [
+    "double",
+    "double the silver",
+    "double the amount"
+   ],
+   "note": "The lexicon's khobos for 'double' is wrong: khobos means fierce (1PE 5:8 'layon khobos-qape'). gen043:12, 15. Question for the Kuni team."
+  },
+  {
+   "id": "gap:nuts.g43",
+   "kind": "gap",
+   "source": "בָּטְנִים וּשְׁקֵדִים (pistachios and almonds)",
+   "value": "no names: 'tae nanga vinivinimba menás' (two kinds of tree fruit)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 1:11",
+     "form": "tae nanga-us"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "open",
+   "words": [
+    "pistachios",
+    "almonds",
+    "almond"
+   ],
+   "note": "Not in the corpus. Aaron's staff of HEB 9:4 bore almonds in Numbers, but the NT text does not name them. gen043:11. Question for the Kuni team."
+  },
+  {
+   "id": "gap:best_products.g43",
+   "kind": "gap",
+   "source": "זִמְרַת הָאָרֶץ (the best products of the land)",
+   "value": "built 'manqei-qa avøe eqeieqei' (the land's good crops)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "REV 14:15",
+     "form": "avøe gigiap"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "open",
+   "words": [
+    "best products",
+    "products",
+    "best products of the land"
+   ],
+   "note": "avøe = crops, as gen041 (abundance 'avøe kopoav'). gen043:11."
+  },
+  {
+   "id": "gap:composure.g43",
+   "kind": "gap",
+   "source": "וַיִּתְאַפַּק (he controlled himself)",
+   "value": "built 'ekeza eiv ndønøzøgím' (he held back his weeping)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "1CO 7:5",
+     "form": "kha nøzøgim"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "open",
+   "words": [
+    "composure",
+    "regaining his composure",
+    "controlled himself",
+    "restrain"
+   ],
+   "note": "Searched restrain|controlled himself|self-control: self-control = 'kha nøzøgim' (1CO 7:5). gen043:31; 45:1 needs it ('could no longer control himself')."
+  },
+  {
+   "id": "gap:portions.g43",
+   "kind": "gap",
+   "source": "מַשְׂאֹת (portions served from his table)",
+   "value": "no word for portion: 'Zosef lou ti-te ndøkhofotáv' (Joseph sent them food); 'larger than' = mø̀ndøløvú (feature comparative)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "2CO 11:24",
+     "form": "Khøuwa faev"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "open",
+   "words": [
+    "portions",
+    "portion",
+    "larger",
+    "table"
+   ],
+   "note": "gen043:34: 'Benzamin-qa lou, ezoqa nøme-qa mø̀ndøløvú, khøuwa faev'."
+  },
+  {
+   "id": "gap:drank_freely.g43",
+   "kind": "gap",
+   "source": "וַיִּשְׁכְּרוּ עִמּוֹ (they drank freely, became drunk with him)",
+   "value": "'ndølouz neka vø̄-iz, khanakhanakh kandambá' (they ate and drank, very glad); drunkenness 'ibøkha soqa izam' (EPH 5:18) not used for this",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 26:30",
+     "form": "lou sasa ndølog"
+    },
+    {
+     "ref": "EPH 5:18",
+     "form": "ibøkha soqa"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "open",
+   "words": [
+    "drank freely",
+    "feasted",
+    "drunk"
+   ],
+   "note": "Searched drunk|drink their fill: the NT's drinking words are for drunkenness as a vice. The BSB reads a feast. gen043:34."
+  },
+  {
+   "id": "gap:intend_overpower.g43",
+   "kind": "gap",
+   "source": "לְהִתְגֹּלֵל עָלֵינוּ וּלְהִתְנַפֵּל עָלֵינוּ (to attack and fall upon us)",
+   "value": "built 'Ndigu amba ni ginigeanemɨ́n' (they want to seize us; amba … -ɨn, feature suffix_in)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "LUK 5:18",
+     "form": "ginø-ndafemɨ́n"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "open",
+   "words": [
+    "intend",
+    "overpower",
+    "they intend to overpower us"
+   ],
+   "note": "gean = seize (store: captives vøzø̄-geanem). gen043:18."
+  },
+  {
+   "id": "gap:received_money.g43",
+   "kind": "gap",
+   "source": "כַּסְפְּכֶם בָּא אֵלָי (your silver came to me: I received it)",
+   "value": "built 'Zoqa moni, no-te mø̀ndøfakhán' (your money has come to me)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "GEN 26:1",
+     "form": "ndøfakhán"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "open",
+   "words": [
+    "received",
+    "i received your silver"
+   ],
+   "note": "The Hebrew image kept; perfective mø̀ndø- + fakhan (come). gen043:23."
+  },
+  {
+   "id": "gap:amount.g43",
+   "kind": "gap",
+   "source": "בְּמִשְׁקָלוֹ (in its full weight)",
+   "value": "'Moni ate ndøgoám, taqa viniv até kopó' (all the money was there, its weight the same; viniv weight, RUT 3:15)",
+   "attested": "by-rule",
+   "evidence": [
+    {
+     "ref": "RUT 3:15",
+     "form": "Taqa viniv"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:gen043",
+   "date": "2026-10-16",
+   "status": "open",
+   "words": [
+    "amount",
+    "full amount"
+   ],
+   "note": "gen043:15 the double amount = 'moni bawan menás' (gap:double.g43); 43:21 the weight."
   }
  ]
 }

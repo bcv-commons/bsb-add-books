@@ -69,3 +69,5 @@ Datum: 02.10.2026 · Status: **Entwurf** (Maschinenentwurf aus dem Grundtext, no
 4. **V. 5.10 »chouffe«** für *qānāh* bei Rut: wörtlich beibehalten (Entwurf; rechtlich präzise, aber für heutige Ohren hart) oder »zur Frou näh« (V. 10) und nur beim Land »chouffe«?
 5. **V. 11 »Bring’s z Efrata zu Aaseh«**: Ist die Verbindung über »aagsehe« (2,1; 3,11) gelungen oder zu konstruiert?
 6. **Stammliste**: »Vatter« oder »Vater«?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

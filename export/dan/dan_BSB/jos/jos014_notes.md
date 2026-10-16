@@ -84,3 +84,5 @@ Ingen nye stednavne i kapitlet. Kadesh-Barnea, Gilgal, Hebron, Kirjat-Arba er al
 ## Harmonisering efter kap. 21
 
 - 14,4 »græsmarker« → »marker« (מִגְרָשׁ) i begge spor, så det følger `import/CC0/dan/den-frie-bibel/text/num035.txt` (»byer med tilhørende marker«) og kap. 21.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

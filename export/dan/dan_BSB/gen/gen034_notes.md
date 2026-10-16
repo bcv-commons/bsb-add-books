@@ -118,3 +118,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 6. v2 *nᵊśîʔ hāʔāræṣ*: Skal det gøres tydeligt om det er Sikem eller Hamor der er »landets høvding«?
 7. v30 »forhadt« med `{T:}` om »stinkende« – eller ordret i teksten (»gjort mig til en stank«), som 2 Mos 5,21 i `import/CC0/dan/den-frie-bibel/text/`?
 8. v3 *nafšô*: Er »Hans sjæl hang ved« + `{N: Sjæl}` for højstemt, når v8 (*ḥāšqāh nafšô*) er gengivet uden »sjæl« (»længes inderligt«)?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

@@ -125,3 +125,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 6. v27: Skal aposiopesen bevares (»…«), eller skal »så bliv!« tilføjes som i BSB?
 7. v8 »kæmpet en kæmpekamp«: for mundret? Alternativ: »Jeg har kæmpet en stor kamp med min søster«.
 8. v38-42: »dyrene« for *ṣōʔn* for variationens skyld – eller konsekvent »småkvæget«?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

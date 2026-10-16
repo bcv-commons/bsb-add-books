@@ -56,3 +56,5 @@ Das Gebet (V. 3-10) ist hebräische Poesie und ist deshalb, anders als die Prosa
 1. ~~Poesie-Layout~~ – entschieden 02.10.2026: Zeilen bleiben.
 2. ~~»bstelle« für *mnh*~~ – entschieden 02.10.2026: **»la cho«** (4,6 »la ufwachse«).
 3. ~~V. 9~~ – entschieden 02.10.2026: »verspile d Gnad vo Gott« (wie BSB).
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

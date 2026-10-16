@@ -88,3 +88,5 @@ I OT-narrative kapitler er tætheden lav: Dom 1 har T=1, E=3, N=1; 2 Mos 1 har T
 - Den fulde eksegetiske gennemgang (som listen ovenfor) lægges i `josNNN_notes.md`, så inline-noterne ikke svulmer op, og reviewer selv kan flytte punkter ind som `{E:}`.
 
 Da `!!<Eksegetisk bearbejdning: Endnu ikke sket>!!` står i hovedet, er det formentlig bedst at `{E:}`-noterne i udkastene holdes få og forsigtige – de er forslag, ikke afgørelser.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

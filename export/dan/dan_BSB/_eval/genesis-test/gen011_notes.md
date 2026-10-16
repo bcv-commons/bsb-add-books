@@ -148,3 +148,5 @@ Udkastet bruger én fast formel gennem hele registret:
 6. v3 »forme teglsten« eller fagordet »stryge teglsten«? »asfalt« (som 2 Mos 2,3) eller »jordbeg«?
 7. v31 *wayyēṣᵊʔû ʔittām* – »de drog sammen ud« (glattet) eller ordret »de drog ud med dem« med `{T:}`?
 8. Skal observation 11 (Sems alder og syndfloden) eller 19 (Tera og Apg 7,4) have en `{E:}` i stedet for en af de fire nuværende?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

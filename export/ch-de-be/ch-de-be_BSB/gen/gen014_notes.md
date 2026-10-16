@@ -85,3 +85,5 @@ Datum: 02.10.2026 · Status: **Entwurf** (Maschinenentwurf aus dem Grundtext, no
 3. **V. 13 *ʾēlônê mamrēʾ***: »Eiche« (Entwurf) oder »Terebinthe«? Muss in 13,18 und 18,1 gleich lauten (andere Teilaufträge).
 4. **V. 5.17 *šāwēh***: einmal »Ebeni« (übersetzt), einmal »Schawe-Tal« (Name) – so belassen?
 5. **Fyndschaft (3,15) vs. 3,15 (anderer Teilauftrag) hat »Fyndschaft« bei der Konsistenzprüfung angleichen (»Findschaft«)?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

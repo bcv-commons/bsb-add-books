@@ -131,3 +131,5 @@ Bereits verwendet: Jakob, Esau, Rebekka, Rahel, Lea, Bilha, Silpa, Ruben, Simeon
 5. **V. 23 »der Erschtgeborene«** oder schwache Form »der Erschtgebore«?
 6. **V. 10** – Formulierung beim Entwurf von 32,29 übernehmen (oder umgekehrt), damit beide Namensgebungen gleich lauten.
 7. **V. 22** – LXX-Zusatz (»und es war böse in seinen Augen«) nur Notiz (so jetzt) oder Fussnote?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

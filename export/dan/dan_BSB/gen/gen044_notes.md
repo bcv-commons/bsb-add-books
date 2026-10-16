@@ -122,3 +122,5 @@ Følgende udtryk i kap. 44 citerer eller genfortæller kap. 42-43 og skal stå e
 7. v29: »i ulykke« (*bᵊrāʕāh*) adskilt fra »med sorg« (*bᵊyāgôn*, v31; 42,38), eller ens »med sorg« begge steder som BSB?
 8. v32: »skal jeg bære skylden over for min far for bestandig« eller ordret »så har jeg syndet mod min far alle dage«? Afgøres sammen med 43,9.
 9. Skal v14 (drømmenes opfyldelse) have en `{E:}` i stedet for v12 (Rakel-ekkoet)?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

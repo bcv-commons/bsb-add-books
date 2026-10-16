@@ -85,3 +85,5 @@ Begge udkast har: `{E:}` ved v1 (Adoni-Sedek/Melkisedek), v10 (*hāmam*), v13 (*
 5. Overskrifter: 6 korte (`_svk`) eller 3 (`_BSB`)? Skal de udbygges til sætningsform som i Dom?
 6. »kamprustede« vs. »krigsdygtige« for *gibbôrê heḥayil* – ensret på tværs af kap. 1, 6, 8, 10.
 7. Antal `{E:}` (fem) – stryg evt. v40.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

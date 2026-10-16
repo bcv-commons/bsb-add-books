@@ -126,3 +126,5 @@ Efter piloten er notetætheden tilpasset de færdige Mosebøger i `tekst/`: `{T:
 | 16 | spise | T | Ordret: >>spise skal du spise<<; den hebraiske dobbeltform understreger friheden. |
 | 17 | dø | T | Ordret: >>dø skal du dø<<. |
 | 25 | ikke | E | *ʕărûmmîm* >>nøgne<< klinger sammen med *ʕārûm* >>snedig<< om slangen i 3,1; ordspillet binder de to afsnit sammen. |
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

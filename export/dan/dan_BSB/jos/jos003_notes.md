@@ -58,3 +58,5 @@ Dato: 17.08.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 4. v16: ketib »ved Adam« (valgt) eller qere »fra Adam«?
 5. Skal »Salthavet« forsynes med `{T: Dvs. Det Døde Hav.}` første gang det forekommer i bogen?
 6. Antal `{E:}`-noter (4 pr. udkast) – for mange eller tilpas for et narrativt kapitel?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

@@ -108,3 +108,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 6. v27: »Hans rige« (den Højeste) eller »Dets rige« (folket)?
 7. v1 »fortalte hovedindholdet« – inline `{T:}` (ordret »hovedet af ordene«) udeladt for at holde T-antallet på 10. Skal den med?
 8. Poesien: skal også v23-27 (englens tydning) sættes som poesi? Stilarket nævner kun v9-10.13-14.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

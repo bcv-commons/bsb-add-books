@@ -103,3 +103,5 @@ Uz, Bela, zozokha) because the check leaves Genesis out; the rest are new names.
 ## Coordinator's fixes (consistency pass, 2026-10-15)
 
 - v26 *Dison* → *Disan* and v39 *Hadad* → *Hada*: the Hebrew has דִישָׁן (Dishan, as in v21, 28, 30) and הֲדַר (Hadar); the BSB follows another reading (Dishon; Hadad as in 1 Chr 1:50). The draft translates the Hebrew; Hada by the letter rule for a final r (Tama). The Hadad of v35–36 is another king, Hadad in the Hebrew too.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

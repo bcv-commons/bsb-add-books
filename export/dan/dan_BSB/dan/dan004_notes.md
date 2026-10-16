@@ -123,3 +123,5 @@ Versangivelser efter `orig/`; BSB-vers = +3.
 5. v32 »Hvad gør du?« eller »Hvad har du gjort?« (BSB)?
 6. v34 »Himlens konge« med stort H? Afstem med »himlens Gud« i 2,18-19.37.44 (parallelle udkast).
 7. »synerne i mit hoved« (v2.7.10): ordret »hoved« eller »sind« (BSB »mind«)? Afstem med 2,28; 7,1.15.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

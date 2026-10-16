@@ -157,3 +157,5 @@ low = a construction without a close model. Status: experiment, not reviewed; no
    progress?
 8. "City gate" as "vemiav mboqog" (the NT has only "taon mboqog"): should Bethlehem here be a
    taon?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

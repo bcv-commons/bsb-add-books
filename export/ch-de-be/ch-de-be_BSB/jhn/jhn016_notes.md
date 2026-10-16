@@ -102,3 +102,5 @@ Fussnoten (berndeutsch) in `jhn016_footnotes.txt`: v7 Hälfer, v8 d Ouge uftue, 
 3. **μικρόν:** „es Wyli“ in 13,33; 14,19 übernehmen; 7,33 („churz“) angleichen?
 5. **16,11 ἄρχων:** „Herrscher vo dere Wält“ für 12,31; 14,30; 16,11 festlegen?
 6. **16,16 und 16,23:** Fussnoten ohne BSB-Fussnote behalten?
+
+*Original text in these notes: Greek from the Berean Greek Bible (public domain, CC0), filled in by scripts/notes_hebrew.py.*

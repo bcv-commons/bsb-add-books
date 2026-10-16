@@ -82,3 +82,5 @@ Ingen. Alle navne (Shilo, Gilead/Gileads land, Kana'ans land, Bashan, Peor, Pine
 ## Harmonisering efter kap. 24
 
 - »HERREN vor Guds« → »HERREN vores Guds« i begge spor, så det følger `import/CC0/dan/den-frie-bibel/text/`'s flertalsform (»vores Gud« 62× mod »vor Gud« 36×; »HERREN vores Gud« 16× mod 2×) og kap. 24.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

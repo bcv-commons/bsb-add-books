@@ -52,3 +52,5 @@ Datum: 02.10.2026 · Status: **Entwurf** (Maschinenentwurf aus dem Grundtext, no
 1. **V. 2 »Schleuse vom Himel«** oder wörtlich »Fänschter vom Himel« (Luther)? Muss mit 7,11 gleich lauten.
 2. **V. 21 »der fein Duft«** als feste Opferformel für das ganze Buch (und später 2.-4. Mose)?
 3. **V. 11 »im Schnabel«** (natürlich) oder wörtlich »im Muul«?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

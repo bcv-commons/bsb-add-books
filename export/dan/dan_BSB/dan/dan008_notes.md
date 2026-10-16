@@ -104,3 +104,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 6. v27: »og ingen forstod det« (valgt) eller »men jeg forstod det ikke«?
 7. v5.8: »et iøjnefaldende horn« – alternativ »et anseligt horn«.
 8. Afstem »det lille horn« og »de helliges folk« med udkastet til kap. 7, når det foreligger.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

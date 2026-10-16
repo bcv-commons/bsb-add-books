@@ -58,3 +58,5 @@ Datum: 02.10.2026 · Status: **Entwurf** (Maschinenentwurf aus dem Grundtext, no
 4. **V. 21**: MT »het gäge mi zügt« (Entwurf) oder LXX »het mi gdemüetiget«?
 5. **Leitwort *šûb***: Soll das Leitwort »umkehren/zurückkehren« möglichst mit einem einzigen Verb (»zrüggchehre«) durchgezogen werden, auch wenn es dann schwerfälliger klingt?
 6. **Überschriften**: drei Abschnitte (V. 1-5 / 6-18 / 19-22), wie BSB. Gibt es Vorgaben für die Länge?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

@@ -127,3 +127,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 6. v19-21: genitivliste »kenitternes, … jebusitternes land« (valgt) eller grundformer i opremsning (»… dette land: kenitterne, kenizzitterne …«), som ligger tættere på hebraisk men er tungere dansk?
 7. v3 *ben-bêtî*: »en af mine husfolk« eller »en træl i mit hus« / »min hjemmefødte træl«?
 8. `tekst/rom004.txt` v18 »din efterkommere« ser ud til at være en fejl; bør meldes til NT-redaktionen.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

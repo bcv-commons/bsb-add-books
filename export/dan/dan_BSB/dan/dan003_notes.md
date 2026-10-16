@@ -123,3 +123,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 7. **v25:** »en gudesøn« er fastlagt efter opgaven; ønskes stadig »Guds Søn« nævnt i `{T:}`?
 8. **v1:** Skal `{T:}` med meterangivelse beholdes (husreglerne for mål i `import/CC0/dan/den-frie-bibel/text/` bør kontrolleres)?
 9. **De græske tilføjelser:** Skal der på sigt være en henvisning ved v23 (fx i en indledning), og i så fald med hvilken titel?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

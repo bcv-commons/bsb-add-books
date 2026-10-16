@@ -97,3 +97,5 @@ In der separaten Datei `gen028_footnotes.txt` (berndeutsch):
 4. **V. 3 *qᵉhal ʿammîm***: »e ganzi Schar vo Völker« oder »e Gmeinschaft vo Völker«? (wiederkehrend 35,11; 48,4)
 5. **V. 9 Machalat**: ch-Regel im Wortinnern auch hier, oder »Mahalat« wie BSB/Luther?
 6. **V. 21**: Nachsatz ab »de söll der HERR my Gott sy« (BSB) oder erst ab V. 22?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

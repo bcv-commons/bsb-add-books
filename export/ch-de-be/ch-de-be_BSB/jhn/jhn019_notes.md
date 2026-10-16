@@ -130,3 +130,5 @@ Nicht belegt (eigene Bildungen bzw. Normalwörter): *vollbracht* (0), *Dornechra
 3. **πραιτώριον = d Burg** (v9): mit dem noch nicht übersetzten Joh 18,28.33 abstimmen; Alternative *Palascht* (16) oder *Amtssitz*.
 4. **χιτών = Underchleid** (v23): unbelegt; Alternative *Hemmli* oder *Rock*?
 5. **Λιθόστρωτον = „Steiplatte“** und **Ῥωμαϊστί = latynisch**: Schreibung und Wortwahl prüfen.
+
+*Original text in these notes: Greek from the Berean Greek Bible (public domain, CC0), filled in by scripts/notes_hebrew.py.*

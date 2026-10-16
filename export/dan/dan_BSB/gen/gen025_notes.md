@@ -123,3 +123,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 7. v23 »allerede fra dit skød« – er tilføjelsen »allerede« for fri?
 8. v29.34 *nāzîd*: »ret / linseret« eller »suppe / linsesuppe« (»rød suppe«)?
 9. v18: Skal subjektskiftet (»Hans efterkommere … han«) glattes (»de slog sig ned«, BSB) eller bevares som nu?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

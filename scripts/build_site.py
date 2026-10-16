@@ -421,62 +421,7 @@ def book_title(p, code, title):
     return m[1] if m else title or code
 
 
-VERSE_HEAD = re.compile(r"^(verse|vers|v\.?|vers\.?)$", re.I)
-
-
-def notes_table(md):
-    """The notes' verse table (the first Markdown table whose first column is Verse/Vers): ([cells], header cells, the
-    notes without it). Kuni notes have a row per verse (verse, Hebrew, Kuni, BSB, comment), the Danish and Bern German
-    ones a row per choice (verse, Hebrew phrase, rendering, BSB phrase, comment)."""
-    lines, rows, head, out, i = md.splitlines(), [], None, [], 0
-    while i < len(lines):
-        l = lines[i]
-        cells = [c.strip() for c in l.strip().strip("|").split("|")] if l.lstrip().startswith("|") else None
-        if head is None and cells and VERSE_HEAD.match(cells[0]) and i + 1 < len(lines) and re.match(r"^\s*\|[\s:|-]+\|\s*$", lines[i + 1]):
-            head, i = cells, i + 2
-            while i < len(lines) and lines[i].lstrip().startswith("|"):
-                rows.append([c.strip() for c in lines[i].strip().strip("|").split("|")])
-                i += 1
-            if out and re.match(r"^#{1,6} ", out[-1].strip() or (out[-2] if len(out) > 1 else "")):
-                k = len(out) - 1                                    # the table's own heading, when nothing else is under it
-                while k >= 0 and not out[k].strip():
-                    k -= 1
-                nxt = next((x for x in lines[i:] if x.strip()), "")
-                if k >= 0 and re.match(r"^#{1,6} ", out[k]) and (not nxt or re.match(r"^#{1,6} ", nxt)):
-                    del out[k:]
-            continue
-        out.append(l)
-        i += 1
-    return rows, head, "\n".join(out)
-
-
-def verse_numbers(cell):
-    """'1' '1.2.6.22' '1–3' '3,5' '16a' 'v3' -> [1, 2, …]"""
-    out = []
-    for part in re.split(r"[.,;/ ]+", re.sub(r"^v", "", cell.strip(), flags=re.I)):
-        m = re.match(r"^(\d+)[a-z]?(?:\s*[-–]\s*(\d+))?", part)
-        if m:
-            a, b = int(m[1]), int(m[2] or m[1])
-            out += list(range(a, min(b, a + 200) + 1))
-    return out
-
-
-def source_verses(code, ch):
-    """{verse: original text}: the Hebrew from MACULA (WLC) in orig/heb.sqlite, the Greek from orig/grc (BGB)."""
-    from books import BY_CODE
-    import langtools as LT
-    if BY_CODE[code][2] == "nt":
-        f = os.path.join(ROOT, "orig", "grc", f"{code}{ch:03d}.txt")
-        return {v: t for (c, v), t in LT.verses_of(f).items()} if os.path.exists(f) else {}
-    db = os.path.join(ROOT, "orig", "heb.sqlite")
-    if not os.path.exists(db):
-        return {}
-    import sqlite3
-    out = {}
-    for v, t, a in sqlite3.connect(db).execute("select v, text, after from tokens where book=? and ch=? order by key",
-                                              (code.upper(), ch)):
-        out[v] = out.get(v, "") + (t or "") + (a or "")
-    return {v: t.strip() for v, t in out.items()}
+from notes_hebrew import notes_table, verse_numbers, original_verses as source_verses  # noqa: E402
 
 
 def bsb_verses(p, code, ch, verses):
@@ -502,7 +447,7 @@ def verse_view(p, code, n, draft_file, notes_md, ui):
     import langtools as LT
     if not notes_md:
         return ""
-    rows, head, rest = notes_table(notes_md)
+    rows, head, rest, _ = notes_table(notes_md)
     draft = {v: t for (c, v), t in LT.verses_of(draft_file).items()}
     src, bsb = source_verses(code, n), bsb_verses(p, code, n, sorted(draft))
     by_v = {}

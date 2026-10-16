@@ -175,3 +175,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 6. v. 33 »Laban sagde« – indsætte navnet (som BSB) eller bevare det ubestemte »Han sagde«?
 7. Citat-i-citat: `>…<` (som her) eller kun kolon og stort begyndelsesbogstav (som `gen020.txt` v5.13)? Genfortællingen i v. 37-48 med tre niveauer er svær at læse uden tegn.
 8. Skal Es 65,24 (v. 15) eller 12,1 (v. 58) have note? Ingen af dem er direkte NT-citater, så `{H:}` er ikke sat.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

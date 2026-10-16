@@ -94,3 +94,5 @@ Dato: 15.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 5. v. 2: »din morfar« / »din morbror« (valgt, som 29,10) eller ordret »din mors far« / »din mors bror«?
 6. v. 3-4: Ønskeform med konjunktiv (»Gud … velsigne dig«, »Han give dig«) eller »Må Gud …«?
 7. v. 8: »ikke brød sig om« (valgt, med ordret `{T:}`) eller »mishagede«?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

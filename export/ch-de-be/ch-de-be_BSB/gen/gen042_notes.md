@@ -98,3 +98,5 @@ Bereits verwendet: Jakob, Josef, Israel, Ruben, Pharao, Ägypte, Kanaan. Keine n
 3. **V. 7 *wayyitnakkēr*** Umschreibung »het sech gstellt, wi wen er se nid würd kenne« oder knapper »het sech frömd gstellt«?
 5. **V. 20** »si sy yverstande gsi« (BSB) oder wörtlich »si hei’s eso gmacht«?
 6. **V. 23** »Dolmetscher« – Alternative »Übersetzer«?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

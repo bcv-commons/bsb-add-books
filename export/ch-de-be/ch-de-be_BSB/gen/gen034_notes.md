@@ -98,3 +98,5 @@ Bereits verwendet: Dina (30,21), Lea, Jakob, Sichem (Person 33,19; Stadt 12,6; 3
 5. buchweit entscheiden.
 6. **V. 17 »üsi Tochter«** – hebräischer Wortlaut beibehalten oder wie BSB »üsi Schwöschter«?
 7. **V. 31 »Huer«** – zu derb für Vorlesetexte? Alternative »wi mit ere Dirne«.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

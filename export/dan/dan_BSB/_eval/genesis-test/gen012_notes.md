@@ -101,3 +101,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 4. v1 ApG 7,3: skal v1's ordlyd styres af en kommende oversættelse af ApG 7, eller omvendt?
 5. v2-3 som poesi (som BSB) eller som prosa i forlængelse af v1?
 6. Skal Gal 3,16 have `{H:}` ved v7 (BSB markerer det som citat)?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

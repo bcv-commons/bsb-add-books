@@ -113,3 +113,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 7. Overskriften ved v21 (»Rubens synd og Jakobs tolv sønner«) dækker to emner, fordi MT's afsnitsskel falder midt i v. 22. Ønskes i stedet en overskrift midt i verset?
 8. v22: Skal LXX-tilføjelsen (»og det var ondt i hans øjne«) stå i `{T:}` i stedet for i `{E:}`?
 9. Ketiv/qere i v21 (*ʔohŏlōh*): skal det noteres inline?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

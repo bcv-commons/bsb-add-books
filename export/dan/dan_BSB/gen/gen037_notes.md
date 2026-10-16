@@ -109,3 +109,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 5. v31 *śᵊʕîr ʕizzîm*: »gedebuk« (husform) eller »gedekid« (BSB »young goat«), som ville gøre ekkoet til 27,9 og 38,17 tydeligere i teksten?
 6. v36 »en af Faraos hofmænd« (valgt) eller »Faraos hofmand« (bestemt, som MT's konstruktion uden artikel kan læses)? Og bør Potifars titel i 39,1 gengives ens?
 7. v28 det ubestemte »de«: bevares tvetydigheden (som nu), eller indsættes »brødrene« som BSB?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

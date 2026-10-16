@@ -130,3 +130,5 @@ Die Stammliste Ismaels ist keine Zeugungs-Formel wie Kap. 5/11, sondern eine Nam
 4. **V. 31-34 *bᵉkōrāh***: »ds Rächt als Eltischte« oder »ds Erschtgeburtsrächt« (kürzer, nicht belegt)? Gilt auch für 27,36; 43,33.
 5. **V. 27 *tām***: »rüejig« (BSB) oder »rächtschaffe / fromm«?
 6. **Machpela / Acher** (V. 9-10) mit dem Entwurf von Kap. 23 abgleichen, sobald vorhanden.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

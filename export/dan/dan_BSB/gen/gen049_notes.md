@@ -129,3 +129,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 8. **v1** »i de kommende dage« eller »i de sidste dage« (traditionelt, med eskatologisk klang)?
 9. Skal `{T:}`-loftet (10) fraviges for v21 (Naftali) eller v14 (*mišpᵊtayim*), som er lige så usikre som de noterede steder?
 10. Skal Sak 9,9 (v11) have en `{E:}`?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

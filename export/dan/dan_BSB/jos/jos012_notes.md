@@ -82,3 +82,5 @@ Aroer, Arnondalen, Jabbokdalen/Jabbokfloden, Kinneretsøen, Arabahavet, Bet-Jesh
 ## Harmonisering efter samlet gennemgang (17.08.2026)
 
 - v2 »Aroer« → »Aro'er« (formen i `import/CC0/dan/den-frie-bibel/text/`, 2×; også kap. 13).
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

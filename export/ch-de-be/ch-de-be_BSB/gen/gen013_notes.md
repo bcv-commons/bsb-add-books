@@ -52,3 +52,5 @@ Datum: 02.10.2026 · Status: **Entwurf** (Maschinenentwurf aus dem Grundtext, no
 1. **V. 10 *šiḥēt***: »zerstört« (Entwurf) oder »verderbt« wie in Kap. 6, damit die Verbindung Sintflut – Sodom (vgl. 19,13.29) hörbar bleibt?
 2. **»Perisiter«** (Entwurf) oder traditionell »Pheresiter« / »Perizziter«? Muss mit 15,20 übereinstimmen.
 3. **V. 8 »Brüeder«** oder deutlicher »Verwandti«?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

@@ -102,3 +102,5 @@ Begge: `{E:}` ved v1 (Manasse som *bəḵôr*), v3 (Selofkads døtre ← 4 Mos 2
 6. **v1 אֲבִי הַגִּלְעָד** – »Gileads far« eller »gileaditternes stamfar«?
 7. **v5** – »ti andele« / »ti lodder« / »ti dele«?
 8. Skal v11's lange opremsning »X og dens tilhørende landsbyer« ×6 forkortes redaktionelt (»… hver med tilhørende landsbyer«, som BSB), eller beholdes ordret som i jdg001?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

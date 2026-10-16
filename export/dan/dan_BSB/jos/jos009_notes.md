@@ -73,3 +73,5 @@ Dato: 17.08.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 4. v21: hører »brændehuggere og vandbærere« til ledernes replik eller til fortælleren?
 5. »på den anden side af Jordan« (ordret, som `import/CC0/dan/den-frie-bibel/text/`) eller ekspliciteret »vest/øst for Jordan«? Særlig påtrængende her, hvor v1 og v10 peger hver sin vej.
 6. Navneformer »Kefira« og »Be'erot« (nye i projektet) – godkendes?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

@@ -101,3 +101,5 @@ Dato: 15.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 4. v1.6.8 »Kana'ans døtre« (ordret) eller »de kana'anæiske kvinder« (BSB; jf. 27,46 »de hittitiske kvinder«)? Bør ensrettes med 27,46.
 5. v21: Hovedsætningen ved »så skal HERREN være min Gud« (valgt) eller først i v22?
 6. v3-4 ønskeform med konjunktiv (»velsigne dig«, »Han give dig«) eller »Må Gud … velsigne dig«?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

@@ -136,3 +136,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 6. *har haggilʕād*: »Gileads bjergland« (som nu) eller »Gileads bjerge« / »bjerget Gilead«?
 7. v23-54 *ʔaḥîm*: konsekvent »slægtninge« – eller »mænd« for Jakobs folk i v46.54 (BSB »relatives«, men det kan være hans egne folk)?
 8. v28 »børnebørn« for *bānay*: godkendes, og skal 32,1 (BSB 31,55) følge?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

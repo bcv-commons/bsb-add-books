@@ -98,3 +98,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 5. v10: Indskuddet om Sodoma og Gomorra står med tankestreger midt i sætningen (hebraisk ordstilling). Skal det i stedet flyttes til sætningens slutning i parentes (som BSB)?
 6. v17 `{T:}`: Er henvisningen til en retslig besiddelseshandling for spekulativ til en inline-note?
 7. v2 »meget rig på kvæg«: *kābēd* (»tung«) har ordspil med 12,10 (»hungersnøden var hård«, *kābēd*); skal det noteres?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

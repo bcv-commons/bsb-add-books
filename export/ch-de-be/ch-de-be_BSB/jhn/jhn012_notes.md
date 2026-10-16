@@ -129,3 +129,5 @@ Zusätzliche Fussnoten ohne Variantencharakter: v32 „ufeglüpft“ (wortgleich
 4. **12,16.23 δοξάζω** als „i sy Herrlechkeit ufgno“, in v28 aber „herrlech mache“ – einheitlich genug, oder durchgehend „herrlech mache“ (auch Joh 7, 39, 13, 31f, 17)?
 5. **12,32.34 „ufeglüpft“** vs. jhn003 v14 „höch ufgrichtet“ – Joh 3,14; 8,28; 12,32.34 sollten einheitlich werden.
 6. **Überschrift vor 12,44** („Jesus isch ds Liecht vo der Wält“): behalten oder streichen (BSB hat keine)?
+
+*Original text in these notes: Greek from the Berean Greek Bible (public domain, CC0), filled in by scripts/notes_hebrew.py.*

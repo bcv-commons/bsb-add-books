@@ -347,11 +347,6 @@ Joseph's robe, the household gods; see [looking ahead](genesis-31-50.md).
   - answers: witness, a witness, serve as a witness
   - gen031:44, 48, 50, 52. GEN 21:30 renders 'as my witness' as 'you will believe that …' (unimanqatin).
   - agent:gen031, 2026-10-15
-- **`gap:ten_times.g`** עֲשֶׂרֶת מֹנִים (ten times, Gen 31:7, 41) → **no 'N times' found (searched 'ten times|seven times'; NT counts the acts with the numeral, LUK 17:4); built gèmbo-ten on gèmbo-menás (the second time, GEN 27:36)** [low, open]
-  - NT: GEN 27:36 *Ndakin gèmbo-menás*; LUK 17:4 *seven*
-  - answers: ten times, times
-  - gen031:7, 41.
-  - agent:gen031, 2026-10-15
 - **`gap:saddlebag.g`** כַּר הַגָּמָל (the camel's saddle, Gen 31:34) → **no saddle or saddlebag found; built 'kemol-qa ndis' (the camel's basket; ndis MRK 4:21)** [low, open]
   - NT: MRK 4:21 *ndis*
   - answers: saddlebag, saddle
@@ -442,4 +437,4 @@ Joseph's robe, the household gods; see [looking ahead](genesis-31-50.md).
   - answers: hot springs, hot, springs
   - Searched 'spring(s)' and 'hot': no hot spring in the corpus. Built from the springs of Gen 2:6 (water came up from the earth) and tatas (hot, REV 3:15); the explanation stays in the text as the team does. Question for the Kuni team.
   - agent:gen036, 2026-10-15
-<!-- store:end sha=e2930d68 -->
+<!-- store:end sha=32757977 -->

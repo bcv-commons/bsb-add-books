@@ -103,3 +103,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 5. Anførselstegnet efter v21 er holdt åbent, fordi talen fortsætter i 11,1. Bekræftes ved udarbejdelsen af kap. 11.
 6. v17 »min herres tjener her … min herre her«: for klodset? Alternativ: »Hvordan skulle jeg, din tjener, min herre, kunne tale med dig?«
 7. v4 »stod jeg ved bredden« (BSB) eller ordret »var jeg ved bredden«?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

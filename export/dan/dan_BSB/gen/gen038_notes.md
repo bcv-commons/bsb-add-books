@@ -104,3 +104,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 4. v26 *yādaʕ*: »var sammen med« (som nu, jf. 4,1) – skal den ordrette »kende« også her stå i `{T:}`, som i 4,1?
 5. Shua (v2.12) og Shua (25,2, *šûaḥ*): skal den ene skrives anderledes (fx »Shuah«), eller accepteres homonymien?
 6. v9 »lod sæden gå til spilde på jorden«: tilstrækkeligt nøgternt, eller ordret »ødelagde mod jorden« i teksten?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

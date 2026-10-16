@@ -125,3 +125,5 @@ Er, Onan, Schela, Tamar, Schua, Hira ohne Namensfussnote: der Text deutet diese 
 6. **V. 12 *wayyinnāḥem*** »d Truurzyt hinder sech gha« (BSB) oder wörtlich »sech tröschtet gha«?
 7. **V. 17 »Härde« / »Herde«** – buchweit vereinheitlichen (29-30 »Herde«, 31 und hier »Härde«).
 8. **V. 3** »er het ihm der Name Er ggä« (MT maskulin) gegen V. 4-5 »si« – so belassen oder mit Samaritanus vereinheitlichen?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

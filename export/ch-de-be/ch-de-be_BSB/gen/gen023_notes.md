@@ -86,3 +86,5 @@ In der separaten Datei `gen023_footnotes.txt` (berndeutsch):
 6. **V. 4.8 *millᵉfānāy*** (»weg von mir«) – mit BSB weggelassen; wörtlich »dass i my Toti us de Ouge cha begrabe«?
 
 - Konsistenzdurchgang 09.10.2026: Zochar (wie 25,9; Regel ḥ → ch) statt »Zohar«; »gägenüber vo Mamre« (V. 17.19) wie 25,9; 49,30; 50,13.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

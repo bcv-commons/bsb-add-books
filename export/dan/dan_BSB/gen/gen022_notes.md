@@ -118,3 +118,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 7. v3.5.19 *nᵊʕārāyw*: »unge tjenere« eller blot »tjenere« (BSB) / »karle«? Forbindelsen til Isak som *naʕar* (»drengen«) går under alle omstændigheder delvis tabt.
 8. v12 »gudfrygtig« eller »at du frygter Gud« (mere mundret, nær BSB)?
 9. Skal Hebr 11,17-19 (v2/v5) og Jak 2,21 (v9) alligevel have `{H:}`, eller holdes de som her i noterne (hentydninger)?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

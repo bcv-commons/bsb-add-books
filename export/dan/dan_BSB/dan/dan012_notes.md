@@ -94,3 +94,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 4. v7 slutsætningen: følge MT (folkets magt knuses) som nu, eller rettelsen (undertrykkerens magt knuses)?
 5. Skal v1-3 sættes som poesi (`//N`)? Mange oversættelser gør det.
 6. v12 »når frem til de 1335 dage« – bestemt form (»de«) tilføjet for flydende dansk; ordret »når til 1335 dage«.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

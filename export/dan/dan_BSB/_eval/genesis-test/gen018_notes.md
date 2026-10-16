@@ -120,3 +120,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 4. v21 *kālāh*: »om de virkelig har gjort alt det …« eller »har de gjort det, så skal det være forbi med dem«?
 5. Skal Luk 1,37 (v14) eller Hebr 13,2 (v1-8) have `{H:}`, selv om det kun er hentydninger?
 6. v10.14: Skal ordlyden ligge endnu tættere på Rom 9,9 (»Ved denne tid vil jeg komme«), eller omvendt Rom 9,9 justeres efter 1 Mos?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

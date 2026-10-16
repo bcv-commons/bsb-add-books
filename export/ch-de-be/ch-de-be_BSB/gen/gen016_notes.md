@@ -52,3 +52,5 @@ Namensdeutungen wie in der BSB als Fussnoten in `gen016_footnotes.txt` (berndeut
 2. **V. 12 »allne syne Brüeder vor der Nase«**: trägt die Mehrdeutigkeit gut, ist aber salopp. Alternativen: »im Trotz gäge alli syni Brüeder« (BSB) oder neutral »östlech vo allne syne Brüeder«.
 3. **V. 11-12 als Poesie**: im Stilblatt nicht vorgesehen – beibehalten?
 4. **V. 13** Frage (MT) oder Ausruf wie BSB?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

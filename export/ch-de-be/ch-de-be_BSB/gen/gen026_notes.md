@@ -121,3 +121,5 @@ In `gen026_footnotes.txt` (berndeutsch):
 4. **V. 22 Rehobot / Rechobot** und **V. 26 Achusat / Ahusat**: Umschrift-Regel für *ḥ* im Wortinnern (10,11 hat »Rehobot-Ir«).
 5. **V. 26 »sym Fründ«** oder »sym Ratgäber« (BSB)?
 6. **V. 33**: Schiba-Fussnote – reicht »Schwur oder sibe«, oder Hinweis auf die zweite Namensbegründung neben 21,31?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

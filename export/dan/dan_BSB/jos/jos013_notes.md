@@ -93,3 +93,5 @@ Ashkelon · Ashtarot · Edre'i · Salka · Bet-Ba'al-Meon · Kedemot · Mefa'at 
 6. v26 Debir/Lo-Debar: MT i teksten + note (som nu) eller Lo-Debar i teksten?
 7. Skal »Hermonbjerget« harmoniseres til »Hermon« (som `import/CC0/dan/den-frie-bibel/text/`)?
 8. Overskrift for v8-14: nævnes Levi (v14) i overskriften?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

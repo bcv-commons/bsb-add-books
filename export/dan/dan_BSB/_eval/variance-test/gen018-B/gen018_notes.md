@@ -110,3 +110,5 @@ Dato: 15.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 5. v10: »Han sagde« (MT) eller »HERREN sagde« (BSB)?
 6. v6 »sea«: bevare enheden eller fordanske (»mål«)?
 7. v29-32 »Af hensyn til de 40« – eller »for de 40's skyld« (tættere på v24.26)?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

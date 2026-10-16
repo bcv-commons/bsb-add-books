@@ -94,3 +94,5 @@ Maschinenentwurf von Joh 13,1-38 aus dem griechischen Grundtext (`orig/grc/jhn01
 4. **13,29 γλωσσόκομον »d Kasse«** oder »der Gäldseckel«? Mit 12,6 abgleichen.
 5. **13,1 »di Synige«** – hängt an der offenen Frage zu 1,11.
 6. **13,18 Fuess statt Färse** im Text: verständlicher, aber das Zitatbild (Ps 41,10) wird abgeschwächt.
+
+*Original text in these notes: Greek from the Berean Greek Bible (public domain, CC0), filled in by scripts/notes_hebrew.py.*

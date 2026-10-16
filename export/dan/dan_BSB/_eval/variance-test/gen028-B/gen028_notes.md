@@ -93,3 +93,5 @@ Dato: 15.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 4. v. 20-22: Skal hovedsætningen begynde i v. 21b (som nu) eller i v. 22?
 5. v. 2 »morfar/morbror« (mundret, som 29,10) eller ordret »din mors far / din mors bror«?
 6. v. 21 *bᵊšālôm*: »uskadt« (forbinder med 33,18) eller »i fred« (som 26,29.31)?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

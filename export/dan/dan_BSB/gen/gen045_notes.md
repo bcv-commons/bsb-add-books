@@ -99,3 +99,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 6. v26 *wayyāfāg libbô*: »hans hjerte blev koldt« (valgt) eller »han blev helt lammet«?
 7. v24 *ʔal-tirgᵊzû*: »Kom ikke op at skændes« (valgt) eller »Vær ikke urolige«?
 8. Antal `{T:}` (10) ligger i den høje ende; v18 eller v22 kan flyttes til noterne.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

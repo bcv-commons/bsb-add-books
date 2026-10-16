@@ -134,3 +134,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 7. v2-4.18-20 *bᵊriʔôt bāśār*: Skal »kød« med (»fede af kød« / »med fedt på kroppen«) for at bevare hebraisk ordlyd, eller er »fede« nok?
 8. v47 Bør `{T:}` om »håndfulde« genindsættes (ville give 11 `{T:}`)?
 9. v45b »drog ud over Egyptens land«: forståeligt, eller »drog rundt i hele Egyptens land« / »overtog styret« (BSB)?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

@@ -102,3 +102,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 5. Skal 50,20 have en teologisk `{E:}` (obs. 9) ud over ordspilsnoten, evt. i stedet for `{E:}` om ruten (v11)?
 6. v26: Er `{T:}` om *ʔārôn* (»ark«) for spekulativ? Alternativt kun »Ordret: >>kisten<<« eller ingen note.
 7. Opgaven foreslog »drage omsorg for« for *pāqōd yifqōd*; udkastet følger husformen fra 2 Mos 13,19 (»tage sig af«). Bekræft.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

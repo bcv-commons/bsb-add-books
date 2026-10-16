@@ -95,3 +95,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 5. v8 *maḥănæh* »lejr«: afstemmes med ordvalget i kap. 32 (Mahanajim, »to lejre«), der skrives parallelt.
 6. v20 »El-Elohe-Israel« (BSB-formen) eller en dansk translitteration som »El-Elohe-Jisra'el«? Udkastet holder »Israel« som i resten af bogen.
 7. Skal Joh 4,5 have `{H:}` ved v19 (stedangivelse, ikke citat)? Nu kun nævnt i `{T:}`.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

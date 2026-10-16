@@ -98,3 +98,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 5. v2: »din mors far« / »din mors bror« (ordret, som nu) eller »din morfar« / »din morbror« (mundret)?
 6. v3-4: Ønskeform med konjunktiv (»Gud … velsigne dig«, »Han give dig«) – for gammeldags? Alternativ: »Må Gud … velsigne dig«, »Må han give dig«.
 7. Betuel: Skal formen være »Betuel« eller »Betu'el«? Afstem med kap. 22 og 24.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

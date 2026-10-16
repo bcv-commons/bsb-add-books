@@ -92,3 +92,5 @@ Begge: `{E:}` v1 (*māʿal*), v1 (*ḥērem*), v19 (*tôḏāh* + `{H: Joh 9,24}
 ## Harmonisering efter kap. 22
 
 - 7,1 `_svk` »forbrød sig mod« → »handlede troløst med« (מָעַל מַעַל בַּחֵרֶם), så det er identisk med `_BSB`, med `import/CC0/dan/den-frie-bibel/text/`'s faste gengivelse af *māʿal* (»handle troløst«, 12×, fx 4 Mos 31,16) og med 22,20 der citerer 7,1 ordret.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

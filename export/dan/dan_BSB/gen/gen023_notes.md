@@ -90,3 +90,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 4. *bᵊʔæræṣ kᵊnāʕan*: »i landet Kana'an« (12; 13; 16; nu 23) eller »i Kana'ans land« (17,8)? Bør ensrettes for hele bogen.
 5. v17.20 *wayyāqom*: »stadfæstet« (retsligt, som nu) eller »gik over i« (mere mundret, mister ordspillet)?
 6. v13 *kæsæp haś-śādæh*: »betalingen for marken« eller »sølvet for marken« (bevarer ordet)?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

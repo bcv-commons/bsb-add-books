@@ -106,3 +106,5 @@ Bereits verwendet (Gen 46): Ruben, Simeon, Levi, Juda, Issachar, Sebulon, Benjam
 5. **V. 9** – »z vil und z starch für üüs« (BSB) oder komparativ »meh und stercher als mir«?
 6. **V. 19 chreftig** oder »zwäg«?
 7. **V. 21** – Bezug von *lāhæm* (Hebammen oder Israel) und »e Familie« vs. »Nachkomme«.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

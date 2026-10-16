@@ -99,3 +99,5 @@ Bewusst vermieden: *erinnere* (0×), *verherrleche* (1×), *Waisechind* (0×), *
 3. **14,30 ἄρχων τοῦ κόσμου:** *der Herrscher vo dere Wält* mit 12,31 und 16,11 abgleichen.
 4. **14,2** Frage (BSB) oder Aussage im Text?
 5. **14,13** Umschreibung *d Herrlechkeit vom Vatter … sichtbar wird* – oder näher am Passiv *für dass der Vatter im Suhn zu Ehre chunt*?
+
+*Original text in these notes: Greek from the Berean Greek Bible (public domain, CC0), filled in by scripts/notes_hebrew.py.*

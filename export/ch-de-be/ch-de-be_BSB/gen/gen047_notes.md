@@ -116,3 +116,5 @@ Bereits verwendet: Josef, Jakob, Israel, Pharao, Ägypte, d Ägypter, Kanaan, Go
 6. **V. 13 »gserblet«** – für *lāhāh* treffend, aber selten; Alternative »sy … am Änd gsi«.
 7. **V. 14** »i ds Huus vom Pharao« (wie 12,15) oder »i Palascht vom Pharao« (BSB)?
 8. **V. 30** Sterbeformel: 49,33 bei der Durchsicht an 25,8 / 35,29 angleichen (»het der letscht Schnuuf ta … isch zu syne Vorfahre heiggange«).
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

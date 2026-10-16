@@ -115,3 +115,5 @@ Bereits verwendet: Josef, Israel, Pharao, Ägypte / d Ägypter, Kanaan / d Kanaa
 5. **V. 25 *ʿaṣmôtay*** »myni Chnoche« oder gehobener »myni Gebei«? Gilt für 2Mo 13,19; Jos 24,32.
 6. **V. 23** – BSB »ufzoge« im Text oder MT »gebore« (Adoptionsbild wie 30,3)?
 7. **V. 10-11** – drei Wörter für eine Sache (*mispēd* »Totechlag«, *ʾēbæl* »Truur«, *bᵉkît* »Truurzyt«): so lassen oder vereinheitlichen?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

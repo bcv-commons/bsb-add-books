@@ -25,6 +25,63 @@ import langtools as LT  # noqa: E402
 N = 5
 BOOK_SHARE, TOTAL_SHARE = 0.10, 0.02
 MAX_QUOTE = 15                 # words in one quotation (a store note, a notes line): a phrase or a short verse
+# The original in our files is quoted from the open texts (the WLC via MACULA Hebrew, orig/heb.sqlite; the BGB,
+# orig/grc), never copied from orig/heb/ (our BHSA copy, the BHS text, CC BY-NC): scripts/notes_hebrew.py fills the
+# notes' verses. A run of more Hebrew or Greek words than this must be the open text word for word.
+CHECK_ORIGINAL = 6
+ORIGINAL_RUN = re.compile(r"(?:[\u0590-\u05FF\uFB1D-\uFB4F]+[\s\u05BE\u05C0\u05C3.,;:()…·-]*)+|"
+                          r"(?:[\u0370-\u03FF\u1F00-\u1FFF]+[\s.,;:·’'()…-]*)+")
+ORIGINAL_WORD = re.compile(r"[\u05D0-\u05EA][\u0591-\u05C7\u05D0-\u05EA]*|[\u0370-\u03FF\u1F00-\u1FFF]+")
+_OPEN = {}
+
+
+def open_text(script):
+    """The open original as one string of words: 'heb' the WLC (orig/heb.sqlite, verse by verse, prefixes joined to their
+    words as printed), 'grc' the BGB (orig/grc). NFC. '' if absent."""
+    import unicodedata
+    if script not in _OPEN:
+        words = []
+        if script == "heb":
+            db = os.path.join(ROOT, "orig", "heb.sqlite")
+            if os.path.exists(db):
+                import sqlite3
+                verse, last = [], None
+                for b_, c, v, t, a in sqlite3.connect(db).execute("select book, ch, v, text, after from tokens order by key"):
+                    if (b_, c, v) != last and verse:
+                        words += ORIGINAL_WORD.findall("".join(verse))
+                        verse = []
+                    last = (b_, c, v)
+                    verse.append((t or "") + (a or ""))
+                words += ORIGINAL_WORD.findall("".join(verse))
+        else:
+            import langtools as LT
+            for f in sorted(glob.glob(os.path.join(ROOT, "orig", "grc", "*.txt"))):
+                if re.fullmatch(r"[0-9a-z]{3}\d{3}\.txt", os.path.basename(f)):
+                    for t in LT.verses_of(f).values():
+                        words += ORIGINAL_WORD.findall(t)
+        _OPEN[script] = unicodedata.normalize("NFC", " " + " ".join(words) + " ") if words else ""
+    return _OPEN[script]
+
+
+ACCENT = re.compile(r"[\u0591-\u05AF]")   # Hebrew cantillation: only copied text carries it
+
+
+def original_runs(text, limit=CHECK_ORIGINAL):
+    """Runs of more than `limit` Hebrew or Greek words copied from a text (Hebrew: with accents) that are not the open text
+    word for word, i.e. not the WLC / BGB: [(words, first words)]."""
+    out = []
+    for m in ORIGINAL_RUN.finditer(text):
+        words = ORIGINAL_WORD.findall(m[0])
+        if len(words) <= limit:
+            continue
+        heb = "\u05D0" <= words[0][0] <= "\u05EA"
+        if heb and not ACCENT.search(m[0]):
+            continue                      # written by hand (no accents): the agent's own phrase or a list, not a copy
+        import unicodedata
+        ref = open_text("heb" if heb else "grc")
+        if ref and unicodedata.normalize("NFC", " " + " ".join(words) + " ") not in ref:
+            out.append((len(words), " ".join(words[:4])))
+    return out
 
 
 def merged(ts):
@@ -152,6 +209,9 @@ class Quotes:
             m = re.fullmatch(r"([0-9a-z]{3})\d{3}\D.*", os.path.basename(f))
             test = m and re.search(r"/_eval/[^/]+-test/", f.replace(os.sep, "/"))
             quoted, verses, unpub, marks = self.check_text(text, m[1] if test else None)
+            for n, start in original_runs(text):
+                problems.append(f"{os.path.relpath(f, ROOT)}: {n} Hebrew/Greek words (“{start} …”) that are not the open text "
+                                f"word for word: quote the WLC or the BGB (scripts/notes_hebrew.py), never orig/heb/")
             total += quoted
             rel = os.path.relpath(f, ROOT)
             if not quoted:

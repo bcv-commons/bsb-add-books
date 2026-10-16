@@ -156,3 +156,5 @@ I alt 25 nydannede former efter reglen (inkl. Kongedalen) + 8 husformer der brug
 6. v11 »Sejrherrerne« eller »De fire konger« (BSB) eller blot »De«?
 7. Skal Sl 110,4 (allusion, ikke citat) nævnes i `{E:}` v18 som nu, og skal Hebr 7,1 have egen `{H:}` ved v18 i stedet for samlet ved v20?
 8. Dalnavne: »Siddimdalen/Shavedalen« (sammenskrevet) eller »Siddim-dalen/Shave-dalen«?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

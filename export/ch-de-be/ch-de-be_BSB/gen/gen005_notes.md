@@ -66,3 +66,5 @@ Namensdeutungen stehen seit dem 2.10.2026 nicht mehr im Text, sondern wie in der
 1. **Zahlwörter**: Bindung vor »achtzg«: »zwöiachtzg« (Entwurf) oder »zwöienachtzg« / »sibenachtzg« vs. »sibeneachtzg«? Von einer Berner Muttersprachlerin / einem Muttersprachler zu prüfen.
 2. **V. 22-24** »sy Wäg mit Gott ggange« – passt, oder »mit Gott gläbt« (eingängiger)? Gleiche Wendung in 6,9.
 3. **V. 29**: Namensdeutung »Rue« (Etymologie *nûaḥ*) oder »Trost« (wie im Wortspiel des Textes)?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

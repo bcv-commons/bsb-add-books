@@ -67,3 +67,5 @@ Maschinenentwurf von Joh 5 aus dem griechischen Grundtext (BGB, `orig/grc/jhn005
 - **ἀμὴν ἀμὴν λέγω ὑμῖν/σοι** = **„Würklech, würklech, i cha nech/der säge:“** in ganz Joh 1-10 (16 Stellen). Frühere Varianten in diesem Notizfile (»Lueget, i cha nech würklech säge«, »Würklech, i säge nech für gwüss«) sind ersetzt. »Lueget« bleibt frei für ἰδού.
 - **γογγύζω / γογγυσμός** = **mule / gmulet**.
 - **8,58 ἐγώ εἰμι** = »bin i.« bleibt (mit Fussnote).
+
+*Original text in these notes: Greek from the Berean Greek Bible (public domain, CC0), filled in by scripts/notes_hebrew.py.*

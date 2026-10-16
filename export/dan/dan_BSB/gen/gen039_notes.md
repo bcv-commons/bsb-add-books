@@ -82,3 +82,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 4. v. 14.17 *ṣaḥēq*: »gøre nar ad« (som BSB) eller en gengivelse der bevarer den seksuelle klang (»lege med«, »trænge sig ind på«)? Afhænger af valget for 21,9 (oversigten).
 5. v. 6 »bekymrede han sig ikke om noget, når han havde ham« – »når han havde ham« gengiver *ʔittô* (»med ham [Josef]«); alternativt at udelade det som BSB.
 6. v. 4 »personlige tjener« – »personlige« er et tilføjet ord for at skelne *šērēt* fra *ʕæbæd*; acceptabelt?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

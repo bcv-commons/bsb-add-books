@@ -108,3 +108,5 @@ Dato: 09.10.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 |---|---|---|---|
 | 9 | samtidige | T | Ordret: >>i sine slægtled<<. |
 | 13 | ansigt | T | Dvs. jeg har besluttet at gøre ende på alt levende. |
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

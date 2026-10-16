@@ -80,3 +80,5 @@ Dato: 17.08.2026 · Status: **Udkast** (maskinudkast fra grundteksten, ingen eks
 4. **v8** – »Beser« eller »Bezer«? Stilarket giver צ → s (Sidon, Mispa, Adoni-Sedek), men DO92-læsere kender »Bezer«.
 5. **v8** – Ordret »på den anden side af Jordan« (`_svk`) vs »øst for Jordan« (`_BSB`) – afgøres bogvidt (overview pkt. 2).
 6. **`{E:}`-noten i v4 (LXX/deuteronomistisk udvidelse)** – Er tekstkritisk/redaktionshistorisk stof ønsket inline, eller kun i notes-filen? Kan flyttes hertil hvis projektet holder inline-noterne rent sprogligt.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

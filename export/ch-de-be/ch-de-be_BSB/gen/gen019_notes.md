@@ -75,3 +75,5 @@ Separat in `gen019_footnotes.txt` (berndeutsch): V. 22 Zoar (»chly«), V. 37 Mo
 2. **V. 12.14 Schwiegersöhne**: Verlobte (Entwurf, BSB) oder bereits verheiratete Töchter?
 3. **V. 18 *ʾădōnāy***: Singular »my Herr« (Entwurf) oder Plural wie BSB?
 4. **V. 17.25.28.29 »Ebeni«**: mit dem Begriff aus Kap. 13 vereinheitlichen.
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*

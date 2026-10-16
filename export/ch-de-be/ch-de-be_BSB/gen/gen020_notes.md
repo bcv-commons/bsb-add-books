@@ -47,3 +47,5 @@ Datum: 02.10.2026 · Status: **Entwurf** (Maschinenentwurf aus dem Grundtext, no
 1. **V. 16 »grächtfertiget«**: passend.
 2. **V. 4 »Herr«** (*ʾădōnāy*) – kleingeschrieben belassen?
 3. **V. 13 »la umezie«** für *hitʿû* (»umherirren lassen«) – oder deutlicher »la umeirre«?
+
+*Original text in these notes: Hebrew from the Westminster Leningrad Codex (public domain), via MACULA Hebrew (CC BY 4.0, Clear Bible), filled in by scripts/notes_hebrew.py.*
