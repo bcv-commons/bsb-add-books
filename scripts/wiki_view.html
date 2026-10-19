@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Language Wiki Viewer</title>
+<!-- Template for scripts/wiki.py view: the data is filled in at build time; the page needs no network. -->
+<style>
+:root {
+  --bg: #fbfaf7; --panel: #ffffff; --ink: #1f2328; --muted: #646b73; --line: #e2ded6;
+  --accent: #2f5d8a; --accent-soft: #e8eff6; --q: #fff4dc; --q-line: #d9a640; --c: #e6f4ea; --c-line: #3c8d5a;
+  --store: #f4f2ee; --dead: #a0a4a8; --mark: #ffe58a;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #16181b; --panel: #1e2125; --ink: #e4e6e8; --muted: #9aa1a8; --line: #33373c;
+    --accent: #8fb8e0; --accent-soft: #24303c; --q: #3a3120; --q-line: #c99a3a; --c: #1f3326; --c-line: #5fae7c;
+    --store: #23262a; --dead: #6b7076; --mark: #6b5a12;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #16181b; --panel: #1e2125; --ink: #e4e6e8; --muted: #9aa1a8; --line: #33373c;
+  --accent: #8fb8e0; --accent-soft: #24303c; --q: #3a3120; --q-line: #c99a3a; --c: #1f3326; --c-line: #5fae7c;
+  --store: #23262a; --dead: #6b7076; --mark: #6b5a12;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; }
+header { position: sticky; top: 0; z-index: 2; background: var(--panel); border-bottom: 1px solid var(--line);
+  display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; padding: 10px 16px; }
+header h1 { font-size: 17px; margin: 0; font-weight: 600; }
+header .proj { color: var(--muted); font-size: 14px; }
+nav.tabs { display: flex; gap: 4px; }
+nav.tabs button { border: 1px solid var(--line); background: transparent; color: var(--ink); padding: 5px 12px;
+  border-radius: 6px; cursor: pointer; font: inherit; font-size: 14px; }
+nav.tabs button.on { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+#q { flex: 1 1 220px; min-width: 0; padding: 6px 10px; border: 1px solid var(--line); border-radius: 6px;
+  background: var(--bg); color: var(--ink); font: inherit; font-size: 14px; }
+.wrap { display: grid; grid-template-columns: 250px minmax(0, 1fr); max-width: 1200px; margin: 0 auto; }
+aside { border-right: 1px solid var(--line); padding: 14px 10px; position: sticky; top: 56px; align-self: start;
+  max-height: calc(100vh - 56px); overflow: auto; }
+aside a { display: block; padding: 4px 8px; border-radius: 5px; color: var(--ink); text-decoration: none; font-size: 14px; }
+aside a.on { background: var(--accent-soft); color: var(--accent); }
+aside a .n { color: var(--muted); font-size: 12px; float: right; }
+aside .grp { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; margin: 12px 8px 4px; }
+main { padding: 18px 28px 60px; min-width: 0; }
+main h1 { font-size: 26px; margin: 0 0 12px; } main h2 { font-size: 20px; margin: 28px 0 8px; } main h3 { font-size: 17px; }
+a { color: var(--accent); }
+code { background: var(--store); padding: 1px 4px; border-radius: 4px; font-size: .9em; }
+pre { background: var(--store); padding: 10px; overflow: auto; border-radius: 6px; }
+.path { font-family: ui-monospace, monospace; font-size: .9em; color: var(--muted); }
+blockquote { margin: 14px 0; padding: 10px 14px; border-left: 4px solid var(--line); background: var(--store); border-radius: 0 6px 6px 0; }
+blockquote.question { background: var(--q); border-color: var(--q-line); }
+blockquote.correction { background: var(--c); border-color: var(--c-line); }
+.table-wrap { overflow-x: auto; } table { border-collapse: collapse; margin: 10px 0; font-size: 14px; }
+th, td { border: 1px solid var(--line); padding: 4px 8px; text-align: left; vertical-align: top; }
+.store-block { margin-top: 16px; padding: 4px 14px 8px; background: var(--store); border-radius: 8px; font-size: 14px; }
+.store-label { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; margin: 8px 0; }
+.help { background: var(--accent-soft); border-radius: 8px; padding: 10px 14px; font-size: 14px; margin-bottom: 18px; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; align-items: center; font-size: 14px; }
+.filters select, .filters label { font: inherit; font-size: 14px; color: var(--ink); background: var(--panel);
+  border: 1px solid var(--line); border-radius: 6px; padding: 4px 8px; }
+.entry { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; margin-bottom: 8px; }
+.entry.dead { opacity: .6; }
+.entry .top { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: baseline; }
+.entry .id { font-family: ui-monospace, monospace; font-size: 13px; color: var(--muted); }
+.entry .val { font-weight: 600; }
+.tag { font-size: 12px; padding: 1px 7px; border-radius: 10px; background: var(--store); color: var(--muted); }
+.tag.kind { background: var(--accent-soft); color: var(--accent); }
+.entry .meta { font-size: 13px; color: var(--muted); margin-top: 4px; }
+.entry .note { font-size: 14px; margin-top: 4px; }
+.count { color: var(--muted); font-size: 14px; margin-bottom: 8px; }
+footer { max-width: 1200px; margin: 0 auto; padding: 16px 28px 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+footer h1 { font-size: 14px; margin: 0 0 6px; }
+mark { background: var(--mark); color: inherit; }
+.hits .hit { margin-bottom: 14px; } .hits .hit a { font-weight: 600; } .hits .snip { font-size: 14px; color: var(--muted); }
+@media (max-width: 760px) {
+  .wrap { grid-template-columns: 1fr; }
+  aside { position: static; max-height: none; border-right: 0; border-bottom: 1px solid var(--line); }
+  main { padding: 16px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Language wiki</h1><span class="proj">{{project}}</span>
+  <nav class="tabs">
+    <button data-tab="pages" class="on">Pages</button>
+    <button data-tab="questions">Open questions</button>
+    <button data-tab="store">Store</button>
+  </nav>
+  <input id="q" type="search" placeholder="Search pages and store (a Kuni word, an English word, a reference)…">
+</header>
+<div class="wrap">
+  <aside id="side"></aside>
+  <main id="main"></main>
+</div>
+<footer id="credits"></footer>
+<script>
+const DATA = /*DATA*/null;
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fold = s => String(s ?? "").normalize("NFD").replace(/[̀-ͯ᷀-᷿꞉]/g, "").toLowerCase();
+let tab = "pages", page = "index.md";
+const HELP = `<div class="help">This is a read-only copy, built by <code>python3 scripts/wiki.py view ${esc(DATA.project)}</code>.
+To add what you know, edit the page's <code>.md</code> file in <code>wiki/</code>, or send the text to whoever keeps it.
+To correct a fact, write under it: <code>&gt; **Correction (your name, date):** …</code>. The next agent turns it into a store entry.
+The grey "Store entries" boxes are generated from the store; don't edit them by hand.</div>`;
+
+function side() {
+  if (tab !== "pages") { $("#side").innerHTML = sideCounts(); return; }
+  const g = {top: [], grammar: [], end: []};
+  DATA.pages.forEach(p => (p.id.startsWith("grammar/") ? g.grammar : ["inbox.md", "log.md"].includes(p.id) ? g.end : g.top).push(p));
+  const n = id => DATA.store.filter(e => e.live && e.page === id).length;
+  const link = p => `<a href="#${p.id}" class="${p.id === page ? "on" : ""}">${esc(p.title)}${n(p.id) ? `<span class="n">${n(p.id)}</span>` : ""}</a>`;
+  $("#side").innerHTML = g.top.map(link).join("") + `<div class="grp">Grammar</div>` + g.grammar.map(link).join("")
+    + `<div class="grp">Upkeep</div>` + g.end.map(link).join("");
+}
+function sideCounts() {
+  const live = DATA.store.filter(e => e.live), c = {};
+  live.forEach(e => c[e.kind] = (c[e.kind] || 0) + 1);
+  return `<div class="grp">Store</div>` + Object.entries(c).sort((a, b) => b[1] - a[1])
+    .map(([k, v]) => `<a href="javascript:void(0)" onclick="kindFilter('${k}')">${esc(k)}<span class="n">${v}</span></a>`).join("")
+    + `<div class="grp">Totals</div><a>live<span class="n">${live.length}</span></a><a>superseded<span class="n">${DATA.store.length - live.length}</span></a>`;
+}
+function showPage() {
+  const p = DATA.pages.find(p => p.id === page) || DATA.pages[0];
+  $("#main").innerHTML = (p.id === "index.md" ? HELP : "") + p.html;
+  window.scrollTo(0, 0);
+}
+function entryHtml(e) {
+  const v = typeof e.value === "string" ? e.value : JSON.stringify(e.value);
+  const by = DATA.store.filter(x => x.supersedes === e.id).map(x => x.id);
+  return `<div class="entry ${e.live ? "" : "dead"}"><div class="top"><span class="tag kind">${esc(e.kind)}</span>
+    ${e.source ? `<span>${esc(e.source)} →</span>` : ""}<span class="val">${esc(v)}</span>
+    ${[e.confidence, e.status, e.attested, e.live ? "" : "superseded"].filter(Boolean).map(t => `<span class="tag">${esc(t)}</span>`).join("")}
+    <span class="id">${esc(e.id)}</span></div>
+    ${e.pattern ? `<div class="meta">pattern: <code>${esc(e.pattern)}</code></div>` : ""}
+    ${e.note ? `<div class="note">${esc(e.note)}</div>` : ""}
+    ${e.refs?.length ? `<div class="meta">evidence: ${esc(e.refs.slice(0, 8).join("; "))}${e.refs.length > 8 ? " …" : ""}</div>` : ""}
+    ${e.words?.length ? `<div class="meta">answers the search for: ${esc(e.words.join(", "))}</div>` : ""}
+    <div class="meta">${esc(e.by)}, ${esc(e.date)}${e.method ? `, ${esc(e.method)}` : ""}${e.supersedes ? `, replaces <code>${esc(e.supersedes)}</code>` : ""}
+    ${by.length ? `, replaced by <code>${esc(by.join(", "))}</code>` : ""}${e.page ? ` · page <a href="#${e.page}" onclick="tab='pages'">${esc(e.page)}</a>` : ""}</div></div>`;
+}
+let kind = "", showDead = false;
+function kindFilter(k) { kind = k; showStore(); }
+function showStore() {
+  const q = fold($("#q").value.trim());
+  const kinds = [...new Set(DATA.store.map(e => e.kind))].sort();
+  const rows = DATA.store.filter(e => (showDead || e.live) && (!kind || e.kind === kind)
+    && (!q || fold([e.id, e.source, typeof e.value === "string" ? e.value : JSON.stringify(e.value), e.note, (e.words || []).join(" "), e.refs.join(" ")].join(" ")).includes(q)));
+  $("#main").innerHTML = `<h1>Store</h1><p>The checked facts the agents use: features and letter rules (observations), terms, formulas and names
+    (decisions), and gaps. A change is a new entry that replaces the old one; both are kept.</p>
+    <div class="filters"><select id="kind"><option value="">all kinds</option>${kinds.map(k => `<option ${k === kind ? "selected" : ""}>${esc(k)}</option>`).join("")}</select>
+    <label><input type="checkbox" id="dead" ${showDead ? "checked" : ""}> show replaced entries</label></div>
+    <div class="count">${rows.length} entries${q ? ` matching “${esc($("#q").value)}”` : ""}</div>`
+    + rows.slice(0, 400).map(entryHtml).join("") + (rows.length > 400 ? `<p class="count">first 400 shown; narrow the search</p>` : "");
+  $("#kind").onchange = ev => { kind = ev.target.value; showStore(); };
+  $("#dead").onchange = ev => { showDead = ev.target.checked; showStore(); };
+}
+function showQuestions() {
+  $("#main").innerHTML = `<h1>Open questions</h1><p>Questions the agents could not settle from the texts. Answer on the page, under the question.</p>`
+    + DATA.questions.map(q => `<h3><a href="#${q.page}" onclick="tab='pages'">${esc(q.title)}</a></h3>${q.html}`).join("");
+}
+function search() {
+  const raw = $("#q").value.trim(), q = fold(raw);
+  if (tab === "store") return showStore();
+  if (!q) return tab === "pages" ? showPage() : showQuestions();
+  const hits = DATA.pages.map(p => { const t = fold(p.text), i = t.indexOf(q); return i < 0 ? null : {p, i, n: t.split(q).length - 1}; })
+    .filter(Boolean).sort((a, b) => b.n - a.n);
+  const st = DATA.store.filter(e => e.live && fold([e.id, e.source, e.value, e.note, (e.words || []).join(" ")].join(" ")).includes(q));
+  $("#main").innerHTML = `<h1>Search: ${esc(raw)}</h1><div class="hits">` + hits.map(h => {
+    const s = h.p.text.slice(Math.max(0, h.i - 90), h.i + q.length + 140);
+    return `<div class="hit"><a href="#${h.p.id}" onclick="$('#q').value=''">${esc(h.p.title)}</a> <span class="count">(${h.n})</span><div class="snip">…${esc(s)}…</div></div>`;
+  }).join("") + `</div>` + (st.length ? `<h2>Store (${st.length})</h2>` + st.slice(0, 60).map(entryHtml).join("") : "")
+    + (!hits.length && !st.length ? `<p>Nothing found.</p>` : "");
+}
+function go() {
+  document.querySelectorAll("nav.tabs button").forEach(b => b.classList.toggle("on", b.dataset.tab === tab));
+  side();
+  if ($("#q").value.trim()) return search();
+  tab === "pages" ? showPage() : tab === "store" ? showStore() : showQuestions();
+}
+document.querySelectorAll("nav.tabs button").forEach(b => b.onclick = () => { tab = b.dataset.tab; go(); });
+let t; $("#q").oninput = () => { clearTimeout(t); t = setTimeout(go, 150); };
+window.onhashchange = () => { const h = decodeURIComponent(location.hash.slice(1)); if (DATA.pages.some(p => p.id === h)) { page = h; tab = "pages"; $("#q").value = ""; go(); } };
+const h0 = decodeURIComponent(location.hash.slice(1));
+if (DATA.pages.some(p => p.id === h0)) page = h0; else if (["store", "questions"].includes(h0)) tab = h0;
+else if (h0.startsWith("search=")) { tab = "pages"; $("#q").value = h0.slice(7); }
+$("#credits").innerHTML = DATA.credits || "";
+go();
+</script>
+</body>
+</html>

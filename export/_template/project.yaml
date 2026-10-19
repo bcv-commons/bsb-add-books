@@ -1,0 +1,63 @@
+# Copy this folder to export/<project-id>/. Drafts go to export/<project-id>/<code>/.
+# Everything in export/ is public domain (CC0), like the BSB; see export/README.md. Work derived from an
+# edition goes elsewhere: export/CC-NC/<project-id>/ (open or CC-NC editions) or local_output/<project-id>/ (any
+# edition, with the rights holder's approval); where the folder is decides the output (docs/licensing.md).
+# One project = one target language/style. See docs/configuration.md.
+
+language: gsw-BE                     # target language code
+language_name: Bern German (Berndeutsch)
+school_language: Standard German     # the team's working language ("school language"): the wiki, the store's
+                                     # notes and all analysis are written in it; only quotations are in the language
+notes_language: Standard German      # language of the _notes.md files (default: school_language)
+familiarity: partial                 # known | partial | unknown: how well the model knows the language
+                                     # (scripts/probe_language.py; docs/onboarding.md)
+close_to: Standard German            # for a variety (partial): the standard language agents must not fall back on
+# corpus_name: Bietenhard's Bern German NT   # how the prompts name the style corpus
+
+# The edition this project continues (its id; it lives in import/<licence>/<id>/), if any.
+# The project then inherits its nt_basis and uses it as style corpus.
+based_on: null
+
+# Editions used as style and vocabulary corpus (default: [based_on]).
+style_from: []
+
+# Editions this project's work is derived from (only under export/CC-NC/ or local_output/): their text may be
+# reused, without quarantine or quotation limits. A based_on edition with role: revise is always listed.
+# derived_from: []
+
+# Overrides the inherited textual basis: critical | majority | tr
+# nt_basis: critical
+
+# Extra books to keep from the drafting agents (added to the editions' quarantine).
+quarantine: []
+
+# Files or folders the agents must not open.
+do_not_open: []
+
+# Presentation
+quotes: "„“"                         # opening + closing quote characters
+chapter_word: Kapitel                # used in the ===Title, Kapitel N=== header
+book_titles:                         # titles used in the chapter header, by BSB code
+  gen: Ds erschte Buech Mose
+  jhn: Ds Johannes-Evangelium
+
+# Style guides for the prompt's contract (paths relative to the project folder), besides the
+# book's own <code>/<code>_style_guide.md: read for every book, or only when the book has none.
+style_guides: []
+default_style_guide: null
+
+# Inline notes in the text ({T: …} {E: …} {H: …} {N: …}): leave out for a clean text. Otherwise one
+# entry per kind saying when to use it, and optionally the glossary keys {N:} may take:
+# inline_notes:
+#   T: "literal wording, only where it changes the meaning"
+#   N: "a glossary reference"
+#   glossary: [grace, soul]
+#   placement: "a note attaches with no space to the preceding word"
+
+# Project-specific rules, added to every chapter prompt.
+rules:
+  - "**Divine names:** der HERR for YHWH; Herr, HERR for *ʔădōnāy YHWH*."
+  - "**Numbers and measures:** numbers in words, measures as in the style corpus."
+
+# Free-text addition to the style section of the prompt (optional).
+style_notes: null
