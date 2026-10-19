@@ -721,7 +721,7 @@ NETLIFY = """# The `site` branch is the finished site (scripts/build_site.py, st
 def leak_test(out):
     """No local path or private detail in the site. (Text of the editions is the quotation check's job, run before a
     deploy by scripts/check_project.py; and the build reads only tracked files.)"""
-    bad = re.compile(r"(?<![\w/])/Users/|(?<![\w/])/home/[a-z]|/private/tmp|\bC:\\\\|\b(?:10\.\d{1,3}|100\.(?:6[4-9]|[7-9]\d|1[01]\d|12[0-7])|192\.168)\.\d{1,3}\.\d{1,3}\b|sk-ant-")  # a path, not 'house/home/…'
+    bad = re.compile(r"(?<![\w/])/Users/|(?<![\w/])/home/[a-z]|/private/tmp|\bC:\\\\|(?<!\.)\b(?:10\.\d{1,3}|100\.(?:6[4-9]|[7-9]\d|1[01]\d|12[0-7])|192\.168)\.\d{1,3}\.\d{1,3}\b(?!\.\d)|sk-ant-")  # a path, not 'house/home/…'
     for d, _, files in os.walk(out):
         for f in files:
             t = open(os.path.join(d, f), encoding="utf-8", errors="replace").read()
