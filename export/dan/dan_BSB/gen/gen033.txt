@@ -1,0 +1,67 @@
+!!<Modenhed: Udkast>!!
+!!<Oversættelse: Maskinudkast fra grundteksten (orig/heb/gen033.txt), sammenholdt med Berean Standard Bible>!!
+!!<Eksegetisk bearbejdning: Endnu ikke sket>!!
+!!<Litterært tjek: Endnu ikke sket>!!
+!!<Dato for denne version: 09.10.2026>!!
+
+===1 Mosebog, kapitel 33===
+
+
+==Jakob møder Esau==
+
+v1 Jakob så op, og se, Esau kom, og med ham 400 mand. Så fordelte han børnene på Lea, Rakel og de
+to trælkvinder. v2 Han stillede trælkvinderne og deres børn forrest, Lea og hendes børn bag dem og
+Rakel og Josef bagest. v3 Selv gik han foran dem, og han bøjede sig til jorden syv gange,{E: At
+kaste sig ned syv gange er en kendt hofskik over for en overherre; i Amarnabrevene skriver vasaller
+at de kaster sig ned for Farao >>syv gange og syv gange<<. Jakob møder Esau som en vasal sin herre
+(jf. >>min herre<< og >>din tjener<< i v. 5.8.13-15).} indtil han nåede hen til sin bror.
+
+v4 Men Esau løb ham i møde og omfavnede ham, faldt ham om halsen og kyssede ham,{E: Over ordet
+*wayyiššāqēhû* >>og kyssede ham<< har den masoretiske tekst prikker (*puncta extraordinaria*), som
+måske markerer at ordet blev anset for tvivlsomt. Nogle gamle jødiske fortolkere læste dem som tegn
+på at kysset ikke var oprigtigt; det er dog næppe tekstens egen mening.} og de græd.
+
+v5 Da Esau så op og fik øje på kvinderne og børnene, sagde han: >>Hvem er de der hos dig?<< Jakob
+svarede: >>Det er de børn som Gud i sin nåde har givet din tjener.<< v6 Så trådte trælkvinderne frem
+med deres børn og bøjede sig. v7 Også Lea trådte frem med sine børn, og de bøjede sig. Til sidst
+trådte Josef og Rakel frem og bøjede sig.
+
+v8 Esau spurgte: >>Hvad vil du med hele den lejr{T: Ordret: >>Hvem er hele denne lejr for dig?<<
+*maḥănæh* >>lejr<< knytter an til Mahanajim (32,3) og de to lejre i 32,8-11.} som jeg mødte?<< Han
+svarede: >>Jeg ville finde nåde for min herres øjne.<< v9 Men Esau sagde: >>Jeg har nok, min bror.
+Behold du hvad der er dit.<<
+
+v10 Jakob sagde: >>Nej, endelig ikke! Hvis jeg har fundet nåde for dine øjne, så tag imod gaven fra
+min hånd. For jeg har set dit ansigt, ligesom man ser Guds ansigt,{N: Ansigt}{T: Ekko af Peniel
+(32,31): >>Jeg har set Gud ansigt til ansigt.<< Samme ord *pānîm* går igennem 32,21-22 og 33,10.} og
+du har taget venligt imod mig. v11 Tag nu imod min velsignelse{T: Ordret >>min velsignelse<<
+(*birkātî*), dvs. min gave. Ordet minder om den velsignelse Jakob tog fra Esau (27,35-36).} som er
+bragt til dig, for Gud har været nådig mod mig, og jeg har alt hvad jeg behøver.<< Han blev ved med
+at nøde ham, og så tog han imod den.
+
+==Brødrene skilles==
+
+v12 Esau sagde: >>Lad os bryde op og drage af sted. Jeg vil gå foran dig.<< v13 Men Jakob sagde til
+ham: >>Min herre ved at børnene er spæde, og at jeg må tage mig af småkvæg og storkvæg der giver
+die. Hvis de bliver drevet hårdt bare én dag, dør hele småkvæget. v14 Lad min herre drage i forvejen
+foran sin tjener, så vil jeg følge efter i ro og mag, i det tempo kvæget{T: Ordret: >>efter foden
+af det arbejde (dvs. den ejendom) som er foran mig<<.} foran mig og børnene kan gå, indtil jeg
+kommer til min herre i Se'ir.<<
+
+v15 Esau sagde: >>Så lad mig dog efterlade nogle af de folk jeg har med mig, hos dig.<< Men han
+svarede: >>Hvorfor dog det? Lad mig blot finde nåde for min herres øjne.<<
+
+v16 Samme dag vendte Esau tilbage ad vejen til Se'ir. v17 Men Jakob brød op til Sukkot. Han byggede
+sig et hus, og til sit kvæg lavede han løvhytter. Derfor kaldte man stedet Sukkot.{T: *sukkôt*
+betyder >>løvhytter<<, enkle skure af grene; samme ord bruges om løvhyttefesten (3 Mos 23,42-43).}
+
+==Jakob slår sig ned ved Sikem==
+
+v18 Da Jakob kom fra Paddan-Aram, nåede han uskadt{E: *šālēm* forstås her som >>i god behold,
+uskadt<< og peger tilbage på Jakobs bøn i 28,21. De gamle oversættelser læste det som et stednavn:
+>>til Salem, en by ved Sikem<<.} til byen Sikem i Kana'ans land, og han slog lejr ud for byen.
+v19 Det stykke mark hvor han havde slået sit telt op, købte han af Hamors sønner, Sikems far, for
+100 kesita.{T: *qᵊśîṭāh* er en mønt eller vægtenhed vi kun kender fra patriarktiden; værdien er
+ukendt. Samme jordstykke nævnes i Jos 24,32 og Joh 4,5.} v20 Der rejste han et alter, og han kaldte
+det El-Elohe-Israel.{T: *ʔēl ʔĕlōhê yiśrāʔēl* betyder >>Gud er Israels Gud<< eller >>Israels Gud er
+mægtig<<. Jakob bruger her for første gang sit nye navn Israel (32,29).}

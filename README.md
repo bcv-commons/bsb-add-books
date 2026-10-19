@@ -41,6 +41,13 @@ guide, with what we ask a team and how the tools adapt to the language: [`docs/o
 project's status, the chapters to read, the language memory. To put it online (Netlify, free; linked to GitHub or
 uploaded from your machine): [`docs/website.md`](docs/website.md).
 
+**Two demo projects** show what a project looks like after some work: `export/dan/dan_BSB/` (Danish, a language the
+model knows well: Genesis, Joshua and Daniel drafted, continuing Den Frie Bibel) and `export/jam/jam_BSB/` (Jamaican
+Creole, partly known: the language memory and Genesis 1). Their editions' texts are not in git; the checks and
+the tools need them: `python3 import/CC0/dan/den-frie-bibel/sync_from_upstream.py` (Danish, a minute) and `python3
+scripts/fetch_edition.py jambswn-et` (Jamaican, from the Digital Bible Platform: needs your `DBT_API_KEY`). Delete
+the two project folders (and their editions in `import/`) when you no longer want them.
+
 ## Layout
 
 ```

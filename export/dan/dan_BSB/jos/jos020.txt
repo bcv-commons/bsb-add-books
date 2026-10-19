@@ -1,0 +1,42 @@
+!!<Modenhed: Udkast>!!
+!!<Oversættelse: Maskinudkast fra grundteksten (orig/heb/jos020.txt), sammenholdt med Berean Standard Bible>!!
+!!<Eksegetisk bearbejdning: Endnu ikke sket>!!
+!!<Litterært tjek: Endnu ikke sket>!!
+!!<Dato for denne version: 17.08.2026>!!
+
+===Josvabogen, kapitel 20===
+
+
+==Seks tilflugtsbyer==
+
+v1 Da sagde HERREN til Josva: v2 >>Sig til israelitterne at de skal udpege de tilflugtsbyer som jeg
+talte til jer om gennem Moses,{H: 2 Mos 21,13. 4 Mos 35,9-15. 5 Mos 19,1-13} v3 så enhver der slår
+en person ihjel ved et uheld, uden at vide det,{T: Ordret: >>uden viden<<, *biḇlî-ḏāʿaṯ*, dvs.
+uforsætligt. Om *bišgāgāh* >>ved et uheld<< se 4 Mos 35,11.15.} kan flygte derhen. De skal være
+jeres tilflugt for blodhævneren. v4 Når han flygter til en af disse byer, skal han stille sig ved
+indgangen til byporten og fremføre sin sag for byens ældste.{T: Ordret: >>tale sine ord i den bys
+ældstes ører<<.}{E: Vers 4-6 mangler i den græske oversættelse (LXX) og gengiver stof fra 5 Mos
+19,4-6.11-12 om de ældste og om drabsmandens sindelag; mange ser her en senere, deuteronomistisk
+udvidelse af en kortere tekst der kun kendte 4 Mos 35.} Så skal de tage ham ind i byen til sig og
+give ham et sted at bo iblandt dem. v5 Hvis blodhævneren forfølger ham, må de ikke udlevere
+drabsmanden i hans hånd, for han slog sin næste ihjel uden at vide det og havde ikke hadet ham i
+forvejen.{T: Ordret: >>i går eller i forgårs<<.} v6 Han skal blive i den by indtil han har stået
+for retten foran forsamlingen,{T: Ordret: >>stået foran forsamlingen for dommen<<.} og indtil{T:
+Hebraisk har intet >>og<<; de to tidsgrænser står sideordnet.} den ypperstepræst der gør tjeneste
+på den tid, dør.{E: To grænser sættes uden bindeord: rettergangen for forsamlingen (4 Mos
+35,12.24-25) og ypperstepræstens død (4 Mos 35,25.28). Ypperstepræstens død fungerer som den
+skæringsdato der ophæver blodhævnerens ret.}{H: 4 Mos 35,25.28} Så kan drabsmanden vende tilbage
+til sit eget hjem i den by han flygtede fra.{T: Ordret: >>vende tilbage og komme til sin by og sit
+hus, til den by som han flygtede fra<<.}<<
+
+v7 De udpegede{T: Ordret: >>helligede<< (*wayyaqdišû*).}{E: Verbet *qdš* >>hellige, indvie<<
+bruges kun her om at udpege tilflugtsbyer; i v. 8 og 4 Mos 35 står *nāṯan* >>give<<. Byerne var
+levitbyer (21,13.21.27.32.36.38), hvilket kan forklare ordvalget.} Kedesh i Galilæa i Naftalis
+bjergland, Sikem i Efraims bjergland og Kirjat-Arba, det er Hebron, i Judas bjergland. v8 Og øst
+for Jordan ved Jeriko{T: Ordret: >>på den anden side af Jordan ved Jeriko, mod øst<<.} afgav de
+Beser i ørkenen på højsletten fra Rubens stamme, Ramot i Gilead fra Gads stamme og Golan i Bashan
+fra Manasses stamme.{H: 5 Mos 4,41-43} v9 Det var de byer der blev fastsat{T: *ʿārê hammûʿāḏāh*,
+>>de fastsatte/udpegede byer<< (kun her).} for alle israelitterne og for de fremmede der bor
+iblandt dem,{E: *gēr* >>fremmed, tilflytter<<: tilflugtsretten gælder også ikke-israelitter der bor
+i landet, som i 4 Mos 35,15.} så enhver som slår en person ihjel ved et uheld, kunne flygte derhen
+og ikke dø for blodhævnerens hånd, førend han havde stået for retten foran forsamlingen.

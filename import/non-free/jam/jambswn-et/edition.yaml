@@ -1,0 +1,48 @@
+# Imported 2026-10-16 by scripts/onboard.py from dbt (JAMBSWN_ET).
+# The text is fetched (scripts/fetch_edition.py), never kept in git: text/ is git-ignored (.gitignore here),
+# in every licence folder. One edition = one existing translation.
+
+name: Di Jamiekan Nyuu Testiment
+language: jam
+role: style
+text_dir: text
+format: one file per chapter (<code>NNN.txt), the format of the BSB files, fetched by scripts/fetch_edition.py
+nt_basis: critical
+books:
+- mat
+- mrk
+- luk
+- jhn
+- act
+- rom
+- 1co
+- 2co
+- gal
+- eph
+- php
+- col
+- 1th
+- 2th
+- 1ti
+- 2ti
+- tit
+- phm
+- heb
+- jas
+- 1pe
+- 2pe
+- 1jn
+- 2jn
+- 3jn
+- jud
+- rev
+quarantine: []
+source: dbt JAMBSWN_ET, https://www.bible.is/
+licence: Bible Text in Jamaican Creole © Bible Society of the West Indies
+attribution: ''
+credit: Di Jamiekan Nyuu Testiment, Bible Text in Jamaican Creole © Bible Society of the West Indies (https://www.bible.is/bible/JAMBSW)
+licence_source: fetched
+fetch:
+  source: dbt
+  id: JAMBSWN_ET
+  language: jam

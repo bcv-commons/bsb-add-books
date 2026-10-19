@@ -1,0 +1,2057 @@
+{
+ "iso": "jam",
+ "edition": "jam_BSB",
+ "partition": "observations",
+ "licence": "CC0-1.0 (feature values and references; quotations credited in ../CREDITS.md)",
+ "orthography": {
+  "normalization": "NFC",
+  "ignore_marks": []
+ },
+ "entries": [
+  {
+   "id": "slip:grombl",
+   "kind": "feature",
+   "value": "The corpus writes »grombl« (22×), never »grumbl«: the model's form in the write probe.",
+   "evidence": [
+    {
+     "ref": "1CO 10:10",
+     "form": "grombl",
+     "n": 22
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "script:probe_language",
+   "date": "2026-10-16",
+   "status": "observed",
+   "words": [],
+   "note": "From the probe (scripts/probe_language.py): check that the two are the same word."
+  },
+  {
+   "id": "slip:diiman",
+   "kind": "feature",
+   "value": "The corpus writes »diiman« (120×), never »dimon«: the model's form in the write probe.",
+   "evidence": [
+    {
+     "ref": "1CO 10:20",
+     "form": "diiman",
+     "n": 120
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "script:probe_language",
+   "date": "2026-10-16",
+   "status": "observed",
+   "words": [],
+   "note": "From the probe (scripts/probe_language.py): check that the two are the same word."
+  },
+  {
+   "id": "slip:chrang",
+   "kind": "feature",
+   "value": "The corpus writes »chrang« (208×), never »schrik«: the model's form in the write probe.",
+   "evidence": [
+    {
+     "ref": "1CO 1:8",
+     "form": "chrang",
+     "n": 208
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "script:probe_language",
+   "date": "2026-10-16",
+   "status": "observed",
+   "words": [],
+   "note": "From the probe (scripts/probe_language.py): check that the two are the same word."
+  },
+  {
+   "id": "slip:evridie",
+   "kind": "feature",
+   "value": "The corpus writes »evridie« (16×), never »ebri«: the model's form in the write probe.",
+   "evidence": [
+    {
+     "ref": "1CO 9:25",
+     "form": "evridie",
+     "n": 16
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "script:probe_language",
+   "date": "2026-10-16",
+   "status": "observed",
+   "words": [],
+   "note": "From the probe (scripts/probe_language.py): check that the two are the same word."
+  },
+  {
+   "id": "slip:iina",
+   "kind": "feature",
+   "value": "The corpus writes »iina« (3060×), never »ina«: the model's form in the write probe.",
+   "evidence": [
+    {
+     "ref": "1CO 1:2",
+     "form": "iina",
+     "n": 3060
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "script:probe_language",
+   "date": "2026-10-16",
+   "status": "observed",
+   "words": [],
+   "note": "From the probe (scripts/probe_language.py): check that the two are the same word."
+  },
+  {
+   "id": "slip:mount",
+   "kind": "feature",
+   "value": "The corpus writes »mount« (20×), never »maunt«: the model's form in the write probe.",
+   "evidence": [
+    {
+     "ref": "ACT 1:12",
+     "form": "Mount",
+     "n": 20
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "script:probe_language",
+   "date": "2026-10-16",
+   "status": "observed",
+   "words": [],
+   "note": "From the probe (scripts/probe_language.py): check that the two are the same word."
+  },
+  {
+   "id": "slip:api",
+   "kind": "feature",
+   "value": "The corpus writes »api« (250×), never »glajnis«: the model's form in the write probe.",
+   "evidence": [
+    {
+     "ref": "1CO 7:12",
+     "form": "api",
+     "n": 250
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "script:probe_language",
+   "date": "2026-10-16",
+   "status": "observed",
+   "words": [],
+   "note": "From the probe (scripts/probe_language.py): check that the two are the same word."
+  },
+  {
+   "id": "slip:uol",
+   "kind": "feature",
+   "value": "The corpus writes »uol« (542×), never »whole«: the model's form in the write probe.",
+   "evidence": [
+    {
+     "ref": "1CO 1:2",
+     "form": "uol",
+     "n": 542
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "script:probe_language",
+   "date": "2026-10-16",
+   "status": "observed",
+   "words": [],
+   "note": "From the probe (scripts/probe_language.py): check that the two are the same word."
+  },
+  {
+   "id": "slip:pred",
+   "kind": "feature",
+   "value": "The corpus writes »pred« (47×), never »spred«: the model's form in the write probe.",
+   "evidence": [
+    {
+     "ref": "1CO 9:23",
+     "form": "pred",
+     "n": 47
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "script:probe_language",
+   "date": "2026-10-16",
+   "status": "observed",
+   "words": [],
+   "note": "From the probe (scripts/probe_language.py): check that the two are the same word."
+  },
+  {
+   "id": "slip:timoti",
+   "kind": "feature",
+   "value": "The corpus writes »timoti« (43×), never »timati«: the model's form in the write probe.",
+   "evidence": [
+    {
+     "ref": "1CO 4:17",
+     "form": "Timoti",
+     "n": 43
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "script:probe_language",
+   "date": "2026-10-16",
+   "status": "observed",
+   "words": [],
+   "note": "From the probe (scripts/probe_language.py): check that the two are the same word."
+  },
+  {
+   "id": "slip:iebriyam",
+   "kind": "feature",
+   "value": "The corpus writes »iebriyam« (137×), never »iebraham«: the model's form in the write probe.",
+   "evidence": [
+    {
+     "ref": "1PE 3:6",
+     "form": "Iebriyam",
+     "n": 137
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "script:probe_language",
+   "date": "2026-10-16",
+   "status": "observed",
+   "words": [],
+   "note": "From the probe (scripts/probe_language.py): check that the two are the same word."
+  },
+  {
+   "id": "slip:kindom",
+   "kind": "feature",
+   "value": "The corpus writes »kindom« (132×), never »kingdom«: the model's form in the write probe.",
+   "evidence": [
+    {
+     "ref": "1CO 4:20",
+     "form": "kindom",
+     "n": 132
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "script:probe_language",
+   "date": "2026-10-16",
+   "status": "observed",
+   "words": [],
+   "note": "From the probe (scripts/probe_language.py): check that the two are the same word."
+  },
+  {
+   "id": "slip:choch",
+   "kind": "feature",
+   "value": "The corpus writes »choch« (241×), never »chech«: the model's form in the write probe.",
+   "evidence": [
+    {
+     "ref": "1CO 1:10",
+     "form": "choch",
+     "n": 241
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "script:probe_language",
+   "date": "2026-10-16",
+   "status": "observed",
+   "words": [],
+   "note": "From the probe (scripts/probe_language.py): check that the two are the same word."
+  },
+  {
+   "id": "narrative_tense",
+   "kind": "feature",
+   "value": "Past events in narrative are told with the bare verb: no preterite ending, no past marker. \"did\" is not the narrative past.",
+   "pattern": "<subject> <bare verb> … an <bare verb> …",
+   "evidence": [
+    {
+     "ref": "JHN 8:6",
+     "form": "Jiizas ben dong"
+    },
+    {
+     "ref": "JHN 20:5",
+     "form": "ben dong an luk"
+    },
+    {
+     "ref": "LUK 2:7",
+     "form": "shi av ar"
+    },
+    {
+     "ref": "ACT 7:4",
+     "form": "lef im konchri"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "Narrative verbs carry no ending: ben, luk, rap, put, lef, go, kom. The derived report's ending hypotheses (-v, -k, -t, -ch … with Greek tense) are artefacts of word-final letters in an uninflected language and are rejected. Counter-cases: \"did\" + verb (3513× in all) marks a state or a background/anterior event (see past_did); the bare verb is the default for a sequence of events."
+  },
+  {
+   "id": "past_did",
+   "kind": "feature",
+   "value": "\"did\" before a verb or predicate marks the past of a state or a background/earlier event (had, was, had done), not the main line of a story.",
+   "pattern": "<subject> did <verb|de|av|a>",
+   "evidence": [
+    {
+     "ref": "LUK 3:34",
+     "form": "a did"
+    },
+    {
+     "ref": "JHN 1:1",
+     "form": "did de bout"
+    },
+    {
+     "ref": "GAL 4:22",
+     "form": "Iebriyam did av"
+    },
+    {
+     "ref": "ACT 7:16",
+     "n": 3513,
+     "form": "did bai"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "Most frequent continuations of did: a (702), de (225), av (170), mek, waahn, se, kom. \"did de\" = was (somewhere), \"did av\" = had, \"did waahn\" = wanted. Used in backgrounds (\"Iebriyam did bai da piis a lan\", the purchase before the burial) and pluperfects."
+  },
+  {
+   "id": "past_progressive",
+   "kind": "feature",
+   "value": "\"did a\" + verb = was doing (past ongoing); the same string \"did a\" + noun is the past copula (was a …).",
+   "pattern": "<subject> did a <verb>",
+   "evidence": [
+    {
+     "ref": "1CO 2:3",
+     "form": "did a chrimbl"
+    },
+    {
+     "ref": "LUK 17:28",
+     "n": 702,
+     "form": "did a nyam"
+    },
+    {
+     "ref": "MAT 1:2",
+     "form": "did a Aizak faada"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "Read \"did a\" by what follows: a verb (did a chrimbl, did a tiich) = progressive; a noun phrase (did a Aizak faada) = past copula. \"a did\" (Aizak a did Iebriyam pikni, LUK 3:34) is also the past copula."
+  },
+  {
+   "id": "progressive",
+   "kind": "feature",
+   "value": "Preverbal \"a\" marks an ongoing action, present or habitual: mi a tel unu (I am telling you).",
+   "pattern": "<subject> a <verb>",
+   "evidence": [
+    {
+     "ref": "1CO 1:10",
+     "form": "mi a beg"
+    },
+    {
+     "ref": "1CO 1:12",
+     "form": "Mi a fala"
+    },
+    {
+     "ref": "LUK 15:7",
+     "n": 1606,
+     "form": "Mi a tel unu"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "pronoun + a + word: 1606× (this includes the copula a + noun). Plain present statements of a state use the bare verb (mi nuo, im lov). Negative: naa (mi naa go …)."
+  },
+  {
+   "id": "future",
+   "kind": "feature",
+   "value": "Future: \"ago\" + verb (most common), also \"gweehn\" + verb; \"wi\" + verb for will/shall in promises and predictions; negative future \"naa go\".",
+   "pattern": "<subject> ago|gweehn|wi <verb>; <subject> naa go <verb>",
+   "evidence": [
+    {
+     "ref": "1CO 1:19",
+     "form": "Mi ago shuo"
+    },
+    {
+     "ref": "1TI 2:15",
+     "form": "Gad gweehn siev"
+    },
+    {
+     "ref": "2CO 6:18",
+     "form": "Mi wi bi"
+    },
+    {
+     "ref": "1PE 2:6",
+     "form": "naa go en op"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "ago 1573×, gweehn 119×, naa go 307×. \"wi\" is also the 1st plural pronoun: \"wi wi gwaan\" (we will go on, 2CO 4:11) has both. Do not write English \"will\"."
+  },
+  {
+   "id": "completive",
+   "kind": "feature",
+   "value": "\"don\" before a verb marks a completed action (have already done); \"It don\" = it is finished.",
+   "evidence": [
+    {
+     "ref": "1CO 1:7",
+     "form": "don gi unu"
+    },
+    {
+     "ref": "1CO 5:3",
+     "form": "mi don joj"
+    },
+    {
+     "ref": "JHN 19:30",
+     "n": 222,
+     "form": "It don nou"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "Less frequent than in speech; most English perfects are bare verbs (\"unu don rich\", 1CO 4:8, beside many plain verbs). Do not confuse with dong (down)."
+  },
+  {
+   "id": "modals",
+   "kind": "feature",
+   "value": "Modals stand before the verb: kyan (can), kyaahn (cannot), kuda (could), kudn (could not), wuda (would), shuda (should), mos (must), afi (have to), maita (might); \"fi\" after the subject = should, ought to.",
+   "evidence": [
+    {
+     "ref": "1CO 1:9",
+     "form": "unu kyan chos"
+    },
+    {
+     "ref": "LUK 1:7",
+     "form": "kudn av non"
+    },
+    {
+     "ref": "HEB 12:1",
+     "form": "wi afi dash"
+    },
+    {
+     "ref": "MRK 12:30",
+     "form": "Yu fi lov"
+    },
+    {
+     "ref": "1CO 8:11",
+     "form": "maita tap"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "kyan 776, kyaahn 376, kuda 199, kudn 147, wuda 300, shuda 26, mos 136, afi 290, maita 45. Commandments of the Law in quotations: \"Yu fi …\" (MRK 12:30, MAT 4:10); subject + fi + verb occurs 1574× (some of these are purpose fi)."
+  },
+  {
+   "id": "copula",
+   "kind": "feature",
+   "value": "Equative \"a\" links two noun phrases (X a Y); adjectives are predicates with no copula (im glad, not *im a glad); \"de\" = be somewhere, exist.",
+   "pattern": "<NP> a <NP>; <NP> <adjective>; <NP> de <place>",
+   "evidence": [
+    {
+     "ref": "MRK 12:29",
+     "form": "im a wan"
+    },
+    {
+     "ref": "ACT 7:49",
+     "form": "Evn a mi chuon"
+    },
+    {
+     "ref": "LUK 15:5",
+     "form": "yu so glad"
+    },
+    {
+     "ref": "LUK 4:18",
+     "form": "de pan mi"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "pronoun + glad/sik/fried/beks/api with no copula 70×, with \"a\" 0×. Past: \"a did\" / \"did a\" + NP (LUK 3:34, MAT 1:2); \"did\" + adjective (did wel uol, LUK 1:7). Becoming: \"ton\" (ton king, 1CO 4:8; ton wan griet man, LUK 1:32) or \"komiin\" (come to be like)."
+  },
+  {
+   "id": "existential",
+   "kind": "feature",
+   "value": "There is / there was: \"yu (did) av\" + indefinite NP introduces a new participant; \"no de\" = there is not; \"de bout\" = exists.",
+   "pattern": "(Nou) yu did av wan <noun> (niem <Name>)",
+   "evidence": [
+    {
+     "ref": "ACT 5:1",
+     "form": "Nou yu did av"
+    },
+    {
+     "ref": "ACT 8:9",
+     "form": "yu did av wan"
+    },
+    {
+     "ref": "1CO 1:7",
+     "form": "notn no de"
+    },
+    {
+     "ref": "JHN 1:1",
+     "form": "did de bout"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "\"yu did av\" 35× (often after Nou, at a story start). \"no de\" 53×."
+  },
+  {
+   "id": "focus_cleft",
+   "kind": "feature",
+   "value": "Focus is put first with \"a\": A + focused phrase + rest of the clause (it is X who …). Also in questions: \"A uu …?\", \"A wa …?\". Negative focus: \"A no …\".",
+   "pattern": "A <focus> <clause>",
+   "evidence": [
+    {
+     "ref": "1CO 8:6",
+     "form": "a im mek evriting"
+    },
+    {
+     "ref": "MAT 2:15",
+     "form": "A outa Iijip"
+    },
+    {
+     "ref": "1CO 1:13",
+     "form": "A uu ded"
+    },
+    {
+     "ref": "1CO 1:2",
+     "form": "A no jos"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "\"a im\" 308×, \"A no\" sentence-initial 54×, \"A wa/uu/ou\" 67×. Used for contrast and for \"it is … that\"; the Hebrew fronted object or subject can be rendered with it. The quotations show the object moved: \"A outa Iijip mi kaal mi bwai pikni\" (MAT 2:15)."
+  },
+  {
+   "id": "constituent_order",
+   "kind": "feature",
+   "value": "SVO. Object after the verb; no case marking on nouns or pronouns. Objects come before the verb only when fronted with focus \"a\" or in relative clauses.",
+   "codes": [
+    "WALS:81A"
+   ],
+   "evidence": [
+    {
+     "ref": "JHN 8:6",
+     "form": "staat rait"
+    },
+    {
+     "ref": "ACT 7:4",
+     "form": "lef im konchri"
+    },
+    {
+     "ref": "LUK 2:7",
+     "form": "Shi rap im op"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-derived",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "Derived report: VO 1,806 (63%), OV 780 (27%), SVO 162, OSV 47, SOV 42. The OV share comes from relative clauses (di sitn dem we wi kyan si), focus fronting and alignment noise; in a plain clause the object follows the verb."
+  },
+  {
+   "id": "negation",
+   "kind": "feature",
+   "value": "Negation stands before the verb: no (present and general), neva (past: did not), neehn (past, also have not), naa (progressive/future), kyaahn (cannot). Negative concord: a negated verb takes no/nobadi/notn/neva in the object too.",
+   "pattern": "<subject> no|neva|neehn|naa <verb> (no <noun>|notn|nobadi)",
+   "codes": [
+    "WALS:112A"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 1:7",
+     "form": "neva av no pikni"
+    },
+    {
+     "ref": "JHN 1:3",
+     "form": "Notn no de"
+    },
+    {
+     "ref": "HEB 11:5",
+     "form": "im neehn ded"
+    },
+    {
+     "ref": "LUK 15:4",
+     "form": "Yu naa go"
+    },
+    {
+     "ref": "1CO 2:4",
+     "form": "neva yuuz no"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "no 3487× (also as determiner), neva 505×, neehn 235×, naa 597×, kyaahn 376×, kudn 147×, wudn 68×. Negative concord (a second negative within 30 letters) in 975 verses. The priors' duon, kyaan, noh, nonaa do not occur. \"na'av\" = does not have (JHN 2:3)."
+  },
+  {
+   "id": "prohibitive",
+   "kind": "feature",
+   "value": "Prohibitions: \"No\" + verb (do not …); emphatic \"No bada\" + verb (don't bother to …).",
+   "evidence": [
+    {
+     "ref": "LUK 1:13",
+     "form": "No fried!"
+    },
+    {
+     "ref": "MAT 4:7",
+     "form": "No tes"
+    },
+    {
+     "ref": "ROM 12:19",
+     "form": "no bada tek"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "\"No fried\" (do not be afraid) 38×. Plural addressees: same form (no unu before it unless emphatic)."
+  },
+  {
+   "id": "hortative",
+   "kind": "feature",
+   "value": "\"Let us\" = Mek wi + verb; \"let him/them\" = mek + subject + verb; the same mek is the causative (make someone do).",
+   "pattern": "Mek wi <verb>; Mek <NP> <verb>",
+   "evidence": [
+    {
+     "ref": "MRK 1:38",
+     "form": "Mek wi go"
+    },
+    {
+     "ref": "1JN 4:7",
+     "form": "mek wi lov"
+    },
+    {
+     "ref": "LUK 15:23",
+     "form": "Mek wi nyam"
+    },
+    {
+     "ref": "2CO 4:6",
+     "form": "Mek di lait shain"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "Of BSB verses with \"let us\", 32 have mek wi, 7 another mek, 10 \"kom\" (Kom mek …, JHN 11:16). \"Mek wi\" 201× in all. The derived report found \"nothing\" for the 1st plural subjunctive: that is wrong, the construction is mek wi. Jussive \"Let there be light\" has its model in 2CO 4:6 \"Mek di lait shain\"."
+  },
+  {
+   "id": "serial_verbs",
+   "kind": "feature",
+   "value": "Verbs are strung without \"and\" or \"to\": go + verb (go tel), kom + verb (kom kom tel = came to tell), tek X go/kom (take X to), gi = to/for after an object (bon sakrifais gi Gad).",
+   "evidence": [
+    {
+     "ref": "LUK 15:23",
+     "form": "kom kil it"
+    },
+    {
+     "ref": "HEB 11:4",
+     "form": "sakrifais gi Gad"
+    },
+    {
+     "ref": "LUK 2:15",
+     "form": "Betliyem go si"
+    },
+    {
+     "ref": "1PE 1:12",
+     "form": "kom kom tel"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "go a 278×, kom bak 331×, kom fram 257×; \"kom kom\" (came to …) 52×."
+  },
+  {
+   "id": "passive",
+   "kind": "feature",
+   "value": "No passive morphology. A passive is rendered (1) with get + verb (get siev, get baptaiz), (2) with the bare verb and the patient as subject (di evn an di ort did mek), or (3) with impersonal \"dem\" as subject (dem kaal …).",
+   "evidence": [
+    {
+     "ref": "1CO 10:33",
+     "form": "get siev"
+    },
+    {
+     "ref": "1CO 1:15",
+     "form": "get baptaiz"
+    },
+    {
+     "ref": "2PE 3:5",
+     "form": "did mek jos so"
+    },
+    {
+     "ref": "ACT 3:2",
+     "form": "we dem kaal"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "get + verb in total 1229× (get also = receive, become). \"we dem kaal\" (called, named) 35×; \"we niem\" 37×. 1TI 2:13 \"Adam did mek bifuo Iiv\" (Adam was formed first)."
+  },
+  {
+   "id": "reduplication",
+   "kind": "feature",
+   "value": "Doubling a word intensifies an adjective or adverb (big big, nof nof, brait brait), makes a distributive (difrant difrant), or an iterative (kot op kot op); \"faada faada\" = forefathers, \"pikni pikni\" = grandchildren.",
+   "evidence": [
+    {
+     "ref": "ACT 10:11",
+     "form": "big big shiit"
+    },
+    {
+     "ref": "1CO 2:6",
+     "form": "nof nof"
+    },
+    {
+     "ref": "1CO 15:38",
+     "form": "difrant difrant"
+    },
+    {
+     "ref": "2PE 3:4",
+     "form": "Wi faada faada"
+    },
+    {
+     "ref": "ACT 19:16",
+     "form": "kot op kot op"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "Doubled words 923× in all; most frequent: de de (148, locative de + de there), faada faada 61, kom kom 56, aad aad 50, nof nof 49, gud gud 36, big big 36, brait brait 30. Hyphenated doubles are separate words: dege-dege (only, mere), fuul-fuul, fasi-fasi. Priors listed no verb doubling; there is none as a grammatical category apart from these."
+  },
+  {
+   "id": "comparison",
+   "kind": "feature",
+   "value": "Comparatives: (muo/muor) + adjective + dan, or the old forms beta, biga, wosa, aiya; superlative: di muos + adjective, or -is (liklis).",
+   "evidence": [
+    {
+     "ref": "HEB 11:4",
+     "form": "beta sakrifais"
+    },
+    {
+     "ref": "MAT 10:15",
+     "form": "iiziya dan"
+    },
+    {
+     "ref": "MRK 12:29",
+     "form": "Di muos impuotant"
+    },
+    {
+     "ref": "MAT 5:18",
+     "form": "liklis leta"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-derived",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "Derived report: Greek comparatives rendered with dan ×59, elda ×52, muo ×29, biga ×20, beta ×14, iiziya ×11. dan 250× in all; \"di muos\" 17×. The priors' -a comparative and -is superlative as productive endings were not found: -a/-ya appears only in a few lexical forms (iiziya, biga, beta)."
+  },
+  {
+   "id": "article",
+   "kind": "feature",
+   "value": "Definite article di; indefinite wan (also \"one\"); bare nouns for generic or mass reference.",
+   "codes": [
+    "WALS:37A",
+    "WALS:38A"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 15:4",
+     "form": "di nainti-nain"
+    },
+    {
+     "ref": "ACT 5:1",
+     "form": "wan man"
+    },
+    {
+     "ref": "LUK 15:1",
+     "form": "Di taks kalekta"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-derived",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "di 11129×, wan 3356× (with \"one\" and \"wan aneda\"). Derived report: Greek article ὁ = di 45%, none 43%. Priors: wahn ABSENT. Names and Gad take no article; \"di Laad\" does."
+  },
+  {
+   "id": "plural",
+   "kind": "feature",
+   "value": "Plural is a separate word \"dem\" after the noun phrase (di piipl dem, im falara dem); it is left out after numerals and quantifiers and with generic nouns.",
+   "pattern": "(di) <noun> dem",
+   "codes": [
+    "WALS:33A"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 15:1",
+     "form": "di sina dem"
+    },
+    {
+     "ref": "LUK 15:6",
+     "form": "fren an nieba dem"
+    },
+    {
+     "ref": "ACT 7:8",
+     "form": "twelv bwai pikini dem"
+    },
+    {
+     "ref": "GAL 4:22",
+     "form": "tuu bwai pikni"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "\"di N dem\" 2147×; piipl dem 859×. Counter-cases: tuu bwai pikni (GAL 4:22) with a numeral and no dem, beside twelv … pikini dem (ACT 7:8). One dem covers a coordinated phrase (fren an nieba dem). Never an -s plural on native words (tingz, ada a fixed form). Priors' \"-dem as suffix\": not a suffix, written apart."
+  },
+  {
+   "id": "demonstratives",
+   "kind": "feature",
+   "value": "This = da N ya / dis N; that = da N de; these = dem N ya / dem ya N; those = dem N de. The noun sits between da/dem and ya/de.",
+   "pattern": "da <noun> ya | da <noun> de | dem <noun> de",
+   "evidence": [
+    {
+     "ref": "LUK 15:3",
+     "form": "da tuori ya"
+    },
+    {
+     "ref": "ACT 7:16",
+     "form": "piis a lan de"
+    },
+    {
+     "ref": "HEB 10:6",
+     "form": "dem sitn de"
+    },
+    {
+     "ref": "JHN 14:31",
+     "form": "da plies ya"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "da … ya 298×, da … de 239×, dem … de 319×, dis + noun 249×. \"ya-so\" = here, \"de-so\" = there. \"ya\" alone after a noun: di man ya (this man)."
+  },
+  {
+   "id": "pronouns",
+   "kind": "feature",
+   "value": "One form for subject, object and possessor: mi, yu (sg), im (he/him/his, also it), shi / ar (she / her), it, wi, unu (you pl), dem. Reflexive: -self (imself, unuself).",
+   "codes": [
+    "WALS:44A"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 15:9",
+     "form": "shi kaal out ar"
+    },
+    {
+     "ref": "1CO 1:10",
+     "form": "mi a beg unu"
+    },
+    {
+     "ref": "LUK 15:7",
+     "form": "Mi a tel unu"
+    },
+    {
+     "ref": "2CO 4:6",
+     "form": "mek im lait shain"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-derived",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "mi 5341, yu 2407, im 7989, shi 308, it 1582, wi 4123, unu 5876, dem 12534 (also plural and demonstrative). In 129 verses where the BSB has she/her and no he/him/his/they: shi 161, ar 145, im 32: women are shi/ar, im for a woman is the exception. ar also means \"or\". The priors' i is ABSENT. unu is strictly plural: a drafter must decide singular yu or plural unu from the Hebrew (Greek σύ/ὑμεῖς: unu 58%, yu 30%)."
+  },
+  {
+   "id": "possessor",
+   "kind": "feature",
+   "value": "Possessor before the possessed with nothing between (Gad kindom, Lat waif); emphatic or predicative \"fi\" + possessor (fi mi Laad, a fi dem); \"a\" links in some fixed phrases (di Spirit a di Laad, di King a Iijip).",
+   "pattern": "<possessor> <noun> | fi <possessor> <noun>",
+   "codes": [
+    "WALS:86A"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 17:32",
+     "form": "Lat waif"
+    },
+    {
+     "ref": "MAT 22:44",
+     "form": "fi mi Laad"
+    },
+    {
+     "ref": "LUK 4:18",
+     "form": "Spirit a di Laad"
+    },
+    {
+     "ref": "ACT 7:10",
+     "form": "di King a Iijip"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "fi + pronoun 904× (also purpose fi + object pronoun); Gad kindom ×35 for ἡ βασιλεία τοῦ θεοῦ (derived report). Contractions fi'im (his, 65×) and fu'unu (your pl, 52×) appear in Acts and later books. Priors: fi-mi etc. hyphenated ABSENT: written apart."
+  },
+  {
+   "id": "relative_clause",
+   "kind": "feature",
+   "value": "Relative clauses follow the noun and open with \"we\" (who, which, that) for subject and object alike; no resumptive pronoun. \"uu\" is the question word, not a relative.",
+   "codes": [
+    "WALS:90A"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 15:7",
+     "form": "wan sina we ton"
+    },
+    {
+     "ref": "MAT 4:7",
+     "form": "di Laad we a"
+    },
+    {
+     "ref": "ACT 17:24",
+     "form": "Di Gad we mek"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-derived",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "Derived report: ὅς = we 31%, none 48%. \"dem we\" (those who) 1340×; \"piipl we\" 488×. we also = where/away (\"go we\", \"we im de?\"). Whose = uufa (fi ar pikni …, uufa pet niem, JHN 11:16). The OT \"the LORD your God\" is built with a relative: di Laad we a yu Gad."
+  },
+  {
+   "id": "complementizer_se",
+   "kind": "feature",
+   "value": "\"se\" introduces the content of saying, knowing, thinking, seeing (that …), and is repeated after the speech verb before a quotation.",
+   "evidence": [
+    {
+     "ref": "LUK 15:2",
+     "form": "grombl se"
+    },
+    {
+     "ref": "1CO 1:9",
+     "form": "chos se"
+    },
+    {
+     "ref": "HEB 11:20",
+     "form": "biliiv se"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-derived",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "nuo se 313, tingk se 152, si se 126. Derived report: ὅτι = se 47%, kaaz 17%, kaa 8%. A causal ὅτι/כִּי is kaaz, not se."
+  },
+  {
+   "id": "speech_frame",
+   "kind": "feature",
+   "value": "Speech is framed \"<speaker> se (tu <addressee>) se, “…”\": the verb se (say) and then the complementizer se again. Also aks <X> se, ansa (<X>) se, tel <X> se.",
+   "pattern": "<speaker> se tu <addressee> se, “<quote>”",
+   "evidence": [
+    {
+     "ref": "LUK 15:7",
+     "form": "se tu dem se"
+    },
+    {
+     "ref": "MAT 4:7",
+     "form": "Jiizas ansa im se"
+    },
+    {
+     "ref": "LUK 15:12",
+     "form": "tu im faada se"
+    },
+    {
+     "ref": "ACT 7:2",
+     "form": "ansa an se"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-derived",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "\"se tu X se\" 355× (+ 22 with a two-word addressee); \"se,\" before an opening quote mark 1472×; aks X se 118×; ansa (X) se 83×. Derived report: καί λέγω αὐτός = \"an se\" (13 of 162). Counter-cases: the frame may also follow or be left out (Jiizas ansa bak, “…”, MAT 4:10)."
+  },
+  {
+   "id": "quotation_marks",
+   "kind": "feature",
+   "value": "Double curly quotes “…” for speech, single ‘…’ for speech inside speech.",
+   "evidence": [
+    {
+     "ref": "LUK 15:6",
+     "form": "‘Kom selibriet"
+    },
+    {
+     "ref": "MAT 22:44",
+     "form": "Di Laad se"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "project.yaml quotes: “”. A quotation inside a quotation uses ‘ ’ (LUK 15:6), a third level “ ” again (MAT 22:44)."
+  },
+  {
+   "id": "connective_sequence",
+   "kind": "feature",
+   "value": "Narrative clauses open with An (and), Den (then), So (so, and so), Nou (now, a new scene), Wen (when), Afta dat (after that), Bot (but). καί is \"an\" or nothing; δέ is bot or nothing; τότε is den.",
+   "evidence": [
+    {
+     "ref": "LUK 15:11",
+     "form": "Den Jiizas se"
+    },
+    {
+     "ref": "LUK 15:3",
+     "form": "So Jiizas ansa"
+    },
+    {
+     "ref": "ACT 5:1",
+     "form": "Nou yu did av"
+    },
+    {
+     "ref": "LUK 15:13",
+     "form": "Likl afta dat"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-derived",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "Sentence-initial words: An 1,037, So 934, Bot 893, Wen 618, Den 436, Nou 258, Afta 206. Derived report at clause start: καί an 50% / none 37%; δέ bot 39% / none 52%; τότε den 65%; οὖν so 43%, den 18%. Hebrew wayyiqtol chains: do not start every clause with An; the corpus links two or three verbs with an and starts new sentences with So/Den/Wen."
+  },
+  {
+   "id": "causal",
+   "kind": "feature",
+   "value": "Because / for: kaaz (main form), kaa (short form, same use), sieka (because of + noun phrase).",
+   "evidence": [
+    {
+     "ref": "LUK 1:7",
+     "form": "kaaz Ilizibet"
+    },
+    {
+     "ref": "1PE 1:7",
+     "form": "kaa guol"
+    },
+    {
+     "ref": "1CO 8:11",
+     "form": "sieka wa unu du"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-derived",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "kaaz 1573×, kaa 232×, sieka 204×. Derived report: γάρ kaaz 56%, kaa 8%, none 37%. The priors' bikaa and \"kaaz a\" are ABSENT."
+  },
+  {
+   "id": "conditional",
+   "kind": "feature",
+   "value": "If = ef. There is no \"if\".",
+   "evidence": [
+    {
+     "ref": "GAL 6:9",
+     "form": "ef wi no gi"
+    },
+    {
+     "ref": "ROM 9:29",
+     "form": "Ef di Laad"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "ef 936×; \"if\" occurs only in the compound if-an-bot. Counterfactual: wuda (Wi wuda don fa, ROM 9:29)."
+  },
+  {
+   "id": "purpose",
+   "kind": "feature",
+   "value": "Purpose: fi + verb (to, in order to), so (dat) + clause (so that).",
+   "evidence": [
+    {
+     "ref": "LUK 15:1",
+     "form": "fi ier"
+    },
+    {
+     "ref": "HEB 11:7",
+     "form": "fi siev im fambili"
+    },
+    {
+     "ref": "1CO 10:33",
+     "form": "so dat evribadi"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-derived",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "Derived report: ἵνα so 27%, fi 25%, dat 13%. fi + du 678×. Negative purpose: so … no / so dat … naa (so unu no en op, 1PE 3:16)."
+  },
+  {
+   "id": "prepositions",
+   "kind": "feature",
+   "value": "Main prepositions: iina (in, into), a (at, to a place: go a el), pan (on, upon), wid (with), fram (from), tu (to a person), outa (out of), bout (about), uova (over), anda (under), infronta (before, in front of), mongks (among), gens (against), saida (beside), baka (behind, back to).",
+   "codes": [
+    "WALS:85A"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 1:2",
+     "form": "iina"
+    },
+    {
+     "ref": "LUK 15:6",
+     "form": "go a yu yaad"
+    },
+    {
+     "ref": "LUK 15:5",
+     "form": "pan yu shuolda"
+    },
+    {
+     "ref": "MAT 22:44",
+     "form": "anda yu fut"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-derived",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "iina 3059, pan 1245, wid 1385, fram 1165, tu 2629, infronta 165, mongks 170, gens 210. Derived report: ἐν iina 31% / a 10% / pan 5%; εἰς iina 26%, go 18%, a 17%. Priors: ina, ova, kaaz a ABSENT; it is iina, uova."
+  },
+  {
+   "id": "questions",
+   "kind": "feature",
+   "value": "Question words: wa (what), uu (who), uufa (whose), ou (how), wich paat (where), wen (when), wa mek (why), wa kaina (what kind). Yes/no questions keep statement order; tags iihn? and duohn?.",
+   "evidence": [
+    {
+     "ref": "1CO 1:13",
+     "form": "A uu ded"
+    },
+    {
+     "ref": "ACT 1:11",
+     "form": "wa mek unu"
+    },
+    {
+     "ref": "1CO 15:55",
+     "form": "A wich paat"
+    },
+    {
+     "ref": "2PE 3:4",
+     "form": "duohn?"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "wich paat 141×; \"we paat\" 16×; wa mek 49×, fi wa 28×; wai only 6×. iihn 36×. Rhetorical: \"A …\" + question word."
+  },
+  {
+   "id": "time_expressions",
+   "kind": "feature",
+   "value": "Time: wan die (one day), di neks die (the next day), afta dat, wen it kech <time> (when it came to …), \"Wen taim did staat\" (in the beginning).",
+   "evidence": [
+    {
+     "ref": "JHN 1:1",
+     "form": "Wen taim did staat"
+    },
+    {
+     "ref": "MRK 15:34",
+     "form": "Wen it kech"
+    },
+    {
+     "ref": "MRK 4:35",
+     "form": "wen it kech iivnin"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "Days counted with die: di fos die, die sevn (HEB 4:4: number after die), di sevn die. \"fram Gad mek di worl\" = from the creation, from the beginning (MAT 19:4, ROM 1:20)."
+  },
+  {
+   "id": "numerals",
+   "kind": "feature",
+   "value": "Numbers are written as words: wan, tuu, chrii, fuo, faiv, siks, sevn, iet, nain, ten, ilevn, twelv, twenti, fifti, onjrid, touzn; compounds with a hyphen (nainti-nain, twenti-fuo). Digits are rare.",
+   "evidence": [
+    {
+     "ref": "LUK 15:4",
+     "form": "onjrid shiip"
+    },
+    {
+     "ref": "REV 7:5",
+     "form": "twelv touzn"
+    },
+    {
+     "ref": "ACT 7:6",
+     "form": "fuo onjrid ier"
+    },
+    {
+     "ref": "LUK 15:4",
+     "form": "nainti-nain"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "Digit tokens only 14× in 7 verses (e.g. measures converted, REV 21:17). Ordinals: fos, sekan; \"die sevn\". 12,000 = twelv touzn."
+  },
+  {
+   "id": "contractions",
+   "kind": "feature",
+   "value": "Some pronoun and verb pairs are written contracted with an apostrophe: fi'im (his/for him), fu'unu (your pl), dwi'it (do it), gi'im (give him), si'it (see it), na'av (not have), na'afi (not have to).",
+   "evidence": [
+    {
+     "ref": "ACT 4:12",
+     "form": "fi'im niem"
+    },
+    {
+     "ref": "ACT 3:22",
+     "form": "fu'unu Gad"
+    },
+    {
+     "ref": "JHN 2:5",
+     "form": "dwi'it"
+    },
+    {
+     "ref": "JHN 2:3",
+     "form": "na'av"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "fi'im 65, fu'unu 52, dwi'it 42, na'av 16, gi'im 11. They are concentrated in some books (Acts, John); elsewhere the full forms (fi im, fi unu) are usual. Optional; a draft may use the full forms."
+  },
+  {
+   "id": "discourse_markers",
+   "kind": "feature",
+   "value": "Attention and emphasis: Luk ya (look, behold), Lisn (listen), Wach it (watch out / behold), Matarafak (in fact), iivn (even), jos (just).",
+   "evidence": [
+    {
+     "ref": "MAT 1:20",
+     "form": "wach ya nou"
+    },
+    {
+     "ref": "MAT 1:23",
+     "form": "Lisn op!"
+    },
+    {
+     "ref": "HEB 8:8",
+     "form": "Wach it"
+    },
+    {
+     "ref": "JHN 1:1",
+     "form": "Matarafak"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "\"behold\" in the BSB: luk 11, lisn 6 (lexicon). Luk ya 22×. Hebrew הִנֵּה is far more frequent than these models: often leave it out or use Luk ya / Wach ya nou in speech."
+  },
+  {
+   "id": "style_explicit",
+   "kind": "feature",
+   "value": "The corpus is a meaning-based translation: it spells out implicit information, explains customs and turns abstract nouns into clauses (birthright = \"everything Esau would get because he was his father's first son\").",
+   "evidence": [
+    {
+     "ref": "HEB 12:16",
+     "form": "fos bwai pikni"
+    },
+    {
+     "ref": "HEB 7:4",
+     "form": "wan outa evri ten"
+    },
+    {
+     "ref": "REV 21:17",
+     "form": "fut ai"
+    },
+    {
+     "ref": "COL 1:15",
+     "form": "siem laik im Faada"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "Abstract nouns become verbs (faith = chos iina Gad / biliiv; salvation = siev; righteousness = du wa rait). Measures are converted (cubits to fut, REV 21:17). A draft that copies the BSB's abstract nouns falls back on English."
+  },
+  {
+   "id": "letter:long_vowels",
+   "kind": "letter",
+   "value": "Long vowels are written double: aa (faada, laad, aal), ii (piipl, iina, biliiv), uu (juu, fuud, nyuu). There is no ee or oo except before hn (neehn, gweehn).",
+   "evidence": [
+    {
+     "ref": "LUK 15:12",
+     "form": "faada"
+    },
+    {
+     "ref": "LUK 15:7",
+     "form": "piipl"
+    },
+    {
+     "ref": "LUK 15:2",
+     "form": "Farisii"
+    },
+    {
+     "ref": "ACT 7:11",
+     "form": "fuud"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "words with aa 13067, ii 15173, uu 3639 tokens. English \"ee/ea\" → ii (siid, priis), \"oo\" → uu (fuud, gruup), \"or/ar/aw\" → aa (laad, staat, laa)."
+  },
+  {
+   "id": "letter:ie_uo",
+   "kind": "letter",
+   "value": "The gliding vowels: ie for English \"ay/ai/a_e\" (siem, niem, die, fies), uo for \"o/oa/ow\" (nuo, shuo, uol, kuot).",
+   "evidence": [
+    {
+     "ref": "ACT 7:49",
+     "form": "Di Laad se"
+    },
+    {
+     "ref": "LUK 15:3",
+     "form": "tuori"
+    },
+    {
+     "ref": "ACT 5:1",
+     "form": "niem"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "ie 7021, uo 5993 tokens: siem, ier, wie, die, prie, niem; nuo, uol, shuo, uova, bifuo. Names follow: Iebriyam, Muoziz, Juozif."
+  },
+  {
+   "id": "letter:ai_ou",
+   "kind": "letter",
+   "value": "ai for English \"i_e/y\" (taim, laik, krais), ou for \"ou/ow\" (ous, out, toun, roun).",
+   "evidence": [
+    {
+     "ref": "LUK 15:8",
+     "form": "lait lamp"
+    },
+    {
+     "ref": "LUK 15:6",
+     "form": "yaad"
+    },
+    {
+     "ref": "LUK 15:8",
+     "form": "di ous"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "ai 8449, ou 5304 tokens."
+  },
+  {
+   "id": "letter:short_vowels",
+   "kind": "letter",
+   "value": "Short vowels: a for English short o and short a (gad, lat, kat, man), o for English short u (lov, blod, son, kom), i for short i, e for short e.",
+   "evidence": [
+    {
+     "ref": "LUK 17:32",
+     "form": "Lat waif"
+    },
+    {
+     "ref": "JHN 8:6",
+     "form": "fingga"
+    },
+    {
+     "ref": "1CO 1:2",
+     "form": "Gad"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "God = Gad, Lot = Lat, love = lov, blood = blod, come = kom, sun = son (no distinction from son!), church = choch, worship = worship, serve = sorv (English \"ur/er/ir\" = o/or)."
+  },
+  {
+   "id": "letter:no_h",
+   "kind": "letter",
+   "value": "English initial h is not written: ous (house), im (him), ier (hear, year, here), api (happy), el (hell), ed (head), ai (high).",
+   "evidence": [
+    {
+     "ref": "LUK 15:8",
+     "form": "di ous"
+    },
+    {
+     "ref": "LUK 15:1",
+     "form": "fi ier"
+    },
+    {
+     "ref": "LUK 1:32",
+     "form": "Muos Ai Gad"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "h appears only in sh, ch, zh (iezha) and in the nasal spelling -hn (waahn, kyaahn, neehn). No c (except ch), q, x or th: th = t or d (ting, di, dat, Set for Seth)."
+  },
+  {
+   "id": "letter:nasal_hn",
+   "kind": "letter",
+   "value": "A nasalised vowel is written with hn after it: waahn (want), kyaahn (cannot), neehn (did not), gweehn (going to), iihn (eh?).",
+   "evidence": [
+    {
+     "ref": "ACT 5:4",
+     "form": "did waahn"
+    },
+    {
+     "ref": "ROM 1:20",
+     "form": "kyaahn"
+    },
+    {
+     "ref": "HEB 11:5",
+     "form": "neehn"
+    },
+    {
+     "ref": "LUK 1:32",
+     "form": "gweehn"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "waahn 770, kyaahn 376, neehn 235, gweehn 119, iihn 36, wehn 23. Keep kyan (can) and kyaahn (cannot) apart: the hn is the negation."
+  },
+  {
+   "id": "letter:palatals",
+   "kind": "letter",
+   "value": "After k and g before a, a y is written (kyan, kyari, gyal, gyaadn); ny for an initial palatal n (nyam, nyuu).",
+   "evidence": [
+    {
+     "ref": "LUK 15:23",
+     "form": "kyaaf"
+    },
+    {
+     "ref": "MAT 3:4",
+     "form": "Kyamil"
+    },
+    {
+     "ref": "LUK 15:23",
+     "form": "Mek wi nyam"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "ky 1,488 tokens (kyan, kyari, kyamil), gy 355 (gyada, Gyalalii, gyaadn), ny 490 (nyam, nyuuz). Not every k/g + a: Gad, kaal, gaan, kaaz have none."
+  },
+  {
+   "id": "letter:ch_j",
+   "kind": "letter",
+   "value": "English tr- and thr- are written chr- (chrii = three and tree, chrang, chuu = through and true), dr- is jr- (jriim, jringk).",
+   "evidence": [
+    {
+     "ref": "MRK 15:34",
+     "form": "chrii aklak"
+    },
+    {
+     "ref": "LUK 17:27",
+     "form": "jringk"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "chrii 203 (three, tree), chuu 527 (true, through), chuut (truth), chrang 208 (strong), jringk 124."
+  },
+  {
+   "id": "letter:final_er",
+   "kind": "letter",
+   "value": "Unstressed final English -er/-or/-a is written a: faada, mada, breda, sista, ova = uova, afta, neva, ruula, tiicha.",
+   "evidence": [
+    {
+     "ref": "LUK 15:12",
+     "form": "faada"
+    },
+    {
+     "ref": "MAT 19:5",
+     "form": "mada"
+    },
+    {
+     "ref": "LUK 15:5",
+     "form": "shuolda"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "faada 624, breda 354, neva 505, afta 379. English -ear/-air/-are = ier (ier, kier, shier, swier)."
+  },
+  {
+   "id": "letter:syllabic",
+   "kind": "letter",
+   "value": "Unstressed syllables with l or n are written without a vowel: likl, onggl (only), gyaadn, mountn, iivn (heaven = evn, even = iivn), baptaiz; -ing is -in or -n (iivnin, maanin, wedn).",
+   "evidence": [
+    {
+     "ref": "LUK 15:13",
+     "form": "Likl afta dat"
+    },
+    {
+     "ref": "MRK 4:35",
+     "form": "iivnin"
+    },
+    {
+     "ref": "JHN 14:31",
+     "form": "onggl"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "onggl 346, iivn 344, evn (heaven) 170 in the lexicon. Variants: mountn 20 / moutn 7."
+  },
+  {
+   "id": "letter:clusters",
+   "kind": "letter",
+   "value": "Final consonant clusters lose their last consonant: lan (land), fiil (field), tel, ol, wel, chos (trust), ges (guest), fren (friend); voiced -s is z (kaaz, Muoziz, tingz).",
+   "evidence": [
+    {
+     "ref": "LUK 15:4",
+     "form": "iina di fiil"
+    },
+    {
+     "ref": "LUK 15:6",
+     "form": "fren an nieba"
+    },
+    {
+     "ref": "LUK 1:7",
+     "form": "kaaz"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "Exceptions keep a cluster where English has one stressed (staat, paat, aks). Plural -z on borrowed nouns (tingz, nyuuz)."
+  },
+  {
+   "id": "letter:names",
+   "kind": "letter",
+   "value": "New names are spelled as an English speaker pronounces the English form, in the same phonemic spelling: stressed long a → ie (Iebl, Kien, Siera), long e → ii (Iinok, Iiv), long o → uo (Muoziz, Juozif), long i → ai (Aizak, Aizaiya), au/aw → aa (Paal), ph → f, ch (k) → k, th → t, s between vowels and final -s → z.",
+   "evidence": [
+    {
+     "ref": "HEB 11:4",
+     "form": "Iebl"
+    },
+    {
+     "ref": "HEB 11:5",
+     "form": "Iinok"
+    },
+    {
+     "ref": "LUK 3:34",
+     "form": "Aizak"
+    },
+    {
+     "ref": "LUK 3:38",
+     "form": "Set"
+    },
+    {
+     "ref": "HEB 11:20",
+     "form": "Iisaa"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "observed",
+   "note": "Derived report (Greek → target letters) is dominated by English-sound effects (e → ii, a → ie, o → uu/uo) and confirms that names go through English, not Greek. h between vowels becomes y or w (Iebriyam, Nowa, Rieyab), final -ah is -a (Juuda, Siera). Initial h drops (Iegar, Iemuor, Ieran = Haran)."
+  },
+  {
+   "id": "gap:expanse",
+   "kind": "gap",
+   "value": "the expanse/firmament (רָקִיעַ) of GEN 1:6–8: no NT model; the corpus has skai (sky) and evn (heaven). Proposed: describe it (\"wan big roof … iina di skai\") or use skai; decide with the team.",
+   "source": "GEN 1:6",
+   "words": [
+    "expanse"
+   ],
+   "evidence": [
+    {
+     "ref": "HEB 11:3",
+     "form": "di worl mek"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "superseded",
+   "note": "Source verse in \"source\"; references are the NT models. GEN 1 draft: see term:expanse."
+  },
+  {
+   "id": "gap:formless_void",
+   "kind": "gap",
+   "value": "\"formless and void\" (תֹהוּ וָבֹהוּ, GEN 1:2): no model; render as a description (it had no shape, nothing was on it), in the corpus's explicit style.",
+   "source": "GEN 1:2",
+   "words": [
+    "formless",
+    "void"
+   ],
+   "evidence": [],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "superseded",
+   "note": "Source verse in \"source\"; references are the NT models. GEN 1 draft: see formula:formless_void."
+  },
+  {
+   "id": "gap:kinds",
+   "kind": "gap",
+   "value": "\"according to their kinds\" (לְמִינֵהוּ, GEN 1:11–25): kaina (kind, sort) is attested; \"difrant difrant\" (each different) is the corpus's model for different kinds of seed (1CO 15:38).",
+   "source": "GEN 1:11",
+   "words": [
+    "kind",
+    "kinds"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 15:38",
+     "form": "difrant difrant siid"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "superseded",
+   "note": "Source verse in \"source\"; references are the NT models. GEN 1 draft: see formula:according_to_kind."
+  },
+  {
+   "id": "gap:be_fruitful",
+   "kind": "gap",
+   "value": "\"Be fruitful and multiply\" (פְּרוּ וּרְבוּ): no NT model; the closest is HEB 6:14's promise of \"pikni pan tap a pikni\". Propose \"av nof nof pikni\" (have many children).",
+   "source": "GEN 1:28",
+   "words": [
+    "fruitful",
+    "multiply"
+   ],
+   "evidence": [
+    {
+     "ref": "HEB 6:14",
+     "form": "pikni pan tap a"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "superseded",
+   "note": "Source verse in \"source\"; references are the NT models. GEN 1 draft: see formula:be_fruitful."
+  },
+  {
+   "id": "gap:creeping_things",
+   "kind": "gap",
+   "value": "creeping things (רֶמֶשׂ): ROM 1:23 has \"animal we kraal\" (animals that crawl).",
+   "source": "GEN 1:24",
+   "words": [
+    "creeping",
+    "crawls"
+   ],
+   "evidence": [
+    {
+     "ref": "ROM 1:23",
+     "form": "animal we kraal"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "superseded",
+   "note": "Source verse in \"source\"; references are the NT models. GEN 1 draft: see term:creeping_things."
+  },
+  {
+   "id": "gap:sea_creatures",
+   "kind": "gap",
+   "value": "great sea creatures (תַּנִּינִם, GEN 1:21): no model; fish is fish, big = big big. Propose \"big big fish ar animal iina di sii\".",
+   "source": "GEN 1:21",
+   "words": [
+    "creatures"
+   ],
+   "evidence": [],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "superseded",
+   "note": "Source verse in \"source\"; references are the NT models. GEN 1 draft: see term:sea_creatures."
+  },
+  {
+   "id": "gap:livestock",
+   "kind": "gap",
+   "value": "livestock (בְּהֵמָה): the NT has animal, kou (cattle), shiip; no word for livestock as a class. Propose \"animal dem we piipl kip\" (by description).",
+   "source": "GEN 1:24",
+   "words": [
+    "livestock"
+   ],
+   "evidence": [],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "superseded",
+   "note": "Source verse in \"source\"; references are the NT models. GEN 1 draft: see term:livestock."
+  },
+  {
+   "id": "gap:image_likeness",
+   "kind": "gap",
+   "value": "\"in our image, after our likeness\" (בְּצַלְמֵנוּ כִּדְמוּתֵנוּ): the corpus paraphrases: Gad mek man fi bi laik im (1CO 11:7), \"fi tan laik imself\" (JAS 3:9). No noun for image.",
+   "source": "GEN 1:26",
+   "words": [
+    "image",
+    "likeness"
+   ],
+   "evidence": [
+    {
+     "ref": "JAS 3:9",
+     "form": "fi tan laik imself"
+    },
+    {
+     "ref": "1CO 11:7",
+     "form": "fi bi laik im"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "superseded",
+   "note": "Source verse in \"source\"; references are the NT models. GEN 1 draft: see formula:image_likeness."
+  },
+  {
+   "id": "gap:cubit",
+   "kind": "gap",
+   "value": "cubits: REV 21:17 converts 144 cubits to feet (\"216 fut ai\"). Decide whether OT measures are converted (ark, tabernacle) or kept with an explanation.",
+   "source": "GEN 6:15",
+   "words": [
+    "cubit",
+    "cubits"
+   ],
+   "evidence": [
+    {
+     "ref": "REV 21:17",
+     "form": "216 fut ai"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Source verse in \"source\"; references are the NT models."
+  },
+  {
+   "id": "gap:birthright",
+   "kind": "gap",
+   "value": "birthright (בְּכֹרָה): HEB 12:16 spells it out as all that Esau would get as his father's first son. Use a description, not a noun.",
+   "source": "GEN 25:31",
+   "words": [
+    "birthright"
+   ],
+   "evidence": [
+    {
+     "ref": "HEB 12:16",
+     "form": "fos bwai pikni"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Source verse in \"source\"; references are the NT models."
+  },
+  {
+   "id": "gap:tithe",
+   "kind": "gap",
+   "value": "a tenth / tithe (מַעֲשֵׂר): HEB 7:4 \"wan outa evri ten sitn\".",
+   "source": "GEN 14:20",
+   "words": [
+    "tenth",
+    "tithe"
+   ],
+   "evidence": [
+    {
+     "ref": "HEB 7:4",
+     "form": "wan outa evri ten"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Source verse in \"source\"; references are the NT models."
+  },
+  {
+   "id": "gap:concubine",
+   "kind": "gap",
+   "value": "concubine (פִּילֶגֶשׁ): no NT word. Propose a description (a second wife / a woman he lived with who was not his wife); team to decide.",
+   "source": "GEN 22:24",
+   "words": [
+    "concubine"
+   ],
+   "evidence": [],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Source verse in \"source\"; references are the NT models."
+  },
+  {
+   "id": "gap:tent",
+   "kind": "gap",
+   "value": "tent (אֹהֶל): the NT's tent verses (2CO 5:1, 2PE 1:13) are metaphors rendered as ous/badi; no model for a nomad's tent. Propose \"tent\" (English loan, check with the team).",
+   "source": "GEN 4:20",
+   "words": [
+    "tent",
+    "tents"
+   ],
+   "evidence": [],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Source verse in \"source\"; references are the NT models."
+  },
+  {
+   "id": "gap:sojourn",
+   "kind": "gap",
+   "value": "sojourn / live as a foreigner (גּוּר): ACT 7:6 \"liv laik chrienja iina wan konchri we a no fi dem\".",
+   "source": "GEN 12:10",
+   "words": [
+    "sojourn",
+    "sojourned",
+    "foreigner"
+   ],
+   "evidence": [
+    {
+     "ref": "ACT 7:6",
+     "form": "liv laik chrienja"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Source verse in \"source\"; references are the NT models."
+  },
+  {
+   "id": "gap:herds_flocks",
+   "kind": "gap",
+   "value": "flocks and herds (צֹאן וּבָקָר): shiip (sheep) and kou (cattle) exist; \"flock\" as a word does not (shiip 4 of 7). Render as \"shiip an guot\" / \"kou\" by the Hebrew.",
+   "source": "GEN 12:16",
+   "words": [
+    "flocks",
+    "herds"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 25:32",
+     "form": "guot"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Source verse in \"source\"; references are the NT models."
+  },
+  {
+   "id": "gap:hittites_etc",
+   "kind": "gap",
+   "value": "peoples of Canaan (Hittites, Hivites, Perizzites, Jebusites: derived report ×48, ×25, ×23): no NT models. Build by the name rule as \"di Hitait piipl\" etc.; the team decides the spelling (h is not written: Itait?).",
+   "source": "GEN 15:20",
+   "words": [
+    "hittites",
+    "hivites",
+    "perizzites"
+   ],
+   "evidence": [],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Source verse in \"source\"; references are the NT models."
+  },
+  {
+   "id": "gap:weights_colours",
+   "kind": "gap",
+   "value": "weight (מִשְׁקָל ×49), blue (תְּכֵלֶת ×49), pomegranates (×32), wheels (×35), basin (×23), cart (×25), twisted (×21), fortified (×36): frequent OT words the NT hardly has (derived report). None is needed for Genesis 1–11; fill them as terms when the drafts meet them.",
+   "source": "EXO 25:4",
+   "words": [
+    "blue",
+    "pomegranates",
+    "basin",
+    "cart"
+   ],
+   "evidence": [],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Source verse in \"source\"; references are the NT models."
+  },
+  {
+   "id": "gap:ark",
+   "kind": "gap",
+   "value": "Noah's ark: the corpus has both aak (LUK 17:27, MAT 24:38) and \"big buot\" (HEB 11:7, 1PE 3:20). Proposed: aak, explained once as a big buot in GEN 6:14.",
+   "source": "GEN 6:14",
+   "words": [
+    "ark"
+   ],
+   "evidence": [
+    {
+     "ref": "LUK 17:27",
+     "form": "di aak"
+    },
+    {
+     "ref": "HEB 11:7",
+     "form": "wan big buot"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-16",
+   "status": "open",
+   "note": "Source verse in \"source\"; references are the NT models."
+  },
+  {
+   "id": "gap:bring_forth",
+   "kind": "gap",
+   "value": "'bring forth' (הוֹצִיא of the earth, GEN 1:12, 24): no corpus model ('bring out', 'bring fuot' 0 hits). Used 'Mek di ort bier griin tingz' for plants and 'Mek … kom out a di ort' for animals.",
+   "source": "GEN 1:11",
+   "words": [
+    "bring forth",
+    "produced",
+    "produce"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 1:24",
+     "form": "kom out a di"
+    }
+   ],
+   "confidence": "low",
+   "method": "project-decision",
+   "by": "agent:gen001",
+   "date": "2026-10-16",
+   "status": "open"
+  }
+ ]
+}

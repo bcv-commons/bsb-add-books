@@ -17,7 +17,7 @@ Usage: python3 scripts/memory_prompt.py <project> [--init] [--no-derived] [--out
 import datetime, glob, os, sys, subprocess
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-EXAMPLE = "kvg/kvg_BSB"      # a finished memory shown as a worked example, where this working copy has it
+EXAMPLES = ("kvg/kvg_BSB", "jam/jam_BSB")   # finished memories shown as a worked example, the first this working copy has
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from project import project, edition, project_dir, project_rel  # noqa: E402
 import modes, quotes  # noqa: E402
@@ -138,11 +138,12 @@ def main():
             "about the language before the corpus was studied, each item checked against the corpus (confirmed, weak, "
             "not found, ABSENT). Correct the file where the corpus contradicts it (change the item, add `source: corpus` "
             "and the evidence), and don't carry an unconfirmed prior into the store.")
+    example = next((e for e in EXAMPLES if e != pname and os.path.isdir(os.path.join(ROOT, "export", e, "wiki"))), None)
     out = text.format(
         store_dir=store_dir, wiki_dir=wiki_dir, derived_lines=derived_lines,
-        example_line=("" if pname == EXAMPLE or not os.path.isdir(os.path.join(ROOT, "export", EXAMPLE, "wiki")) else
+        example_line=("" if not example else
                       " A worked example of a finished memory, for its form only: "
-                      f"`export/{EXAMPLE}/wiki/` and `export/{EXAMPLE}/profile/` (a different language; take nothing "
+                      f"`export/{example}/wiki/` and `export/{example}/profile/` (a different language; take nothing "
                       "from its content)."),
         wiki_check=("" if "--store-only" in sys.argv else
                     f" and `python3 scripts/wiki.py sync {pname}`, then `python3 scripts/wiki.py lint {pname}`; add one line to `wiki/log.md`"),

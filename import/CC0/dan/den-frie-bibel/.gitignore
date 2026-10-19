@@ -1,0 +1,3 @@
+# The synced text is fetched by sync_from_upstream.py (README.md), not kept in git
+text/
+sfm/

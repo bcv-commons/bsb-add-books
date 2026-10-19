@@ -1,0 +1,101 @@
+!!<Modenhed: Udkast>!!
+!!<Oversættelse: Maskinudkast fra grundteksten (orig/heb/gen047.txt), sammenholdt med Berean Standard Bible>!!
+!!<Eksegetisk bearbejdning: Endnu ikke sket>!!
+!!<Litterært tjek: Endnu ikke sket>!!
+!!<Dato for denne version: 09.10.2026>!!
+
+===1 Mosebog, kapitel 47===
+
+
+==Josefs brødre får lov at bo i Goshen==
+
+v1 Josef gik ind og fortalte det til Farao. Han sagde: >>Min far og mine brødre er kommet fra
+Kana'ans land med deres småkvæg og hornkvæg og alt hvad de ejer, og nu er de i Goshens land.<< v2
+Han havde taget fem mænd blandt sine brødre med, og dem stillede han frem for Farao.
+
+v3 Farao spurgte hans brødre: >>Hvad er jeres erhverv?<< De svarede Farao: >>Dine tjenere er hyrder,
+både vi og vores fædre.<< v4 Og de sagde til Farao: >>Vi er kommet for at bo som fremmede i landet,
+for der er ingen græsgang til dine tjeneres småkvæg, fordi hungersnøden er hård i Kana'ans land. Lad
+nu dine tjenere bo i Goshens land.<<
+
+v5 Farao sagde til Josef: >>Din far og dine brødre er kommet til dig. v6 Egyptens land ligger åbent
+foran dig. Lad din far og dine brødre bo i den bedste del af landet; lad dem bo i Goshens land. Og
+hvis du ved at der er dygtige mænd iblandt dem, så sæt dem til at have opsyn med mit kvæg.<<
+
+==Jakob står foran Farao==
+
+v7 Josef førte sin far Jakob ind og stillede ham frem for Farao, og Jakob velsignede Farao.{E: Det
+er den gamle fremmede hyrde der velsigner Egyptens konge, ikke omvendt. Verbet *bērēk* kan også
+bruges om en hilsen ved ankomst og afsked (jf. v. 10), men i 1 Mosebog peger ordet tilbage på løftet
+om at alle jordens slægter skal velsignes i Abrahams slægt (12,3). Jf. Hebr 7,7: >>det er den
+ringere som velsignes af den større<<.} v8 Farao spurgte Jakob: >>Hvor gammel er du?<<{T: Ordret:
+>>Hvor mange er dagene i dine leveår?<<} v9 Jakob svarede Farao: >>Min udlændigheds år er 130 år.{T:
+Ordret: >>dagene i min udlændigheds år<< (*mᵊgûray*, af *gûr* >>bo som fremmed<<), og igen i
+slutningen af verset om fædrene. Jakob kalder hele sit liv et ophold som fremmed, jf. 17,8; 28,4 og
+Hebr 11,9.13.} Få og onde har mine leveår været, og de har ikke nået op på mine fædres leveår i
+deres udlændigheds dage.<< v10 Så velsignede Jakob Farao og gik bort fra Farao.
+
+v11 Josef lod sin far og sine brødre bosætte sig, og han gav dem ejendom i Egyptens land, i den
+bedste del af landet, i Ramses' land,{T: Det hebraiske navn er *raʕmᵊsēs*, som byen i 2 Mos 1,11;
+12,37. Her er navnet brugt om egnen omkring Goshen.} sådan som Farao havde befalet. v12 Josef
+forsørgede sin far og sine brødre og hele sin fars hus med brød, efter hvor mange børn der var.{T:
+Ordret: >>efter de små børn<<, dvs. efter hvor mange munde der skulle mættes.}
+
+==Josefs forvaltning i hungersnøden==
+
+v13 Der var intet brød i hele landet, for hungersnøden var meget hård, og Egyptens land og Kana'ans
+land var udmattede af hungersnøden. v14 Josef samlede alle de penge der fandtes i Egyptens land og i
+Kana'ans land, betalingen for det korn som de købte, og Josef bragte pengene ind i Faraos hus.
+
+v15 Da pengene var sluppet op i Egyptens land og i Kana'ans land, kom alle egypterne til Josef og
+sagde: >>Giv os brød! Hvorfor skal vi dø for øjnene af dig? For pengene er sluppet op.<< v16 Josef
+sagde: >>Kom med jeres kvæg, så vil jeg give jer brød for jeres kvæg, hvis pengene er sluppet op.<<
+v17 Så kom de med deres kvæg til Josef, og Josef gav dem brød for hestene, for småkvæget og
+hornkvæget og for æslerne. Han holdt liv i dem med brød for alt deres kvæg i det år.
+
+v18 Da det år var omme, kom de til ham året efter og sagde til ham: >>Vi vil ikke skjule for min
+herre at pengene er sluppet op, og kvægflokkene er gået over til min herre. Der er intet tilbage for
+min herre uden vores kroppe og vores agerjord. v19 Hvorfor skal vi omkomme for øjnene af dig, både
+vi og vores agerjord? Køb os og vores agerjord for brød, så skal vi og vores agerjord være trælle
+for Farao. Giv os såsæd, så vi kan leve og ikke dø, og agerjorden ikke bliver øde.<<
+
+v20 Så købte Josef hele Egyptens agerjord til Farao, for egypterne solgte hver sin mark, fordi
+hungersnøden var hård for dem. Sådan blev landet Faraos. v21 Og folket flyttede han til byerne{T:
+Sådan den hebraiske grundtekst. Den samaritanske tekst og LXX har >>og folket gjorde han til
+trælle<<. På hebraisk adskiller de to læsninger sig kun ved få bogstaver; jf. >>trælle<< i v. 19 og
+25.} fra den ene ende af Egyptens område til den anden. v22 Kun præsternes agerjord købte han ikke,
+for præsterne havde en fast tildeling fra Farao,{E: Egyptiske kilder kender store templer med egne
+jorder og indtægter, og at præsterne havde privilegier er velbelagt. Den græske historieskriver
+Herodot (2,168) nævner at præsterne havde skattefri jord; hvor langt det kan bruges til at datere
+eller belyse vores tekst, er usikkert.} og de levede af den tildeling som Farao havde givet dem.
+Derfor solgte de ikke deres agerjord.
+
+v23 Josef sagde til folket: >>Nu har jeg i dag købt jer og jeres agerjord til Farao. Her er såsæd
+til jer, så I kan tilså agerjorden. v24 Når høsten kommer, skal I give en femtedel til Farao, og de
+fire dele skal være jeres, til såsæd for marken og til føde for jer og for dem der er i jeres huse,
+og til føde for jeres små børn.<< v25 De svarede: >>Du har holdt os i live! Lad os finde nåde for
+min herres øjne, så vil vi være Faraos trælle.<<{E: Fortællingen ser Josefs forvaltning med
+egypternes egne øjne: de takker ham for at have reddet deres liv. En afgift på en femtedel af høsten
+var ikke usædvanlig i oldtiden. Men der er forsigtigt en ironi i at ordene >>trælle for Farao<<
+senere bliver Israels egen skæbne (2 Mos 1,11-14).} v26 Josef gjorde det til en lov{T: *ḥōq* >>lov,
+fast ordning<< er samme ord som præsternes >>faste tildeling<< i v. 22.} der gælder for Egyptens
+agerjord den dag i dag: Farao skal have femtedelen. Kun præsternes agerjord blev ikke Faraos.
+
+==Jakob vil begraves hos sine fædre==
+
+v27 Israel boede i Egyptens land, i Goshens land. De fik ejendom dér, og de blev frugtbare og blev
+meget mange.{T: Ordene fra velsignelsen i 1,28; 9,1; 35,11. Det samme siges om Israels efterkommere
+i 2 Mos 1,7.} v28 Jakob levede 17 år i Egyptens land, og Jakobs dage, hans leveår, blev i alt 147
+år.
+
+v29 Da tiden nærmede sig at Israel skulle dø, kaldte han på sin søn Josef og sagde til ham: >>Hvis
+jeg har fundet nåde for dine øjne, så læg din hånd under min lænd{T: Ordret: >>under mit lår<<
+(*yārēk*). Samme edsgestus som i 24,2.9.} og vis mig trofasthed og troskab:{N: nåde} Begrav mig ikke
+i Egypten! v30 Når jeg har lagt mig til hvile hos mine fædre,{T: Ordret: >>når jeg ligger med mine
+fædre<<, en omskrivning af døden, i lighed med >>samlet til sine fædre<< (25,8; 35,29).} så før mig
+bort fra Egypten og begrav mig i deres grav.<< Josef svarede: >>Jeg vil gøre som du siger.<< v31 Men
+han sagde: >>Sværg mig det!<< Og han svor ham det. Så bøjede Israel sig over sengens hovedende.{T:
+Sådan den hebraiske grundtekst: *hammiṭṭāh* >>sengen<<. De samme konsonanter kan læses *hammaṭṭæh*
+>>staven<<, og sådan har LXX læst: >>Israel tilbad over spidsen på sin stav<<. Det er LXX's ordlyd
+der citeres i Hebr 11,21. Verbet *hištaḥăwāh* kan betyde både >>bøje sig<< og >>tilbede<<.}{H: Hebr
+11,21.}

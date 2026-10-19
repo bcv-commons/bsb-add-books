@@ -1,0 +1,5 @@
+project dan/dan_BSB, model eflomal, corpus 17238 verses
+eng: 17162 verse pairs, 10071 source words
+hbo: 11210 verse pairs, 5586 source words
+  names: the top rendering of a Hebrew name is the edition's name in 693 of 1005
+grc: 6019 verse pairs, 7954 source words

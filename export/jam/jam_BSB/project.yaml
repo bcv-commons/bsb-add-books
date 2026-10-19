@@ -1,0 +1,23 @@
+# Written by scripts/onboard.py; fields: docs/configuration.md. Everything in export/ is CC0 (export/README.md).
+# Books planned at onboarding: gen; first chapter: gen 1
+
+language: jam
+language_name: Jamaican Creole English
+school_language: English      # the wiki, the store's notes and the analysis are in it
+familiarity: partial
+
+close_to: English               # the standard language the agents must not fall back on
+
+based_on: null
+style_from: [jambswn-et]
+
+# Books a non-free edition has are drafted in quarantine (scripts/quarantine.py writes this list).
+quarantine: []
+do_not_open: [download/, scratch/, export/jam/jam_BSB/_eval/local/]   # _eval/local/: the probes, local only
+
+quotes: "“”"                      # opening + closing quote marks (read from the corpus)
+chapter_word: Chapter
+# book_titles: {gen: …}   # titles for books the editions don't have; the others come from the edition
+
+rules:
+  - "**Divine names:** (decide with the team: YHWH, Adonai YHWH, Elohim, El Shaddai)"

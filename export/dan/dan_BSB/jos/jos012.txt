@@ -1,0 +1,50 @@
+!!<Modenhed: Udkast>!!
+!!<Oversættelse: Maskinudkast fra grundteksten (orig/heb/jos012.txt), sammenholdt med Berean Standard Bible>!!
+!!<Eksegetisk bearbejdning: Endnu ikke sket>!!
+!!<Litterært tjek: Endnu ikke sket>!!
+!!<Dato for denne version: 17.08.2026>!!
+
+===Josvabogen, kapitel 12===
+
+
+==Kongerne der blev besejret øst for Jordan==
+
+v1 Dette er de konger i landet som israelitterne slog, og hvis land de tog i besiddelse øst for
+Jordan,{T: Ordret: >>hinsides Jordan, mod solens opgang<<.}{E: Kapitlet afslutter
+erobringsberetningen (kap. 1-12) med to lister: kongerne øst for Jordan, besejret under Moses
+(v. 1-6), og kongerne vest for Jordan, besejret under Josva (v. 7-24).} fra Arnondalen til
+Hermonbjerget, med hele Araba-sletten mod øst: v2 Sihon, amoritternes konge, som boede i Heshbon.
+Han herskede fra Aro'er ved kanten af Arnondalen og fra midten af dalen op til Jabbokfloden{T:
+Ordret: >>Jabbok, dalen<<.} – ammonitternes grænse – det vil sige halvdelen af Gilead, v3 samt
+Araba-sletten øst for Kinneretsøen{T: Dvs. Genesaret Sø.} og til Arabahavet, Salthavet,{T: Dvs. Det
+Døde Hav.} østpå ad vejen til Bet-Jeshimot og mod syd neden for Pisgas skråninger. v4 Og Og, kongen
+af Bashan,{T: Med LXX. Hebraisk: >>og Ogs område, kongen af Bashan<<.} en af de sidste refaitter,
+som boede i Ashtarot og Edre'i. v5 Han herskede over Hermonbjerget, Salka og hele Bashan til
+geshuritternes og ma'akatitternes grænse, og over halvdelen af Gilead til grænsen mod Sihon, kongen
+i Heshbon. v6 HERRENS tjener Moses og israelitterne havde slået dem,{E: Vers 2-6 sammenfatter
+4 Mos 21,21-35 og 5 Mos 2,26-3,17; jf. den fuldere grænsebeskrivelse i Jos 13,8-12.}{H: 4 Mos
+21,21-35. 5 Mos 3,8-11. Jos 13,8-12} og HERRENS tjener Moses havde givet deres land i eje til
+rubenitterne, gaditterne og halvdelen af Manasses stamme.
+
+==Kongerne der blev besejret vest for Jordan==
+
+v7 Og dette er de konger i landet som Josva og israelitterne besejrede vest for Jordan, fra
+Ba'al-Gad i Libanondalen til Halakbjerget, der hæver sig mod Se'ir. Josva gav deres land i eje til
+Israels stammer efter deres afdelinger, v8 i bjerglandet, i lavlandet, på Araba-sletten, på
+skråningerne, i ørkenen og i Negev – hittitternes, amoritternes, kana'anæernes, perizzitternes,
+hivvitternes og jebusitternes land:
+
+v9 Kongen i Jeriko, én;{E: Hvert navn følges af *ʾeḥāḏ* >>én<<, som i en optællingsliste;
+sammentællingen står i v. 24. Formen ligner et administrativt dokument.} kongen i Aj ved Betel, én;
+v10 kongen i Jerusalem, én; kongen i Hebron, én; v11 kongen i Jarmut, én; kongen i Lakish, én;
+v12 kongen i Eglon, én; kongen i Gezer, én; v13 kongen i Debir, én; kongen i Geder, én; v14 kongen i
+Horma, én; kongen i Arad, én; v15 kongen i Libna, én; kongen i Adullam, én; v16 kongen i Makkeda,
+én; kongen i Betel, én; v17 kongen i Tappua, én; kongen i Hefer, én; v18 kongen i Afek, én; kongen i
+Lasharon,{T: Eller >>i Sharon<<; LXX læser >>kongen i Afek i Sharon<<.} én; v19 kongen i Madon, én;
+kongen i Hasor, én; v20 kongen i Shimron-Meron, én; kongen i Akshaf, én; v21 kongen i Ta'anak, én;
+kongen i Megiddo, én; v22 kongen i Kedesh, én; kongen i Jokneam ved Karmel, én; v23 kongen i Dor i
+Nafat-Dor,{T: Eller >>i Dors højland<<, jf. 11,2.} én; kongen i Gojim i Gilgal,{T: Hebraisk; LXX:
+>>i Galilæa<<.} én; v24 kongen i Tirsa, én. I alt 31 konger.{E: Flere af kongerne (Geder, Horma,
+Arad, Adullam, Tappua, Hefer, Afek, Ta'anak, Megiddo, Jokneam, Dor, Tirsa) nævnes ikke i
+beretningerne i kap. 6-11; listen er altså mere fuldstændig end fortællingen. Ifølge Dom 1,27
+forblev bl.a. Megiddo, Ta'anak og Dor på kana'anæernes hænder.}
