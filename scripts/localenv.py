@@ -1,7 +1,7 @@
 """Personal keys: from the environment, else from .env in the working copy (git-ignored).
 
-Only the names in FROM_ENV_FILE are read from .env. The environment wins when both are set. A key is returned to the caller that makes the request, and never
-printed, logged or written anywhere by these scripts.
+Only the names in FROM_ENV_FILE are read from .env. The environment wins when both are set. A key is returned to the
+caller that makes the request, and never printed, logged or written anywhere by these scripts.
 
     DBT_API_KEY=...          the Digital Bible Platform (scripts/fetch_edition.py)
     DBT_API_BASE_URL=...     its address, if not https://4.dbt.io/api (not a secret; read the same way)
