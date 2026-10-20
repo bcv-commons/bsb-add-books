@@ -21,7 +21,7 @@ fields, evidence; the wiki section at the end) and `scripts/wiki.py` (page forma
 - The style corpus, {corpus}: {corpus_dirs}. Search it with `python3 scripts/concord.py {project} <cmd>`
   (`eng`, `{lang}`, `forms`, `like`, `lex`, `gloss`; read its docstring); count with Python
   (`collections.Counter`) over the files where a figure helps.
-- The alignment lexicons in `export/{project}/_learn/` (`lexicon_eng.tsv`, `lexicon_grc.tsv`; built by
+- The alignment lexicons in `{project_dir}/_learn/` (`lexicon_eng.tsv`, `lexicon_grc.tsv`; built by
   `scripts/align.py`): how English and Greek words are rendered, with counts.
 {derived_lines}
 {drafts_line}

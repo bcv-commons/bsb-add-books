@@ -147,7 +147,8 @@ def main():
                       "from its content)."),
         wiki_check=("" if "--store-only" in sys.argv else
                     f" and `python3 scripts/wiki.py sync {pname}`, then `python3 scripts/wiki.py lint {pname}`; add one line to `wiki/log.md`"),
-        root=ROOT, project=pname, language_name=p.get("language_name"), school_language=modes.school_language(p),
+        root=ROOT, project=pname, project_dir=project_rel(pname), language_name=p.get("language_name"),
+        school_language=modes.school_language(p),
         language_rule=(f"Write the wiki and the store's notes in **{modes.school_language(p)}**."
                        if modes.school_language(p).split(" (")[0] == label else
                        f"Write the wiki and the store's notes in **{modes.school_language(p)}**: all text and analysis; "

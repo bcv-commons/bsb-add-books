@@ -2,14 +2,17 @@
 """Where a reviewer looks first: the verses where the project's draft and an independent second draft disagree most
 (plan C7). The signal is chrF between the two drafts' verses (plain tokens, marks ignored): low = disagree. In the
 study the lowest quarter by this signal found the agent's weakest verses (by chrF against the human text) with AUC
-0.64-0.69 in Kuni and Danish, an NLLB second draft as well as an in-context one (0.68 / 0.64, level by bootstrap).
+0.64-0.69 in Kuni and Danish, an NLLB second draft as well as an in-context one (0.68 / 0.64, level by bootstrap); in
+Bern German John 0.73 with NLLB, and on John 1-2 NLLB 0.65 against the in-context draft's 0.51.
 
 Second drafts are read from <project>/_eval/local/second/<name>/<code>NNN.txt (`icl` from scripts/icl_draft.py; any
-other name for a second draft from another system, e.g. `nllb` from a fine-tuned NLLB model); several are averaged. The output names verses and figures only, no text, so it may
+other name for a second draft from another system, e.g. `nllb` from a fine-tuned NLLB model). Without --second, a chapter
+uses `nllb` where the project has an NLLB draft of it, else `icl`; with --second, the named drafts are averaged. The
+output names verses and figures only, no text, so it may
 go into a review overview (--overview: a section between triage markers in <code>/<code>_review_overview.md, or the
 project's review_overview.md, replaced on a rerun).
 
-Usage: python3 scripts/triage.py <project> <code> <ch>[-<ch>|,<ch>..] [--second icl,nllb] [--share 0.25] [--overview]
+Usage: python3 scripts/triage.py <project> <code> <ch>[-<ch>|,<ch>..] [--second nllb,icl] [--share 0.25] [--overview]
 """
 import os, re, sys
 
@@ -41,12 +44,14 @@ def rows(pname, code, chs, names):
             continue
         draft = {k: t for k, t in LT.verses_of(f).items() if k[0] == ch}
         sec = {}
-        for n in names:
+        for n in (names or ("nllb", "icl")):
             sf = os.path.join(pd, "_eval", "local", "second", n, f"{code}{ch:03d}.txt")
             if os.path.exists(sf):
                 sec[n] = {(ch, v): t for (c, v), t in LT.verses_of(sf).items()}
+                if not names:            # the default: the first that exists
+                    break
         if not sec:
-            print(f"# {code} {ch}: no second draft ({', '.join(names)})", file=sys.stderr)
+            print(f"# {code} {ch}: no second draft ({', '.join(names or ('nllb', 'icl'))})", file=sys.stderr)
             continue
         used |= set(sec)
         for k in sorted(draft):
@@ -92,7 +97,7 @@ def main():
     if len(a) < 3 or a[0] in ("-h", "--help"):
         raise SystemExit(__doc__)
     pname, code, chs = a[0], a[1], chapters(a[2])
-    names = (a[a.index("--second") + 1] if "--second" in a else "icl,nllb").split(",")
+    names = a[a.index("--second") + 1].split(",") if "--second" in a else None
     share = float(a[a.index("--share") + 1]) if "--share" in a else 0.25
     rs, used = rows(pname, code, chs, names)
     if not rs:

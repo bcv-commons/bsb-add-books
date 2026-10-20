@@ -14,7 +14,7 @@ Work in {root}. You are drafting **{book_title}, chapter {chapter}** (`{code}{nn
 **Contract**, read fully first:
 {contract_lines}
 
-**STYLE MODEL, the most important part:** the chapters already drafted in `export/{project}/{code}/` ARE the style. If there are any, read IN FULL before translating:
+**STYLE MODEL, the most important part:** the chapters already drafted in `{project_dir}/{code}/` ARE the style. If there are any, read IN FULL before translating:
 - chapter 1 of this book;
 - the highest-numbered finished chapter below yours;
 - one more finished chapter of similar genre (narrative, dialogue, discourse or poetry);
@@ -45,7 +45,7 @@ Where your source repeats a phrase that an earlier chapter already rendered, reu
 {extra_rules}
 
 **Finally:**{tagged_first}
-- Run `python3 scripts/wrap_draft.py export/{project}/{code}/{code}{nnn}.{draft_ext}`{tagged_split}.{style_step}
+- Run `python3 scripts/wrap_draft.py {project_dir}/{code}/{code}{nnn}.{draft_ext}`{tagged_split}.{style_step}
 - Run `python3 scripts/check_draft.py {project} {code}` and fix every problem reported for your chapter.{numbering_note}{spell_step}{align_step}
 
 Write only your chapter's files. Report in under 150 words: verse check, {report_items}, new name forms or fixed renderings, top open questions.

@@ -12,7 +12,7 @@ names. See docs/configuration.md for the fields.
 """
 import datetime, os, re, sys
 from books import BY_CODE
-from project import edition, project, sources, must_quarantine, missing_texts, ROOT, project_dir, project_rel
+from project import edition, project, sources, must_quarantine, missing_texts, ROOT, project_dir, project_rel, derived_dir
 import vrs
 
 NAMES = {
@@ -31,6 +31,21 @@ def verse_count(path, nt):
         if m:
             vs.add(int(m.group(2) if nt else m.group(1)))
     return len(vs)
+
+
+def sibling_projects(pname):
+    """The other folders of the project's language on every output path (export/, export/CC-NC/, local_output/): other
+    projects, test copies, machine drafts. An agent works from the corpus and its own project, never from these."""
+    parts = project_rel(pname).split("/")
+    lang = parts[2] if parts[1] == "CC-NC" else parts[1]
+    own = {project_rel(pname), os.path.relpath(derived_dir(pname), ROOT)}
+    out = []
+    for top in ("export", "export/CC-NC", "local_output"):
+        d = os.path.join(ROOT, top, lang)
+        if os.path.isdir(d):
+            out += [f"{top}/{lang}/{n}" for n in sorted(os.listdir(d))
+                    if os.path.isdir(os.path.join(d, n)) and f"{top}/{lang}/{n}" not in own]
+    return out
 
 
 def main():
@@ -94,6 +109,8 @@ def main():
             dont.append(f"`{d}/quarantined/` and any `{code}` file in `{d}/`")
             if os.path.isdir(os.path.join(ROOT, d, "source")):
                 dont.append(f"`{d}/source/` (the edition's original files)")
+    closed = tuple(d.rstrip("/") + "/" for d in p.get("do_not_open") or [])
+    dont += [f"`{d}/`" for d in sibling_projects(pname) if not (d + "/").startswith(closed)]
     do_not_open = "; ".join(dont) or "-"
 
     # the contract: the project's and the book's style guides and review overviews that exist
@@ -175,7 +192,7 @@ def main():
     mrules = modes.mode_rules(pname, p, modes.have_tools(pname))
     style_check = modes.mode(p)["style_check"]
     fields = dict(
-        root=ROOT, project=pname, code=code, nnn=nnn, chapter=chapter, date=date,
+        root=ROOT, project=pname, project_dir=project_rel(pname), code=code, nnn=nnn, chapter=chapter, date=date,
         book_title=book_title, footnotes_rule=footnotes_rule, header_rule=header_rule, notes_rule=notes_rule,
         footnotes_files=" and `_footnotes.txt`" if footnotes else "", style_model_fallback=style_model_fallback,
         report_items=p.get("report_items") or ("footnotes created" if footnotes else "notes written"),
