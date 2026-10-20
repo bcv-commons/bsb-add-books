@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""Where a reviewer looks first: the verses where the project's draft and an independent second draft disagree most
-(plan C7). The signal is chrF between the two drafts' verses (plain tokens, marks ignored): low = disagree. In the
-study the lowest quarter by this signal found the agent's weakest verses (by chrF against the human text) with AUC
-0.64-0.69 in Kuni and Danish, an NLLB second draft as well as an in-context one (0.68 / 0.64, level by bootstrap); in
-Bern German John 0.73 with NLLB, and on John 1-2 NLLB 0.65 against the in-context draft's 0.51.
+"""Where a reviewer looks first: the verses where the project's draft and an independent second draft disagree most.
+The signal is chrF between the two drafts' verses (plain tokens, marks ignored): low = disagree. Tested against a held-out
+human text, the lowest quarter by this signal finds the agent's weaker verses better than chance (AUC about 0.65-0.7),
+with an NLLB second draft as well as an in-context one.
 
 Second drafts are read from <project>/_eval/local/second/<name>/<code>NNN.txt (`icl` from scripts/icl_draft.py; any
 other name for a second draft from another system, e.g. `nllb` from a fine-tuned NLLB model). Without --second, a chapter

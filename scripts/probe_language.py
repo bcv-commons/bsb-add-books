@@ -9,7 +9,7 @@ no files; their scores set `familiarity` (scripts/modes.py, docs/onboarding.md, 
   python3 scripts/probe_language.py <project> tell --write-answer WRITE.txt [--n 24] > prompt.md
       tell apart: pairs of a corpus verse and an altered copy; which one is the published text? Three kinds of
       alteration, a third each: the model's own slips (forms of its write answer that the corpus never has, put in
-      place of the corpus form they stand for: Bernese *öich* -> *euch*), a word ending (another corpus form of the
+      place of the corpus form they stand for: the standard language's spelling for the variety's), a word ending (another corpus form of the
       same stem), and two neighbouring words swapped. Chance is 50%.
   python3 scripts/probe_language.py <project> run [--route api|claude-code] [--model M]
       all three, each sent to a fresh model with no tools: through the API when ANTHROPIC_API_KEY is set (environment or .env) (billed per
@@ -133,7 +133,7 @@ def corpus_vocab(P):
 
 def find_slips(P, write_ans, vocab):
     """[(corpus form, the model's form)]: words of the write answer that the corpus never has, paired with the corpus
-    word they stand for in the same verse (1:1 in the aligned word sequences, or a near spelling: Kuni Tloas ~ Troas)."""
+    word they stand for in the same verse (1:1 in the aligned word sequences, or a near spelling of a name: Tloas ~ Troas)."""
     slips = []
     ref = {r[0]: r for r in sample(P, 16)}
     for key, text in write_ans.items():
@@ -335,7 +335,7 @@ def suggest(res):
     return "partial", f"the model understands it but writes it with slips (write {w['chrf_by_verse'] if w else '?'} by verse{seen})"
 
 
-KNOWN_BY_VERSE = 58.0     # Danish 64.4, Bern German 48.2
+KNOWN_BY_VERSE = 58.0     # Danish 64.4, Jamaican 47.9
 
 
 # ---------- running them: the API (ANTHROPIC_API_KEY) or Claude Code (claude -p, no tools) ----------

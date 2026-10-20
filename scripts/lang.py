@@ -15,7 +15,7 @@ Tables:
     python3 scripts/lang.py build <project> [--links FILE]
     python3 scripts/lang.py hbo <project> <lexeme> [--verses N]   via the LXX bridge (e.g. 2617 or H2617)
     python3 scripts/lang.py grc <project> <strong> [--verses N]   a Greek lemma by Strong's number (e.g. 1656)
-    python3 scripts/lang.py derive <project>                     the derived products (plan 14.2): d_* tables
+    python3 scripts/lang.py derive <project>                     the derived products: d_* tables
     python3 scripts/lang.py report <project>                     their summary
     python3 scripts/lang.py stats <project>
 The listings show the edition's words for the agents' and the team's own use; what goes into the store or the wiki
@@ -114,9 +114,7 @@ def lexeme_aligner_links(con, P, layer):
     token positions only) decoded onto our NT tokens -> [(book, ch, v, pos, MACULA key, 'lexeme-aligner')].
     Their positions count the words of the layer's source text (its tokenizer: runs of letters and marks) in that
     text's verses; our copy may be newer, so words are matched verse by verse and a word our copy lacks is left out.
-    Kuni (kvg_wbt): 71,843 tokens linked, together with ours 58% of the NT (ours alone 46%), the same Greek key on 64% of
-    the tokens both link; the NT bridge's hits 41% -> 46% of content words (plan, section 26). Only the helloAO provider
-    is read for now (the source of most layers)."""
+    Only the helloAO provider is read for now (the source of most layers)."""
     import difflib, json, unicodedata, urllib.request
     import full_align as FA
     from fetch_edition import getjson, HELLOAO, DL
@@ -176,9 +174,13 @@ def lexeme_aligner_links(con, P, layer):
             print(f"  lexeme_aligner: {b}: the source text changed since the layer was made (hash {h}); skipped")
             continue
         keys = FA.index(b, "keys")
-        for (c, v, t), s in zip(verses, json.load(open(files[b], encoding="utf-8"))):
-            mine = ours.get((b, c, v), [])
-            if not s or not mine:
+        # row i of the layer is the i-th verse of the index (_index/<BOOK>_lexemes.json), not of the source text: a
+        # verse the source lacks (or adds) would otherwise shift every later row onto the wrong verse
+        text = {(c, v): t for c, v, t in verses}
+        for ref, s in zip(FA.index(b, "lexemes"), json.load(open(files[b], encoding="utf-8"))):
+            c, v = (int(x) for x in ref.split(" ")[1].split(":"))
+            mine, t = ours.get((b, c, v), []), text.get((c, v))
+            if not s or not mine or t is None:
                 continue
             sm = difflib.SequenceMatcher(None, [fold(x) for x in FA.tokenize(t)], [m[1] for m in mine], autojunk=False)
             pmap = {}
@@ -287,10 +289,9 @@ GREEK_LATIN = dict(zip("αβγδεζηθικλμνξοπρστυφχψως", ["a
 
 def merge_fragments(rows, counts, share=0.8):
     """One real affix shows up as nested candidates (-sch, -h; gsch-, gsc-, gc-). When a candidate makes up most
-    (≥ share) of the cases of its one-letter-shorter form, that shorter form is only its tail and goes. Measured:
-    at 0.8 Kuni keeps all 20 affixes its study agents confirmed and Bern German its 7
-    known ones; dropping longer 'subset' candidates as well (-get of -et) cost Kuni -av, ge-, vø-, -gi (real affixes
-    whose one-letter tails are meaningless), so subsets stay for the agent to judge."""
+    (≥ share) of the cases of its one-letter-shorter form, that shorter form is only its tail and goes. Longer
+    'subset' candidates (-get of -et) are not dropped: that would cost real affixes whose one-letter tails are
+    meaningless, so subsets stay for the agent to judge."""
     best = {}
     for a, f, v, n, rate, lift in rows:
         best[a] = max(best.get(a, 0), lift)
@@ -430,7 +431,7 @@ def derive(pname, quiet=False):
     # word-forming affixes named in profile/priors.yaml carry no grammar: not hypotheses
     wf = priors.word_forming(pname)
     # ...unless the priors also list it as inflection, or the statistics tie it strongly to a grammatical value (lift
-    # ≥ 5): then it stays, and the priors check reports the contradiction (the model listed Bern German -i as word-forming)
+    # ≥ 5): then it stays, and the priors check reports the contradiction (the model listed an inflection ending as word-forming)
     strong = {r[0] for r in out if r[5] >= 5}
     keep = priors.inflection_affixes(pname) | strong
     out = [r for r in out if r[0] not in wf or r[0] in keep]
@@ -598,7 +599,7 @@ def derive(pname, quiet=False):
     con.executemany("insert into d_gaps values(?,?,?,?,?)", gaps)
     con.commit()
     if not quiet:
-        for t in ("d_renderings", "d_function", "d_affix", "d_order", "d_names", "d_letters", "d_formulas", "d_discourse", "d_gaps"):
+        for t in ("d_renderings", "d_function", "d_affix", "d_marks", "d_order", "d_names", "d_letters", "d_formulas", "d_discourse", "d_gaps"):
             print(f"  {t}: {con.execute(f'select count(*) from {t}').fetchone()[0]} rows")
     return con
 

@@ -1,6 +1,11 @@
 """Print the drafting prompt for one chapter, filled in from the project config.
 
 Usage: python3 scripts/make_prompt.py <project> <code> <chapter> [--date DD.MM.YYYY] [--end-align]
+       python3 scripts/make_prompt.py <project> <code> --book [<first>-<last>] [--handoff N]
+
+--book: the prompt for one book agent (docs/prompts/book_prompt.md), which drafts the chapters one after another,
+each with its own chapter prompt and scripts/chapter_check.py, and hands over to a fresh agent after N chapters
+(default 10). Without a range: from the first chapter not yet drafted to the end of the book.
 
 OT chapters are drafted tagged by default: the agent reads the clause packages (scripts/package.py, built first)
 and writes <code>NNN.tagged, from which scripts/full_align.py split makes the draft and its word alignment.
@@ -48,8 +53,51 @@ def sibling_projects(pname):
     return out
 
 
+def book(pname, code, rng):
+    """The book agent's prompt (docs/prompts/book_prompt.md)."""
+    import books
+    p = project(pname)
+    nt = BY_CODE[code][2] == "nt"
+    n = books.chapters(code) if nt else books.heb_chapters(code)
+    d = os.path.join(project_dir(pname), code)
+    done = [c for c in range(1, n + 1) if os.path.exists(os.path.join(d, f"{code}{c:03d}.txt"))]
+    if rng:
+        first, last = (int(x) for x in rng.split("-")) if "-" in rng else (int(rng), int(rng))
+    else:
+        first, last = next((c for c in range(1, n + 1) if c not in done), n + 1), n
+    if not 1 <= first <= last <= n:
+        raise SystemExit(f"{code}: chapters 1-{n}" + (", all drafted" if first > n else ""))
+    handoff = int(sys.argv[sys.argv.index("--handoff") + 1]) if "--handoff" in sys.argv else 10
+    rel = project_rel(pname)
+    state = f"{rel}/{code}/{code}_state.md"
+    before = [c for c in done if c < first]
+    resume = (f"Chapters {before[0]}-{before[-1]} are drafted already" if len(before) > 1 else
+              f"Chapter {before[0]} is drafted already" if before else "")
+    if resume:
+        resume += f": read `{state}` and the last of them, `{rel}/{code}/{code}{before[-1]:03d}.txt`, in full first."
+    materials = (f"`python3 scripts/verse_pack.py {pname} {code} N`" if nt else
+                 f"`python3 scripts/package.py {pname} {code} N` and `python3 scripts/verse_pack.py {pname} {code} N`")
+    shut = tuple(d.rstrip("/") + "/" for d in p.get("do_not_open") or [])
+    closed = [f"`{x}`" for x in p.get("do_not_open") or []]
+    closed += [f"`{d}/`" for d in sibling_projects(pname) if not (d + "/").startswith(shut)]   # as the chapter prompt
+    extra = ("\n- Never open " + ", ".join(closed) + "." if closed else "")
+    if p.get("book_rules"):                     # project.yaml: lines for the book agent only
+        extra += "".join(f"\n- {r}" for r in p["book_rules"])
+    fields = dict(root=ROOT, project=pname, code=code, book_title=BY_CODE[code][1],
+                  language_name=p.get("language_name", p.get("language")), first=first, last=last, resume=resume,
+                  state=state, materials=materials, handoff=handoff,
+                  draft_kind="the draft" if nt else "the tagged draft and its split",
+                  notes_language=p.get("notes_language", "English"), style_guide=f"{rel}/style_guide.md",
+                  extra_rules=extra)
+    template = open(os.path.join(ROOT, "docs", "prompts", "book_prompt.md"), encoding="utf-8").read()
+    print(re.sub(r"\n{3,}", "\n\n", template.split("\n---\n", 1)[1].format(**fields)).strip())
+
+
 def main():
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    if "--book" in sys.argv:
+        rest = [a for a in args[2:] if a != sys.argv[sys.argv.index("--handoff") + 1]] if "--handoff" in sys.argv else args[2:]
+        return book(args[0], args[1], rest[0] if rest else None)
     pname, code, chapter = args[0], args[1], int(args[2])
     date = sys.argv[sys.argv.index("--date") + 1] if "--date" in sys.argv else datetime.date.today().strftime("%d.%m.%Y")
     p = project(pname)

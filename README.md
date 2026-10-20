@@ -5,8 +5,8 @@ Greek**, with the **BSB** (or, for majority-text projects, the **MSB**) as the
 only assisting translation, and with existing translations in the target
 language as **style** models.
 
-`docs/workflow.md` describes the way of working, which comes from earlier drafting
-projects (Bern German and Danish) done in the same way.
+`docs/workflow.md` describes the way of working; the demo projects (Danish and Jamaican) were
+drafted with it.
 
 ## Start here: a new language
 
@@ -64,10 +64,10 @@ import/         existing translations, filed by licence (import/README.md)
   CC-BY/        CC BY editions
   CC-BY-SA/     CC BY-SA editions
   non-free/     all other editions: only edition.yaml in git, texts kept local      *
-    <language>/ ISO 639-3 code (dan), or an interim dialect id (ch-de-be)
+    <language>/ ISO 639-3 code (dan), or an interim dialect id
       <edition>/ edition.yaml + text/
 export/         our drafts, public domain (CC0, export/README.md)
-  <language>/   ISO 639-3 code (dan), or an interim dialect id (ch-de-be)
+  <language>/   ISO 639-3 code (dan), or an interim dialect id
     <lang>_BSB/ one project (project id e.g. dan/dan_BSB): project.yaml,
                 status.yaml + STATUS.md (draft status), CREDITS.md (quoted editions)
       <code>/   <code>NNN.txt, <code>NNN_notes.md, <code>NNN_footnotes.txt,
@@ -112,15 +112,16 @@ After cloning:
 2. **Editions.** Their texts aren't in git. Those with a `fetch:` recipe come with
    `python3 scripts/setup.py --only editions`; Den Frie Bibel with
    `python3 import/CC0/dan/den-frie-bibel/sync_from_upstream.py` (its pinned commit). A non-free
-   edition's text has to be obtained from its owner; `edition.yaml` says where from (the Kuni edition
-   builds from eBible: `python3 import/non-free/kvg/KVG-KuNT/build_text.py`).
+   edition's text has to be obtained from its owner, or is built by its recipe (`python3 scripts/fetch_edition.py
+   <edition>`); `edition.yaml` says where from.
 3. **Check a project:** `python3 scripts/modes.py <project>` (its mode and what it switches on) and
    `python3 scripts/check_project.py <project>` (drafts, store, wiki, quotations, status).
 4. **Draft a chapter:** `python3 scripts/verse_pack.py` and, for an OT chapter, `python3 scripts/package.py <project>
    <code> <chapter>` (the clause packages, from `orig/heb.sqlite`, which `setup.py` fetches); then
    `python3 scripts/make_prompt.py <project> <code> <chapter>` prints the prompt for a fresh agent, who writes the
    draft tagged with the Hebrew token numbers (`scripts/full_align.py split` makes the draft and its word alignment).
-   `docs/workflow.md` gives the way of working.
+   A whole book: `python3 scripts/make_prompt.py <project> <code> --book`, the prompt for one agent that drafts
+   the chapters one after another and checks each (`scripts/chapter_check.py`). `docs/workflow.md` gives the way of working.
 
 Before your first commit, once per clone: `git config core.hooksPath .githooks` (runs the double check).
 

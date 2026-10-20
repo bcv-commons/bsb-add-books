@@ -32,7 +32,7 @@ To keep that possible:
   Hugging Face layer `<edition>+draft+bsb-add-books` from them.
 
 One folder per project, by language: `export/<language>/<langID>_BSB/` (ISO 639-3 code, or an
-interim dialect id such as `ch-de-be`), with `project.yaml` (start from `_template/`) and the
+interim dialect id), with `project.yaml` (start from `_template/`) and the
 chapters in `<code>/` under it, BSB book codes (`export/dan/dan_BSB/gen/gen020.txt`). The scripts
 take the project id `dan/dan_BSB`. Drafts of chapters that a published translation already
 covers go to `quarantine/<code>/` there, which is not in git.

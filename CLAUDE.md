@@ -25,7 +25,7 @@ working; this file adds the rules that hold for any task here.
 4. **Skills** for the main tasks (in `.claude/skills/`):
    - `new-project`: set up `export/<project>/` and its style guide;
    - `import-edition`: add an existing translation to `import/`;
-   - `draft-chapter`: draft chapters, one fresh agent per chapter, and check them.
+   - `draft-chapter`: draft chapters, one book agent per book, chapter after chapter, each checked in the loop.
    - `learn-language`: prepare a language the model doesn't know (aligner, concordance, store, wiki, packs, tests).
 
 ## Decisions (binding)
@@ -42,7 +42,7 @@ working; this file adds the rules that hold for any task here.
 - **No source texts in git.** Sources come from `scripts/setup.py` at pinned versions.
 - **Imported editions are filed by licence:** `import/CC0/`, `import/CC-BY/`, `import/CC-BY-SA/` (in git) and
   `import/non-free/` (texts git-ignored, only `edition.yaml` and README in git; the default when the licence is unclear; also `import/CC-ND/` and `import/CC-NC/`, texts git-ignored likewise), then by language:
-  the ISO 639-3 code (`import/CC0/dan/`), or for a dialect an interim id (`ch-de-be`; the
+  the ISO 639-3 code (`import/CC0/dan/`), or for a dialect an interim id (the
   scheme is still open). Edition ids are unique across the folders. Details: `import/README.md`.
 - **`export/` is public domain (CC0),** like the BSB/MSB: only our own work goes there. Work derived from an edition
   (a revision, a draft with its book in view, a file in its structure) has two paths of its own: `export/CC-NC/` for
@@ -78,7 +78,7 @@ working; this file adds the rules that hold for any task here.
   BHSA's `tab`. Agents consult it as a reference work, as a translator would; the drafts are our
   own text and stay free (CC0). Never publish the BHSA files themselves, not in git, not on the site branch. Our
   drafts laid out on the BHSA layout may be shown, as **CC BY-NC 4.0** with the ETCBC credited and the licence
-  shown prominently (the website's BHSA view; decided by the user, 2026-10-14): BY-NC allows adaptations,
+  shown prominently (the website's BHSA view): BY-NC allows adaptations,
   non-commercially. Those clause lines are never stored: `scripts/build_site.py` derives them at build time from
   each draft and its `.align` on the local layout files (`scripts/clause_lines.py`), so nothing laid out on BHSA is
   in git. Everything else built on BHSA (sidecars, indexes, the levels as data) stays unpublished. Clause
@@ -87,13 +87,13 @@ working; this file adds the rules that hold for any task here.
   this repo drafts on `bcv-query` (`--drafting bcv-query`) or asks the ETCBC.
   **Its text is never copied either:** the Hebrew quoted in notes, store and wiki is the WLC (MACULA Hebrew in
   `orig/heb.sqlite`, the clause packages; public domain); `scripts/notes_hebrew.py` fills the notes' verses from it and adds
-  the credit line, and `quotes.py` reports accented Hebrew that isn't the WLC word for word (2026-10-16).
+  the credit line, and `quotes.py` reports accented Hebrew that isn't the WLC word for word.
 - **Don't use BSB text files from other converters:** older ones dropped verse markers and
   footnotes inside `\wj` (words of Jesus). Use the files `setup.py` builds.
 - **Quarantine is required for non-free text.** A book that a non-free style edition has
   (`import/non-free/`) is drafted only in quarantine: `python3 scripts/quarantine.py <project> <code>`
   moves its files out of the edition's `text/` and lists the book; `make_prompt.py` refuses otherwise.
-  A chapter the edition doesn't have needs none (Kuni Genesis 31–50 beside the edition's 1–30; `--chapter N`
+  A chapter the edition doesn't have needs none (an edition with only part of a book; `--chapter N`
   checks it); without the edition's text here, the whole-book rule holds.
   A public-domain edition never needs it; an attributable one (CC BY, CC BY-SA) only with
   `quarantine_attributable: true`. Draft with fresh agents, not forks (`docs/workflow.md`).
@@ -115,7 +115,9 @@ python3 scripts/probe_language.py <project> run | write|read|tell [--score F] # 
 python3 scripts/priors.py write|check <project>     # what the model believes about the language (profile/priors.yaml), tested against the corpus
 python3 scripts/usage.py <project> add <code><nnn> --tokens N | summary # tokens per chapter, by familiarity
 python3 scripts/memory_prompt.py <project>           # prompt for an agent that builds the store and wiki, by mode
-python3 scripts/make_prompt.py <project> <code> <ch> [--end-align] # chapter prompt for a fresh agent (OT: tagged drafting)
+python3 scripts/make_prompt.py <project> <code> <ch> [--end-align] # chapter prompt (OT: tagged drafting)
+python3 scripts/make_prompt.py <project> <code> --book [a-b] [--handoff N] # the book agent's prompt: chapters in order, handover after N
+python3 scripts/chapter_check.py <project> <code> <ch> # the checks inside the loop: to fix (format, alignment, quotes), to review (negations, names, copy)
 python3 scripts/package.py <project> <code> <ch>   # clause packages for an OT chapter (orig/heb.sqlite, the project's .align, store, NT bridge)
 python3 scripts/check_draft.py <project> [code] [--spell] # verse/format checks of drafts; spelling against the corpus, marks kept
 python3 scripts/notes_hebrew.py <project> <code> <ch> | --all | show <code> <ch>:<v> # the notes' Hebrew/Greek from the WLC/BGB, with the credit line
@@ -136,6 +138,7 @@ python3 scripts/nllb/train.py --data DIR             # train here (CUDA, Apple G
 python3 scripts/nllb/draft.py src|run|collect ...    # second drafts into _eval/local/second/nllb/ (triage), or a rough pass with --out
 python3 scripts/style.py <project> <draft> [--brief]  # style against the human translations: flags, watch items, models
 python3 scripts/language_profile.py check <dir>      # validate a language profile (docs/proposals/language-profile/)
+python3 scripts/grammar.py show <project> [morph|cell|claim] | from-tsv <tsv dir> <profile dir> # the store's grammar: morphs, paradigm cells, tested claims
 python3 scripts/wiki.py sync|lint <project>          # a project's language wiki: pages + generated store blocks
 python3 scripts/wiki.py view <project>               # one offline HTML file to read the wiki and search the store
 python3 scripts/team_input.py <project> init|list|add|prompt # the team's plain-language input (wiki/team-input.md) -> binding store entries

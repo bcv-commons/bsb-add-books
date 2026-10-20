@@ -5,10 +5,10 @@ Every tool that depends on the situation asks here (docs/onboarding.md).
 Two settings decide it:
   - `familiarity` in project.yaml (set it from scripts/probe_language.py):
       known     the model writes the language well (Danish): agents draft from their own command of it; the
-                project's memory (store, wiki) keeps decisions consistent across agents, books and waves;
-      partial   the model knows a close standard language but not this variety (Bern German, close to Standard
-                German): agents check forms against the corpus, and the memory holds the variety's forms;
-      unknown   the model can't write the language (Kuni): agents learn everything from the corpus, invent
+                project's memory (store, wiki) keeps decisions consistent across agents and books;
+      partial   the model knows a close standard language but not this variety (Jamaican, close to
+                English): agents check forms against the corpus, and the memory holds the variety's forms;
+      unknown   the model can't write the language: agents learn everything from the corpus, invent
                 nothing, and the memory holds the grammar too;
   - the licence of the style editions (from their import/ folders): public-domain, attributable, non-free.
     Non-free brings quarantine (docs/workflow.md) and the quotation rule (docs/licensing.md).
@@ -26,13 +26,13 @@ from project import project, edition, missing_texts, LICENCE_CLASS, project_dir,
 
 FAMILIARITY = ("known", "partial", "unknown")
 FEATURES = {
-    "known": {"pack": "memory", "style_check": False, "spell_check": False, "drafting": "waves",
+    "known": {"pack": "memory", "style_check": False, "spell_check": False, "drafting": "sequential",
               "summary": "drafts from the model's own command of the language; the memory keeps decisions consistent"},
-    # partial, like unknown: one chapter after another (decided by the user, 2026-10-16, Jamaican pilot): its drafts drift in
+    # partial, like unknown: one chapter after another: its drafts drift in
     # forms and spelling, and each chapter's decisions reach the next one's pack
     "partial": {"pack": "dialect", "style_check": True, "spell_check": True, "drafting": "sequential",
                 "summary": "drafts in the variety, not the standard language: forms checked against the corpus"},
-    # unknown: one chapter after another (decided by the user, 2026-10-15, Kuni Genesis 31-40): each chapter's store
+    # unknown: one chapter after another: each chapter's store
     # entries reach the next chapter's pack, which is built just in time; no waves
     "unknown": {"pack": "full", "style_check": True, "spell_check": True, "drafting": "sequential",
                 "summary": "learns the language from the corpus while drafting; invents nothing"},
@@ -121,8 +121,7 @@ def main():
              "local_output": "; derived work, returned to the rights holder, never published"}[m["output"]])
     print(f"  verse pack: {m['pack']}; style check in the prompt: {'yes' if m['style_check'] else 'no'}; "
           f"spell check: {'yes' if m['spell_check'] else 'no'}")
-    print("  drafting: " + ("sequential: one chapter after another, its pack built just in time (no waves)"
-                            if m["drafting"] == "sequential" else "waves of about ten chapters, shared terms fixed first"))
+    print("  drafting: one book agent, one chapter after another, each pack built just in time (make_prompt.py --book)")
     print(f"  memory tools present: {', '.join(sorted(have)) or 'none'}"
           + ("" if {"store", "wiki"} <= have else f" (set up: docs/onboarding.md, step 4)"))
     for e, how in missing_texts(p):

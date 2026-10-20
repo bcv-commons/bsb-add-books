@@ -387,8 +387,8 @@ def next_steps(pname, p, tracked, od, ui, banner, built, nav, lc, rows, preview)
     seq = modes.mode(p).get("drafting") == "sequential"
     todo.append(("Draft the next chapters", "<p>" + ("One chapter after another, never several at once: each chapter's "
                  "agent reads what the earlier chapters decided (names, word forms, spelling) and adds its own decisions to the "
-                 "memory, so the chapters stay consistent. Ask for the next chapter when one is done." if seq else "In waves of about ten chapters, one agent each, in "
-                 "parallel; the shared names and terms are fixed first.") + " In Claude Code:</p>"
+                 "memory, so the chapters stay consistent. One agent drafts a book, chapter by chapter, and checks each."
+                 if seq else "") + " In Claude Code:</p>"
                  + say_box(f"Draft the next chapters of {pname}" if not drafted else
                            f"Draft {BY_CODE[drafted[-1][0][:3]][1]} {int(drafted[-1][0][3:]) + 1} for {pname}")))
     todo.append(("Show it to others: the website", "<p>" + ("<strong>This is a local preview</strong> on your computer "

@@ -4,8 +4,8 @@
 export/<project>/status.yaml records the chapters that are not plain drafts:
 
   chapters:
-    rut001: {status: in-review, by: Kuni team, date: 2026-11-02, note: first reading done}
-    rut002: {status: published, by: Kuni team, date: 2026-12-01, statement: "...", sha256: "..."}
+    rut001: {status: in-review, by: the team, date: 2026-11-02, note: first reading done}
+    rut002: {status: published, by: the team, date: 2026-12-01, statement: "...", sha256: "..."}
 
   - draft       (default, not listed) written with AI agents from the Hebrew/Greek; not reviewed;
   - in-review   a team is working on it;

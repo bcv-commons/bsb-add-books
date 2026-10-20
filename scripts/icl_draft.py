@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-"""A second draft of a chapter, made in context: silnlp's LLM path, for review triage (plan C6; never an input to the agents).
+"""A second draft of a chapter, made in context: silnlp's LLM path, for review triage (never an input to the agents).
 
 Per verse: about 100 corpus verses (BSB English -> the style corpus) chosen by silnlp's greedy coverage step, the verse's
 BSB English and its open original (WLC via orig/heb.sqlite, or the BGB), in silnlp's prompt, one model call. The
-original is part of the query: in the study it removed the major errors (Bern German 1/5 -> 0/3). The drafted book is
+original is part of the query: it removes most major errors. The drafted book is
 never among the examples. The reply is read as silnlp reads it (code fence and label removed, the most target-like
 line by the corpus's character trigrams), and its XML escapes are undone (no `&gt;` in the text).
 
 The draft is shaped by the edition's wording (100 of its verses per call): it is a triage tool, local, never published.
 It goes to <project>/_eval/local/second/icl/<code>NNN.txt (vN lines, Hebrew verse numbers in the OT), with the
 model replies cached beside it, so a second run costs nothing. `scripts/triage.py` compares it with the project's
-draft. Cost (study): 14-20k input tokens a verse, a chapter in 1-3 minutes; Opus rather than Sonnet (Kuni: 71.2 / 67.1).
+draft. Cost: 14-20k input tokens a verse, a chapter in 1-3 minutes; Opus rather than Sonnet.
 
 The model runs through Claude Code (`claude -p`, no tools, silnlp's system prompt), so no API key is needed.
 

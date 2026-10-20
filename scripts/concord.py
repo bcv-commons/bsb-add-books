@@ -15,7 +15,7 @@ assisting translation (docs/proposals/language-toolkit/). Every command prints r
   python3 scripts/concord.py <project> gloss "<regex>"     the edition's glossary entries (glossary.tsv)
   python3 scripts/concord.py <project> store "<regex>"     language-store entries whose id, source or value
                                                            matches, in full with their evidence
-The target command is also available under the project's language code (e.g. `kvg`). N defaults to 8
+The target command is also available under the project's language code (e.g. `jam`). N defaults to 8
 (40 for forms). Lexicons come from scripts/align.py.
 """
 import collections, json, math, os, re, sys

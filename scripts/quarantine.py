@@ -12,7 +12,7 @@ to the project's `quarantine:` list. --release moves them back and removes the b
 Afterwards, re-run scripts/align.py for a project whose lexicons were built with the book in the corpus.
 
 A chapter that the edition doesn't have needs no quarantine, though the edition has other chapters of the book
-(Kuni Genesis 31-50 beside the edition's Genesis 1-30): make_prompt.py checks it per chapter; --chapter N says
+(Genesis 31-50 beside an edition's Genesis 1-30): make_prompt.py checks it per chapter; --chapter N says
 whether chapter N needs one.
 
 Usage: python3 scripts/quarantine.py <project> <code> [--release] [--all-editions] [--chapter N]

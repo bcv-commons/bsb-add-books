@@ -5,9 +5,9 @@ orig/heb/ is our BHSA copy (the BHS text, CC BY-NC): agents consult its clause l
 original that the notes quote comes from the open texts: the Westminster Leningrad Codex (public domain) via MACULA
 Hebrew in orig/heb.sqlite, and for the NT the Berean Greek Bible (orig/grc/, CC0).
 
-- A notes table with a row per verse (Kuni: Verse · Hebrew · Kuni · BSB · Comment) gets the whole verse in its original
+- A notes table with a row per verse (Verse · Hebrew · <language> · BSB · Comment) gets the whole verse in its original
   column, written here from the WLC / BGB (the agent leaves it empty, or anything it wrote is replaced).
-- A table with a row per choice (Danish, Bern German: the Hebrew phrase · the rendering · …) keeps the agent's phrase;
+- A table with a row per choice (Danish, Jamaican: the Hebrew phrase · the rendering · …) keeps the agent's phrase;
   quotes.py checks that a long one is the WLC word for word.
 - The file ends with a credit line for the original text (replaced, not repeated, on a second run).
 
@@ -88,8 +88,8 @@ def verse_numbers(cell):
 
 
 def per_verse(rows, orig):
-    """A row per verse whose original column is the verse (Kuni: whole, left empty, or cut to a few words with …), not a
-    row per choice (Danish, Bern German), even where a chapter has one choice per verse (a list of names)."""
+    """A row per verse whose original column is the verse (whole, left empty, or cut to a few words with …), not a
+    row per choice (Danish, Jamaican), even where a chapter has one choice per verse (a list of names)."""
     vs = [verse_numbers(r[0]) for r in rows]
     if not (rows and orig and len(rows) >= 0.8 * len(orig) and all(len(v) == 1 for v in vs)
             and len({v[0] for v in vs}) == len(vs)):

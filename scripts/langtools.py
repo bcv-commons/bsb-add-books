@@ -93,7 +93,7 @@ def usfm_verses(text):
 def published_verses(ed):
     """The published text of an edition, for checking quotations: its `published_text` (a USFM zip or folder)
     or else its text/ folder, plus `published_also` (further USFM files or folders: books published elsewhere, such as
-    Kuni Genesis). {"BOOK c:v": text}; None if a published text named isn't there."""
+    an OT book published apart from the NT). {"BOOK c:v": text}; None if a published text named isn't there."""
     import zipfile
     src = ed.get("published_text")
     out = {}
@@ -148,7 +148,7 @@ class Project:
 
     def spellings(self):
         """{plain token: Counter(exact token)}: how the corpus writes each form that matching sees without the ignored
-        marks (Kuni: zøveqase -> zøveqasé). The tools match on plain forms but must show and check these."""
+        marks (a tone or accent mark the tokenizer is told to ignore). The tools match on plain forms but must show and check these."""
         if self._spell is None:
             sp = collections.defaultdict(collections.Counter)
             for r in self.corpus():

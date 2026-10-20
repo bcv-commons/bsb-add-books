@@ -17,7 +17,7 @@ Usage: python3 scripts/memory_prompt.py <project> [--init] [--no-derived] [--out
 import datetime, glob, os, sys, subprocess
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-EXAMPLES = ("kvg/kvg_BSB", "jam/jam_BSB")   # finished memories shown as a worked example, the first this working copy has
+EXAMPLES = ("jam/jam_BSB", "dan/dan_BSB")   # finished memories shown as a worked example, the first this working copy has
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from project import project, edition, project_dir, project_rel  # noqa: E402
 import modes, quotes  # noqa: E402

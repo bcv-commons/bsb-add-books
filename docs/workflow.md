@@ -1,7 +1,7 @@
 # Workflow
 
-What worked in earlier drafting projects (Ruth, Jonah, Genesis, John and Ephesians in
-Bern German; Genesis and Daniel in Danish), written down as the way of working here.
+The way of working here, as the demo projects were drafted (Genesis, Joshua and Daniel in Danish; Genesis 1 in
+Jamaican).
 
 ## Principles
 
@@ -26,28 +26,32 @@ Bern German; Genesis and Daniel in Danish), written down as the way of working h
 1. Write a short `style_guide.md` first: divine names, quote style, numbers,
    poetry, spelling rules for names, and a table of fixed renderings.
 2. Draft one reference chapter, review it with the user, and adjust the guide.
-3. Draft the rest in **waves of about ten chapters**, one **fresh agent per
-   chapter** with the prompt from `scripts/make_prompt.py`. Later waves can then
-   reuse name forms and formulas from earlier ones.
-   **Not for an unknown or a partly known language** (`scripts/modes.py`: `drafting: sequential`; decided 2026-10-15 with Kuni Genesis
-   31–40, and for partly known languages 2026-10-16 with the Jamaican pilot: their drafts drift in forms and spelling):
-   there the chapters are drafted **one after another**, and each chapter's verse pack is built just in time,
-   after the previous chapter has written its store entries, so what one chapter learns reaches the next. A wave would
-   build the packs in advance, and they would miss everything the wave learns; `make_prompt.py` refuses a pack older
-   than the store. The consistency pass (step 5) then runs after a run of chapters instead of after a wave.
-4. Chapters in the same wave can't see each other. Before launching a wave, fix
-   the shared terms in advance and add them to each chapter's prompt (e.g. for
-   the Josef chapters: the court titles, »prison«, »cistern«).
-5. After each wave, run a **consistency pass**:
-   - `python3 scripts/check_draft.py <project>`: verses, inline notes, quotes,
-     long lines, footnote verses;
+3. Draft the rest **one chapter after another**, by **one book agent** per book, in every mode: `python3 scripts/make_prompt.py <project>
+   <code> --book` prints its prompt (`docs/prompts/book_prompt.md`). The agent keeps the story, the characters and its
+   own recent choices in view, and for each chapter
+   - builds the chapter's verse pack and (OT) clause packages just in time, after the previous chapter's store
+     entries, so what one chapter learns reaches the next (`make_prompt.py` refuses a pack older than the store);
+   - drafts it with the chapter prompt (`make_prompt.py <project> <code> <chapter>`), its contract;
+   - runs `python3 scripts/chapter_check.py <project> <code> <chapter>`: the format, alignment and quotation checks it
+     must fix, and the lost negations, names that differ from the earlier chapters and (Hebrew) the copy check, which
+     it reviews, keeping one only with a line in the notes;
+   - writes the store entries and the book's **state file** (`<code>/<code>_state.md`): name forms, fixed formulas,
+     register decisions, open threads, the last verse, open questions.
+
+   **Handover:** after ten chapters (`--handoff N`), or earlier when its conversation grows long, the agent stops after
+   a finished chapter, and a fresh one continues from the state file, the store and the last chapter
+   (`make_prompt.py <project> <code> --book` starts at the first chapter not drafted). No waves: a wave builds its
+   packs in advance and misses what its own chapters learn, and its chapters can't see each other's choices.
+4. Watch each report; a team's decision enters the store or `style_guide.md` and binds from the next chapter on.
+5. After a run of chapters (a handover, a book), a **consistency pass**:
+   - `python3 scripts/check_project.py <project>`: drafts, store, wiki, quotations, status;
    - count key terms across all chapters (one regex per term, chapter by chapter);
    - make only **mechanical** fixes yourself: where the original is identical
      and only the drafts differ. Note each fix in the chapter's notes.
    - every **real choice** goes into `review_overview.md` as a table
      (topic · passages · draft · alternative), with the chapters' open
      questions collected below it. The user decides; decided items are binding
-     for later waves.
+     for the chapters after.
 6. Update `style_guide.md` with each decision.
 
 ## Quarantine
@@ -94,15 +98,14 @@ Our drafts and an existing edition of the same book (or chapter) live side by si
 | Case | Example | Our chapters | The existing edition |
 |---|---|---|---|
 | **continue** | Danish Genesis 20–50 after Den Frie Bibel's 1–19, 28 | drafts in `<code>/` | shown; ours fill its gaps |
-| **test** | Kuni Ruth: four test chapters, then the human Ruth came back | `_eval/` only, never drafts | stands; the team's translation supersedes ours |
-| **independent** | Bern German John and Ephesians beside Bietenhard | drafts in `<code>/`, published as drafts | non-free: stays in `import/non-free/`, not shown |
+| **test** | a book a language team has translated, held out of the corpus | `_eval/` only, never drafts | stands; the team's translation supersedes ours |
+| **independent** | an NT book beside a non-free edition that has it (Jamaican) | drafts in `<code>/`, published as drafts | non-free: stays in `import/non-free/`, not shown |
 | **alongside** | an open (CC0, CC BY, CC BY-SA) edition of a book we also draft | drafts in `<code>/` | shown next to ours, with its credit |
 
 - **independent** needs the quarantine while drafting (*Quarantine* above), and evidence afterwards:
   `STATUS.md` gives the share of our words in runs of 5+ words that stand word for word in the edition's
   text of the book. Independent literal translations of the same source share about 20% (Danish Genesis
-  drafted in quarantine against Den Frie Bibel: 20%, Bern German John against Bietenhard: 28%,
-  Ephesians 11%); over 40%, or more than 3 runs of 15+ words per 1000 words, is marked **check**
+  drafted in quarantine against Den Frie Bibel: 20%); over 40%, or more than 3 runs of 15+ words per 1000 words, is marked **check**
   (`quotes.overlap`).
 - **test** chapters are written to measure the method on a book a language team has translated
   (`learn-language`); they stay in `_eval/` with their reports and are listed under *Test drafts*.
@@ -121,7 +124,7 @@ The agents keep to this as they write, not afterwards:
 - the tools enforce it where agents write: the store validator (`language_profile.py check --project`)
   rejects evidence forms over 4 words and quotations over 15 words, from the working copy or without
   the edition's marks; `wiki.py lint` checks the wiki; `quotes.py <files>` an agent's notes;
-- `python3 scripts/check_project.py <project>` is the double check at the end of a wave and before a
+- `python3 scripts/check_project.py <project>` is the double check after a run of chapters and before a
   commit (`.githooks/pre-commit`, enabled with `git config core.hooksPath .githooks`). When it finds
   something, fix the cause (prompt, rule, tool) as well as the file.
 

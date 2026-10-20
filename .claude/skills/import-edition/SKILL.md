@@ -25,7 +25,7 @@ Fields are explained in `docs/configuration.md`; the template has comments.
      single GitHub sources are checked by hand.
 2. **Create it:** copy `import/_template/` to `import/<licence>/<language>/<edition>/`, where
    `<language>` is the ISO 639-3 code (`dan`), or for a dialect an interim id agreed with the
-   user (`ch-de-be`), (the edition id
+   user (the scheme is still open; `import/README.md`), (the edition id
    must not exist in another licence folder), put the files in `text/`
    (or the folder named in `text_dir`), and fill in `edition.yaml`. Name the files with the
    BSB book codes where possible (`books.tsv`), so prompts can point to the right book.

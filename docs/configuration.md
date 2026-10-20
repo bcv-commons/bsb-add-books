@@ -40,10 +40,11 @@ date, form, for, returned_to}`; a project under `local_output/` that builds on a
 | `derived_from` | editions the project's work is derived from; only for a project under `export/CC-NC/` or `local_output/` (where the project folder is decides its output). Their text may be reused there without quarantine or quotation limits; a `based_on` edition with `role: revise` is always included |
 | `nt_basis` | overrides the inherited basis |
 | `quarantine`, `do_not_open` | books and paths kept from the agents (`scripts/quarantine.py` maintains `quarantine`) |
+| `book_rules` | optional lines added to the book agent's prompt only (`make_prompt.py --book`) |
 | `quarantine_attributable` | `true`: also quarantine books that an attributable (CC BY, CC BY-SA) style edition has; non-free editions always need it, public-domain ones never |
 | `familiarity` | `known` \| `partial` \| `unknown`: how well the model knows the language (`scripts/probe_language.py`); picks the rule bundle (`docs/prompts/modes.md`), the verse-pack level and the style-check default (`scripts/modes.py`, `docs/onboarding.md`) |
-| `close_to` | for `partial`: the standard language agents must not fall back on (`Standard German`) |
-| `corpus_name` | how the prompts name the style corpus (`the Kuni NT, Ruth and Jonah`); default: the editions' names |
+| `close_to` | for `partial`: the standard language agents must not fall back on (`English` for Jamaican) |
+| `corpus_name` | how the prompts name the style corpus (`the Jamaican NT`); default: the editions' names |
 | `school_language` | the team's working language: the wiki, the store's notes and all analysis are written in it (only quotations in the target language); default for `notes_language` |
 | `style_check` | `true` / `false` (default by familiarity: on for partial and unknown): the chapter prompt has the agent run `scripts/style.py` on its chapter and work through the flags (compares with the human translations in the corpus; for a language the model doesn't know) |
 | `draft_statement` | the statement shown with every draft (`STATUS.md`, sites); default: drafted with AI agents from the Hebrew and Greek, not yet reviewed, not for use as published Scripture, CC0 |
@@ -55,6 +56,7 @@ date, form, for, returned_to}`; a project under `local_output/` that builds on a
 | `spell_check` | default by mode (on for `partial` and `unknown`); `true`: `check_draft.py` lists every word form the style corpus writes only with other marks, and every form it lacks (information); the chapter prompt tells the agent to take the corpus spelling. Matching elsewhere ignores `ignore_marks`; this keeps every mark |
 | `second_draft` | `nllb` or `none` (the wizard asks in the `unknown` mode): whether the project plans a fine-tuned NLLB as the second draft for review triage (`scripts/triage.py` reads it from `_eval/local/second/nllb/`); a second opinion, never a draft |
 | `pack_budget` | characters (on trial, not set by any project): a `full` verse pack shows, per verse, as many corpus verses as fit in this many characters of target text, chosen by silnlp's greedy coverage on the English words and word pairs (pack v3), instead of the 2 most similar verses (pack v2). `verse_pack.py --budget` sets it for one pack. The A/B against v2 at 2k and 6k decides the default |
+| `pack_grammar` | `true` (on trial, not set by any project): the verse pack adds the verb-marking block (pack v4, `scripts/verse_analysis.py`): the store's verb paradigm in the header, and per verse the verbs whose cell is marked (negated, a subject other than 3rd singular) with the store's pattern. `verse_pack.py --grammar` sets it for one pack. Needs the store's cell entries (`scripts/grammar.py`). An A/B against v2 decides the default |
 | `tokenise` | target-language tokenising for the toolkit (`scripts/langtools.py`): `split_hyphens` (suffixes after a hyphen are tokens), `word_chars` (characters that belong to words besides letters, `U+A789` or literal), `ignore_marks` (default: the store's `orthography.ignore_marks`) |
 | `footnotes` | `false`: the drafts have no footnotes (default `true`) |
 | `header` | the header lines of a chapter file, `{file}` and `{date}` filled in; a list, or `{ot: [...], nt: [...]}` (default: as in the earlier chapters) |
@@ -86,6 +88,6 @@ If an edition follows the TR closely, consider adding a TR text as
 `python3 scripts/project.py <project>` shows the resolved setup.
 
 - **`lexeme_aligner`** (project, optional): the id of lexeme-aligner's compact-alignments layer for the style
-  edition's language (Kuni: `kvg_wbt`). `scripts/lang.py build` decodes it onto the project's NT tokens as a second
+  edition's language (an id such as `<iso>_<edition>`). `scripts/lang.py build` decodes it onto the project's NT tokens as a second
   alignment beside eflomal's (CC0 positions; the layer's source text is fetched from its provider, so far helloAO).
 

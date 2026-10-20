@@ -13,8 +13,6 @@ How a draft is judged:
     _learn/style_norms*.json, rebuilt when the corpus changes.) A draft is flagged only where it strays further
     than 95% of the human chapters, and the count is large enough to mean something (Poisson |z| >= 2,
     4 or more expected or seen). Further than 80% (|z| >= 1.5) is listed under Watch.
-    Checked on Kuni Ruth 1-4 (drafts from the NT alone, against the human Ruth, per chapter): the human text
-    lies in the flagged direction for about 72% of flags and 80% of flags + watch items.
   - Style items only: words and pairs that occur in most books of the corpus (names and topic words don't)
     and are not simply the rendering of one English content word.
 

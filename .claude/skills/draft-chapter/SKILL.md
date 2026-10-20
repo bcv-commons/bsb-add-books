@@ -1,6 +1,6 @@
 ---
 name: draft-chapter
-description: Draft one or more Bible chapters for a project in export/<project>/, from the Hebrew or Greek with the BSB/MSB as the only assisting translation, one fresh agent per chapter. Use when asked to draft, translate or continue chapters, or to run a drafting wave.
+description: Draft one or more Bible chapters for a project in export/<project>/, from the Hebrew or Greek with the BSB/MSB as the only assisting translation, one book agent per book, chapter after chapter. Use when asked to draft, translate or continue chapters or a book.
 ---
 
 # Draft chapters
@@ -17,35 +17,28 @@ The full way of working is `docs/workflow.md`; this is the procedure.
    anything looks unexpected (e.g. the wrong `nt_basis`).
 3. **Style guide and decisions:** `export/<project>/style_guide.md` must exist (see the
    new-project skill). If the project has no finished chapter yet, draft a single reference
-   chapter first and review it with the user before any wave.
+   chapter first and review it with the user before the book agent.
 
-## A wave (about ten chapters)
+## The book agent (every mode)
 
-**Unknown and partly known languages draft no waves** (`python3 scripts/modes.py <project>` says `drafting: sequential`): one chapter at a
-time, in order. For each: build its verse pack and clause packages just now (after the previous chapter's store entries
-are in), write the prompt, run one fresh agent, check the result and log its usage; only then prepare the next chapter.
-`make_prompt.py` refuses a pack older than the store. Shared terms need no fixing in advance (each chapter reads the
-store the previous ones wrote); the consistency pass and the review below come after the run of chapters.
+Chapters are drafted one after another, by one agent per book (no waves in any mode).
 
-1. **Fix shared terms first.** Chapters in the same wave can't see each other. List the names,
-   titles and recurring terms the chapters will share, agree them with the user (or take them
-   from `style_guide.md` / `review_overview.md`), and add them to the prompts.
-2. **One fresh agent per chapter.** For each chapter:
-   - `python3 scripts/verse_pack.py <project> <code> <chapter>` builds the verse pack first, at the level the project's
-     mode sets (`memory`, `dialect` or `full`; `python3 scripts/modes.py <project>`). The prompt points the agent to it,
-     and its rules apply only when the pack exists;
-   - for an OT chapter, `python3 scripts/package.py <project> <code> <chapter>` builds the clause packages (it needs
-     `orig/heb.sqlite`, which `python3 scripts/setup.py` fetches (`--only src`: bcv-query's published cache); for an unknown language with an NT, the occurrence index
-     `python3 scripts/lang.py build <project>` after `align.py`). `make_prompt.py` refuses an OT prompt without them;
-   - `python3 scripts/make_prompt.py <project> <code> <chapter>` prints the prompt (OT: tagged drafting; `--end-align`
-     gives the old way, the draft first and the alignment at the end);
-   - give it, unchanged except for the shared terms, to a **new** agent (Agent tool, not a
-     fork of this conversation: a fork has seen other chapters, and for a quarantined book it
-     may have seen the existing translation);
-   - agents of one wave can run in parallel.
+1. **The prompt:** `python3 scripts/make_prompt.py <project> <code> --book [<first>-<last>] [--handoff N]` prints it
+   (`docs/prompts/book_prompt.md`); without a range it starts at the first chapter not drafted. The agent builds each
+   chapter's materials itself, just in time (`verse_pack.py`; for the OT `package.py`, which needs `orig/heb.sqlite`
+   from `python3 scripts/setup.py --only src`, and for an unknown language with an NT `python3 scripts/lang.py build
+   <project>` after `align.py`), prints the chapter prompt (`make_prompt.py <project> <code> <chapter>`; OT: tagged
+   drafting, `--end-align` the old way), runs `python3 scripts/chapter_check.py <project> <code> <chapter>` until it
+   has nothing to fix, and writes the store and the state file `<code>/<code>_state.md`.
+2. **A new agent** (Agent tool, not a fork of this conversation: a fork has seen other chapters, and for a quarantined
+   book it may have seen the existing translation). Give it the prompt unchanged. One book agent at a time per
+   project: its chapters write the store that the next chapter's pack reads.
    - If an agent stops on a rate limit, resume that agent; don't start a new one.
+   - **Handover:** when it stops after its chapters (ten by default), print the prompt again (it continues at the next
+     chapter) and give it to a fresh agent.
    - When an agent finishes, log what it cost from its usage report: `python3 scripts/usage.py <project> add
-     <code><NNN> --tokens N --calls N --minutes M`. The wizard's estimates per mode come from these logs.
+     <code><NNN> --tokens N --calls N --minutes M` (the first chapter of its run; the wizard's estimates per mode come
+     from these logs).
 3. **Check each result** when the agent reports:
    - `python3 scripts/notes_hebrew.py <project> <code> <chapter>` (the agent runs it too): the notes' verses from the WLC /
      BGB and the credit line; never text copied from `orig/heb/`;
@@ -62,20 +55,20 @@ store the previous ones wrote); the consistency pass and the review below come a
      scripts/bridge_align.py` (script, profile `a`), then optionally `python3 scripts/full_align.py prompt <project>
      <code> <chapter>` for a fresh agent that checks it.
    - The prompt already makes the agent keep to the quotation rules (`docs/licensing.md`) and check its
-     own files; at the end of the wave run `python3 scripts/check_project.py <project>` (drafts, store,
+     own files; after a handover or a book run `python3 scripts/check_project.py <project>` (drafts, store,
      wiki, quotations, status) as the double check, and fix the cause in the prompt or the rules when
      it finds something the agents should have avoided.
 
-## After the wave: consistency pass, then review
+## After a run of chapters: consistency pass, then review
 
 - Count the key terms across all chapters (one regex per term, chapter by chapter).
 - Make only **mechanical** fixes yourself: where the original is identical and only the drafts
   differ. Note each fix in that chapter's `_notes.md`.
 - Every **real choice** goes into `export/<project>/review_overview.md` as a table
   (topic · passages · draft · alternative), with the chapters' open questions below it. The
-  user decides; decided items are binding for later waves.
+  user decides; decided items are binding for the chapters after.
 - Update `style_guide.md` with each decision.
-- **Offer the review:** ask the user whether the wave's chapters go to the team now. If so,
+- **Offer the review:** ask the user whether the run's chapters go to the team now. If so,
   `python3 scripts/status.py <project> set <code>:<first>-<last> in-review --by <who>` marks them (and rewrites
   `STATUS.md`); the team reads them with `python3 scripts/wiki.py view <project>` and the draft files. Publishing
   is the team's decision: `status.py publish … --by NAME` only when they say so.

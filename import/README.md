@@ -33,8 +33,8 @@ edition can be published with this repository:
   open one, goes to `non-free/` until a folder for it is agreed.
 - **Language folders:** inside each licence folder, one folder per language, named by its
   ISO 639-3 code (`dan`, `deu`, `eng`). Dialects have no ISO 639-3 code of their own; how
-  to name them is still open, and `ch-de-be` (Bern German) is an interim id. The precise
-  language tag goes into `edition.yaml` (`language: da`, `language: gsw-BE`).
+  to name them is still open (an interim id until then). The precise
+  language tag goes into `edition.yaml` (`language: da`, `language: jam`).
 - **Edition ids are unique** across the folders: projects name an edition by its id
   alone (`based_on: <edition>`), and `scripts/project.py` finds its folder.
 - **Three ways to bring an edition in** (for a new language, `python3 scripts/onboard.py` does the first for you):

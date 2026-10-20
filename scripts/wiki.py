@@ -81,6 +81,12 @@ def render(e):
     v = e["value"] if isinstance(e["value"], str) else json.dumps(e["value"], ensure_ascii=False)
     head = f"- **`{e['id']}`**" + (f" {e['source']} →" if e.get("source") else "") + f" **{v}**"
     tags = [e.get("confidence", ""), e.get("status", "")] + ([e["attested"]] if e.get("attested") else [])
+    if e.get("kind") == "morph":
+        head += f" `{e.get('form')}` ({e.get('slot')}, {e.get('host')})"
+    elif e.get("kind") == "cell":
+        head += f" {e.get('paradigm')} {e.get('bundle')}" + (" (gap)" if e.get("gap") else "")
+    elif e.get("kind") == "claim":
+        tags.append(e.get("verdict", ""))
     head += f" [{', '.join(t for t in tags if t)}]"
     if e.get("pattern"):
         head += f" — `{e['pattern']}`"
@@ -90,6 +96,10 @@ def render(e):
         lines.append(f"  - NT: {ev}")
     if e.get("words"):
         lines.append(f"  - answers: {', '.join(e['words'])}")
+    if e.get("figures"):
+        lines.append(f"  - tested ({', '.join(e.get('tests', []))}): {e['figures']}")
+    if e.get("next"):
+        lines.append(f"  - next: {e['next']}")
     if e.get("note"):
         lines.append(f"  - {e['note']}")
     lines.append(f"  - {e.get('by', '')}, {e.get('date', '')}" + (f", supersedes `{e['supersedes']}`" if e.get("supersedes") else ""))

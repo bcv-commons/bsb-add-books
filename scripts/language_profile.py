@@ -10,6 +10,10 @@ edition. `check` validates them against the contract without any library:
      combining marks named in `orthography.ignore_marks` ignored; a formula's <slots> ignored);
   4. ids are unique among live entries; `supersedes` points to an existing entry;
   5. feature codes match the Grambank/WALS pattern;
+  5a. grammar entries (morph, cell, claim; README, *Kinds*): their fields and enums; a morph's form occurs in at least
+     one cited verse on its side of a word (a prefix at the start, a suffix at the end, an infix inside; marks
+     ignored as in 3; tone morphs are not matched); a cell's morphs are morph entries; a cell cites evidence unless
+     it is a gap;
   5b. team decisions (`method: team-decision`, `by: team:<who>`) name their source (`team_source`, an item of the wiki's
      team-input page) instead of needing verse evidence, and are binding: an entry by anyone else that supersedes a team
      decision, or replaces it under the same id, is an error (only the team changes its own facts);
@@ -31,8 +35,11 @@ sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from books import BY_CODE  # noqa: E402
 from project import project_dir  # noqa: E402
 
-KINDS = {"feature", "letter", "gap", "term", "formula", "name"}
-NEEDS_EVIDENCE = {"feature", "term", "formula", "name"}
+KINDS = {"feature", "letter", "gap", "term", "formula", "name", "morph", "cell", "claim"}
+NEEDS_EVIDENCE = {"feature", "term", "formula", "name", "morph"}
+SLOTS = {"prefix", "suffix", "infix", "clitic", "free", "tone"}
+VERDICTS = {"confirmed", "corpus-only", "contradicted", "new", "open"}
+TESTS = {"corpus", "greek", "hebrew", "nllb", "team"}
 ENUMS = {"confidence": {"high", "medium", "low"}, "method": {"corpus-observed", "corpus-derived", "project-decision", "external", "team-decision"},
          "status": {"observed", "decided", "open", "superseded"}, "partition": {"observations", "decisions", "external"}}
 REQUIRED = ["id", "kind", "value", "confidence", "method", "by", "date", "status"]
@@ -75,6 +82,21 @@ def text_dir_of(args, iso, edition):
         edition = p["style_from"][0]
     e = ed_cfg(edition)
     return os.path.join(ROOT, e["dir"], e.get("text_dir", "text"))
+
+
+def morph_in(form, slot, verse, marks):
+    """does the morph occur in the verse, on its side of a word (parts of a hyphenated word count as words)"""
+    bare = normal(form.strip("-="), marks)
+    if not bare:
+        return False
+    words = [w for t in re.findall(r"[\w\u0300-\u036f\u1dc0-\u1dff\ua789'-]+", normal(verse, marks)) for w in [t] + t.split("-")]
+    if slot == "prefix":
+        return any(w.startswith(bare) and len(w) > len(bare) for w in words)
+    if slot == "suffix":
+        return any(w.endswith(bare) and len(w) > len(bare) for w in words)
+    if slot == "infix":
+        return any(bare in w[1:-1] for w in words)
+    return any(w == bare or bare in w for w in words)
 
 
 def normal(s, marks):
@@ -134,6 +156,25 @@ def main():
                     problems.append(f"{where}: a team decision needs team_source (the team-input item)")
             else:
                 others.append((where, e))
+            k = e.get("kind")
+            if k == "morph":
+                for f in ("form", "slot", "host"):
+                    if not e.get(f):
+                        problems.append(f"{where}: a morph needs {f}")
+                if e.get("slot") and e["slot"] not in SLOTS:
+                    problems.append(f"{where}: slot {e['slot']!r}")
+            if k == "cell":
+                for f in ("paradigm", "bundle"):
+                    if not e.get(f):
+                        problems.append(f"{where}: a cell needs {f}")
+                if not e.get("evidence") and not e.get("gap") and not team:
+                    problems.append(f"{where}: no evidence (or gap: true)")
+            if k == "claim":
+                if e.get("verdict") not in VERDICTS:
+                    problems.append(f"{where}: verdict {e.get('verdict')!r}")
+                for t in e.get("tests", []):
+                    if t not in TESTS:
+                        problems.append(f"{where}: test {t!r}")
             if e.get("kind") in NEEDS_EVIDENCE and not e.get("evidence") and not team:
                 problems.append(f"{where}: no evidence")
             if e.get("kind") in ("term", "formula", "name") and not e.get("source"):
@@ -162,6 +203,8 @@ def main():
                         continue      # a gap may cite a verse the edition doesn't have yet
                     problems.append(f"{where}: {r['ref']} is not in the edition")
                     continue
+                if text and k == "morph" and e.get("slot") != "tone" and e.get("form"):
+                    found_form = found_form or morph_in(e["form"], e.get("slot"), text[key], marks)
                 if text and e.get("kind") in ("term", "formula", "name") and e.get("attested") != "by-rule":
                     form = r.get("form") or (e["value"] if isinstance(e["value"], str) else "")
                     form = re.sub(r"<[^>]*>", "", form).strip()
@@ -169,6 +212,8 @@ def main():
                         found_form = True
             if text and e.get("kind") in ("term", "formula", "name") and e.get("attested") != "by-rule" and e.get("evidence") and not found_form and not team:
                 problems.append(f"{where}: value {e.get('value')!r} not found in any cited verse")
+            if text and k == "morph" and e.get("slot") != "tone" and e.get("evidence") and not found_form:
+                problems.append(f"{where}: morph {e.get('form')!r} not found ({e.get('slot')}) in any cited verse")
             if text and marks and e.get("kind") in ("term", "formula", "name") and e.get("status") != "superseded" \
                     and isinstance(e.get("value"), str):
                 spelling.append((where, e["value"]))
@@ -180,6 +225,10 @@ def main():
     for where, target in links:
         if target not in entries:
             problems.append(f"{where}: supersedes unknown entry {target}")
+    for eid, e in entries.items():        # a cell's morphs are morph entries
+        for m in e.get("morphs", []) if e.get("kind") == "cell" else []:
+            if entries.get(m, {}).get("kind") != "morph":
+                problems.append(f"{eid}: morph {m} is not a morph entry")
     for where, e in others:      # only the team changes a team decision
         if e.get("status") != "superseded" and (e.get("supersedes") in team_ids or e.get("id") in team_ids):
             problems.append(f"{where}: replaces a team decision ({e.get('supersedes') or e.get('id')}); "

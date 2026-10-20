@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""A project's drafts as USFM, for a team's Paratext project (plan D8).
+"""A project's drafts as USFM, for a team's Paratext project.
 
 Per book, one file with the chapters that are drafted:
   - the frame comes from the team's own book where the style edition has its SFM (`source/`): its `\\id` line, `\\ide`,
@@ -12,7 +12,7 @@ Per book, one file with the chapters that are drafted:
     poetry, gets one `\\q1` line per verse), footnotes from `<code>NNN_footnotes.txt` as `\\f + \\fr c:v \\fk … \\ft …\\f*`;
   - verse numbers: OT drafts keep the Hebrew numbering; the file takes the team's (`--numbering`, default from the
     edition's SFM: English where their Jonah has 1:17, else Hebrew). Hebrew verses that the BSB joins become one verse;
-  - Unicode as the team's files have it (`--norm NFC|NFD`, default: as their SFM; Kuni's are NFD, our texts NFC: the same
+  - Unicode as the team's files have it (`--norm NFC|NFD`, default: as their SFM; a team's files may be NFD, our texts are NFC: the same
     letters, but Paratext's word list compares code points).
 The file is checked with usfmtc (pip install usfmtc) and its verses counted against the draft.
 

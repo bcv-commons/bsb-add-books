@@ -242,8 +242,8 @@ def speakers():
     with ThreadPoolExecutor(3) as ex:
         got = list(ex.map(one, lst))
     failed = [sp["speaker"] for sp, d in got if d is None]
-    # a group name with '/' (Zebah/Zalmunna) was unreachable as /speaker/<name> until bcv-query fixed the route
-    # (2026-10-15); should it fail again, those are skipped and listed; any other failure stops the update
+    # a group name with '/' (Zebah/Zalmunna) was unreachable as /speaker/<name> until bcv-query fixed the route;
+    # should it fail again, those are skipped and listed; any other failure stops the update
     slashed = [n for n in failed if "/" in n]
     if len(failed) > len(slashed):
         raise SystemExit(f"speakers: {len(failed)} of {len(lst)} could not be fetched (e.g. {failed[:3]}); nothing written")

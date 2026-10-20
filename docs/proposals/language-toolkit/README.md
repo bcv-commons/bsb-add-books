@@ -1,8 +1,8 @@
 # Drafting in a language the model doesn't know: the toolkit
 
-Status: 2026-10-14, the general tools are in `scripts/` (below); the Kuni project uses them. Worked out on Kuni (kvg), a language without LLM exposure, where the drafting
-agents learned the language from its NT alone. The tools are meant for any language with an existing
-translation (a style corpus) and no other resources. Kuni is the first user.
+The general tools are in `scripts/` (below). They were worked out on a language without LLM exposure, where the
+drafting agents learned the language from its NT alone, and are meant for any language with an existing translation
+(a style corpus) and no other resources.
 
 ## The pieces
 
@@ -18,13 +18,10 @@ translation (a style corpus) and no other resources. Kuni is the first user.
 | style | the draft against the human translations: for each verse the human verses most like it (BSB tf-idf), expected counts of the corpus's style items (words and pairs found in most books, not renderings of one content word), flagged only beyond the spread of the human chapters themselves; with model verses; `style_check: true` puts it into the chapter prompt | `scripts/style.py <project> <draft> [--brief]` |
 | workflow | the steps for a new language | skill `learn-language` |
 
-The Kuni-only predecessors in `scratch/kvg/` (`align.py`, `align2.py`, `score.py`) and
-`export/kvg/kvg_BSB/_learn/concord.py` are superseded by these.
-
 ## What makes a tool language-neutral
 
 - **Tokenising and normalising** come from the store's `orthography` (marks to ignore) and the project's
-  `tokenise:` (`split_hyphens` for suffixes such as Kuni's `-qa`, `-te`; `word_chars` such as Kuni's `꞉`).
+  `tokenise:` (`split_hyphens` for suffixes written after a hyphen; `word_chars` such as `꞉` where it belongs to words).
   No language is hard-coded.
 - **Corpus pairing** goes through `orig/vrs`: OT editions keep the Hebrew numbering, the BSB the English.
 - **Paths** come from the project (`style_from`, `based_on`, `do_not_open`), never from a language code.
@@ -51,4 +48,3 @@ The Kuni-only predecessors in `scratch/kvg/` (`align.py`, `align2.py`, `score.py
    style figures, the alignment retrained with it).
 6. Draft new books with the pack and the wiki; every search ends in the store.
 
-The Kuni test series (Ruth 1–4) and its reports are in `export/kvg/kvg_BSB/_eval/` (quotations credited in its `CREDITS.md`).

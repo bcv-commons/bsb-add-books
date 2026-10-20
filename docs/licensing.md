@@ -81,7 +81,7 @@ edition's own structure (a USFM/Paratext book of theirs); a model fine-tuned on 
 back-translation, interlinear or verse-by-verse concordance of the edition. Not derived, whatever the path: our
 independent drafts (in quarantine), the store, the wiki's prose, lexicons and statistics (*Ours, CC0* above).
 
-- **ND wins:** an edition under NC-ND (as eBible's Kuni NT) is filed in `import/CC-ND/`, so its derived work goes only
+- **ND wins:** an edition under NC-ND is filed in `import/CC-ND/`, so its derived work goes only
   to `local_output/`. An ND licence forbids sharing adaptations; the rights holder may share their own.
 - **The approval is recorded per edition** (`derived_work: approved_by, date, form, for, returned_to`): who gave it, how
   (written or verbal), for what, and who gets the output. For work that goes back only to the translation team, the

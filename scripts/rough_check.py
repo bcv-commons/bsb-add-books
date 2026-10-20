@@ -1,20 +1,22 @@
 #!/usr/bin/env python3
 """Two cheap meaning checks for a draft chapter, no model: the verses a reviewer must look at in a rough pass (an NLLB
-draft for a team, after a blind meaning check of three such chapters, 2026-10-19), and useful on any draft.
+draft for a team), and useful on any draft.
 
 - negation: the original's negations per verse (Hebrew: the WLC words tagged negative in orig/heb.sqlite; Greek: Louw-Nida
   69.2-69.3 in orig/grc.sqlite) against the project language's negation markers in the draft verse. The markers are learned
   from the style corpus: forms and word endings that occur almost only in verses whose English (the assisting translation)
   is negated. Flagged: the original negates and the draft has no marker ("missing"), or fewer markers than the original
   has negations ("fewer"); the draft has a marker where the original has none ("added", weaker: Hebrew and the language may
-  negate in different places). In the judged NLLB chapters a lost negation was the commonest major error.
-  Calibrated on Kuni (2026-10-19): markers with precision >= 0.6 cover 88% of the corpus's negated verses; the human Kuni
-  OT (Genesis 1-30, Ruth, Jonah) gets 40 "missing/fewer" flags in about 960 verses (4%), the judged NLLB chapters 7 in 47
-  (15%), 2 of the judges' 4 major errors on a Hebrew negation among them. --strict (precision >= 0.7): 13 of 47, 3 of 4,
-  at the price of 48% of the human negated verses flagged.
+  negate in different places). In rough machine drafts a lost negation is a common major error.
+  Markers need precision >= 0.6 (--strict: 0.7, which flags more verses, and more of the human translation's too); how
+  much of the corpus's negated verses they cover is printed first. A human translation gets some flags as well: a flag
+  asks for a look, it is not an error.
+  A draft with a .align beside it (OT, scripts/full_align.py) also counts the original's negations its alignment links
+  to a draft word, so a marker the corpus can't learn because it is also a common other word (Hebrew אל "do not", also
+  "to") is no false "missing" flag; a negation the draft leaves unlinked is counted by the markers alone.
 - English: word forms the corpus doesn't have but the assisting English does ("seven", "mules"): text the model copied
   from its English source instead of translating ("mules", Ps 32:9). Capitalised ones may be names spelled the English
-  way; an English loanword the corpus has (Kuni "seven") is not flagged.
+  way; an English loanword the corpus has is not flagged.
 
 Both report verse numbers and forms only (no corpus text), so the output may go into a review list. The markers and how
 well they cover the corpus's negated verses are printed first (--markers shows them alone).
@@ -49,9 +51,29 @@ def source_negations(code, ch):
     return out
 
 
+def aligned_negations(path):
+    """{verse: number of the original's negations linked to a draft word} from the .align beside an OT draft; {} if none."""
+    import full_align as FA
+    b = os.path.basename(path)
+    code, ch = b[:3], int(b[3:6])
+    al = path[:-4] + ".align"
+    if BY_CODE[code][2] != "ot" or not os.path.exists(al):
+        return {}
+    con = sqlite3.connect(os.path.join(ROOT, "orig", "heb.sqlite"))
+    neg = {k for (k,) in con.execute("select key from tokens where book=? and ch=? and morph like 'Tn%'", (code.upper(), ch))}
+    out = collections.Counter()
+    for v, (main, fn, _) in FA.read_chapter(al)[1].items():
+        for links, kind in ((main, "keys"), (fn, "fn_keys")):           # content and function tokens (אל is one)
+            keys = FA.index(code.upper(), kind).get(f"{code.upper()} {ch}:{v}", [])
+            for o, pos in FA.parse(links).items():
+                if pos and o < len(keys) and keys[o]:
+                    out[v] += sum(1 for k in keys[o].split("+") if k in neg)
+    return out
+
+
 def features(P, text):
     """The candidate negation markers of a verse: its word forms and the endings of their hyphen parts (2-4 characters,
-    as '-ending'), each both as written (every mark kept: Kuni's prohibitive ends in the rising tone mark, '-᷄m') and
+    as '-ending'), each both as written (every mark kept: a negation may differ from another form only by a tone mark) and
     plain."""
     out = set()
     for w in P.tok.tokens(text, exact=True):
@@ -126,10 +148,10 @@ def main():
     for f in files:
         b = os.path.basename(f)
         code, ch = b[:3], int(b[3:6])
-        src = source_negations(code, ch)
+        src, linked = source_negations(code, ch), aligned_negations(f)
         flags = []
         for (c, v), text in sorted(LT.verses_of(f).items()):
-            n_src, n_tgt = src.get(v, 0), marker_count(P, text, ms)
+            n_src, n_tgt = src.get(v, 0), max(marker_count(P, text, ms), linked.get(v, 0))
             if n_src and not n_tgt:
                 flags.append((v, f"negation missing: the original negates {n_src}x, the draft has no negation marker"))
             elif n_src > n_tgt:

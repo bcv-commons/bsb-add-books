@@ -4,15 +4,15 @@
 # edition, with the rights holder's approval); where the folder is decides the output (docs/licensing.md).
 # One project = one target language/style. See docs/configuration.md.
 
-language: gsw-BE                     # target language code
-language_name: Bern German (Berndeutsch)
-school_language: Standard German     # the team's working language ("school language"): the wiki, the store's
+language: jam                        # target language code
+language_name: Jamaican Creole English
+school_language: English             # the team's working language ("school language"): the wiki, the store's
                                      # notes and all analysis are written in it; only quotations are in the language
-notes_language: Standard German      # language of the _notes.md files (default: school_language)
+notes_language: English              # language of the _notes.md files (default: school_language)
 familiarity: partial                 # known | partial | unknown: how well the model knows the language
                                      # (scripts/probe_language.py; docs/onboarding.md)
-close_to: Standard German            # for a variety (partial): the standard language agents must not fall back on
-# corpus_name: Bietenhard's Bern German NT   # how the prompts name the style corpus
+close_to: English                    # for a variety (partial): the standard language agents must not fall back on
+# corpus_name: the Jamaican NT   # how the prompts name the style corpus
 
 # The edition this project continues (its id; it lives in import/<licence>/<id>/), if any.
 # The project then inherits its nt_basis and uses it as style corpus.
@@ -35,11 +35,9 @@ quarantine: []
 do_not_open: []
 
 # Presentation
-quotes: "„“"                         # opening + closing quote characters
-chapter_word: Kapitel                # used in the ===Title, Kapitel N=== header
-book_titles:                         # titles used in the chapter header, by BSB code
-  gen: Ds erschte Buech Mose
-  jhn: Ds Johannes-Evangelium
+quotes: "“”"                         # opening + closing quote characters
+chapter_word: Chapter                # used in the ===Title, Chapter N=== header
+book_titles: {}                      # titles used in the chapter header, by BSB code (gen: …); default: the editions'
 
 # Style guides for the prompt's contract (paths relative to the project folder), besides the
 # book's own <code>/<code>_style_guide.md: read for every book, or only when the book has none.
@@ -56,7 +54,7 @@ default_style_guide: null
 
 # Project-specific rules, added to every chapter prompt.
 rules:
-  - "**Divine names:** der HERR for YHWH; Herr, HERR for *ʔădōnāy YHWH*."
+  - "**Divine names:** (decide with the team: YHWH, Adonai YHWH, Elohim, El Shaddai)"
   - "**Numbers and measures:** numbers in words, measures as in the style corpus."
 
 # Free-text addition to the style section of the prompt (optional).

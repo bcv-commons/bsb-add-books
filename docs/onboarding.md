@@ -2,14 +2,15 @@
 
 How a new language comes into this repository, from the first conversation with a team to published
 chapters. Two facts about the situation decide how the tools work: **how well the model knows the
-language**, and **how free the existing translations are**. The three pilots cover the main cases.
+language**, and **how free the existing translations are**. The two demo projects (`export/dan/dan_BSB/`,
+`export/jam/jam_BSB/`) and the case they don't cover:
 
-| | Danish | Bern German | Kuni |
+| | Danish | Jamaican | a language the model doesn't know |
 |---|---|---|---|
-| Existing translation | Den Frie Bibel (public domain) | Bietenhard's NT (all rights reserved) | Kuni NT, Ruth, Jonah (CC BY-NC-ND) |
-| Licence class | public domain | non-free | non-free |
-| The model knows the language | well (`known`) | the standard language better than the dialect (`partial`) | not at all (`unknown`) |
-| Agents | draft from their own Danish; the memory keeps decisions consistent | write Bernese, not Standard German: check forms against the corpus | learn Kuni from the corpus while drafting; invent nothing |
+| Existing translation | Den Frie Bibel (public domain) | Di Jamiekan Nyuu Testiment (© Bible Society of the West Indies) | the team's translation, often NT only |
+| Licence class | public domain | non-free | any |
+| The model knows the language | well (`known`) | the standard language better than the creole (`partial`) | not at all (`unknown`) |
+| Agents | draft from their own Danish; the memory keeps decisions consistent | write Jamaican, not English: check forms against the corpus | learn the language from the corpus while drafting; invent nothing |
 
 ## 0. The wizard
 
@@ -42,8 +43,8 @@ questions and runs it) walks a new team through the steps below:
    the machine never do. For `partial` it is shown, off, while it is being tested; a `known` language doesn't need it.
 8. **Set-up:** sources and the Hebrew layout, lexicons, the empty store and wiki, the probe's slips as the first
    store entries (to be checked), `CREDITS.md`, `STATUS.md`.
-9. **What comes next:** the memory, the style guide, a reference chapter, then the chapters: in waves for a known
-   language, one after another for a partly known or unknown one (`scripts/modes.py`), each asked for in Claude Code
+9. **What comes next:** the memory, the style guide, a reference chapter, then the chapters, one after another by one
+   agent per book (`make_prompt.py --book`), asked for in Claude Code
    in plain words. At the end the wizard builds the website's local preview and opens the first chapter in the
    browser; `docs/website.md` says how to see it again and how to put it online.
 
@@ -88,8 +89,7 @@ repository, and the existing translations are a style corpus, not a source.
 
 **School language** (`school_language`): the team's working language. The wiki, the store's notes and all
 analysis are written in it, and the translator notes too unless `notes_language` says otherwise; only
-quotations and examples are in the target language. Danish: Danish; Bern German: Standard German; Kuni:
-English.
+quotations and examples are in the target language. Danish: Danish; Jamaican: English.
 
 **Familiarity** (`familiarity` in `project.yaml`), measured with three short probes, each a fresh agent with
 no tools (`python3 scripts/probe_language.py <project> write|read|tell`, then `--score` its answer): **write**
@@ -99,11 +99,11 @@ published verse from 24 pairs with one changed word. See *Calibration* below.
 | Familiarity | Write probe chrF (read: see Calibration) | Example | The agents |
 |---|---|---|---|
 | `known` | 65 and up | Danish | draft from their own command of the language; the memory holds the project's decisions |
-| `partial` | 30–65 | Bern German (`close_to: Standard German`) | write the variety as the corpus writes it, look up what they are unsure of, never fall back on the standard language |
-| `unknown` | below 30 | Kuni | model every word on the corpus, search what the verse pack lacks, record every finding |
+| `partial` | 30–65 | Jamaican (`close_to: English`) | write the variety as the corpus writes it, look up what they are unsure of, never fall back on the standard language |
+| `unknown` | below 30 | a language the model doesn't know | model every word on the corpus, search what the verse pack lacks, record every finding |
 
-The probe's figures for the three pilots are in *Calibration* below. Read the answer as well as the score:
-an answer in fluent Standard German for a Bernese probe is what `partial` means.
+The probe's figures for the demo projects are in *Calibration* below. Read the answer as well as the score:
+an answer that drifts into English for a Jamaican probe is what `partial` means.
 
 `python3 scripts/modes.py <project>` prints the resulting mode and what it switches on.
 
@@ -147,16 +147,17 @@ every prompt, `CREDITS.md`, and which generated files stay local (`docs/licensin
      probes) has the model write down what it believes about the language's grammar: word-forming affixes,
      inflection with the grammatical value each marks, function words. `lang.py derive` leaves the word-forming affixes
      out of its hypotheses, and `priors.py check` tests every item against the corpus; for a partial language it shows
-     where the standard language or another dialect leaks in (Bern German: the model's *dr*, *wüu*, *u* for "and" are
-     absent from Bietenhard, who writes *der*, *wil*, *und*).
-5. **Draft**: a reference chapter first, reviewed with the team; then waves for a known language, one chapter after
-   another for a partly known or unknown one (`draft-chapter` skill). Per
+     where the standard language leaks in (Jamaican: the model listed *-in* as a participle ending and *-dem* as a
+     plural suffix; the corpus has verbs without endings, the progressive *a* before the verb, and *dem* as a word
+     after the noun).
+5. **Draft**: a reference chapter first, reviewed with the team; then one chapter after another, by one book agent
+   per book (`draft-chapter` skill; `chapter_check.py` in its loop). Per
    chapter the pack (`verse_pack.py`, level by the mode), for the OT the clause packages (`package.py`: per Hebrew
    clause line the tokens with their numbers, the BSB words, the project's earlier renderings, and for an unknown
    language the NT's words through the LXX bridge) and the prompt (`make_prompt.py`, rules by the mode) are
    generated; the agent writes the draft tagged (`word^n`) and `full_align.py split` makes the draft and its word
    alignment; agents extend the memory as they go.
-6. **Check** after every wave: `python3 scripts/check_project.py <project>` (drafts, store, wiki,
+6. **Check** after every run of chapters: `python3 scripts/check_project.py <project>` (drafts, store, wiki,
    quotations, status). The agents keep to the rules as they write; this is the double check.
 7. **Review and publish**: the team reads the drafts and the wiki; `scripts/status.py` marks chapters
    `in-review` and `published` (date, who, statement). Everything is online as drafts from the start,
@@ -177,41 +178,37 @@ Three probes (`scripts/probe_language.py`), each a fresh agent with no tools; re
 
 - **write** (production): 16 BSB verses into the language, chrF against the edition;
 - **read** (understanding): 16 corpus verses into English, chrF against the BSB, verse by verse. Verses with a
-  name are left out: from a name the model recognises the verse in any language and recalls its English (Kuni
-  with names: 59; without: 32);
+  name are left out: from a name the model recognises the verse in any language and recalls its English, so a
+  language it doesn't know scores far above its floor on verses with names;
 - **tell apart**: 24 pairs of a corpus verse and a copy with one change (the model's own slips from its write
   answer, a word ending, two words swapped); which is the published one? Chance 50%.
 
 | Project | write (pooled / by verse; floor) | read (floor) | tell apart (slips) | Familiarity |
 |---|---|---|---|---|
 | Danish | 68.4 / 64.4 (21) | 67.0 (20) | 100% (2/2) | `known` |
-| Bern German | 56.7 / 48.2 (22) | 57.4 (20) | 100% (5/5: *öich*, *der*, *Söu* …) | `partial` |
-| Kuni | 15.2 / 12.0 (27) | 32.4 (22) | 79% (6/7) | `unknown` |
+| Jamaican | 57.0 / 47.9 (23) | 45.2 (20) | 100% (8/8) | `partial` |
 
-The floor is unrelated text: each verse scored against another one. What the three show:
+The floor is unrelated text: each verse scored against another one. What the two show:
 
-- **read** separates understanding from none (Kuni barely above the floor), but not Danish from Bern German:
-  both are understood, and the read score also depends on how freely the edition translates (Bietenhard
-  paraphrases more than Den Frie Bibel).
-- **write** is what separates Danish from Bern German; by verse it is the clearer figure (Kuni's invented
-  text scores below a random Kuni verse).
-- **tell apart** is at the ceiling for both known languages: shown the corpus form beside its own slip, the
-  model picks the corpus form every time (*öich*, not *euch*). Bern German's slips are production errors,
-  not gaps in knowledge, so a form check against the corpus catches them; the slips themselves are the first
-  store entries. Kuni's 79% comes from surface cues (spelling of names, word shapes), not knowledge, so it
-  says little; its misses are mostly word order.
+- **read** separates understanding from none: a language the model doesn't know stays near the floor. Both demo
+  languages are understood; the read score also depends on how freely the edition translates.
+- **write** is what separates Danish from Jamaican; by verse it is the clearer figure. A language the model doesn't
+  know scores near or below its floor: the model invents text.
+- **tell apart** is at the ceiling for both: shown the corpus form beside its own slip, the model picks the corpus
+  form every time. Jamaican's slips are production errors, not gaps in knowledge, so a form check against the corpus
+  catches them; the slips themselves are the first store entries. For a language the model doesn't know a high score
+  can come from surface cues (the spelling of names, word shapes), not knowledge, so it says little.
 
 Provisional reading of the scores (`probe_language.py`, `suggest`):
 
-- read less than 15 above its floor → `unknown`: the model doesn't understand it (Kuni);
-- write by verse less than 10 above its floor → `unknown` for writing, though it may read it: the first run of the
-  wizard on a new language, Bodo Parja (helloAO, Odia script), read 70.6 (floor 20) and wrote 22.6 (floor 27): the
-  model understands it, likely through a related language it knows (Odia), but can't write it. The wizard then
-  asks for that language (`close_to`);
+- read less than 15 above its floor → `unknown`: the model doesn't understand it;
+- write by verse less than 10 above its floor → `unknown` for writing, though it may read it: the model understands
+  it, likely through a related language it knows, but can't write it. The wizard then asks for that language
+  (`close_to`);
 - write by verse 58 and up → `known` (Danish);
-- in between → `partial`: understood, written with slips (Bern German).
+- in between → `partial`: understood, written with slips (Jamaican).
 
-A fourth and fifth language will move the thresholds.
+More languages will move the thresholds.
 
 **Planned, not built:** a language with no corpus of its own (only related varieties, or none). Then neither
 read nor tell apart can be scored, and write only by a speaker; the wizard asks the speaker to judge the write

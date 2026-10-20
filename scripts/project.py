@@ -4,17 +4,17 @@ resolve, per book, which original text and which assisting translation apply.
 Where a project lives is its output path (docs/licensing.md, *Three output paths*):
 
     project id                 folder                          output
-    kvg/kvg_BSB                export/kvg/kvg_BSB/             export (our own work, CC0; in git)
+    dan/dan_BSB                export/dan/dan_BSB/             export (our own work, CC0; in git)
     CC-NC/xyz/xyz_rev          export/CC-NC/xyz/xyz_rev/       export/CC-NC (derived from a CC-NC edition; in git, its licence)
-    local_output/kvg/kvg_rev   local_output/kvg/kvg_rev/       local_output (derived work returned to the rights holder; never in git)
+    local_output/jam/jam_rev   local_output/jam/jam_rev/       local_output (derived work returned to the rights holder; never in git)
 
 Derived work (a revision, a draft made with the edition's text of the book in view, a file in the edition's own structure)
 is allowed only on the two derived paths: export/CC-NC for an open or CC-NC edition, local_output for any edition, with the
 rights holder's approval recorded in edition.yaml (derived_work:) when the edition is non-free or CC-ND.
 
 Editions are filed by licence and language, the ISO 639-3 code or an interim dialect id
-(import/CC0/dan/den-frie-bibel/, import/non-free/ch-de-be/bietenhard/), and
-named by their id alone: 'based_on: bietenhard' finds import/*/*/bietenhard/.
+(import/CC0/dan/den-frie-bibel/, import/non-free/jam/jambswn-et/), and
+named by their id alone: 'based_on: den-frie-bibel' finds import/*/*/den-frie-bibel/.
 
 Text basis -> source folders:
 
@@ -209,7 +209,7 @@ def must_quarantine(p, code, chapter=None):
     """The style editions whose copy of this book a draft must not see: every non-free edition that has the
     book, and an attributable (CC BY / CC BY-SA) one when the project sets quarantine_attributable: true.
     Public-domain editions never need it. With chapter: an edition that has other chapters of the book but not this
-    one needs no quarantine for it (Kuni Genesis 31-50 while the edition has 1-30); when that can't be told (no text
+    one needs no quarantine for it (Genesis 31-50 while the edition has 1-30); when that can't be told (no text
     here), the whole-book rule holds. On a derived path the editions the work is derived from need none (their text is
     the work's input); a held-out test there names its books in the project's own quarantine list.
     Returns [(edition id, licence class, [files still present])]."""

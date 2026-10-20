@@ -324,7 +324,7 @@ def write_credits(Q):
         lines += ["Data:", "",
                   "- `_learn/lexicon_hbo.tsv`: Hebrew lexeme ids, lemmas and glosses from MACULA Hebrew (Clear Bible, "
                   "https://github.com/Clear-Bible/macula-hebrew), CC BY 4.0, via the bcv-commons scaffold API; "
-                  "the Kuni renderings and counts are ours (CC0)."]
+                  "the renderings and counts are ours (CC0)."]
     open(f, "w", encoding="utf-8").write("\n".join(lines) + "\n")
     print(f"{os.path.relpath(f, ROOT)} written")
 

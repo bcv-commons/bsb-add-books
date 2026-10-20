@@ -36,7 +36,7 @@ from it, mark each verse it checked with profile b, then `check`.
 The tagged format (an agent's interim file, `<code>NNN.tagged`, git-ignored): the draft
 in its usual layout with the Hebrew token numbers right after the letters of each word, `Synerzyt^2,3, wo^4 d^5`.
 The numbers count every token of the verse in the compact-alignments index (content and function) in source order,
-from 0 (`numbering`). Two more marks (2026-10-16, with lexeme-aligner): `^-7` between words, a token with no target
+from 0 (`numbering`). Two more marks (lexeme-aligner's notation): `^-7` between words, a token with no target
 word at its slot (at the verse's end: no particular slot), and `word^+5` / `word^+`, a word added for token 5 or for the
 grammar. An unmarked word or token is not decided. In the .align they become lexeme-aligner's notation: `!ords` and
 `u<ord>[@pos]` (the @ only where the slot differs from the default rule: after the last target word of the nearest
@@ -168,7 +168,7 @@ def ids_of(sp):
 
 
 def decisions(s):
-    """The decision entries of a main or fn string (lexeme-aligner's notation, 2026-10-16): !<ords> (no target word),
+    """The decision entries of a main or fn string (lexeme-aligner's notation): !<ords> (no target word),
     u<ord>[@<pos>] (untranslated, its slot), e<ord>[@<pos>] (rendered elsewhere), +<pos>[><ord>] (added target words, in
     fn; >ord a content token, >f<ord> a function token).
     -> {"none": [ord], "u": {ord: slot|None}, "e": {ord: slot|None}, "plus": [(pos, ("c"|"f", ord) | None)]}"""

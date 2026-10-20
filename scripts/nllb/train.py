@@ -10,9 +10,9 @@ silnlp does, target characters missing from the NLLB vocabulary become tokens, a
 initialised from the data's init_lang. Early stop on the validation loss; the best model is kept.
 
 The device: CUDA if there is one, else Apple's GPU (MPS; fp32: about 20 GB of shared memory, so a Mac with 32 GB; a 16 GB
-M1 ran out of memory, measured 2026-10-19), else the processor (weeks: 8.8 s per batch of 2 on an i7-6700, so 4-5 minutes a step; rent a GPU instead). --device overrides.
+M1 runs out of memory), else the processor (weeks: 8.8 s per batch of 2 on an i7-6700, so 4-5 minutes a step; rent a GPU instead). --device overrides.
 
-Measured (RTX 3060 Ti, 8 GB, Kuni NT 7,700 verses): peak 6.6-6.9 GB, about 5 s a step, early stop at 4,000-4,500 steps,
+Measured (RTX 3060 Ti, 8 GB, an NT of 7,700 verses): peak 6.6-6.9 GB, about 5 s a step, early stop at 4,000-4,500 steps,
 5.5-6 hours.
 
 Usage: python3 scripts/nllb/train.py --data DIR [--out DIR] [--model facebook/nllb-200-distilled-600M] [--steps 5000]

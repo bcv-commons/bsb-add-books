@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Priors: what is believed about a language before its corpus is studied, as a list the derived products test.
 For a known or partly known language the model knows things the statistics would
-otherwise have to rediscover (Bern German: ver-, us-, uf- form words and carry no grammar; -sch is the 2nd singular).
+otherwise have to rediscover (Jamaican: -nis and -ful form words and carry no grammar).
 Each item is a hypothesis with its source until the corpus or the team confirms it: for a partial language the risk is
 the standard language leaking in, and the check below shows it item by item.
 

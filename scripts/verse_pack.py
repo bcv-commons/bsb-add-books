@@ -16,7 +16,9 @@ For export/<project>/_learn/packs/<code>NNN.md, per verse:
     (pack v3, `--budget CHARS` or the project's `pack_budget`, full level only), as many corpus verses as fit in
     CHARS characters of target text, chosen by silnlp's greedy coverage step on the verse's English content words and
     word pairs: the closest verses first, then each next verse the one that best covers what is not covered yet;
-  - "still needs a search": the content words that no store entry, lexicon row or phrase covers.
+  - "still needs a search": the content words that no store entry, lexicon row or phrase covers;
+  - with --grammar or the project's `pack_grammar: true` (pack v4, on trial): the verbs whose cell is marked (negated, a subject other than 3rd
+    singular) with the store's pattern for the cell, and the paradigm once in the header (scripts/verse_analysis.py).
 And a chapter header: the store's features in one line each, an index of all live terms, formulas and
 names (one line each; `concord.py store <id>` prints an entry in full), the names in the chapter, the
 glossary entries (edition glossary.tsv) whose English equivalent occurs in the chapter.
@@ -30,12 +32,12 @@ Levels (`--level`, default from the project's mode, scripts/modes.py):
   memory    the header and each verse's store hits only (known: the model writes the language; the pack
             keeps the project's decisions in front of it).
 
-Pack v3 is on trial (plan B5): until the A/B on a held-out Kuni chapter decides (v2 against v3 at 2k and 6k
-characters), no project sets `pack_budget` and the default is v2. The study's offline test: from 2k to 8k characters a
-verse, word coverage +11-13 points, rare words +7-15; the coverage step adds about +1.3 rare-word points at equal budget.
+Pack v3 is on trial: the default is v2, and a project opts in with `pack_budget`. Offline, a larger budget (2k to 8k
+characters a verse) covers more of the verse's words and more of its rare words; the coverage step adds a little more at
+equal budget.
 
 Usage: python3 scripts/verse_pack.py <project> <code> <chapter> [--level full|dialect|memory] [--similar K]
-                                     [--budget CHARS] [--out FILE]
+                                     [--budget CHARS] [--grammar] [--out FILE]
 """
 import collections, glob, json, math, os, re, sys, unicodedata
 
@@ -173,7 +175,7 @@ def main():
                 bsb_ref[hv] = (bc, bv)
     LP = LT.Project(pname)                         # the style corpus, paired with the BSB (scripts/langtools.py)
     glossary = LP.glossary()
-    # never the chapter being drafted; the book's other chapters are the best models when the edition has them (Kuni
+    # never the chapter being drafted; the book's other chapters are the best models when the edition has them (its
     # Genesis 1-30 for Genesis 31). When the edition has the chapter itself, make_prompt.py demands a quarantine, which
     # takes the whole book out of the corpus.
     corpus = [(r[0], r[3], r[4]) for r in LP.corpus() if r[3] and not (r[1] == code and r[2][0] == int(nnn))]
@@ -344,7 +346,7 @@ def main():
         ww, rel = w / w.sum(), s / max(float(s.max()), 1e-12)
         tlen = [len(corpus[cands[o]][2]) for o in order]
         best = []
-        for kk in (2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 25, 30, 40, 50, 65, 80, 100):   # the study's ladder
+        for kk in (2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 25, 30, 40, 50, 65, 80, 100):   # the ladder of k
             chosen = list(range(min(20, max(1, kk // 2), len(order))))
             avail = np.ones(len(order), bool)
             avail[chosen] = False
@@ -406,6 +408,12 @@ def main():
     if gh:
         L += ["## Glossary entries whose English occurs in this chapter", ""] + [f"- **{g[0]}** = {g[1]}" for g in gh] + [""]
 
+    gverses = {}
+    if "--grammar" in args or p.get("pack_grammar"):   # pack v4 (on trial): the verbs' required marking
+        import verse_analysis
+        ghead, gverses = verse_analysis.grammar_block(pname, code, chapter)
+        if ghead:
+            L += ["## Verb marking (pack v4)", ""] + ghead
     L += ["## Verses", ""]
     need_total = []
     for v in sorted(assist):
@@ -438,6 +446,8 @@ def main():
             for e in gh:
                 L.append(f"- gap [{e['status']}]" + (f" ({', '.join(e['words'])})" if e.get("words") else "") + f": {e['value']}")
             L.append("")
+        if gverses.get(vn):
+            L += ["Verbs to mark (source cell: the store's pattern):", ""] + gverses[vn] + [""]
         lexed = set()
         if level == "memory":
             continue

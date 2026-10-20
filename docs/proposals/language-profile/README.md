@@ -22,17 +22,17 @@ agents, checked by a validator, and never silently overwritten: a later entry
 supersedes an earlier one and says so.
 
 > **Status: proposal** from bcv-commons/bsb-add-books, after its first drafting
-> experiment in a language with no LLM exposure (Kuni, `kvg`, Papua New Guinea).
+> experiment in a language with no LLM exposure.
 > Proposed as a sibling of lexeme-aligner's `gram-struct`, `target-morphology`
 > and `lexeme-alignments`, which it builds on and cross-checks.
 
 ## What it adds to what exists
 
-| dataset | layer | example for Kuni |
+| dataset | layer | example for Jamaican |
 |---|---|---|
-| `gram-struct` (lexeme-aligner) | typological slots from Grambank, WALS and alignment statistics | postpositions; verb-final; possessor before the noun; no bound article |
-| `target-morphology` | unsupervised affix inventories and stems | suffixes `-am`, `-át`, `-ɨn`; prefixes `vø-`, `ndø-`, `ge-` |
-| `lexeme-alignments` | surface forms per Strong's number, with counts | `grc:2316` → mbumbukiam 1207 |
+| `gram-struct` (lexeme-aligner) | typological slots from Grambank, WALS and alignment statistics | SVO; prepositions; no case on nouns or pronouns |
+| `target-morphology` | unsupervised affix inventories and stems | word-forming `-nis`, `-ful`, `-li`; no verb endings |
+| `lexeme-alignments` | surface forms per Strong's number, with counts | `grc:2316` → gad |
 | **language profile** (this) | **usage-level, evidenced knowledge for drafting**: how speech is framed, which verb form carries narrative, what `-te` and `-qa` mark, which rendering to use for "famine" and why, how names are transliterated, what the corpus doesn't have | "direct speech: `āv gene-eín nqǽgo:` then the quote, 2,051× in the NT"; "YHWH → Evezøza, as the NT's κύριος for God"; "glean: no NT model, built from *gather* + *grain*, open" |
 
 `gram-struct`'s own README lists what alignments can't tell: that is where a
@@ -62,8 +62,8 @@ non-free ones (bsb-add-books `docs/licensing.md`):
   each source and code; it is never written by an agent.
 
 `<edition>` is the edition id as in bcv-commons/bibles or lexeme-aligner
-(`dan_dfb`, `kvg_wbt`); a draft project that has no published edition uses its
-project id (`kvg_BSB`).
+(`dan_dfb`); a draft project that has no published edition uses its
+project id (`jam_BSB`).
 
 ## The entry contract
 
@@ -72,7 +72,7 @@ Every entry, whatever its kind:
 | field | meaning |
 |---|---|
 | `id` | stable within the profile (`speech_frame`, `term:H7458`, `name:naomi`) |
-| `kind` | `feature`, `letter`, `gap` (observations); `term`, `formula`, `name` (decisions) |
+| `kind` | `feature`, `letter`, `gap`, `morph`, `cell`, `claim` (observations); `term`, `formula`, `name` (decisions) |
 | `value` | the finding (a string, or a small object for formulas) |
 | `evidence` | verse references in the edition, `"BOOK C:V"` (USFM code, the edition's numbering), each with an optional count `n` of occurrences in the corpus; at least one for `feature`, `term`, `formula`, `name` |
 | `confidence` | `high`, `medium`, `low` |
@@ -121,6 +121,25 @@ Rules:
   evidence) or `by-rule` (built from the letter table; evidence then cites the
   letter entries).
 
+- **`morph`**: a grammatical morph. `value` is its Leipzig gloss (`2.PL`, `NEG.IND`); `form` the morph as written,
+  with a hyphen on the side it attaches (`ge-`, `-eav`, `-zø-`, `=te`); `slot` one of `prefix`, `suffix`, `infix`,
+  `clitic`, `free`, `tone` (a tone pattern: `form` is then a name, `tone-proh`, and `tone` describes the pattern);
+  `host` the word class (`verb`, `noun`, `pron`, `any`); `unimorph` the same gloss in UniMorph tags; `stats` the
+  figures a script computed (`count`, `hosts`, `lift`, `test_lift` on held-out books); evidence verses where it
+  occurs (the validator finds the form on its side of a word in at least one). Id `m:<form>:<host>[.<use>]`.
+- **`cell`**: a paradigm cell, the form that fills one bundle of grammatical values. `paradigm` as the source-to-cell
+  table names it (`verb.subject`, `verb.polarity`, `poss.pronoun`: `scripts/source_cells.py`), `bundle` its tags
+  (`3.SG.IND`), `value` the form pattern (`z…-ap`, `Ø` for no mark), `morphs` the morph ids that build it,
+  `alternatives` other forms with counts, `stats` (`count`, `share` of the bundle's tokens), `gap: true` when the
+  corpus has no case (then no evidence). Id `c:<paradigm>:<bundle>`.
+- **`claim`**: a statement about the grammar (from the wiki, an analysis, a grammar sketch or the team) and how it
+  was tested: `value` the claim, `area`, `source`, `tests` (`corpus`, `greek`, `hebrew`, `nllb`, `team`), `figures`
+  (the results in short), `verdict` (`confirmed`, `corpus-only`, `contradicted`, `new`, `open`), `next`. Evidence
+  optional. Id `claim:<name>`.
+
+`scripts/grammar.py` reads the three kinds for the tools (`grammar.load(project)`: morphs, affixes by host and slot,
+cells by paradigm) and writes them from a working store's TSV files (`from-tsv`).
+
 `term`, `formula` and `name` carry `attested`: `attested` means the value occurs
 as such in a cited verse (the validator checks it); `by-rule` means it was built
 by analogy from the cited verses (a prefix swapped, a frame filled, a name
@@ -157,7 +176,7 @@ unchanged, from the published text, credited.
   validator. The chapter's own notes keep the per-verse models and exegesis; the
   profile keeps only what carries over.
 
-In bsb-add-books this replaces the prose "learning notes" of the first Kuni run
+In bsb-add-books this replaces the prose "learning notes" of a language the model doesn't know
 and extends the style guides of the other projects; `project.yaml` points the
 chapter prompt at the profile.
 
@@ -167,7 +186,7 @@ Proposed as `bcv-commons/language-profiles` on Hugging Face, one folder per
 language and edition, `observations.json` for every language (CC0) and
 `decisions.json` for every language too (single words and short phrases, with references).
 Quotations in notes and patterns carry the edition's credit line. First candidates: Danish
-(Den Frie Bibel, public domain) and Kuni (both partitions, credit: Wycliffe Switzerland).
+(Den Frie Bibel, public domain) and Jamaican (credit: Bible Society of the West Indies).
 
 ## Open questions
 

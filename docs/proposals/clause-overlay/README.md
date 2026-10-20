@@ -13,15 +13,15 @@ clause depends on which, for example:
 - a circumstantial clause under its main line;
 - a relative or conditional clause under its main clause.
 
-Example, Ruth 1,1 (Bern German pilot):
+Example, Ruth 1,1 (the BSB's words on the pilot's clause lines):
 
 ```
-Synerzyt,
-    wo d Richter regiert hei,
-  isch e Hungersnot im Land cho.
-  Da isch e Maa vo Betlehem z Juda furtzoge,
-          für sech als Frömde im Land Moab niderzla,
-        är, sy Frou und syni zwee Sühn.
+In the days
+    when the judges ruled,
+  there was a famine in the land.
+  And a man from Bethlehem in Judah went
+          to reside in the land of Moab,
+        he and his wife and his two sons.
 ```
 
 Three decisions shape the design:
@@ -98,7 +98,7 @@ offer the toggle.
   write the translation with **inline markers** (authoring format below).
 - **Rule for the agents:** follow the segments where the language allows it. Merging
   and moving words between segments of the same verse are allowed and get a short
-  note. The pilot (Ruth 1 Bern German, Genesis 1 Danish, 53 verses) needed
+  note. The pilot (Ruth 1 and Genesis 1 in two languages, 53 verses) needed
   3 merges and 5 word-order changes in 255 segments.
 - The draft check reports merges and moves as information. It fails only on hard
   errors: a wrong number of segments in a verse, a wrong verse.
@@ -257,8 +257,7 @@ tenths, capped at 9.
      dotted underline colours), the line is marked "+1 clause", and an empty ghost line
      at the second clause's level shows its words (`↑ at … var godt`).
 
-   Where the words do not interleave (Ruth 1,9: *Da hei si lut* / *aafa briegge*),
-   both displays give two lines. A clause written `k:=` has no words; it is shown as a
+   Where the words do not interleave, both displays give two lines. A clause written `k:=` has no words; it is shown as a
    ghost line "no words of its own" under the line before it.
 
 Prose mode ignores all of this.
@@ -267,13 +266,8 @@ Prose mode ignores all of this.
 
 **Merges are a display, not a translation decision.** The translator (or an aligner)
 only says which words render which Hebrew clause. Two neighbouring clauses whose words
-interleave can then be shown as one line or as two (see "Rendering in a client"):
-- Ruth 1,9 וַתִּשֶּׂאנָה קוֹלָן / וַתִּבְכֶּינָה "they lifted their voice / and wept" → „Da hei si
-  lut aafa briegge“: the words do not interleave (*Da hei si lut* / *aafa briegge*), so
-  this is simply two lines;
-- Ruth 1,14 „Da hei si no einisch lut aafa briegge“: *no einisch* ("again", with "wept")
-  stands inside the first clause, so the clauses interleave;
-- Genesis 1,4 "Gud så at lyset var godt": *at … var godt* and *Gud så … lyset* interleave.
+interleave can then be shown as one line or as two (see "Rendering in a client"), for example
+Genesis 1,4 "Gud så at lyset var godt": *at … var godt* and *Gud så … lyset* interleave.
 
 The pilot drafts were first written with these as merges (`//N =`); the line was kept
 and the words of the second clause named, which is all the sidecar needs.
@@ -283,9 +277,9 @@ Two equivalent forms of the same draft, convertible both ways:
 **Clause lines**: one line per Hebrew segment.
 
 ```
-//1 v1 Synerzyt,
-//3 wo d Richter regiert hei,
-//2 isch e Hungersnot im Land cho.
+//1 v1 In the days
+//3 when the judges ruled,
+//2 there was a famine in the land.
 //2 =
 ```
 
@@ -297,7 +291,7 @@ Two equivalent forms of the same draft, convertible both ways:
 **Overlay**: running prose with inline markers.
 
 ```
-v1 |0 Synerzyt, |2 wo d Richter regiert hei, |1 isch e Hungersnot im Land cho. ...
+v1 |0 In the days |2 when the judges ruled, |1 there was a famine in the land. ...
 ```
 
 - `|N` gives the level of the following segment.
@@ -312,12 +306,11 @@ Ruth 1 both forms give the identical sidecar.
 
 ## Examples
 
-`examples/` holds the two pilot chapters:
+`examples/` holds the pilot's Danish chapter and the source indexes (locally):
 
 ```
 examples/_index/RUT_clauses.json                          source index, Ruth 1
 examples/_index/GEN_clauses.json                          source index, Genesis 1
-examples/g/gsw/gsw_bern-draft/RUT_59f86.clauses.json      Bern German draft, Ruth 1
 examples/d/dan/dan_draft/GEN_2714e.clauses.json           Danish draft, Genesis 1
 ```
 
@@ -334,10 +327,10 @@ The pilot texts and a side-by-side view of prose and clause lines are kept local
 
 ## Open questions
 
-1. **Segmentation:** *decided 2026-10-12 with bcv-query:* MACULA's own segments, tied
+1. **Segmentation:** *decided with bcv-query:* MACULA's own segments, tied
    to the aligner's word keys. Segments and clauses are identified by word keys (a
    segment by its `first` key, a clause by `clause_key`), never by the build's row ids.
-2. **Who owns the index?** *Decided 2026-10-12:* bcv-query publishes it with
+2. **Who owns the index?** *Decided:* bcv-query publishes it with
    `hebrew-clause-layout`; lexeme-aligner mirrors it into its `_index/` with its spine pin.
 3. **Function words:** the derivation in lexeme-aligner is much better with the
    function-word alignments, which are only published for hand-aligned editions so far.

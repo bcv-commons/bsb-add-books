@@ -33,11 +33,11 @@ Frie Bibel) is imported with the import-edition skill; the wizard can still crea
 (answer `editions` with its id).
 
 Answers (all optional; the wizard prints the file it used, so a run can be repeated):
-    language: kvg                  language_name: Kuni          school_language: English
-    dialect_id: null               # an interim id instead of the ISO code (ch-de-be)
-    editions: [ebible:kvg]         # source:id from the list, or the id of an edition already in import/
-    licence_folder: {ebible:kvg: non-free}   # only where the licence can't be read; default non-free
-    project: kvg_BSB               books: [gen, exo]            familiarity: null (set by the probe)
+    language: jam                  language_name: Jamaican Creole English   school_language: English
+    dialect_id: null               # an interim id instead of the ISO code, for a variety without one
+    editions: [dbt:JAMBSWN_ET]     # source:id from the list, or the id of an edition already in import/
+    licence_folder: {dbt:JAMBSWN_ET: non-free}   # only where the licence can't be read; default non-free
+    project: jam_BSB               books: [gen, exo]            familiarity: null (set by the probe)
     quotes: "“”"                   chapter_word: Chapter
     ai_route: api | claude-code    probe_model: claude-opus-5-5 (API route)   close_to: null   go_ahead: true
     run_setup: true                run_align: true              init_memory: true
@@ -976,7 +976,7 @@ def probe_step(pname, name, route, have_corpus):
     if not have_corpus or not route or DRY:
         why = "no corpus to score against" if not have_corpus else "no model to run them" if not route else "dry run"
         say(f"  the probes are skipped ({why}); docs/onboarding.md explains the three familiarities")
-        return ask("familiarity", "Familiarity (known: like Danish, partial: like Bern German, unknown: like Kuni)",
+        return ask("familiarity", "Familiarity (known: like Danish, partial: like Jamaican, unknown: the model doesn't know it)",
                    "unknown", choices=fams), []
     say("  Three short tests, each a fresh model with no tools (about a minute):\n"
         f"    write: 16 verses into {name}   read: 16 verses into English   tell apart: 24 pairs, which is the published one")
@@ -1025,7 +1025,7 @@ def accelerator():
 
 
 def training_offer(fam):
-    """The second-draft model (a fine-tuned NLLB-600M, for review triage; the study's verdict, 2026-10-19: a second opinion,
+    """The second-draft model (a fine-tuned NLLB-600M, for review triage: a second opinion,
     not a drafter): what this machine can do with it, a rented GPU where it can't, and the question. Offered in the
     unknown mode; in the partial mode it is still being tested; a known language doesn't need it. Returns the answer, or
     None when not offered."""

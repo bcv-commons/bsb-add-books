@@ -103,10 +103,10 @@ def store_terms(pname):
 
 
 def team_ot(pname):
-    """{lexeme: [(word, count)]}: how the style edition's own OT renders each Hebrew lexeme (the human text: for Kuni
-    Genesis 1-30, Ruth, Jonah), from the aligner's links (_learn/lexicon_hbo.tsv, scripts/align.py --sides hbo). Measured
-    on Kuni Genesis 24, 27, 29 left out of the alignment: a top-3 word in the team's verse for 55% of content words (floor
-    27%), against 44% (24%) for the NT bridge; both together 58% of all content words, against 41% (plan, section 26)."""
+    """{lexeme: [(word, count)]}: how the style edition's own OT renders each Hebrew lexeme (the human text of the
+    OT books the edition has), from the aligner's links (_learn/lexicon_hbo.tsv, scripts/align.py --sides hbo). Where the
+    edition has OT books, this is a better guide to the team's words than the NT bridge, and the two together better
+    than either."""
     import csv
     f = os.path.join(project_dir(pname), "_learn", "lexicon_hbo.tsv")
     out = collections.defaultdict(list)
@@ -150,8 +150,7 @@ def nt_bridge(pname, lexemes):
 def widen(con, lexemes, out, sparse=5):
     """Where the LXX route gives fewer than `sparse` NT renderings (the LXX word is rare or absent in the NT: goat עֵז ->
     αἴξ, while the NT has ἔριφος), the NT Greek words with the Hebrew word's English gloss, kept to one Louw-Nida sense
-    (the largest group), and their renderings. Measured on Kuni Genesis 24, 27, 29: candidates 96% -> 98%, hits +1 point
-    (plan, section 26). Louw-Nida is UBS material inside MACULA Greek: used here locally (packages are git-ignored)."""
+    (the largest group), and their renderings. Louw-Nida is UBS material inside MACULA Greek: used here locally (packages are git-ignored)."""
     import lang as L
     heb = sqlite3.connect(HEB)
     gloss = {}

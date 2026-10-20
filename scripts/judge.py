@@ -21,9 +21,8 @@ Usage:
   python3 scripts/judge.py prompt <project> <case>  # the prompt again
   python3 scripts/judge.py tally <project> [case ...] [--by-version]  # unblinded figures per case, and in total
 
-Costs about 80-100k tokens a chapter for three versions (study). Measured noise (2026-10-19, three near-identical Bern German
-drafts, two judges, other label orders): the error counts agree; the "best" pick and the top naturalness mark went to label A
-both times (position bias). So compare versions by their errors, and trust a ranking only when it holds across two judgements
+Costs about 80-100k tokens a chapter for three versions. Noise (three near-identical drafts, two judges, other label
+orders): the error counts agree; the "best" pick and the top naturalness mark can follow the label (position bias). So compare versions by their errors, and trust a ranking only when it holds across two judgements
 with different label orders (prepare the case twice, another --seed).
 """
 import collections, json, os, random, re, sys

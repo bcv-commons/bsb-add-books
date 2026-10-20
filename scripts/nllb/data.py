@@ -11,9 +11,9 @@ code starts from, read by train.py).
 Usage: python3 scripts/nllb/data.py <project> [--test rut[,jon]] [--nt-only] [--trg-code xxx_Latn] [--init-lang tpi_Latn]
                                     [--out DIR]
   --trg-code  default: the project's language code (ISO 639-3, first part) + _Latn (dan_Latn is NLLB's own; a code NLLB
-              lacks, such as kvg_Latn, is added at training)
+              lacks is added at training)
   --init-lang the NLLB language a new code starts from (default eng_Latn; better a related language: tpi_Latn for a
-              language of Papua New Guinea, deu_Latn for a German dialect)
+              language where Tok Pisin is the language of wider communication, deu_Latn for a German dialect)
 """
 import json, os, random, sys
 

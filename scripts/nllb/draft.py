@@ -13,7 +13,7 @@ this file and the model, so it can run on another machine:
            <project>/_eval/local/second/<name>/<code>NNN.txt, read by scripts/triage.py; with --out the chapters go to DIR2
            as a rough pass, with DIR2/rough_check.md: the verses scripts/rough_check.py flags (a lost negation, English
            left in), to be reviewed first. A rough pass of poetry or prophecy is not worth handing over (4 major errors per
-           10 verses in the study, against about 2 in narrative and law).
+           10 verses in a test, against about 2 in narrative and law).
 
 The vref lines are "code c:v" in the original's numbering, so a verse the BSB splits or joins is drafted once.
 """
