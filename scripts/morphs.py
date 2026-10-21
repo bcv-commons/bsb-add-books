@@ -316,6 +316,12 @@ class Segmenter:
                 ok += sum(1 for w in ws if any(self.attested(w[:-len(a)], none, o, self.vocab[w]) for o in ones) if side == "s")
                 if len(ws) >= 10 and ok >= self.min_productive * len(ws):
                     self.productive.add(a + "-" if side == "p" else "-" + a)
+        # and the affixes `try` found productive by their Greek feature (`productive: true`): taken off every word,
+        # they still mark it (a negation suffix on verbs whose stems seldom occur in another form)
+        for e in G.morphs:
+            fm = self.plain(unicodedata.normalize("NFC", (e.get("form") or "").lower()).strip("-="))
+            if e.get("productive") is True and fm and e.get("slot") in ("prefix", "suffix"):
+                self.productive.add(fm + "-" if e["slot"] == "prefix" else "-" + fm)
         # host-aware chains: a word's classes from the NT aligned to the Greek (classes: {word: Counter(Greek class:
         # tokens linked to one, and "" all its linked tokens)}): each class linked in at least half its tokens (2 or
         # more), so a verb that also renders its subject's article (bakagaamba: οἱ ... εἶπον) is still a verb. A chain's
@@ -578,7 +584,7 @@ def word_classes(pname, P):
     return out
 
 
-METHOD = "morphs try 1"
+METHOD = "morphs try 2"
 HOSTS = {"verb": ("verb",), "noun": ("noun",), "adj": ("adj",), "pron": ("pron",)}  # any other host: every class
 
 
@@ -641,6 +647,11 @@ def try_morphs(pname, ids, P, S, write=False, by="script:morphs.py", min_n=20, m
     every verse and on the even verses alone (a second count on half the data).
     Kept: n >= min_n, stems >= min_stems, and both odds ratios >= min_odds (without `greek`: the counts only, verdict
     open).
+    Productive: a prefix or suffix with `greek` that the segmenter takes off only where the stem is attested is measured
+    a second time as taken off every word that leaves a stem of 3 letters or more; where that is confirmed too and keeps
+    at least half its odds ratio (on all verses and on the even ones: it marks the feature about as sharply), it is
+    productive (`productive: true`, written with its figures): its words split without a stem of their own elsewhere.
+    Where it isn't (a short ending that many other words share), `productive: false`.
     With write: the entry's `stats`, status observed (kept) or open (not), and one claim per entry (id claim:morph.<id>)
     with its rerun recipe and basis, so that grammar.py retest reruns it when the store changes"""
     import json, sqlite3, datetime
@@ -661,18 +672,39 @@ def try_morphs(pname, ids, P, S, write=False, by="script:morphs.py", min_n=20, m
         kept = n >= min_n and stems >= min_stems and (not want or (odds or 0) >= min_odds and (todds or 0) >= min_odds)
         verdict = ("confirmed" if kept else "contradicted") if want else ("open" if kept else "contradicted")
         refs = list(dict.fromkeys(t[5] for t in host_on))[:3]
-        res.append((e, n, stems, lift, tl, odds, todds, verdict, refs))
+        prod = None
+        a = form.lower().strip("-=")
+        key = a + "-" if e.get("slot") == "prefix" else "-" + a
+        if want and e.get("slot") in ("prefix", "suffix") and (key not in S.productive or e.get("productive") is True):
+            had = key in S.productive
+            S.productive.add(key)
+            S.cache = {}
+            pout, _ = measure(e, affix_tokens(pname, S), want)
+            if not had:
+                S.productive.discard(key)
+            S.cache = {}
+            pn, ps, _, po = pout["all"]
+            pto = pout["even"][3]
+            prod = (pn >= min_n and ps >= min_stems and (po or 0) >= max(min_odds, 0.5 * (odds or 0))
+                    and (pto or 0) >= max(min_odds, 0.5 * (todds or 0)), pn, ps, po, pto)
+        res.append((e, n, stems, lift, tl, odds, todds, verdict, refs, prod))
         print(f"  {e['id']:24} {form:7} position {pos or '-'}  n {n:5}  stems {stems:4}"
               + (f"  lift {lift}, odds {odds} (even verses {todds}) for {gr(e)}" if want else "")
-              + f"  -> {verdict}")
+              + f"  -> {verdict}"
+              + (f"; off every word: n {prod[1]}, stems {prod[2]}, odds {prod[3]} (even verses {prod[4]}) -> "
+                 + ("productive" if prod[0] else "not productive") if prod else ""))
     if not write:
         return res
     f = os.path.join(P.profile, "observations.json")
     d = json.load(open(f, encoding="utf-8"))
     today = datetime.date.today().isoformat()
     by_id = {x.get("id"): x for x in d["entries"]}
-    for e, n, stems, lift, tl, odds, todds, verdict, refs in res:
+    for e, n, stems, lift, tl, odds, todds, verdict, refs, prod in res:
         x = by_id[e["id"]]
+        if prod:
+            x["productive"] = bool(prod[0] and verdict == "confirmed")
+            x["stats"] = {**(x.get("stats") or {}), "productive_count": prod[1], "productive_hosts": prod[2],
+                          **({"productive_odds": prod[3], "productive_test_odds": prod[4]} if prod[3] is not None else {})}
         if not x.get("evidence") and refs:          # a proposal without evidence gets the first verses it comes off in
             x["evidence"] = [{"ref": refs[0], "n": n}] + [{"ref": r} for r in refs[1:]]
         x["stats"] = {**(x.get("stats") or {}), "count": n, "hosts": stems,
@@ -685,7 +717,9 @@ def try_morphs(pname, ids, P, S, write=False, by="script:morphs.py", min_n=20, m
                       + f", {e.get('host') or 'any'}) is an affix" + (f" marking {want}" if want else ""),
              "area": "morph", "source": e.get("by") or "", "tests": ["corpus"],
              "figures": f"n {n}, stems {stems}" + (f", lift {lift} (even verses {tl}), odds ratio {odds} (even verses "
-                                                   f"{todds})" if lift is not None else ""),
+                                                   f"{todds})" if lift is not None else "")
+                        + (f"; off every word: n {prod[1]}, stems {prod[2]}, odds ratio {prod[3]} (even verses {prod[4]}): "
+                           + ("productive" if prod[0] and verdict == "confirmed" else "not productive") if prod else ""),
              "verdict": verdict, "next": {"confirmed": "the morph stays (observed)", "open": "counts only: name its "
                                           "Greek feature (`greek`) to test it",
                                           "contradicted": "the morph stays open: revise or supersede it"}[verdict],
@@ -848,11 +882,14 @@ def carried(S, M, dim, fv, words):
 
 
 def verb_words(S, G, ws):
-    """the words that carry a verb prefix of the chain (host verb, with a position)"""
+    """the words that carry a verb prefix of the chain (host verb, with a position); a store without a chain: every
+    word linked to the Greek verb (its affixes have no positions to pick the verb word by)"""
     A = getattr(S, "_verb_pre", None)
     if A is None:
         A = S._verb_pre = {k for k, e in affix_entries(G).items() if e.get("host") == "verb" and e.get("slot") == "prefix"
                            and e.get("position")}
+    if not A:
+        return list(ws)
     return [w for w in ws if any((m.form, m.position) in A for m in S.split(w))]
 
 

@@ -102,7 +102,8 @@ bridge between an NT translated from the Greek and the Hebrew OT being drafted.
 | `position` | optional: the place in an affix chain (prefixes from the word's start, suffixes from the stem outward); one form can hold two (subject *mu-* at 2, object *mu-* at 4) |
 | `greek` | optional: the Greek feature it marks, as `lang.py report` names them (`{"person+number": "fp"}`; a list for several values) |
 | `tone_pattern` | a grammatical tone morph's marks by position from the word's end: `[{"at": "-2", "mark": "U+0300"}, {"at": "-1", "mark": "U+1DC4"}]`; `"<-1"` any unit before the last |
-| `stats` | from scripts: `count`, `hosts`, `lift`, `test_lift`, `odds`, `test_odds` |
+| `productive` | from `morphs.py try`: `true` where the affix, taken off every word, still marks its Greek feature (confirmed, with at least half its odds ratio) (its words split without a stem attested elsewhere); `false` where it doesn't |
+| `stats` | from scripts: `count`, `hosts`, `lift`, `test_lift`, `odds`, `test_odds`; `productive_count`, `productive_hosts`, `productive_odds`, `productive_test_odds` |
 
 The form must occur on its side of a word in at least one cited verse (tone morphs are not matched). Only a tone morph
 with a `tone_pattern` is grammatical and taken out of the word; other tone is lexical and stays in the stem.
