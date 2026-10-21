@@ -1,0 +1,16 @@
+# A Bantu NT (Kuhane, Zambia/Namibia): a test corpus for affix chains (scripts/morphs.py). Fetched by its recipe:
+# python3 scripts/fetch_edition.py sbs_doo (the text is not in git; fetch.lock.json pins it).
+name: "Kuhane New Testament (Door 43)"
+language: sbs
+role: style
+text_dir: text
+format: "one .txt file per chapter (fetched)"
+nt_basis: critical
+quarantine: []
+fetch:
+  source: helloao
+  id: sbs_doo
+source: "bible.helloao.org, translation sbs_doo; eBible sbs (copyright 2020 Door 43 International Mission Community)"
+licence: "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)"
+attribution: "Kuhane Bible, copyright 2020 Door 43 International Mission Community, CC BY 4.0"
+credit: "Kuhane NT, Door 43 (CC BY 4.0)"
