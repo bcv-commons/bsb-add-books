@@ -102,7 +102,7 @@ def slug(s):
     return re.sub(r"[^a-z0-9_:.-]+", "_", s).strip("_")
 
 
-def status(st):
+def tsv_status(st):
     """the working store's statuses onto the contract's: thin -> observed (confidence low), gap -> observed + gap"""
     return st if st in ("observed", "decided", "open", "superseded") else "observed"
 
@@ -129,7 +129,7 @@ def from_tsv(src, dst, by, date):
              "stats": {k: v for k, v in st.items() if v is not None}, "evidence": refs(r.get("refs"), st["count"]),
              "confidence": confidence(st["test_lift"] if st["test_lift"] is not None else st["lift"], st["count"]),
              "method": "corpus-derived", "by": r.get("by") or by, "date": r.get("date") or date,
-             "status": status(r.get("status"))}
+             "status": tsv_status(r.get("status"))}
         if tone:
             e["tone"] = r["form"]
         if r.get("unimorph"):
@@ -146,7 +146,7 @@ def from_tsv(src, dst, by, date):
         e = {"id": slug(r["id"]), "kind": "cell", "value": r["form"], "paradigm": r["paradigm"], "bundle": r["bundle"],
              "stats": {k: v for k, v in st.items() if v is not None}, "evidence": refs(r.get("refs"), st["count"]),
              "confidence": "medium" if (st["share"] or 0) >= 0.3 and r.get("status") != "thin" else "low",
-             "method": "corpus-derived", "by": by, "date": date, "status": status(r.get("status"))}
+             "method": "corpus-derived", "by": by, "date": date, "status": tsv_status(r.get("status"))}
         if r.get("gap") == "1" or r.get("status") == "gap" or not e["evidence"]:
             e["gap"] = True                   # no case cited: recorded as a gap, never as a form
         ms = [slug(m) for m in (r.get("morphs") or "").split(";") if m.strip()]
