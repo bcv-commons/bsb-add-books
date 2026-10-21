@@ -22,12 +22,15 @@ Commands:
                                           is no entry). Prints them; --write puts them into observations.json (its own
                                           earlier entries replaced, an agent's or the team's left alone)
   show <project|dir> [morph|cell|claim]   the entries, one line each
+  retest <project> [--run]                the tests a script ran on the store (claims with `rerun`) whose basis changed:
+                                          the store learned something since (orthography.tone, a tone pattern, a morph,
+                                          analysis.match) or the method did; --run reruns them (and rewrites their claims)
   from-tsv <tsv dir> <profile dir> [--by NAME] [--date YYYY-MM-DD]
       writes the morphs.tsv, cells.tsv and claims.tsv of a working store (one row per morph, cell or claim; list
       fields ';'-separated) into <profile dir>/observations.json as entries: those of the three kinds already there
       are replaced, every other entry is kept. Check the result with scripts/language_profile.py check.
 """
-import csv, datetime, json, os, re, sys
+import collections, csv, datetime, json, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
@@ -319,7 +322,78 @@ def line(e):
     return f"{e['id']:28} {e['verdict']:12} {e['value'][:80]}"
 
 
+# --- basis and retest -------------------------------------------------------------------------------------------------
+# A test a script ran on the store (a claim with `rerun`) records its `basis`: a fingerprint of what its result depends
+# on. When the store learns something later (how tone is written, a tone pattern, a new morph, the view the checks use)
+# or the checking method changes, the basis no longer matches and `retest` reruns the test.
+
+def basis(where, cell=None, method=""):
+    """the fingerprint of the store settings a test depends on: the orthography and analysis settings, every live morph
+    (form, slot, host, tone pattern), the cell's own value and its alternatives that no test added, the checking
+    method's version. The style corpus is recorded beside it (corpus()), as a profile folder alone doesn't name it"""
+    import hashlib
+    d = json.load(open(os.path.join(profile_dir(where), "observations.json"), encoding="utf-8"))
+    G = Grammar(d.get("entries", []))
+    parts = {"orthography": d.get("orthography") or {}, "analysis": d.get("analysis") or {}, "method": method,
+             "morphs": sorted([e.get("form"), e.get("slot"), e.get("host"), e.get("tone_pattern")] for e in G.morphs)}
+    if cell:
+        ce = G.cell(*cell)
+        parts["cell"] = [ce.get("value"), sorted(x.get("value") for x in ce.get("alternatives", [])
+                                                 if x.get("method") != "tested")] if ce else None
+    return hashlib.sha256(json.dumps(parts, sort_keys=True, ensure_ascii=False, default=str).encode()).hexdigest()[:16]
+
+
+def corpus(where):
+    """the project's style corpus (project.yaml style_from), or None for a profile folder"""
+    try:
+        from project import project
+        return project(where).get("style_from")
+    except Exception:
+        return None
+
+
+def stale(where):
+    """[(claim entry, current basis)] of the claims a script can rerun whose basis has changed; and the number of
+    script-derived entries without a recipe (their figures can't be rerun here)"""
+    G = load(where)
+    out, norecipe = [], 0
+    for e in G.claims:
+        r = e.get("rerun")
+        if not r:
+            norecipe += e.get("method") == "corpus-derived" and str(e.get("by", "")).startswith("script:")
+            continue
+        cell = tuple(r[2:4]) if r[:2] == ["cell_check.py", "try"] else None
+        cur = basis(where, cell, e.get("rerun_method", ""))
+        c = corpus(where)
+        if e.get("basis") != cur or (c is not None and e.get("basis_corpus") != c):
+            out.append((e, cur))
+    return out, norecipe
+
+
+def retest(where, run_them):
+    """list the stale tests; with --run rerun them, grouped by command (one `cell_check.py try` per cell, all its forms)"""
+    import subprocess
+    out, norecipe = stale(where)
+    print(f"{where}: {len(out)} test(s) whose store settings changed since they ran" +
+          (f"; {norecipe} script-derived claim(s) without a rerun recipe" if norecipe else ""))
+    groups = collections.OrderedDict()
+    for e, cur in out:
+        r = e["rerun"]
+        print(f"  {e['id']}: basis {e.get('basis') or 'none'} -> {cur}  ({' '.join(r)})")
+        key = tuple(r[:4]) if r[:2] == ["cell_check.py", "try"] else tuple(r)
+        groups.setdefault(key, []).extend(r[4:] if r[:2] == ["cell_check.py", "try"] else [])
+    if not run_them:
+        return
+    for key, forms in groups.items():
+        cmd = [sys.executable, os.path.join(ROOT, "scripts", key[0]), where, *key[1:], *dict.fromkeys(forms), "--write"]
+        print("$", " ".join(cmd[1:]))
+        subprocess.run(cmd, check=True)
+
+
 def main(a):
+    if a[:1] == ["retest"] and len(a) >= 2:
+        retest(a[1], "--run" in a)
+        return
     if a[:1] == ["show"] and len(a) >= 2:
         G = load(a[1])
         for k in (a[2:3] or list(GRAMMAR)):

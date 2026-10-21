@@ -71,12 +71,32 @@ def aligned_negations(path):
     return out
 
 
+USE_MORPHS = None       # True / False overrides the store's analysis.match (for comparisons)
+_SEG = {}
+
+
+def segmenter(P):
+    """the morph view (scripts/morphs.py) when the store sets `analysis.match: morphs`, else None"""
+    import json
+    import morphs
+    if P.name not in _SEG:
+        f = os.path.join(P.profile, "observations.json")
+        d = json.load(open(f, encoding="utf-8")) if os.path.exists(f) else {}
+        _SEG[P.name] = (morphs.load(P.name, P), (d.get("analysis") or {}).get("match") == "morphs")
+    S, on = _SEG[P.name]
+    return S if (on if USE_MORPHS is None else USE_MORPHS) else None
+
+
 def features(P, text):
     """The candidate negation markers of a verse: its word forms and the endings of their hyphen parts (2-4 characters,
     as '-ending'), each both as written (every mark kept: a negation may differ from another form only by a tone mark) and
-    plain."""
+    plain; with the morph view also each word's morphs (as '~-eav', '~tone-proh': a negation that is a suffix or a tone
+    pattern, not a word's last letters)."""
     out = set()
+    S = segmenter(P)
     for w in P.tok.tokens(text, exact=True):
+        if S is not None:
+            out |= {"~" + m for m in S.labels(w)}
         for x in {w, P.tok.plain(w)}:
             out.add(x)
             for part in x.split("-")[1:] if "-" in x else [x]:

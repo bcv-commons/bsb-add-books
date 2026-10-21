@@ -51,33 +51,78 @@ def fold(w):
 
 
 def free_form(v):
-    """a form without hyphens (a particle, an auxiliary: a morph of slot `free`) -> the word, folded"""
+    """a form without hyphens (a particle, an auxiliary: a morph of slot `free`) -> the word as written (NFC, lower
+    case): its tone and accent marks are part of it (ambá "please" is not amba "wanted")"""
     v = (v or "").strip()
-    return fold(v) if v and v != "Ø" and "-" not in v and "…" not in v else ""
+    return unicodedata.normalize("NFC", v.lower()) if v and v != "Ø" and "-" not in v and "…" not in v else ""
+
+
+TONES = set()          # the forms of the store's grammatical tone morphs (tone-proh), set by view()
+FORCE_VIEW = None      # "strings" | "morphs": overrides the store's analysis.match (for comparisons)
+_VIEWS = {}
+
+
+def view(P):
+    """the project's morph view (scripts/morphs.py) when its store sets `analysis.match: morphs` (or FORCE_VIEW does),
+    else None: affixes are then matched as strings at the token's edges. A tone morph needs the segmenter either way;
+    it is built whenever the store has one."""
+    import json
+    import morphs
+    if P.name not in _VIEWS:
+        f = os.path.join(P.profile, "observations.json")
+        d = json.load(open(f, encoding="utf-8")) if os.path.exists(f) else {}
+        S = morphs.load(P.name, P)
+        _VIEWS[P.name] = (S, (d.get("analysis") or {}).get("match", "strings"))
+    S, match = _VIEWS[P.name]
+    TONES.clear()
+    TONES.update(t.form for t in (S.tones if S else []))
+    return S if (FORCE_VIEW or match) == "morphs" else None
+
+
+def tone_view(P):
+    view(P)
+    return _VIEWS[P.name][0]
 
 
 def patterns(ce):
-    """(prefix, suffix, word) triples of a cell entry: its value and its alternatives of two letters or more; a form
-    without hyphens is a separate word that marks the cell (word set, prefix and suffix empty)"""
+    """(prefix, suffix, word, tone) of a cell entry: its value and its alternatives of two letters or more; a form
+    without hyphens is a separate word that marks the cell; a grammatical tone morph's form (tone-proh) the tone"""
     out = []
     alts = [a.get("value") for a in ce.get("alternatives", [])]
     for v in [ce.get("value")] + alts:
+        if v in TONES:
+            out.append(("", "", "", v))
+            continue
         pre, suf = VA.parts(v)
         w = free_form(v)
         if w:
-            out.append(("", "", w))
+            out.append(("", "", w, ""))
         elif (pre or suf) and (v == ce.get("value") or len(pre + suf) >= 2):  # a one-letter alternative passes anything
-            out.append((pre, suf, ""))
+            out.append((pre, suf, "", ""))
     return out
 
 
-def carries(tokens, pats):
-    """the number of tokens that carry one of the patterns"""
+def carries(tokens, pats, exact=None, seg=None, tones=None):
+    """the number of tokens that carry one of the patterns. A free word is matched as written, on `exact` (the same
+    tokens with every mark kept: Tokeniser.tokens(s, exact=True)); without it, with the marks folded on both sides.
+    With `seg` (the morph view) an affix must be a morph of the token (qo-, -eav), not merely its first or last letters
+    (an affix the store has no morph entry for is still matched as a string);
+    a tone pattern is matched by `tones` (the segmenter, also when affixes are matched as strings)."""
     n = 0
     for i, t in enumerate(tokens):
-        for pre, suf, w in pats:
-            if w:
-                ok = fold(t) == w
+        lab = None
+        for pre, suf, w, tn in pats:
+            if tn or (seg is not None and (pre or suf)):
+                if lab is None:
+                    S = seg or tones
+                    lab = S.labels(exact[i]) if S is not None and exact is not None else set()
+            if tn:
+                ok = tn in lab
+            elif w:
+                ok = exact[i] == w if exact is not None else fold(t) == fold(w)
+            elif seg is not None and (not pre or pre in seg.pre) and (not suf or suf in seg.suf):
+                ok = (t == "-" + suf and not pre) or ((not pre or pre + "-" in lab) and (not suf or "-" + suf in lab
+                      or (i + 1 < len(tokens) and tokens[i + 1] == "-" + suf)))
             elif pre and suf:
                 ok = t.startswith(pre) and (t.endswith(suf) or (i + 1 < len(tokens) and tokens[i + 1] == "-" + suf))
             elif pre:
@@ -118,6 +163,7 @@ def check(P, G, path):
 
 def check_text(P, G, code, ch, text):
     """check() on {(chapter, verse): text}"""
+    S, T = view(P), tone_view(P)
     req, pats = required(G, code, ch)
     res = collections.defaultdict(lambda: [0, 0, 0, 0])     # verses needing, passing; verses not needing, with it
     miss = []
@@ -125,16 +171,16 @@ def check_text(P, G, code, ch, text):
     for (c_, v), t in text.items():                          # the pattern where the source has no such verb
         if c_ != ch:
             continue
-        toks = P.tok.tokens(t)
+        toks, ex = P.tok.tokens(t), P.tok.tokens(t, exact=True)
         for cell, ps in allpats.items():
             if not req.get(v, {}).get(cell):
-                res[cell][2] += 1; res[cell][3] += carries(toks, ps) > 0
+                res[cell][2] += 1; res[cell][3] += carries(toks, ps, ex, S, T) > 0
     for v, cells in sorted(req.items()):
         if (ch, v) not in text:
             continue
-        toks = P.tok.tokens(text[(ch, v)])
+        toks, ex = P.tok.tokens(text[(ch, v)]), P.tok.tokens(text[(ch, v)], exact=True)
         for cell, n in cells.items():
-            ok = carries(toks, pats[cell]) >= n
+            ok = carries(toks, pats[cell], ex, S, T) >= n
             res[cell][0] += 1; res[cell][1] += ok
             if not ok:
                 miss.append((f"{code.upper()} {ch}:{v}", cell, n, pats[cell]))
@@ -153,14 +199,16 @@ def check_tagged(P, G, path):
     parts = re.split(r"(?<![\w>.])v(\d+)(?=\s)", text)
     res = collections.defaultdict(lambda: [0, 0, 0, 0])
     miss, pats, unmarked = [], {}, collections.defaultdict(list)    # paradigm -> token lists of its unmarked verbs
+    S, T = view(P), tone_view(P)
     for i in range(1, len(parts) - 1, 2):
         v, body = int(parts[i]), parts[i + 1]
         ref = f"{code.upper()} {ch}:{v}"
         num = {n: keys for n, _, _, keys in F.numbering(code.upper(), ref)}
         words = collections.defaultdict(list)            # source key -> the target tokens of the words tagged with it
-        vtoks = P.tok.tokens(re.sub(r"\^\d+(?:,\d+)*", "", body))   # a free word may be tagged with the source's particle
+        vtext = re.sub(r"\^\d+(?:,\d+)*", "", body)         # a free word may be tagged with the source's particle
+        vtoks = (P.tok.tokens(vtext), P.tok.tokens(vtext, exact=True))
         for w, ns in re.findall(r"(\S+?)\^(\d+(?:,\d+)*)", body):
-            toks = P.tok.tokens(w)
+            toks = (P.tok.tokens(w), P.tok.tokens(w, exact=True))
             for n in ns.split(","):
                 for k in num.get(int(n), []):
                     words[k].append(toks)
@@ -168,7 +216,7 @@ def check_tagged(P, G, path):
             t = cells.get(k)
             if not t:
                 continue
-            toks = [x for tt in tl for x in tt]
+            toks = ([x for tt in tl for x in tt[0]], [x for tt in tl for x in tt[1]])
             for par, bundle in t.cells:
                 if par not in VA.VERB_PARADIGMS:
                     continue
@@ -177,7 +225,8 @@ def check_tagged(P, G, path):
                     if not (ce and ce.get("status") in ("observed", "decided") and not ce.get("gap") and patterns(ce)):
                         continue
                     pats[(par, used)] = ps = patterns(ce)
-                    ok = carries(toks, [p for p in ps if not p[2]]) > 0 or carries(vtoks, [p for p in ps if p[2]]) > 0
+                    ok = (carries(toks[0], [p for p in ps if not p[2]], toks[1], S, T) > 0
+                          or carries(vtoks[0], [p for p in ps if p[2]], vtoks[1]) > 0)
                     res[(par, used)][0] += 1; res[(par, used)][1] += ok
                     if not ok:
                         miss.append((ref, (par, used), 1, pats[(par, used)]))
@@ -186,7 +235,8 @@ def check_tagged(P, G, path):
     for cell, ps in pats.items():                        # the background: the pattern on the unmarked verbs' words
         tl = unmarked.get(cell[0], [])
         aff, free = [p for p in ps if not p[2]], [p for p in ps if p[2]]
-        res[cell][2] = len(tl); res[cell][3] = sum(carries(t, aff) > 0 or carries(vt, free) > 0 for t, vt in tl)
+        res[cell][2] = len(tl)
+        res[cell][3] = sum(carries(t[0], aff, t[1], S, T) > 0 or carries(vt[0], free, vt[1]) > 0 for t, vt in tl)
     return res, miss
 
 
@@ -323,14 +373,15 @@ def try_forms(P, G, cell, forms, min_gain=0.01):
     ce = VA.store_cell(G, *cell)[0]
     if not ce:
         raise SystemExit(f"no cell {cell[0]} {cell[1]} in the store")
-    alts = list(ce.get("alternatives", []))
+    alts = [x for x in ce.get("alternatives", []) if x.get("value") not in forms]   # a form tried again: from without it
+    saved = list(ce.get("alternatives", []))
 
     def lift(extra, tm):
         ce["alternatives"] = alts + [{"value": f} for f in extra]
         try:
             n, k, nb, kb = human_rates(P, G, tm).get(cell, [0, 0, 0, 0])
         finally:
-            ce["alternatives"] = alts
+            ce["alternatives"] = saved
         return (n, k, nb, kb, (k / n if n else 0) - (kb / nb if nb else 0))
 
     tms = [tm for tm in ("ot", "nt") if lift([], tm)[0] >= 10]
@@ -343,24 +394,31 @@ def try_forms(P, G, cell, forms, min_gain=0.01):
     return res, ({tm: (base[tm], lift(kept, tm)) for tm in tms} if kept else {})
 
 
-def write_tried(f, G, cell, res, by):
-    """the result into the store: kept forms as alternatives of the cell (method `tested`), and one claim per form
-    tried, kept or not (verdict confirmed or contradicted), so that no later agent tries it again unseen"""
+METHOD = "cell_check 2"   # the checking method's version: a change to the matching bumps it, and retest reruns
+
+
+def write_tried(f, G, cell, res, by, where=None):
+    """the result into the store: kept forms as alternatives of the cell (method `tested`; a form a rerun no longer
+    keeps is taken out), and one claim per form tried, kept or not (verdict confirmed or contradicted), so that no later
+    agent tries it again unseen. Each claim records its `rerun` command and its `basis` (grammar.basis): when the store
+    settings it depended on change, `grammar.py retest` reruns it"""
     import datetime, json
     d = json.load(open(f, encoding="utf-8"))
-    affixes = show({"value": "", "alternatives": [x for x in VA.store_cell(G, *cell)[0].get("alternatives", [])
-                                                   if not free_form(x.get("value"))]} | {"value": VA.store_cell(G, *cell)[0].get("value")})
+    ce0 = VA.store_cell(G, *cell)[0]
+    affixes = show({"value": ce0.get("value"), "alternatives": [x for x in ce0.get("alternatives", [])
+                                                                if not free_form(x.get("value")) and x.get("method") != "tested"]})
     today = datetime.date.today().isoformat()
     fig = lambda r: "; ".join(f"{tm.upper()}: pass {b[1]}/{b[0]} -> {a[1]}/{a[0]}, background {b[3]}/{b[2]} -> "
                               f"{a[3]}/{a[2]}, lift {b[4]:+.2f} -> {a[4]:+.2f}" for tm, (b, a) in r.items())
     cid = f"c:{cell[0]}:{cell[1].lower()}"
     for e in d["entries"]:
         if e.get("id") == cid:
-            have = {a.get("value") for a in e.get("alternatives", [])}
+            tried = {form for form, _, _ in res}
+            e["alternatives"] = [x for x in e.get("alternatives", []) if x.get("value") not in tried or x.get("method") != "tested"]
+            have = {x.get("value") for x in e["alternatives"]}
             for form, r, k in res:
                 if k and form not in have:
-                    e.setdefault("alternatives", []).append(
-                        {"value": form, "n": sum(a[1] - b[1] for b, a in r.values()), "method": "tested"})
+                    e["alternatives"].append({"value": form, "n": sum(a[1] - b[1] for b, a in r.values()), "method": "tested"})
     ids = {e.get("id") for e in d["entries"]}
     for form, r, k in res:
         e = {"id": f"claim:{cell[0]}.{cell[1].lower()}.{form.strip('-')}", "kind": "claim",
@@ -369,19 +427,28 @@ def write_tried(f, G, cell, res, by):
              "verdict": "confirmed" if k else "contradicted",
              "next": "kept in the cell's alternatives" if k else "not added: no gain over the background",
              "confidence": "medium" if k else "low", "method": "corpus-derived", "by": by, "date": today,
-             "status": "observed"}
+             "status": "observed", "rerun": ["cell_check.py", "try", cell[0], cell[1], form], "rerun_method": METHOD}
+        old = next((x for x in d["entries"] if x.get("id") == e["id"]), None)
+        if old and old.get("source"):
+            e["source"] = old["source"]
         if e["id"] in ids:
             d["entries"] = [e if x.get("id") == e["id"] else x for x in d["entries"]]
         else:
             d["entries"].append(e)
     json.dump(d, open(f, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     open(f, "a").write("\n")
+    b = grammar.basis(where or os.path.dirname(f), cell, METHOD)   # after the write: the store as the test now leaves it
+    for e in d["entries"]:
+        if e.get("rerun", [None])[:4] == ["cell_check.py", "try", cell[0], cell[1]] and e["rerun"][4] in {x for x, _, _ in res}:
+            e["basis"], e["basis_corpus"] = b, grammar.corpus(where) if where else None
+    json.dump(d, open(f, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    open(f, "a").write("\n")
     return f
 
 
 def show(ce):
-    return " / ".join(w or (p + "-" if p else "") + ("…" if p and s else "") + ("-" + s if s else "")
-                      for p, s, w in patterns(ce))
+    return " / ".join(tn or w or (p + "-" if p else "") + ("…" if p and sf else "") + ("-" + sf if sf else "")
+                      for p, sf, w, tn in patterns(ce))
 
 
 def main(a):
@@ -406,7 +473,7 @@ def main(a):
             by = a[a.index("--by") + 1] if "--by" in a else "script:cell_check.py"
             from project import project_dir
             f = os.path.join(project_dir(a[0]), "profile", "observations.json")
-            print("written:", os.path.relpath(write_tried(f, G, cell, res, by), ROOT))
+            print("written:", os.path.relpath(write_tried(f, G, cell, res, by, a[0]), ROOT))
         return
     files = [x for i, x in enumerate(a[1:], 1) if not x.startswith("--") and a[i - 1] not in ("--human", "--min-ceiling")]
     if not a or not files:

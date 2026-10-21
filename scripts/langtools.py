@@ -139,7 +139,7 @@ class Tokeniser:
                 out += ([first] if first else []) + ["-" + r for r in rest if r]
             else:
                 out.append(w)
-        return [t for t in out if not t.isdigit()]
+        return [t for t in out if not self.plain(t).isdigit()]   # a number with a stray mark too: exact and plain align
 
 
 def usfm_verses(text):

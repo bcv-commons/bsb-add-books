@@ -128,7 +128,10 @@ Rules:
 
 - **`morph`**: a grammatical morph. `value` is its Leipzig gloss (`2.PL`, `NEG.IND`); `form` the morph as written,
   with a hyphen on the side it attaches (`ge-`, `-eav`, `-zø-`, `=te`); `slot` one of `prefix`, `suffix`, `infix`,
-  `clitic`, `free`, `tone` (a tone pattern: `form` is then a name, `tone-proh`, and `tone` describes the pattern);
+  `clitic`, `free`, `tone` (a tone pattern: `form` is then a name, `tone-proh`, and `tone` describes the pattern; a
+  grammatical one also has `tone_pattern`, the marks by position from the word's end, `[{"at": "-2", "mark": "U+0300"},
+  {"at": "-1", "mark": "U+1DC4"}]`, `"<-1"` any unit before the last: only such a morph is taken out of a word into its own
+  morph, `scripts/morphs.py`; tone without one is lexical, part of the word);
   `host` the word class (`verb`, `noun`, `pron`, `any`); `unimorph` the same gloss in UniMorph tags; `stats` the
   figures a script computed (`count`, `hosts`, `lift`, `test_lift` on held-out books); evidence verses where it
   occurs (the validator finds the form on its side of a word in at least one). Id `m:<form>:<host>[.<use>]`.
@@ -136,12 +139,25 @@ Rules:
   table names it (`verb.subject`, `verb.polarity`, `poss.pronoun`: `scripts/source_cells.py`), `bundle` its tags
   (`3.SG.IND`), `value` the form pattern (`z…-ap`, `Ø` for no mark; a form without hyphens is a separate word that marks the
   cell, a particle or auxiliary), `morphs` the morph ids that build it,
-  `alternatives` other forms with counts, `stats` (`count`, `share` of the bundle's tokens), `gap: true` when the
+  `alternatives` other forms with counts (a tone morph's form, `tone-proh`, as one of them: the cell is marked by that tone;
+  `method: tested` on those a test added), `stats` (`count`, `share` of the bundle's tokens), `gap: true` when the
   corpus has no case (then no evidence). Id `c:<paradigm>:<bundle>`.
 - **`claim`**: a statement about the grammar (from the wiki, an analysis, a grammar sketch or the team) and how it
   was tested: `value` the claim, `area`, `source`, `tests` (`corpus`, `greek`, `hebrew`, `nllb`, `team`), `figures`
   (the results in short), `verdict` (`confirmed`, `corpus-only`, `contradicted`, `new`, `open`), `next`. Evidence
-  optional. Id `claim:<name>`.
+  optional. Id `claim:<name>`. A claim a script tested carries `rerun` (the command, `["cell_check.py", "try", paradigm,
+  bundle, form]`), `rerun_method` and `basis` (a fingerprint of the store settings the result depends on, with
+  `basis_corpus`): when the store learns something later, `scripts/grammar.py retest <project> --run` reruns it.
+
+Profile-level settings that the tools read beside the entries:
+- `orthography.ignore_marks`: marks the search and alignment tools ignore (a word's tonal variants are one form there);
+  checks of the store's forms keep every mark.
+- `orthography.tone`: how the language writes tone, `{"written": "marks" | "digits" | "letters" | "none", "marks": [...],
+  "vowels": "...", "absent": "unknown" | "neutral"}` (digits: Jyutping *si1*; letters: Gwoyeu Romatzyh; none: characters or
+  everyday Pinyin; `absent: neutral` where a missing mark is a tone of its own).
+- `analysis.match`: `strings` (default: a cell's affixes are matched at a word's edges) or `morphs` (on the morph view:
+  prefix, stem, grammatical tone, suffix; `scripts/morphs.py`). Chosen by measurement (`cell_check.py`'s lifts on the
+  human text), and like every setting, a change makes the tests that depended on it stale.
 
 `scripts/grammar.py` reads the three kinds for the tools (`grammar.load(project)`: morphs, affixes by host and slot,
 cells by paradigm) and writes them from a working store's TSV files (`from-tsv`).
@@ -200,8 +216,8 @@ Quotations in notes and patterns carry the edition's credit line. First candidat
   new partition (`observed/`, CC0), closing the loop.
 - A shared id list for features beyond the recommended ones, so that profiles of
   unrelated languages stay comparable.
-- Tone and other diacritics: whether the validator's "ignore tone marks" switch
-  should be a profile-level declaration (`orthography.ignore_marks`).
+- Tone and other diacritics: `orthography.ignore_marks` is the profile-level switch for finding; `orthography.tone`
+  and the tone morphs' `tone_pattern` say what the marks mean (above).
 
 ## The wiki: explanations next to the store
 

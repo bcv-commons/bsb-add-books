@@ -437,6 +437,22 @@ def derive(pname, quiet=False):
     con.executemany("insert into d_affix values(?,?,?,?,?,?)", out)
     # 3b. tone and other marks: each combining mark on a verb against the same features, and the last word of a verse
     #     against a Greek question mark (;) ending the verse
+    #     and, where the store says how tone is written (orthography.tone, scripts/morphs.py), the tone pattern by position
+    #     from the word's end: '@-1:U+1DC4' (the mark on the last tone-bearing unit), '@-2:U+0300 @-1:U+1DC4' (the last
+    #     two): the candidates for a grammatical tone morph's tone_pattern
+    import json, morphs
+    pf = os.path.join(P.profile, "observations.json")
+    spec = morphs.ToneSpec(json.load(open(pf, encoding="utf-8")).get("orthography") if os.path.exists(pf) else {})
+
+    def tone_sig(raw):
+        cl = morphs.clusters((raw or "").lower())
+        u = spec.units(cl)
+        if spec.written not in ("marks", "digits") or not u:
+            return set()
+        at = {k: sorted(spec.marks_at(cl, u[k])) for k in (-1, -2, -3) if len(u) >= -k}
+        out = {f"@{k}:U+{ord(m):04X}" for k, ms_ in at.items() for m in ms_}
+        out |= {f"@-2:U+{ord(a):04X} @-1:U+{ord(b):04X}" for a in at.get(-2, []) for b in at.get(-1, [])}
+        return out
     marks, mbase, mjoint = collections.Counter(), collections.Counter(), collections.Counter()
     nv = 0
     for r in rows:
@@ -444,6 +460,7 @@ def derive(pname, quiet=False):
             continue
         nv += 1
         ms = {f"U+{ord(c):04X}" for c in unicodedata.normalize("NFD", r["raw"] or "") if unicodedata.combining(c)}
+        ms |= tone_sig(r["raw"])
         fv = features(r)
         neg_mood = ("negated+mood", f"{'neg' if r['clause'] in neg_clause else 'pos'}.{r['mood']}")
         fv.add(neg_mood)
