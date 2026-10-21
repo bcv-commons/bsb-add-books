@@ -154,7 +154,11 @@ Profile-level settings that the tools read beside the entries:
   checks of the store's forms keep every mark.
 - `orthography.tone`: how the language writes tone, `{"written": "marks" | "digits" | "letters" | "none", "marks": [...],
   "vowels": "...", "absent": "unknown" | "neutral"}` (digits: Jyutping *si1*; letters: Gwoyeu Romatzyh; none: characters or
-  everyday Pinyin; `absent: neutral` where a missing mark is a tone of its own).
+  everyday Pinyin; `absent: neutral` where a missing mark is a tone of its own). `scripts/morphs.py <project> tone`
+  detects it from the corpus: the tone marks are the layer of marks that never share a letter (a two-layer orthography's
+  other layer, Vietnamese â ă ơ, Yoruba's dot below, is the vowel quality), spread over the vowels, and telling words apart
+  (twins: ambá and amba); `--write` stores it with `derived` (the figures). Checked on eight corpora: Kuni, Vietnamese and
+  Yoruba found with their marks, French, Spanish, Danish, Jamaican Creole and Lingala (tone not written) none.
 - `analysis.match`: `strings` (default: a cell's affixes are matched at a word's edges) or `morphs` (on the morph view:
   prefix, stem, grammatical tone, suffix; `scripts/morphs.py`). Chosen by measurement (`cell_check.py`'s lifts on the
   human text), and like every setting, a change makes the tests that depended on it stale.

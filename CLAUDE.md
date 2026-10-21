@@ -159,7 +159,7 @@ python3 scripts/full_align.py listing|prompt <project> <code> <ch> | check <proj
 python3 scripts/full_align.py tag|split <project> <code> <ch> # the tagged interim format (word^n) <-> prose + .align
 python3 scripts/src.py build [code ...] | layouts [--layout L] | map | speakers | speaker-layer DIR | show <code> <c>:<v> | bridge <lexeme> | export-open DIR # orig/heb.sqlite, orig/grc.sqlite (MACULA + numbering + BSB tables; local)
 python3 scripts/lang.py build|derive|report <project> | hbo <project> <lexeme> | grc <project> <strong> # the project's language DB: NT occurrences of any Hebrew word via the LXX; derived grammar statistics
-python3 scripts/morphs.py <project> check | show <word> ... # the morph view (prefix, stem, grammatical tone, suffix) from the store; every word rebuilt
+python3 scripts/morphs.py <project> check | show <word> ... | tone [--write] # the morph view (prefix, stem, grammatical tone, suffix) from the store; every word rebuilt; how the corpus writes tone
 python3 scripts/cell_check.py <project> unmarked | try <paradigm> <bundle> <form> ... [--write] # agents' unmarked notes; candidate forms measured on the human text
 python3 scripts/grammar.py retest <project> [--run]  # tests whose store settings changed since they ran (rerun them)
 python3 scripts/macula_to_tf.py <delivery dir>       # draft Text-Fabric dataset (needs text-fabric)

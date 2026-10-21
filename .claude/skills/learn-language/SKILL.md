@@ -36,8 +36,11 @@ of another language in this working copy, if there is one, is the worked example
    want to read it (and add what they know), `python3 scripts/wiki.py view <project>` builds one offline HTML
    file (pages, open questions, a searchable store); it is a copy, so edits go into the `.md` pages.
    Check the writing system first: which tone marks and accents the corpus uses, written into every store value
-   exactly (`language_profile.py check` lists values with other marks). `orthography.ignore_marks` only loosens the
-   search tools. The team's own facts come in through `wiki/team-input.md` (`python3 scripts/team_input.py <project>
+   exactly (`language_profile.py check` lists values with other marks). `python3 scripts/morphs.py <project> tone`
+   detects how the corpus writes tone (marks, digits or none; which marks, on which letters; with its figures) and
+   `--write` puts it into the store as `orthography.tone` (and `ignore_marks` if there are none yet); check it with
+   what the team or a grammar says, and keep a two-layer orthography's quality marks out of it. `orthography.ignore_marks`
+   only loosens the search tools. The team's own facts come in through `wiki/team-input.md` (`python3 scripts/team_input.py <project>
    init`, then `prompt` for the curation agent); they are binding.
    The store's grammar (morphs, paradigm cells, claims; `scripts/grammar.py`): `grammar.py run <project> --write`
    adds the Grambank features its morphs answer (questions: `python3 scripts/setup.py --only grambank`), and

@@ -35,8 +35,13 @@ like a prefix stays whole). The view is word-class blind: it is measured, not as
 
     python3 scripts/morphs.py <project> check      every corpus token rebuilt from its morphs; what the view finds
     python3 scripts/morphs.py <project> show <word> ...
+    python3 scripts/morphs.py <project> tone [--write [--force]]
+        how the corpus writes tone, detected (detect_tone): marks, digits or none, the tone marks, the letters that carry
+        them, what a missing mark means; with the figures. --write puts it into the store as orthography.tone (and
+        ignore_marks if the store has none), marked as derived; a setting already there is kept unless --force. Like every
+        store setting, a change makes the tests that depended on it stale (grammar.py retest)
 """
-import collections, os, sys, unicodedata
+import collections, os, re, sys, unicodedata
 from typing import NamedTuple
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -44,6 +49,101 @@ sys.path.insert(0, os.path.join(ROOT, "scripts"))
 import grammar  # noqa: E402
 
 CH = lambda m: chr(int(m[2:], 16)) if m.upper().startswith("U+") else m
+
+
+# combining marks that orthographies use for tone (acute, grave, circumflex, caron, macron, double acute and grave, the
+# vertical line above of Pe̍h-ōe-jī, the contour marks): the candidates. Every other mark (dot below, tilde, diaeresis,
+# cedilla, ogonek, ring, horn, breve) is taken as part of its letter; a store can still name it in orthography.tone.
+TONE_CANDIDATES = {chr(c) for c in (0x0300, 0x0301, 0x0302, 0x030C, 0x0304, 0x030B, 0x030F, 0x030D,
+                                    0x1DC4, 0x1DC5, 0x1DC6, 0x1DC7, 0x1DC8, 0x1DC9)}
+
+
+def detect_tone(tokens, min_mark=0.002, min_words=0.03, min_twins=0.15, max_top=0.6, min_digits=0.3, neutral=0.35,
+                conflict=0.05, min_letter=0.02):
+    """(proposal, figures) from {token: count} of the corpus as written.
+
+    The tone marks are a layer: marks that never share a letter (one tone per vowel). Marks that do share one are in
+    different layers: in a two-layer orthography the other layer is the vowel quality (Vietnamese â ă ơ under the
+    tones: ấ; Yoruba's dot below: ọ́). The tone layer starts from the candidates (TONE_CANDIDATES) that occur in at least
+    min_mark of the tokens; while two of them share letters (in more than `conflict` of the rarer one's uses), the one
+    in most such pairs goes to the other layer. Where there is another layer, a frequent mark outside the candidates
+    that never shares a letter with the tone layer but does with the other layer is a tone mark too (Vietnamese hook
+    above, tilde, dot below).
+
+    Tone is written with marks when the layer has at least two marks, the marked tokens are min_words of all, and
+    min_twins of the marked word types have a twin: a word with the same letters and other tone marks or none (ambá
+    beside amba, Yoruba ọkọ̀ ọkọ́ ọkọ; a stress or spelling accent seldom makes one: French 12%), and no letter carries
+    more than max_top of the marks (tone falls on every vowel; French accents 79% on e); with digits when
+    min_digits of the tokens end a syllable in 1-9 (Jyutping si1); else none. The tone-bearing letters are those of
+    which at least min_letter of the occurrences carry a tone mark (and 10 in all); a missing mark is "neutral" (a tone
+    of its own: Yoruba's and Vietnamese's level tone, Pinyin's neutral) when most of those letters carry one, else
+    "unknown"."""
+    N = sum(tokens.values()) or 1
+    fig = {"tokens": N}
+    dig = sum(n for w, n in tokens.items() if re.search(r"[^\W\d_][1-9](?![0-9])", w) and not w.isdigit())
+    fig["digit_syllables"] = round(dig / N, 4)
+    per, uses, pair = collections.Counter(), collections.Counter(), collections.Counter()
+    for w, n in tokens.items():
+        ms = set()
+        for cl in clusters(w.lower()):
+            here = sorted({m for m in cl[1:] if unicodedata.combining(m)})
+            for m in here:
+                ms.add(m)
+                uses[m] += n
+            for x in range(len(here)):
+                for y in range(x + 1, len(here)):
+                    pair[(here[x], here[y])] += n
+        for m in ms:
+            per[m] += n
+    frequent = {m for m, n in per.items() if n >= min_mark * N}
+    clash = lambda a, b: pair[tuple(sorted((a, b)))] > conflict * min(uses[a], uses[b])
+    layer = {m for m in frequent if m in TONE_CANDIDATES}
+    other = set()
+    while True:
+        bad = collections.Counter({m: sum(clash(m, o) for o in layer if o != m) for m in layer})
+        if not bad or max(bad.values()) == 0:
+            break
+        m = max(bad, key=lambda k: (bad[k], -uses[k]))
+        layer.discard(m)
+        other.add(m)
+    if other:
+        other |= {m for m in frequent - layer - other if any(clash(m, t) for t in layer)}
+        layer |= {m for m in frequent - layer - other if not any(clash(m, t) for t in layer) and any(clash(m, o) for o in other)}
+    U = lambda ms: sorted(f"U+{ord(m):04X}" for m in ms)
+    fig["marks"] = {f"U+{ord(m):04X}": round(per[m] / N, 4) for m in sorted(frequent, key=lambda k: -per[k])}
+    if other:
+        fig["other_layer"] = U(other)
+    strip = lambda w: unicodedata.normalize("NFC", "".join(c for c in unicodedata.normalize("NFD", w.lower()) if c not in layer))
+    types = collections.Counter(unicodedata.normalize("NFC", w.lower()) for w in tokens)
+    groups = collections.Counter(strip(w) for w in types)
+    marked = [w for w in types if any(c in layer for c in unicodedata.normalize("NFD", w))]
+    fig["marked_words"] = round(sum(n for w, n in tokens.items() if any(c in layer for c in unicodedata.normalize("NFD", w))) / N, 4)
+    fig["twins"] = round(sum(groups[strip(w)] >= 2 for w in marked) / len(marked), 3) if marked else 0
+    on = collections.Counter()
+    for w, n in tokens.items():
+        for cl in clusters(w.lower()):
+            if any(m in layer for m in cl[1:]):
+                on[cl[0]] += n
+    fig["top_letter"] = round(max(on.values()) / sum(on.values()), 3) if on else 0
+    if len(layer) >= 2 and fig["marked_words"] >= min_words and fig["twins"] >= min_twins and fig["top_letter"] <= max_top:
+        occ, tone_occ = collections.Counter(), collections.Counter()
+        for w, n in tokens.items():
+            for cl in clusters(w.lower()):
+                occ[cl[0]] += n
+                tone_occ[cl[0]] += n * any(m in layer for m in cl[1:])
+        vowels = sorted(c for c, k in tone_occ.items() if c.isalpha() and k >= 10 and k >= min_letter * occ[c])
+        units = sum(occ[c] for c in vowels)
+        fig["marked_units"] = round(sum(tone_occ[c] for c in vowels) / units, 3) if units else 0
+        return ({"written": "marks", "marks": U(layer), "vowels": "".join(vowels),
+                 "absent": "neutral" if fig["marked_units"] >= neutral else "unknown"}, fig)
+    if fig["digit_syllables"] >= min_digits:
+        return {"written": "digits", "absent": "unknown"}, fig
+    fig["why_none"] = ("fewer than two frequent tone marks" if len(layer) < 2 else
+                       f"marked words {fig['marked_words']:.1%} < {min_words:.0%}" if fig["marked_words"] < min_words else
+                       f"twins {fig['twins']:.0%} < {min_twins:.0%}: the marks don't tell words apart"
+                       if fig["twins"] < min_twins else
+                       f"{fig['top_letter']:.0%} of the marks on one letter: a spelling accent, not tone")
+    return {"written": "none"}, fig
 
 
 class Morph(NamedTuple):
@@ -278,9 +378,40 @@ def main(a):
         raise SystemExit(__doc__)
     import langtools as LT
     P = LT.Project(a[0])
-    S = load(a[0], P)
-    if S is None:
+    S = load(a[0], P) if a[1] != "tone" else None
+    if S is None and a[1] != "tone":
         raise SystemExit(f"{a[0]}: the store has no morph entries")
+    if a[1] == "tone":
+        import datetime, json
+        tok = collections.Counter()
+        for r in P.corpus():
+            tok.update(P.tok.tokens(r[4], exact=True))
+        prop, fig = detect_tone(tok)
+        f = os.path.join(P.profile, "observations.json")
+        d = json.load(open(f, encoding="utf-8")) if os.path.exists(f) else {}
+        have = (d.get("orthography") or {}).get("tone")
+        print(f"{a[0]}: tone written as {prop['written']}" + (f", marks {' '.join(prop['marks'])} on {prop['vowels']}, a "
+              f"missing mark {prop['absent']}" if prop["written"] == "marks" else ""))
+        print("  figures:", json.dumps(fig, ensure_ascii=False))
+        if have:
+            same = {k: have.get(k) for k in prop} == prop
+            print("  the store has:", json.dumps({k: v for k, v in have.items() if k != "derived"}, ensure_ascii=False),
+                  "(the same)" if same else "(different)")
+        if "--write" in a:
+            if have and "--force" not in a:
+                print("  kept the store's setting (--force replaces it)")
+                return
+            if not os.path.exists(f):
+                raise SystemExit(f"{a[0]}: no store ({f})")
+            o = d.setdefault("orthography", {})
+            o["tone"] = {**prop, "derived": {"by": "script:morphs.py tone", "date": datetime.date.today().isoformat(),
+                                             "figures": fig}}
+            if prop["written"] == "marks" and not o.get("ignore_marks"):
+                o["ignore_marks"] = prop["marks"]
+            json.dump(d, open(f, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+            open(f, "a").write("\n")
+            print("  written:", os.path.relpath(f, ROOT), "(grammar.py retest lists the tests this makes stale)")
+        return
     if a[1] == "show":
         for w in a[2:]:
             for t in P.tok.tokens(w, exact=True):
