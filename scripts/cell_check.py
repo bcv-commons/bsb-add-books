@@ -14,6 +14,10 @@ With a tagged draft beside the file (<code>NNN.tagged, the OT drafting's interim
 the target words tagged with each source verb of a marked cell, against the same pattern on the words tagged with the
 paradigm's unmarked verbs (the background); --verse forces the verse-level count.
 
+In the drafting loop (scripts/chapter_check.py, book_review()) the check is a comparison, not a rule: the human text
+leaves many verbs of a marked cell unmarked too, so a cell is flagged only where the book's drafts mark it clearly less
+often than the style corpus's human OT does, verse level on both sides.
+
 Usage: python3 scripts/cell_check.py <project> <chapter file> ... [--list] [--verse] [--min-ceiling R]
   --list           the verses that miss a cell (REVIEW lines), for a draft
   --min-ceiling R  with a human file given as --human DIR: only cells whose human pass rate is at least R (default 0.5)
@@ -81,8 +85,12 @@ def required(G, code, ch):
 def check(P, G, path):
     """per cell: [verses required, verses passed], and the verses that miss a cell"""
     code, ch = os.path.basename(path)[:3], int(os.path.basename(path)[3:6])
+    return check_text(P, G, code, ch, LT.verses_of(path))
+
+
+def check_text(P, G, code, ch, text):
+    """check() on {(chapter, verse): text}"""
     req, pats = required(G, code, ch)
-    text = LT.verses_of(path)
     res = collections.defaultdict(lambda: [0, 0, 0, 0])     # verses needing, passing; verses not needing, with it
     miss = []
     allpats = dict(pats)
@@ -150,6 +158,56 @@ def check_tagged(P, G, path):
         tl = unmarked.get(cell[0], [])
         res[cell][2] = len(tl); res[cell][3] = sum(carries(t, ps) > 0 for t in tl)
     return res, miss
+
+
+def human_rates(P, G):
+    """per cell: [verses required, passed, not required, with the pattern anyway] in the style corpus's OT chapters
+    (verse level): the human ceiling and its background"""
+    by = collections.defaultdict(dict)
+    for _, code, (c, v), _, t in P.corpus():
+        if BY_CODE[code][2] == "ot":
+            by[(code, c)][(c, v)] = t
+    out = collections.defaultdict(lambda: [0, 0, 0, 0])
+    for (code, c), text in by.items():
+        for cell, x in check_text(P, G, code, c, text)[0].items():
+            for i in range(4):
+                out[cell][i] += x[i]
+    return out
+
+
+def book_review(pname, code, ch, margin=0.2, min_n=5, min_human=10):
+    """REVIEW lines for the drafting loop (scripts/chapter_check.py): a cell the book's drafts so far (chapters up to
+    ch, verse level) mark clearly less often than the human OT of the style corpus does (by more than margin), with
+    this chapter's verses that miss it. A verb the human text leaves unmarked as often is no flag: the store's pattern
+    is how a cell is marked, not that it always is. [] without an OT in the corpus or observed verb cells in the store."""
+    P, G = LT.Project(pname), grammar.load(pname)
+    hum = human_rates(P, G)
+    if not hum:
+        return []
+    import glob
+    from project import project_dir
+    tot, misses = collections.defaultdict(lambda: [0, 0, 0, 0]), []
+    for f in sorted(glob.glob(os.path.join(project_dir(pname), code, f"{code}[0-9][0-9][0-9].txt"))):
+        c = int(os.path.basename(f)[3:6])
+        if c > ch:
+            continue
+        r, m = check(P, G, f)
+        for cell, x in r.items():
+            for i in range(4):
+                tot[cell][i] += x[i]
+        if c == ch:
+            misses += m
+    out = []
+    for cell, (n, k, nb, kb) in tot.items():
+        hn, hk, hnb, hkb = hum.get(cell, (0, 0, 0, 0))
+        if (n < min_n or hn < min_human or (nb and kb / nb > 0.5) or (hnb and hkb / hnb > 0.5)
+                or k / n >= hk / hn - margin):            # the pattern common anyway, on either side: can't be judged
+            continue
+        vs = [ref.split()[-1] for ref, c, _, _ in misses if c == cell]
+        out.append(f"cell {cell[0]} {cell[1]} ({show(VA.store_cell(G, *cell)[0])}): the book's drafts so far mark it in "
+                   f"{k}/{n} verses, the human OT in {hk}/{hn} ({hk / hn:.0%})"
+                   + (f"; here without it: {', '.join(vs)}" if vs else ""))
+    return out
 
 
 def show(ce):

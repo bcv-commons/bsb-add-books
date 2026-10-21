@@ -9,6 +9,8 @@ To review (reported, not failed; each kept one explained in the chapter's notes)
   - lost or added negations: scripts/rough_check.py (its markers are learned from the corpus; with a .align beside the
     draft, a negation the alignment links to a draft word counts too, so a negation word that is also a common other
     word, Hebrew אל "do not" / "to", is no false flag)
+  - verb marking (a store with observed verb cells and an OT in the style corpus): a cell the book's drafts mark
+    clearly less often than the human OT does, scripts/cell_check.py (book_review)
   - a Hebrew target (language he): the copy check, scripts/heb_copy.py
   - names against the book so far (OT, from the .align files): a name of the original rendered in this chapter
     otherwise than in the earlier chapters of the book (their most frequent rendering, seen at least twice)
@@ -111,6 +113,8 @@ def main(a):
         review += [f"copy: {l}" for l in out.splitlines() if l.startswith(f"{code}{nnn}") and " 0 verses" not in l]
     if BY_CODE[code][2] == "ot":
         review += name_flags(pname, code, ch)
+        import cell_check
+        review += cell_check.book_review(pname, code, ch)
     print(f"{pname} {code} {ch}: {len(fix)} to fix, {len(review)} to review")
     for l in fix:
         print(f"  FIX     {l}")

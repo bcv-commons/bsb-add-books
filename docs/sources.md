@@ -169,6 +169,19 @@ The Hebrew is optional: `--heb bhsa,bcv-query` builds both clause layouts side b
 - **OT drafts keep the Hebrew numbering**; the maps make a BSB-numbered
   export possible later.
 
+## download/grambank/ — Grambank feature questions
+
+- **What:** Grambank's 195 feature questions (`parameters.csv`: id, question, description) and their value codes
+  (`codes.csv`), for a project's typology in the language store (`kind: feature`, `codes: [GBnnn]`).
+- **From:** `grambank/grambank` on GitHub, tag **v1.0.3**, `cldf/parameters.csv` (SHA-256
+  `ff5a675e…dc80`) and `cldf/codes.csv` (SHA-256 `cdcf17f5…3263`), pinned in `setup.py`.
+- **Licence:** CC BY 4.0. Credit: Skirgård, H. et al. 2023, *Grambank reveals the importance of genealogical
+  constraints on linguistic diversity and highlights the impact of language loss*, Science Advances 9; Grambank v1.0.3.
+- **Rebuild:** `python3 scripts/setup.py --only grambank` (only on request).
+- **Use:** `scripts/grammar.py plan|run|status` show the question of each feature; the recipes that decide a feature
+  from a Bible corpus are in `docs/proposals/language-profile/grambank_recipes.tsv`. Only the questions are used: no
+  Grambank language values enter a store.
+
 ## books.tsv
 
 Written by `python3 scripts/books.py`: BSB code, English name, testament, chapter

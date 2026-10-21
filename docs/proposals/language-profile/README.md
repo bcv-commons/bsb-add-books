@@ -108,6 +108,11 @@ Rules:
   `narrative_tense`, `speech_frame`, `quotation_marks`, `connective_sequence`
   ("and then"), `relative_clause`, `conditional`, `vocative`, `numerals`,
   `pronouns`, `plural`, `tone_marks`.
+  A Grambank feature has the id `gb:GBnnn` and `codes: [GBnnn]`; its value starts with the Grambank code (`1
+  (present): qo-, ge-`). `grambank_recipes.tsv` (beside this file) says for each feature a Bible corpus can decide how
+  it is decided (method, inputs, test, rule, relevance for drafting); `scripts/grammar.py run` writes those the store's
+  own morphs answer, `grammar.py plan` lists the rest. Only features with evidence get an entry, never a 0 for "not
+  found".
 - **`letter`**: one correspondence of the name-transliteration table, from the
   source language's letter or sound to the edition's, with the names it was read
   off (`"j → z"`, evidence `Zuda`, `Zelusalem`).

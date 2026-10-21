@@ -1,0 +1,28 @@
+gb_id	method	inputs	test	decide	relevance	from_store	note
+GB024	order	NT corpus; target-Greek links; orig/grc.sqlite nodes	Greek phrases (one node) with one noun and a numeral: order of the target tokens linked to each	1 if numeral first >= 80%, 2 if noun first >= 80%, 3 if both >= 20% with n >= 50; else open	medium		
+GB025	order	as GB024	the same with a demonstrative (type demonstrative)	as GB024	medium		needs n >= 50; the NT has few adnominal demonstratives in one node
+GB028	align-morph	target-Greek links; the free pronouns	target forms linked to ἡμεῖς (ἐγώ plural)	0 if one form takes >= 95% (n >= 100); 1 if two forms split by the speaker's inclusion of the addressee	high		the split must follow the context, not the book
+GB030	align-morph	target-Greek links; the free pronouns	target forms linked to 3rd-person pronouns by the Greek gender	1 if masculine and feminine take different forms (each >= 80%)	high		the Greek gender is grammatical: check that the feminine referents are women
+GB051	align-morph	links; possessive or agreement morphs	a class marker (possessive suffix, verb prefix) against the referent's sex	1 if male and female referents take different markers (>= 80%)	high		needs the referents' sex: Greek gender of persons, names
+GB053	align-morph	as GB051	a class marker against animate and inanimate referents	1 if they take different markers (>= 80%)	medium		
+GB065	order	links; orig/grc.sqlite	a genitive noun or personal pronoun next to a head noun: order of the linked target tokens	as GB024 (1 possessor first, 2 possessed first)	high		noisy through word links; retest on units
+GB074	order	links; orig/grc.sqlite	Greek prepositions: is the linked target token before or after its noun's target token	1 if before >= 50% of prepositions with n >= 100	high		pairs with GB075
+GB075	order	as GB074	as GB074, after the noun (or a suffix on it)	1 if after >= 50%	high		
+GB079	affix	the verbs segmented by the store's morphs; affix lifts against the Greek features	verb prefixes against non-person features (mood, tense, aspect, polarity)	1 if a prefix has lift >= 3 for such a feature on dev and test, >= 4 stems	high	yes	
+GB080	affix	as GB079	verb suffixes against the same	as GB079	high	yes	
+GB084	affix	as GB079; tone marks if the orthography writes them	affixes and marks against the Greek future	1 if a piece has lift >= 2 on dev and test with >= 20 stems	high	yes	a tendency is enough for 1; note the share
+GB089	affix	as GB079	verb suffixes against the subject's person and number (intransitive clauses)	1 if a suffix has lift >= 3 for a person or number on dev and test	high	yes	split by transitivity: a Greek clause with an object role
+GB090	affix	as GB079	verb prefixes against the subject's person and number (intransitive clauses)	as GB089	high	yes	
+GB091	affix	as GB079	as GB089, transitive clauses	as GB089	high	yes	
+GB092	affix	as GB079	as GB090, transitive clauses	as GB089	high	yes	
+GB093	affix	verb tokens; links to Greek object pronouns	verb suffixes when the token is also linked to an object pronoun	1 if lift >= 3 on dev and test	high	yes	
+GB094	affix	as GB093	verb prefixes when the token is also linked to an object pronoun	as GB093	high	yes	
+GB107	affix	as GB079; οὐ/μή in the Greek clause	verb affixes and marks against clause negation	1 if a piece has lift >= 4 on dev and test with >= 10 stems	high	yes	
+GB130	order	links; orig/grc.sqlite roles	subject (role s) and verb (role v) in one clause: order of the linked target tokens	1 SV >= 75%, 2 VS >= 75%, 3 both	high		
+GB133	order	as GB130	verb last among the clause's linked target tokens; object (role o) before the verb	1 if verb last >= 75% and object first >= 75%	high		noisy through word links; retest on units
+GB137	order	as GB107	position of the negation piece in the clause	1 if clause-final >= 50%	medium		
+GB139	affix	as GB107; μή + imperative and μή + subjunctive	the pieces of prohibitions against those of declarative negation	1 if the characteristic pieces differ (each lift >= 4)	high	yes	
+GB140	team	the store's existence and nominal-negation entries	negation of existential and nominal predicates against verbal	0 if different forms are attested	medium		corpus count possible: εἰμί / ἔχω with negation
+GB193	order	as GB024	adjective (same case) and noun in one node	as GB024 (1 ANM-N, 2 N-ANM)	medium		
+GB312	affix	as GB079	verb pieces against mood (imperative, subjunctive, optative)	1 if a piece has lift >= 4 for a mood on dev and test	high	yes	
+GB522	align-morph	links; the free pronouns	Greek finite verbs without a subject word: share of target clauses without a free pronoun	1 if >= 50% have none	medium		

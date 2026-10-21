@@ -24,8 +24,10 @@ The steps:
     beside the edition, and a suggested familiarity the user accepts or overrides (close_to where it applies);
  7. the tools that familiarity switches on, with the tokens per chapter logged so far in that mode (scripts/usage.py);
  8. the sources (scripts/setup.py; for OT books the Hebrew layout and scripts/src.py's prepared structure), the
-    alignment lexicons (scripts/align.py; for an unknown language also the NT occurrence index, scripts/lang.py), the
-    empty memory (scripts/memory_prompt.py --init) with the probe's slips as its first entries;
+    alignment lexicons (scripts/align.py; for an unknown language also the NT occurrence index, scripts/lang.py), for a
+    partly known or unknown language Grambank's questions (setup.py --only grambank) and the grammar plan
+    (scripts/grammar.py plan), the empty memory (scripts/memory_prompt.py --init) with the probe's slips as its first
+    entries;
  9. what comes next, asked for in Claude Code: the memory, the style guide, a reference chapter, the chapters.
 
 An edition that isn't in any of these sources (copied in by hand, or synced from its own repository like Den
@@ -717,6 +719,12 @@ def main():
                     "language study starts from")
                 run("scripts/lang.py", "build", pname)
                 run("scripts/lang.py", "derive", pname)
+    if fam in ("partial", "unknown"):           # the store's grammar: Grambank's questions and the curation list
+        if not os.path.exists(os.path.join(ROOT, "download", "grambank", "v1.0.3", "parameters.csv")):
+            say("  Fetching Grambank's feature questions (the typology of the language store; CC BY 4.0)")
+            run("scripts/setup.py", "--only", "grambank")
+        say(f"  - the grammar to settle, once the store has morphs: python3 scripts/grammar.py plan {pname} (the "
+            f"curation agent's list); grammar.py run {pname} --write fills the features the store's morphs answer")
     if ANSWERS.get("init_memory", True) and not DRY:
         if os.path.isdir(os.path.join(pdir, "profile")) and os.path.isdir(os.path.join(pdir, "wiki")):
             say("  - the language memory (store and wiki): already here")

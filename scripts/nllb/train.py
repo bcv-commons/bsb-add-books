@@ -105,6 +105,9 @@ def main():
     targs = Seq2SeqTrainingArguments(
         output_dir=os.path.join(out, "ckpt"), max_steps=20 if smoke else args.steps,
         per_device_train_batch_size=2 if smoke else args.batch, gradient_accumulation_steps=1 if smoke else args.accum,
+        # validation in the same small batches: the default of 8 runs out of an 8 GB card at the first validation (the loss
+        # over the 256k-token vocabulary)
+        per_device_eval_batch_size=2 if smoke else args.batch,
         learning_rate=args.lr, lr_scheduler_type="cosine", warmup_steps=2 if smoke else min(1000, args.steps // 5),
         label_smoothing_factor=0.2, optim=args.optim, bf16=dev == "cuda", gradient_checkpointing=True,
         use_cpu=dev == "cpu", eval_strategy="steps", eval_steps=10 if smoke else 500, save_strategy="steps",

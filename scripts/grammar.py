@@ -11,6 +11,16 @@ As a library:
   G.morph(id)              one morph entry
 
 Commands:
+  status <project|dir>                    what the store holds: entries by kind and status, the Grambank features
+  plan <project|dir>                      what to settle next: the Grambank features a recipe can decide that the store
+                                          lacks (by relevance; those the store's own morphs answer marked `run`), open
+                                          and thin cells, open claims, open morphs: the curation agent's list
+  run <project|dir> [GBnnn ...] [--write] the Grambank features the store's morphs answer (docs/proposals/
+                                          language-profile/grambank_recipes.tsv, from_store: yes): a morph tagged with
+                                          the code, or for NEG, FUT, mood, tense and object morphs the tag; a feature
+                                          entry gb:GBnnn (value 1, evidence the morphs' verses), never a 0 (no evidence
+                                          is no entry). Prints them; --write puts them into observations.json (its own
+                                          earlier entries replaced, an agent's or the team's left alone)
   show <project|dir> [morph|cell|claim]   the entries, one line each
   from-tsv <tsv dir> <profile dir> [--by NAME] [--date YYYY-MM-DD]
       writes the morphs.tsv, cells.tsv and claims.tsv of a working store (one row per morph, cell or claim; list
@@ -165,6 +175,141 @@ def from_tsv(src, dst, by, date):
     print(f"{f}: {len(kept)} other entries kept; " + ", ".join(f"{v} {k}s" for k, v in n.items()))
 
 
+# --- status, plan, run ----------------------------------------------------------------------------------------------
+RECIPES = os.path.join(ROOT, "docs", "proposals", "language-profile", "grambank_recipes.tsv")
+GB_DIR = os.path.join(ROOT, "download", "grambank", "v1.0.3")       # python3 scripts/setup.py --only grambank
+RELEVANCE = {"high": 0, "medium": 1, "low": 2}
+TAM = {"NEG", "IRR", "REAL", "OPT", "HORT", "JUSS", "FUT", "PST", "PRS", "PRF", "IPFV", "PFV", "IMP", "SBJV", "COND", "PROH"}
+MOOD = {"IMP", "SBJV", "OPT", "IRR", "HORT", "JUSS", "COND", "PROH"}
+CONF = {"high": 2, "medium": 1, "low": 0}
+
+
+def recipes():
+    return list(csv.DictReader(open(RECIPES, encoding="utf-8"), delimiter="\t"))
+
+
+def questions():
+    """{GBnnn: question} from Grambank's parameters.csv; {} before setup.py --only grambank"""
+    f = os.path.join(GB_DIR, "parameters.csv")
+    return {r["ID"]: r["Name"] for r in csv.DictReader(open(f, encoding="utf-8"))} if os.path.exists(f) else {}
+
+
+def entries(where):
+    f = os.path.join(profile_dir(where), "observations.json")
+    return json.load(open(f, encoding="utf-8")).get("entries", []) if os.path.exists(f) else []
+
+
+def gb_codes(es):
+    """{GBnnn: [feature entries]} of the store's live features"""
+    out = {}
+    for e in es:
+        if e.get("kind") == "feature" and e.get("status") != "superseded":
+            for c in e.get("codes") or []:
+                out.setdefault(c, []).append(e)
+    return out
+
+
+def answering(G, gb):
+    """the store's verb morphs that answer a Grambank feature with 1 (see run)"""
+    live = [m for m in G.morphs if m.get("host") in ("verb", "any") and m.get("status") in ("observed", "decided")]
+    coded = [m for m in live if gb in (m.get("codes") or [])]
+    if coded or gb in ("GB089", "GB090", "GB091", "GB092"):   # intransitive / transitive: only from a tagged morph
+        return coded
+    tags = lambda m: set(re.split(r"[.;_ ]", (m.get("value") or "").upper()))
+    obj = lambda m: (m.get("value") or "").upper().startswith(("P.", "O.", "OBJ"))
+    rule = {"GB079": lambda m: m.get("slot") == "prefix" and tags(m) & TAM and not obj(m),
+            "GB080": lambda m: m.get("slot") == "suffix" and tags(m) & TAM and not obj(m),
+            "GB084": lambda m: "FUT" in tags(m),
+            "GB093": lambda m: m.get("slot") == "suffix" and obj(m),
+            "GB094": lambda m: m.get("slot") in ("prefix", "infix") and obj(m),
+            "GB107": lambda m: "NEG" in tags(m),
+            "GB312": lambda m: bool(tags(m) & MOOD)}.get(gb)
+    if gb == "GB139":                     # prohibitive pieces that differ from those of declarative negation
+        proh = [m for m in live if "PROH" in tags(m)]
+        neg = [m for m in live if "NEG" in tags(m) and "PROH" not in tags(m)]
+        return proh + neg if proh and neg and {m["form"] for m in proh} - {m["form"] for m in neg} else []
+    return [m for m in live if rule(m)] if rule else []
+
+
+def derive(where, only=()):
+    """the feature entries run writes: gb:GBnnn for each from_store recipe the store's morphs answer"""
+    G, out = load(where), []
+    for r in recipes():
+        gb = r["gb_id"]
+        if r.get("from_store") != "yes" or (only and gb not in only):
+            continue
+        ms = answering(G, gb)
+        if not ms:
+            continue
+        ev, seen = [], set()
+        for m in ms:
+            for x in m.get("evidence") or []:
+                if x["ref"] not in seen and len(ev) < 5:
+                    seen.add(x["ref"]); ev.append({"ref": x["ref"]})
+        conf = max((m.get("confidence") or "low" for m in ms), key=lambda c: CONF.get(c, 0))
+        out.append({"id": f"gb:{gb}", "kind": "feature", "value": "1 (present): " + ", ".join(dict.fromkeys(m["form"] for m in ms)),
+                    "codes": [gb], "evidence": ev, "confidence": conf, "method": "corpus-derived",
+                    "by": "script:grammar.py", "date": datetime.date.today().isoformat(), "status": "observed",
+                    "note": f"grammar.py run: answered by the store's morphs ({', '.join(m['id'] for m in ms)}); "
+                            f"recipe: {r['test']}"})
+    return out
+
+
+def run(where, only, write):
+    new = derive(where, only)
+    q = questions()
+    for e in new:
+        gb = e["codes"][0]
+        print(f"{e['id']:10} {q.get(gb, '')[:70]:70} {e['value']} ({e['confidence']})")
+    if not write:
+        print(f"{len(new)} features; --write puts them into the store")
+        return
+    f = os.path.join(profile_dir(where), "observations.json")
+    prof = json.load(open(f, encoding="utf-8"))
+    ids = {e["id"] for e in new}
+    others = {e["id"] for e in prof["entries"] if e["id"] in ids and e.get("by") != "script:grammar.py"}
+    prof["entries"] = [e for e in prof["entries"] if e["id"] not in ids or e["id"] in others] + \
+        [e for e in new if e["id"] not in others]
+    json.dump(prof, open(f, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    print(f"{f}: {len(new) - len(others)} features written" + (f"; kept the agent's or team's {sorted(others)}" if others else ""))
+
+
+def status(where):
+    import collections
+    es = entries(where)
+    by = collections.Counter((e.get("kind"), e.get("status")) for e in es)
+    for k in sorted({k for k, _ in by}):
+        print(f"{k:8} " + ", ".join(f"{st} {n}" for (kk, st), n in sorted(by.items()) if kk == k))
+    have, rs = gb_codes(es), recipes()
+    print(f"Grambank: {len([c for c in have if c.startswith('GB')])} features in the store; recipes {len(rs)}, "
+          f"of them in the store {sum(1 for r in rs if r['gb_id'] in have)}, answered by the store's morphs and not yet "
+          f"written {sum(1 for r in rs if r['gb_id'] not in have and r.get('from_store') == 'yes' and answering(load(where), r['gb_id']))}"
+          + ("" if questions() else " (no questions: python3 scripts/setup.py --only grambank)"))
+
+
+def plan(where):
+    es, G, q = entries(where), load(where), questions()
+    have = gb_codes(es)
+    todo = sorted((r for r in recipes() if r["gb_id"] not in have), key=lambda r: (RELEVANCE.get(r["relevance"], 3), r["gb_id"]))
+    print("## Grambank features a recipe can decide, not in the store yet")
+    for r in todo:
+        how = "run (the store's morphs answer it)" if r.get("from_store") == "yes" and answering(G, r["gb_id"]) else \
+            f"{r['method']}: {r['test']}"
+        print(f"- {r['gb_id']} ({r['relevance']}) {q.get(r['gb_id'], '')}: {how}")
+    cells = [c for c in G.cells if not c.get("gap") and (c.get("status") == "open" or c.get("confidence") == "low")]
+    print(f"\n## Cells open or thin ({len(cells)})")
+    for c in cells:
+        print(f"- {c['id']}: {c.get('value')} ({c.get('status')}, {c.get('confidence')})")
+    claims = [c for c in G.claims if c.get("verdict") in ("open", "new", "corpus-only")]
+    print(f"\n## Claims to test ({len(claims)})")
+    for c in claims:
+        print(f"- {c['id']} ({c.get('verdict')}): {c['value'][:100]}" + (f"; next: {c['next']}" if c.get("next") else ""))
+    ms = [m for m in G.morphs if m.get("status") == "open"]
+    print(f"\n## Morphs open ({len(ms)})")
+    for m in ms:
+        print(f"- {m['id']}: {m.get('value')}" + (f" ({m['note'][:80]})" if m.get("note") else ""))
+
+
 def line(e):
     k = e["kind"]
     if k == "morph":
@@ -180,6 +325,12 @@ def main(a):
         for k in (a[2:3] or list(GRAMMAR)):
             for e in getattr(G, k + "s"):
                 print(line(e))
+    elif a[:1] == ["status"] and len(a) >= 2:
+        status(a[1])
+    elif a[:1] == ["plan"] and len(a) >= 2:
+        plan(a[1])
+    elif a[:1] == ["run"] and len(a) >= 2:
+        run(a[1], [x for x in a[2:] if re.fullmatch(r"GB\d{3}", x)], "--write" in a)
     elif a[:1] == ["from-tsv"] and len(a) >= 3:
         opt = lambda k, d: a[a.index(k) + 1] if k in a else d
         from_tsv(a[1], a[2], opt("--by", "script:grammar.py"), opt("--date", datetime.date.today().isoformat()))

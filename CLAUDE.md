@@ -105,7 +105,7 @@ working; this file adds the rules that hold for any task here.
 ## Commands
 
 ```
-python3 scripts/setup.py [--heb bhsa,bcv-query,macula] [--drafting LAYOUT] [--only bsb,msb,bgb,rp,vrs,src,spk,editions] [--force]
+python3 scripts/setup.py [--heb bhsa,bcv-query,macula] [--drafting LAYOUT] [--only bsb,msb,bgb,rp,vrs,src,spk,editions,grambank] [--force]
 python3 scripts/onboard.py [--answers F] [--yes] [--dry-run] # wizard for a new language: editions, project, memory
 python3 scripts/fetch_edition.py --find <iso>       # editions of a language (bcv-commons/bibles, eBible)
 python3 scripts/fetch_edition.py <edition> | --all  # fetch an edition by its recipe into import/
@@ -138,7 +138,7 @@ python3 scripts/nllb/train.py --data DIR             # train here (CUDA, Apple G
 python3 scripts/nllb/draft.py src|run|collect ...    # second drafts into _eval/local/second/nllb/ (triage), or a rough pass with --out
 python3 scripts/style.py <project> <draft> [--brief]  # style against the human translations: flags, watch items, models
 python3 scripts/language_profile.py check <dir>      # validate a language profile (docs/proposals/language-profile/)
-python3 scripts/grammar.py show <project> [morph|cell|claim] | from-tsv <tsv dir> <profile dir> # the store's grammar: morphs, paradigm cells, tested claims
+python3 scripts/grammar.py show <project> [morph|cell|claim] | status|plan <project> | run <project> [--write] | from-tsv <tsv dir> <profile dir> # the store's grammar: morphs, cells, claims; what to settle next; the Grambank features its morphs answer
 python3 scripts/wiki.py sync|lint <project>          # a project's language wiki: pages + generated store blocks
 python3 scripts/wiki.py view <project>               # one offline HTML file to read the wiki and search the store
 python3 scripts/team_input.py <project> init|list|add|prompt # the team's plain-language input (wiki/team-input.md) -> binding store entries

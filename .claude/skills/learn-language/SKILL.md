@@ -39,6 +39,10 @@ of another language in this working copy, if there is one, is the worked example
    exactly (`language_profile.py check` lists values with other marks). `orthography.ignore_marks` only loosens the
    search tools. The team's own facts come in through `wiki/team-input.md` (`python3 scripts/team_input.py <project>
    init`, then `prompt` for the curation agent); they are binding.
+   The store's grammar (morphs, paradigm cells, claims; `scripts/grammar.py`): `grammar.py run <project> --write`
+   adds the Grambank features its morphs answer (questions: `python3 scripts/setup.py --only grambank`), and
+   `grammar.py plan <project>` lists what to settle next: the features a recipe can decide, open and thin cells,
+   claims to test. Give it to the curation agent; it proposes, the corpus counts decide.
 5. **Draft with packs:** for each chapter `python3 scripts/verse_pack.py <project> <code> <ch>`, then the
    `draft-chapter` skill (fresh agent per chapter; the pack and `wiki/index.md` in `style_guides`).
 6. **Test** (if a book is held out): score each chapter with `python3 scripts/score.py <project> <draft>

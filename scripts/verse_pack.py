@@ -17,7 +17,7 @@ For export/<project>/_learn/packs/<code>NNN.md, per verse:
     CHARS characters of target text, chosen by silnlp's greedy coverage step on the verse's English content words and
     word pairs: the closest verses first, then each next verse the one that best covers what is not covered yet;
   - "still needs a search": the content words that no store entry, lexicon row or phrase covers;
-  - with --grammar or the project's `pack_grammar: true` (pack v4, on trial): the verbs whose cell is marked (negated, a subject other than 3rd
+  - with --grammar or the project's `pack_grammar: true` (pack v4, on trial; `binding`: the block as a rule): the verbs whose cell is marked (negated, a subject other than 3rd
     singular) with the store's pattern for the cell, and the paradigm once in the header (scripts/verse_analysis.py).
 And a chapter header: the store's features in one line each, an index of all live terms, formulas and
 names (one line each; `concord.py store <id>` prints an entry in full), the names in the chapter, the
@@ -44,7 +44,7 @@ import collections, glob, json, math, os, re, sys, unicodedata
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from books import BY_CODE  # noqa: E402
-from project import project, sources, edition, project_dir  # noqa: E402
+from project import project, sources, edition, project_dir, project_rel  # noqa: E402
 import langtools as LT  # noqa: E402
 
 COMMON = {"one", "said", "man", "men", "people", "place", "land", "day", "days", "came", "went", "come", "go", "give", "gave", "put", "made", "make", "took", "take", "see", "saw", "know", "like", "way", "thing", "things", "time", "hand", "house", "son", "sons", "name"}
@@ -414,6 +414,11 @@ def main():
         ghead, gverses = verse_analysis.grammar_block(pname, code, chapter)
         if ghead:
             L += ["## Verb marking (pack v4)", ""] + ghead
+            if p.get("pack_grammar") == "binding":     # on trial: the block as a rule, checked per verb
+                L += [f"**Binding:** for each verb under \"Verbs to mark\", the word you tag with it carries the pattern, "
+                      f"unless the corpus shows that verb unmarked in such a verse (`concord.py`); then say so in the "
+                      f"chapter's notes in one line, with the reference. Check after the split: `python3 scripts/cell_check.py "
+                      f"{pname} {project_rel(pname)}/{code}/{code}{chapter:03d}.txt --list`.", ""]
     L += ["## Verses", ""]
     need_total = []
     for v in sorted(assist):
