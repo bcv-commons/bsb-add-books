@@ -6,7 +6,7 @@ The machine is named only in your environment or in .env (git-ignored), never in
     NLLB_DIR=~/bsb-nllb            the folder there (default ~/bsb-nllb); one subfolder per project
     NLLB_PYTHON=python3            its Python with scripts/nllb/requirements.txt installed (a venv's python)
 
-  push    python3 scripts/nllb/remote.py push <project>      the data (scripts/nllb/data.py) and train.py to the machine
+  push    python3 scripts/nllb/remote.py push <project>      the data (scripts/nllb/data.py), train.py and model_text.py to the machine
   train   python3 scripts/nllb/remote.py train <project> [train.py options]   starts training there, detached (nohup),
           and returns; the log is <dir>/train.log
   status  python3 scripts/nllb/remote.py status <project>    the log's last lines, and whether the model is ready
@@ -53,6 +53,7 @@ def main():
             raise SystemExit(f"no training data: python3 scripts/nllb/data.py {pname}")
         ssh(host, f"mkdir -p {d}")
         subprocess.run(["rsync", "-a", os.path.join(ROOT, "scripts", "nllb", "train.py"),
+                        os.path.join(ROOT, "scripts", "nllb", "model_text.py"),
                         os.path.join(ROOT, "scripts", "nllb", "requirements.txt"), f"{host}:{d}/"], check=True)
         subprocess.run(["rsync", "-a", "--delete", data + "/", f"{host}:{d}/data/"], check=True)
         print(f"pushed to {host}:{d}")

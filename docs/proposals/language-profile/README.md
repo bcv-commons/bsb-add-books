@@ -158,6 +158,12 @@ Profile-level settings that the tools read beside the entries:
 - `analysis.match`: `strings` (default: a cell's affixes are matched at a word's edges) or `morphs` (on the morph view:
   prefix, stem, grammatical tone, suffix; `scripts/morphs.py`). Chosen by measurement (`cell_check.py`'s lifts on the
   human text), and like every setting, a change makes the tests that depended on it stale.
+- `analysis.model_text`: `words` (default) or `morphs`: the second-draft model's target text
+  (`scripts/nllb/model_text.py`) as written, or each word as its parts: a prefix ending in the joiner (`be+`), a suffix
+  starting with it (`+gu`), the grammatical tone as one token after the stem (`~PROH`), lexical tone as a code after its
+  part (`~H1`: an acute on the part's last tone-bearing unit). The decoder rebuilds the words exactly; names stay whole.
+  `analysis.model_join` and `analysis.model_tone` change the two signs (`+`, `~`) for a corpus that uses them. Data and
+  models record the store basis they were built on; `grammar.py retest` lists them when it has changed.
 
 `scripts/grammar.py` reads the three kinds for the tools (`grammar.load(project)`: morphs, affixes by host and slot,
 cells by paradigm) and writes them from a working store's TSV files (`from-tsv`).

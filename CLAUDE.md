@@ -136,6 +136,7 @@ python3 scripts/rough_check.py <project> <chapter file> ... [--strict] # lost ne
 python3 scripts/nllb/data.py <project> [--test rut]  # the second-draft model (fine-tuned NLLB, for triage): verse pairs, then
 python3 scripts/nllb/train.py --data DIR             # train here (CUDA, Apple GPU) or: scripts/nllb/remote.py push|train|status|fetch <project> (NLLB_HOST in .env)
 python3 scripts/nllb/draft.py src|run|collect ...    # second drafts into _eval/local/second/nllb/ (triage), or a rough pass with --out
+python3 scripts/nllb/model_text.py <project> check | show <text> # the model's target in parts (analysis.model_text morphs), decoded back exactly
 python3 scripts/style.py <project> <draft> [--brief]  # style against the human translations: flags, watch items, models
 python3 scripts/language_profile.py check <dir>      # validate a language profile (docs/proposals/language-profile/)
 python3 scripts/grammar.py show <project> [morph|cell|claim] | status|plan <project> | run <project> [--write] | from-tsv <tsv dir> <profile dir> # the store's grammar: morphs, cells, claims; what to settle next; the Grambank features its morphs answer

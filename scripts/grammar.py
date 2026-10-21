@@ -370,6 +370,25 @@ def stale(where):
     return out, norecipe
 
 
+def stale_data(where):
+    """[(meta.json, its basis)] of the project's model data and models built in parts (model_text morphs) on store
+    settings that have changed since: their tokens no longer match what the store would write"""
+    import glob
+    try:
+        from project import project_dir
+        d = os.path.join(project_dir(where), "_eval", "local", "nllb")
+    except Exception:
+        return []
+    out, cur = [], None
+    for f in sorted(glob.glob(os.path.join(d, "**", "meta.json"), recursive=True)):
+        mt = json.load(open(f, encoding="utf-8")).get("model_text") or {}
+        if mt.get("mode") == "morphs":
+            cur = cur or basis(where, None, "model_text 1")
+            if mt.get("basis") != cur:
+                out.append((f, mt.get("basis")))
+    return out
+
+
 def retest(where, run_them):
     """list the stale tests; with --run rerun them, grouped by command (one `cell_check.py try` per cell, all its forms)"""
     import subprocess
@@ -382,6 +401,9 @@ def retest(where, run_them):
         print(f"  {e['id']}: basis {e.get('basis') or 'none'} -> {cur}  ({' '.join(r)})")
         key = tuple(r[:4]) if r[:2] == ["cell_check.py", "try"] else tuple(r)
         groups.setdefault(key, []).extend(r[4:] if r[:2] == ["cell_check.py", "try"] else [])
+    for f, b in stale_data(where):
+        print(f"  model data {os.path.relpath(f, ROOT)}: built on basis {b}, the store is now at "
+              f"{basis(where, None, 'model_text 1')}: rebuild it (scripts/nllb/data.py) before the next training")
     if not run_them:
         return
     for key, forms in groups.items():

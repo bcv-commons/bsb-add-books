@@ -64,10 +64,17 @@ def run(a):
     for i in range(0, len(lines), 16):
         b = tok(lines[i:i + 16], return_tensors="pt", padding=True, truncation=True, max_length=200).to(dev)
         with torch.no_grad():
-            o = model.generate(**b, forced_bos_token_id=bos, num_beams=int(opt(a, "--beams", 2)), max_new_tokens=256)
+            o = model.generate(**b, forced_bos_token_id=bos, num_beams=int(opt(a, "--beams", 2)),
+                               max_new_tokens=max(256, meta.get("trg_len", 200) + 16))
         preds += tok.batch_decode(o, skip_special_tokens=True)
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from model_text import Codec       # a model trained on parts: the words rebuilt as the data was built
+    codec = Codec(meta.get("model_text"))
+    if codec.on:
+        open(os.path.join(data, "input.pred.parts"), "w", encoding="utf-8").write("\n".join(p.strip() for p in preds) + "\n")
+        preds = [codec.decode(p) for p in preds]
     open(os.path.join(data, "input.pred"), "w", encoding="utf-8").write("\n".join(p.strip() for p in preds) + "\n")
-    print(f"{len(preds)} verses drafted on {dev}")
+    print(f"{len(preds)} verses drafted on {dev}" + (f"; repairs {dict(codec.repairs)}" if codec.on and codec.repairs else ""))
 
 
 def collect(a):
