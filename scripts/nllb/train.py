@@ -55,7 +55,7 @@ def main():
     meta = json.load(open(os.path.join(args.data, "meta.json"), encoding="utf-8"))
     trg_code, init_lang = args.trg_code or meta["trg_code"], args.init_lang or meta.get("init_lang", "eng_Latn")
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-    from model_text import Codec       # the target as the data was built (words, or morphs: decoded before scoring)
+    from model_text import Codec, generate   # the target as the data was built (words, or morphs: decoded before scoring)
     codec = Codec(meta.get("model_text"))
     out = args.out or os.path.join(os.path.dirname(os.path.abspath(args.data)), "run")
     os.makedirs(out, exist_ok=True)
@@ -144,23 +144,20 @@ def main():
     sc: dict = {}
     if te[0]:
         model.eval()
-        preds, bos = [], tok.convert_tokens_to_ids(trg_code)
-        for i in range(0, len(te[0]), 16):
-            b = tok(te[0][i:i + 16], return_tensors="pt", padding=True, truncation=True, max_length=args.max_len).to(model.device)
-            with torch.no_grad():
-                o = model.generate(**b, forced_bos_token_id=bos, num_beams=2, max_new_tokens=max(256, trg_len + 16))
-            preds += tok.batch_decode(o, skip_special_tokens=True)
+        # drafted as draft.py drafts (looping verses again), so the score is the drafts' score
+        preds, sc["looped"] = generate(model, tok, te[0], tok.convert_tokens_to_ids(trg_code), max_len=args.max_len,
+                                       max_new=max(256, trg_len + 16))
         if codec.on:                    # the model's parts as written, and the words rebuilt from them (scored)
             open(os.path.join(out, "test.pred.parts"), "w", encoding="utf-8").write("\n".join(p.strip() for p in preds) + "\n")
             preds, te = [codec.decode(p) for p in preds], (te[0], [codec.decode(t) for t in te[1]])
         open(os.path.join(out, "test.pred"), "w", encoding="utf-8").write("\n".join(p.strip() for p in preds) + "\n")
         try:
             import sacrebleu
-            sc = {"chrf3": sacrebleu.corpus_chrf(preds, [te[1]], char_order=6, beta=3, remove_whitespace=True).score,
+            sc = {**sc, "chrf3": sacrebleu.corpus_chrf(preds, [te[1]], char_order=6, beta=3, remove_whitespace=True).score,
                   "chrf2": sacrebleu.corpus_chrf(preds, [te[1]], char_order=6, beta=2).score,
                   "bleu": sacrebleu.corpus_bleu(preds, [te[1]]).score}
         except Exception as e:  # noqa: BLE001
-            sc = {"error": str(e)}
+            sc = {**sc, "error": str(e)}
     if codec.on:
         sc["repairs"] = dict(codec.repairs)
     sc.update(train_minutes=round((t1 - t0) / 60, 1), steps=trainer.state.global_step, device=dev,

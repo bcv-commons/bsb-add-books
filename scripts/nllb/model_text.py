@@ -20,6 +20,7 @@ to separate. Only marks the store names as tone marks are coded; any other mark 
 The decoder needs only the spec (spec_from_store(), saved in the data's meta.json as `model_text`), not the store: a model
 is decoded as it was trained, whatever the store has learned since (then grammar.py retest lists the data as stale).
 This file runs without the rest of the repo (train.py and draft.py use decode on a GPU machine); encoding needs the store.
+It also holds the drafting both share (generate(): beam search, with looping verses drafted again).
 
     python3 scripts/nllb/model_text.py <project> check     every corpus verse encoded and decoded back; token counts
     python3 scripts/nllb/model_text.py <project> show <verse text>
@@ -231,6 +232,36 @@ def codec_for(pname, mode=None, P=None):
     C.names = {w for w, (lo, up) in case.items() if up + lo >= 2 and up >= 0.9 * (up + lo)}
     C.names |= {NFC(str(e.get("value", ""))).lower() for e in grammar_entries(pname) if e.get("kind") == "name"}
     return C, morphs.load(pname, P)
+
+
+def loops(ids):
+    """a run of 1-8 tokens three times in a row: the model is looping ("Ság! Ság! Ság! ..." to the length limit)"""
+    return any(ids[i:i + k] == ids[i + k:i + 2 * k] == ids[i + 2 * k:i + 3 * k]
+               for k in range(1, 9) for i in range(len(ids) - 3 * k + 1))
+
+
+def generate(model, tok, lines, bos, max_len=200, max_new=256, beams=2, batch=16):
+    """The model's drafts of the source lines, and how many looped. A looping verse (or one cut at the length limit) is
+    drafted again with no 4-token run repeated; the others keep their beam search as it was. Not a guard on every verse:
+    the human Kuni repeats a 4-token run in 32% of its verses (reduplication, repeated verb forms), a 6-token run in 12%,
+    and runs of three never (0 of 1,244 test verses). Kuni from the Greek, Genesis 1-30: 24 of 871 verses looped, chrF3 on
+    them 31.6 -> 37.4 (the whole set 38.3 -> 38.5)."""
+    import torch
+
+    def gen(ls, **kw):
+        ids = []
+        for i in range(0, len(ls), batch):
+            b = tok(ls[i:i + batch], return_tensors="pt", padding=True, truncation=True, max_length=max_len).to(model.device)
+            with torch.no_grad():
+                o = model.generate(**b, forced_bos_token_id=bos, num_beams=beams, max_new_tokens=max_new, **kw)
+            ids += [[t for t in r.tolist() if t not in tok.all_special_ids] for r in o]
+        return ids
+
+    ids = gen(lines)
+    bad = [i for i, x in enumerate(ids) if len(x) >= max_new - 1 or loops(x)]
+    for i, x in zip(bad, gen([lines[i] for i in bad], no_repeat_ngram_size=4) if bad else []):
+        ids[i] = x
+    return [tok.decode(x, skip_special_tokens=True) for x in ids], len(bad)
 
 
 def grammar_entries(pname):

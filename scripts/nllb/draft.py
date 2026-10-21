@@ -11,7 +11,8 @@ this file and the model, so it can run on another machine:
            <code>NNN.txt, e.g. a modern Greek Bible), in the original's numbering (the default for --source) or the
            BSB's; --plain-quotes as such a model's training text had it (« » “ ” -> ", ‘ ’ -> ', — -> " - ", – -> -)
   run      python3 scripts/nllb/draft.py run --data DIR [--model DIR] [--beams 2] [--device cuda|mps|cpu]
-           DIR/input.pred; minutes for a chapter, on the processor too (default model: <data>/../../run/model)
+           DIR/input.pred; minutes for a chapter, on the processor too (default model: <data>/../../run/model); a verse
+           whose draft loops (a run repeated three times) is drafted again with no 4-token run repeated (model_text.py)
   collect  python3 scripts/nllb/draft.py collect <project> DIR [--name nllb] [--out DIR2]
            <project>/_eval/local/second/<name>/<code>NNN.txt, read by scripts/triage.py; with --out the chapters go to DIR2
            as a rough pass, with DIR2/rough_check.md: the verses scripts/rough_check.py flags (a lost negation, English
@@ -81,22 +82,17 @@ def run(a):
     tok = AutoTokenizer.from_pretrained(mdir, src_lang=meta.get("src_code", "eng_Latn"))
     model = AutoModelForSeq2SeqLM.from_pretrained(mdir).to(dev).eval()
     lines = open(os.path.join(data, "input.src"), encoding="utf-8").read().splitlines()
-    bos = tok.convert_tokens_to_ids(meta["trg_code"])
-    preds = []
-    for i in range(0, len(lines), 16):
-        b = tok(lines[i:i + 16], return_tensors="pt", padding=True, truncation=True, max_length=200).to(dev)
-        with torch.no_grad():
-            o = model.generate(**b, forced_bos_token_id=bos, num_beams=int(opt(a, "--beams", 2)),
-                               max_new_tokens=max(256, meta.get("trg_len", 200) + 16))
-        preds += tok.batch_decode(o, skip_special_tokens=True)
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-    from model_text import Codec       # a model trained on parts: the words rebuilt as the data was built
+    from model_text import Codec, generate   # looping verses drafted again; a model trained on parts: the words rebuilt
+    preds, looped = generate(model, tok, lines, tok.convert_tokens_to_ids(meta["trg_code"]), beams=int(opt(a, "--beams", 2)),
+                             max_new=max(256, meta.get("trg_len", 200) + 16))
     codec = Codec(meta.get("model_text"))
     if codec.on:
         open(os.path.join(data, "input.pred.parts"), "w", encoding="utf-8").write("\n".join(p.strip() for p in preds) + "\n")
         preds = [codec.decode(p) for p in preds]
     open(os.path.join(data, "input.pred"), "w", encoding="utf-8").write("\n".join(p.strip() for p in preds) + "\n")
-    print(f"{len(preds)} verses drafted on {dev}" + (f"; repairs {dict(codec.repairs)}" if codec.on and codec.repairs else ""))
+    print(f"{len(preds)} verses drafted on {dev}" + (f"; {looped} looped and were drafted again" if looped else "")
+          + (f"; repairs {dict(codec.repairs)}" if codec.on and codec.repairs else ""))
 
 
 def collect(a):
