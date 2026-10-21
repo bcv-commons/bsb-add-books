@@ -9,27 +9,15 @@ Output (printed as JSON, or written with --out DIR):
 - <BOOK>_<hash>.clauses.json            ["0:0 1:1-5 2:6-11 ...", ...] parallel to the index keys
 
 Target positions use the compact-alignments tokenizer (runs of letters and marks;
-digits and punctuation are separators). The hash is the compact-alignments book
-content hash, computed over the verses of the given file only.
+digits and punctuation are separators). The hash is the compact-alignments text
+fingerprint (its first 8 hex in the name), computed over the verses of the given file only.
 
 Usage: python3 scripts/clause_sidecar.py <draft> <orig/heb file> <BOOK> [--out DIR]
 """
-import hashlib, json, os, re, sys, unicodedata
+import json, os, re, sys
 
-
-def tokenize(text):
-    toks, cur = [], []
-    for ch in unicodedata.normalize("NFC", text):
-        if unicodedata.combining(ch):
-            continue
-        if unicodedata.category(ch)[0] in ("L", "M"):
-            cur.append(ch)
-        elif cur:
-            toks.append("".join(cur))
-            cur = []
-    if cur:
-        toks.append("".join(cur))
-    return toks
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from full_align import text_fingerprint, tokenize   # compact-alignments' tokenizer v2 and text fingerprint v1
 
 
 def plain(text):
@@ -153,8 +141,8 @@ def build(draft, heb, book):
             elif owned[k][0]:
                 parts.append(f"{k}:" + runs(owned[k][0], owned[k][2] if len(owned[k]) > 2 else owned[k][0][0]))
         entries.append(" ".join(parts))
-        hashed.append(f"{chapter}:{v}:" + re.sub(r"\s+", " ", plain(" ".join(s for s in draft_v if not is_merged(s)))).strip())
-    digest = hashlib.sha256("\n".join(hashed).encode("utf-8")).hexdigest()
+        hashed.append((chapter, v, plain(" ".join(s for s in draft_v if not is_merged(s)))))
+    digest = text_fingerprint(hashed)[0]
     return index, entries, digest
 
 
@@ -185,7 +173,7 @@ def main():
     os.makedirs(out, exist_ok=True)
     index_path = os.path.join(index_dir, f"{book}_clauses.json")
     json.dump(index, open(index_path, "w"), separators=(",", ":"))
-    sidecar = os.path.join(out, f"{book}_{digest[-5:]}.clauses.json")
+    sidecar = os.path.join(out, f"{book}_{digest[:8]}.clauses.json")
     json.dump(entries, open(sidecar, "w"), ensure_ascii=False, indent=0)
     print(f"{index_path}\n{sidecar}")
 

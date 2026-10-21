@@ -21,7 +21,8 @@ The published layer, one file set per book, as on Hugging Face (`export` below):
     <iso[0]>/<iso>/<edition>+auto+bsb-add-books/<BOOK>_<hash>.json        main strings, parallel to _index/<BOOK>_lexemes.json
                                                  <BOOK>_<hash>.meta.json   channels fn, wp, fp (wx, rows, off: null)
                                                  _layer.json               attribution and the profile table
-  <hash> = the last 5 hex characters of compact-alignments' book_content_hash: sha256 of "{c}:{v}:{text}" lines
+  <hash> = the first 8 hex characters of compact-alignments' text fingerprint v1 (text_fingerprint): per chapter the
+  sha256 of the "{v}:{tokens}" lines, then the sha256 of the "{c}:{chapter digest}" lines
   (translatable text only, ascending verses, joined by "\\n").
 
     python3 scripts/full_align.py listing <project> <code> <ch>  numbered Hebrew and draft tokens per verse, for the agent
@@ -45,7 +46,7 @@ preceding linked token), and `+pos[>ord]` at the end of fn.
     python3 scripts/full_align.py split <project> <code> <ch>   <code>NNN.tagged -> prose .txt + .align (profile b),
                                                                 and the content tokens left undecided per verse
 """
-import functools, hashlib, json, os, re, sys, unicodedata, urllib.request
+import collections, functools, hashlib, json, os, re, sys, unicodedata, urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
@@ -96,7 +97,7 @@ def index(book, kind):
     """_index/<BOOK>_<kind>.json (lexemes, keys, fn, fn_keys), downloaded once and checked against the published
     _source.json: a cached file whose SHA-256 differs is downloaded again (the index is republished now and then, and a
     stale copy would give wrong ordinals without any error)."""
-    import hashlib
+    import collections, hashlib
     path = os.path.join(INDEX, f"{book}_{kind}.json")
     want = (source_index().get("books", {}).get(book) or {}).get(f"{kind}_sha256")
     if os.path.exists(path) and want and hashlib.sha256(open(path, "rb").read()).hexdigest() != want:
@@ -122,20 +123,89 @@ def verse_text(raw):
     return re.sub(r"\s+", " ", NOTE.sub(" ", MARK.sub("", raw.strip()))).strip()
 
 
+TOKENIZER_VERSION = 2   # compact-alignments' manifest.json tokenizer_version
+TEXT_FP_VERSION = 1     # its text_fp_version (text_fingerprint)
+MYA_KEEP = {0x1039, 0x103A}   # Myanmar virama and asat: they carry the syllable, not optional marks
+MYA_CONS = [(0x1000, 0x102A), (0x103F, 0x103F), (0x1050, 0x1055), (0x105A, 0x105D), (0x1061, 0x1061), (0x1065, 0x1066),
+            (0x106E, 0x1070), (0x1075, 0x1081), (0x108E, 0x108E), (0xA9E0, 0xA9E4), (0xA9E7, 0xA9EF), (0xA9FA, 0xA9FE),
+            (0xAA60, 0xAA6F), (0xAA71, 0xAA76), (0xAA7A, 0xAA7A), (0xAA7E, 0xAA7F)]
+
+
+def _mya(cp):
+    return any(a <= cp <= b for a, b in MYA_CONS)
+
+
+def _cjk(cp):
+    if 0x4E00 <= cp <= 0x9FFF or 0x3400 <= cp <= 0x4DBF or 0xF900 <= cp <= 0xFAFF:
+        return "han"
+    return "hira" if 0x3040 <= cp <= 0x309F else "kata" if 0x30A0 <= cp <= 0x30FF else None
+
+
+def _unspaced(tok):
+    """a run of letters in a script written without spaces, segmented as compact-alignments does: Myanmar by syllable
+    (one starts at a consonant or U+1031, not after a virama, U+1031 or an asat), Han one character a token, Japanese at
+    the kana/script boundaries; any other run is one token"""
+    cps = [ord(c) for c in tok]
+    if any(_mya(c) for c in cps):
+        out, cur = [], ""
+        for i, c in enumerate(cps):
+            prev = cps[i - 1] if i else 0
+            if (_mya(c) or c == 0x1031) and cur and prev not in (0x1039, 0x1031, 0x103A):
+                out.append(cur)
+                cur = ""
+            cur += chr(c)
+        return out + [cur] if cur else out
+    if not any(_cjk(c) for c in cps):
+        return [tok]
+    out, cur, cls_ = [], "", None
+    for ch in tok:
+        cl = _cjk(ord(ch))
+        if cl == "han":
+            if cur:
+                out.append(cur)
+                cur, cls_ = "", None
+            out.append(ch)
+        elif cl != cls_ and cur:
+            out.append(cur)
+            cur, cls_ = ch, cl
+        else:
+            cur, cls_ = cur + ch, cl
+    return out + [cur] if cur else out
+
+
 def tokenize(text):
-    """compact-alignments' tokenizer (usj_source.tokenize)."""
+    """compact-alignments' tokenizer v2 (tokenize.js, usj_source.tokenize): marks with a combining class dropped (not
+    Myanmar's virama and asat), variation selectors dropped, then maximal runs of letters and marks; punctuation, white
+    space and digits separate; scripts without spaces segmented by rule (_unspaced)."""
     toks, cur = [], []
     for ch in unicodedata.normalize("NFC", text):
-        if unicodedata.combining(ch):
+        cp = ord(ch)
+        if (unicodedata.combining(ch) and cp not in MYA_KEEP) or 0xFE00 <= cp <= 0xFE0F or 0xE0100 <= cp <= 0xE01EF:
             continue
         if unicodedata.category(ch)[0] in ("L", "M"):
             cur.append(ch)
         elif cur:
-            toks.append("".join(cur))
+            toks += _unspaced("".join(cur))
             cur = []
     if cur:
-        toks.append("".join(cur))
+        toks += _unspaced("".join(cur))
     return toks
+
+
+def text_fingerprint(rows):
+    """compact-alignments' text fingerprint v1 of a book, rows = [(c, v, text)] in the edition's own numbering (a bridged
+    verse under its first number), translatable text only: (book digest, {c: chapter digest}). A verse line is
+    "{v}:{tokens joined by one space}" (a verse without tokens left out); a chapter is the SHA-256 of its verse lines in
+    order joined by newlines; the book the SHA-256 of the "{c}:{chapter digest}" lines. File names carry the book
+    digest's first 8 hex characters: <BOOK>_<fp[:8]>.json."""
+    by = collections.defaultdict(list)
+    for c, v, t in sorted(rows, key=lambda r: (int(r[0]), int(r[1]))):
+        toks = tokenize(t)
+        if toks:
+            by[int(c)].append(f"{int(v)}:{' '.join(toks)}")
+    sha = lambda x: hashlib.sha256(x.encode("utf-8")).hexdigest()
+    chapters = {c: sha("\n".join(ls)) for c, ls in by.items()}
+    return sha("\n".join(f"{c}:{chapters[c]}" for c in sorted(chapters))), chapters
 
 
 def text_hash(ch, verses):
@@ -754,11 +824,11 @@ def export(pname, out=None):
                 main[ref], fn[ref] = m, f
                 wp[ref] = p * len(m.split())
                 fp[ref] = p * len(f.split())
-        hx = book_hash(text_rows)
+        hx = text_fingerprint(text_rows)[0]
         for old in os.listdir(d):
             if old.startswith(book + "_") and old.endswith(".json"):
                 os.remove(os.path.join(d, old))
-        base = os.path.join(d, f"{book}_{hx[-5:]}")
+        base = os.path.join(d, f"{book}_{hx[:8]}")       # compact-alignments' name: the text fingerprint
         json.dump([main.get(r, "") for r in refs], open(base + ".json", "w", encoding="utf-8"), ensure_ascii=False)
         json.dump({"fn": [fn.get(r, "") for r in refs], "wp": [wp.get(r, "") for r in refs],
                    "fp": [fp.get(r, "") for r in refs], "wx": None, "rows": None, "off": None}, open(base + ".meta.json", "w", encoding="utf-8"), ensure_ascii=False)
@@ -767,6 +837,8 @@ def export(pname, out=None):
     json.dump({"version": 3, "lists": True, "layer": layer, "kind": "auto", "has_ids": False,   # decision lists (!, u, e, +)
                # the _index the ordinals refer to: a file built on another one points at the wrong tokens
                "spine_index_sha256": src.get("spine_index_sha256"),
+               # the target positions and the file names: the tokenizer and the text fingerprint they follow
+               "tokenizer_version": TOKENIZER_VERSION, "text_fp_version": TEXT_FP_VERSION,
                "attribution": {"base_text": ed, "kind": "auto", "license": "CC0-1.0", "source": "bsb-add-books",
                                "versification": "org", "repo": "https://github.com/bcv-commons/bsb-add-books"},
                "profiles": PROFILES}, open(os.path.join(d, "_layer.json"), "w", encoding="utf-8"), indent=1)

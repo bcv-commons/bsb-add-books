@@ -199,16 +199,17 @@ One string per verse, parallel to the index keys:
 | `""` | no clause information for this verse |
 
 Rules:
-- **Tokens** are counted with the compact-alignments tokenizer: maximal runs of
+- **Tokens** are counted with the compact-alignments tokenizer (v2): maximal runs of
   Unicode letters and marks, NFC, combining marks dropped; digits and punctuation
-  are separators. Punctuation therefore stays at the end of the line before a
+  are separators; scripts without spaces segmented by rule (Han, Japanese, Myanmar). Punctuation therefore stays at the end of the line before a
   break, as in the prose.
 - **Verse numbering:** keys are spine verses (Hebrew numbering). An edition with
   different numbering reads its words from the mapped verse, using the existing
   `_index/_versification_<scheme>.json` of compact-alignments.
-- **Hash:** the book content hash of compact-alignments (`"{c}:{v}:{text}"` per verse,
-  newline-joined, SHA-256, last 5 hex in the filename). If the edition's text
-  changes, the file no longer matches and is not used.
+- **Hash:** the text fingerprint of compact-alignments (v1: per chapter the SHA-256 of the
+  `"{v}:{tokens}"` lines, then the SHA-256 of the `"{c}:{chapter digest}"` lines; the first
+  8 hex in the filename). If the edition's text changes, the file no longer matches and is
+  not used.
 - **Licence:** integers only, no text. CC0.
 
 ### 3. Provenance channel (optional)
@@ -311,7 +312,7 @@ Ruth 1 both forms give the identical sidecar.
 ```
 examples/_index/RUT_clauses.json                          source index, Ruth 1
 examples/_index/GEN_clauses.json                          source index, Genesis 1
-examples/d/dan/dan_draft/GEN_2714e.clauses.json           Danish draft, Genesis 1
+examples/d/dan/dan_draft/GEN_<fp>.clauses.json            Danish draft, Genesis 1 (fp: 8 hex)
 ```
 
 Notes on the examples:

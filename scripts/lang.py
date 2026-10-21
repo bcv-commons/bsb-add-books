@@ -129,26 +129,30 @@ def lexeme_aligner_links(con, P, layer):
         print(f"  lexeme_aligner: source provider {src.get('provider')} not read yet; skipped")
         return []
     listing = getjson(f"https://huggingface.co/api/datasets/bcv-commons/compact-alignments/tree/main/{iso[0]}/{iso}/{layer}",
-                      os.path.join(d, "_listing.json"), False)
+                      os.path.join(d, "_listing.json"), False, 24 * 3600)   # a day: names change with the text
     files = {}
+    names = collections.defaultdict(dict)                # book -> {hash in the name: path on Hugging Face}
     for x in listing:
         name = os.path.basename(x["path"])
-        if name.endswith(".json") and not name.endswith(".meta.json"):
-            f = os.path.join(d, name)
-            for attempt in range(4):                     # Hugging Face resets connections now and then
-                if os.path.exists(f):
-                    break
-                try:
-                    req = urllib.request.Request(f"{CA}/resolve/main/{x['path']}", headers={"User-Agent": "bsb-add-books"})
-                    body = urllib.request.urlopen(req, timeout=120).read()
-                    open(f + ".part", "wb").write(body)
-                    os.replace(f + ".part", f)
-                except OSError:
-                    if attempt == 3:
-                        raise
-                    import time
-                    time.sleep(5 * (attempt + 1))
-            files[name.split("_")[0]] = f
+        if name.endswith(".json") and not name.endswith(".meta.json") and "_" in name:
+            names[name.split("_")[0]][name[:-5].split("_", 1)[1]] = x["path"]
+
+    def fetch(path):
+        f = os.path.join(d, os.path.basename(path))
+        for attempt in range(4):                         # Hugging Face resets connections now and then
+            if os.path.exists(f):
+                break
+            try:
+                req = urllib.request.Request(f"{CA}/resolve/main/{path}", headers={"User-Agent": "bsb-add-books"})
+                body = urllib.request.urlopen(req, timeout=120).read()
+                open(f + ".part", "wb").write(body)
+                os.replace(f + ".part", f)
+            except OSError:
+                if attempt == 3:
+                    raise
+                import time
+                time.sleep(5 * (attempt + 1))
+        return f
     data = getjson(f"{HELLOAO}/{src['edition']}/complete.json", os.path.join(DL, src["edition"], "complete.json"), False)
     fold = lambda s: "".join(c for c in unicodedata.normalize("NFD", s.lower()) if not unicodedata.combining(c))
     ours = collections.defaultdict(list)
@@ -158,7 +162,7 @@ def lexeme_aligner_links(con, P, layer):
     out = []
     for book in data["books"]:
         b = book["id"]
-        if b not in files or BY_CODE.get(b.lower(), (None, None, None))[2] != "nt":
+        if b not in names or BY_CODE.get(b.lower(), (None, None, None))[2] != "nt":
             continue
         verses = []
         for ch in book["chapters"]:
@@ -168,10 +172,15 @@ def lexeme_aligner_links(con, P, layer):
                     parts = [x if isinstance(x, str) else x["text"] for x in blk["content"] if isinstance(x, str) or "text" in x]
                     verses.append((c["number"], blk["number"], re.sub(r"\s+", " ", " ".join(parts)).strip()))
         verses.sort()
-        h = FA.book_hash(verses)[-5:]
-        if not os.path.basename(files[b]).startswith(f"{b}_{h}"):
-            print(f"  lexeme_aligner: {b}: the source text changed since the layer was made (hash {h}); skipped")
+        # the file for exactly this text: its text fingerprint (8 hex) in the name, or until 2026-12-20 the old name
+        # (the last 5 hex of the raw-text hash); neither: the source changed since the layer was made
+        fp, old = FA.text_fingerprint(verses)[0][:8], FA.book_hash(verses)[-5:]
+        path = names[b].get(fp) or names[b].get(old)
+        if not path:
+            print(f"  lexeme_aligner: {b}: no layer file for this text (fingerprint {fp}); the source text changed "
+                  "since the layer was made; skipped")
             continue
+        files[b] = fetch(path)
         keys = FA.index(b, "keys")
         # row i of the layer is the i-th verse of the index (_index/<BOOK>_lexemes.json), not of the source text: a
         # verse the source lacks (or adds) would otherwise shift every later row onto the wrong verse
