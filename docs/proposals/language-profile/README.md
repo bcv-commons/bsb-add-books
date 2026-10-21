@@ -134,7 +134,8 @@ Rules:
   occurs (the validator finds the form on its side of a word in at least one). Id `m:<form>:<host>[.<use>]`.
 - **`cell`**: a paradigm cell, the form that fills one bundle of grammatical values. `paradigm` as the source-to-cell
   table names it (`verb.subject`, `verb.polarity`, `poss.pronoun`: `scripts/source_cells.py`), `bundle` its tags
-  (`3.SG.IND`), `value` the form pattern (`z…-ap`, `Ø` for no mark), `morphs` the morph ids that build it,
+  (`3.SG.IND`), `value` the form pattern (`z…-ap`, `Ø` for no mark; a form without hyphens is a separate word that marks the
+  cell, a particle or auxiliary), `morphs` the morph ids that build it,
   `alternatives` other forms with counts, `stats` (`count`, `share` of the bundle's tokens), `gap: true` when the
   corpus has no case (then no evidence). Id `c:<paradigm>:<bundle>`.
 - **`claim`**: a statement about the grammar (from the wiki, an analysis, a grammar sketch or the team) and how it

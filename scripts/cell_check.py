@@ -18,12 +18,23 @@ In the drafting loop (scripts/chapter_check.py, book_review()) the check is a co
 leaves many verbs of a marked cell unmarked too, so a cell is flagged only where the book's drafts mark it clearly less
 often than the style corpus's human OT does, verse level on both sides.
 
-Usage: python3 scripts/cell_check.py <project> <chapter file> ... [--list] [--verse] [--min-ceiling R]
+A form without hyphens in a cell's value or alternatives is a separate word that marks it (a particle: the morph slot
+`free`): a verse passes with it anywhere in the verse (word level: anywhere in the verse's words, as the word may be
+tagged with the source's particle rather than the verb).
+
+Candidates from the drafting loop: in a binding project an agent explains each unmarked verb in the notes
+(`unmarked <ch>:<v> <cell>: <reason>`, citing the words it used in *italics*); `unmarked` lists them by cell. `try`
+measures each candidate form on the style corpus's human text before it goes into the store, and `--write` adds the
+kept ones to the cell and records every form tried as a claim with its figures (kept or not).
+
+Usage: python3 scripts/cell_check.py <project> unmarked
+       python3 scripts/cell_check.py <project> try <paradigm> <bundle> <form> ... [--write] [--by NAME]
+       python3 scripts/cell_check.py <project> <chapter file> ... [--list] [--verse] [--min-ceiling R]
   --list           the verses that miss a cell (REVIEW lines), for a draft
   --min-ceiling R  with a human file given as --human DIR: only cells whose human pass rate is at least R (default 0.5)
   --human DIR      the human translation's folder (files named as the drafts): its pass rate per cell beside the draft's
 """
-import collections, os, re, sys
+import collections, os, re, sys, unicodedata
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
@@ -34,14 +45,29 @@ import verse_analysis as VA  # noqa: E402
 from books import BY_CODE  # noqa: E402
 
 
+def fold(w):
+    """lower case without accents and tone marks, as the tokeniser may give a word (mbaín -> mbain)"""
+    return "".join(c for c in unicodedata.normalize("NFD", w.lower()) if not unicodedata.combining(c))
+
+
+def free_form(v):
+    """a form without hyphens (a particle, an auxiliary: a morph of slot `free`) -> the word, folded"""
+    v = (v or "").strip()
+    return fold(v) if v and v != "Ø" and "-" not in v and "…" not in v else ""
+
+
 def patterns(ce):
-    """(prefix, suffix) pairs of a cell entry: its value and its alternatives of two letters or more"""
+    """(prefix, suffix, word) triples of a cell entry: its value and its alternatives of two letters or more; a form
+    without hyphens is a separate word that marks the cell (word set, prefix and suffix empty)"""
     out = []
     alts = [a.get("value") for a in ce.get("alternatives", [])]
     for v in [ce.get("value")] + alts:
         pre, suf = VA.parts(v)
-        if (pre or suf) and (v == ce.get("value") or len(pre + suf) >= 2):    # a one-letter alternative passes anything
-            out.append((pre, suf))
+        w = free_form(v)
+        if w:
+            out.append(("", "", w))
+        elif (pre or suf) and (v == ce.get("value") or len(pre + suf) >= 2):  # a one-letter alternative passes anything
+            out.append((pre, suf, ""))
     return out
 
 
@@ -49,8 +75,10 @@ def carries(tokens, pats):
     """the number of tokens that carry one of the patterns"""
     n = 0
     for i, t in enumerate(tokens):
-        for pre, suf in pats:
-            if pre and suf:
+        for pre, suf, w in pats:
+            if w:
+                ok = fold(t) == w
+            elif pre and suf:
                 ok = t.startswith(pre) and (t.endswith(suf) or (i + 1 < len(tokens) and tokens[i + 1] == "-" + suf))
             elif pre:
                 ok = t.startswith(pre) and len(t) > len(pre) + 1
@@ -130,6 +158,7 @@ def check_tagged(P, G, path):
         ref = f"{code.upper()} {ch}:{v}"
         num = {n: keys for n, _, _, keys in F.numbering(code.upper(), ref)}
         words = collections.defaultdict(list)            # source key -> the target tokens of the words tagged with it
+        vtoks = P.tok.tokens(re.sub(r"\^\d+(?:,\d+)*", "", body))   # a free word may be tagged with the source's particle
         for w, ns in re.findall(r"(\S+?)\^(\d+(?:,\d+)*)", body):
             toks = P.tok.tokens(w)
             for n in ns.split(","):
@@ -147,25 +176,26 @@ def check_tagged(P, G, path):
                     ce, used = VA.store_cell(G, par, bundle)
                     if not (ce and ce.get("status") in ("observed", "decided") and not ce.get("gap") and patterns(ce)):
                         continue
-                    pats[(par, used)] = patterns(ce)
-                    ok = carries(toks, pats[(par, used)]) > 0
+                    pats[(par, used)] = ps = patterns(ce)
+                    ok = carries(toks, [p for p in ps if not p[2]]) > 0 or carries(vtoks, [p for p in ps if p[2]]) > 0
                     res[(par, used)][0] += 1; res[(par, used)][1] += ok
                     if not ok:
                         miss.append((ref, (par, used), 1, pats[(par, used)]))
                 else:
-                    unmarked[par].append(toks)
+                    unmarked[par].append((toks, vtoks))
     for cell, ps in pats.items():                        # the background: the pattern on the unmarked verbs' words
         tl = unmarked.get(cell[0], [])
-        res[cell][2] = len(tl); res[cell][3] = sum(carries(t, ps) > 0 for t in tl)
+        aff, free = [p for p in ps if not p[2]], [p for p in ps if p[2]]
+        res[cell][2] = len(tl); res[cell][3] = sum(carries(t, aff) > 0 or carries(vt, free) > 0 for t, vt in tl)
     return res, miss
 
 
-def human_rates(P, G):
+def human_rates(P, G, testament="ot"):
     """per cell: [verses required, passed, not required, with the pattern anyway] in the style corpus's OT chapters
-    (verse level): the human ceiling and its background"""
+    (or NT: testament "nt"; verse level): the human ceiling and its background"""
     by = collections.defaultdict(dict)
     for _, code, (c, v), _, t in P.corpus():
-        if BY_CODE[code][2] == "ot":
+        if BY_CODE[code][2] == testament:
             by[(code, c)][(c, v)] = t
     out = collections.defaultdict(lambda: [0, 0, 0, 0])
     for (code, c), text in by.items():
@@ -181,6 +211,8 @@ def book_review(pname, code, ch, margin=0.2, min_n=5, min_human=10):
     this chapter's verses that miss it. A verb the human text leaves unmarked as often is no flag: the store's pattern
     is how a cell is marked, not that it always is. [] without an OT in the corpus or observed verb cells in the store."""
     P, G = LT.Project(pname), grammar.load(pname)
+    if not G.cells:
+        return []
     hum = human_rates(P, G)
     if not hum:
         return []
@@ -210,11 +242,172 @@ def book_review(pname, code, ch, margin=0.2, min_n=5, min_human=10):
     return out
 
 
+def binding_cells(P, G, lift=0.25, min_n=10):
+    """the cells a binding project (project.yaml `pack_grammar: binding`) must mark: those the style corpus's human OT
+    marks clearly more often where the source has such a verb than where it hasn't (by at least `lift`, verse level).
+    A cell whose pattern the human text has about as often anyway (a common prefix) is no rule. {cell: pattern}"""
+    out = {}
+    for cell, (n, k, nb, kb) in human_rates(P, G).items():
+        if n >= min_n and nb and k / n - kb / nb >= lift:
+            ce = VA.store_cell(G, *cell)[0]
+            if ce and patterns(ce):
+                out[cell] = show(ce)
+    return out
+
+
+def binding_list(pname, code, ch):
+    """[(verse, source word, gloss, cell, pattern)]: the chapter's verbs of the binding cells, for the chapter prompt"""
+    import sqlite3
+    P, G = LT.Project(pname), grammar.load(pname)
+    cells = binding_cells(P, G)
+    if not cells:
+        return []
+    nt = BY_CODE[code][2] == "nt"
+    db = sqlite3.connect(os.path.join(ROOT, "orig", "grc.sqlite" if nt else "heb.sqlite"))
+    toks = SC.cells_of(code.upper(), "nt" if nt else "ot")
+    out = []
+    for key, v, gloss in db.execute("select key, v, gloss from tokens where book = ? and ch = ? order by key",
+                                    (code.upper(), ch)):
+        t = toks.get(key)
+        for par, bundle in (t.cells if t else []):
+            if par in VA.VERB_PARADIGMS and VA.marked(par, bundle):
+                used = VA.store_cell(G, par, bundle)[1]
+                if (par, used) in cells:
+                    out.append((v, t.text, (gloss or "").replace(".", " "), (par, used), cells[(par, used)]))
+    return out
+
+
+def binding_fix(pname, code, ch):
+    """FIX lines for chapter_check.py: in a binding project, a verb of a binding cell whose tagged words lack the
+    pattern, unless the chapter's notes have a line `unmarked <ch>:<v> ...` saying why"""
+    from project import project, project_dir
+    if project(pname).get("pack_grammar") != "binding":
+        return []
+    d = os.path.join(project_dir(pname), code)
+    tg = os.path.join(d, f"{code}{ch:03d}.tagged")
+    if not os.path.exists(tg):
+        return []
+    P, G = LT.Project(pname), grammar.load(pname)
+    cells = binding_cells(P, G)
+    nf = os.path.join(d, f"{code}{ch:03d}_notes.md")
+    notes = open(nf, encoding="utf-8").read() if os.path.exists(nf) else ""
+    explained = set(re.findall(r"unmarked\W+(\d+:\d+)", notes, re.I))
+    out, seen = [], set()
+    for ref, cell, _, _ in check_tagged(P, G, tg)[1]:
+        cv = ref.split()[-1]
+        if cell in cells and cv not in explained and (cv, cell) not in seen:
+            seen.add((cv, cell))
+            out.append(f"verb marking {ref}: {cell[1]} ({cells[cell]}): the word tagged with the verb lacks it: mark it, "
+                       f"or say why in the notes in a line `unmarked {cv} {cell[1]}: <reason>`")
+    return out
+
+
+def unmarked_notes(pname):
+    """{bundle: [(chapter file, ch:v, reason, [the *italic* words it cites])]}: the `unmarked` lines of the project's
+    notes, where a drafting agent said why a verb of a binding cell carries no mark: the candidates for the store"""
+    import glob
+    from project import project_dir
+    out = collections.defaultdict(list)
+    for nf in sorted(glob.glob(os.path.join(project_dir(pname), "*", "*_notes.md"))):
+        for m in re.finditer(r"^\W*unmarked\W+(\d+:\d+)\s+([\w.]+):\s*(.*)$", open(nf, encoding="utf-8").read(), re.M | re.I):
+            out[m[2]].append((os.path.basename(nf)[:6], m[1], m[3], [w for w in re.findall(r"\*([^*\s][^*]*?)\*", m[3]) if " " not in w]))
+    return out
+
+
+def try_forms(P, G, cell, forms, min_gain=0.01):
+    """does each candidate form (a free word, `mbaín`, or an affix, `-eav`) help the cell? Per testament of the style
+    corpus: the human pass rate and background (human_rates) with the cell's patterns as they are, with each form
+    added alone, and with the forms kept. A form is kept when the lift (pass rate minus background) rises by at least
+    `min_gain` in every testament with at least 10 verses of the cell. [(form, {testament: (before, after)}, kept)],
+    the figures of the kept set"""
+    ce = VA.store_cell(G, *cell)[0]
+    if not ce:
+        raise SystemExit(f"no cell {cell[0]} {cell[1]} in the store")
+    alts = list(ce.get("alternatives", []))
+
+    def lift(extra, tm):
+        ce["alternatives"] = alts + [{"value": f} for f in extra]
+        try:
+            n, k, nb, kb = human_rates(P, G, tm).get(cell, [0, 0, 0, 0])
+        finally:
+            ce["alternatives"] = alts
+        return (n, k, nb, kb, (k / n if n else 0) - (kb / nb if nb else 0))
+
+    tms = [tm for tm in ("ot", "nt") if lift([], tm)[0] >= 10]
+    base = {tm: lift([], tm) for tm in tms}
+    res = []
+    for f in forms:
+        r = {tm: (base[tm], lift([f], tm)) for tm in tms}
+        res.append((f, r, bool(tms) and all(a[4] - b[4] >= min_gain for b, a in r.values())))
+    kept = [f for f, _, k in res if k]
+    return res, ({tm: (base[tm], lift(kept, tm)) for tm in tms} if kept else {})
+
+
+def write_tried(f, G, cell, res, by):
+    """the result into the store: kept forms as alternatives of the cell (method `tested`), and one claim per form
+    tried, kept or not (verdict confirmed or contradicted), so that no later agent tries it again unseen"""
+    import datetime, json
+    d = json.load(open(f, encoding="utf-8"))
+    affixes = show({"value": "", "alternatives": [x for x in VA.store_cell(G, *cell)[0].get("alternatives", [])
+                                                   if not free_form(x.get("value"))]} | {"value": VA.store_cell(G, *cell)[0].get("value")})
+    today = datetime.date.today().isoformat()
+    fig = lambda r: "; ".join(f"{tm.upper()}: pass {b[1]}/{b[0]} -> {a[1]}/{a[0]}, background {b[3]}/{b[2]} -> "
+                              f"{a[3]}/{a[2]}, lift {b[4]:+.2f} -> {a[4]:+.2f}" for tm, (b, a) in r.items())
+    cid = f"c:{cell[0]}:{cell[1].lower()}"
+    for e in d["entries"]:
+        if e.get("id") == cid:
+            have = {a.get("value") for a in e.get("alternatives", [])}
+            for form, r, k in res:
+                if k and form not in have:
+                    e.setdefault("alternatives", []).append(
+                        {"value": form, "n": sum(a[1] - b[1] for b, a in r.values()), "method": "tested"})
+    ids = {e.get("id") for e in d["entries"]}
+    for form, r, k in res:
+        e = {"id": f"claim:{cell[0]}.{cell[1].lower()}.{form.strip('-')}", "kind": "claim",
+             "value": f"{form} marks {cell[1]} ({cell[0]}) where the human translation has none of {affixes} on the verb",
+             "area": cell[0], "source": "drafting agents' unmarked notes", "tests": ["corpus"], "figures": fig(r),
+             "verdict": "confirmed" if k else "contradicted",
+             "next": "kept in the cell's alternatives" if k else "not added: no gain over the background",
+             "confidence": "medium" if k else "low", "method": "corpus-derived", "by": by, "date": today,
+             "status": "observed"}
+        if e["id"] in ids:
+            d["entries"] = [e if x.get("id") == e["id"] else x for x in d["entries"]]
+        else:
+            d["entries"].append(e)
+    json.dump(d, open(f, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    open(f, "a").write("\n")
+    return f
+
+
 def show(ce):
-    return " / ".join((p + "-" if p else "") + ("…" if p and s else "") + ("-" + s if s else "") for p, s in patterns(ce))
+    return " / ".join(w or (p + "-" if p else "") + ("…" if p and s else "") + ("-" + s if s else "")
+                      for p, s, w in patterns(ce))
 
 
 def main(a):
+    if len(a) > 1 and a[1] == "unmarked":
+        for b, rows in sorted(unmarked_notes(a[0]).items()):
+            words = collections.Counter(w for *_, ws in rows for w in ws)
+            print(f"{b}: {len(rows)} unmarked; words cited: " + (", ".join(f"{w} ({n})" for w, n in words.most_common()) or "none"))
+            for ch, cv, why, _ in rows:
+                print(f"  {ch} {cv}: {why}")
+        return
+    if len(a) > 4 and a[1] == "try":
+        P, G = LT.Project(a[0]), grammar.load(a[0])
+        cell = (a[2], a[3])
+        forms = [x for i, x in enumerate(a[4:], 4) if not x.startswith("--") and a[i - 1] != "--by"]
+        res, together = try_forms(P, G, cell, forms)
+        fig = lambda b, x: f"pass {x[1]}/{x[0]} ({x[1] / max(1, x[0]):.0%}), background {x[3]}/{x[2]} ({x[3] / max(1, x[2]):.0%}), lift {b[4]:+.2f} -> {x[4]:+.2f}"
+        for form, r, k in res:
+            print(f"{form}: " + ("KEEP" if k else "no gain") + "".join(f"\n  {tm.upper()} {fig(b, x)}" for tm, (b, x) in r.items()))
+        if together:
+            print("kept together:" + "".join(f"\n  {tm.upper()} {fig(b, x)}" for tm, (b, x) in together.items()))
+        if "--write" in a:
+            by = a[a.index("--by") + 1] if "--by" in a else "script:cell_check.py"
+            from project import project_dir
+            f = os.path.join(project_dir(a[0]), "profile", "observations.json")
+            print("written:", os.path.relpath(write_tried(f, G, cell, res, by), ROOT))
+        return
     files = [x for i, x in enumerate(a[1:], 1) if not x.startswith("--") and a[i - 1] not in ("--human", "--min-ceiling")]
     if not a or not files:
         print(__doc__); sys.exit(2)

@@ -415,10 +415,9 @@ def main():
         if ghead:
             L += ["## Verb marking (pack v4)", ""] + ghead
             if p.get("pack_grammar") == "binding":     # on trial: the block as a rule, checked per verb
-                L += [f"**Binding:** for each verb under \"Verbs to mark\", the word you tag with it carries the pattern, "
-                      f"unless the corpus shows that verb unmarked in such a verse (`concord.py`); then say so in the "
-                      f"chapter's notes in one line, with the reference. Check after the split: `python3 scripts/cell_check.py "
-                      f"{pname} {project_rel(pname)}/{code}/{code}{chapter:03d}.txt --list`.", ""]
+                L += ["**Binding:** the verbs of the cells the human translation clearly marks are listed in the chapter "
+                      "prompt; `chapter_check.py` reports each one whose tagged words lack the pattern as FIX, unless the "
+                      f"chapter's notes have a line `unmarked {chapter}:<verse> <cell>: <reason>`.", ""]
     L += ["## Verses", ""]
     need_total = []
     for v in sorted(assist):

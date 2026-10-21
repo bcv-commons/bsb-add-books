@@ -238,6 +238,16 @@ def main():
     import quotes, modes
     qrule = quotes.rule_text(pname)
     mrules = modes.mode_rules(pname, p, modes.have_tools(pname))
+    if p.get("pack_grammar") == "binding":        # on trial: the verbs to mark, here in the prompt (not only in the pack)
+        import cell_check
+        bl = cell_check.binding_list(pname, code, chapter)
+        if bl:
+            mrules.append("**Verbs to mark (binding):** the human translation clearly marks these cells; the word you tag "
+                          "with each of these verbs carries the pattern, unless the corpus shows such a verb unmarked in "
+                          f"such a verse (`concord.py`): then write a line `unmarked {chapter}:<verse> <cell>: <reason>` in the chapter's notes, with the word that "
+                          "carries the meaning instead in *italics* (a separate negating word, say): such words are tested for the store "
+                          "(`cell_check.py unmarked`, `try`). `chapter_check.py` lists every one left as FIX.\n"
+                          + "\n".join(f"  - {chapter}:{v} {w} ({g}): {c[1]} {pat}" for v, w, g, c, pat in bl))
     style_check = modes.mode(p)["style_check"]
     fields = dict(
         root=ROOT, project=pname, project_dir=project_rel(pname), code=code, nnn=nnn, chapter=chapter, date=date,

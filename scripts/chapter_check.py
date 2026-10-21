@@ -5,6 +5,8 @@ To fix (the command fails while any is left):
   - format and verses: scripts/check_draft.py (--spell where the project's mode sets the spell check)
   - alignment (OT, a .align beside the draft): scripts/full_align.py check
   - quotations in the chapter's notes and footnotes: scripts/quotes.py
+  - verb marking, in a project with `pack_grammar: binding` (on trial): a verb of a cell the human OT clearly marks whose
+    tagged words lack the pattern, unless the notes say why (`unmarked <ch>:<v> ...`), scripts/cell_check.py (binding_fix)
 To review (reported, not failed; each kept one explained in the chapter's notes):
   - lost or added negations: scripts/rough_check.py (its markers are learned from the corpus; with a .align beside the
     draft, a negation the alignment links to a draft word counts too, so a negation word that is also a common other
@@ -114,6 +116,7 @@ def main(a):
     if BY_CODE[code][2] == "ot":
         review += name_flags(pname, code, ch)
         import cell_check
+        fix += cell_check.binding_fix(pname, code, ch)
         review += cell_check.book_review(pname, code, ch)
     print(f"{pname} {code} {ch}: {len(fix)} to fix, {len(review)} to review")
     for l in fix:
