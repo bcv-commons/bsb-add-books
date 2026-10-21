@@ -15,6 +15,12 @@ assisting translation (docs/proposals/language-toolkit/). Every command prints r
   python3 scripts/concord.py <project> gloss "<regex>"     the edition's glossary entries (glossary.tsv)
   python3 scripts/concord.py <project> store "<regex>"     language-store entries whose id, source or value
                                                            matches, in full with their evidence
+With morph entries in the store (scripts/morphs.py), a word's parts:
+  python3 scripts/concord.py <project> parts <word> ...    each word as its parts, with what each affix means
+  python3 scripts/concord.py <project> stem <stem> [N]     the corpus forms of a stem (write it plain), with their
+                                                           parts and counts: the forms to build a new one from
+  python3 scripts/concord.py <project> morph <affix> [N]   the corpus words that carry an affix (tu-, -ibw, aá-; as
+                                                           the store writes it), most frequent first, and its stems
 The target command is also available under the project's language code (e.g. `jam`). N defaults to 8
 (40 for forms). Lexicons come from scripts/align.py.
 """
@@ -37,7 +43,7 @@ def main():
         raise SystemExit(__doc__)
     P = LT.Project(a[0])
     cmd, arg = a[1], a[2]
-    n = int(a[3]) if len(a) > 3 else (40 if cmd == "forms" else 8)
+    n = int(a[3]) if len(a) > 3 and cmd != "parts" else (40 if cmd in ("forms", "stem", "morph") else 8)
     lang = P.p.get("language") or "target"
     if cmd == lang:
         cmd = "tgt"
@@ -78,6 +84,35 @@ def main():
         rx = re.compile(P.tok.plain(arg), re.I)
         c = collections.Counter(w for r in rows for w in P.tok.rx_exact.findall(P.tok.exact(r[4])) if rx.search(P.tok.plain(w)))
         print("\n".join(f"{c[w]:6}  {w}" for w, _ in c.most_common(n)))
+    elif cmd in ("parts", "stem", "morph"):
+        import grammar, morphs
+        S = P.segmenter()
+        if not S:
+            raise SystemExit(f"{P.name}: the store has no morph entries (scripts/morphs.py)")
+        A = morphs.affix_entries(grammar.load(P.name))
+        if cmd == "parts":
+            for w in a[2:]:
+                for t in P.tok.tokens(w, exact=True):
+                    ms = S.split(t)
+                    print(f"{t} = {morphs.parts(S, t) or t}")
+                    for m in ms:
+                        e = A.get((m.form, m.position)) if m.slot != "stem" else None
+                        if m.slot != "stem":
+                            print(f"    {m.form:8} {m.slot}{f' {m.position}' if m.position else ''}: "
+                                  + (morphs.meaning(e) if e else "(not in the store)"))
+            return
+        words = S.vocab_exact
+        if cmd == "stem":
+            want = S.plain(P.tok.plain(arg))
+            c = [(w, k) for w, k in words.most_common() if any(m.slot == "stem" and m.form == want for m in S.split(w))]
+        else:
+            fm = __import__("unicodedata").normalize("NFC", arg.lower())
+            c = [(w, k) for w, k in words.most_common() if any(m.form == fm for m in S.split(w) if m.slot != "stem")]
+            st = collections.Counter(next(m.form for m in S.split(w) if m.slot == "stem") for w, _ in c)
+            print(f"{arg}: {sum(k for _, k in c)} tokens, {len(c)} forms, {len(st)} stems (most: "
+                  + ", ".join(f"{x} {k}" for x, k in st.most_common(8)) + ")")
+        print("\n".join(f"{k:6}  {w} = {morphs.parts(S, w) or w}" for w, k in c[:n]))
+        print(f"({len(c)} forms)" if len(c) > n else "")
     elif cmd == "like":
         df = collections.Counter(t for r in rows for t in set(LT.eng_tokens(r[3])))
         q = set(LT.eng_tokens(arg))

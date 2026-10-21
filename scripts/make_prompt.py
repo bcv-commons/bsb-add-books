@@ -248,6 +248,19 @@ def main():
                           "carries the meaning instead in *italics* (a separate negating word, say): such words are tested for the store "
                           "(`cell_check.py unmarked`, `try`). `chapter_check.py` lists every one left as FIX.\n"
                           + "\n".join(f"  - {chapter}:{v} {w} ({g}): {c[1]} {pat}" for v, w, g, c, pat in bl))
+    import langtools as LT
+    S = LT.Project(pname).segmenter()
+    if S:                                         # the store's morph view (scripts/morphs.py)
+        mrules.append("**Word parts:** the store splits words into parts (affixes, stem, a grammatical tone). The pack's *Word "
+                      "parts* block lists the affixes with their places and meanings, and its lexicon shows a rendering's parts "
+                      "in brackets. A form the corpus lacks is built from these parts, in their places, on a stem the corpus "
+                      f"has: `python3 scripts/concord.py {pname} stem <stem>` lists a stem's forms, `morph <affix>` the words "
+                      "that carry an affix, `parts <word>` a word's parts with their meanings. An affix written with a tone mark is "
+                      "a different affix from one without it. "
+                      + ("`chapter_check.py` lists as REVIEW the verbs whose word lacks the part the original's verb calls for "
+                         "(its subject, object, negation, mood), where the human translation marks it on most such verbs: "
+                         "fix the word, or keep it where the corpus shows such a verb without it."
+                         if S.chain else ""))
     style_check = modes.mode(p)["style_check"]
     fields = dict(
         root=ROOT, project=pname, project_dir=project_rel(pname), code=code, nnn=nnn, chapter=chapter, date=date,
@@ -269,7 +282,8 @@ def main():
         numbering_note=(" Count verses with Hebrew numbering." if not nt else ""),
         spell_step=(" Its `spelling:` lines are word forms the corpus writes only with other marks (tone, accents): take the "
                     "corpus spelling unless the store decides otherwise (`concord.py " + pname + " forms` shows every spelling "
-                    "with its count). Its `not in the corpus:` lines are forms the corpus lacks: keep a new name or a word you "
+                    "with its count). Its `built from parts:` lines are forms the corpus lacks but builds from the store's parts: check "
+                    "that each part is the one you mean. Its `not in the corpus:` lines are forms the corpus lacks: keep a new name or a word you "
                     "built on purpose (and give it a store entry), fix every other one. Run it again until no `spelling:` line "
                     "is left for your chapter." if modes.mode(p)["spell_check"] else ""),
         style_step=(f"\n- Run `python3 scripts/style.py {pname} {project_rel(pname)}/{code}/{code}{nnn}.txt --brief`: it compares your chapter "

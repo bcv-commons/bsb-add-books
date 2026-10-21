@@ -50,6 +50,11 @@ of another language in this working copy, if there is one, is the worked example
    them as morph entries with `position` and `greek` (`docs/proposals/language-profile/`), and `python3
    scripts/morphs.py <project> try --write` measures each one against the Greek (lift, odds ratio); the agent revises the
    ones it rejects. Check that the corpus still rebuilds word for word: `python3 scripts/morphs.py <project> check`.
+   With morph entries the drafting agent sees words in parts: the verse pack lists the affixes and shows a rendering's
+   parts, `concord.py <project> parts|stem|morph` finds a word's parts, a stem's forms and an affix's words, and the
+   spelling check accepts a form built from known parts (listed apart). With affix chains, `chapter_check.py` reviews
+   each Hebrew verb whose word lacks the part for its subject, object, negation or mood, for the features the human NT
+   marks on most such verbs (`python3 scripts/morphs.py <project> rates` shows which).
 5. **Draft with packs:** for each chapter `python3 scripts/verse_pack.py <project> <code> <ch>`, then the
    `draft-chapter` skill (fresh agent per chapter; the pack and `wiki/index.md` in `style_guides`).
 6. **Test** (if a book is held out): score each chapter with `python3 scripts/score.py <project> <draft>

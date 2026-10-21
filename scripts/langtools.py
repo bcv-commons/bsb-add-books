@@ -211,6 +211,7 @@ class Project:
         self.editions = [edition(e) for e in self.p["style_from"]]
         self._rows = None
         self._spell = None
+        self._seg = None
 
     def spellings(self):
         """{plain token: Counter(exact token)}: how the corpus writes each form that matching sees without the ignored
@@ -254,6 +255,42 @@ class Project:
             elif w not in c:
                 marks.append((w, n, [x for x, _ in c.most_common(3)]))
         return marks, unknown
+
+    def segmenter(self):
+        """the store's morph view (scripts/morphs.py), or None without morph entries"""
+        if self._seg is None:
+            import morphs
+            self._seg = morphs.load(self.name, self) or False
+        return self._seg or None
+
+    def parts(self, form, confirmed=False):
+        """an exact form as its parts (ba-ka-gaamb-a), or None (one part, or no morph view; confirmed: also where an
+        affix is not confirmed)"""
+        S = self.segmenter()
+        if not S:
+            return None
+        import morphs
+        if confirmed and getattr(self, "_aff", None) is None:
+            import grammar
+            self._aff = morphs.affix_entries(grammar.load(self.name))
+        return morphs.parts(S, form, self._aff if confirmed else None)
+
+    def built(self, unknown):
+        """Of spell_check's unknown forms, those the store's morph view builds from known parts (the store's affixes
+        and the stem of a corpus word): [(form, n, parts, note)], note naming a stem written with other marks than the
+        corpus writes it. The rest stay unknown: (built, still unknown)."""
+        S = self.segmenter()
+        if not S:
+            return [], unknown
+        import morphs
+        out, rest = [], []
+        for w, n in unknown:
+            b = morphs.built(S, w)
+            if b:
+                out.append((w, n, *b))
+            else:
+                rest.append((w, n))
+        return out, rest
 
     def spelled(self, form):
         """A plain form as the corpus writes it: the most frequent spelling, and any other one used at least a fifth as

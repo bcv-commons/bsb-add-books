@@ -13,6 +13,9 @@ For each chapter:
 - spelling (projects with `spell_check: true`, or `--spell`): every word form the style corpus writes
   only with other marks ("spelling: zøveqase -> zøveqasé"), and every form it doesn't have at all
   ("not in the corpus"), reported as information: a new name or word may be right, a mark seldom is.
+  With morph entries in the store (scripts/morphs.py), a form the corpus lacks but whose parts it has (the store's
+  affixes on the stem of a corpus word) is listed apart, "built from parts: tukamubona = tu-ka-mu-bon-a", with a
+  note where the stem has other marks than the corpus gives it.
   Matching elsewhere ignores the project's `ignore_marks`; this check keeps every mark.
 
 OT chapters whose verses fall in other BSB chapters (orig/vrs, see vrs.py) are
@@ -131,9 +134,13 @@ def main():
                     import langtools as LT
                     text = " ".join(LT.verses_of(os.path.join(d, f)).values())
                     marks, unknown = LP.spell_check(text)
+                    parts, unknown = LP.built(unknown)
                     if marks:
                         print(f"{f}: spelling: " + "; ".join(
                             f"{w}{f' ×{k}' if k > 1 else ''} -> {', '.join(c)}" for w, k, c in marks))
+                    if parts:
+                        print(f"{f}: built from parts: " + "; ".join(
+                            f"{w}{f' ×{k}' if k > 1 else ''} = {p}" + (f" ({nt})" if nt else "") for w, k, p, nt in parts))
                     if unknown:
                         print(f"{f}: not in the corpus: " + ", ".join(f"{w}{f' ×{k}' if k > 1 else ''}" for w, k in unknown))
     print(f"{n} chapters checked, {n_bad} with problems")

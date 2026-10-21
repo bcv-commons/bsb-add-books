@@ -391,6 +391,15 @@ def main():
             L.append(f"- `{e['id']}` {e.get('source') or ''} → {e['value'] if isinstance(e['value'], str) else e['value']}"
                      + (" (by-rule)" if e.get("attested") == "by-rule" else "") + (" [open]" if e.get("status") == "open" else "") + (" [team]" if e.get("method") == "team-decision" else ""))
         L.append("")
+    S = LP.segmenter()
+    if S:                    # the morph view (scripts/morphs.py): the affixes a new form is built from
+        import grammar, morphs
+        L += [f"## Word parts (the store's affixes; renderings below show their parts in brackets where each affix is confirmed; `concord.py {pname} "
+              "parts <word>`, `stem <stem>`, `morph <affix>`)", ""] + morphs.affix_table(grammar.load(pname)) + [""]
+    def sp(kk):              # a rendering as the corpus spells it, with its parts where every affix is confirmed
+        s_ = LP.spelled(kk)
+        pt = LP.parts(s_.split(" (")[0], confirmed=True) if S else None
+        return s_ + (f" [{pt}]" if pt else "")
     if letters:
         L += ["## Name letters", ""] + [f"- {e['value']}" for e in letters] + [""]
     chapter_heb = " ".join(l for v in orig.values() for l in v)
@@ -468,7 +477,7 @@ def main():
                 r = [(kk, c, sh) for kk, c, sh in lex.get(w, []) if c >= 3 and sh >= 0.15][:3]
                 if r:
                     lexed.add(w)
-                cells.append(f"{w}: " + (", ".join(f"{LP.spelled(kk)} {c}/{sh:.2f}" for kk, c, sh in r) if r else "—"))
+                cells.append(f"{w}: " + (", ".join(f"{sp(kk)} {c}/{sh:.2f}" for kk, c, sh in r) if r else "—"))
             L += ["; ".join(cells), ""]
         shown = set()
         ph = phrases(bsb)

@@ -13,6 +13,9 @@ To review (reported, not failed; each kept one explained in the chapter's notes)
     word, Hebrew אל "do not" / "to", is no false flag)
   - verb marking (a store with observed verb cells and an OT in the style corpus): a cell the book's drafts mark
     clearly less often than the human OT does, scripts/cell_check.py (book_review)
+  - word parts (a store with affix chains that mark Greek features, and the NT aligned to the Greek): a Hebrew verb whose
+    draft word lacks the affix for its subject, object, negation or mood, where the human NT carries it on most verbs
+    with that feature, scripts/morphs.py (chain_review; `morphs.py <project> rates` shows which are checked)
   - a Hebrew target (language he): the copy check, scripts/heb_copy.py
   - names against the book so far (OT, from the .align files): a name of the original rendered in this chapter
     otherwise than in the earlier chapters of the book (their most frequent rendering, seen at least twice)
@@ -118,6 +121,9 @@ def main(a):
         import cell_check
         fix += cell_check.binding_fix(pname, code, ch)
         review += cell_check.book_review(pname, code, ch)
+        import morphs                             # affix chains: the parts the Hebrew verb calls for (morphs.py review)
+        if os.path.exists(os.path.join(d, f"{code}{nnn}.align")) or os.path.exists(os.path.join(d, f"{code}{nnn}.tagged")):
+            review += morphs.chain_review(pname, code, ch)
     print(f"{pname} {code} {ch}: {len(fix)} to fix, {len(review)} to review")
     for l in fix:
         print(f"  FIX     {l}")

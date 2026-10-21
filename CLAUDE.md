@@ -126,7 +126,7 @@ python3 scripts/status.py <project> [set|publish|check] # draft status per chapt
 python3 scripts/quotes.py <project> [--credits|--rule] # quotations within docs/licensing.md; CREDITS.md; the agents' rule
 python3 scripts/check_project.py <project>           # the final double check: drafts, store, wiki, quotations, status
 python3 scripts/align.py <project> [--sides eng,hbo,grc] # lexicons of the style corpus (eflomal or IBM2)
-python3 scripts/concord.py <project> <cmd> <arg>     # agents' search tool: eng, tgt, like, lex, hlex, forms, gloss, store
+python3 scripts/concord.py <project> <cmd> <arg>     # agents' search tool: eng, tgt, like, lex, hlex, forms, gloss, store; parts, stem, morph (the morph view)
 python3 scripts/verse_pack.py <project> <code> <ch> [--budget N] # precompiled per-verse pack (store hits, lexicon, similar verses; --budget: pack v3, on trial)
 python3 scripts/score.py <project> <draft>           # chrF (and SIL's chrF3) against a held-out human translation, with floors
 python3 scripts/judge.py prepare|prompt|tally <project> ... # blind meaning judge of N versions (or a corrections report for a team's chapter)
@@ -159,7 +159,7 @@ python3 scripts/full_align.py listing|prompt <project> <code> <ch> | check <proj
 python3 scripts/full_align.py tag|split <project> <code> <ch> # the tagged interim format (word^n) <-> prose + .align
 python3 scripts/src.py build [code ...] | layouts [--layout L] | map | speakers | speaker-layer DIR | show <code> <c>:<v> | bridge <lexeme> | export-open DIR # orig/heb.sqlite, orig/grc.sqlite (MACULA + numbering + BSB tables; local)
 python3 scripts/lang.py build|derive|report <project> | hbo <project> <lexeme> | grc <project> <strong> # the project's language DB: NT occurrences of any Hebrew word via the LXX; derived grammar statistics
-python3 scripts/morphs.py <project> check | show <word> ... | tone [--write] | try [id ...] [--write] # the morph view (prefix, stem, grammatical tone, suffix; affix chains by position) from the store; every word rebuilt; how the corpus writes tone; affix entries measured against the Greek
+python3 scripts/morphs.py <project> check | show <word> ... | tone [--write] | try [id ...] [--write] | rates | review <code> <ch> # the morph view (prefix, stem, grammatical tone, suffix; affix chains by position) from the store; every word rebuilt; how the corpus writes tone; affix entries measured against the Greek; what the loop checks, and the check on an OT draft
 python3 scripts/cell_check.py <project> unmarked | try <paradigm> <bundle> <form> ... [--write] # agents' unmarked notes; candidate forms measured on the human text
 python3 scripts/grammar.py retest <project> [--run]  # tests whose store settings changed since they ran (rerun them)
 python3 scripts/macula_to_tf.py <delivery dir>       # draft Text-Fabric dataset (needs text-fabric)

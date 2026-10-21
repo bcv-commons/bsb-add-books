@@ -47,6 +47,11 @@ one tone apart): the parse runs on the plain letters, and the label follows the 
         each affix entry measured on the NT aligned to the Greek (lang.py build): n, stems, and for the feature its
         `greek` names the lift and odds ratio (try_morphs); --write records them and a claim with its rerun recipe
     python3 scripts/morphs.py <project> show <word> ...
+    python3 scripts/morphs.py <project> rates      the features the confirmed affixes mark, and how often the human NT
+        marks them on the Greek verbs that have them: those marked on 60% or more are checked in the loop
+    python3 scripts/morphs.py <project> review <code> <ch>   that check on an OT draft (chapter_check.py runs it): the
+        verbs whose draft words lack the part for a feature of the Hebrew verb (person and number, negation, object,
+        mood; wayyiqtol as a past)
     python3 scripts/morphs.py <project> tone [--write [--force]]
         how the corpus writes tone, detected (detect_tone): marks, digits or none, the tone marks, the letters that carry
         them, what a missing mark means; with the figures. --write puts it into the store as orthography.tone (and
@@ -355,10 +360,11 @@ class Segmenter:
                 return frozenset({"any", h})
         return frozenset({"any"})
 
-    def chain_parse(self, s, hosts=None, cut_ok=lambda n: True):
+    def chain_parse(self, s, hosts=None, cut_ok=lambda n: True, fit=lambda pc, sc: 0):
         """(stem, prefix chain, suffix chain) of the plain word s, or None: of the chains that leave an attested stem
-        (or are all productive), the one that takes off most letters in the fewest pieces (ba-, not b-a-), then the stem
-        with most other forms. cut_ok(n): a boundary n letters from the start may be cut"""
+        (or are all productive), the one that takes off most letters in the fewest pieces (ba-, not b-a-), then the one
+        whose affixes are written as the store writes them (fit: b-aá-, not ba-á-, where aá- is a form and á- is not),
+        then the stem with most other forms. cut_ok(n): a boundary n letters from the start may be cut"""
         at = self.at_for.get(hosts) if hosts is not None else None
         best = None
         for pc, lp in self.chains(s, "p", cut_ok, at):
@@ -370,7 +376,7 @@ class Segmenter:
                     len(core) >= 2 and all(a + "-" in self.productive for _, a in pc)
                     and all("-" + a in self.productive for _, a in sc))
                 if ev:
-                    key = (lp + ls, -len(pc) - len(sc), ev)
+                    key = (lp + ls, -len(pc) - len(sc), fit(pc, sc), ev)
                     if best is None or key > best[0]:
                         best = (key, core, pc, sc)
         return best[1:] if best else None
@@ -454,7 +460,19 @@ class Segmenter:
                     Morph("suffix", "-" + q, cut(k, j))]
                 return self.cache[w]
         if self.chain and s not in self.free and not w.startswith("-"):
-            best = self.chain_parse(s, self.hosts_of(s), lambda n: at(n) is not None)
+            def fit(pc, sc):                             # +1 an affix written with a store form's mark, -1 one written
+                score, a, b = 0, 0, len(cl)              # with a mark no store form of it has
+                for slot, ch_ in (("prefix", pc), ("suffix", sc)):
+                    for p, f in ch_:
+                        if slot == "prefix":
+                            k = at(idx[a] + len(f)); t = cut(a, k); a = k
+                        else:
+                            k = at(idx[b] - len(f)); t = cut(k, b); b = k
+                        t = unicodedata.normalize("NFC", t.lower())
+                        if t != f:
+                            score += 1 if t in self.tone_forms.get((slot, p, f), {}) else -1
+                return score
+            best = self.chain_parse(s, self.hosts_of(s), lambda n: at(n) is not None, fit)
             tail = []
             if best:
                 _, pc, sc = best
@@ -536,7 +554,9 @@ def load(pname, P=None):
     vocab = collections.Counter()
     for r in P.corpus():
         vocab.update(P.tok.tokens(r[4], exact=True))
-    return Segmenter(G, orth, {w: n for w, n in vocab.items() if n >= 2}, word_classes(pname, P))
+    S = Segmenter(G, orth, {w: n for w, n in vocab.items() if n >= 2}, word_classes(pname, P))
+    S.vocab_exact = vocab                         # every corpus token as written, for stem_forms
+    return S
 
 
 def word_classes(pname, P):
@@ -670,6 +690,301 @@ def try_morphs(pname, ids, P, S, write=False, by="script:morphs.py", min_n=20, m
     return res
 
 
+# ---------- the morph view for the drafting agents: a word's parts, a stem's forms, and the loop's check ----------
+
+def parts(S, w, confirmed=None):
+    """an exact token as its parts written with hyphens (y-aá-mu-gaamb-il-a; a grammatical tone after a +:
+    zøveqas+tone-proh), or None for a word of one part. confirmed (affix_entries): None as well where an affix is not
+    confirmed (open, or not in the store), so a guess (a name cut by an open suffix) isn't shown as a split"""
+    ms = S.split(w)
+    if len(ms) < 2:
+        return None
+    if confirmed is not None and any(m.slot != "stem" and not is_confirmed(confirmed.get((m.form, m.position)))
+                                     for m in ms):
+        return None
+    t = [m.text for m in ms if m.slot != "tone" and m.text]
+    return "-".join(t) + "".join(f"+{m.form}" for m in ms if m.slot == "tone")
+
+
+def is_confirmed(e, min_n=20, min_stems=5):
+    """an affix entry the corpus bears out: observed or decided, or, without a Greek feature to test, open with try's
+    counts passing (n and stems: a final vowel)"""
+    if not e:
+        return False
+    st = e.get("stats") or {}
+    return e.get("status") in ("observed", "decided") or (
+        e.get("status") == "open" and not e.get("greek") and (st.get("count") or 0) >= min_n and (st.get("hosts") or 0) >= min_stems)
+
+
+def meaning(e):
+    """an affix entry's meaning in a few words: its value (2.SG), the Greek feature it marks, open if not confirmed"""
+    g = " ".join(f"{a}={'|'.join(b) if isinstance(b, list) else b}" for a, b in sorted((e.get("greek") or {}).items()))
+    return (e.get("value") or "") + (f" ({g})" if g else "") + (" [open]" if e.get("status") == "open" else "")
+
+
+def affix_entries(G):
+    """{(store form, position): entry} of the store's live affixes (prefix, infix, suffix, tone)"""
+    out = {}
+    for e in G.morphs:
+        if e.get("slot") in ("prefix", "infix", "suffix", "tone") and e.get("form") and e.get("status") not in ("rejected",):
+            out[(unicodedata.normalize("NFC", e["form"].lower()), int(e.get("position") or 0))] = e
+    return out
+
+
+def affix_table(G):
+    """the store's affixes for a verse pack or a prompt: one line per slot and position, each with its meaning"""
+    by = collections.defaultdict(list)
+    for (fm, pos), e in affix_entries(G).items():
+        by[(e["slot"], e.get("host") or "any", pos)].append(f"{fm} {meaning(e)}".strip())
+    order = {"prefix": 0, "infix": 1, "tone": 2, "suffix": 3}
+    return [f"- {slot}{f' {pos}' if pos else ''} ({host}): " + "; ".join(sorted(v))
+            for (slot, host, pos), v in sorted(by.items(), key=lambda x: (order[x[0][0]], x[0][1], x[0][2]))]
+
+
+def stem_forms(S):
+    """{plain stem: Counter(exact stem text)} of the corpus words (a word of one part is its own stem)"""
+    if getattr(S, "_stems", None) is None:
+        st = collections.defaultdict(collections.Counter)
+        for w, n in S.vocab_exact.items():
+            for m in S.split(w):
+                if m.slot == "stem" and m.form:
+                    st[m.form][m.text] += n
+        S._stems = st
+    return S._stems
+
+
+def built(S, w):
+    """a form the corpus lacks, as the store's parts build it: (parts, note) where its stem is the stem of a corpus word
+    and at least one affix comes off (note: the stem written with other marks than the corpus writes it, else ""),
+    or None"""
+    ms = S.split(w)
+    stem = next((m for m in ms if m.slot == "stem"), None)
+    if len(ms) < 2 or not stem or not stem.form:
+        return None
+    c = stem_forms(S).get(stem.form)
+    if not c:
+        return None
+    note = "" if stem.text in c else f"the stem {stem.text}: the corpus writes {', '.join(x for x, _ in c.most_common(2))}"
+    return parts(S, w), note
+
+
+# the loop's check: a verb of the original whose draft word lacks the part the store says marks its feature, where the
+# human translation marks it in most such verbs (measured on the NT aligned to the Greek). Features in the names of
+# lang.greek_features; a Hebrew verb is given the same names (hebrew_features): its person and number, a negation in
+# its clause, its clause's object pronoun, and for the forms that say it, mood (imperative; jussive and cohortative as
+# subjunctive; infinitive; participle) and tense (wayyiqtol as an aorist indicative). qatal, yiqtol, weqatal and the
+# stems (niphal as a passive) are left out: their Greek counterparts vary too much. Only words that carry a verb prefix
+# of the chain count (a verb rendered by a noun or a pronoun says nothing about its parts), and an imperative, an
+# infinitive or a participle is not expected to carry a subject.
+DIMS = {"person+number": "subject", "person+number+mood": "subject", "negated": "negation", "object": "object",
+        "tense": "tense", "tense+mood": "tense", "mood": "mood"}
+HEB_NEG = {"לֹא", "לָא", "אַל", "בַּל", "בְּלִי", "אַיִן", "בִּלְתִּי"}
+HEB_MOOD = {"imperative": "imperative", "jussive": "subjunctive", "cohortative": "subjunctive",
+            "infinitive construct": "infinitive", "infinitive absolute": "infinitive",
+            "participle active": "participle", "participle passive": "participle"}
+
+
+def marking(G, min_odds=2.0):
+    """{(store form, position): (dimension, label, want)} of the store's affixes that mark a Greek feature and are
+    confirmed: decided, or observed with odds ratios >= min_odds (morphs.py try)"""
+    out = {}
+    for k, e in affix_entries(G).items():
+        g = e.get("greek") or {}
+        dim = next((DIMS[a] for a in g if a in DIMS), None)
+        st = e.get("stats") or {}
+        if not dim or not (e.get("status") == "decided" or e.get("status") == "observed"
+                           and (st.get("odds") or 0) >= min_odds and (st.get("test_odds") or 0) >= min_odds):
+            continue
+        want = {a: set(b) if isinstance(b, list) else {b} for a, b in g.items()}
+        label = " ".join(f"{a}={'|'.join(sorted(b))}" for a, b in sorted(want.items()))
+        out[k] = (dim, label, want)
+    return out
+
+
+def _has(want, fv):
+    return all(any((a, v) in fv for v in vs) for a, vs in want.items())
+
+
+NO_SUBJECT = {("mood", "imperative"), ("mood", "infinitive"), ("mood", "participle")}
+
+
+def expected(M, fv):
+    """{(dimension, label): {(form, position)}}: the confirmed affixes a verb with the features fv would carry"""
+    out = collections.defaultdict(set)
+    for (fm, pos), (dim, label, want) in M.items():
+        if dim == "subject" and fv & NO_SUBJECT:
+            continue
+        if _has(want, fv):
+            out[(dim, label)].add((fm, pos))
+    return out
+
+
+def carried(S, M, dim, fv, words):
+    """does one of the words (exact tokens) carry an affix of the dimension that fits the features fv"""
+    for w in words:
+        for m in S.split(w):
+            x = M.get((m.form, m.position))
+            if x and x[0] == dim and _has(x[2], fv):
+                return True
+    return False
+
+
+def verb_words(S, G, ws):
+    """the words that carry a verb prefix of the chain (host verb, with a position)"""
+    A = getattr(S, "_verb_pre", None)
+    if A is None:
+        A = S._verb_pre = {k for k, e in affix_entries(G).items() if e.get("host") == "verb" and e.get("slot") == "prefix"
+                           and e.get("position")}
+    return [w for w in ws if any((m.form, m.position) in A for m in S.split(w))]
+
+
+def human_rates(pname, P, S, M):
+    """{(dimension, label): [verbs, carried, forms]} on the NT aligned to the Greek (lang.py build): of the Greek verbs
+    with the feature linked to a word with a verb prefix, how many have one that carries one of its affixes"""
+    import sqlite3
+    import lang
+    _, con = lang.connect(pname)
+    con.row_factory = sqlite3.Row
+    gtok = {r["key"]: r for r in con.execute("select * from g.tokens")}
+    feat = lang.greek_features(con, gtok)
+    words = collections.defaultdict(list)
+    for key, raw in con.execute("select l.key, t.raw from nt_links l join nt_tokens t on t.book=l.book and t.ch=l.ch "
+                                "and t.v=l.v and t.pos=l.pos"):
+        if raw:
+            words[key].append(raw)
+    out = collections.defaultdict(lambda: [0, 0, set()])
+    G = grammar.load(pname)
+    for key, ws in words.items():
+        g = gtok.get(key)
+        if not g or g["class"] != "verb":
+            continue
+        ws = verb_words(S, G, ws)
+        if not ws:
+            continue
+        fv = feat(g)
+        for (dim, label), forms in expected(M, fv).items():
+            r = out[(dim, label)]
+            r[0] += 1
+            r[1] += carried(S, M, dim, fv, ws)
+            r[2] |= forms
+    return dict(out)
+
+
+def checked(rates, min_n=20, min_rate=0.6):
+    return {k: r for k, r in rates.items() if r[0] >= min_n and r[1] >= min_rate * r[0]}
+
+
+def hebrew_features(code, ch):
+    """{Hebrew key: (token row, {(feature, value)})} of a chapter's verbs (orig/heb.sqlite), in the names of
+    lang.greek_features (see DIMS above for what is mapped)"""
+    import sqlite3
+    con = sqlite3.connect(os.path.join(ROOT, "orig", "heb.sqlite"))
+    con.row_factory = sqlite3.Row
+    rows = con.execute("select * from tokens where book=? and ch=?", (code.upper(), ch)).fetchall()
+    neg = {r["clause"] for r in rows if r["lemma"] in HEB_NEG and r["clause"]}
+    obj = {}
+    for r in rows:
+        if r["role"] == "o" and r["pos"] in ("suffix", "pronoun") and r["person"] and r["clause"]:
+            obj.setdefault(r["clause"], f"{'123'[['first', 'second', 'third'].index(r['person'])]}{(r['number'] or 's')[:1]}")
+    out = {}
+    for r in rows:
+        if r["pos"] != "verb":
+            continue
+        fv = set()
+        num = {"dual": "plural"}.get(r["number"], r["number"])
+        mood = HEB_MOOD.get(r["type"])
+        if r["type"] == "wayyiqtol":
+            mood = "indicative"
+            fv |= {("tense", "aorist"), ("tense+mood", "aorist.indicative")}
+        if mood:
+            fv.add(("mood", mood))
+        if num:
+            fv.add(("number", num))
+        if r["person"] in ("first", "second", "third") and num:
+            fv |= {("person", r["person"]), ("person+number", f"{r['person'][:1]}{num[:1]}")}
+            if mood in ("subjunctive", "imperative"):
+                fv.add(("person+number+mood", f"{r['person'][:1]}{num[:1]}.{mood}"))
+        if r["clause"] in neg:
+            fv.add(("negated", "yes"))
+        if r["clause"] in obj:
+            fv.add(("object", obj[r["clause"]]))
+        out[r["key"]] = (r, fv)
+    return out
+
+
+def draft_words(pname, code, ch):
+    """{verse: {Hebrew key: [exact tokens of the draft words tagged with it]}} of an OT chapter: its .tagged working
+    copy, else the tagging rebuilt from the .txt and .align (full_align.tag)"""
+    import full_align as F
+    from project import project_dir
+    P = __import__("langtools").Project(pname)
+    tg = os.path.join(project_dir(pname), code, f"{code}{ch:03d}.tagged")
+    text = open(tg, encoding="utf-8").read() if os.path.exists(tg) else F.tag(pname, code, ch)[0]
+    text = F.ADDED.sub("", text)
+    bits = re.split(r"(?<![\w>.])v(\d+)(?=\s)", text)
+    out = {}
+    for i in range(1, len(bits) - 1, 2):
+        v, body = int(bits[i]), bits[i + 1]
+        num = {n: keys for n, _, _, keys in F.numbering(code.upper(), f"{code.upper()} {ch}:{v}")}
+        words = collections.defaultdict(list)
+        for w, ns in re.findall(r"(\S+?)\^(\d+(?:,\d+)*)", body):
+            for n in ns.split(","):
+                for k in num.get(int(n), []):
+                    words[k] += P.tok.tokens(w, exact=True)
+        out[v] = dict(words)
+    return out
+
+
+def chain_review(pname, code, ch, P=None, S=None, cap=12):
+    """REVIEW lines for chapter_check.py: the verbs of an OT chapter whose draft words lack the part the store says
+    marks a feature the Hebrew verb has (checked: features the human NT marks on 60% of such verbs or more, 20 or more;
+    only words with a verb prefix);
+    [] without chain affixes that mark a Greek feature, or without the NT aligned to the Greek"""
+    import langtools as LT
+    import lang
+    P = P or LT.Project(pname)
+    if not os.path.exists(lang.db_path(P)):
+        return []
+    S = S or load(pname, P)
+    if not S or not S.chain:
+        return []
+    G = grammar.load(pname)
+    M = marking(G)
+    if not M:
+        return []
+    ok = checked(human_rates(pname, P, S, M))
+    if not ok:
+        return []
+    heb = hebrew_features(code, ch)
+    plain = lambda x: S.plain(x.strip("-="))
+    out, by = [], collections.Counter()
+    for v, words in sorted(draft_words(pname, code, ch).items()):
+        for key, ws in words.items():
+            if key not in heb:
+                continue
+            r, fv = heb[key]
+            ws = verb_words(S, G, ws)
+            if not ws:
+                continue
+            for (dim, label), forms in expected(M, fv).items():
+                if (dim, label) not in ok or carried(S, M, dim, fv, ws):
+                    continue
+                by[(dim, label)] += 1
+                if by[(dim, label)] > cap:
+                    continue
+                n, k, _ = ok[(dim, label)]
+                have = [m for w in ws for m in S.split(w) if m.slot != "stem"]
+                near = [m.form for m in have if any(m.position == p and plain(m.form) == plain(f) and m.form != f
+                                                    for f, p in forms)]
+                out.append(f"word parts {ch}:{v} {' '.join(ws)} ({r['text']} {r['gloss'] or ''}, {r['morph']}): {dim} "
+                           f"{label}: none of {', '.join(sorted(f for f, _ in forms))}" + (f" (written {', '.join(near)}: other marks)" if near else "")
+                           + f"; the human NT marks it on {k / n:.0%} of {n} such verbs")
+    for (dim, label), n in by.items():
+        if n > cap:
+            out.append(f"word parts: {n - cap} more verbs without {dim} {label}")
+    return out
+
+
 def main(a):
     if len(a) < 2:
         raise SystemExit(__doc__)
@@ -712,6 +1027,20 @@ def main(a):
             json.dump(d, open(f, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
             open(f, "a").write("\n")
             print("  written:", os.path.relpath(f, ROOT), "(grammar.py retest lists the tests this makes stale)")
+        return
+    if a[1] == "rates":
+        M = marking(grammar.load(a[0]))
+        rates, ok = human_rates(a[0], P, S, M), None
+        ok = checked(rates)
+        print(f"{a[0]}: the confirmed affixes that mark a Greek feature, on the NT's verbs with it (checked in the loop: "
+              "marked on 60% or more of 20 or more)")
+        for (dim, label), (n, k, forms) in sorted(rates.items()):
+            print(f"  {dim:9} {label:34} {', '.join(sorted(f for f, _ in forms)):18} {k:5}/{n:<5} {k / n:4.0%}"
+                  + ("  checked" if (dim, label) in ok else ""))
+        return
+    if a[1] == "review":
+        for l in chain_review(a[0], a[2], int(a[3]), P, S):
+            print(l)
         return
     if a[1] == "show":
         for w in a[2:]:
