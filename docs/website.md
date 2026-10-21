@@ -16,7 +16,11 @@ The onboarding wizard runs this at its end.
 ## What the site shows
 
 - Only what git tracks in `export/<lang>/<id>/`: drafts, notes, footnotes, `STATUS.md`, the wiki, `CREDITS.md`. Every
-  page carries the draft statement (`draft_statement`). `site: false` in `project.yaml` leaves a project out.
+  page carries the draft statement (`draft_statement`) and a status strip at the top that stays in view: an
+  unreviewed draft (amber), in review, or published by the team (green, with the date), naming the team
+  (`team_name`, else "the <language> language team"). A page that isn't published says Draft in its tab title and asks
+  search engines not to index it. The language memory opens every page and the store with a notice that it is the
+  agents' working analysis, not checked by the team, and tags each entry "team" or "not reviewed". `site: false` in `project.yaml` leaves a project out.
 - Never the editions' texts, verse packs, alignment links, style reports, `_eval/local/`, `local_output/` or
   `export/CC-NC/` (`docs/licensing.md`). A leak test stops the build if a page holds a local path or private address.
 - **Clause views** are derived at build time from each draft's `.align` and the local clause layouts, which are never

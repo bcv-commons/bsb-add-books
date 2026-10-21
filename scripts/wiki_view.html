@@ -25,6 +25,9 @@
 }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; }
+.notice { background: var(--q); border: 2px solid var(--q-line); border-radius: 6px; padding: 8px 12px; margin: 0 0 14px;
+  font-size: 14px; font-weight: 600; }
+.tag.team { background: var(--c); border-color: var(--c-line); } .tag.unrev { background: var(--q); border-color: var(--q-line); }
 header { position: sticky; top: 0; z-index: 2; background: var(--panel); border-bottom: 1px solid var(--line);
   display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; padding: 10px 16px; }
 header h1 { font-size: 17px; margin: 0; font-weight: 600; }
@@ -101,6 +104,7 @@ const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const fold = s => String(s ?? "").normalize("NFD").replace(/[̀-ͯ᷀-᷿꞉]/g, "").toLowerCase();
 let tab = "pages", page = "index.md";
+const NOTICE = `<div class="notice" role="note">${esc(DATA.notice)}</div>`;
 const HELP = `<div class="help">This is a read-only copy, built by <code>python3 scripts/wiki.py view ${esc(DATA.project)}</code>.
 To add what you know, edit the page's <code>.md</code> file in <code>wiki/</code>, or send the text to whoever keeps it.
 To correct a fact, write under it: <code>&gt; **Correction (your name, date):** …</code>. The next agent turns it into a store entry.
@@ -124,7 +128,7 @@ function sideCounts() {
 }
 function showPage() {
   const p = DATA.pages.find(p => p.id === page) || DATA.pages[0];
-  $("#main").innerHTML = (p.id === "index.md" ? HELP : "") + p.html;
+  $("#main").innerHTML = NOTICE + (p.id === "index.md" ? HELP : "") + p.html;
   window.scrollTo(0, 0);
 }
 function entryHtml(e) {
@@ -132,6 +136,7 @@ function entryHtml(e) {
   const by = DATA.store.filter(x => x.supersedes === e.id).map(x => x.id);
   return `<div class="entry ${e.live ? "" : "dead"}"><div class="top"><span class="tag kind">${esc(e.kind)}</span>
     ${e.source ? `<span>${esc(e.source)} →</span>` : ""}<span class="val">${esc(v)}</span>
+    ${e.team ? `<span class="tag team">team</span>` : `<span class="tag unrev">not reviewed</span>`}
     ${[e.confidence, e.status, e.attested, e.live ? "" : "superseded"].filter(Boolean).map(t => `<span class="tag">${esc(t)}</span>`).join("")}
     <span class="id">${esc(e.id)}</span></div>
     ${e.glosses?.length ? `<div class="meta">gloss: ${e.glosses.map(g => esc(g)).join("<br>")}</div>` : ""}
@@ -149,7 +154,7 @@ function showStore() {
   const kinds = [...new Set(DATA.store.map(e => e.kind))].sort();
   const rows = DATA.store.filter(e => (showDead || e.live) && (!kind || e.kind === kind)
     && (!q || fold([e.id, e.source, typeof e.value === "string" ? e.value : JSON.stringify(e.value), e.note, (e.words || []).join(" "), e.refs.join(" "), (e.glosses || []).join(" ")].join(" ")).includes(q)));
-  $("#main").innerHTML = `<h1>Store</h1><p>The checked facts the agents use: features and letter rules (observations), terms, formulas and names
+  $("#main").innerHTML = NOTICE + `<h1>Store</h1><p>The working facts the agents use (checked against the corpus, not by the team unless marked “team”): features and letter rules (observations), terms, formulas and names
     (decisions), and gaps. A change is a new entry that replaces the old one; both are kept.</p>
     <div class="filters"><select id="kind"><option value="">all kinds</option>${kinds.map(k => `<option ${k === kind ? "selected" : ""}>${esc(k)}</option>`).join("")}</select>
     <label><input type="checkbox" id="dead" ${showDead ? "checked" : ""}> show replaced entries</label></div>

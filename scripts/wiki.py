@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """A project's language wiki: Markdown pages that agents and people both read and edit, next to the store.
 
-The store (export/<project>/profile/*.json, docs/language-store.md) holds the checked facts; the
+The store (export/<project>/profile/*.json, docs/language-store.md) holds the facts the agents
+work with (checked against the corpus; by the team only where marked); the
 wiki (export/<project>/wiki/) holds the explanations: how a construction works, which models are best, what
 was tried and rejected, open questions. Each page has
 
@@ -332,8 +333,14 @@ def md_html(text, page):
     return "\n".join(out)
 
 
-def view(pname, out_file):
-    """One self-contained HTML file to read the wiki and browse the store, offline; nothing is sent anywhere."""
+NOTICE = ("Working analysis by AI agents, learned from the existing translation: hypotheses for the drafts, not checked "
+          "by the language team. Only entries marked “team” come from the team.")
+
+
+def view(pname, out_file, notice=None):
+    """One self-contained HTML file to read the wiki and browse the store, offline; nothing is sent anywhere. Every page
+    and the store open with the notice (what the memory is and who has checked it: NOTICE, or the site's text in the
+    team's school language), and each entry says whether it comes from the team."""
     pdir = project_dir(pname)
     wdir = os.path.join(pdir, "wiki")
     entries = []
@@ -346,6 +353,7 @@ def view(pname, out_file):
     where = {e["id"]: p for p, es in placed.items() for e in es}
     store = [{k: e.get(k) for k in ("id", "kind", "source", "value", "pattern", "note", "words", "confidence", "status",
                                     "attested", "method", "by", "date", "supersedes")} |
+             {"team": e.get("method") == "team-decision" or str(e.get("by") or "").startswith("team:")} |
              {"refs": [r.get("ref", "") + (f" {r['form']}" if r.get("form") else "") for r in e.get("evidence", []) if isinstance(r, dict)],
               "live": e["id"] in live and e.get("status") != "superseded", "page": where.get(e["id"]),
               "glosses": [G.line(g) for g in G.glosses(e)] if e["id"] in live else []} for e in entries]
@@ -363,7 +371,8 @@ def view(pname, out_file):
                 questions.append({"page": p, "title": fm.get("title", p), "html": md_html(m[1], p)})
     cf = os.path.join(pdir, "CREDITS.md")
     credits = md_html(read_page(cf)[1], "CREDITS.md") if os.path.exists(cf) else ""
-    data = json.dumps({"project": pname, "pages": pg, "store": store, "questions": questions, "credits": credits}, ensure_ascii=False)
+    data = json.dumps({"project": pname, "pages": pg, "store": store, "questions": questions, "credits": credits,
+                       "notice": notice or NOTICE}, ensure_ascii=False)
     tpl = open(os.path.join(ROOT, "scripts", "wiki_view.html"), encoding="utf-8").read()
     html = tpl.replace("/*DATA*/null", data.replace("</", "<\\/")).replace("{{project}}", pname)
     open(out_file, "w", encoding="utf-8").write(html)

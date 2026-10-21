@@ -5,8 +5,8 @@ title: Jamaican Creole English: wiki
 
 What Di Jamiekan Nyuu Testiment (the style corpus) teaches about Jamaican Creole English as written,
 for drafting the Old Testament from the Hebrew. Drafting agents read it before every chapter; the
-language team reads it, corrects it and answers the [questions](questions.md). The checked facts are
-in the store (`../profile/observations.json`, `../profile/decisions.json`); each page shows its store
+language team reads it, corrects it and answers the [questions](questions.md). The facts the agents
+work with (checked against the corpus, not yet by the team) are in the store (`../profile/observations.json`, `../profile/decisions.json`); each page shows its store
 entries in a generated block at the end. The pages are in English; examples are short quotations from
 the corpus with their references.
 

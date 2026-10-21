@@ -67,6 +67,12 @@ main { max-width:960px; margin:0 auto; padding:18px 16px 40px; }
 h1 { font-size:24px; margin:8px 0 12px; } h2 { font-size:19px; margin:26px 0 8px; }
 a { color:var(--accent); }
 .banner { background:var(--q); border-left:4px solid var(--q-line); padding:10px 14px; border-radius:4px; margin:12px 0 18px; }
+.strip { position:sticky; top:0; z-index:5; padding:8px 16px; font-size:15px; line-height:1.4; border-bottom:2px solid; }
+.strip.draft, .strip.review { background:#ffe7a3; color:#3d2a00; border-color:#c98a00; }
+.strip.published { background:#dff3e4; color:#123d1f; border-color:#3c8d5a; }
+.strip strong { text-transform:uppercase; letter-spacing:.04em; margin-right:4px; }
+.strip a { color:inherit; text-decoration:underline; }
+.books .chs a.review { border-color:#c98a00; } .books .chs a.published { border-color:#3c8d5a; background:#dff3e4; color:#123d1f; }
 table { border-collapse:collapse; width:100%; display:block; overflow-x:auto; font-size:15px; }
 th, td { border-bottom:1px solid var(--line); padding:6px 10px; text-align:left; vertical-align:top; }
 th { color:var(--muted); font-weight:600; }
@@ -114,6 +120,46 @@ code { font-size:90%; } .path { font-family:ui-monospace,monospace; font-size:90
 """
 
 
+UI["English"].update({
+    "s_draft": "Unreviewed draft", "s_review": "In review", "s_published": "Published",
+    "t_draft": "Not yet checked or approved by the {team}. Not for use as Scripture.",
+    "t_review": "Being reviewed by the {team}; not yet approved. Not for use as Scripture.",
+    "t_published": "Reviewed and published by the {team}.",
+    "t_memory": "Working analysis by AI agents, learned from the existing translation: hypotheses for the drafts, not "
+                "checked by the {team}. Only entries marked “team” come from the team.",
+    "team": "{lang} language team", "about": "What this means", "tab_draft": "Draft"})
+UI["Standard German"].update({
+    "s_draft": "Ungeprüfter Entwurf", "s_review": "In Prüfung", "s_published": "Veröffentlicht",
+    "t_draft": "Noch nicht vom {team} geprüft oder freigegeben. Nicht als Bibeltext zu verwenden.",
+    "t_review": "Wird vom {team} geprüft; noch nicht freigegeben. Nicht als Bibeltext zu verwenden.",
+    "t_published": "Vom {team} geprüft und veröffentlicht.",
+    "t_memory": "Arbeitsanalyse von KI-Agenten, aus der vorhandenen Übersetzung gelernt: Annahmen für die Entwürfe, "
+                "nicht vom {team} geprüft. Nur Einträge mit „team“ stammen vom Team.",
+    "team": "Sprachteam ({lang})", "about": "Was das heißt", "tab_draft": "Entwurf"})
+UI["Danish"].update({
+    "s_draft": "Ikke gennemset udkast", "s_review": "Til gennemsyn", "s_published": "Udgivet",
+    "t_draft": "Endnu ikke gennemset eller godkendt af {team}. Ikke til brug som bibeltekst.",
+    "t_review": "Gennemses af {team}; endnu ikke godkendt. Ikke til brug som bibeltekst.",
+    "t_published": "Gennemset og udgivet af {team}.",
+    "t_memory": "Arbejdsanalyse lavet af AI-agenter ud fra den eksisterende oversættelse: antagelser til udkastene, "
+                "ikke gennemset af {team}. Kun poster mærket “team” kommer fra teamet.",
+    "team": "sprogteamet for {lang}", "about": "Hvad det betyder", "tab_draft": "Udkast"})
+
+
+def team_name(p, ui):
+    """the team the status strip names: the project's team_name, else the language's name (without its bracket)"""
+    lang = re.sub(r"\s*\(.*$", "", str(p.get("language_name") or p.get("language") or "")).strip()
+    return p.get("team_name") or ui["team"].format(lang=lang)
+
+
+def strip(ui, team, state="draft", status_href=None, extra=""):
+    """the status strip at the top of a page, in view while scrolling: draft (amber), in review, published (green)"""
+    s = {"in-review": "review"}.get(state, state)
+    more = f' <a href="{status_href}">{H.escape(ui["about"])}</a>' if status_href else ""
+    return (f'<div class="strip {s}" role="note"><strong>{H.escape(ui["s_" + s])}.</strong> '
+            f'{H.escape(ui["t_" + s].format(team=team))}{H.escape(extra)}{more}</div>')
+
+
 def git_tracked(preview=False):
     """The files the site may read: tracked ones; with --preview also untracked, not ignored ones (a local look at
     uncommitted work, never deployed: scripts/deploy_site.py builds without it from a clean tree)."""
@@ -126,13 +172,21 @@ def git_tracked(preview=False):
     return files
 
 
-def page(title, body, nav, banner, built, depth, ui, lang="en"):
+CURRENT = {}     # the project being built: its status strip (strip(), %UP% for the path back to the site's root)
+
+
+def page(title, body, nav, banner, built, depth, ui, lang="en", top=None, published=False):
+    """a site page; top: the status strip (default: the current project's); a page that isn't published says Draft in
+    its tab title and asks search engines not to index it"""
     up = "../" * depth
+    top = (CURRENT.get("top", "") if top is None else top).replace("%UP%", up)
+    if top and not published:
+        title = f"{ui['tab_draft']}: {title}"
     links = "".join(f'<a href="{up}{href}"{" class=on" if on else ""}>{H.escape(label)}</a>' for label, href, on in nav)
     return f"""<!doctype html>
 <html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{H.escape(title)}</title><link rel="stylesheet" href="{up}style.css"></head>
-<body><header><a class="site" href="{up}index.html">bsb-add-books</a><nav>{links}</nav></header>
+<title>{H.escape(title)}</title>{'' if published or not top else '<meta name="robots" content="noindex">'}<link rel="stylesheet" href="{up}style.css"></head>
+<body>{top}<header><a class="site" href="{up}index.html">bsb-add-books</a><nav>{links}</nav></header>
 <main>{f'<div class="banner">{banner}</div>' if banner else ''}{body}</main>
 <footer>{H.escape(ui['built'])} <code>{H.escape(built)}</code> · bcv-commons/bsb-add-books · CC0</footer></body></html>
 """
@@ -182,6 +236,8 @@ def build(out, built, preview=False):
         first = re.match(r"([^\s.]+)\.\s*", draft_st)       # the statement's first word ("Draft.", "Udkast.")
         rest = draft_st[first.end():] if first and first[1].lower() in ("draft", ui["draft"].lower()) else draft_st
         banner = f"<strong>{H.escape(ui['draft'].capitalize())}.</strong> {H.escape(rest)}"
+        team = team_name(p, ui)
+        CURRENT["top"] = strip(ui, team, "draft", f"%UP%{pname}/index.html")
         # home: STATUS.md as committed; stop if it no longer matches status.yaml and the drafts (the build changes no
         # tracked file: regenerate it with scripts/status.py and commit)
         sf = need(tracked, os.path.join(pdir, "STATUS.md"))
@@ -217,12 +273,15 @@ def build(out, built, preview=False):
                 if f.endswith(".md"):
                     need(tracked, os.path.join(pdir, "wiki", f))
             mem = os.path.join(od, "memory.html")
-            wiki.view(pname, mem)
+            wiki.view(pname, mem, notice=ui["t_memory"].format(team=team))
             h = open(mem, encoding="utf-8").read()
             up = "../" * (pname.count("/") + 1)
-            bar = (f'<div style="background:var(--q);border-bottom:1px solid var(--q-line);padding:6px 16px;font-size:14px">'
-                   f'<a href="{up}{pname}/index.html">{H.escape(name)}</a> · {banner}</div>')
-            h = h.replace("<body>", "<body>" + bar, 1).replace('<html lang="en">', f'<html lang="{lc}">', 1)
+            bar = strip(ui, team, "draft", f"{up}{pname}/index.html").replace(
+                '<div class="strip draft" role="note">', '<div class="strip draft" role="note" style="'
+                'padding:8px 16px;font-size:15px;background:#ffe7a3;color:#3d2a00;border-bottom:2px solid #c98a00">'
+                f'<a href="{up}{pname}/index.html" style="color:inherit">{H.escape(name)}</a> · ', 1)
+            h = (h.replace("<body>", "<body>" + bar, 1).replace('<html lang="en">', f'<html lang="{lc}">', 1)
+                 .replace("<head>", '<head><meta name="robots" content="noindex">', 1))
             open(mem, "w", encoding="utf-8").write(h)
         rd = reader(pname, p, tracked, od, ui, banner, built, nav, lc, rows)
         next_steps(pname, p, tracked, od, ui, banner, built, nav, lc, rows, preview)
@@ -242,6 +301,7 @@ def build(out, built, preview=False):
     en = UI["English"]
     langs = "".join(f'<li><a href="{p_}/read/index.html">{H.escape(r_["name"])}</a> <span class="muted">'
                     f'({sum(len(b[2]) for b in r_["books"])} {H.escape(en["chapters"])})</span></li>' for p_, r_ in readers.items())
+    CURRENT.clear()
     open(os.path.join(out, "read.html"), "w", encoding="utf-8").write(page("bsb-add-books: read", f"<h1>{en['choose']}</h1><ul class=books>{langs}</ul>",
         [(en["read"], "read.html", True), (en["projects"], "index.html", False)], "", built, 0, en))
     intro = ("<p>Bible translations drafted chapter by chapter from the Hebrew and Greek, with the Berean Standard Bible as "
@@ -617,7 +677,9 @@ def reader(pname, p, tracked, od, ui, banner, built, nav, lc, rows):
     items = []
     for c in order:
         b = books[c]
-        chs = "".join(f'<a href="{c}/{n:03d}.html">{n}</a>' for n in b["chs"])
+        cls = {(x[0], x[1]): x[5].get("status", "draft") for x in pages}
+        chs = "".join(f'<a href="{c}/{n:03d}.html" class="{cls.get((c, n), "draft")}" title="{H.escape(ui[{"in-review": "review"}.get(cls.get((c, n), "draft"), cls.get((c, n), "draft"))])}">{n}</a>'
+                      for n in b["chs"])
         items.append(f'<li><strong>{H.escape(b["title"])}</strong><div class="chs">{chs}</div></li>')
     body = f'<h1>{H.escape(p.get("language_name") or pname)}: {H.escape(ui["read"])}</h1><ul class="books">{"".join(items)}</ul>'
     open(os.path.join(rd, "index.html"), "w", encoding="utf-8").write(page(f"{p.get('language_name')}: {ui['read']}", body, nav("r"), banner, built, depth, ui, lc))
@@ -665,7 +727,11 @@ def reader(pname, p, tracked, od, ui, banner, built, nav, lc, rows):
                 + f'<script src="{"../" * (depth + 1)}nav.js"></script>')
         os.makedirs(os.path.join(rd, code), exist_ok=True)
         open(os.path.join(rd, code, f"{n:03d}.html"), "w", encoding="utf-8").write(
-            page(f"{title} · {p.get('language_name')}", body, nav("r"), bn, built, depth + 1, ui, lc))
+            page(f"{title} · {p.get('language_name')}", body, nav("r"), bn, built, depth + 1, ui, lc,
+                 top=strip(ui, team_name(p, ui), "draft" if r.get("changed") else r.get("status", "draft"),
+                           f"%UP%{pname}/index.html",
+                           extra=f" ({r['date']})" if r.get("status") == "published" and r.get("date") and not r.get("changed") else ""),
+                 published=r.get("status") == "published" and not r.get("changed")))
     return {"name": p.get("language_name") or pname, "books": [[c, books[c]["title"], books[c]["chs"]] for c in order]}
 
 
