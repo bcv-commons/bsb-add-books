@@ -12,8 +12,8 @@ language**, and **how free the existing translations are**. The two demo project
 | The model knows the language | well (`known`) | the standard language better than the creole (`partial`) | not at all (`unknown`) |
 | Agents | draft from their own Danish; the memory keeps decisions consistent | write Jamaican, not English: check forms against the corpus | learn the language from the corpus while drafting; invent nothing |
 
-For the third case two sample editions come without a project: the Kuhane NT (CC BY) and the Zinza NT (CC BY-SA),
-both Bantu (`import/README.md`, *Sample editions*).
+For the third case two sample editions come without a project: the Bodo Parja NT (CC BY, Odia script) and the Zinza
+NT (CC BY-SA, Bantu) (`import/README.md`, *Sample editions*).
 
 ## 0. The wizard
 

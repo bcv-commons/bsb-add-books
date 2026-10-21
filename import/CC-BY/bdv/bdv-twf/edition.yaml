@@ -1,0 +1,48 @@
+# A sample edition in a non-Roman script (Odia): the Bodo Parja NT (India), imported by scripts/onboard.py from helloao
+# (bdv_twf). Fetch it with python3 scripts/fetch_edition.py bdv-twf. The text is fetched (scripts/fetch_edition.py), never kept in git: text/ is git-ignored (.gitignore here),
+# in every licence folder. One edition = one existing translation.
+
+# nt_basis read from the text by scripts/onboard.py: 15 of 15 test verses present (Mt 17:21, Acts 8:37 …). Check it (import-edition skill).
+name: 'Bodo Parja: BOPO Bible'
+language: bdv
+role: style
+text_dir: text
+format: one file per chapter (<code>NNN.txt), the format of the BSB files, fetched by scripts/fetch_edition.py
+nt_basis: majority
+books:
+- mat
+- mrk
+- luk
+- jhn
+- act
+- rom
+- 1co
+- 2co
+- gal
+- eph
+- php
+- col
+- 1th
+- 2th
+- 1ti
+- 2ti
+- tit
+- phm
+- heb
+- jas
+- 1pe
+- 2pe
+- 1jn
+- 2jn
+- 3jn
+- jud
+- rev
+quarantine: []
+source: helloao bdv_twf, https://ebible.org/Scriptures/details.php?id=bdv
+licence: "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)"
+attribution: 'The New Testament in the Bodo Parja language of India, copyright © 2020 The Word for the World International, CC BY 4.0 (https://ebible.org/Scriptures/details.php?id=bdv)'
+credit: 'Bodo Parja NT, The Word for the World International (CC BY 4.0)'
+licence_source: "eBible's details page (checked 2026-10-21); helloAO lists it as attribution required"
+fetch:
+  source: helloao
+  id: bdv_twf

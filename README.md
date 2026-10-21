@@ -46,9 +46,9 @@ model knows well: Genesis, Joshua and Daniel drafted, continuing Den Frie Bibel)
 Creole, partly known: the language memory and Genesis 1). Their editions' texts are not in git; the checks and
 the tools need them: `python3 import/CC0/dan/den-frie-bibel/sync_from_upstream.py` (Danish, a minute) and `python3
 scripts/fetch_edition.py jambswn-et` (Jamaican, from the Digital Bible Platform: needs your `DBT_API_KEY`). Delete
-the two project folders (and their editions in `import/`) when you no longer want them. Two more editions, Bantu NTs without a project (Kuhane,
-CC BY; Zinza, CC BY-SA), are test corpora for a language the model doesn't know: the four sample editions are listed in
-[`import/README.md`](import/README.md), *Sample editions*.
+the two project folders (and their editions in `import/`) when you no longer want them. Two more editions, NTs without a project (Bodo Parja,
+CC BY, in the Odia script; Zinza, CC BY-SA, Bantu), are samples of a language the model doesn't know: the four sample
+editions are listed in [`import/README.md`](import/README.md), *Sample editions*.
 
 ## Layout
 
