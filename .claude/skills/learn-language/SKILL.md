@@ -22,6 +22,8 @@ of another language in this working copy, if there is one, is the worked example
 3. **Align:** `python3 scripts/align.py <project>` (eflomal if installed; see the toolkit's *External
    tools* for macOS). Read `_learn/align_report.txt`: the glossary and name checks show how far to trust the
    lexicons. lexeme-aligner may already have the language: compare, and cite its data as `external`.
+   `python3 scripts/lang.py layers <project> --write` finds a bcv-commons alignment layer built on exactly this text
+   (by its text fingerprint) and sets it as `lexeme_aligner`, so `lang.py build` adds its links.
    Then the occurrence index and the derived products: the Greek structure
    (`orig/grc.sqlite`, fetched by `python3 scripts/setup.py --only src`), `python3 scripts/lang.py build <project>` (every NT token linked to a MACULA Greek
    token; `lang.py hbo <project> <lexeme>` shows how the NT renders any Hebrew word through the LXX) and

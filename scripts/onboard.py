@@ -717,6 +717,8 @@ def main():
             else:
                 say("  Building the language database: every word of the NT linked to the Greek, and the statistics the "
                     "language study starts from")
+                say("  Looking for an alignment layer of bcv-commons built on this text (its links join the database)")
+                run("scripts/lang.py", "layers", pname, "--write")
                 run("scripts/lang.py", "build", pname)
                 run("scripts/lang.py", "derive", pname)
     if fam in ("partial", "unknown"):           # the store's grammar: Grambank's questions and the curation list

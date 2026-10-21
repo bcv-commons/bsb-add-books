@@ -158,6 +158,11 @@ def from_tsv(src, dst, by, date):
         if r.get("nllb"):
             e["note"] = f"NLLB contrast: {r['nllb']}"
         out.append(e)
+    from language_profile import VERDICTS
+    bad = [f"{r['id']} ({r['verdict']})" for r in rows(os.path.join(src, "claims.tsv")) if r.get("verdict") and r["verdict"] not in VERDICTS]
+    if bad:                                      # caught here, not afterwards by language_profile.py check
+        raise SystemExit(f"claims.tsv: verdicts the schema doesn't have: {', '.join(bad)}; use one of "
+                         f"{', '.join(sorted(VERDICTS))} (and say more in `next`)")
     for r in rows(os.path.join(src, "claims.tsv")):
         e = {"id": "claim:" + slug(r["id"]), "kind": "claim", "value": r["claim"], "area": r.get("area", ""),
              "tests": [t for t in (r.get("tests") or "").split(";") if t], "figures": r.get("figures", ""),

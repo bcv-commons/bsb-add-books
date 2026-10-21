@@ -87,7 +87,11 @@ If an edition follows the TR closely, consider adding a TR text as
 
 `python3 scripts/project.py <project>` shows the resolved setup.
 
-- **`lexeme_aligner`** (project, optional): the id of lexeme-aligner's compact-alignments layer for the style
-  edition's language (an id such as `<iso>_<edition>`). `scripts/lang.py build` decodes it onto the project's NT tokens as a second
-  alignment beside eflomal's (CC0 positions; the layer's source text is fetched from its provider, so far helloAO).
+- **`lexeme_aligner`** (project, optional): the id of a bcv-commons alignment layer for the style edition's language:
+  compact-alignments (`<iso>_<edition>`, statistical), full-alignments-llm (`<edition>+llm+<name>`, checked by a language
+  model) or full-alignments-manual (`+manual+`). `scripts/lang.py build` decodes it onto the project's NT tokens as a
+  second alignment beside eflomal's (CC0 positions). A book is used where the layer was built on exactly our text (the
+  file name's text fingerprint), or, for a compact layer from helloAO, on helloAO's text matched to ours word by word.
+  `python3 scripts/lang.py layers <project> [--write]` finds the layers built on our text and sets the best one;
+  `onboard.py` runs it.
 

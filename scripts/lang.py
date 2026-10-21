@@ -18,6 +18,10 @@ Tables:
     python3 scripts/lang.py derive <project>                     the derived products: d_* tables
     python3 scripts/lang.py report <project>                     their summary
     python3 scripts/lang.py stats <project>
+    python3 scripts/lang.py layers <project> [--write]          the alignment layers of bcv-commons built on exactly
+        our text of the style edition (compact-alignments, full-alignments-llm, full-alignments-manual; matched by the
+        file names' text fingerprint), best first; --write sets the best as `lexeme_aligner` in project.yaml where it
+        has none, so that build adds its links
 The listings show the edition's words for the agents' and the team's own use; what goes into the store or the wiki
 keeps to the quotation limits (docs/licensing.md).
 """
@@ -106,36 +110,109 @@ def build(pname, links=None):
 
 
 CA = "https://huggingface.co/datasets/bcv-commons/compact-alignments"
+HF = "https://huggingface.co/datasets/bcv-commons"
+# the alignment datasets of bcv-commons, in one format (compact-alignments' paths, _index and tokenizer): a layer id
+# with +manual+ is hand-made, with +llm+ checked by a language model, else lexeme-aligner's statistical layer
+DATASETS = ("full-alignments-manual", "full-alignments-llm", "compact-alignments")
+
+
+def dataset_of(layer):
+    return ("full-alignments-manual" if "+manual+" in layer else "full-alignments-llm" if "+llm+" in layer
+            else "compact-alignments")
+
+
+def hf_tree(ds, path, cache, max_age=24 * 3600):
+    """the entries of a folder of a bcv-commons dataset ([] where it has none), cached for a day: names change with the text"""
+    from fetch_edition import getjson
+    try:
+        x = getjson(f"https://huggingface.co/api/datasets/bcv-commons/{ds}/tree/main/{path}", cache, False, max_age)
+    except Exception:                              # a folder the dataset doesn't have answers 404
+        return []
+    return x if isinstance(x, list) else []
+
+
+def layer_names(ds, iso, layer):
+    """{book: {hash in the file name: path in the dataset}} of a layer's main files"""
+    d = os.path.join(ROOT, "download", ds, iso[0], iso, layer)
+    os.makedirs(d, exist_ok=True)
+    names = collections.defaultdict(dict)
+    for x in hf_tree(ds, f"{iso[0]}/{iso}/{layer}", os.path.join(d, "_listing.json")):
+        name = os.path.basename(x["path"])
+        if name.endswith(".json") and not name.endswith(".meta.json") and "_" in name and not name.startswith("_"):
+            names[name.split("_")[0]][name[:-5].split("_", 1)[1]] = x["path"]
+    return names
+
+
+def iso3(P):
+    """the language's ISO 639-3 code, the datasets' folder: the style edition's (its language, or the folder it is
+    filed in, import/<licence>/<iso>/), else the project's"""
+    for e in P.editions:
+        for c in (e.get("language") or "", os.path.basename(os.path.dirname(os.path.normpath(e.get("dir") or "")))):
+            if re.fullmatch(r"[a-z]{3}", c):
+                return c
+    return P.p.get("language") or ""
+
+
+def local_verses(P):
+    """{BOOK: [(ch, v, text)]} of the style corpus in the edition's own numbering"""
+    out = collections.defaultdict(list)
+    for ref, code, key, _, t in P.corpus():
+        out[code.upper()].append((key[0], key[1], t))
+    return out
+
+
+def matching(names, verses):
+    """the layer file of exactly this text: its text fingerprint (8 hex) in the name, or until 2026-12-20 the old name
+    (the last 5 hex of the raw-text hash); None: the text differs from the one the layer was made on"""
+    import full_align as FA
+    return names.get(FA.text_fingerprint(verses)[0][:8]) or names.get(FA.book_hash(verses)[-5:])
+
+
+def find_layers(P):
+    """[(dataset, layer, NT books matched, NT books of the layer, OT books matched)] of the alignment layers of the
+    project's language built on exactly our text of the style edition (by the text fingerprint), best first: most NT
+    books, then hand-made before model-checked before statistical"""
+    iso = iso3(P)
+    ours = local_verses(P)
+    out = []
+    for rank, ds in enumerate(DATASETS):
+        cache = os.path.join(ROOT, "download", ds, iso[:1], iso, "_listing.json")
+        os.makedirs(os.path.dirname(cache), exist_ok=True)
+        for x in hf_tree(ds, f"{iso[:1]}/{iso}", cache):
+            if x.get("type") != "directory":
+                continue
+            layer = os.path.basename(x["path"])
+            names = layer_names(ds, iso, layer)
+            nt = [b for b in names if BY_CODE.get(b.lower(), (0, 0, ""))[2] == "nt"]
+            m_nt = sum(1 for b in nt if b in ours and matching(names[b], ours[b]))
+            m_ot = sum(1 for b in names if b not in nt and b in ours and matching(names[b], ours[b]))
+            out.append((ds, layer, m_nt, len(nt), m_ot, rank))
+    out.sort(key=lambda r: (-r[2], r[5]))
+    return [r[:5] for r in out]
 
 
 def lexeme_aligner_links(con, P, layer):
-    """A second NT alignment: lexeme-aligner's compact layer for this language (bcv-commons/compact-alignments, CC0:
-    token positions only) decoded onto our NT tokens -> [(book, ch, v, pos, MACULA key, 'lexeme-aligner')].
-    Their positions count the words of the layer's source text (its tokenizer: runs of letters and marks) in that
-    text's verses; our copy may be newer, so words are matched verse by verse and a word our copy lacks is left out.
-    Only the helloAO provider is read for now (the source of most layers)."""
+    """A second NT alignment: a bcv-commons layer for this language (compact-alignments, or full-alignments-llm /
+    -manual for a layer id with +llm+ / +manual+; CC0: token positions only) decoded onto our NT tokens ->
+    [(book, ch, v, pos, MACULA key, 'lexeme-aligner')]. Their positions count the words of the layer's source text
+    (its tokenizer: runs of letters and marks) in that text's verses. A book whose text is ours exactly (the file name's
+    text fingerprint, find_layers) is read on our text; else, for a compact layer from helloAO, on helloAO's text,
+    words matched verse by verse onto our copy (it may be newer) and a word our copy lacks left out."""
     import difflib, json, unicodedata, urllib.request
     import full_align as FA
     from fetch_edition import getjson, HELLOAO, DL
-    iso = P.p.get("language") or layer.split("_")[0]
-    d = os.path.join(ROOT, "download", "compact-alignments", iso[0], iso, layer)
-    os.makedirs(d, exist_ok=True)
-    man = getjson(f"{CA}/resolve/main/manifest.json", os.path.join(ROOT, "download", "compact-alignments", "manifest.json"), False)
-    ed = man["languages"].get(iso, {}).get("editions", {}).get(layer)
-    if not ed:
-        raise SystemExit(f"lexeme_aligner: no layer {layer} for {iso} in compact-alignments")
-    src = ed.get("source", {})
-    if src.get("provider") != "bible.helloao.org":
-        print(f"  lexeme_aligner: source provider {src.get('provider')} not read yet; skipped")
-        return []
-    listing = getjson(f"https://huggingface.co/api/datasets/bcv-commons/compact-alignments/tree/main/{iso[0]}/{iso}/{layer}",
-                      os.path.join(d, "_listing.json"), False, 24 * 3600)   # a day: names change with the text
+    iso = iso3(P) or layer.split("_")[0]
+    ds = dataset_of(layer)
+    d = os.path.join(ROOT, "download", ds, iso[0], iso, layer)
+    names = layer_names(ds, iso, layer)
+    if not names:
+        raise SystemExit(f"lexeme_aligner: no layer {layer} for {iso} in {ds} (lang.py layers {P.name} lists them)")
+    src = {}
+    if ds == "compact-alignments":
+        man = getjson(f"{CA}/resolve/main/manifest.json", os.path.join(ROOT, "download", "compact-alignments", "manifest.json"),
+                      False, 7 * 24 * 3600)
+        src = (man["languages"].get(iso, {}).get("editions", {}).get(layer) or {}).get("source", {})
     files = {}
-    names = collections.defaultdict(dict)                # book -> {hash in the name: path on Hugging Face}
-    for x in listing:
-        name = os.path.basename(x["path"])
-        if name.endswith(".json") and not name.endswith(".meta.json") and "_" in name:
-            names[name.split("_")[0]][name[:-5].split("_", 1)[1]] = x["path"]
 
     def fetch(path):
         f = os.path.join(d, os.path.basename(path))
@@ -143,7 +220,7 @@ def lexeme_aligner_links(con, P, layer):
             if os.path.exists(f):
                 break
             try:
-                req = urllib.request.Request(f"{CA}/resolve/main/{path}", headers={"User-Agent": "bsb-add-books"})
+                req = urllib.request.Request(f"{HF}/{ds}/resolve/main/{path}", headers={"User-Agent": "bsb-add-books"})
                 body = urllib.request.urlopen(req, timeout=120).read()
                 open(f + ".part", "wb").write(body)
                 os.replace(f + ".part", f)
@@ -153,17 +230,18 @@ def lexeme_aligner_links(con, P, layer):
                 import time
                 time.sleep(5 * (attempt + 1))
         return f
-    data = getjson(f"{HELLOAO}/{src['edition']}/complete.json", os.path.join(DL, src["edition"], "complete.json"), False)
+    mine = local_verses(P)
+    data = {"books": []}
+    if src.get("provider") == "bible.helloao.org" and not all(matching(names[b], mine[b]) for b in names if b in mine):
+        data = getjson(f"{HELLOAO}/{src['edition']}/complete.json", os.path.join(DL, src["edition"], "complete.json"), False)
     fold = lambda s: "".join(c for c in unicodedata.normalize("NFD", s.lower()) if not unicodedata.combining(c))
     ours = collections.defaultdict(list)
     for b, c, v, pos, surf in con.execute("select book, ch, v, pos, surface from nt_tokens order by book, ch, v, pos"):
         for sub in FA.tokenize(surf) or [surf]:        # their tokenizer splits at hyphens and other marks; ours may not
             ours[(b, c, v)].append((pos, fold(sub)))
     out = []
+    theirs = {}
     for book in data["books"]:
-        b = book["id"]
-        if b not in names or BY_CODE.get(b.lower(), (None, None, None))[2] != "nt":
-            continue
         verses = []
         for ch in book["chapters"]:
             c = ch["chapter"]
@@ -171,14 +249,18 @@ def lexeme_aligner_links(con, P, layer):
                 if blk.get("type") == "verse":
                     parts = [x if isinstance(x, str) else x["text"] for x in blk["content"] if isinstance(x, str) or "text" in x]
                     verses.append((c["number"], blk["number"], re.sub(r"\s+", " ", " ".join(parts)).strip()))
-        verses.sort()
-        # the file for exactly this text: its text fingerprint (8 hex) in the name, or until 2026-12-20 the old name
-        # (the last 5 hex of the raw-text hash); neither: the source changed since the layer was made
-        fp, old = FA.text_fingerprint(verses)[0][:8], FA.book_hash(verses)[-5:]
-        path = names[b].get(fp) or names[b].get(old)
+        theirs[book["id"]] = sorted(verses)
+    for b in sorted(names):
+        if BY_CODE.get(b.lower(), (None, None, None))[2] != "nt":
+            continue
+        # the file for exactly this text: our copy, else the provider's; neither: the text changed since the layer
+        # was made
+        verses = mine.get(b) if b in mine and matching(names[b], mine[b]) else theirs.get(b)
+        path = matching(names[b], verses) if verses else None
         if not path:
-            print(f"  lexeme_aligner: {b}: no layer file for this text (fingerprint {fp}); the source text changed "
-                  "since the layer was made; skipped")
+            if b in mine:
+                print(f"  lexeme_aligner: {b}: no layer file for this text (fingerprint "
+                      f"{FA.text_fingerprint(mine[b])[0][:8]}); the text changed since the layer was made; skipped")
             continue
         files[b] = fetch(path)
         keys = FA.index(b, "keys")
@@ -709,6 +791,33 @@ def stats(pname):
     print(con.execute("select * from meta").fetchall())
 
 
+def layers(pname, write=False):
+    import langtools as LT
+    from project import project_dir
+    P = LT.Project(pname)
+    rows = find_layers(P)
+    if not rows:
+        print(f"{pname}: no alignment layer for {iso3(P)} in bcv-commons")
+        return None
+    print(f"{pname}: alignment layers for {iso3(P)} (NT books on exactly our text / the layer's NT books; OT books)")
+    for ds, layer, m, n, mo in rows:
+        print(f"  {layer:40} {ds:24} NT {m}/{n}" + (f", OT {mo}" if mo else ""))
+    best = rows[0] if rows[0][2] else None
+    have = P.p.get("lexeme_aligner")
+    if not best:
+        print("  none is built on our text (another copy or another numbering): lexeme_aligner left as it is")
+    elif have:
+        print(f"  project.yaml has lexeme_aligner: {have}" + ("" if have == best[1] else f" (the best match is {best[1]})"))
+    elif write:
+        pf = os.path.join(project_dir(pname), "project.yaml")
+        open(pf, "a", encoding="utf-8").write(
+            f"# the alignment layer built on our text (lang.py layers): its links go into lang.py build\nlexeme_aligner: {best[1]}\n")
+        print(f"  written: lexeme_aligner: {best[1]} (lang.py build adds its links)")
+    else:
+        print(f"  --write sets lexeme_aligner: {best[1]}")
+    return best
+
+
 def main():
     a = sys.argv[1:]
     if len(a) < 2:
@@ -726,6 +835,8 @@ def main():
         report(a[1])
     elif a[0] == "stats":
         stats(a[1])
+    elif a[0] == "layers":
+        layers(a[1], "--write" in a)
     else:
         raise SystemExit(__doc__)
 
