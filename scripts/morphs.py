@@ -59,7 +59,7 @@ TONE_CANDIDATES = {chr(c) for c in (0x0300, 0x0301, 0x0302, 0x030C, 0x0304, 0x03
 
 
 def detect_tone(tokens, min_mark=0.002, min_words=0.03, min_twins=0.15, max_top=0.6, min_digits=0.3, neutral=0.35,
-                conflict=0.05, min_letter=0.02):
+                conflict=0.05, min_letter=0.02, min_double=0.01):
     """(proposal, figures) from {token: count} of the corpus as written.
 
     The tone marks are a layer: marks that never share a letter (one tone per vowel). Marks that do share one are in
@@ -73,7 +73,11 @@ def detect_tone(tokens, min_mark=0.002, min_words=0.03, min_twins=0.15, max_top=
     Tone is written with marks when the layer has at least two marks, the marked tokens are min_words of all, and
     min_twins of the marked word types have a twin: a word with the same letters and other tone marks or none (ambá
     beside amba, Yoruba ọkọ̀ ọkọ́ ọkọ; a stress or spelling accent seldom makes one: French 12%), and no letter carries
-    more than max_top of the marks (tone falls on every vowel; French accents 79% on e); with digits when
+    more than max_top of the marks (tone falls on every vowel; French accents 79% on e). An orthography that marks one
+    tone only (the high tone with an acute, as many Bantu languages do: Zinza Múungu) has a layer of one mark: it is tone
+    when that mark stands twice in a word in at least min_double of the marked words (a stress accent stands once at most:
+    Spanish, Italian, modern Greek), on min_words of all; the unmarked vowels then have the other tone (absent neutral).
+    With digits when
     min_digits of the tokens end a syllable in 1-9 (Jyutping si1); else none. The tone-bearing letters are those of
     which at least min_letter of the occurrences carry a tone mark (and 10 in all); a missing mark is "neutral" (a tone
     of its own: Yoruba's and Vietnamese's level tone, Pinyin's neutral) when most of those letters carry one, else
@@ -125,7 +129,13 @@ def detect_tone(tokens, min_mark=0.002, min_words=0.03, min_twins=0.15, max_top=
             if any(m in layer for m in cl[1:]):
                 on[cl[0]] += n
     fig["top_letter"] = round(max(on.values()) / sum(on.values()), 3) if on else 0
-    if len(layer) >= 2 and fig["marked_words"] >= min_words and fig["twins"] >= min_twins and fig["top_letter"] <= max_top:
+    if marked:
+        dbl = sum(n for w, n in tokens.items() if sum(c in layer for c in unicodedata.normalize("NFD", w)) >= 2)
+        fig["double"] = round(dbl / max(1, fig["marked_words"] * N), 3)
+    single = (len(layer) == 1 and fig["marked_words"] >= min_words and fig.get("double", 0) >= min_double
+              and fig["top_letter"] <= max_top)
+    if single or (len(layer) >= 2 and fig["marked_words"] >= min_words and fig["twins"] >= min_twins
+                  and fig["top_letter"] <= max_top):
         occ, tone_occ = collections.Counter(), collections.Counter()
         for w, n in tokens.items():
             for cl in clusters(w.lower()):
@@ -135,10 +145,11 @@ def detect_tone(tokens, min_mark=0.002, min_words=0.03, min_twins=0.15, max_top=
         units = sum(occ[c] for c in vowels)
         fig["marked_units"] = round(sum(tone_occ[c] for c in vowels) / units, 3) if units else 0
         return ({"written": "marks", "marks": U(layer), "vowels": "".join(vowels),
-                 "absent": "neutral" if fig["marked_units"] >= neutral else "unknown"}, fig)
+                 "absent": "neutral" if single or fig["marked_units"] >= neutral else "unknown"}, fig)
     if fig["digit_syllables"] >= min_digits:
         return {"written": "digits", "absent": "unknown"}, fig
-    fig["why_none"] = ("fewer than two frequent tone marks" if len(layer) < 2 else
+    fig["why_none"] = ("no frequent tone mark" if not layer else
+                       f"one mark, never twice in a word ({fig.get('double', 0):.1%}): a stress accent" if len(layer) == 1 else
                        f"marked words {fig['marked_words']:.1%} < {min_words:.0%}" if fig["marked_words"] < min_words else
                        f"twins {fig['twins']:.0%} < {min_twins:.0%}: the marks don't tell words apart"
                        if fig["twins"] < min_twins else
