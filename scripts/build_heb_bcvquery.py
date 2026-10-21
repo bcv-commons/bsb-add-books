@@ -2,7 +2,7 @@
 """Build orig/heb/<code>NNN.txt from bcv-query's Hebrew clause layout (MACULA Hebrew + UHB; no NC data).
 
 Input: a bcv-query release, or a delivery folder: any folder holding <BOOK>_<CCC>.jsonl files, one
-row per clause segment (docs/proposals/hebrew-clause-layout/schema/clause_segment.schema.json),
+row per clause segment (the dataset card of bcv-commons/hebrew-clause-layout on Hugging Face),
 anywhere below it. A build.json next to them gives the segmentation version.
 
 Output, one file per chapter, in the same format as the BHSA and MACULA routes:

@@ -1096,7 +1096,7 @@ def tools_step(pname, fam):
     say(f"  {on(fam == 'unknown')}  held-out test book and the learn-language skill (a test chapter before drafting)")
     say(f"  {on(m['quotation_rule'])}  quotation rule and quarantine ({m['licence']} edition)")
     est = usage.estimate(fam)
-    say("  Each chapter runs one fresh agent in Claude Code: " + (f"about {est[0] // 1000}k tokens a chapter so far in this mode "
+    say("  Each book is drafted by one agent in Claude Code, chapter after chapter (a new one takes over at a handoff): " + (f"about {est[0] // 1000}k tokens a chapter so far in this mode "
         f"({est[1]} chapters logged)." if est else "no chapters logged in this mode yet (scripts/usage.py)."))
     sd = training_offer(fam)
     if sd is not None and not DRY:

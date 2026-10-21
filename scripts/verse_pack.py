@@ -3,7 +3,7 @@
 
 For export/<project>/_learn/packs/<code>NNN.md, per verse:
   - the original's clause lines and the assisting translation (BSB/MSB) verse;
-  - store hits from export/<project>/profile/ (docs/proposals/language-profile/): terms whose rendering
+  - store hits from export/<project>/profile/ (docs/language-store.md): terms whose rendering
     the alignment lexicon links to a word of the verse (or whose gloss is in it), formulas whose source
     phrase occurs in the verse, names, and the gaps recorded for this verse;
   - for every content word of the assisting verse, the lexicon's renderings with counts

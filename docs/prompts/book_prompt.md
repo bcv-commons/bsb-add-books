@@ -1,6 +1,6 @@
 # Book prompt template
 
-`scripts/make_prompt.py <project> <code> --book [<first>-<last>]` fills in the `{…}` fields and prints the prompt
+`scripts/make_prompt.py <project> <code> --book [<first>-<last>] [--handoff N]` fills in the `{…}` fields and prints the prompt
 for one book agent: it drafts the book's chapters one after another (docs/workflow.md, *The book agent*), each with
 the chapter prompt it prints itself, and hands over to a fresh agent after `{handoff}` chapters. Edit this template to
 change the loop for all projects. Everything below the line is the prompt.

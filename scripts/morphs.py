@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """The morph view of a project's words: each word token as prefix, stem, grammatical tone, suffix, in that order,
-from the language store (scripts/grammar.py: the morph entries; docs/proposals/language-profile/, *Kinds*).
+from the language store (scripts/grammar.py: the morph entries; docs/language-store.md, *Kinds*).
 
 Words have three views, aligned token by token (scripts/langtools.py, Tokeniser): the plain tokens (the marks in
 `orthography.ignore_marks` removed: for finding, aligning and counting, where a word's tonal variants are one form), the

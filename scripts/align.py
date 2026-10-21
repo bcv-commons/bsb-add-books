@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Word alignment of a project's style corpus, for the drafting agents' lexicons (docs/proposals/language-toolkit/).
+"""Word alignment of a project's style corpus, for the drafting agents' lexicons (docs/onboarding.md).
 
 Sides (source -> target-language words):
   eng  the assisting translation (BSB / MSB), every book of the corpus
@@ -221,7 +221,7 @@ def main():
             model = "eflomal"
         except ImportError:
             if model == "eflomal":
-                raise SystemExit("eflomal is not installed (docs/proposals/language-toolkit/README.md: External tools)")
+                raise SystemExit("eflomal is not installed (docs/onboarding.md: External tools)")
             model = "ibm2"
     if "--out" in a:
         P.learn = os.path.abspath(a[a.index("--out") + 1])

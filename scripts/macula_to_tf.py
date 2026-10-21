@@ -3,7 +3,7 @@ into a Text-Fabric dataset, loadable by Text-Fabric and Context-Fabric. No BHSA 
 
 Inputs:
 - a clause-layout delivery: <dir>/clauses/<BOOK>_<CCC>.jsonl and <dir>/build.json
-  (bcv-query's format, docs/proposals/hebrew-clause-layout/);
+  (bcv-query's format, bcv-commons/hebrew-clause-layout on Hugging Face);
 - the MACULA word data for the same chapters from the shoresh /scaffold API, cached in
   download/scaffold/<BOOK>/<chapter>.json (scripts/fetch_heb_macula.py fetches them).
 

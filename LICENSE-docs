@@ -3,10 +3,6 @@ repository (README.md, docs/, import/_template/, export/_template/) are
 dedicated to the public domain under CC0 1.0 Universal:
 https://creativecommons.org/publicdomain/zero/1.0/
 
-Exceptions: the example data in docs/proposals/hebrew-clause-layout/examples/
-is derived from MACULA Hebrew (CC BY 4.0) and the unfoldingWord Hebrew Bible
-(CC BY-SA 4.0) and keeps those licences.
-
 The drafts in export/ are dedicated to the public domain under CC0 1.0 as well
 (export/README.md).
 

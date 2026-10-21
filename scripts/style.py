@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Measure a draft against the style of the human translations in the target language, and show what to
-change (docs/proposals/language-toolkit/). Nothing here knows a language: every figure comes from the corpus.
+change (docs/onboarding.md). Nothing here knows a language: every figure comes from the corpus.
 
 How a draft is judged:
   - Expected values. Each draft verse is compared with the 30 corpus verses whose assisting text (BSB) is

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Clause-line versions of a project's prose drafts: the same text, laid out one line per Hebrew clause line, for the
-website's clause views (docs/proposals/clause-overlay/, authoring format).
+website's clause views (docs/clause-sidecar.md, authoring format).
 
 They are never stored: scripts/build_site.py derives them at build time from each OT draft and its word alignment
 (<code>NNN.align, scripts/full_align.py) with scripts/bridge_align.py's clauses(), on the two layouts:

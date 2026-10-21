@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """A project's grammar from its language store: the morph, cell and claim entries of profile/observations.json
-(docs/proposals/language-profile/, *Kinds*), for the tools that segment, analyse and check (a segmenter, the verse
+(docs/language-store.md, *Kinds*), for the tools that segment, analyse and check (a segmenter, the verse
 analysis, the draft check).
 
 As a library:
@@ -15,8 +15,8 @@ Commands:
   plan <project|dir>                      what to settle next: the Grambank features a recipe can decide that the store
                                           lacks (by relevance; those the store's own morphs answer marked `run`), open
                                           and thin cells, open claims, open morphs: the curation agent's list
-  run <project|dir> [GBnnn ...] [--write] the Grambank features the store's morphs answer (docs/proposals/
-                                          language-profile/grambank_recipes.tsv, from_store: yes): a morph tagged with
+  run <project|dir> [GBnnn ...] [--write] the Grambank features the store's morphs answer (docs/
+                                          language-store/grambank_recipes.tsv, from_store: yes): a morph tagged with
                                           the code, or for NEG, FUT, mood, tense and object morphs the tag; a feature
                                           entry gb:GBnnn (value 1, evidence the morphs' verses), never a 0 (no evidence
                                           is no entry). Prints them; --write puts them into observations.json (its own
@@ -184,7 +184,7 @@ def from_tsv(src, dst, by, date):
 
 
 # --- status, plan, run ----------------------------------------------------------------------------------------------
-RECIPES = os.path.join(ROOT, "docs", "proposals", "language-profile", "grambank_recipes.tsv")
+RECIPES = os.path.join(ROOT, "docs", "language-store", "grambank_recipes.tsv")
 GB_DIR = os.path.join(ROOT, "download", "grambank", "v1.0.3")       # python3 scripts/setup.py --only grambank
 RELEVANCE = {"high": 0, "medium": 1, "low": 2}
 TAM = {"NEG", "IRR", "REAL", "OPT", "HORT", "JUSS", "FUT", "PST", "PRS", "PRF", "IPFV", "PFV", "IMP", "SBJV", "COND", "PROH"}

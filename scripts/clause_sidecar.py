@@ -1,4 +1,4 @@
-"""Build the clause-overlay files for one chapter draft (see docs/proposals/clause-overlay/).
+"""Build the clause-overlay files for one chapter draft (see docs/clause-sidecar.md).
 
 Input: a draft in clause-line form ('//N vK text', '//N =' for a merged segment)
 or in overlay form (prose with inline '|N' / '|=' markers before each segment),

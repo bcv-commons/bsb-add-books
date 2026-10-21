@@ -6,7 +6,7 @@ reference/MSB/
 orig/
 
 # The clause-overlay examples carry BHSA levels (CC BY-NC 4.0): never published
-docs/proposals/clause-overlay/examples/
+docs/clause-sidecar/examples/
 
 # Imported editions are filed by licence (import/README.md): CC0/, CC-BY/ and CC-BY-SA/ are kept; non-free/, CC-ND/
 # and CC-NC/ keep only their descriptions; any other folder stays out until it is added here.

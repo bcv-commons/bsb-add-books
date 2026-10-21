@@ -182,6 +182,9 @@ def install_src(force):
 
 def main():
     argv = sys.argv[1:]
+    if "-h" in argv or "--help" in argv:
+        print(__doc__)
+        return
     force = "--force" in argv
     hebs = argv[argv.index("--heb") + 1].split(",") if "--heb" in argv else []
     drafting = argv[argv.index("--drafting") + 1] if "--drafting" in argv else None

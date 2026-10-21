@@ -5,51 +5,36 @@ description: Import an existing Bible translation into import/<licence>/<languag
 
 # Import an existing edition
 
-Fields are explained in `docs/configuration.md`; the template has comments.
+Folders and rules: `import/README.md`; fields: `docs/configuration.md` and the template's comments. For a new
+language, `python3 scripts/onboard.py` imports and fetches the editions it finds (and creates the project).
 
 1. **Ask first:**
-   - name, language code, and its role: `style` (corpus only), `continue` (new drafts continue
-     it) or `revise`;
-   - where it comes from and under what licence. This picks the folder (`import/README.md`):
-     `CC0/` (public domain or CC0), `CC-BY/` (CC BY), `CC-BY-SA/` (CC BY-SA), both with their
-     `attribution`, or `non-free/` (any other licence, open or not, for now; its texts git-ignored, `edition.yaml` in git, so keep it free of private details). If
-     unclear, use `non-free/` and write `private use only`. Don't put an edition in an open
-     folder without checking its licence statement, and
-     ask the user before adding one that isn't public domain to git;
-   - which Greek text its NT follows (`nt_basis`: `critical`, `majority`, `tr`). If unsure,
-     look at a few test verses (e.g. Mt 17:21, Acts 8:37, 1 Jn 5:7) and propose a value;
-   - whether any of its books are to be translated independently (quarantine).
-   - if the user names a language but no file: `python3 scripts/fetch_edition.py --find <iso>`
-     lists the editions of bcv-commons/bibles (helloAO, openbible; DBT and PKF are listed but
-     need a key or a decoder) and eBible, with their licences. Propose one; CrossWire and
-     single GitHub sources are checked by hand.
-2. **Create it:** copy `import/_template/` to `import/<licence>/<language>/<edition>/`, where
-   `<language>` is the ISO 639-3 code (`dan`), or for a dialect an interim id agreed with the
-   user (the scheme is still open; `import/README.md`), (the edition id
-   must not exist in another licence folder), put the files in `text/`
-   (or the folder named in `text_dir`), and fill in `edition.yaml`. Name the files with the
-   BSB book codes where possible (`books.tsv`), so prompts can point to the right book.
-   - **To fetch it** instead of copying files: add a `fetch:` block (see the template) and run
-     `python3 scripts/fetch_edition.py <edition>`. It checks the source's licence against the
-     folder, writes `text/` (git-ignored) and `fetch.lock.json` (in git). If the licence can't be
-     read from the source, check it yourself and pass `--licence-checked`. If a later fetch
-     reports that the source changed, show the user before passing `--update`.
-   - **A text with one source of its own** (e.g. a GitHub repository): write a
-     `sync_from_upstream.py` in the edition folder, on the model of
-     `import/CC0/dan/den-frie-bibel/`: the files git-ignored, copied
-     from the commit pinned in the edition (`--latest` or `--commit` moves the pin), `--check` to only
-     report, and the commit and coverage or checksums recorded in the edition's `README.md`; set
-     `get_text` to the command.
-   - **A text that can be fetched from a URL is never in git**, also in `CC0/` and `CC-BY/`: the edition's
-     `.gitignore` keeps `text/` out. Only a text copied in by hand, with no source to fetch it from, is
-     kept in git (open folders only).
-   - For a new language, `python3 scripts/onboard.py` does the fetching (and creates the project).
-3. **Quarantine:** a non-free edition's books can be drafted only in quarantine
-   (`python3 scripts/quarantine.py <project> <code>`, which moves the files and lists the book;
-   `make_prompt.py` enforces it). Keep comparison reports that quote it out of the agents' reach
-   (`do_not_open:` in the project).
-4. **Check:** `python3 scripts/project.py <project>` for a project that uses it shows the
-   edition in `style_from` and the inherited `nt_basis` and quarantine.
+   - name, language code, and its `role`: `style` (corpus only), `continue` (new drafts continue it) or `revise`;
+   - source and licence, which pick the folder: `CC0/` (public domain, CC0), `CC-BY/`, `CC-BY-SA/` (with
+     `attribution`), `CC-ND/` (any CC licence with ND), `CC-NC/` (NC without ND), else `non-free/` (also when unclear,
+     with `licence: private use only`). Only `edition.yaml` of the last three is in git: keep it free of private
+     details. Check the licence statement before using an open folder; every quoted edition gets a `credit` line;
+   - which Greek text its NT follows (`nt_basis`: `critical`, `majority`, `tr`); if unsure, look at test verses
+     (Mt 17:21, Acts 8:37, 1 Jn 5:7) and propose a value;
+   - whether any of its books are to be translated independently (quarantine);
+   - a language but no file: `python3 scripts/fetch_edition.py --find <iso>` lists the editions of
+     bcv-commons/bibles (helloAO, openbible; DBT with the user's `DBT_API_KEY`) and eBible, with licences. Propose
+     one; CrossWire and single GitHub sources are checked by hand.
+2. **Create it:** copy `import/_template/` to `import/<licence>/<language>/<edition>/` (`<language>`: the ISO 639-3
+   code, `dan`, or for a dialect an interim id agreed with the user; the edition id must be unique across the
+   folders), put the files in `text/` (or `text_dir`) with BSB book codes as names where possible (`books.tsv`), and
+   fill in `edition.yaml`.
+   - **Fetched:** a `fetch:` block (see the template), then `python3 scripts/fetch_edition.py <edition>`. It checks
+     the licence against the folder and writes `text/` (git-ignored) and `fetch.lock.json` (in git). If the licence
+     can't be read from the source, check it yourself and pass `--licence-checked`; if a later fetch reports a
+     changed source, show the user before passing `--update`.
+   - **Synced from its own source** (e.g. a GitHub repository): a `sync_from_upstream.py` in the edition folder,
+     modelled on `import/CC0/dan/den-frie-bibel/` (pinned commit, files git-ignored); set `get_text` to the command.
+   - A text that can be fetched or synced is never in git; only one copied in by hand is (open folders only).
+3. **Quarantine:** a book that a non-free edition (also `CC-ND/`, `CC-NC/`) has is drafted only in quarantine
+   (`python3 scripts/quarantine.py <project> <code>`; `make_prompt.py` enforces it). Keep reports that quote the
+   edition out of the agents' reach (`do_not_open:` in the project).
+4. **Check:** `python3 scripts/project.py <project>` for a project that uses it shows the edition in `style_from`
+   and the inherited `nt_basis` and quarantine.
 
-Editions in `import/CC0/`, `import/CC-BY/` and `import/CC-BY-SA/` are published with the repository, so their
-licence must allow it; `import/non-free/` stays local. Don't commit; the user commits.
+Ask the user before adding an edition that isn't public domain to git. Don't commit; the user commits.

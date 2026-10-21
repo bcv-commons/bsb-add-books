@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check (and later seed) a language profile: docs/proposals/language-profile/.
+"""Check (and later seed) a language profile: docs/language-store.md.
 
 A profile folder holds observations.json, decisions.json and external.json for one language and
 edition. `check` validates them against the contract without any library:

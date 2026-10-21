@@ -1,4 +1,4 @@
-"""Shared pieces of the language toolkit (docs/proposals/language-toolkit/): a project's style corpus
+"""Shared pieces of the language toolkit (docs/onboarding.md): a project's style corpus
 paired with the assisting translation, the target-language tokeniser, chrF.
 
 Nothing here knows a language. The tokeniser is configured in project.yaml:

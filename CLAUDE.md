@@ -38,7 +38,7 @@ working; this file adds the rules that hold for any task here.
   tr`) in `edition.yaml`; a project inherits it through `based_on`.
 - **Clause lines are guidance, not a law:** a draft may keep a natural word order and render
   two Hebrew clauses in one line. Merging lines is a display choice; the data only records
-  which words render which Hebrew clause (`docs/proposals/clause-overlay/`).
+  which words render which Hebrew clause (`docs/clause-sidecar.md`).
 - **No source texts in git.** Sources come from `scripts/setup.py` at pinned versions.
 - **Imported editions are filed by licence:** `import/CC0/`, `import/CC-BY/`, `import/CC-BY-SA/` (in git) and
   `import/non-free/` (texts git-ignored, only `edition.yaml` and README in git; the default when the licence is unclear; also `import/CC-ND/` and `import/CC-NC/`, texts git-ignored likewise), then by language:
@@ -138,7 +138,7 @@ python3 scripts/nllb/train.py --data DIR             # train here (CUDA, Apple G
 python3 scripts/nllb/draft.py src|run|collect ...    # second drafts into _eval/local/second/nllb/ (triage), or a rough pass with --out
 python3 scripts/nllb/model_text.py <project> check | show <text> # the model's target in parts (analysis.model_text morphs), decoded back exactly
 python3 scripts/style.py <project> <draft> [--brief]  # style against the human translations: flags, watch items, models
-python3 scripts/language_profile.py check <dir>      # validate a language profile (docs/proposals/language-profile/)
+python3 scripts/language_profile.py check <dir>      # validate a language profile (docs/language-store.md)
 python3 scripts/grammar.py show <project> [morph|cell|claim] | status|plan <project> | run <project> [--write] | from-tsv <tsv dir> <profile dir> # the store's grammar: morphs, cells, claims; what to settle next; the Grambank features its morphs answer
 python3 scripts/wiki.py sync|lint <project>          # a project's language wiki: pages + generated store blocks
 python3 scripts/wiki.py view <project>               # one offline HTML file to read the wiki and search the store
@@ -165,5 +165,5 @@ python3 scripts/grammar.py retest <project> [--run]  # tests whose store setting
 python3 scripts/macula_to_tf.py <delivery dir>       # draft Text-Fabric dataset (needs text-fabric)
 ```
 
-Sources, versions and licences: `docs/sources.md`. Config fields: `docs/configuration.md`.
-Proposals for bcv-commons: `docs/proposals/`.
+Sources, versions and licences: `docs/sources.md`. Config fields: `docs/configuration.md`. The language store's
+format: `docs/language-store.md`; the clause sidecars': `docs/clause-sidecar.md`.

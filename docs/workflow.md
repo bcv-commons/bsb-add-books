@@ -1,139 +1,95 @@
 # Workflow
 
-The way of working here, as the demo projects were drafted (Genesis, Joshua and Daniel in Danish; Genesis 1 in
-Jamaican).
-
 ## Principles
 
-- **Translate from the original.** The Hebrew/Aramaic (`orig/heb`) or Greek
-  (`orig/grc`, `orig/grc-rp`) is the text being translated.
-- **One assisting translation only:** the BSB, or the MSB for a majority-text NT.
-  It is a guide to the original, never the text being translated. When the
-  original allows more than one reading, follow its interpretation.
-- **Existing translations are style, not source.** Imported editions give
-  vocabulary, idiom and spelling. Check word choices with frequency counts over
-  the corpus. Where the corpus quotes the chapter (e.g. an NT quote of an OT
-  verse), take over its wording.
-- **The finished chapters ARE the style.** Every new chapter must read like a
-  continuation by the same translator: same tenses, particles, formulas, name
-  forms. Repeated phrases are reused verbatim.
-- **Clean text, separate notes.** The draft has no inline notes. Translator
-  notes go to `_notes.md` (in the notes language), reader footnotes to
-  `_footnotes.txt` (in the target language, one per line as `vN Keyword: text`).
+- **Translate from the original:** `orig/heb` (Hebrew/Aramaic), `orig/grc` or `orig/grc-rp` (Greek).
+- **One assisting translation:** the BSB, or the MSB for a majority-text NT. It guides to the original and is never
+  the text translated. Where the original allows more than one reading, follow the BSB's.
+- **Editions are style, not source:** vocabulary, idiom, spelling, checked by frequency counts over the corpus. Where
+  the corpus quotes the chapter (an NT quote of an OT verse), take over its wording.
+- **The finished chapters are the style:** same tenses, particles, formulas and name forms; repeated phrases verbatim.
+- **Clean text, separate notes:** translator notes in `_notes.md` (notes language), reader footnotes in
+  `_footnotes.txt` (target language, one per line: `vN Keyword: text`).
 
 ## Per project
 
-1. Write a short `style_guide.md` first: divine names, quote style, numbers,
-   poetry, spelling rules for names, and a table of fixed renderings.
-2. Draft one reference chapter, review it with the user, and adjust the guide.
-3. Draft the rest **one chapter after another**, by **one book agent** per book, in every mode: `python3 scripts/make_prompt.py <project>
-   <code> --book` prints its prompt (`docs/prompts/book_prompt.md`). The agent keeps the story, the characters and its
-   own recent choices in view, and for each chapter
-   - builds the chapter's verse pack and (OT) clause packages just in time, after the previous chapter's store
-     entries, so what one chapter learns reaches the next (`make_prompt.py` refuses a pack older than the store);
-   - drafts it with the chapter prompt (`make_prompt.py <project> <code> <chapter>`), its contract;
-   - runs `python3 scripts/chapter_check.py <project> <code> <chapter>`: the format, alignment and quotation checks it
-     must fix, and the lost negations, names that differ from the earlier chapters and (Hebrew) the copy check, which
-     it reviews, keeping one only with a line in the notes;
-   - writes the store entries and the book's **state file** (`<code>/<code>_state.md`): name forms, fixed formulas,
-     register decisions, open threads, the last verse, open questions.
+1. Write a short `style_guide.md`: divine names, quote style, numbers, poetry, name spelling, fixed renderings.
+2. Draft one reference chapter, review it with the user, adjust the guide.
+3. Draft the rest with one book agent per book (below).
+4. A team's decision goes into the store or `style_guide.md` and binds from the next chapter.
+5. After a handover or a book, a **consistency pass**: `python3 scripts/check_project.py <project>`; count key terms
+   chapter by chapter; fix only **mechanical** differences yourself (identical original, different drafts) and note
+   each in the chapter's notes; put every **real choice** in `review_overview.md` (topic · passages · draft ·
+   alternative, open questions below) for the user to decide.
 
-   **Handover:** after ten chapters (`--handoff N`), or earlier when its conversation grows long, the agent stops after
-   a finished chapter, and a fresh one continues from the state file, the store and the last chapter
-   (`make_prompt.py <project> <code> --book` starts at the first chapter not drafted). No waves: a wave builds its
-   packs in advance and misses what its own chapters learn, and its chapters can't see each other's choices.
-4. Watch each report; a team's decision enters the store or `style_guide.md` and binds from the next chapter on.
-5. After a run of chapters (a handover, a book), a **consistency pass**:
-   - `python3 scripts/check_project.py <project>`: drafts, store, wiki, quotations, status;
-   - count key terms across all chapters (one regex per term, chapter by chapter);
-   - make only **mechanical** fixes yourself: where the original is identical
-     and only the drafts differ. Note each fix in the chapter's notes.
-   - every **real choice** goes into `review_overview.md` as a table
-     (topic · passages · draft · alternative), with the chapters' open
-     questions collected below it. The user decides; decided items are binding
-     for the chapters after.
-6. Update `style_guide.md` with each decision.
+## The book agent
+
+One agent per book drafts its chapters in order, in every mode. `python3 scripts/make_prompt.py <project> <code>
+--book [a-b] [--handoff N]` prints its prompt (`docs/prompts/book_prompt.md`). Per chapter the agent:
+
+- builds the verse pack and (OT) clause packages just before drafting, so the last chapter's store entries reach them
+  (`make_prompt.py` refuses a pack older than the store);
+- drafts with the chapter prompt (`make_prompt.py <project> <code> <chapter>`);
+- runs `python3 scripts/chapter_check.py <project> <code> <chapter>`: it fixes the format, alignment and quotation
+  findings, and reviews the rest (negations, names, …), keeping one only with a line in the notes;
+- writes the store entries and the state file `<code>/<code>_state.md` (name forms, formulas, register, open threads,
+  last verse, open questions).
+
+**Handover:** after `--handoff` chapters (default 10), or earlier if the conversation grows long, the agent stops after
+a finished chapter. A fresh agent continues from the state file, the store and the last chapter; `--book` without a
+range starts at the first chapter not drafted.
 
 ## Quarantine
 
-To translate a book independently of an existing translation of the same book
-in the target language. **Required** when that edition is non-free: our drafts are public domain and
-must not be built on its text. A public-domain edition may be used as it is; an attributable one
-(CC BY, CC BY-SA) is the project's choice (`quarantine_attributable: true` to require it).
+Quarantine keeps an edition's text of a book away from the agents, so our draft of it is independent. It is
+**required** for a non-free edition, never needed for a public-domain one, and for CC BY / BY-SA only with
+`quarantine_attributable: true`.
 
-- `python3 scripts/quarantine.py <project> <code>` moves the book's files from
-  `import/<licence>/<language>/<edition>/text/` to `<edition>/quarantined/<code>/` and lists the book
-  under `quarantine:` in `project.yaml` (`--release` undoes both). `make_prompt.py` refuses to write a
-  prompt for a book a non-free edition has until this is done, and the prompt keeps the agents out of
-  `quarantined/` and the edition's `source/`. Re-run `scripts/align.py` for a project with lexicons;
-- use **fresh** agents (not forks of a conversation that has seen the text);
-- keep comparison reports and notes that quote the quarantined book out of the
-  agents' reach (`do_not_open:` in `project.yaml`).
-
-Afterwards the overlap can be measured verse by verse against the returned
-book (exact matches, matches ignoring punctuation, mean similarity).
+- `python3 scripts/quarantine.py <project> <code>` moves the book from the edition's `text/` to
+  `quarantined/<code>/` and lists it under `quarantine:` in `project.yaml`; `--release` undoes both; `--chapter N`
+  says whether chapter N needs it (one the edition lacks doesn't); `--all-editions` includes public-domain editions.
+- `make_prompt.py` refuses until it is done; the prompt keeps agents out of `quarantined/` and `source/`.
+- Re-run `scripts/align.py` if the project has lexicons. Use **fresh** agents, not forks. Put reports that quote the
+  book in `do_not_open:`.
 
 ## Draft status
 
-Every chapter is a **draft** until a team publishes it. Drafts can be online from the first day, always
-marked as drafts; publishing is the team's act, recorded with a date and a statement.
+Every chapter is a **draft** until a team publishes it. Drafts may be online, always marked as drafts.
 
-- `status.yaml` in the project lists the chapters that are not plain drafts; `STATUS.md` (generated) shows
-  every chapter's status and the draft statement, and is what readers of the repository and of a site see.
-- `python3 scripts/status.py <project> set <code>[:ch[-ch]] in-review --by NAME [--note TEXT]` when a team
-  starts on a chapter; `set … draft` takes it back.
-- `python3 scripts/status.py <project> publish <code>[:ch[-ch]] --by NAME [--statement TEXT]` records the
-  status `published`, the date, who approved it, the publishing statement (project `publish_statement`,
-  with `{by}` and `{date}`) and the file's SHA-256.
-- `python3 scripts/status.py <project> check` reports a published chapter whose file changed since; publish
-  it again (a new date) or set it back to `in-review`.
-- The texts themselves are not changed by publishing: the status lives beside them, so a draft and its
-  published form are the same file.
+- `status.yaml` lists the chapters that are not plain drafts; `STATUS.md` (generated) shows all, with the draft
+  statement.
+- `python3 scripts/status.py <project> set <code>[:ch[-ch]] in-review|draft [--by NAME] [--note TEXT]`.
+- `python3 scripts/status.py <project> publish <code>[:ch[-ch]] --by NAME [--statement TEXT] [--date YYYY-MM-DD]`
+  records the date, the approver, the statement (`publish_statement`) and the file's SHA-256.
+- `python3 scripts/status.py <project> check` reports a published chapter changed since; publish it again or set it
+  back to `in-review`. Publishing never changes the text.
 
 ## When an edition already has the book
 
-Our drafts and an existing edition of the same book (or chapter) live side by side in one of four ways;
-`STATUS.md` shows which, per book ("Existing edition").
+`STATUS.md` shows per book which case applies ("Existing edition"):
 
 | Case | Example | Our chapters | The existing edition |
 |---|---|---|---|
-| **continue** | Danish Genesis 20–50 after Den Frie Bibel's 1–19, 28 | drafts in `<code>/` | shown; ours fill its gaps |
-| **test** | a book a language team has translated, held out of the corpus | `_eval/` only, never drafts | stands; the team's translation supersedes ours |
-| **independent** | an NT book beside a non-free edition that has it (Jamaican) | drafts in `<code>/`, published as drafts | non-free: stays in `import/non-free/`, not shown |
-| **alongside** | an open (CC0, CC BY, CC BY-SA) edition of a book we also draft | drafts in `<code>/` | shown next to ours, with its credit |
+| **continue** | Danish chapters Den Frie Bibel lacks | drafts in `<code>/` | shown; ours fill its gaps |
+| **test** | a team's book held out of the corpus | `_eval/` only (*Test drafts*) | stands; supersedes ours |
+| **independent** | an NT book a non-free edition has (Jamaican) | drafts, published as drafts | not shown |
+| **alongside** | a book an open edition also has (default) | drafts in `<code>/` | shown beside ours, credited |
 
-- **independent** needs the quarantine while drafting (*Quarantine* above), and evidence afterwards:
-  `STATUS.md` gives the share of our words in runs of 5+ words that stand word for word in the edition's
-  text of the book. Independent literal translations of the same source share about 20% (Danish Genesis
-  drafted in quarantine against Den Frie Bibel: 20%); over 40%, or more than 3 runs of 15+ words per 1000 words, is marked **check**
-  (`quotes.overlap`).
-- **test** chapters are written to measure the method on a book a language team has translated
-  (`learn-language`); they stay in `_eval/` with their reports and are listed under *Test drafts*.
-- **alongside** is the default for an open edition; with `quarantine_attributable: true` an
-  attributable one is treated like a non-free one.
+**Independent** needs quarantine, and evidence afterwards: `STATUS.md` gives the share of our words in 5+ word runs
+found word for word in the edition. Independent literal translations share about 20%; over 40%, or more than 3 runs
+of 15+ words per 1000 words, is marked **check** (`quotes.overlap`).
 
 ## Licences and quotations
 
-What we derive from an edition is ours and CC0; quotations from a non-free one are short, unchanged,
-from the published text and credited (`docs/licensing.md`); public-domain and CC BY / BY-SA editions are
-credited (`CREDITS.md`, `python3 scripts/quotes.py <project> --credits`).
-
-The agents keep to this as they write, not afterwards:
-- every chapter prompt carries the quotation rule (`make_prompt.py`, from `quotes.rule_text`); a prompt for
-  any other agent (curation, revision, wiki work) includes `python3 scripts/quotes.py <project> --rule`;
-- the tools enforce it where agents write: the store validator (`language_profile.py check --project`)
-  rejects evidence forms over 4 words and quotations over 15 words, from the working copy or without
-  the edition's marks; `wiki.py lint` checks the wiki; `quotes.py <files>` an agent's notes;
-- `python3 scripts/check_project.py <project>` is the double check after a run of chapters and before a
-  commit (`.githooks/pre-commit`, enabled with `git config core.hooksPath .githooks`). When it finds
-  something, fix the cause (prompt, rule, tool) as well as the file.
+The rules are in `docs/licensing.md`. Agents comply as they write: chapter prompts carry the quotation rule, other
+agents' prompts include `python3 scripts/quotes.py <project> --rule`, and the store validator (`language_profile.py
+check --project`), `wiki.py lint` and `quotes.py <project> FILE ...` check what they write.
+`python3 scripts/check_project.py <project>` is the double check before a commit (`.githooks/pre-commit`; `git config
+core.hooksPath .githooks`); when it finds something, fix the cause (prompt, rule, tool) as well as the file.
 
 ## Practical notes
 
-- Hebrew verse numbering differs from the BSB in places; always count verses
-  from `orig/heb`. Mention the BSB numbering in a footnote where a verse moves to
-  another chapter. `make_prompt.py` lists the shifted verses and the BSB chapters
-  to consult, from `orig/vrs/` (`python3 scripts/vrs.py <code> <chapter>`).
-- If an agent stops on a rate limit, resume the same agent rather than starting a new one.
-- Run `scripts/wrap_draft.py` on every draft (100 characters, keeps `vN`
-  attached to its word, leaves `//` poetry lines alone).
+- Count verses from `orig/heb` (Hebrew numbering); footnote the BSB numbering where a verse moves chapter.
+  `make_prompt.py` lists the shifts (`python3 scripts/vrs.py <code> <chapter>`).
+- If an agent stops on a rate limit, resume the same agent.
+- Run `scripts/wrap_draft.py` on every draft (100 characters; keeps `vN` with its word; leaves `//` lines alone).

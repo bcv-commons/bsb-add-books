@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Score a draft chapter against a human translation of the same chapter (docs/proposals/language-toolkit/).
+"""Score a draft chapter against a human translation of the same chapter (docs/onboarding.md).
 
 For evaluation only: the reference must be kept from the drafting agents (a held-out book). chrF
 (character n-grams 1-6, beta 2) over the chapter, on the project tokeniser's plain text (lower case,

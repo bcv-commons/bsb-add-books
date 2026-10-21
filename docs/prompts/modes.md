@@ -2,8 +2,8 @@
 
 `scripts/make_prompt.py` adds the bundle for the project's `familiarity` (`scripts/modes.py`,
 `docs/onboarding.md`) to every chapter prompt, before the project's own `rules`. A rule tagged `[store]`,
-`[wiki]`, `[pack]` or `[lexicon]` is added only when the project has that tool. Placeholders: `{project}`,
-`{label}` (the language), `{lang}` (its code, the concord command), `{corpus}` (the style editions),
+`[wiki]`, `[pack]` or `[lexicon]` is added only when the project has that tool. Placeholders: `{project}`, `{project_dir}`,
+`{label}` (the language), `{lang}` (its code, the concord command), `{corpus}` (the style editions), `{similar_verses}` (the pack's corpus verses),
 `{close_to}` (project `close_to`, for a variety of a standard language), `{school_language}` (project
 `school_language`: the team's working language). Language-specific rules (divine
 names, test drafts to avoid) stay in the project's `rules`.

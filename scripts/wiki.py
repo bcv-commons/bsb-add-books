@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """A project's language wiki: Markdown pages that agents and people both read and edit, next to the store.
 
-The store (export/<project>/profile/*.json, docs/proposals/language-profile/) holds the checked facts; the
+The store (export/<project>/profile/*.json, docs/language-store.md) holds the checked facts; the
 wiki (export/<project>/wiki/) holds the explanations: how a construction works, which models are best, what
 was tried and rejected, open questions. Each page has
 

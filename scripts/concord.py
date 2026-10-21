@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """The drafting agents' learning tool for a project's language: the style corpus side by side with the
-assisting translation (docs/proposals/language-toolkit/). Every command prints references with both texts.
+assisting translation (docs/onboarding.md). Every command prints references with both texts.
 
   python3 scripts/concord.py <project> eng "<regex>" [N]   verses whose assisting text (BSB) matches
   python3 scripts/concord.py <project> tgt "<regex>" [N]   verses whose target text matches (the ignored

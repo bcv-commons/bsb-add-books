@@ -5,71 +5,55 @@ description: Prepare a project for a target language the model doesn't know (lit
 
 # Learn a language from its existing translation
 
-The plan and the reasons are in `docs/proposals/language-toolkit/README.md`; a finished project
-of another language in this working copy, if there is one, is the worked example. Fields: `docs/configuration.md`.
+The path and its reasons: `docs/onboarding.md`; the store's format: `docs/language-store.md`; fields:
+`docs/configuration.md`. A finished project of another language in this working copy, if there is one, is the
+worked example.
 
-1. **Ask first:**
-   - which edition is the corpus, its licence (this picks the import folder and whether lexicons, packs and
-     the wiki can ever be published), and whether it has OT books;
-   - whether a book with a human translation can be **held out** as a test (`python3 scripts/quarantine.py <project> <code>`, and keep its
-     files out of the corpus until the test series is done);
-   - who will review the drafts (the language team), and in which language the notes are written.
-2. **Import and set up:** `import-edition`, then `new-project` with `style_from` the edition. In
-   `project.yaml` add `tokenise:` (does the orthography write suffixes after a hyphen? characters such as
-   `꞉` that belong to words?) and the rules for an unknown language: no knowledge of the language assumed,
-   everything modelled on the corpus, the verse pack first, searches only for what the pack lacks, every
-   search ending in a store entry, the wiki, divine names, a notes file with the model verses.
-3. **Align:** `python3 scripts/align.py <project>` (eflomal if installed; see the toolkit's *External
-   tools* for macOS). Read `_learn/align_report.txt`: the glossary and name checks show how far to trust the
-   lexicons. lexeme-aligner may already have the language: compare, and cite its data as `external`.
-   `python3 scripts/lang.py layers <project> --write` finds a bcv-commons alignment layer built on exactly this text
-   (by its text fingerprint) and sets it as `lexeme_aligner`, so `lang.py build` adds its links.
-   Then the occurrence index and the derived products: the Greek structure
-   (`orig/grc.sqlite`, fetched by `python3 scripts/setup.py --only src`), `python3 scripts/lang.py build <project>` (every NT token linked to a MACULA Greek
-   token; `lang.py hbo <project> <lexeme>` shows how the NT renders any Hebrew word through the LXX) and
-   `python3 scripts/lang.py derive <project>` + `report <project>`: word order, function words, connectors, affix
-   hypotheses (endings against the Greek features), name letters, formulas, OT gaps. Give the report to the agent
-   of step 4 as its starting point: `python3 scripts/memory_prompt.py <project>` does that by default when the
-   occurrence index exists (`--no-derived` without it); the agent confirms or rejects each item against the corpus.
-4. **Seed the store and the wiki:** a first agent drafts one chapter and writes a grammar sketch; turn it
-   into `profile/observations.json` + `decisions.json` (`docs/proposals/language-profile/`, validate with
-   `python3 scripts/language_profile.py check export/<project>/profile --project <project>`) and seed the
-   wiki with `python3 scripts/wiki.py init <project> --from-notes FILE --map MAP.json`. For people who
-   want to read it (and add what they know), `python3 scripts/wiki.py view <project>` builds one offline HTML
-   file (pages, open questions, a searchable store); it is a copy, so edits go into the `.md` pages.
-   Check the writing system first: which tone marks and accents the corpus uses, written into every store value
-   exactly (`language_profile.py check` lists values with other marks). `python3 scripts/morphs.py <project> tone`
-   detects how the corpus writes tone (marks, digits or none; which marks, on which letters; with its figures) and
-   `--write` puts it into the store as `orthography.tone` (and `ignore_marks` if there are none yet); check it with
-   what the team or a grammar says, and keep a two-layer orthography's quality marks out of it. `orthography.ignore_marks`
-   only loosens the search tools. The team's own facts come in through `wiki/team-input.md` (`python3 scripts/team_input.py <project>
-   init`, then `prompt` for the curation agent); they are binding.
-   The store's grammar (morphs, paradigm cells, claims; `scripts/grammar.py`): `grammar.py run <project> --write`
-   adds the Grambank features its morphs answer (questions: `python3 scripts/setup.py --only grambank`), and
-   `grammar.py plan <project>` lists what to settle next: the features a recipe can decide, open and thin cells,
-   claims to test. Give it to the curation agent; it proposes, the corpus counts decide.
-   A language that stacks affixes (subject, tense, object before a verb stem: many Bantu languages): the agent writes
-   them as morph entries with `position` and `greek` (`docs/proposals/language-profile/`), and `python3
-   scripts/morphs.py <project> try --write` measures each one against the Greek (lift, odds ratio); the agent revises the
-   ones it rejects. Check that the corpus still rebuilds word for word: `python3 scripts/morphs.py <project> check`.
-   With morph entries the drafting agent sees words in parts: the verse pack lists the affixes and shows a rendering's
-   parts, `concord.py <project> parts|stem|morph` finds a word's parts, a stem's forms and an affix's words, and the
-   spelling check accepts a form built from known parts (listed apart). With affix chains, `chapter_check.py` reviews
-   each Hebrew verb whose word lacks the part for its subject, object, negation or mood, for the features the human NT
-   marks on most such verbs (`python3 scripts/morphs.py <project> rates` shows which).
-5. **Draft with packs:** for each chapter `python3 scripts/verse_pack.py <project> <code> <ch>`, then the
-   `draft-chapter` skill (fresh agent per chapter; the pack and `wiki/index.md` in `style_guides`).
-6. **Test** (if a book is held out): score each chapter with `python3 scripts/score.py <project> <draft>
-   --reference <held-out file>` and compare with the floors (retrieval, word by word); record tool calls,
-   searches, time and tokens per chapter. `python3 scripts/style.py <project> <draft>` measures the style
-   against the human translations (no held-out book needed); `style_check: true` has the drafting agent run it. Write a report per chapter in `_eval/`.
-7. **Lift the holdout** when the user decides (`python3 scripts/quarantine.py <project> <code> --release`): the book returns to the corpus; re-run `align.py`, let a
-   curation agent audit the store and the wiki against the human text (the human version supersedes), and
-   open `_eval/` to the agents.
+1. **Ask first:** which edition is the corpus, its licence (the import folder, and whether lexicons, packs and wiki
+   can be published), whether it has OT books; whether a book with a human translation is **held out** as a test
+   (`python3 scripts/quarantine.py <project> <code>`, out of the corpus until the tests are done); who reviews the
+   drafts (the language team), and their school language.
+2. **Import and set up:** `python3 scripts/onboard.py` (or the `import-edition` and `new-project` skills) with
+   `familiarity: unknown`, which gives every chapter prompt the unknown-language rules (`docs/prompts/modes.md`), the
+   full verse pack and the style check. In `project.yaml` add `tokenise:` (suffixes after a hyphen? characters such
+   as `꞉` that belong to words?) and in `rules` only what is specific to the language (divine names).
+3. **Align and derive:** `python3 scripts/align.py <project>` (eflomal if installed); read `_learn/align_report.txt`
+   (the glossary and name checks show how far to trust the lexicons). `python3 scripts/lang.py layers <project>
+   --write` sets a bcv-commons alignment layer built on exactly this text as `lexeme_aligner`. Then, with
+   `orig/grc.sqlite` (`python3 scripts/setup.py --only src`): `python3 scripts/lang.py build <project>` (the NT
+   occurrence index; `lang.py hbo <project> <lexeme>` shows how the NT renders a Hebrew word through the LXX) and
+   `lang.py derive <project>` + `report <project>`: word order, function words, connectors, affix hypotheses, name
+   letters, formulas, OT gaps.
+4. **Build the store and the wiki:** `python3 scripts/memory_prompt.py <project> --init` creates them empty and prints
+   the prompt for a fresh agent, which starts from the derived report and confirms or rejects each item against the
+   corpus. A first test chapter's grammar sketch can seed the wiki (`python3 scripts/wiki.py init <project>
+   --from-notes FILE --map MAP.json`). Validate with `python3 scripts/language_profile.py check
+   export/<lang>/<project>/profile --project <project>`.
+   - **Writing system:** the tone marks and accents the corpus uses go into every store value exactly
+     (`language_profile.py check` lists values with other marks). `python3 scripts/morphs.py <project> tone
+     [--write]` detects how the corpus writes tone and stores it as `orthography.tone`; check it with the team or a
+     grammar, and keep a two-layer orthography's quality marks out of it. `orthography.ignore_marks` only loosens
+     the search tools.
+   - **Grammar:** `python3 scripts/grammar.py run <project> --write` adds the Grambank features the store's morphs
+     answer (questions: `setup.py --only grambank`); `grammar.py plan <project>` lists what to settle next, for the
+     curation agent: it proposes, the corpus counts decide.
+   - **Affix chains** (subject, tense, object before a verb stem, as in many Bantu languages): morph entries with
+     `position` and `greek`; `python3 scripts/morphs.py <project> try --write` measures each against the Greek (the
+     agent revises the rejected ones), and `morphs.py <project> check` must rebuild the corpus word for word. The
+     packs, `concord.py`, the spelling check and `chapter_check.py` then work with the words' parts.
+   - **The team:** `python3 scripts/team_input.py <project> init`, then `prompt` for a curation agent: their items
+     become binding store entries. `python3 scripts/wiki.py view <project>` gives them one offline HTML file to read
+     (a copy: edits go into the `.md` pages).
+5. **Draft:** the `draft-chapter` skill, one book agent per book; it builds each chapter's verse pack (level `full`)
+   and runs `chapter_check.py` in its loop.
+6. **Test** (with a held-out book): `python3 scripts/score.py <project> <draft> --reference <held-out file>` per
+   chapter against its floors; `python3 scripts/style.py <project> <draft>` measures the style against the human
+   translations. Log tokens (`usage.py`) and write a report per chapter in `_eval/`.
+7. **Lift the holdout** when the user decides (`quarantine.py <project> <code> --release`): re-run `align.py`, let a
+   curation agent audit the store and the wiki against the human text (it supersedes), and open `_eval/` to the
+   agents.
 
-What the toolkit derives is CC0 even from a non-free edition; the edition's text stays in `import/non-free/`, and
-quotations keep to `docs/licensing.md`: give the edition a `credit` line and run `python3 scripts/quotes.py <project> --credits`.
-Agents comply as they write: chapter prompts carry the quotation rule; for any other agent (curation, revision) put
-the output of `python3 scripts/quotes.py <project> --rule` into its prompt, and have it run the store validator with
-`--project`, `wiki.py lint` and `quotes.py` on its files. `python3 scripts/check_project.py <project>` is the double
-check afterwards. Don't commit; the user commits.
+What the toolkit derives is CC0 even from a non-free edition; quotations keep to `docs/licensing.md` (a `credit`
+line, `python3 scripts/quotes.py <project> --credits`). A curation or revision agent gets `quotes.py <project> --rule`
+in its prompt and runs the store validator, `wiki.py lint` and `quotes.py` on its files; `check_project.py` is the
+double check. Don't commit; the user commits.
