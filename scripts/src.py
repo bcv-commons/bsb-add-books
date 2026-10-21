@@ -12,7 +12,7 @@ Hebrew, orig/heb.sqlite, from:
   - the BSB Translation Tables (full-alignments-manual eng_BSB+manual+bsb-tables, CC0): which BSB words render each
     token (positions in the BSB verse);
   - the two clause layouts on this machine: orig/heb-bhsa (BHSA 2021, CC BY-NC: local only) and orig/heb-bcv-query
-    (+ -keys; hebrew-clause-layout v0.35, CC BY-SA): the line of each token in each layout.
+    (+ -keys; hebrew-clause-layout v0.37, CC BY-SA): the line of each token in each layout.
 
 Tables:
   tokens(key, book, ch, v, word, n, kind, ord, text, after, lemma, lexeme, strong, class, pos, morph, type, stem,
@@ -291,7 +291,7 @@ def export_open(out):
             con.execute("attach database ? as o", (lay,))
             con.execute("create table o.layout as select * from layout where layout='bcv-query'")
             con.execute("create table o.meta(name text primary key, value text)")
-            con.execute("insert into o.meta values('licence', 'CC BY-SA 4.0: bcv-commons/hebrew-clause-layout v0.35 "
+            con.execute("insert into o.meta values('licence', 'CC BY-SA 4.0: bcv-commons/hebrew-clause-layout v0.37 "
                         "(MACULA Hebrew, UHB); keys are MACULA Hebrew word ids')")
             con.commit()
             con.execute("detach database o")

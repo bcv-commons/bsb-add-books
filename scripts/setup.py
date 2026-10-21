@@ -19,7 +19,7 @@ The Hebrew clause layout can be built three ways, side by side (--heb a,b builds
                         Needs text-fabric; downloads BHSA on first use (build_heb_bhsa.py).
     --heb bcv-query     the bcv-query Hebrew clause layout release (MACULA Hebrew + UHB, with the
                         text-level hierarchy; CC BY-SA 4.0), pinned by tag and SHA-256:
-                        Hugging Face bcv-commons/hebrew-clause-layout v0.35. For everything
+                        Hugging Face bcv-commons/hebrew-clause-layout v0.37. For everything
                         published that carries clause structure (sidecars, clause-line editions);
                         also writes orig/heb-bcv-query-keys/ (MACULA word keys).
     --heb macula        MACULA Hebrew + UHB via the shoresh scaffold API (CC BY / CC BY-SA).
@@ -56,11 +56,11 @@ DL = os.path.join(ROOT, "download")
 UA = {"User-Agent": "bsb-add-books-setup/1.0"}
 
 LAYOUTS = {"bhsa": "ETCBC BHSA 2021; CC BY-NC: consulted for drafting, never published",
-           "bcv-query": "bcv-query Hebrew clause layout v0.35; CC BY-SA 4.0",
+           "bcv-query": "bcv-query Hebrew clause layout v0.37; CC BY-SA 4.0",
            "macula": "MACULA Hebrew + UHB via the shoresh API; this takes long"}
-HCL_TAG = "v0.35"                                         # bcv-commons/hebrew-clause-layout
+HCL_TAG = "v0.37"                                         # bcv-commons/hebrew-clause-layout
 HCL_URL = f"https://huggingface.co/datasets/bcv-commons/hebrew-clause-layout/resolve/{HCL_TAG}/hebrew-clause-layout-{HCL_TAG}.tar.gz"
-SPK_TAG = "v0.7"                                          # bcv-commons/hebrew-speaker-layer
+SPK_TAG = "v0.11"                                          # bcv-commons/hebrew-speaker-layer
 SPK_URL = f"https://huggingface.co/datasets/bcv-commons/hebrew-speaker-layer/resolve/{SPK_TAG}/hebrew-speaker-layer-{SPK_TAG}.tar.gz"
 RP_COMMIT = "27a45ff1b7be6c17ccbfeac414f3f55732ae8e28"     # byztxt/byzantine-majority-text, 2024-12-31
 GB_TAG = "v1.0.3"                                         # grambank/grambank (Skirgård et al. 2023)
@@ -80,8 +80,8 @@ SOURCES = {
 }
 SHA256 = {
     "bgb": "56eb9ba026316e6d66d675a4f1812deae362d46244541b9071e937d77d21eac7",
-    "hcl": "2b131856790fcdbc8fc0b72deaedbe33a0f1b8e075edef9710b86e86be90b772",
-    "spk": "cf800878986e0023f70c987e99940a7406d808d5db7715926adb79d079d3ff58",
+    "hcl": "02f90e95caf01b941136fe2f03826f6dcdb93551dd6a78d86aa792235a864791",
+    "spk": "68ec601e456d535ca56bbada485153aa645da67947055c73b8bf372978843b16",
     "gb-parameters": "ff5a675e6e2417b6e1746230b6649429be688f4e16df0da99bbabe4eff52dc80",
     "gb-codes": "cdcf17f53d56c6b58d52a76cb82c77fe6fd919abb3b9ac836c80f97c537f3263",
     "src-heb-open.sqlite.gz": "7a3613f19c450746afb304c02f688963c556e3e74fd469caaf27d44e7d70e543",

@@ -73,12 +73,13 @@ The Hebrew is optional: `--heb bhsa,bcv-query` builds both clause layouts side b
   clause-line draft with `python3 scripts/relayout.py <draft> --from orig/heb-bhsa --to
   orig/heb-bcv-query`. A commercial user drafts on bcv-query (`--drafting bcv-query`).
 - **The bcv-query Hebrew clause layout** (Hugging Face
-  `bcv-commons/hebrew-clause-layout`, tag **v0.35** (2026-10-17; v0.22 until then, still available under its tag),
-  archive SHA-256 `2b131856790fcdbc8fc0b72deaedbe33a0f1b8e075edef9710b86e86be90b772`):
+  `bcv-commons/hebrew-clause-layout`, tag **v0.37** (2026-10-21; v0.35 and v0.22 before it, still available under their
+  tags), archive SHA-256 `02f90e95caf01b941136fe2f03826f6dcdb93551dd6a78d86aa792235a864791`):
   `python3 scripts/setup.py --heb bcv-query` (into `orig/heb-bcv-query/`), or
   `python3 scripts/build_heb_bcvquery.py <unpacked release> [--law] [--out DIR]`.
   - **What it is:** MACULA Hebrew (CC BY 4.0) over the UHB text (CC BY-SA 4.0); the release is
-    **CC BY-SA 4.0**. Segmentation `8977039d6ddb5383`, levels `0.22+76768237c912922e`.
+    **CC BY-SA 4.0**. Segmentation `8977039d6ddb5383` (the same since v0.22), discourse rules 0.37; the levels
+    include the speaker layer's quotations (a speech one level in from its introduction).
   - **Lines:** one line per clause segment. The number after the colon is `text_depth`, the
     text-level hierarchy (`--law` uses `text_depth_law`, the law view).
   - **Keys:** `orig/heb-bcv-query-keys/<code>NNN.json` keeps each segment's word keys for the
@@ -131,13 +132,13 @@ The Hebrew is optional: `--heb bhsa,bcv-query` builds both clause layouts side b
   Glyssen / FCBH character data, MIT; compact-alignments and the BSB tables CC0; the bcv-query layout file CC BY-SA 4.0.
   The UBS data in MACULA (SDBH, Louw–Nida) is not in the cache (its columns are empty).
 - **The speaker layer, added here** (`setup.py`, step `spk`; `src.py speaker-layer DIR`): Hugging Face
-  `bcv-commons/hebrew-speaker-layer`, tag **v0.7** (2026-10-17), archive SHA-256
-  `cf800878986e0023f70c987e99940a7406d808d5db7715926adb79d079d3ff58`, **CC BY 4.0** (bcv-commons; built on Clear's MACULA
+  `bcv-commons/hebrew-speaker-layer`, tag **v0.11** (2026-10-21; v0.7 before), archive SHA-256
+  `68ec601e456d535ca56bbada485153aa645da67947055c73b8bf372978843b16`, **CC BY 4.0** (bcv-commons; built on Clear's MACULA
   Quotation and Speaker Data, CC BY 4.0, with SIL Glyssen / FCBH character data, MIT). Who speaks where, on the Hebrew: each
   clause segment of the bcv-query layout with its quotation, level (2+ = a quotation inside a quotation) and speaker, and a
   chapter's frame (a psalm's psalmist, a memoir's narrator). Tables `speaker_segments` and `speaker_quotations`. The clause
   packages show it per line (`[speech 2: God, inside Joshua's]`, and a `# Frame` line); without it, Clear's one-level spans.
-  Checked by us against the BHSA text types (its card has the figures): narrative in or out of a quotation 97.7%, its
+  Checked by us against the BHSA text types on v0.7 (its card has the figures): narrative in or out of a quotation 97.7%, its
   nested quotations right 83%; weakest in the prophets (30% of the reference's nested quotations found).
 - **Added here, never published:** the BHSA layout rows (from `orig/heb-bhsa`) and the BGB/RP mapping
   (`src.py layouts --layout bhsa`, `src.py map`; `setup.py --only src` runs both).

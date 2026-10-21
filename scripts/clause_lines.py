@@ -5,7 +5,7 @@ website's clause views (docs/proposals/clause-overlay/, authoring format).
 They are never stored: scripts/build_site.py derives them at build time from each OT draft and its word alignment
 (<code>NNN.align, scripts/full_align.py) with scripts/bridge_align.py's clauses(), on the two layouts:
     bhsa        orig/heb-bhsa (ETCBC BHSA 2021): the view is CC BY-NC 4.0; the layout files stay local, never published
-    bcv-query   orig/heb-bcv-query (MACULA Hebrew + UHB, hebrew-clause-layout v0.35): the view is CC BY-SA 4.0
+    bcv-query   orig/heb-bcv-query (MACULA Hebrew + UHB, hebrew-clause-layout v0.37): the view is CC BY-SA 4.0
 The text must stay the prose draft's, word for word: the clause view is a display of the draft, not another
 translation; this script checks that.
 
@@ -28,7 +28,7 @@ from project import project_dir  # noqa: E402
 
 LAYOUTS = {"bhsa": "orig/heb-bhsa", "bcv-query": "orig/heb-bcv-query"}
 LICENCE = {"bhsa": "CC BY-NC 4.0 (the clause layout is ETCBC's BHSA 2021: non-commercial use, attribution)",
-           "bcv-query": "CC BY-SA 4.0 (the clause layout is bcv-commons/hebrew-clause-layout v0.35, from MACULA Hebrew and UHB)"}
+           "bcv-query": "CC BY-SA 4.0 (the clause layout is bcv-commons/hebrew-clause-layout v0.37, from MACULA Hebrew and UHB)"}
 
 
 def paths(pname, code, ch, layout="bhsa"):
