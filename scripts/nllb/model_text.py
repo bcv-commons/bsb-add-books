@@ -23,6 +23,10 @@ This file runs without the rest of the repo (train.py and draft.py use decode on
 
     python3 scripts/nllb/model_text.py <project> check     every corpus verse encoded and decoded back; token counts
     python3 scripts/nllb/model_text.py <project> show <verse text>
+    python3 scripts/nllb/model_text.py <project> encode <data dir> <out dir>
+        an existing model data folder (scripts/nllb/data.py's files, or another split built the same way) with its target
+        in parts: the .trg files encoded, .src and .vref copied, the spec added to meta.json. Same source, same split:
+        only the target's form differs (an A/B of the form)
 """
 import collections, os, sys, unicodedata
 
@@ -243,6 +247,31 @@ def main(a):
     import langtools as LT
     P = LT.Project(a[0])
     C, S = codec_for(a[0], "morphs", P)
+    if a[1] == "encode" and len(a) == 4:
+        import json, shutil
+        src, dst = a[2], a[3]
+        os.makedirs(dst, exist_ok=True)
+        for f in sorted(os.listdir(src)):
+            p = os.path.join(src, f)
+            if f.endswith(".trg"):
+                lines = open(p, encoding="utf-8").read().splitlines()
+                enc = [C.encode(" ".join(t.split()), S) for t in lines]
+                bad = sum(C.decode(e) != NFC(" ".join(t.split())) for t, e in zip(lines, enc))
+                open(os.path.join(dst, f), "w", encoding="utf-8").write("\n".join(enc) + "\n")
+                print(f"{f}: {len(lines)} lines encoded, {bad} not decoded back exactly")
+                if bad:
+                    sys.exit(1)
+            elif f == "meta.json":
+                m = json.load(open(p, encoding="utf-8"))
+                m["model_text"] = C.spec
+                json.dump(m, open(os.path.join(dst, f), "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+            elif os.path.isfile(p):
+                shutil.copy(p, dst)
+        print("->", dst)
+        print(f"spec: tone written as {C.spec['written']}, tone marks {C.spec['marks'] or 'none'}, grammatical tone tokens "
+              f"{', '.join('~' + t for t in C.spec['tones']) or 'none (no tone morph with a tone_pattern in the store)'}; "
+              f"{'no morph entries: words are not split' if S is None else 'affixes from the store'}")
+        return
     if a[1] == "show":
         line = " ".join(a[2:])
         e = C.encode(line, S)

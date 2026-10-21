@@ -4,9 +4,12 @@
 this file and the model, so it can run on another machine:
 
   src      python3 scripts/nllb/draft.py src <project> <code> <ch>[,<ch>..] [--out DIR]
-           one line per verse of the original (Hebrew numbering in the OT) with its BSB English as the source (the model
-           was trained on BSB -> edition pairs): DIR/input.src + DIR/input.vref (default DIR:
-           <project>/_eval/local/nllb/drafts/<code>NNN-NNN/)
+                                              [--source DIR [--numbering original|bsb] [--plain-quotes]]
+           one line per verse of the original (Hebrew numbering in the OT) with its source text: DIR/input.src +
+           DIR/input.vref (default DIR: <project>/_eval/local/nllb/drafts/<code>NNN-NNN/). The source is the one the
+           model was trained on: by default the BSB English; --source another edition's verse files (<code>.txt or
+           <code>NNN.txt, e.g. a modern Greek Bible), in the original's numbering (the default for --source) or the
+           BSB's; --plain-quotes as such a model's training text had it (« » “ ” -> ", ‘ ’ -> ', — -> " - ", – -> -)
   run      python3 scripts/nllb/draft.py run --data DIR [--model DIR] [--beams 2] [--device cuda|mps|cpu]
            DIR/input.pred; minutes for a chapter, on the processor too (default model: <data>/../../run/model)
   collect  python3 scripts/nllb/draft.py collect <project> DIR [--name nllb] [--out DIR2]
@@ -36,16 +39,35 @@ def src(a):
     os.makedirs(out, exist_ok=True)
     P = LT.Project(pname)
     ot = BY_CODE[code][2] != "nt"
-    s, r = [], []
+    sdir = opt(a, "--source")
+    bsb_num = (opt(a, "--numbering") or ("original" if sdir else "bsb")) == "bsb"
+    files = {}
+
+    def verse(c, v):
+        if not sdir:
+            return LT.verses_of(os.path.join(ROOT, P.assist_dir(code), f"{code}{c:03d}.txt")).get((c, v), "")
+        for f in (f"{code}{c:03d}.txt", f"{code}.txt"):
+            p = os.path.join(sdir, f)
+            if os.path.exists(p):
+                if p not in files:
+                    files[p] = LT.verses_of(p)
+                if (c, v) in files[p]:
+                    return files[p][(c, v)]
+        return ""
+    s, r, missing = [], [], 0
     for ch in chs:
         for v in sorted(original_verses(code, ch)):
-            c, bv = vrs.to_bsb(code, ch, v) if ot else (ch, v)
-            bsb = LT.verses_of(os.path.join(ROOT, P.assist_dir(code), f"{code}{c:03d}.txt")).get((c, bv), "")
-            s.append(" ".join(bsb.split()))
+            c, bv = vrs.to_bsb(code, ch, v) if ot and bsb_num else (ch, v)
+            t = " ".join(verse(c, bv).split())
+            if "--plain-quotes" in a:
+                t = " ".join(t.replace("«", '"').replace("»", '"').replace("“", '"').replace("”", '"').replace("‘", "'")
+                             .replace("’", "'").replace("—", " - ").replace("–", "-").split())
+            missing += not t
+            s.append(t)
             r.append(f"{code} {ch}:{v}")
     open(os.path.join(out, "input.src"), "w", encoding="utf-8").write("\n".join(s) + "\n")
     open(os.path.join(out, "input.vref"), "w", encoding="utf-8").write("\n".join(r) + "\n")
-    print(f"{len(s)} verses -> {out}")
+    print(f"{len(s)} verses -> {out}" + (f"; {missing} without source text (empty lines)" if missing else ""))
 
 
 def run(a):
