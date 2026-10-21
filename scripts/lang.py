@@ -416,12 +416,13 @@ def greek_features(con, gtok=None):
     """features(row) -> {(feature, value)} of a linked Greek token (a row of g.tokens): person, number, tense, mood,
     gcase, voice, and in pairs (person+number "fs", tense+mood "aorist.indicative", person+number+mood "fp.subjunctive"),
     degree, and for verbs three clause-level ones: negated "yes" (οὐ / μή in the Greek clause), object (the clause's
-    object pronoun, "3s") and subject_gender (through the subject referent). The names lang.py report shows, which a
+    object pronoun, "3s"), transitive ("yes": the clause has an object, role o; "no": it has none) and subject_gender
+    (through the subject referent). The names lang.py report shows, which a
     morph entry's `greek` names (scripts/morphs.py try)"""
     gtok = gtok or {r["key"]: r for r in con.execute("select * from g.tokens")}
     NEG = {"οὐ", "μή", "οὐδέ", "μηδέ", "οὐχί", "οὐκέτι", "μηκέτι"}
     neg_clause = {t["clause"] for t in gtok.values() if t["lemma"] in NEG and t["clause"]}
-    obj_of = {}
+    obj_of, has_obj = {}, {t["clause"] for t in gtok.values() if t["role"] == "o" and t["clause"]}
     for t in gtok.values():
         if t["role"] in ("o", "io") and t["class"] == "pron" and t["clause"]:
             m_ = re.match(r"P-(\d)?", t["morph"] or "")
@@ -448,6 +449,8 @@ def greek_features(con, gtok=None):
                 out.add(("negated", "yes"))
             if r["clause"] in obj_of:
                 out.add(("object", obj_of[r["clause"]]))
+            if r["clause"]:
+                out.add(("transitive", "yes" if r["clause"] in has_obj else "no"))
             if r["key"] in subj_gender:
                 out.add(("subject_gender", subj_gender[r["key"]]))
         return out

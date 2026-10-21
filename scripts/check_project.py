@@ -64,6 +64,12 @@ def main():
         if not check_output(p, P):
             ok = False
             continue
+        import sfm_profile as SFM
+        for e in P.project(p).get("style_from") or []:
+            ed = os.path.join(ROOT, P.edition(e)["dir"])
+            if SFM.sfm_files(ed) and not P.edition(e).get("sfm"):
+                print(f"warn sfm: edition {e} has the team's SFM files but no sfm: block; the export detects their "
+                      f"conventions at every export: run python3 scripts/sfm_profile.py {e} --write")
         for e, how in P.missing_texts(P.project(p)):
             print(f"warn text: edition {e} is not here, so quotations and store evidence from it are not checked; get it: {how}")
         ok &= run("drafts", ["scripts/check_draft.py", p])

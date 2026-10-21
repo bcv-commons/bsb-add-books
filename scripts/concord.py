@@ -64,8 +64,10 @@ def main():
             f = os.path.join(P.profile, fn)
             if os.path.exists(f):
                 for e in json.load(open(f, encoding="utf-8"))["entries"]:
-                    if re.search(arg, " ".join(str(e.get(k, "")) for k in ("id", "source", "value")), re.I):
-                        print(json.dumps(e, ensure_ascii=False, indent=1), "\n")
+                    if re.search(arg, " ".join(str(e.get(k, "")) for k in ("id", "source", "value", "gloss")), re.I):
+                        import gloss as G
+                        print(json.dumps(e, ensure_ascii=False, indent=1))
+                        print("".join(f"  gloss: {G.line(g)}\n" for g in G.glosses(e)))
         return
     if cmd == "gloss":
         for row in P.glossary():

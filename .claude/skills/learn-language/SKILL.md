@@ -34,13 +34,18 @@ worked example.
      [--write]` detects how the corpus writes tone and stores it as `orthography.tone`; check it with the team or a
      grammar, and keep a two-layer orthography's quality marks out of it. `orthography.ignore_marks` only loosens
      the search tools.
+   - **Glosses:** terms, formulas and names say what they mean in Greek or Hebrew (`gloss`), never in English inside
+     the value (`docs/language-store.md`, *Glosses*). `python3 scripts/gloss.py propose <project> [--write]` proposes
+     them from the alignment; the memory agent checks the proposals and glosses what is left.
    - **Grammar:** `python3 scripts/grammar.py run <project> --write` adds the Grambank features the store's morphs
      answer (questions: `setup.py --only grambank`); `grammar.py plan <project>` lists what to settle next, for the
      curation agent: it proposes, the corpus counts decide.
    - **Affix chains** (subject, tense, object before a verb stem, as in many Bantu languages): morph entries with
      `position` and `greek`; `python3 scripts/morphs.py <project> try --write` measures each against the Greek (the
      agent revises the rejected ones), and `morphs.py <project> check` must rebuild the corpus word for word. The
-     packs, `concord.py`, the spelling check and `chapter_check.py` then work with the words' parts.
+     packs, `concord.py`, the spelling check and `chapter_check.py` then work with the words' parts. Once the store has
+     confirmed affixes, rerun `align.py <project>` (then `lang.py build`): it aligns the affixes themselves (by parts,
+     gaps filled by word links); `morphs.py try` and `rates` before and after show what it changed.
    - **The team:** `python3 scripts/team_input.py <project> init`, then `prompt` for a curation agent: their items
      become binding store entries. `python3 scripts/wiki.py view <project>` gives them one offline HTML file to read
      (a copy: edits go into the `.md` pages).

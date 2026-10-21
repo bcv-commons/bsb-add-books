@@ -10,7 +10,8 @@ In `import/<licence>/<language>/<edition>/`; the text is in `text/`. The licence
 | Field | Meaning |
 |---|---|
 | `name`, `language` | readable name; language code |
-| `role` | `style` (corpus only), `continue` (drafts continue it), `revise` |
+| `role` | `style` (corpus only), `continue` (drafts continue it), `revise`, `source` (a source for the second-draft model, not a corpus) |
+| `nllb_code` | a source edition's NLLB language code (`ell_Grek`) |
 | `text_dir` | folder with the imported files (default `text`) |
 | `nt_basis` | Greek text of the edition's NT: `critical`, `majority` or `tr` |
 | `books` | BSB codes of the books present (optional) |
@@ -23,6 +24,7 @@ In `import/<licence>/<language>/<edition>/`; the text is in `text/`. The licence
 | `published_also` | further USFM files or folders of the published text (books published elsewhere) |
 | `fetch` | recipe for `scripts/fetch_edition.py`: `source` (`helloao`, `openbible`, `ebible`, `dbt`, `local`), `id` |
 | `get_text` | how a clone gets the text (a command, or why it isn't available); printed when the text is missing; with `fetch` the default is `fetch_edition.py <edition>` |
+| `sfm` | the team's SFM conventions, written by `scripts/sfm_profile.py --write` from their files in `source/`: `normalization` (NFC, NFD), `line_endings` (crlf, lf), `versification` (english, hebrew; `evidence.versification`), `id_line` (`{BOOK}` for the code), `ide`, `file_pattern` (`{nn}{BOOK}`), `heading` (s, s1), `paragraphs`, `divine_name` (the words marked `\nd`), `footnotes` (their parts: `fr fk ft`), `also` (markup recorded, not produced), `newest` (the book followed where they differ), `differs_in_older_books`; `scripts/export_usfm.py` follows it |
 | `derived_work` | approval of derived work: `{approved_by, date, form, for, returned_to}`; needed before a `local_output/` project builds on a non-free or CC-ND edition (`docs/licensing.md`, *Three output paths*) |
 
 ## project.yaml
@@ -49,8 +51,8 @@ with `role: revise` must be CC0; `scripts/project.py` refuses any other.
 | `style_check` | run `scripts/style.py` on each chapter and work through its flags (default: on for `partial` and `unknown`) |
 | `spell_check` | `check_draft.py --spell`: word forms the corpus writes only with other marks, and forms it lacks (default: on for `partial` and `unknown`) |
 | `tokenise` | target tokenising (`scripts/langtools.py`): `split_hyphens`, `word_chars` (`U+A789` or literal), `ignore_marks` (default: the store's `orthography.ignore_marks`) |
-| `second_draft` | `nllb` or `none`, set by the wizard: whether the project plans a fine-tuned NLLB (trained from the BSB) as a second opinion for review triage (`scripts/triage.py`, from `_eval/local/second/nllb/`); never a draft |
-| `pack_budget` | *experimental:* characters of corpus verses per verse in a `full` pack (pack v3) instead of the 2 most similar verses; `verse_pack.py --budget` for one pack |
+| `second_draft` | `nllb` or `none`, set by the wizard: whether the project plans a fine-tuned NLLB as a second opinion for review triage (`scripts/triage.py`, from `_eval/local/second/nllb/`); never a draft |
+| `nllb_source` | the second-draft model's source: a source edition (default `vamvas`, modern Greek) or `bsb` (the assisting translation, English); `scripts/nllb/source.py` |
 | `pack_grammar` | *experimental:* `true` adds the verb-marking block to the pack (pack v4, needs the store's verb cells); `binding` also lists the chapter's verbs of clearly marked cells in the prompt, and `chapter_check.py` reports one lacking the pattern unless the notes have `unmarked <ch>:<v> <cell>: <reason>` (`cell_check.py <project> unmarked \| try …` turns those into store entries); `verse_pack.py --grammar` for one pack |
 | `rules` | project rules added to every prompt |
 | `book_rules` | lines added to the book agent's prompt only (`make_prompt.py --book`) |
@@ -69,6 +71,7 @@ with `role: revise` must be CC0; `scripts/project.py` refuses any other.
 | `draft_statement` | statement shown with every draft (`STATUS.md`, site) |
 | `publish_statement` | statement recorded on publishing, with `{by}` and `{date}` (`scripts/status.py publish`) |
 | `site` | `false`: the project is left off the website |
+| `sfm` | fields of the style edition's `sfm:` block (above) to set otherwise for this project's SFM export (`heading: s`, `versification: hebrew`) |
 
 ## Textual basis
 

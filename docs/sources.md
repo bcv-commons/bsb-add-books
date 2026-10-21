@@ -45,7 +45,7 @@ commercial user drafts on bcv-query (`--drafting bcv-query`).
   `scripts/build_heb_bhsa.py [--tf DIR] [--out DIR] [code ...]` (needs `text-fabric`; downloads BHSA to
   `~/text-fabric-data` on first use). One line per clause atom; the level is BHSA's `tab`; the text is BHSA's
   surface text (the BHS). **CC BY-NC 4.0**, Eep Talstra Centre for Bible and Computer, VU Amsterdam; cite DOI
-  10.17026/dans-z6y-skyh; no commercial use without consent of the Deutsche Bibelgesellschaft. Its files, levels
+  10.17026/dans-z6y-skyh; no commercial use without consent (ask the ETCBC and the Deutsche Bibelgesellschaft, the final rights holder). Its files, levels
   and anything laid out on them are never published (`CLAUDE.md`, *Pitfalls*).
 - **bcv-query** (`orig/heb-bcv-query/`): the released dataset **bcv-commons/hebrew-clause-layout** (Hugging Face),
   tag **v0.37**, archive SHA-256 `02f90e95caf01b941136fe2f03826f6dcdb93551dd6a78d86aa792235a864791`: `--heb bcv-query`
@@ -98,6 +98,10 @@ commercial user drafts on bcv-query (`--drafting bcv-query`).
 the bcv-commons/bibles catalogue (`https://cdn.bibel.wiki/catalog/index.json`: helloAO, openbible, DBT with your own
 API key) and eBible (`ebible.org/Scriptures/`). `fetch.lock.json` keeps the source version and a SHA-256 per file.
 Each edition keeps its own licence and credit (`import/README.md`).
+
+The source edition of the second-draft model, `import/CC0/ell/vamvas/` (Vamvas 1850, modern Greek, public domain), is
+read from CrossWire's SWORD module GreVamvas 1.0.3 (zip SHA-256 pinned) by its own `fetch_vamvas.py` (needs `pip
+install pysword==0.2.8` and `orig/`); its OT is renumbered to the Hebrew verses, psalm titles to the title verses.
 
 ## Alignment datasets (bcv-commons, Hugging Face)
 

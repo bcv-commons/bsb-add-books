@@ -46,73 +46,107 @@ Tilbagevendende vendinger og deres faste danske form. `<…>` er pladser der udf
   - answers: said to him, said to her, said to them
   - Se feature speech_frame.
   - agent:memory-setup, 2026-10-14
-- **`formula:koh_amar`** כֹּה אָמַר יְהוָה → **Sådan siger HERREN** [high, decided, attested]
-  - NT: EXO 7:26 *Sådan siger HERREN*; ISA 37:6 *Sådan siger HERREN*; ISA 37:21 *Sådan siger HERREN*
-  - answers: this is what the lord says, thus says the lord
-  - DFB 69×.
-  - agent:memory-setup, 2026-10-14
-- **`formula:neum_yhwh`** נְאֻם יְהוָה → **siger HERREN** [high, decided, attested]
-  - NT: ISA 1:11 *siger HERREN*; ISA 1:18 *siger HERREN*; GEN 22:16 *siger HERREN*
-  - answers: declares the lord
-  - DFB 150× (inkl. 'Sådan siger HERREN'); udkast 1 Mos 22,16; Jos 7,13; 24,2.
-  - agent:memory-setup, 2026-10-14
-- **`formula:word_came`** וַיְהִי דְבַר־יְהוָה אֶל → **HERRENS ord kom til <modtager>** [high, decided, attested]
-  - NT: EZK 33:23 *HERRENS ord kom til*; JER 1:4 *HERRENS ord kom til*; JER 1:11 *HERRENS ord kom til*
-  - answers: the word of the lord came to
-  - DFB 15× (Jer, Ez).
-  - agent:memory-setup, 2026-10-14
-- **`formula:oath_life`** חַי־יְהוָה / חַי פַּרְעֹה → **så sandt <HERREN> lever** [high, decided, attested]
-  - NT: JER 23:8 *så sandt HERREN lever*; RUT 3:13 *så sandt HERREN lever*; GEN 42:15 *Så sandt Farao lever*
-  - answers: as surely as the lord lives, as surely as pharaoh lives
-  - DFB 'så sandt' 19×; 'så sandt jeg lever' (4 Mos 14,21) for Guds ed.
-  - agent:memory-setup, 2026-10-14
 - **`formula:hinneni`** הִנֵּנִי → **Her er jeg** [medium, open, attested]
   - NT: GEN 22:1 *Her er jeg*; GEN 22:7 *Her er jeg*; EXO 3:4 *Se, her er jeg*
   - answers: here i am
   - Udkastene 1 Mos 22,1.7.11; 27,1.18; 31,11; 46,2 har 'Her er jeg' (gen027 spm. 6).
   - agent:memory-setup, 2026-10-14
-- **`formula:gathered`** וַיֵּאָסֶף אֶל־עַמָּיו → **blev samlet til sine fædre** [medium, open, attested]
+- **`formula:koh_amar.gloss`** כֹּה אָמַר יְהוָה → **Sådan siger HERREN** [high, decided, attested]
+  - gloss: יהוה: יְהוָה֙ (EXO 7:26) [proposed] — English (generated): Then the LORD
+  - NT: EXO 7:26 *Sådan siger HERREN*; ISA 37:6 *Sådan siger HERREN*; ISA 37:21 *Sådan siger HERREN*
+  - answers: this is what the lord says, thus says the lord
+  - DFB 69×.
+  - script:gloss.py, 2026-10-14, supersedes `formula:koh_amar`
+- **`formula:neum_yhwh.gloss`** נְאֻם יְהוָה → **siger HERREN** [high, decided, attested]
+  - gloss: יהוה: יְהוָ֔ה (ISA 1:11) [proposed] — English (generated): the LORD
+  - NT: ISA 1:11 *siger HERREN*; ISA 1:18 *siger HERREN*; GEN 22:16 *siger HERREN*
+  - answers: declares the lord
+  - DFB 150× (inkl. 'Sådan siger HERREN'); udkast 1 Mos 22,16; Jos 7,13; 24,2.
+  - script:gloss.py, 2026-10-14, supersedes `formula:neum_yhwh`
+- **`formula:word_came.gloss`** וַיְהִי דְבַר־יְהוָה אֶל → **HERRENS ord kom til <modtager>** [high, decided, attested]
+  - gloss: יהוה: יְהֹוָ֖ה (EZK 33:23) [proposed] — English (generated): of the LORD
+  - NT: EZK 33:23 *HERRENS ord kom til*; JER 1:4 *HERRENS ord kom til*; JER 1:11 *HERRENS ord kom til*
+  - answers: the word of the lord came to
+  - DFB 15× (Jer, Ez).
+  - script:gloss.py, 2026-10-14, supersedes `formula:word_came`
+- **`formula:oath_life.gloss`** חַי־יְהוָה / חַי פַּרְעֹה → **så sandt <HERREN> lever** [high, decided, attested]
+  - gloss: יהוה: יְהוָ֗ה (JER 23:8) [proposed] — English (generated): As surely as the LORD
+  - NT: JER 23:8 *så sandt HERREN lever*; RUT 3:13 *så sandt HERREN lever*; GEN 42:15 *Så sandt Farao lever*
+  - answers: as surely as the lord lives, as surely as pharaoh lives
+  - DFB 'så sandt' 19×; 'så sandt jeg lever' (4 Mos 14,21) for Guds ed.
+  - script:gloss.py, 2026-10-14, supersedes `formula:oath_life`
+- **`formula:evening_morning.gloss`** וַיְהִי־עֶרֶב וַיְהִי־בֹקֶר → **Og det blev aften, og det blev morgen** [high, decided, attested]
+  - gloss: בֹּקֶר: בֹ֖קֶר (GEN 1:5) [proposed] — English (generated): morning
+  - NT: GEN 1:5 *Og det blev aften, og det blev morgen*; GEN 1:8 *Og det blev aften, og det blev morgen*; GEN 1:13 *Og det blev aften, og det blev morgen*
+  - answers: and there was evening, and there was morning
+  - DFB 1 Mos 1: '…, én dag' (v5), ellers '…, anden dag' osv.; stilarkets tankestreg-form er overhalet.
+  - script:gloss.py, 2026-10-14, supersedes `formula:evening_morning`
+- **`formula:be_fruitful.gloss`** פְּרוּ וּרְבוּ → **Bliv frugtbare og talrige** [medium, open, attested]
+  - gloss: רָבָה: רְב֗וּ (GEN 1:22) [proposed] — English (generated): and multiply
+  - NT: GEN 1:22 *Bliv frugtbare og talrige*; GEN 1:28 *Bliv frugtbare og talrige*
+  - answers: be fruitful and multiply
+  - DFB 1 Mos 1,22.28; 9,1; 28,3 ('gøre dig frugtbar og talrig'). Udkastet 35,11 bør nok følge DFB (gen009 spm. 1).
+  - script:gloss.py, 2026-10-14, supersedes `formula:be_fruitful`
+- **`formula:gathered.gloss`** וַיֵּאָסֶף אֶל־עַמָּיו → **blev samlet til sine fædre** [medium, open, attested]
+  - gloss: עַם: עַמָּֽי (GEN 25:8) [proposed] — English (generated): his people
   - NT: GEN 25:8 *samlet til sine fædre*; GEN 25:17 *samlet til sine fædre*; GEN 35:29 *samlet til sine fædre*
   - answers: gathered to his people
   - 1 Mos 25,8.17; 35,29; 49,33 (gen-oversigten 8; DFB selv uens: 4 Mos 20 / 27; 31).
-  - agent:memory-setup, 2026-10-14
-- **`formula:full_of_days`** זָקֵן וּשְׂבַע יָמִים → **gammel og mæt af dage** [high, decided, attested]
+  - script:gloss.py, 2026-10-14, supersedes `formula:gathered`
+- **`formula:full_of_days.gloss`** זָקֵן וּשְׂבַע יָמִים → **gammel og mæt af dage** [high, decided, attested]
+  - gloss: יוֹם: יָמִֽים (JOB 42:17) [proposed] — English (generated): of years
+  - gloss: ἡμέρα: ἡμέρας (MAT 4:2) [proposed] — English (generated): days
   - NT: JOB 42:17 *mæt af dage*; GEN 25:8 *gammel og mæt af dage*
   - answers: old and full of years
   - Efter Job 42,17.
-  - agent:memory-setup, 2026-10-14
-- **`formula:evil_eyes`** וַיַּעֲשׂוּ הָרַע בְּעֵינֵי יְהוָה → **handlede ondt i HERRENS øjne** [high, decided, attested]
+  - script:gloss.py, 2026-10-14, supersedes `formula:full_of_days`
+- **`formula:evil_eyes.gloss`** וַיַּעֲשׂוּ הָרַע בְּעֵינֵי יְהוָה → **handlede ondt i HERRENS øjne** [high, decided, attested]
+  - gloss: יהוה: יְהוָ֑ה (1KI 11:6) [proposed] — English (generated): of the LORD
   - NT: 1KI 11:6 *handlede ondt i HERRENS øjne*; JDG 2:11 *handlede israelitterne ondt i HERRENS øjne*
   - answers: did evil in the sight of the lord, evil in the sight of the lord
   - DFB Dom 2,11; 3,7 osv. (12× 'ondt i HERRENS øjne').
-  - agent:memory-setup, 2026-10-14
-- **`formula:call_name`** וַיִּקְרָא בְּשֵׁם יְהוָה → **påkaldte HERRENS navn** [high, decided, attested]
+  - script:gloss.py, 2026-10-14, supersedes `formula:evil_eyes`
+- **`formula:call_name.gloss`** וַיִּקְרָא בְּשֵׁם יְהוָה → **påkaldte HERRENS navn** [high, decided, attested]
+  - gloss: יהוה: יהוָ֔ה (GEN 12:8) [proposed] — English (generated): to the LORD
+  - gloss: κύριος: Κυρίου (MAT 1:20) [proposed] — English (generated): of Lord
   - NT: GEN 12:8 *påkaldte HERRENS navn*; GEN 21:33 *påkaldte han HERRENS navn*; GEN 26:25 *påkaldte HERRENS navn*
   - answers: called on the name of the lord
-  - agent:memory-setup, 2026-10-14
-- **`formula:cut_covenant`** כָּרַת בְּרִית → **slutte en pagt** [high, decided, by-rule]
+  - script:gloss.py, 2026-10-14, supersedes `formula:call_name`
+- **`formula:cut_covenant.gloss`** כָּרַת בְּרִית → **slutte en pagt** [high, decided, by-rule]
+  - gloss: בְּרִית: בְּרִֽית (GEN 21:27) [proposed] — English (generated): a covenant
+  - gloss: διαθήκη: διαθήκης (MAT 26:28) [proposed] — English (generated): covenant
   - NT: GEN 21:27 *sluttede en pagt*; JOS 24:25 *sluttede Josva pagt*; 1KI 8:9 *sluttede pagt*
   - answers: made a covenant, make a covenant
   - DFB 'slutte … pagt' 12×; stilarkets faste form.
-  - agent:memory-setup, 2026-10-14
-- **`formula:blessed_be`** בָּרוּךְ יְהוָה → **Lovet være HERREN** [medium, open, attested]
+  - script:gloss.py, 2026-10-14, supersedes `formula:cut_covenant`
+- **`formula:blessed_be.gloss`** בָּרוּךְ יְהוָה → **Lovet være HERREN** [medium, open, attested]
+  - gloss: יהוה: יְהוָה֙ (GEN 24:27) [proposed] — English (generated): the LORD
   - NT: GEN 24:27 *Lovet være HERREN*; EXO 18:10 *Lovet være HERREN*
   - answers: blessed be the lord
   - DFB 'Lovet være' 15×, 'Velsignet være' 9×. 1 Mos 24 bruger 'Lovet være' (v27) og 'lovede' (v48); 'velsignet' ville bevare forbindelsen til v1.31.35.60 (gen024 spm. 3).
-  - agent:memory-setup, 2026-10-14
-- **`formula:sword`** הִכָּה לְפִי־חֶרֶב → **slog <dem> ned med sværd** [medium, open, attested]
+  - script:gloss.py, 2026-10-14, supersedes `formula:blessed_be`
+- **`formula:king_live.gloss`** מַלְכָּא לְעָלְמִין חֱיִי (aram.) → **Konge, lev evigt!** [high, decided, attested]
+  - gloss: βασιλεύς: βασιλέα (MAT 1:6) [proposed] — English (generated): king
+  - NT: DAN 3:9 *Konge, lev evigt*
+  - answers: o king, may you live forever
+  - Hofformular Dan 2,4; 3,9; 5,10; 6,7.22.
+  - script:gloss.py, 2026-10-14, supersedes `formula:king_live`
+- **`formula:sword.gloss`** הִכָּה לְפִי־חֶרֶב → **slog <dem> ned med sværd** [medium, open, attested]
+  - gloss: חֶרֶב: חָ֑רֶב (JDG 1:8) [proposed] — English (generated): to the sword
   - NT: JDG 1:8 *slog indbyggerne ned med sværd*; JOS 8:24 *slog også byen ned med sværd*; JOS 10:28 *slog byen og dens konge ned med sværd*
   - answers: put to the sword, struck with the sword
   - DFB Dom 1,8.25; 18,27; 20,48 'slog … ned med sværd' (4×). Jos 17: ét valg for bogen; DFB peger på 'slog'.
-  - agent:memory-setup, 2026-10-14
-- **`formula:land_rest`** וְהָאָרֶץ שָׁקְטָה מִמִּלְחָמָה → **fik landet ro for krig** [high, decided, attested]
+  - script:gloss.py, 2026-10-14, supersedes `formula:sword`
+- **`formula:land_rest.gloss`** וְהָאָרֶץ שָׁקְטָה מִמִּלְחָמָה → **fik landet ro for krig** [high, decided, attested]
+  - gloss: אֶרֶץ: אָ֗רֶץ (JOS 11:23) [proposed] — English (generated): land
   - NT: JOS 11:23 *fik landet ro for krig*
   - answers: the land had rest from war
   - Jos 11,23 og 14,15 ens.
-  - agent:memory-setup, 2026-10-14
-- **`formula:find_favor`** מָצָא חֵן בְּעֵינֵי → **finde nåde for <X>s øjne** [medium, decided, by-rule]
+  - script:gloss.py, 2026-10-14, supersedes `formula:land_rest`
+- **`formula:find_favor.gloss`** מָצָא חֵן בְּעֵינֵי → **finde nåde for <X>s øjne** [medium, decided, by-rule]
+  - gloss: מָצָא: מָ֥צָא (GEN 6:8) [proposed] — English (generated): found
   - NT: GEN 6:8 *fandt nåde*; GEN 39:21 *finde nåde for fængselsforvalterens øjne*
   - answers: found favor in the eyes of, find favor
   - DFB 1 Mos 6,8 'fandt nåde'; udkast 39,21 'finde nåde for … øjne'.
-  - agent:memory-setup, 2026-10-14
-<!-- store:end sha=64cb4c92 -->
+  - script:gloss.py, 2026-10-14, supersedes `formula:find_favor`
+<!-- store:end sha=dbe3a9c4 -->

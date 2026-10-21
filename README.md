@@ -70,7 +70,8 @@ Formats: the language store in [`docs/language-store.md`](docs/language-store.md
 ## Working on a project
 
 Requirements: Python 3 with PyYAML and `usfmtc`; numpy and scipy for the style check (`scripts/style.py`); eflomal,
-if installed, for better alignment lexicons (`scripts/align.py`; see `docs/onboarding.md`, *External tools*).
+if installed, for better alignment lexicons (`scripts/align.py`; see `docs/onboarding.md`, *External tools*); pysword
+for the second-draft model's Greek source (`import/CC0/ell/vamvas/`).
 
 In [Claude Code](https://claude.com/claude-code), `CLAUDE.md` gives the rules and four skills guide the main tasks:
 `import-edition`, `new-project`, `learn-language` (a language the model doesn't know) and `draft-chapter`.

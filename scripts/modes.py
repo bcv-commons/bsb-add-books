@@ -76,10 +76,8 @@ def mode_rules(pname, p, have):
         return []
     label = (p.get("language_name") or p.get("language")).split(" (")[0]
     corpus = p.get("corpus_name") or ", ".join(edition(e).get("name", e) for e in p.get("style_from") or [])
-    budget = p.get("pack_budget")
     fill = {"project": pname, "project_dir": project_rel(pname), "label": label,
-            "similar_verses": (f"the corpus verses chosen to cover the verse's words (pack v3, at most {budget} characters)"
-                               if budget else "two similar corpus verses"), "lang": p.get("language", "tgt"), "corpus": corpus,
+            "similar_verses": "two similar corpus verses", "lang": p.get("language", "tgt"), "corpus": corpus,
             "close_to": p.get("close_to") or "the standard language",
             "school_language": school_language(p)}
     out = []

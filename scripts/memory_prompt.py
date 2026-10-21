@@ -6,7 +6,7 @@ docs/prompts/memory_prompt.md.
 Usage: python3 scripts/memory_prompt.py <project> [--init] [--no-derived] [--out DIR] [--store-only]
        The study starts from the derived products whenever the project has its occurrence index
        (_learn/lang.sqlite; scripts/lang.py build): the derived products (scripts/lang.py derive + report, written to
-                  _eval/local/derived_report.md) and uses the occurrence index (lang.py hbo / grc): the agent
+                  _learn/derived_report.md, local) and uses the occurrence index (lang.py hbo / grc): the agent
                   confirms or rejects each item against the corpus instead of finding everything by reading
        --no-derived: without them (reading and searching only)
        --out DIR: write the store (and wiki) under DIR instead of the project's own (a test run)
@@ -111,7 +111,7 @@ def main():
     derived_lines = ""
     import lang
     if "--no-derived" not in sys.argv and os.path.exists(os.path.join(pdir, "_learn", "lang.sqlite")):
-        rep_path = os.path.join(pdir, "_eval", "local", "derived_report.md")
+        rep_path = os.path.join(pdir, "_learn", "derived_report.md")
         os.makedirs(os.path.dirname(rep_path), exist_ok=True)
         import contextlib, io
         buf = io.StringIO()

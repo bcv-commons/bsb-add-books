@@ -337,7 +337,7 @@ def pick_editions(iso, listed, name=None):
             src, sid = p.split(":", 1)
             hit = next((c for c in found if c["source"] == src and c["id"] == sid), None)
             out.append(hit or {"source": src, "id": sid, "title": sid, "cls": None, "licence": "", "books": 0})
-        elif p in here:
+        elif p in here or p in {c.get("existing") for c in found}:
             out.append({"existing": p})
         elif p.lower() in ("m", "own", "manual"):
             out.append({"manual": True})
@@ -356,8 +356,10 @@ def edition_id(c, iso):
 
 
 def nt_basis(text_dir):
+    """critical or majority from the test verses (Mt 17:21, Acts 8:37 …): present in a majority or TR text, absent in a
+    critical one, or present in brackets ([ v21 … ]) in a critical text that keeps the traditional verses marked"""
     files = {}
-    present = 0
+    present = bracketed = 0
     tested = 0
     for code, ch, v in TEST_VERSES:
         f = os.path.join(text_dir, f"{code}{ch:03d}.txt")
@@ -366,11 +368,14 @@ def nt_basis(text_dir):
         t = files.setdefault(f, open(f, encoding="utf-8").read())
         tested += 1
         m = re.search(rf"(?<![\w>.])v{v}(?=\s)(.*?)(?=(?<![\w>.])v\d+\s|\Z)", t, re.S)
-        present += bool(m and len(m[1].strip()) > 3)
+        here = bool(m and len(m[1].strip()) > 3)
+        present += here
+        bracketed += here and (t[:m.start()].rstrip().endswith("[") or m[1].strip().startswith("[")) and "]" in m[1]
     if not tested:
         return None, "no NT test verses"
-    basis = "critical" if present <= tested / 3 else "majority"
-    return basis, f"{present} of {tested} test verses present (Mt 17:21, Acts 8:37 …)"
+    basis = "critical" if present - bracketed <= tested / 3 else "majority"
+    return basis, f"{present} of {tested} test verses present (Mt 17:21, Acts 8:37 …)" + (
+        f", {bracketed} of them in brackets (a critical text that keeps the traditional verses marked)" if bracketed else "")
 
 
 def quotes_of(text_dirs):
@@ -384,26 +389,52 @@ def quotes_of(text_dirs):
     return n.most_common(1)[0][0] if n and n.most_common(1)[0][1] else "“”"
 
 
+def sfm_step(eid):
+    """an edition with the team's SFM files (source/) and no `sfm:` block: their conventions, read from the books
+    (scripts/sfm_profile.py), shown for the person to confirm, then written into its edition.yaml"""
+    import sfm_profile as SFM
+    path = os.path.join(ROOT, FE.edition_dir(eid))
+    if not SFM.sfm_files(path) or SFM.stored(path):
+        return
+    block, notes = SFM.profile(path)
+    if not block:
+        return
+    say("  The team's SFM files: what the drafts we send back will follow (scripts/sfm_profile.py)")
+    for n in notes:
+        say(f"    {n}")
+    for k in ("normalization", "line_endings", "versification", "heading", "paragraphs", "divine_name", "id_line",
+              "file_pattern"):
+        say(f"    {k}: {block[k]}")
+    say(f"    versification evidence: {block['evidence']['versification']}")
+    if DRY:
+        say(f"  would write the sfm: block into {FE.edition_dir(eid)}/edition.yaml")
+        return
+    SFM.write(path, block)
+    if ask(f"sfm.{eid}", "  Do these match the team's files?", True):
+        say(f"  written into {FE.edition_dir(eid)}/edition.yaml (sfm:)")
+    else:
+        say(f"  written into {FE.edition_dir(eid)}/edition.yaml (sfm:): correct the fields there, or override them for "
+            "this project in its project.yaml (sfm:, docs/configuration.md)")
+
+
 def import_edition(c, iso, lang_dir):
     """Write edition.yaml with the fetch recipe, fetch it, and fill in books and nt_basis. -> edition id."""
     if "existing" in c:
         eid = c["existing"]
         if edition_text_complete(eid):
             say(f"  {eid}: already in import/, with its text")
+            sfm_step(eid)
             return eid
         say(f"  {eid}: already in import/; fetching its text (continues from what was downloaded)")
         FE.fetch_edition(eid, checked=True)
-        path = os.path.join(ROOT, FE.edition_dir(eid))
+        path = os.path.join(ROOT, FE.edition_dir(eid))     # its edition.yaml is kept as it is (it may be in git)
         y = yaml.safe_load(open(os.path.join(path, "edition.yaml"), encoding="utf-8"))
         text = os.path.join(path, "text")
-        y["books"] = sorted({f[:3] for f in os.listdir(text) if f.endswith(".txt")}, key=lambda b: [x[0] for x in BOOKS].index(b))
+        books = {f[:3] for f in os.listdir(text) if f.endswith(".txt")}
         basis, why = nt_basis(text)
-        if basis:
-            y["nt_basis"] = basis
-        raw = open(os.path.join(path, "edition.yaml"), encoding="utf-8").read()
-        head = "".join(l for l in raw.splitlines(True) if l.startswith("#"))
-        open(os.path.join(path, "edition.yaml"), "w", encoding="utf-8").write(head + "\n" + yaml.safe_dump(y, allow_unicode=True, sort_keys=False, width=110))
-        say(f"  {len(y['books'])} books; nt_basis {y['nt_basis']} ({why})")
+        say(f"  {len(books)} books; nt_basis {y.get('nt_basis')}" + (f" (the test verses suggest {basis}: {why}; check it, "
+                                                                     "import-edition skill)" if basis and basis != y.get("nt_basis") else ""))
+        sfm_step(eid)
         return eid
     if c.get("manual"):
         return import_own_files(iso, lang_dir)
@@ -502,6 +533,7 @@ def import_own_files(iso, lang_dir):
         y["nt_basis"] = basis
     open(os.path.join(path, "edition.yaml"), "w", encoding="utf-8").write(head + yaml.safe_dump(y, allow_unicode=True, sort_keys=False, width=110))
     say(f"  {len(y['books'])} books; nt_basis {y['nt_basis']} ({why})")
+    sfm_step(eid)
     return eid
 
 
@@ -1071,10 +1103,30 @@ def training_offer(fam):
         return None
     say("  Second-draft model (a fine-tuned NLLB, trained once on the corpus): it drafts every chapter a second time in")
     say("  minutes, and the verses where it and the agent's draft disagree are the ones a reviewer looks at first")
-    say("  (scripts/triage.py). It is not a drafter: it translates the English, not the original, and makes meaning errors.")
+    say("  (scripts/triage.py). It is not a drafter: it translates a modern Bible, not the original, and makes meaning errors.")
+    say("  Its source: the Vamvas Bible in modern Greek (1850, public domain; the default: closer to the original's wording),")
+    say("  or the BSB in English.")
     say("  Training it (scripts/nllb/: data.py, then train.py here or remote.py for another machine, then draft.py):")
     say("\n".join(show("    ")))
-    return ask("second_draft", "Plan the second-draft model for this project?", True)
+    if not ask("second_draft", "Plan the second-draft model for this project?", True):
+        return False, None
+    return True, ask("nllb_source", "Its source: modern Greek (vamvas) or English (bsb)?", "vamvas", choices=["vamvas", "bsb"])
+
+
+def source_text(src):
+    """Fetch the source edition's text if it isn't here (the Vamvas fetcher needs pysword)."""
+    import project as PJ
+    how = src != "bsb" and PJ.missing_text(src)
+    if not how:
+        return
+    if DRY:
+        return say(f"  (dry run: the {src} text would be fetched: {how})")
+    try:
+        import pysword  # noqa: F401
+    except ImportError:
+        return say(f"  The {src} text is fetched with pysword: pip install pysword==0.2.8, then: {how}")
+    say(f"  fetching the {src} text: {how}")
+    subprocess.run([sys.executable] + how.split()[1:], cwd=ROOT, check=True)
 
 
 def tools_step(pname, fam):
@@ -1099,8 +1151,12 @@ def tools_step(pname, fam):
     say("  Each book is drafted by one agent in Claude Code, chapter after chapter (a new one takes over at a handoff): " + (f"about {est[0] // 1000}k tokens a chapter so far in this mode "
         f"({est[1]} chapters logged)." if est else "no chapters logged in this mode yet (scripts/usage.py)."))
     sd = training_offer(fam)
-    if sd is not None and not DRY:
-        set_project_lines(os.path.join(P.project_dir(pname), "project.yaml"), {"second_draft": "nllb" if sd else "none"})
+    if sd is not None:
+        if sd[1]:
+            source_text(sd[1])
+        if not DRY:
+            set_project_lines(os.path.join(P.project_dir(pname), "project.yaml"),
+                              {"second_draft": "nllb" if sd[0] else "none", **({"nllb_source": sd[1]} if sd[1] else {})})
     return ask("go_ahead", "Go ahead?", True)
 
 

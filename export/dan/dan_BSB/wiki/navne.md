@@ -63,63 +63,10 @@ Shadaj – se [spørgsmålssiden](spoergsmaal.md).
   - NT: GEN 21:14 *e'ersheba*; 1KI 1:8 *m’i*; 1KI 11:23 *d'ezer*
   - Jos-oversigten punkt 37: én global beslutning; kan rettes maskinelt. Samme navn står i DFB på begge måder (Kana'an 9 / Kana’an 32).
   - agent:memory-setup, 2026-10-14
-- **`name:joshua`** יְהוֹשֻׁעַ Joshua → **Josva** [high, decided, attested]
-  - NT: EXO 17:9 *Josva*; EXO 17:10 *Josva*; JOS 1:1 *Josva, Nuns søn*
-  - answers: joshua
-  - 'Josva, Nuns søn' (DFB 11×); 'HERRENS tjener Moses' (udkast 14×).
-  - agent:memory-setup, 2026-10-14
-- **`name:caleb`** כָּלֵב Caleb → **Kaleb** [high, decided, attested]
-  - NT: JDG 1:12 *Kaleb*; JDG 1:13 *Kaleb*
-  - answers: caleb
-  - 'Kaleb, kenizzitten Jefunnes søn' (4 Mos 32,12; Jos 14,6).
-  - agent:memory-setup, 2026-10-14
-- **`name:rahab`** רָחָב Rahab → **Rahab** [high, decided, attested]
-  - NT: HEB 11:31 *Rahab*; ISA 30:7 *Rahab*
-  - answers: rahab
-  - agent:memory-setup, 2026-10-14
-- **`name:jericho`** יְרִיחוֹ Jericho → **Jeriko** [high, decided, attested]
-  - NT: JER 39:5 *Jeriko*; LUK 10:30 *Jeriko*
-  - answers: jericho
-  - agent:memory-setup, 2026-10-14
-- **`name:ai`** הָעַי Ai → **Aj** [high, decided, attested]
-  - NT: GEN 12:8 *Aj*; GEN 13:3 *Aj*
-  - answers: ai
-  - DFB 1 Mos 12,8; 13,3; Jer 49,3.
-  - agent:memory-setup, 2026-10-14
-- **`name:achan`** עָכָן Achan → **Akan** [high, decided, attested]
-  - NT: GEN 36:27 *Akan*; JOS 7:1 *Akan*
-  - answers: achan
-  - Og 'Akors dal' (Jos 7,24-26).
-  - agent:memory-setup, 2026-10-14
-- **`name:hazor`** חָצוֹר Hazor → **Hasor** [high, decided, attested]
-  - NT: 1KI 9:15 *Hasor*; JDG 4:2 *Hasor*
-  - answers: hazor
-  - ḥ → h, ṣ → s; ikke Hazor.
-  - agent:memory-setup, 2026-10-14
-- **`name:mizpah`** מִצְפָּה Mizpah → **Mispa** [high, decided, attested]
-  - NT: JDG 10:17 *Mispa*; JDG 20:1 *Mispa*
-  - answers: mizpah
-  - DFB 20×; Jos 15,38; 18,26 har 'Mispe' (MT-vokalisering) – åbent (jos 28).
-  - agent:memory-setup, 2026-10-14
 - **`name:beersheba`** בְּאֵר שֶׁבַע Beersheba → **Be'ersheba** [high, decided, attested]
   - NT: GEN 21:14 *Be'ersheba*; GEN 21:31 *Be'ersheba*; 1KI 5:5 *Be’ersheba*
   - answers: beersheba
   - DFB staver både Beersheba (1 Mos 28,10), Be’ersheba (1 Kong 5,5) og Be'ersheba (Dom 20,1). Udkastene 12× Be'ersheba.
-  - agent:memory-setup, 2026-10-14
-- **`name:shinar`** שִׁנְעָר Shinar → **Sinear** [high, decided, attested]
-  - NT: GEN 10:10 *Sinear*; GEN 11:2 *Sinear*
-  - answers: shinar
-  - Husform (DFB 1 Mos 10,10; 11,2; Zak 5,11) går forud for translitterationsreglen.
-  - agent:memory-setup, 2026-10-14
-- **`name:haran_city`** חָרָן Harran (byen) → **Karan** [high, decided, attested]
-  - NT: GEN 11:31 *Karan*; GEN 11:32 *Karan*
-  - answers: haran
-  - Byen Karan ≠ broderen Haran (הָרָן). DFB 1 Mos 11,31; 12,4; Es 37,12.
-  - agent:memory-setup, 2026-10-14
-- **`name:canaan`** כְּנַעַן Canaan → **Kana'an** [high, decided, attested]
-  - NT: GEN 23:2 *Kana'an*; GEN 23:19 *Kana'an*; EXO 6:4 *Kana’an*
-  - answers: canaan
-  - 'i Kana'ans land' / 'landet Kana'an' (gen023 spm. 4).
   - agent:memory-setup, 2026-10-14
 - **`name:zilpah`** זִלְפָּה Zilpah → **Zilpa** [high, decided, attested]
   - NT: GEN 29:24 *Zilpa*; GEN 30:9 *Zilpa*
@@ -130,99 +77,24 @@ Shadaj – se [spørgsmålssiden](spoergsmaal.md).
   - NT: GEN 29:29 *Bilha*; GEN 30:3 *Bilha*
   - answers: bilhah
   - agent:memory-setup, 2026-10-14
-- **`name:rachel`** רָחֵל Rachel → **Rakel** [high, decided, attested]
-  - NT: JER 31:15 *Rakel*; MAT 2:18 *Rakel*
-  - answers: rachel
-  - agent:memory-setup, 2026-10-14
-- **`name:leah`** לֵאָה Leah → **Lea** [high, decided, attested]
-  - NT: RUT 4:11 *Lea*
-  - answers: leah
-  - agent:memory-setup, 2026-10-14
-- **`name:rebekah`** רִבְקָה Rebekah → **Rebekka** [high, decided, attested]
-  - NT: GEN 28:5 *Rebekka*; ROM 9:10 *Rebekka*
-  - answers: rebekah
-  - agent:memory-setup, 2026-10-14
 - **`name:bethuel`** בְּתוּאֵל Bethuel → **Betuel** [high, decided, attested]
   - NT: GEN 28:5 *Betuel*
   - answers: bethuel
   - Uden apostrof, som Samuel, Israel.
-  - agent:memory-setup, 2026-10-14
-- **`name:esau`** עֵשָׂו Esau → **Esau** [high, decided, attested]
-  - NT: GEN 28:6 *Esau*; GEN 28:8 *Esau*
-  - answers: esau
-  - agent:memory-setup, 2026-10-14
-- **`name:laban`** לָבָן Laban → **Laban** [high, decided, attested]
-  - NT: GEN 28:5 *Laban*
-  - answers: laban
-  - agent:memory-setup, 2026-10-14
-- **`name:joseph`** יוֹסֵף Joseph → **Josef** [high, decided, attested]
-  - NT: EXO 1:5 *Josef*; EXO 1:6 *Josef*
-  - answers: joseph
-  - agent:memory-setup, 2026-10-14
-- **`name:pharaoh`** פַּרְעֹה Pharaoh → **Farao** [high, decided, attested]
-  - NT: 1KI 3:1 *Farao*; 1KI 9:16 *Farao*
-  - answers: pharaoh
-  - Uden artikel, som egennavn.
-  - agent:memory-setup, 2026-10-14
-- **`name:potiphar`** פּוֹטִיפַר Potiphar → **Potifar** [high, decided, attested]
-  - NT: GEN 37:36 *Potifar*; GEN 39:1 *Potifar*
-  - answers: potiphar
   - agent:memory-setup, 2026-10-14
 - **`name:potiphera`** פּוֹטִי פֶרַע Potiphera → **Poti-Fera** [high, decided, attested]
   - NT: GEN 41:45 *Poti-Fera*; GEN 41:50 *Poti-Fera*
   - answers: potiphera
   - To ord i MT; adskilt fra Potifar.
   - agent:memory-setup, 2026-10-14
-- **`name:asenath`** אָסְנַת Asenath → **Asenat** [high, decided, attested]
-  - NT: GEN 41:45 *Asenat*; GEN 41:50 *Asenat*
-  - answers: asenath
-  - agent:memory-setup, 2026-10-14
-- **`name:perez`** פֶּרֶץ Perez → **Peres** [high, decided, attested]
-  - NT: MAT 1:3 *Peres*; NUM 26:20 *Peres*
-  - answers: perez
-  - agent:memory-setup, 2026-10-14
-- **`name:ishmael`** יִשְׁמָעֵאל Ishmael → **Ismael** [high, decided, attested]
-  - NT: GEN 16:11 *Ismael*; GEN 16:15 *Ismael*
-  - answers: ishmael
-  - agent:memory-setup, 2026-10-14
-- **`name:isaac`** יִצְחָק Isaac → **Isak** [high, decided, attested]
-  - NT: DEU 30:20 *Isak*; EXO 2:24 *Isak*
-  - answers: isaac
-  - agent:memory-setup, 2026-10-14
-- **`name:abimelech`** אֲבִימֶלֶךְ Abimelech → **Abimelek** [high, decided, attested]
-  - NT: JDG 8:31 *Abimelek*; JDG 9:1 *Abimelek*
-  - answers: abimelech
-  - agent:memory-setup, 2026-10-14
-- **`name:shechem`** שְׁכֶם Shechem → **Sikem** [high, decided, attested]
-  - NT: GEN 12:6 *Sikem*; JDG 8:31 *Sikem*
-  - answers: shechem
-  - agent:memory-setup, 2026-10-14
 - **`name:bethel`** בֵּית־אֵל Bethel → **Betel** [high, decided, attested]
   - NT: GEN 12:8 *Betel*; GEN 13:3 *Betel*
   - answers: bethel
-  - agent:memory-setup, 2026-10-14
-- **`name:philistines`** פְּלִשְׁתִּים Philistines → **filistrene** [high, decided, attested]
-  - NT: GEN 10:14 *filistrene*; ISA 2:6 *filistrene*
-  - answers: philistines
   - agent:memory-setup, 2026-10-14
 - **`name:moriah`** מֹרִיָּה Moriah → **Morija** [medium, open, attested]
   - NT: GEN 22:2 *Morija*
   - answers: moriah
   - DFB har ikke navnet (kun DA 1871 'Moria'); afgøres med 2 Krøn 3,1 (gen022 spm. 1).
-  - agent:memory-setup, 2026-10-14
-- **`name:hanoch`** חֲנוֹךְ Hanoch (Rubens søn) → **Hanok** [medium, open, attested]
-  - NT: GEN 25:4 *Hanok*; GEN 46:9 *Hanok*
-  - answers: hanoch
-  - DFB 4 Mos 26,5 har 'Enok' (gen-oversigten 11).
-  - agent:memory-setup, 2026-10-14
-- **`name:ephrath`** אֶפְרָת Ephrath → **Efrat** [medium, open, attested]
-  - NT: GEN 35:16 *Efrat*; GEN 35:19 *Efrat*; RUT 1:2 *Efrat*
-  - answers: ephrath, ephrathah
-  - DFB Ruth 1,2 'Efrat', Ruth 4,11 og Sl 132,6 'Efrata'; udkastene 'Efrat' (1 Mos 35,16.19; 48,7).
-  - agent:memory-setup, 2026-10-14
-- **`name:nebuchadnezzar`** נְבוּכַדְנֶאצַּר Nebuchadnezzar → **Nebukadnesar** [high, decided, attested]
-  - NT: JER 21:2 *Nebukadnesar*; JER 24:1 *Nebukadnesar*
-  - answers: nebuchadnezzar
   - agent:memory-setup, 2026-10-14
 - **`name:belshazzar`** בֵּלְשַׁאצַּר Belshazzar → **Belshassar** [high, decided, attested]
   - NT: DAN 5:1 *Belshassar*; DAN 5:2 *Belshassar*
@@ -242,46 +114,243 @@ Shadaj – se [spørgsmålssiden](spoergsmaal.md).
   - NT: DAN 1:7 *Abed-Nego*; DAN 2:49 *Abed-Nego*
   - answers: abednego
   - agent:memory-setup, 2026-10-14
-- **`name:darius`** דָּרְיָוֶשׁ Darius → **Darius** [high, decided, attested]
+- **`name:joshua.gloss`** יְהוֹשֻׁעַ Joshua → **Josva** [high, decided, attested]
+  - gloss: יְהֹושֻׁעַ: יְהוֹשֻׁ֨עַ֙ (EXO 17:9) [proposed] — English (generated): Joshua
+  - NT: EXO 17:9 *Josva*; EXO 17:10 *Josva*; JOS 1:1 *Josva, Nuns søn*
+  - answers: joshua
+  - 'Josva, Nuns søn' (DFB 11×); 'HERRENS tjener Moses' (udkast 14×).
+  - script:gloss.py, 2026-10-14, supersedes `name:joshua`
+- **`name:caleb.gloss`** כָּלֵב Caleb → **Kaleb** [high, decided, attested]
+  - gloss: כָּלֵב: כָּלֵ֔ב (JDG 1:12) [proposed] — English (generated): And Caleb
+  - NT: JDG 1:12 *Kaleb*; JDG 1:13 *Kaleb*
+  - answers: caleb
+  - 'Kaleb, kenizzitten Jefunnes søn' (4 Mos 32,12; Jos 14,6).
+  - script:gloss.py, 2026-10-14, supersedes `name:caleb`
+- **`name:rahab.gloss`** רָחָב Rahab → **Rahab** [high, decided, attested]
+  - gloss: רַהַב: רַ֥הַב (ISA 30:7) [proposed] — English (generated): Rahab
+  - gloss: Ῥαάβ: Ῥαὰβ (HEB 11:31) [proposed] — English (generated): Rahab
+  - NT: HEB 11:31 *Rahab*; ISA 30:7 *Rahab*
+  - answers: rahab
+  - script:gloss.py, 2026-10-14, supersedes `name:rahab`
+- **`name:jericho.gloss`** יְרִיחוֹ Jericho → **Jeriko** [high, decided, attested]
+  - gloss: יְרִיחֹו יְרִחֹו: יְרֵחוֹ֒ (JER 39:5) [proposed] — English (generated): of Jericho
+  - gloss: Ἰεριχώ: Ἰεριχὼ (LUK 10:30) [proposed] — English (generated): Jericho
+  - NT: JER 39:5 *Jeriko*; LUK 10:30 *Jeriko*
+  - answers: jericho
+  - script:gloss.py, 2026-10-14, supersedes `name:jericho`
+- **`name:ai.gloss`** הָעַי Ai → **Aj** [high, decided, attested]
+  - gloss: עַי: עַ֣י (GEN 12:8) [proposed] — English (generated): and Ai
+  - NT: GEN 12:8 *Aj*; GEN 13:3 *Aj*
+  - answers: ai
+  - DFB 1 Mos 12,8; 13,3; Jer 49,3.
+  - script:gloss.py, 2026-10-14, supersedes `name:ai`
+- **`name:achan.gloss`** עָכָן Achan → **Akan** [high, decided, attested]
+  - gloss: עָכָן: עָכָ֣ן (JOS 7:1) [proposed] — English (generated): Achan
+  - NT: GEN 36:27 *Akan*; JOS 7:1 *Akan*
+  - answers: achan
+  - Og 'Akors dal' (Jos 7,24-26).
+  - script:gloss.py, 2026-10-14, supersedes `name:achan`
+- **`name:hazor.gloss`** חָצוֹר Hazor → **Hasor** [high, decided, attested]
+  - gloss: חָצוֹר: חָצֹ֥ר (1KI 9:15) [proposed] — English (generated): Hazor
+  - NT: 1KI 9:15 *Hasor*; JDG 4:2 *Hasor*
+  - answers: hazor
+  - ḥ → h, ṣ → s; ikke Hazor.
+  - script:gloss.py, 2026-10-14, supersedes `name:hazor`
+- **`name:mizpah.gloss`** מִצְפָּה Mizpah → **Mispa** [high, decided, attested]
+  - gloss: מִצְפָּה: מִּצְפָּֽה (JDG 10:17) [proposed] — English (generated): at Mizpah
+  - NT: JDG 10:17 *Mispa*; JDG 20:1 *Mispa*
+  - answers: mizpah
+  - DFB 20×; Jos 15,38; 18,26 har 'Mispe' (MT-vokalisering) – åbent (jos 28).
+  - script:gloss.py, 2026-10-14, supersedes `name:mizpah`
+- **`name:shinar.gloss`** שִׁנְעָר Shinar → **Sinear** [high, decided, attested]
+  - gloss: שִׁנְעָר: שִׁנְעָֽר (GEN 10:10) [proposed] — English (generated): of Shinar
+  - NT: GEN 10:10 *Sinear*; GEN 11:2 *Sinear*
+  - answers: shinar
+  - Husform (DFB 1 Mos 10,10; 11,2; Zak 5,11) går forud for translitterationsreglen.
+  - script:gloss.py, 2026-10-14, supersedes `name:shinar`
+- **`name:haran_city.gloss`** חָרָן Harran (byen) → **Karan** [high, decided, attested]
+  - gloss: חָרָן: חָרָ֖ן (GEN 11:31) [proposed] — English (generated): Haran
+  - NT: GEN 11:31 *Karan*; GEN 11:32 *Karan*
+  - answers: haran
+  - Byen Karan ≠ broderen Haran (הָרָן). DFB 1 Mos 11,31; 12,4; Es 37,12.
+  - script:gloss.py, 2026-10-14, supersedes `name:haran_city`
+- **`name:nahor.gloss`** נָחוֹר Nahor → **Nakor** [medium, open, attested]
+  - gloss: נָחוֹר: נָחֽוֹר (GEN 11:22) [proposed] — English (generated): Nahor
+  - NT: GEN 11:22 *Nakor*; GEN 11:23 *Nakor*; GEN 22:20 *Nahor*
+  - answers: nahor
+  - DFB 1 Mos 11,22-29 har 'Nakor' (8×) og Jos 24,2-udkastet ligeså; 1 Mos-udkastene 22,20.23; 24 har 'Nahor' (8×). Bør ensrettes til DFB.
+  - script:gloss.py, 2026-10-14, supersedes `name:nahor`
+- **`name:canaan.gloss`** כְּנַעַן Canaan → **Kana'an** [high, decided, attested]
+  - gloss: כְּנַעַן: כְּנָ֑עַן (GEN 23:2) [proposed] — English (generated): of Canaan
+  - gloss: Κανά: Κανὰ (JHN 2:1) [proposed] — English (generated): Cana
+  - NT: GEN 23:2 *Kana'an*; GEN 23:19 *Kana'an*; EXO 6:4 *Kana’an*
+  - answers: canaan
+  - 'i Kana'ans land' / 'landet Kana'an' (gen023 spm. 4).
+  - script:gloss.py, 2026-10-14, supersedes `name:canaan`
+- **`name:rachel.gloss`** רָחֵל Rachel → **Rakel** [high, decided, attested]
+  - gloss: רָחֵל: רָחֵ֖ל (JER 31:15) [proposed] — English (generated): Rachel
+  - gloss: Ῥαχήλ: Ῥαχὴλ (MAT 2:18) [proposed] — English (generated): Rachel
+  - NT: JER 31:15 *Rakel*; MAT 2:18 *Rakel*
+  - answers: rachel
+  - script:gloss.py, 2026-10-14, supersedes `name:rachel`
+- **`name:leah.gloss`** לֵאָה Leah → **Lea** [high, decided, attested]
+  - gloss: לֵאָה: לֵאָה֙ (RUT 4:11) [proposed] — English (generated): and Leah
+  - NT: RUT 4:11 *Lea*
+  - answers: leah
+  - script:gloss.py, 2026-10-14, supersedes `name:leah`
+- **`name:rebekah.gloss`** רִבְקָה Rebekah → **Rebekka** [high, decided, attested]
+  - gloss: רִבְקָה: רִבְקָ֔ה (GEN 28:5) [proposed] — English (generated): of Rebekah
+  - gloss: Ῥεβέκκα: Ῥεβέκκα (ROM 9:10) [proposed] — English (generated): Rebecca s
+  - NT: GEN 28:5 *Rebekka*; ROM 9:10 *Rebekka*
+  - answers: rebekah
+  - script:gloss.py, 2026-10-14, supersedes `name:rebekah`
+- **`name:esau.gloss`** עֵשָׂו Esau → **Esau** [high, decided, attested]
+  - gloss: עֵשָׂו: עֵשָׂ֗ו (GEN 28:6) [proposed] — English (generated): Now Esau
+  - gloss: Ἠσαῦ: Ἠσαῦ (ROM 9:13) [proposed] — English (generated): Esau
+  - NT: GEN 28:6 *Esau*; GEN 28:8 *Esau*
+  - answers: esau
+  - script:gloss.py, 2026-10-14, supersedes `name:esau`
+- **`name:laban.gloss`** לָבָן Laban → **Laban** [high, decided, attested]
+  - gloss: לָבָן: לָבָ֤ן (GEN 28:5) [proposed] — English (generated): Laban
+  - NT: GEN 28:5 *Laban*
+  - answers: laban
+  - script:gloss.py, 2026-10-14, supersedes `name:laban`
+- **`name:joseph.gloss`** יוֹסֵף Joseph → **Josef** [high, decided, attested]
+  - gloss: יוֹסֵף: יוֹסֵ֖ף (EXO 1:5) [proposed] — English (generated): including Joseph
+  - gloss: Ἰωσήφ: Ἰωσὴφ (MAT 1:16) [proposed] — English (generated): Joseph
+  - NT: EXO 1:5 *Josef*; EXO 1:6 *Josef*
+  - answers: joseph
+  - script:gloss.py, 2026-10-14, supersedes `name:joseph`
+- **`name:pharaoh.gloss`** פַּרְעֹה Pharaoh → **Farao** [high, decided, attested]
+  - gloss: פַּרְעֹה: פַּרְעֹ֖ה (1KI 3:1) [proposed] — English (generated): Pharaoh
+  - gloss: Φαραώ: Φαραὼ (ACT 7:10) [proposed] — English (generated): Pharaoh
+  - NT: 1KI 3:1 *Farao*; 1KI 9:16 *Farao*
+  - answers: pharaoh
+  - Uden artikel, som egennavn.
+  - script:gloss.py, 2026-10-14, supersedes `name:pharaoh`
+- **`name:potiphar.gloss`** פּוֹטִיפַר Potiphar → **Potifar** [high, decided, attested]
+  - gloss: פּוֹטִיפַר: פֽוֹטִיפַר֙ (GEN 37:36) [proposed] — English (generated): to Potiphar
+  - NT: GEN 37:36 *Potifar*; GEN 39:1 *Potifar*
+  - answers: potiphar
+  - script:gloss.py, 2026-10-14, supersedes `name:potiphar`
+- **`name:asenath.gloss`** אָסְנַת Asenath → **Asenat** [high, decided, attested]
+  - gloss: אָסְנַת: אָֽסְנַ֗ת (GEN 41:45) [proposed] — English (generated): Asenath
+  - NT: GEN 41:45 *Asenat*; GEN 41:50 *Asenat*
+  - answers: asenath
+  - script:gloss.py, 2026-10-14, supersedes `name:asenath`
+- **`name:perez.gloss`** פֶּרֶץ Perez → **Peres** [high, decided, attested]
+  - gloss: פֶּרֶץ: פֶ֕רֶץ (NUM 26:20) [proposed] — English (generated): from Perez
+  - gloss: Φάρες: Φαρὲς (MAT 1:3) [proposed] — English (generated): Perez
+  - NT: MAT 1:3 *Peres*; NUM 26:20 *Peres*
+  - answers: perez
+  - script:gloss.py, 2026-10-14, supersedes `name:perez`
+- **`name:ishmael.gloss`** יִשְׁמָעֵאל Ishmael → **Ismael** [high, decided, attested]
+  - gloss: יִשְׁמָעֵאל: יִשְׁמָעֵ֔אל (GEN 16:11) [proposed] — English (generated): Ishmael
+  - NT: GEN 16:11 *Ismael*; GEN 16:15 *Ismael*
+  - answers: ishmael
+  - script:gloss.py, 2026-10-14, supersedes `name:ishmael`
+- **`name:isaac.gloss`** יִצְחָק Isaac → **Isak** [high, decided, attested]
+  - gloss: יִצְחָק: יִצְחָ֥ק (DEU 30:20) [proposed] — English (generated): Isaac
+  - gloss: Ἰσαάκ: Ἰσαάκ (MAT 1:2) [proposed] — English (generated): Isaac
+  - NT: DEU 30:20 *Isak*; EXO 2:24 *Isak*
+  - answers: isaac
+  - script:gloss.py, 2026-10-14, supersedes `name:isaac`
+- **`name:abimelech.gloss`** אֲבִימֶלֶךְ Abimelech → **Abimelek** [high, decided, attested]
+  - gloss: אֲבִימֶלֶךְ: אֲבִימֶֽלֶךְ (JDG 8:31) [proposed] — English (generated): Abimelech
+  - NT: JDG 8:31 *Abimelek*; JDG 9:1 *Abimelek*
+  - answers: abimelech
+  - script:gloss.py, 2026-10-14, supersedes `name:abimelech`
+- **`name:shechem.gloss`** שְׁכֶם Shechem → **Sikem** [high, decided, attested]
+  - gloss: שְׁכֶם: שְׁכֶ֔ם (GEN 12:6) [proposed] — English (generated): at Shechem
+  - NT: GEN 12:6 *Sikem*; JDG 8:31 *Sikem*
+  - answers: shechem
+  - script:gloss.py, 2026-10-14, supersedes `name:shechem`
+- **`name:philistines.gloss`** פְּלִשְׁתִּים Philistines → **filistrene** [high, decided, attested]
+  - gloss: פְּלִשְׁתִּי: פְּלִשְׁתִּ֖ים (GEN 10:14) [proposed] — English (generated): the Philistines
+  - NT: GEN 10:14 *filistrene*; ISA 2:6 *filistrene*
+  - answers: philistines
+  - script:gloss.py, 2026-10-14, supersedes `name:philistines`
+- **`name:hanoch.gloss`** חֲנוֹךְ Hanoch (Rubens søn) → **Hanok** [medium, open, attested]
+  - gloss: חֲנוֹךְ: חֲנ֑וֹךְ (GEN 4:17) [proposed] — English (generated): Enoch
+  - NT: GEN 25:4 *Hanok*; GEN 46:9 *Hanok*
+  - answers: hanoch
+  - DFB 4 Mos 26,5 har 'Enok' (gen-oversigten 11).
+  - script:gloss.py, 2026-10-14, supersedes `name:hanoch`
+- **`name:ephrath.gloss`** אֶפְרָת Ephrath → **Efrat** [medium, open, attested]
+  - gloss: אֶפְרָתִי: אֶפְרָתִ֔ים (RUT 1:2) [proposed] — English (generated): They were Ephrathites
+  - NT: GEN 35:16 *Efrat*; GEN 35:19 *Efrat*; RUT 1:2 *Efrat*
+  - answers: ephrath, ephrathah
+  - DFB Ruth 1,2 'Efrat', Ruth 4,11 og Sl 132,6 'Efrata'; udkastene 'Efrat' (1 Mos 35,16.19; 48,7).
+  - script:gloss.py, 2026-10-14, supersedes `name:ephrath`
+- **`name:nebuchadnezzar.gloss`** נְבוּכַדְנֶאצַּר Nebuchadnezzar → **Nebukadnesar** [high, decided, attested]
+  - gloss: נְבוּכַדְרֶאצַּר: נְבוּכַדְרֶאצַּ֥ר (JER 21:2) [proposed] — English (generated): Nebuchadnezzar
+  - NT: JER 21:2 *Nebukadnesar*; JER 24:1 *Nebukadnesar*
+  - answers: nebuchadnezzar
+  - script:gloss.py, 2026-10-14, supersedes `name:nebuchadnezzar`
+- **`name:darius.gloss`** דָּרְיָוֶשׁ Darius → **Darius** [high, decided, attested]
+  - gloss: דָּרְיָוֶשׁ: דָרְיָ֖וֶשׁ (ZEC 7:1) [proposed] — English (generated): Darius
   - NT: ZEC 7:1 *Darius*
   - answers: darius
-  - agent:memory-setup, 2026-10-14
-- **`name:cyrus`** כּוֹרֶשׁ Cyrus → **Kyros** [high, decided, attested]
+  - script:gloss.py, 2026-10-14, supersedes `name:darius`
+- **`name:cyrus.gloss`** כּוֹרֶשׁ Cyrus → **Kyros** [high, decided, attested]
+  - gloss: כּוֹרֶשׁ: כ֨וֹרֶשׁ֙ (ISA 44:28) [proposed] — English (generated): of Cyrus
   - NT: ISA 41:24 *Kyros*; ISA 44:28 *Kyros*
   - answers: cyrus
-  - agent:memory-setup, 2026-10-14
-- **`name:michael`** מִיכָאֵל Michael → **Mikael** [high, decided, attested]
+  - script:gloss.py, 2026-10-14, supersedes `name:cyrus`
+- **`name:michael.gloss`** מִיכָאֵל Michael → **Mikael** [high, decided, attested]
+  - gloss: מִיכָאֵל: מִיכָאֵֽל (NUM 13:13) [proposed] — English (generated): of Michael
+  - gloss: Μιχαήλ: Μιχαὴλ (JUD 1:9) [proposed] — English (generated): Michael
   - NT: JUD 1:9 *Mikael*; REV 12:7 *Mikael*
   - answers: michael
-  - agent:memory-setup, 2026-10-14
-- **`name:babylon`** בָּבֶל Babylon → **Babylon** [high, decided, attested]
+  - script:gloss.py, 2026-10-14, supersedes `name:michael`
+- **`name:babylon.gloss`** בָּבֶל Babylon → **Babylon** [high, decided, attested]
+  - gloss: בָּבֶל: בָּבֶ֔ל (ISA 21:9) [proposed] — English (generated): Babylon
+  - gloss: Βαβυλών: Βαβυλῶνι (1PE 5:13) [proposed] — English (generated): Babylon
   - NT: 1PE 5:13 *Babylon*; ISA 21:9 *Babylon*
   - answers: babylon
   - 'Babel' i 1 Mos 10-11 (DFB).
-  - agent:memory-setup, 2026-10-14
-- **`name:media_persia`** מָדַי וּפָרַס Media and Persia → **Medien** [high, decided, attested]
+  - script:gloss.py, 2026-10-14, supersedes `name:babylon`
+- **`name:media_persia.gloss`** מָדַי וּפָרַס Media and Persia → **Medien** [high, decided, attested]
+  - gloss: מָדַי: מָדָ֑י (ISA 13:17) [proposed] — English (generated): the Medes
   - NT: ISA 13:17 *Medien*; ISA 21:2 *Medien*
   - answers: media, medes
   - Og Persien, Grækenland (Javan i {T:}); 'Medien og Persien' eller 'mederne og perserne' er åbent (dan005 spm. 6).
-  - agent:memory-setup, 2026-10-14
-- **`name:moses`** מֹשֶׁה Moses → **Moses** [high, decided, attested]
+  - script:gloss.py, 2026-10-14, supersedes `name:media_persia`
+- **`name:moses.gloss`** מֹשֶׁה Moses → **Moses** [high, decided, attested]
+  - gloss: מֹשֶׁה: מֹשֶׁ֑ה (1KI 2:3) [proposed] — English (generated): of Moses
+  - gloss: Μωϋσῆς: Μωϋσῆν (1CO 10:2) [proposed] — English (generated): Moses
   - NT: 1CO 10:2 *Moses*; 1KI 2:3 *Moses*
   - answers: moses
   - Genitiv 'Moses'' (Moses' lovbog).
-  - agent:memory-setup, 2026-10-14
-- **`name:kadesh`** קָדֵשׁ Kadesh → **Kadesh** [high, decided, attested]
+  - script:gloss.py, 2026-10-14, supersedes `name:moses`
+- **`name:kadesh.gloss`** קָדֵשׁ Kadesh → **Kadesh** [high, decided, attested]
+  - gloss: קָדֵשׁ: קָדֵ֔שׁ (GEN 14:7) [proposed] — English (generated): Kadesh
   - NT: GEN 14:7 *Kadesh*; JDG 11:16 *Kadesh*
   - answers: kadesh
   - DFB 14×; 1 Mos 16,14 dog 'Qadesh'.
-  - agent:memory-setup, 2026-10-14
-- **`name:gilgal`** גִּלְגָּל Gilgal → **Gilgal** [high, decided, attested]
+  - script:gloss.py, 2026-10-14, supersedes `name:kadesh`
+- **`name:gilgal.gloss`** גִּלְגָּל Gilgal → **Gilgal** [high, decided, attested]
+  - gloss: גִּלְגָּל: גִּלְגָּ֖ל (JDG 2:1) [proposed] — English (generated): Gilgal
   - NT: JDG 2:1 *Gilgal*; JDG 3:19 *Gilgal*
   - answers: gilgal
-  - agent:memory-setup, 2026-10-14
-- **`name:gibeon`** גִּבְעוֹן Gibeon → **Gibeon** [high, decided, attested]
+  - script:gloss.py, 2026-10-14, supersedes `name:gilgal`
+- **`name:gibeon.gloss`** גִּבְעוֹן Gibeon → **Gibeon** [high, decided, attested]
+  - gloss: גִּבְעוֹן: גִּבְעֹ֨נָ (1KI 3:4) [proposed] — English (generated): to Gibeon
   - NT: 1KI 3:4 *Gibeon*; 1KI 3:5 *Gibeon*
   - answers: gibeon
-  - agent:memory-setup, 2026-10-14
+  - script:gloss.py, 2026-10-14, supersedes `name:gibeon`
+- **`name:arpachshad.gloss`** אַרְפַּכְשַׁד Arphaxad → **Arpakshad** [high, decided, attested]
+  - gloss: אַרְפַּכְשַׁד: אַרְפַּכְשַׁ֖ד (GEN 10:22) [proposed] — English (generated): Arphaxad
+  - NT: GEN 10:22 *Arpakshad*; GEN 10:24 *Arpakshad*
+  - answers: arphaxad
+  - DFB 1 Mos 10-11; stilarket havde 'Arpaksad'.
+  - script:gloss.py, 2026-10-14, supersedes `name:arpachshad`
+- **`name:lamech.gloss`** לֶמֶךְ Lamech → **Lemek** [high, decided, attested]
+  - gloss: לֶמֶךְ: לָֽמֶךְ (GEN 4:18) [proposed] — English (generated): Lamech
+  - NT: GEN 4:18 *Lemek*; GEN 4:19 *Lemek*
+  - answers: lamech
+  - DFB 1 Mos 4-5; stilarket havde 'Lamek'.
+  - script:gloss.py, 2026-10-14, supersedes `name:lamech`
 - **`letter:shin`** **šin → sh** [high, observed]
   - NT: GEN 20:1 *Kadesh*; GEN 30:13 *Asher*; GEN 35:26 *Asher*
   - Bashan, Shilo, Shittim, Kadesh, Asher; men husformer går forud (Sinear, Sikem).
@@ -326,4 +395,4 @@ Shadaj – se [spørgsmålssiden](spoergsmaal.md).
 - **`letter:known_forms`** **indarbejdede danske former bruges uændret: Jerusalem, Betlehem, Jordan, Libanon, Egypten, Gilead, Efraim, Manasse, Juda, Ruben, Gad, Zebulon, Issakar, Asher, Naftali, Dan, Benjamin, Simeon, Levi** [high, decided]
   - NT: DAN 1:1 *Jerusalem*; DAN 5:2 *Jerusalem*
   - agent:memory-setup, 2026-10-14
-<!-- store:end sha=fb1895ea -->
+<!-- store:end sha=6c0218e0 -->

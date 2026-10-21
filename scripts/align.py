@@ -15,12 +15,25 @@ Writes export/<project>/_learn/:
   links_<side>.tsv                   ref, target token, source token: the symmetrised links of the OT books
   links_grc_pos.tsv                  ref, target position, source position: every NT link (the Greek side), for
                                      scripts/lang.py's occurrence index
+  links_eng_pos.tsv                  the same for the English side, every verse: for scripts/build_units.py
   align_report.txt                   the checks: glossary terms, OT names (where the corpus has OT books)
+By parts (the default when the store has confirmed affixes: morph entries of slot prefix, infix or suffix with status
+observed or decided; else by words; `analysis.align: words|parts|parts+fill` in the store's observations.json, or
+--by, sets it): the target side is aligned as the words' parts (scripts/morphs.py: an affix by its store form, ta-, the stem as
+written, a grammatical tone by its label), and each link goes back to the word the part belongs to, so the lexicons
+and the links files keep word positions. Also written then:
+  lexicon_<side>_parts.tsv           part, source, count, share: the source words each affix links to (top 8)
+With the gap fill (the default by parts; --by parts alone, or `analysis.align: parts`, leaves it out), the words are
+aligned as well, and a word link fills each gap the parts left: added where neither its source word nor its target word
+has a link by parts. Measured on Zinza (morphs.py try against the Greek; Greek verbs linked to a word): by parts the
+affixes mark their Greek features more sharply (odds ratios up for most) but 5% fewer Greek verbs are linked; the fill
+brings it to 9% more than by words and keeps most of the gain.
 Lexicons are statistics about the edition (words with counts), ours and CC0 for any edition (docs/licensing.md);
 the links files list a verse's words in order and stay local (.gitignore). lexicon_hbo's lemmas and glosses are
 MACULA Hebrew's (CC BY 4.0, credited in CREDITS.md).
 
-Usage: python3 scripts/align.py <project> [--sides eng,hbo,grc] [--model eflomal|ibm2] [--iter N] [--out DIR]
+Usage: python3 scripts/align.py <project> [--sides eng,hbo,grc] [--model eflomal|ibm2] [--iter N] [--by words|parts]
+       [--out DIR]
 """
 import collections, difflib, json, math, os, re, sys, tempfile, unicodedata
 
@@ -153,16 +166,39 @@ def side_pairs(P, side):
                 heb[(code, key[0])] = byv
             src = heb[(code, key[0])].get(key[1], [])
         if src:
-            out.append((src, tgt, ref, code))
+            out.append((src, tgt, ref, code, P.tok.tokens(text, exact=True)))
     return out, gl, lemma
 
 
 # --- main ----------------------------------------------------------------------------------------
 
-def lexicon(pairs, links):
+def by_parts(P, pairs):
+    """the pairs with each target word as its parts (scripts/morphs.py), and per pair the word index of each part"""
+    import morphs
+    S = morphs.load(P.name, P)
+    if not S:
+        raise SystemExit(f"--by parts: {P.name}'s store has no morph entries (docs/language-store.md, Morphs)")
+    out, owner = [], []
+    for src, tgt, ref, code, exact in pairs:
+        ws = exact if len(exact) == len(tgt) else tgt   # the exact tokens, where they pair with the plain ones
+        ps, ow = [], []
+        for j, w in enumerate(ws):
+            for m in S.split(w):
+                ps.append(m.form if m.slot != "stem" else P.tok.plain(m.text).lower() or m.text)
+                ow.append(j)
+        out.append((src, ps)); owner.append(ow)
+    return out, owner
+
+
+def lexicon(pairs, links, owner=None):
+    """the lexicon and the symmetrised links of the word pairs; with owner (by parts) the links are of the pairs'
+    parts, owner[k][j] the word of part j, and come back as links of the words"""
     lex, sym = collections.Counter(), []
-    for p, (f, r) in zip(pairs, links):
-        s = {(i, j) for i, j in symmetrise(f, r) if i < len(p[0]) and j < len(p[1])}
+    for k, (p, (f, r)) in enumerate(zip(pairs, links)):
+        s = symmetrise(f, r)
+        if owner:
+            s = {(i, owner[k][j]) for i, j in s if j < len(owner[k])}
+        s = {(i, j) for i, j in s if i < len(p[0]) and j < len(p[1])}
         sym.append(s)
         for i, j in s:
             lex[(p[0][i], p[1][j])] += 1
@@ -170,6 +206,31 @@ def lexicon(pairs, links):
     for (s, t), c in lex.items():
         by[s][t] += c
     return by, sym
+
+
+def fill(pairs, sym, sym_w):
+    """the parts' links with the word links added where their source or target word has none; the lexicon again"""
+    out, lex = [], collections.Counter()
+    for p, s, w in zip(pairs, sym, sym_w):
+        si, sj = {i for i, _ in s}, {j for _, j in s}
+        m = s | {(i, j) for i, j in w if i not in si and j not in sj}
+        out.append(m)
+        for i, j in m:
+            lex[(p[0][i], p[1][j])] += 1
+    by = collections.defaultdict(collections.Counter)
+    for (a, b), c in lex.items():
+        by[a][b] += c
+    return by, out
+
+
+def part_lexicon(part_pairs, links):
+    """{affix: Counter(source word)}: the source words each affix (not a stem) links to"""
+    by = collections.defaultdict(collections.Counter)
+    for (src, ps), (f, r) in zip(part_pairs, links):
+        for i, j in symmetrise(f, r):
+            if i < len(src) and j < len(ps) and (ps[j].startswith("-") or ps[j].endswith("-") or ps[j].startswith("tone")):
+                by[ps[j]][src[i]] += 1
+    return by
 
 
 def glossary_check(P, by_eng):
@@ -190,7 +251,7 @@ def glossary_check(P, by_eng):
 def names_check(P, pairs, by_hbo, gl):
     """Hebrew proper nouns (capitalised gloss) -> is the top rendering the name in the edition's verses?"""
     verses = collections.defaultdict(list)
-    for src, tgt, ref, code in pairs:
+    for src, tgt, ref, code, _ in pairs:
         for lx in set(src):
             verses[lx].append(tgt)
     ok = n = 0
@@ -223,18 +284,44 @@ def main():
             if model == "eflomal":
                 raise SystemExit("eflomal is not installed (docs/onboarding.md: External tools)")
             model = "ibm2"
+    obs = os.path.join(P.profile, "observations.json")
+    store = json.load(open(obs, encoding="utf-8")) if os.path.exists(obs) else {}
+    affixes = any(e.get("kind") == "morph" and e.get("slot") in ("prefix", "infix", "suffix")
+                  and e.get("status") in ("observed", "decided") for e in store.get("entries", []))
+    unit = a[a.index("--by") + 1] if "--by" in a else (store.get("analysis") or {}).get(
+        "align", "parts+fill" if affixes else "words")
+    unit, gapfill = {"parts+fill": ("parts", True), "parts": ("parts", False)}.get(unit, (unit, False))
+    if unit not in ("words", "parts"):
+        raise SystemExit(f"--by {unit}: words, parts or parts+fill")
     if "--out" in a:
         P.learn = os.path.abspath(a[a.index("--out") + 1])
     os.makedirs(P.learn, exist_ok=True)
-    rep = [f"project {P.name}, model {model}, corpus {len(P.corpus())} verses"]
+    rep = [f"project {P.name}, model {model}, corpus {len(P.corpus())} verses, aligned by {unit}{' with the gaps filled by word links' if unit == 'parts' and gapfill else ''}"]
     for side in sides:
         pairs, gl, lemma = side_pairs(P, side)
         if not pairs:
             rep.append(f"{side}: no verse pairs")
             continue
         sp = [(p[0], p[1]) for p in pairs]
-        links = eflomal_links(sp) if model == "eflomal" else ibm2_links(sp, iters)
-        by, sym = lexicon(sp, links)
+        owner = None
+        if unit == "parts":
+            pp, owner = by_parts(P, pairs)
+            links = eflomal_links(pp) if model == "eflomal" else ibm2_links(pp, iters)
+            bp = part_lexicon(pp, links)
+            with open(os.path.join(P.learn, f"lexicon_{side}_parts.tsv"), "w", encoding="utf-8") as fh:
+                fh.write("part\tsource\tcount\tshare\n")
+                for t in sorted(bp, key=lambda t: -sum(bp[t].values())):
+                    tot = sum(bp[t].values())
+                    for s_, c in bp[t].most_common(8):
+                        fh.write(f"{t}\t{s_}\t{c}\t{c / tot:.2f}\n")
+        else:
+            links = eflomal_links(sp) if model == "eflomal" else ibm2_links(sp, iters)
+        by, sym = lexicon(sp, links, owner)
+        if owner and gapfill:
+            before = sum(len(s) for s in sym)
+            _, sym_w = lexicon(sp, eflomal_links(sp) if model == "eflomal" else ibm2_links(sp, iters))
+            by, sym = fill(sp, sym, sym_w)
+            rep.append(f"{side}: gap fill: {sum(len(s) for s in sym) - before} word links added to {before} by parts")
         with open(os.path.join(P.learn, f"lexicon_{side}.tsv"), "w", encoding="utf-8") as fh:
             fh.write(("lexeme\tlemma\tgloss\t" if side == "hbo" else "source\t") + "target\tcount\tshare\n")
             for s in sorted(by, key=lambda s: -sum(by[s].values())):
@@ -249,6 +336,13 @@ def main():
                 for p, s in ot:
                     for i, j in sorted(s, key=lambda x: x[1]):
                         fh.write(f"{p[2]}\t{p[1][j]}\t{p[0][i]}\n")
+        if side == "eng":  # every link by position, for the units (scripts/build_units.py)
+            with open(os.path.join(P.learn, "links_eng_pos.tsv"), "w", encoding="utf-8") as fh:
+                fh.write("# source positions in langtools.eng_tokens of the assisting verse, target positions in the "
+                         "project's tokens\nref\ttarget_pos\tsource_pos\n")
+                for p, s in zip(pairs, sym):
+                    for i, j in sorted(s, key=lambda x: (x[1], x[0])):
+                        fh.write(f"{p[2]}\t{j}\t{i}\n")
         if side == "grc":  # every NT link by position, for the occurrence index (scripts/lang.py: positions -> MACULA keys)
             with open(os.path.join(P.learn, "links_grc_pos.tsv"), "w", encoding="utf-8") as fh:
                 fh.write(f"# nt_basis {P.p['nt_basis']}: source positions in {GREEK[P.p['nt_basis']]} (letters only), "

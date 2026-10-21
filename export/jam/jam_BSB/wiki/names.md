@@ -48,243 +48,364 @@ Names the NT lacks were built by the table and are `by-rule`, status open, for t
   - NT: HEB 11:4 *Iebl*; HEB 11:5 *Iinok*; LUK 3:34 *Aizak*; LUK 3:38 *Set*
   - Derived report (Greek → target letters) is dominated by English-sound effects (e → ii, a → ie, o → uu/uo) and confirms that names go through English, not Greek. h between vowels becomes y or w (Iebriyam, Nowa, Rieyab), final -ah is -a (Juuda, Siera). Initial h drops (Iegar, Iemuor, Ieran = Haran).
   - agent:memory-setup, 2026-10-16
-- **`name:adam`** Adam → **Adam** [high, observed, attested]
+- **`name:adam.gloss`** Adam → **Adam** [high, observed, attested]
+  - gloss: Ἀδάμ: Ἀδὰμ (1TI 2:13) [proposed] — English (generated): Adam
+  - gloss: אָדָם: אָדָ֕ם (GEN 2:20) [proposed] — English (generated): The man
   - NT: 1TI 2:13 *Adam*
-  - agent:memory-setup, 2026-10-16
-- **`name:eve`** Eve → **Iiv** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:adam`
+- **`name:eve.gloss`** Eve → **Iiv** [high, observed, attested]
+  - gloss: חַוָּה: חַוָּ֑ה (GEN 3:20) [proposed] — English (generated): Eve
   - NT: 1TI 2:13 *Iiv*
-  - agent:memory-setup, 2026-10-16
-- **`name:cain`** Cain → **Kien** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:eve`
+- **`name:cain.gloss`** Cain → **Kien** [high, observed, attested]
+  - gloss: Κάϊν: Κάϊν (HEB 11:4) [proposed] — English (generated): Cain
+  - gloss: קַיִן: קַ֔יִן (GEN 4:1) [proposed] — English (generated): Cain
   - NT: HEB 11:4 *Kien*
-  - agent:memory-setup, 2026-10-16
-- **`name:abel`** Abel → **Iebl** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:cain`
+- **`name:abel.gloss`** Abel → **Iebl** [high, observed, attested]
+  - gloss: Ἅβελ: Ἅβελ (HEB 11:4) [proposed] — English (generated): Abel
+  - gloss: הֶבֶל: הָ֑בֶל (GEN 4:2) [proposed] — English (generated): Abel
   - NT: HEB 11:4 *Iebl*
-  - agent:memory-setup, 2026-10-16
-- **`name:seth`** Seth → **Set** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:abel`
+- **`name:seth.gloss`** Seth → **Set** [high, observed, attested]
+  - gloss: Σήθ: Σὴθ (LUK 3:38) [proposed] — English (generated): of Seth
+  - gloss: שֵׁת: שֵׁ֑ת (GEN 4:25) [proposed] — English (generated): Seth
   - NT: LUK 3:38 *Set*
-  - agent:memory-setup, 2026-10-16
-- **`name:enosh`** Enosh → **Iinos** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:seth`
+- **`name:enosh.gloss`** Enosh → **Iinos** [high, observed, attested]
+  - gloss: אֱנוֹשׁ: אֱנ֑וֹשׁ (GEN 4:26) [proposed] — English (generated): Enosh
   - NT: LUK 3:38 *Iinos*
-  - agent:memory-setup, 2026-10-16
-- **`name:enoch`** Enoch → **Iinok** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:enosh`
+- **`name:enoch.gloss`** Enoch → **Iinok** [high, observed, attested]
+  - gloss: Ἑνώχ: Ἑνὼχ (HEB 11:5) [proposed] — English (generated): Enoch
+  - gloss: חֲנוֹךְ: חֲנ֑וֹךְ (GEN 4:17) [proposed] — English (generated): Enoch
   - NT: HEB 11:5 *Iinok*
-  - agent:memory-setup, 2026-10-16
-- **`name:methuselah`** Methuselah → **Metyuuzila** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:enoch`
+- **`name:methuselah.gloss`** Methuselah → **Metyuuzila** [high, observed, attested]
+  - gloss: מְתוּשֶׁלַח: מְתוּשָֽׁלַח (GEN 5:21) [proposed] — English (generated): Methuselah
   - NT: LUK 3:37 *Metyuuzila*
-  - agent:memory-setup, 2026-10-16
-- **`name:lamech`** Lamech → **Lamek** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:methuselah`
+- **`name:lamech.gloss`** Lamech → **Lamek** [high, observed, attested]
+  - gloss: Λάμεχ: Λάμεχ (LUK 3:36) [proposed] — English (generated): of Lamech
+  - gloss: לֶמֶךְ: לָֽמֶךְ (GEN 4:18) [proposed] — English (generated): Lamech
   - NT: LUK 3:36 *Lamek*
-  - agent:memory-setup, 2026-10-16
-- **`name:noah`** Noah → **Nowa** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:lamech`
+- **`name:noah.gloss`** Noah → **Nowa** [high, observed, attested]
+  - gloss: Νῶε: Νῶε (HEB 11:7) [proposed] — English (generated): Noah
+  - gloss: נֹחַ: נֹ֖חַ (GEN 5:29) [proposed] — English (generated): Noah
   - NT: HEB 11:7 *Nowa*
-  - agent:memory-setup, 2026-10-16
-- **`name:shem`** Shem → **Shem** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:noah`
+- **`name:shem.gloss`** Shem → **Shem** [high, observed, attested]
+  - gloss: שֵׁם: שֵׁ֖ם (GEN 5:32) [proposed] — English (generated): Shem
   - NT: LUK 3:36 *Shem*
-  - agent:memory-setup, 2026-10-16
-- **`name:arphaxad`** Arphaxad → **Arfaksad** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:shem`
+- **`name:arphaxad.gloss`** Arphaxad → **Arfaksad** [high, observed, attested]
+  - gloss: אַרְפַּכְשַׁד: אַרְפַּכְשַׁ֖ד (GEN 10:22) [proposed] — English (generated): Arphaxad
   - NT: LUK 3:36 *Arfaksad*
-  - agent:memory-setup, 2026-10-16
-- **`name:terah`** Terah → **Tera** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:arphaxad`
+- **`name:terah.gloss`** Terah → **Tera** [high, observed, attested]
+  - gloss: תֶּרַח: תָּֽרַח (GEN 11:24) [proposed] — English (generated): Terah
   - NT: LUK 3:34 *Tera*
-  - agent:memory-setup, 2026-10-16
-- **`name:nahor`** Nahor → **Nieyar** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:terah`
+- **`name:nahor.gloss`** Nahor → **Nieyar** [high, observed, attested]
+  - gloss: Ναχώρ: Ναχὼρ (LUK 3:34) [proposed] — English (generated): of Nahor
+  - gloss: נָחוֹר: נָחֽוֹר (GEN 11:22) [proposed] — English (generated): Nahor
   - NT: LUK 3:34 *Nieyar*
-  - agent:memory-setup, 2026-10-16
-- **`name:mahalalel`** Mahalalel → **Mayalalel** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:nahor`
+- **`name:mahalalel.gloss`** Mahalalel → **Mayalalel** [high, observed, attested]
+  - gloss: מַהֲלַלְאֵל: מַֽהֲלַלְאֵֽל (GEN 5:12) [proposed] — English (generated): Mahalalel
   - NT: LUK 3:37 *Mayalalel*
-  - agent:memory-setup, 2026-10-16
-- **`name:jared`** Jared → **Jared** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:mahalalel`
+- **`name:jared.gloss`** Jared → **Jared** [high, observed, attested]
+  - gloss: יֶרֶד: יָֽרֶד (GEN 5:15) [proposed] — English (generated): Jared
   - NT: LUK 3:37 *Jared*
-  - agent:memory-setup, 2026-10-16
-- **`name:abraham`** Abraham → **Iebriyam** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:jared`
+- **`name:abraham.gloss`** Abraham → **Iebriyam** [high, observed, attested]
+  - gloss: Ἀβραάμ: Ἀβραὰμ (LUK 3:34) [proposed] — English (generated): of Abraham
+  - gloss: אַבְרָהָם: אַבְרָהָ֔ם (GEN 17:5) [proposed] — English (generated): Abraham
   - NT: LUK 3:34 *Iebriyam*
-  - agent:memory-setup, 2026-10-16
-- **`name:sarah`** Sarah → **Siera** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:abraham`
+- **`name:sarah.gloss`** Sarah → **Siera** [high, observed, attested]
+  - gloss: Σάρρα: Σάρρᾳ (HEB 11:11) [proposed] — English (generated): Sarah
+  - gloss: שָׂרָה: שָׂרָ֖ה (GEN 17:15) [proposed] — English (generated): Sarah
   - NT: HEB 11:11 *Siera*
-  - agent:memory-setup, 2026-10-16
-- **`name:lot`** Lot → **Lat** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:sarah`
+- **`name:lot.gloss`** Lot → **Lat** [high, observed, attested]
+  - gloss: Λώτ: Λώτ (LUK 17:32) [proposed] — English (generated): Lot s
+  - gloss: לוֹט: לֽוֹט (GEN 11:27) [proposed] — English (generated): Lot
   - NT: LUK 17:32 *Lat*
-  - agent:memory-setup, 2026-10-16
-- **`name:isaac`** Isaac → **Aizak** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:lot`
+- **`name:isaac.gloss`** Isaac → **Aizak** [high, observed, attested]
+  - gloss: Ἰσαάκ: Ἰσαὰκ (LUK 3:34) [proposed] — English (generated): of Isaac
+  - gloss: יִצְחָק: יִצְחָ֑ק (GEN 17:19) [proposed] — English (generated): Isaac
   - NT: LUK 3:34 *Aizak*
-  - agent:memory-setup, 2026-10-16
-- **`name:rebekah`** Rebekah → **Ribeka** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:isaac`
+- **`name:rebekah.gloss`** Rebekah → **Ribeka** [high, observed, attested]
+  - gloss: Ῥεβέκκα: Ῥεβέκκα (ROM 9:10) [proposed] — English (generated): Rebecca s
+  - gloss: רִבְקָה: רִבְקָ֑ה (GEN 22:23) [proposed] — English (generated): Rebekah
   - NT: ROM 9:10 *Ribeka*
-  - agent:memory-setup, 2026-10-16
-- **`name:jacob`** Jacob → **Jiekob** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:rebekah`
+- **`name:jacob.gloss`** Jacob → **Jiekob** [high, observed, attested]
+  - gloss: Ἰακώβ: Ἰακὼβ (LUK 3:34) [proposed] — English (generated): of Jacob
+  - gloss: יַעֲקֹב: יַעֲקֹ֑ב (GEN 25:26) [proposed] — English (generated): Jacob
   - NT: LUK 3:34 *Jiekob*
-  - agent:memory-setup, 2026-10-16
-- **`name:esau`** Esau → **Iisaa** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:jacob`
+- **`name:esau.gloss`** Esau → **Iisaa** [high, observed, attested]
+  - gloss: Ἠσαῦ: Ἠσαῦ (HEB 11:20) [proposed] — English (generated): Esau
+  - gloss: עֵשָׂו: עֵשָֽׂו (GEN 25:25) [proposed] — English (generated): Esau
   - NT: HEB 11:20 *Iisaa*
-  - agent:memory-setup, 2026-10-16
-- **`name:joseph`** Joseph → **Juozif** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:esau`
+- **`name:joseph.gloss`** Joseph → **Juozif** [high, observed, attested]
+  - gloss: Ἰωσήφ: Ἰωσὴφ (HEB 11:22) [proposed] — English (generated): Joseph
+  - gloss: יוֹסֵף: יוֹסֵ֖ף (GEN 30:24) [proposed] — English (generated): Joseph
   - NT: HEB 11:22 *Juozif*
-  - agent:memory-setup, 2026-10-16
-- **`name:judah`** Judah → **Juuda** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:joseph`
+- **`name:judah.gloss`** Judah → **Juuda** [high, observed, attested]
+  - gloss: Ἰούδας: Ἰούδα (MAT 2:6) [proposed] — English (generated): of Judah
+  - gloss: יְהוּדָה: יְהוּדָ֑ה (GEN 29:35) [proposed] — English (generated): Judah
   - NT: LUK 3:34 *Juuda*
-  - agent:memory-setup, 2026-10-16
-- **`name:reuben`** Reuben → **Ruuben** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:judah`
+- **`name:reuben.gloss`** Reuben → **Ruuben** [high, observed, attested]
+  - gloss: Ῥουβήν: Ῥουβὴν (REV 7:5) [proposed] — English (generated): of Reuben
+  - gloss: רְאוּבֵן: רְאוּבֵ֑ן (GEN 29:32) [proposed] — English (generated): Reuben
   - NT: REV 7:5 *Ruuben*
-  - agent:memory-setup, 2026-10-16
-- **`name:simeon`** Simeon → **Simiyan** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:reuben`
+- **`name:simeon.gloss`** Simeon → **Simiyan** [high, observed, attested]
+  - gloss: Συμεών: Συμεὼν (REV 7:7) [proposed] — English (generated): of Simeon
+  - gloss: שִׁמְעוֹן: שִׁמְעֽוֹן (GEN 29:33) [proposed] — English (generated): Simeon
   - NT: REV 7:7 *Simiyan*
-  - agent:memory-setup, 2026-10-16
-- **`name:levi`** Levi → **Liivai** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:simeon`
+- **`name:levi.gloss`** Levi → **Liivai** [high, observed, attested]
+  - gloss: Λευί: Λευὶ (REV 7:7) [proposed] — English (generated): of Levi
+  - gloss: לֵוִי: לֵוִֽי (GEN 29:34) [proposed] — English (generated): Levi
   - NT: REV 7:7 *Liivai*
-  - agent:memory-setup, 2026-10-16
-- **`name:issachar`** Issachar → **Isakyar** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:levi`
+- **`name:issachar.gloss`** Issachar → **Isakyar** [high, observed, attested]
+  - gloss: Ἰσσαχάρ: Ἰσσαχὰρ (REV 7:7) [proposed] — English (generated): of Issachar
+  - gloss: יִשָּׂשכָר: יִשָּׂשכָֽר (GEN 30:18) [proposed] — English (generated): Issachar
   - NT: REV 7:7 *Isakyar*
-  - agent:memory-setup, 2026-10-16
-- **`name:zebulun`** Zebulun → **Zebyulan** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:issachar`
+- **`name:zebulun.gloss`** Zebulun → **Zebyulan** [high, observed, attested]
+  - gloss: Ζαβουλών: Ζαβουλὼν (REV 7:8) [proposed] — English (generated): of Zebulun
+  - gloss: זְבוּלֻן: זְבֻלֽוּן (GEN 30:20) [proposed] — English (generated): Zebulun
   - NT: REV 7:8 *Zebyulan*
-  - agent:memory-setup, 2026-10-16
-- **`name:benjamin`** Benjamin → **Benjamin** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:zebulun`
+- **`name:benjamin.gloss`** Benjamin → **Benjamin** [high, observed, attested]
+  - gloss: Βενιαμίν: Βενιαμὶν (REV 7:8) [proposed] — English (generated): of Benjamin
+  - gloss: בִּנְיָמִן: בִנְיָמִֽין (GEN 35:18) [proposed] — English (generated): him
   - NT: REV 7:8 *Benjamin*
-  - agent:memory-setup, 2026-10-16
-- **`name:asher`** Asher → **Asha** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:benjamin`
+- **`name:asher.gloss`** Asher → **Asha** [high, observed, attested]
+  - gloss: Ἀσήρ: Ἀσὴρ (REV 7:6) [proposed] — English (generated): of Asher
+  - gloss: אָשֵׁר: אָשֵֽׁר (GEN 30:13) [proposed] — English (generated): How happy I am
   - NT: REV 7:6 *Asha*
-  - agent:memory-setup, 2026-10-16
-- **`name:naphtali`** Naphtali → **Naftali** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:asher`
+- **`name:naphtali.gloss`** Naphtali → **Naftali** [high, observed, attested]
+  - gloss: Νεφθαλίμ: Νεφθαλὶμ (REV 7:6) [proposed] — English (generated): of Naphtali
+  - gloss: נַפְתָּלִי: נַפְתָּלִֽי (GEN 30:8) [proposed] — English (generated): Naphtali
   - NT: REV 7:6 *Naftali*
-  - agent:memory-setup, 2026-10-16
-- **`name:manasseh`** Manasseh → **Manase** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:naphtali`
+- **`name:manasseh.gloss`** Manasseh → **Manase** [high, observed, attested]
+  - gloss: Μανασσῆ: Μανασσῆ (REV 7:6) [proposed] — English (generated): of Manasseh
+  - gloss: מְנַשֶּׁה: מְנַשֶּׁ֑ה (GEN 41:51) [proposed] — English (generated): Manasseh
   - NT: REV 7:6 *Manase*
-  - agent:memory-setup, 2026-10-16
-- **`name:hagar`** Hagar → **Iegar** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:manasseh`
+- **`name:hagar.gloss`** Hagar → **Iegar** [high, observed, attested]
+  - gloss: Ἁγάρ: Ἁγάρ (GAL 4:24) [proposed] — English (generated): Hagar
+  - gloss: הָגָר: הָגָֽר (GEN 16:1) [proposed] — English (generated): Hagar
   - NT: GAL 4:24 *Iegar*
-  - agent:memory-setup, 2026-10-16
-- **`name:melchizedek`** Melchizedek → **Melkizedek** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:hagar`
+- **`name:melchizedek.gloss`** Melchizedek → **Melkizedek** [high, observed, attested]
+  - gloss: Μελχισέδεκ: Μελχισέδεκ (HEB 7:1) [proposed] — English (generated): Melchizedek
+  - gloss: מַלְכִּי צֶדֶק: מַלְכִּי (GEN 14:18) [proposed] — English (generated): Then Melchizedek
   - NT: HEB 7:1 *Melkizedek*
-  - agent:memory-setup, 2026-10-16
-- **`name:salem`** Salem → **Sielem** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:melchizedek`
+- **`name:salem.gloss`** Salem → **Sielem** [high, observed, attested]
+  - gloss: Σαλήμ: Σαλήμ (HEB 7:1) [proposed] — English (generated): of Salem
+  - gloss: שָׁלֵם: שָׁלֵ֔ם (GEN 14:18) [proposed] — English (generated): of Salem
   - NT: HEB 7:1 *Sielem*
-  - agent:memory-setup, 2026-10-16
-- **`name:egypt`** Egypt → **Iijip** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:salem`
+- **`name:egypt.gloss`** Egypt → **Iijip** [high, observed, attested]
+  - gloss: Αἴγυπτος: Αἰγύπτου (ACT 7:10) [proposed] — English (generated): of Egypt
+  - gloss: מִצְרַיִם: מִצְרַ֨יְמָ (GEN 12:10) [proposed] — English (generated): to Egypt
   - NT: ACT 7:10 *Iijip*
-  - agent:memory-setup, 2026-10-16
-- **`name:pharaoh`** Pharaoh → **Fiera** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:egypt`
+- **`name:pharaoh.gloss`** Pharaoh → **Fiera** [high, observed, attested]
+  - gloss: Φαραώ: Φαραὼ (ACT 7:10) [proposed] — English (generated): Pharaoh
+  - gloss: פַּרְעֹה: פַּרְעֹ֑ה (GEN 12:15) [proposed] — English (generated): When Pharaoh s
   - NT: ACT 7:10 *Fiera*
-  - agent:memory-setup, 2026-10-16
-- **`name:canaan`** Canaan → **Kienan** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:pharaoh`
+- **`name:canaan.gloss`** Canaan → **Kienan** [high, observed, attested]
+  - gloss: Χανάαν: Χανάαν (ACT 7:11) [proposed] — English (generated): Canaan
+  - gloss: כְּנַעַן: כְנָֽעַן (GEN 9:18) [proposed] — English (generated): of Canaan
   - NT: ACT 7:11 *Kienan*
   - Kienan is also Cainan (LUK 3:36–37): a homograph.
-  - agent:memory-setup, 2026-10-16
-- **`name:haran`** Haran → **Ieran** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:canaan`
+- **`name:haran.gloss`** Haran → **Ieran** [high, observed, attested]
+  - gloss: Χαρράν: Χαρράν (ACT 7:4) [proposed] — English (generated): Haran
+  - gloss: הָרָן: הָרָֽן (GEN 11:26) [proposed] — English (generated): and Haran
   - NT: ACT 7:4 *Ieran*
   - Ieran is also Aaron in the corpus (lexicon aaron → ieran): a homograph.
-  - agent:memory-setup, 2026-10-16
-- **`name:chaldeans`** Chaldeans → **Kaldiya** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:haran`
+- **`name:chaldeans.gloss`** Chaldeans → **Kaldiya** [high, observed, attested]
+  - gloss: Χαλδαῖος: Χαλδαίων (ACT 7:4) [proposed] — English (generated): of the Chaldeans
+  - gloss: כַּשְׂדִּים: כַּשְׂדִּֽים (GEN 11:28) [proposed] — English (generated): of the Chaldeans
   - NT: ACT 7:4 *Kaldiya*
-  - agent:memory-setup, 2026-10-16
-- **`name:mesopotamia`** Mesopotamia → **Mesopotiemiya** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:chaldeans`
+- **`name:mesopotamia.gloss`** Mesopotamia → **Mesopotiemiya** [high, observed, attested]
+  - gloss: Μεσοποταμία: Μεσοποταμίᾳ (ACT 7:2) [proposed] — English (generated): Mesopotamia
   - NT: ACT 7:2 *Mesopotiemiya*
-  - agent:memory-setup, 2026-10-16
-- **`name:shechem`** Shechem → **Shekem** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:mesopotamia`
+- **`name:shechem.gloss`** Shechem → **Shekem** [high, observed, attested]
+  - gloss: שְׁכֶם: שְׁכֶ֔ם (GEN 12:6) [proposed] — English (generated): at Shechem
   - NT: ACT 7:16 *Shekem*
-  - agent:memory-setup, 2026-10-16
-- **`name:hamor`** Hamor → **Iemuor** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:shechem`
+- **`name:hamor.gloss`** Hamor → **Iemuor** [high, observed, attested]
+  - gloss: Ἑμμώρ: Ἑμμὼρ (ACT 7:16) [proposed] — English (generated): of Hamor
+  - gloss: חֲמוֹר: חֲמ֖וֹר (GEN 33:19) [proposed] — English (generated): of Hamor
   - NT: ACT 7:16 *Iemuor*
-  - agent:memory-setup, 2026-10-16
-- **`name:sodom`** Sodom → **Sadam** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:hamor`
+- **`name:sodom.gloss`** Sodom → **Sadam** [high, observed, attested]
+  - gloss: Σόδομα: Σοδόμων (MAT 10:15) [proposed] — English (generated): for Sodom
+  - gloss: סְדֹם: סְדֹ֧מָ (GEN 10:19) [proposed] — English (generated): toward Sodom
   - NT: MAT 10:15 *Sadam*
-  - agent:memory-setup, 2026-10-16
-- **`name:gomorrah`** Gomorrah → **Gomaro** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:sodom`
+- **`name:gomorrah.gloss`** Gomorrah → **Gomaro** [high, observed, attested]
+  - gloss: Γόμορρα: Γομόρρων (MAT 10:15) [proposed] — English (generated): Gomorrah
+  - gloss: עֲמֹרָה: עֲמֹרָ֛ה (GEN 10:19) [proposed] — English (generated): Gomorrah
   - NT: MAT 10:15 *Gomaro*
   - Gomaro 3×, Gomara 1× (ROM 9:29).
-  - agent:memory-setup, 2026-10-16
-- **`name:tamar`** Tamar → **Tamaar** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:gomorrah`
+- **`name:tamar.gloss`** Tamar → **Tamaar** [high, observed, attested]
+  - gloss: חַצֲצֹן תָּמָר: תָּמָֽר (GEN 14:7) [proposed] — English (generated): in Hazazon tamar
   - NT: MAT 1:3 *Tamaar*
-  - agent:memory-setup, 2026-10-16
-- **`name:perez`** Perez → **Perez** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:tamar`
+- **`name:perez.gloss`** Perez → **Perez** [high, observed, attested]
+  - gloss: Φάρες: Φαρὲς (MAT 1:3) [proposed] — English (generated): Perez
+  - gloss: פֶּרֶץ: פָּֽרֶץ (GEN 38:29) [proposed]
   - NT: MAT 1:3 *Perez*
-  - agent:memory-setup, 2026-10-16
-- **`name:zerah`** Zerah → **Ziira** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:perez`
+- **`name:zerah.gloss`** Zerah → **Ziira** [high, observed, attested]
+  - gloss: Ζάρα: Ζαρὰ (MAT 1:3) [proposed] — English (generated): Zerah
+  - gloss: זֶרַח: זֶ֖רַח (GEN 36:13) [proposed] — English (generated): Zerah
   - NT: MAT 1:3 *Ziira*
-  - agent:memory-setup, 2026-10-16
-- **`name:hezron`** Hezron → **Ezran** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:zerah`
+- **`name:hezron.gloss`** Hezron → **Ezran** [high, observed, attested]
+  - gloss: חֶצְרוֹן: חֶצְר֥וֹן (GEN 46:9) [proposed] — English (generated): Hezron
   - NT: MAT 1:3 *Ezran*
-  - agent:memory-setup, 2026-10-16
-- **`name:israel`** Israel → **Izrel** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:hezron`
+- **`name:israel.gloss`** Israel → **Izrel** [high, observed, attested]
+  - gloss: Ἰσραήλ: Ἰσραήλ (LUK 1:68) [proposed] — English (generated): of Israel
+  - gloss: יִשְׂרָאֵל: יִשְׂרָאֵ֑ל (GEN 32:29) [proposed] — English (generated): but Israel
   - NT: LUK 1:68 *Izrel*
-  - agent:memory-setup, 2026-10-16
-- **`name:moses`** Moses → **Muoziz** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:israel`
+- **`name:moses.gloss`** Moses → **Muoziz** [high, observed, attested]
+  - gloss: Μωϋσῆς: Μωϋσῆς (MAT 8:4) [proposed] — English (generated): by Moses
+  - gloss: מֹשֶׁה: מֹשֶׁ֔ה (EXO 2:10) [proposed] — English (generated): Moses
   - NT: GAL 4:24 *Muoziz*
-  - agent:memory-setup, 2026-10-16
-- **`name:david`** David → **Dievid** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:moses`
+- **`name:david.gloss`** David → **Dievid** [high, observed, attested]
+  - gloss: Δαυίδ: Δαυὶδ (LUK 1:32) [proposed] — English (generated): David
+  - gloss: דָּוִד: דָוִֽד (RUT 4:17) [proposed] — English (generated): of David
   - NT: LUK 1:32 *Dievid*
-  - agent:memory-setup, 2026-10-16
-- **`name:babylon`** Babylon → **Babilan** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:david`
+- **`name:babylon.gloss`** Babylon → **Babilan** [high, observed, attested]
+  - gloss: Βαβυλών: Βαβυλὼν (REV 14:8) [proposed] — English (generated): Babylon
+  - gloss: בָּבֶל: בָּבֶ֡ל (2KI 17:24) [proposed] — English (generated): people from Babylon
   - NT: REV 14:8 *Babilan*
-  - agent:memory-setup, 2026-10-16
-- **`name:jordan`** Jordan → **Jaadn** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:babylon`
+- **`name:jordan.gloss`** Jordan → **Jaadn** [high, observed, attested]
+  - gloss: Ἰορδάνης: Ἰορδάνῃ (MRK 1:5) [proposed] — English (generated): Jordan
+  - gloss: יַרְדֵּן: יַּרְדֵּ֔ן (GEN 13:10) [proposed] — English (generated): of the Jordan
   - NT: MRK 1:5 *Jaadn*
-  - agent:memory-setup, 2026-10-16
-- **`name:sinai`** Sinai → **Sainai** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:jordan`
+- **`name:sinai.gloss`** Sinai → **Sainai** [high, observed, attested]
+  - gloss: Σινᾶ: Σινᾶ (GAL 4:24) [proposed] — English (generated): Sinai
+  - gloss: סִינַי: סִינָ֑י (EXO 16:1) [proposed] — English (generated): and Sinai
   - NT: GAL 4:24 *Sainai*
-  - agent:memory-setup, 2026-10-16
-- **`name:rachel`** Rachel → **Riechel** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:sinai`
+- **`name:rachel.gloss`** Rachel → **Riechel** [high, observed, attested]
+  - gloss: רָחֵל: רָחֵ֣ל (GEN 29:6) [proposed] — English (generated): Rachel
   - NT: MAT 2:18 *Riechel*
-  - agent:memory-setup, 2026-10-16
-- **`name:satan`** Satan → **Sietan** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:rachel`
+- **`name:satan.gloss`** Satan → **Sietan** [high, observed, attested]
+  - gloss: Σατανᾶς: Σατανᾶ (MAT 4:10) [proposed] — English (generated): Satan
   - NT: MAT 4:10 *Sietan*
-  - agent:memory-setup, 2026-10-16
-- **`name:jesus`** Jesus → **Jiizas** [high, observed, attested]
+  - script:gloss.py, 2026-10-16, supersedes `name:satan`
+- **`name:jesus.gloss`** Jesus → **Jiizas** [high, observed, attested]
+  - gloss: Ἰησοῦς: Ἰησοῦς (MAT 4:7) [proposed] — English (generated): Jesus
   - NT: MAT 4:7 *Jiizas*
-  - agent:memory-setup, 2026-10-16
-- **`name:ishmael`** Ishmael → **Ishmiel** [low, open, by-rule]
+  - script:gloss.py, 2026-10-16, supersedes `name:jesus`
+- **`name:ishmael.gloss`** Ishmael → **Ishmiel** [low, open, by-rule]
+  - gloss: יִשְׁמָעֵאל: יִשְׁמָעֵ֔אל (GEN 16:11) [proposed] — English (generated): Ishmael
   - NT: LUK 3:34 *Iebriyam*; HEB 11:4 *Iebl*; LUK 3:38 *Set*
   - Built from the letter table (letter:names, letter:no_h, letter:ie_uo): a candidate for the team. The cited verses hold the models (a → ie, h dropped, th → t).
-  - agent:memory-setup, 2026-10-16
-- **`name:leah`** Leah → **Liiya** [low, open, by-rule]
+  - script:gloss.py, 2026-10-16, supersedes `name:ishmael`
+- **`name:leah.gloss`** Leah → **Liiya** [low, open, by-rule]
+  - gloss: לֵאָה: לֵאָ֔ה (GEN 29:16) [proposed] — English (generated): Leah
   - NT: LUK 3:34 *Iebriyam*; HEB 11:4 *Iebl*; LUK 3:38 *Set*
   - Built from the letter table (letter:names, letter:no_h, letter:ie_uo): a candidate for the team. The cited verses hold the models (a → ie, h dropped, th → t).
-  - agent:memory-setup, 2026-10-16
-- **`name:laban`** Laban → **Lieban** [low, open, by-rule]
+  - script:gloss.py, 2026-10-16, supersedes `name:leah`
+- **`name:laban.gloss`** Laban → **Lieban** [low, open, by-rule]
+  - gloss: לָבָן: לָבָ֑ן (GEN 24:29) [proposed] — English (generated): Laban
   - NT: LUK 3:34 *Iebriyam*; HEB 11:4 *Iebl*; LUK 3:38 *Set*
   - Built from the letter table (letter:names, letter:no_h, letter:ie_uo): a candidate for the team. The cited verses hold the models (a → ie, h dropped, th → t).
-  - agent:memory-setup, 2026-10-16
-- **`name:eden`** Eden → **Iidn** [low, open, by-rule]
+  - script:gloss.py, 2026-10-16, supersedes `name:laban`
+- **`name:eden.gloss`** Eden → **Iidn** [low, open, by-rule]
+  - gloss: עֵדֶן: עֵ֖דֶן (GEN 2:8) [proposed] — English (generated): in Eden
   - NT: LUK 3:34 *Iebriyam*; HEB 11:4 *Iebl*; LUK 3:38 *Set*
   - Built from the letter table (letter:names, letter:no_h, letter:ie_uo): a candidate for the team. The cited verses hold the models (a → ie, h dropped, th → t).
-  - agent:memory-setup, 2026-10-16
-- **`name:ham`** Ham → **Am** [low, open, by-rule]
+  - script:gloss.py, 2026-10-16, supersedes `name:eden`
+- **`name:ham.gloss`** Ham → **Am** [low, open, by-rule]
+  - gloss: חָם: חָ֥ם (GEN 5:32) [proposed] — English (generated): Ham
   - NT: LUK 3:34 *Iebriyam*; HEB 11:4 *Iebl*; LUK 3:38 *Set*
   - Built from the letter table (letter:names, letter:no_h, letter:ie_uo): a candidate for the team. The cited verses hold the models (a → ie, h dropped, th → t).
-  - agent:memory-setup, 2026-10-16
-- **`name:japheth`** Japheth → **Jiefet** [low, open, by-rule]
+  - script:gloss.py, 2026-10-16, supersedes `name:ham`
+- **`name:japheth.gloss`** Japheth → **Jiefet** [low, open, by-rule]
+  - gloss: יֶפֶת: יָֽפֶת (GEN 5:32) [proposed] — English (generated): and Japheth
   - NT: LUK 3:34 *Iebriyam*; HEB 11:4 *Iebl*; LUK 3:38 *Set*
   - Built from the letter table (letter:names, letter:no_h, letter:ie_uo): a candidate for the team. The cited verses hold the models (a → ie, h dropped, th → t).
-  - agent:memory-setup, 2026-10-16
-- **`name:abram`** Abram → **Iebram** [low, open, by-rule]
+  - script:gloss.py, 2026-10-16, supersedes `name:japheth`
+- **`name:abram.gloss`** Abram → **Iebram** [low, open, by-rule]
+  - gloss: Ἀβραάμ: Ἀβραὰμ (LUK 3:34) [proposed] — English (generated): of Abraham
+  - gloss: אַבְרָם: אַבְרָ֔ם (GEN 11:26) [proposed] — English (generated): Abram
   - NT: LUK 3:34 *Iebriyam*; HEB 11:4 *Iebl*; LUK 3:38 *Set*
   - Built from the letter table (letter:names, letter:no_h, letter:ie_uo): a candidate for the team. The cited verses hold the models (a → ie, h dropped, th → t).
-  - agent:memory-setup, 2026-10-16
-- **`name:sarai`** Sarai → **Sierai** [low, open, by-rule]
+  - script:gloss.py, 2026-10-16, supersedes `name:abram`
+- **`name:sarai.gloss`** Sarai → **Sierai** [low, open, by-rule]
+  - gloss: שָׂרַי: שָׂרָ֔י (GEN 11:29) [proposed] — English (generated): Sarai
   - NT: LUK 3:34 *Iebriyam*; HEB 11:4 *Iebl*; LUK 3:38 *Set*
   - Built from the letter table (letter:names, letter:no_h, letter:ie_uo): a candidate for the team. The cited verses hold the models (a → ie, h dropped, th → t).
-  - agent:memory-setup, 2026-10-16
-- **`name:babel`** Babel → **Biebl** [low, open, by-rule]
+  - script:gloss.py, 2026-10-16, supersedes `name:sarai`
+- **`name:babel.gloss`** Babel → **Biebl** [low, open, by-rule]
+  - gloss: בָּבֶל: בָּבֶ֔ל (GEN 10:10) [proposed] — English (generated): in Babylon
   - NT: LUK 3:34 *Iebriyam*; HEB 11:4 *Iebl*; LUK 3:38 *Set*
   - Built from the letter table (letter:names, letter:no_h, letter:ie_uo): a candidate for the team. The cited verses hold the models (a → ie, h dropped, th → t).
-  - agent:memory-setup, 2026-10-16
-- **`name:nimrod`** Nimrod → **Nimrad** [low, open, by-rule]
+  - script:gloss.py, 2026-10-16, supersedes `name:babel`
+- **`name:nimrod.gloss`** Nimrod → **Nimrad** [low, open, by-rule]
+  - gloss: נִמְרֹד: נִמְרֹ֑ד (GEN 10:8) [proposed] — English (generated): Nimrod
   - NT: LUK 3:34 *Iebriyam*; HEB 11:4 *Iebl*; LUK 3:38 *Set*
   - Built from the letter table (letter:names, letter:no_h, letter:ie_uo): a candidate for the team. The cited verses hold the models (a → ie, h dropped, th → t).
-  - agent:memory-setup, 2026-10-16
-- **`name:ephraim`** Ephraim → **Iifriyim** [low, open, by-rule]
+  - script:gloss.py, 2026-10-16, supersedes `name:nimrod`
+- **`name:ephraim.gloss`** Ephraim → **Iifriyim** [low, open, by-rule]
+  - gloss: אֶפְרַיִם: אֶפְרָ֑יִם (GEN 41:52) [proposed] — English (generated): Ephraim
   - NT: LUK 3:34 *Iebriyam*; HEB 11:4 *Iebl*; LUK 3:38 *Set*
   - Built from the letter table (letter:names, letter:no_h, letter:ie_uo): a candidate for the team. The cited verses hold the models (a → ie, h dropped, th → t).
-  - agent:memory-setup, 2026-10-16
-- **`name:dinah`** Dinah → **Daina** [low, open, by-rule]
+  - script:gloss.py, 2026-10-16, supersedes `name:ephraim`
+- **`name:dinah.gloss`** Dinah → **Daina** [low, open, by-rule]
+  - gloss: דִּינָה: דִּינָֽה (GEN 30:21) [proposed] — English (generated): Dinah
   - NT: LUK 3:34 *Iebriyam*; HEB 11:4 *Iebl*; LUK 3:38 *Set*
   - Built from the letter table (letter:names, letter:no_h, letter:ie_uo): a candidate for the team. The cited verses hold the models (a → ie, h dropped, th → t).
-  - agent:memory-setup, 2026-10-16
-- **`name:ur`** Ur → **Or** [low, open, by-rule]
+  - script:gloss.py, 2026-10-16, supersedes `name:dinah`
+- **`name:ur.gloss`** Ur → **Or** [low, open, by-rule]
+  - gloss: Ἀβραάμ: Ἀβραὰμ (LUK 3:34) [proposed] — English (generated): of Abraham
+  - gloss: אוּר: א֥וּר (GEN 11:28) [proposed] — English (generated): in Ur
   - NT: LUK 3:34 *Iebriyam*; HEB 11:4 *Iebl*; LUK 3:38 *Set*
   - Built from the letter table (letter:names, letter:no_h, letter:ie_uo): a candidate for the team. The cited verses hold the models (a → ie, h dropped, th → t).
-  - agent:memory-setup, 2026-10-16
-- **`name:bethel`** Bethel → **Betel** [low, open, by-rule]
+  - script:gloss.py, 2026-10-16, supersedes `name:ur`
+- **`name:bethel.gloss`** Bethel → **Betel** [low, open, by-rule]
+  - gloss: בֵּית אֵל: בֵֽית (GEN 12:8) [proposed] — English (generated): of
   - NT: LUK 3:34 *Iebriyam*; HEB 11:4 *Iebl*; LUK 3:38 *Set*
   - Built from the letter table (letter:names, letter:no_h, letter:ie_uo): a candidate for the team. The cited verses hold the models (a → ie, h dropped, th → t).
-  - agent:memory-setup, 2026-10-16
-<!-- store:end sha=5f223e30 -->
+  - script:gloss.py, 2026-10-16, supersedes `name:bethel`
+<!-- store:end sha=1ce7238f -->

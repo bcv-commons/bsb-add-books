@@ -56,29 +56,6 @@ verbatim wherever the Hebrew repeats them:
   - NT: MRK 1:38 *Mek wi go*
   - answers: let us
   - agent:memory-setup, 2026-10-16
-- **`formula:let_there_be`** יְהִי / let there be → **Mek <X> <verb>** [medium, observed, attested]
-  - NT: 2CO 4:6 *Mek di lait shain*
-  - answers: let there be, let
-  - Jussive commands of God: mek + subject + verb (Mek di lait shain, 2CO 4:6, God's word of GEN 1:3). "Mek lait de" (let light be) is built by rule.
-  - agent:memory-setup, 2026-10-16
-- **`formula:do_not_fear`** אַל־תִּירָא / do not be afraid → **No fried** [high, observed, attested]
-  - NT: LUK 1:13 *No fried!*
-  - answers: do not be afraid, fear not
-  - agent:memory-setup, 2026-10-16
-- **`formula:says_the_lord`** נְאֻם יְהוָה / declares the LORD → **di Laad se** [high, observed, attested]
-  - NT: HEB 8:8 *di Laad se*
-  - answers: declares the lord, says the lord
-  - Placed inside the quotation (HEB 8:8) or before it (ACT 7:49 "Di Laad se, ‘…’").
-  - agent:memory-setup, 2026-10-16
-- **`formula:it_is_written`** it is written (NT formula) → **it rait dong** [high, observed, attested]
-  - NT: 1CO 1:19 *it rait dong*
-  - answers: it is written, written
-  - agent:memory-setup, 2026-10-16
-- **`formula:named`** וּשְׁמוֹ / named <X> → **wan <noun> niem <X>** [high, observed, attested]
-  - NT: ACT 8:9 *niem Saiman*; LUK 2:25 *niem Simiyan*
-  - answers: named, whose name was
-  - "(yu did av) wan man niem X" (10×); "we niem X" 37×; "we dem kaal X" 35×.
-  - agent:memory-setup, 2026-10-16
 - **`formula:called_his_name`** וַיִּקְרָא אֶת־שְׁמוֹ / called his name <X> → **kaal im <X>** [high, observed, attested]
   - NT: MAT 1:21 *kaal im Jiizas*; LUK 1:13 *kaal im Jan*
   - answers: called his name, named him
@@ -93,26 +70,9 @@ verbatim wherever the Hebrew repeats them:
   - answers: in the beginning
   - JHN 1:1 renders "In the beginning" (an echo of GEN 1:1) so; "fram Gad mek di worl" = from the beginning of creation (MAT 19:4).
   - agent:memory-setup, 2026-10-16
-- **`formula:forever_and_ever`** לְעוֹלָם וָעֶד / forever and ever → **fi eva an eva** [high, observed, attested]
-  - NT: REV 10:6 *fi eva an eva*
-  - answers: forever and ever, forever
-  - agent:memory-setup, 2026-10-16
-- **`formula:the_lord_said_to`** וַיֹּאמֶר יְהוָה אֶל / the LORD said to → **Di Laad se tu <X> se** [high, observed, attested]
-  - NT: MAT 22:44 *Di Laad se tu*
-  - answers: the lord said to
-  - agent:memory-setup, 2026-10-16
 - **`formula:the_next_day`** מִמָּחֳרָת / the next day → **di neks die** [high, observed, attested]
   - NT: ACT 4:3 *di neks die*
   - answers: the next day
-  - agent:memory-setup, 2026-10-16
-- **`formula:after_this`** אַחַר הַדְּבָרִים הָאֵלֶּה / after these things → **Afta dat** [high, observed, attested]
-  - NT: LUK 1:24 *Afta dat*
-  - answers: after this, after these things
-  - agent:memory-setup, 2026-10-16
-- **`formula:god_saw_good`** וַיַּרְא אֱלֹהִים כִּי־טוֹב / God saw that it was good → **Gad si se <X> gud** [medium, observed, by-rule]
-  - NT: 1TI 4:4 *Gad mek gud*; GEN 1:10 *Gad si se it*
-  - answers: saw that it was good
-  - Built: si se (see that, 126×) + adjective with no copula (1TI 4:4 "Evriting we Gad mek gud").
   - agent:memory-setup, 2026-10-16
 - **`formula:formless_void`** תֹהוּ וָבֹהוּ / formless and void → **neva av no shiep, an it did emti** [medium, open, by-rule]
   - NT: GEN 1:2 *neva av no shiep*; MAT 12:44 *di ous emti*
@@ -134,19 +94,71 @@ verbatim wherever the Hebrew repeats them:
   - answers: be fruitful, fruitful, multiply
   - Used for animals (GEN 1:22) and people (1:28). Birds: 'mek di bod dem ton nof nof' (1:22, juss. of רבה).
   - agent:gen001, 2026-10-16, supersedes `gap:be_fruitful`
-- **`formula:it_was_so`** וַיְהִי כֵן / and it was so → **An a so it apm.** [medium, open, by-rule]
+- **`formula:let_there_be.gloss`** יְהִי / let there be → **Mek <X> <verb>** [medium, observed, attested]
+  - gloss: φῶς: φῶς (2CO 4:6) [proposed] — English (generated): Let light
+  - NT: 2CO 4:6 *Mek di lait shain*
+  - answers: let there be, let
+  - Jussive commands of God: mek + subject + verb (Mek di lait shain, 2CO 4:6, God's word of GEN 1:3). "Mek lait de" (let light be) is built by rule.
+  - script:gloss.py, 2026-10-16, supersedes `formula:let_there_be`
+- **`formula:do_not_fear.gloss`** אַל־תִּירָא / do not be afraid → **No fried** [high, observed, attested]
+  - gloss: φοβέω: φοβοῦ (LUK 1:13) [proposed] — English (generated): be afraid
+  - NT: LUK 1:13 *No fried!*
+  - answers: do not be afraid, fear not
+  - script:gloss.py, 2026-10-16, supersedes `formula:do_not_fear`
+- **`formula:says_the_lord.gloss`** נְאֻם יְהוָה / declares the LORD → **di Laad se** [high, observed, attested]
+  - gloss: נְאֻם: נְאֻם (GEN 22:16) [proposed] — English (generated): declares
+  - NT: HEB 8:8 *di Laad se*
+  - answers: declares the lord, says the lord
+  - Placed inside the quotation (HEB 8:8) or before it (ACT 7:49 "Di Laad se, ‘…’").
+  - script:gloss.py, 2026-10-16, supersedes `formula:says_the_lord`
+- **`formula:it_is_written.gloss`** it is written (NT formula) → **it rait dong** [high, observed, attested]
+  - gloss: γράφω: γέγραπται (1CO 1:19) [proposed] — English (generated): it is written
+  - NT: 1CO 1:19 *it rait dong*
+  - answers: it is written, written
+  - script:gloss.py, 2026-10-16, supersedes `formula:it_is_written`
+- **`formula:named.gloss`** וּשְׁמוֹ / named <X> → **wan <noun> niem <X>** [high, observed, attested]
+  - gloss: ὄνομα: ὀνόματι (ACT 8:9) [proposed] — English (generated): named
+  - NT: ACT 8:9 *niem Saiman*; LUK 2:25 *niem Simiyan*
+  - answers: named, whose name was
+  - "(yu did av) wan man niem X" (10×); "we niem X" 37×; "we dem kaal X" 35×.
+  - script:gloss.py, 2026-10-16, supersedes `formula:named`
+- **`formula:forever_and_ever.gloss`** לְעוֹלָם וָעֶד / forever and ever → **fi eva an eva** [high, observed, attested]
+  - gloss: αἰών: αἰῶνας (REV 10:6) [proposed] — English (generated): forever
+  - NT: REV 10:6 *fi eva an eva*
+  - answers: forever and ever, forever
+  - script:gloss.py, 2026-10-16, supersedes `formula:forever_and_ever`
+- **`formula:the_lord_said_to.gloss`** וַיֹּאמֶר יְהוָה אֶל / the LORD said to → **Di Laad se tu <X> se** [high, observed, attested]
+  - gloss: λέγω: Εἶπεν (MAT 22:44) [proposed] — English (generated): said
+  - NT: MAT 22:44 *Di Laad se tu*
+  - answers: the lord said to
+  - script:gloss.py, 2026-10-16, supersedes `formula:the_lord_said_to`
+- **`formula:after_this.gloss`** אַחַר הַדְּבָרִים הָאֵלֶּה / after these things → **Afta dat** [high, observed, attested]
+  - gloss: אַחַר: אַֽחֲרֵי֙ (GEN 5:4) [proposed] — English (generated): And after
+  - NT: LUK 1:24 *Afta dat*
+  - answers: after this, after these things
+  - script:gloss.py, 2026-10-16, supersedes `formula:after_this`
+- **`formula:god_saw_good.gloss`** וַיַּרְא אֱלֹהִים כִּי־טוֹב / God saw that it was good → **Gad si se <X> gud** [medium, observed, by-rule]
+  - gloss: θεός: Θεοῦ (1TI 4:4) [proposed] — English (generated): of God
+  - NT: 1TI 4:4 *Gad mek gud*; GEN 1:10 *Gad si se it*
+  - answers: saw that it was good
+  - Built: si se (see that, 126×) + adjective with no copula (1TI 4:4 "Evriting we Gad mek gud").
+  - script:gloss.py, 2026-10-16, supersedes `formula:god_saw_good`
+- **`formula:it_was_so.gloss`** וַיְהִי כֵן / and it was so → **An a so it apm.** [medium, open, by-rule]
+  - gloss: γραφή: γραφὴ (JAS 2:23) [proposed] — English (generated): Scripture
   - NT: JAS 2:23 *So it apm*; GEN 1:7 *a so it apm*
   - answers: and it was so, it was so
   - Focus a + so (as the wiki proposed); the same at every וַיְהִי כֵן in GEN 1 (7, 9, 11, 15, 24, 30).
-  - agent:gen001, 2026-10-16
-- **`formula:evening_morning`** וַיְהִי עֶרֶב וַיְהִי בֹקֶר יוֹם … / and there was evening, and there was morning, the … day → **Iivnin kom, an maanin kom: dat a did di <ordinal> die.** [medium, open, by-rule]
+  - script:gloss.py, 2026-10-16, supersedes `formula:it_was_so`
+- **`formula:evening_morning.gloss`** וַיְהִי עֶרֶב וַיְהִי בֹקֶר יוֹם … / and there was evening, and there was morning, the … day → **Iivnin kom, an maanin kom: dat a did di <ordinal> die.** [medium, open, by-rule]
+  - gloss: ὄψιος: Ὀψίας (MAT 8:16) [proposed] — English (generated): evening
   - NT: MAT 8:16 *Wen iivnin kom*; GEN 1:5 *maanin kom*
   - answers: there was evening, there was morning, evening, morning
   - Refrain of GEN 1 (5, 8, 13, 19, 23, 31): 'a did' as the past copula (LUK 3:34).
-  - agent:gen001, 2026-10-16
-- **`formula:called_x_y`** וַיִּקְרָא … לְ / called X Y → **<subject> kaal <X> “<Y>”** [medium, open, by-rule]
+  - script:gloss.py, 2026-10-16, supersedes `formula:evening_morning`
+- **`formula:called_x_y.gloss`** וַיִּקְרָא … לְ / called X Y → **<subject> kaal <X> “<Y>”** [medium, open, by-rule]
+  - gloss: λέγω: λεγομένης (ACT 6:9) [proposed] — English (generated): was called
   - NT: ACT 6:9 *dem kaal demself*; GEN 1:5 *kaal di lait*
   - answers: called
   - Naming: Gad kaal di lait “Die”; a fronted object keeps its place: an di daak im kaal “Nait” (GEN 1:5, 10).
-  - agent:gen001, 2026-10-16
-<!-- store:end sha=0fed7522 -->
+  - script:gloss.py, 2026-10-16, supersedes `formula:called_x_y`
+<!-- store:end sha=b6de3ef5 -->

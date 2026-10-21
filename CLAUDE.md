@@ -84,7 +84,8 @@ working; this file adds the rules that hold for any task here.
   in git. Everything else built on BHSA (sidecars, indexes, the levels as data) stays unpublished. Clause
   structure for open reuse is built on the bcv-query layout (`orig/heb-bcv-query/`, CC BY-SA 4.0; the site's
   MACULA/UHB view); `scripts/relayout.py` moves a clause-line draft between layouts. The BHSA copy itself may be used only non-commercially: a commercial user of
-  this repo drafts on `bcv-query` (`--drafting bcv-query`) or asks the ETCBC.
+  this repo drafts on `bcv-query` (`--drafting bcv-query`) or asks the ETCBC and the Deutsche Bibelgesellschaft
+  (the final rights holder) for consent.
   **Its text is never copied either:** the Hebrew quoted in notes, store and wiki is the WLC (MACULA Hebrew in
   `orig/heb.sqlite`, the clause packages; public domain); `scripts/notes_hebrew.py` fills the notes' verses from it and adds
   the credit line, and `quotes.py` reports accented Hebrew that isn't the WLC word for word.
@@ -125,15 +126,16 @@ python3 scripts/quarantine.py <project> <code> [--release] # quarantine a book (
 python3 scripts/status.py <project> [set|publish|check] # draft status per chapter; writes STATUS.md
 python3 scripts/quotes.py <project> [--credits|--rule] # quotations within docs/licensing.md; CREDITS.md; the agents' rule
 python3 scripts/check_project.py <project>           # the final double check: drafts, store, wiki, quotations, status
-python3 scripts/align.py <project> [--sides eng,hbo,grc] # lexicons of the style corpus (eflomal or IBM2)
+python3 scripts/align.py <project> [--sides eng,hbo,grc] [--by words|parts|parts+fill] # lexicons of the style corpus (eflomal or IBM2); by parts (+ gap fill) once the store has confirmed affixes
 python3 scripts/concord.py <project> <cmd> <arg>     # agents' search tool: eng, tgt, like, lex, hlex, forms, gloss, store; parts, stem, morph (the morph view)
-python3 scripts/verse_pack.py <project> <code> <ch> [--budget N] # precompiled per-verse pack (store hits, lexicon, similar verses; --budget: pack v3, on trial)
+python3 scripts/verse_pack.py <project> <code> <ch> [--grammar] [--lexicon units] # precompiled per-verse pack (store hits, lexicon, similar verses; --grammar: pack v4, --lexicon units, on trial)
+python3 scripts/build_units.py <project> [--mode grc|fill|agree|union] # English <-> target units from the English links and, in the NT, the Greek route
 python3 scripts/score.py <project> <draft>           # chrF (and SIL's chrF3) against a held-out human translation, with floors
 python3 scripts/judge.py prepare|prompt|tally <project> ... # blind meaning judge of N versions (or a corrections report for a team's chapter)
 python3 scripts/icl_draft.py <project> <code> <ch>       # in-context second draft (silnlp's LLM path, with the original), local, for triage only
 python3 scripts/triage.py <project> <code> <ch> [--overview] # verses where the draft and the second drafts disagree most: review these first
 python3 scripts/rough_check.py <project> <chapter file> ... [--strict] # lost negations (original vs markers learned from the corpus) and English words left in a draft
-python3 scripts/nllb/data.py <project> [--test rut]  # the second-draft model (fine-tuned NLLB, for triage): verse pairs, then
+python3 scripts/nllb/data.py <project> [--source vamvas|bsb] [--test rut] # the second-draft model (fine-tuned NLLB, for triage; source: nllb_source, Vamvas Greek by default): verse pairs, then
 python3 scripts/nllb/train.py --data DIR             # train here (CUDA, Apple GPU) or: scripts/nllb/remote.py push|train|status|fetch <project> (NLLB_HOST in .env)
 python3 scripts/nllb/draft.py src|run|collect ...    # second drafts into _eval/local/second/nllb/ (triage), or a rough pass with --out
 python3 scripts/nllb/model_text.py <project> check | show <text> # the model's target in parts (analysis.model_text morphs), decoded back exactly
@@ -143,7 +145,8 @@ python3 scripts/grammar.py show <project> [morph|cell|claim] | status|plan <proj
 python3 scripts/wiki.py sync|lint <project>          # a project's language wiki: pages + generated store blocks
 python3 scripts/wiki.py view <project>               # one offline HTML file to read the wiki and search the store
 python3 scripts/team_input.py <project> init|list|add|prompt # the team's plain-language input (wiki/team-input.md) -> binding store entries
-python3 scripts/export_usfm.py <project> <code> [<ch>-<ch>]  # drafts as USFM for a team's Paratext project (their frame, numbering, NFC/NFD)
+python3 scripts/sfm_profile.py <edition> [--newest BOOK] [--write] # the team's SFM conventions read from their files (source/) -> edition.yaml sfm:
+python3 scripts/export_usfm.py <project> <code> [<ch>-<ch>]  # drafts as USFM for a team's Paratext project (their frame and conventions: the sfm: block)
 python3 scripts/build_site.py [--preview]            # the website from tracked files (build/site/); docs/website.md
 python3 scripts/deploy_site.py [--netlify [--draft]] # check, build, stage it on the `site` branch (.site/; the user commits and pushes), or upload it with the Netlify CLI
 python3 scripts/wrap_draft.py <file>                 # wrap a draft at ~100 chars
@@ -162,6 +165,7 @@ python3 scripts/lang.py build|derive|report <project> | hbo <project> <lexeme> |
 python3 scripts/morphs.py <project> check | show <word> ... | tone [--write] | try [id ...] [--write] | rates | review <code> <ch> # the morph view (prefix, stem, grammatical tone, suffix; affix chains by position) from the store; every word rebuilt; how the corpus writes tone; affix entries measured against the Greek; what the loop checks, and the check on an OT draft
 python3 scripts/cell_check.py <project> unmarked | try <paradigm> <bundle> <form> ... [--write] # agents' unmarked notes; candidate forms measured on the human text
 python3 scripts/grammar.py retest <project> [--run]  # tests whose store settings changed since they ran (rerun them)
+python3 scripts/gloss.py check|propose|show|words <project> [--write | <id> | "<BOOK C:V>"] # the store's Greek/Hebrew glosses: checked, proposed from the alignment, shown with generated English; a verse's words and lemmas
 python3 scripts/macula_to_tf.py <delivery dir>       # draft Text-Fabric dataset (needs text-fabric)
 ```
 

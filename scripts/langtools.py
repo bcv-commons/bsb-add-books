@@ -224,18 +224,31 @@ class Project:
             self._spell = sp
         return self._spell
 
+    def english_words(self, text):
+        """the words of a store value that are English, not the target language: words of the assisting translation
+        that the corpus never writes (a gloss or an explanation left in a value)"""
+        if getattr(self, "_eng", None) is None:
+            self._eng = {w.lower() for r in self.corpus() for w in re.findall(r"[A-Za-z]+", r[3])}
+        sp = self.spellings()
+        return [w for w in re.findall(r"[A-Za-z]+", re.sub(r"<[^<>]*>", " ", text or ""))
+                if len(w) > 1 and w.lower() in self._eng and self.tok.plain(w) not in sp]
+
     def store_forms(self):
-        """Exact tokens of the live store entries' values and alternatives (decided names and terms count as attested)."""
+        """Exact tokens of the live term, formula and name entries' values and alternatives (they count as attested): the
+        target language only, so English in brackets (a gloss left in a value) and <slot> placeholders are left out, and
+        glosses (Greek, Hebrew) never count."""
         out = set()
         for fn in ("observations.json", "decisions.json"):
             f = os.path.join(self.profile, fn)
             if os.path.exists(f):
                 for e in json.load(open(f, encoding="utf-8")).get("entries", []):
-                    if e.get("status") in ("superseded", "rejected"):
+                    if e.get("status") in ("superseded", "rejected") or e.get("kind") not in ("term", "formula", "name"):
                         continue
                     for v in [e.get("value")] + [a.get("value") for a in e.get("alternatives") or [] if isinstance(a, dict)]:
                         if isinstance(v, str):
-                            out.update(self.tok.tokens(v, exact=True))
+                            v = re.sub(r"<[^<>]*>|\([^()]*\)", " ", v)
+                            eng = {w.lower() for w in self.english_words(v)} if e.get("kind") != "name" else set()
+                            out.update(t for t in self.tok.tokens(v, exact=True) if t.lower() not in eng)
         return out
 
     def spell_check(self, text):

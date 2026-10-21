@@ -22,7 +22,9 @@ through the `new-project` skill. The steps:
    the team's school language.
 2. **The editions** in the bcv-commons/bibles catalogue and its sources (helloAO, openbible, eBible, the Digital
    Bible Platform), with licence and coverage. You pick the style corpus. Your own USFM or SFM files (e.g. from
-   Paratext) work too (`m`): the wizard says where to copy them and converts them.
+   Paratext) work too (`m`): the wizard says where to copy them and converts them. From SFM files it also reads the
+   team's conventions (Unicode form, line endings, versification, headings, the divine name, the `\id` line and file
+   names; `scripts/sfm_profile.py`) and asks you to confirm them: the drafts sent back as SFM follow them.
 3. **Import and fetch** into the right licence folder. Texts stay out of git. The NT basis and the quote marks are
    read from the text.
 4. **The project** `export/<language>/<language>_BSB/` and the first chapter to draft. A book that a non-free edition
@@ -108,8 +110,9 @@ In every mode the team's input page (`wiki/team-input.md`, `scripts/team_input.p
 binding store entries. The licence class adds, independently: quarantine, the quotation rule in every prompt,
 `CREDITS.md`, and which generated files stay local.
 
-**The second-draft model** is a fine-tuned NLLB trained on the corpus, with the BSB (English) as its source
-(`scripts/nllb/`). It drafts each chapter a second time; `scripts/triage.py` lists the verses where it and the agent
+**The second-draft model** is a fine-tuned NLLB trained on the corpus (`scripts/nllb/`). Its source is the Vamvas Bible
+in modern Greek by default (`import/CC0/ell/vamvas/`, public domain; its wording is closer to the original's), or the
+BSB in English (`nllb_source: bsb`); the wizard asks, and fetches the Vamvas text (`pip install pysword==0.2.8`). It drafts each chapter a second time; `scripts/triage.py` lists the verses where it and the agent
 disagree, for review first. It is never a draft. Training needs an NVIDIA GPU with 8 GB or more (about 5–7 hours),
 an Apple GPU with about 32 GB, or a rented GPU.
 

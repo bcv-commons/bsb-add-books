@@ -19,6 +19,10 @@ edition. `check` validates them against the contract without any library:
      decision, or replaces it under the same id, is an error (only the team changes its own facts);
   6. with --project, for a non-free style edition: quotations keep to docs/licensing.md (evidence forms at
      most 4 words; a note, pattern or value quotes at most 15 words, from the published text, as written);
+  6a. glosses (term, formula and name entries and their alternatives; scripts/gloss.py): the Greek or Hebrew word the
+     value renders, its form as written in the cited source verse (Greek: MACULA, BGB or RP; Hebrew: the WLC, never
+     BHSA), its lemma a lemma of orig/grc.sqlite or orig/heb.sqlite; English in brackets inside a value is a warning
+     (move it to gloss; the bracketed text is left out of the checks of the value);
   7. agreement with lexeme-aligner's gram-struct where a feature id maps to one of its slots
      (reported, not enforced): --gram-struct <iso>.json, default download/lexeme-aligner/grammar/gs_<iso>.json.
 
@@ -114,7 +118,13 @@ def main():
     files = [f for f in ("observations.json", "decisions.json", "external.json") if os.path.exists(os.path.join(folder, f))]
     if not files:
         raise SystemExit(f"no profile files in {folder}")
-    problems, notes = [], []
+    problems, notes, warnings = [], [], []
+    import gloss as G
+    glossed = collections.Counter()
+    LP = None
+    if "--project" in args:
+        import langtools as LT
+        LP = LT.Project(args[args.index("--project") + 1])
     entries, text, marks, links = {}, None, set(), []
     iso = edition = None
     team_ids, others, spelling = set(), [], []
@@ -190,6 +200,23 @@ def main():
             for c in e.get("codes", []):
                 if not CODE.match(c):
                     problems.append(f"{where}: code {c!r}")
+            if k in ("term", "formula", "name") and e.get("status") != "superseded":
+                for item in [e] + [a for a in e.get("alternatives") or [] if isinstance(a, dict)]:
+                    if not isinstance(item.get("gloss", []), list):
+                        problems.append(f"{where}: gloss is a list of {{lang, form, lemma, ref}}")
+                        continue
+                    for g in G.glosses(item):
+                        glossed["proposed" if g.get("proposed") else "confirmed"] += 1
+                        for p in G.check(g):
+                            (notes if p.startswith("not checked") else problems).append(f"{where}: {p}")
+                    if item.get("interlinear") is not None and not isinstance(item["interlinear"], str):
+                        problems.append(f"{where}: interlinear is a Leipzig line (a string)")
+                    if G.split_value(item.get("value"))[1]:
+                        warnings.append(f"{where}: gloss in value ({G.split_value(item['value'])[1][0]!r}): move it to gloss")
+                    elif LP and k != "name" and isinstance(item.get("value"), str) and LP.english_words(item["value"]):
+                        warnings.append(f"{where}: English in value ({' '.join(LP.english_words(item['value'])[:6])}): "
+                                        "the value holds the target language only (English goes to the note)")
+                glossed["entries" if G.glosses(e) else "without a gloss"] += 1
             found_form = False
             for r in e.get("evidence", []):
                 m = REF.match(r.get("ref", ""))
@@ -208,7 +235,7 @@ def main():
                 if text and k == "morph" and e.get("slot") != "tone" and e.get("form"):
                     found_form = found_form or morph_in(e["form"], e.get("slot"), text[key], marks, bool(e.get("position")))
                 if text and e.get("kind") in ("term", "formula", "name") and e.get("attested") != "by-rule":
-                    form = r.get("form") or (e["value"] if isinstance(e["value"], str) else "")
+                    form = r.get("form") or (G.split_value(e["value"])[0] if isinstance(e["value"], str) else "")
                     form = re.sub(r"<[^>]*>", "", form).strip()
                     if form and normal(form, marks) in normal(text[key], marks):
                         found_form = True
@@ -218,7 +245,10 @@ def main():
                 problems.append(f"{where}: morph {e.get('form')!r} not found ({e.get('slot')}) in any cited verse")
             if text and marks and e.get("kind") in ("term", "formula", "name") and e.get("status") != "superseded" \
                     and isinstance(e.get("value"), str):
-                spelling.append((where, e["value"]))
+                v = G.split_value(e["value"])[0]
+                for w in (LP.english_words(v) if LP and k != "name" else []):
+                    v = re.sub(rf"\b{re.escape(w)}\b", " ", v)
+                spelling.append((where, v))
             if eid in entries and e.get("status") != "superseded" and entries[eid].get("status") != "superseded":
                 problems.append(f"{where}: duplicate live id")
             entries[eid] = e
@@ -264,6 +294,11 @@ def main():
     print(f"{folder}: {len(entries)} entries in {len(files)} files, {len(problems)} problems")
     for p in problems:
         print("  problem:", p)
+    for w in warnings:
+        print("  warning:", w)
+    if glossed:
+        notes.append(f"glosses: {glossed['entries']} entries glossed, {glossed['without a gloss']} without; "
+                     f"{glossed['confirmed']} confirmed, {glossed['proposed']} proposed (scripts/gloss.py)")
     for n in notes:
         print("  note:", n)
     # the value is what agents copy: a word the edition writes only with other marks is flagged (matching ignores them)

@@ -50,6 +50,8 @@ export/**/quarantine/
 # Generated files that print corpus verses (docs/licensing.md): local only, rebuilt at will
 export/**/_learn/packs/
 export/**/_learn/links_*.tsv
+export/**/_learn/units_*.tsv
+export/**/_learn/derived_report.md
 export/**/_learn/nt-only/
 export/**/_learn/style_norms*.json
 export/**/*_style.md

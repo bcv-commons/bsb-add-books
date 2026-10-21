@@ -134,6 +134,7 @@ function entryHtml(e) {
     ${e.source ? `<span>${esc(e.source)} →</span>` : ""}<span class="val">${esc(v)}</span>
     ${[e.confidence, e.status, e.attested, e.live ? "" : "superseded"].filter(Boolean).map(t => `<span class="tag">${esc(t)}</span>`).join("")}
     <span class="id">${esc(e.id)}</span></div>
+    ${e.glosses?.length ? `<div class="meta">gloss: ${e.glosses.map(g => esc(g)).join("<br>")}</div>` : ""}
     ${e.pattern ? `<div class="meta">pattern: <code>${esc(e.pattern)}</code></div>` : ""}
     ${e.note ? `<div class="note">${esc(e.note)}</div>` : ""}
     ${e.refs?.length ? `<div class="meta">evidence: ${esc(e.refs.slice(0, 8).join("; "))}${e.refs.length > 8 ? " …" : ""}</div>` : ""}
@@ -147,7 +148,7 @@ function showStore() {
   const q = fold($("#q").value.trim());
   const kinds = [...new Set(DATA.store.map(e => e.kind))].sort();
   const rows = DATA.store.filter(e => (showDead || e.live) && (!kind || e.kind === kind)
-    && (!q || fold([e.id, e.source, typeof e.value === "string" ? e.value : JSON.stringify(e.value), e.note, (e.words || []).join(" "), e.refs.join(" ")].join(" ")).includes(q)));
+    && (!q || fold([e.id, e.source, typeof e.value === "string" ? e.value : JSON.stringify(e.value), e.note, (e.words || []).join(" "), e.refs.join(" "), (e.glosses || []).join(" ")].join(" ")).includes(q)));
   $("#main").innerHTML = `<h1>Store</h1><p>The checked facts the agents use: features and letter rules (observations), terms, formulas and names
     (decisions), and gaps. A change is a new entry that replaces the old one; both are kept.</p>
     <div class="filters"><select id="kind"><option value="">all kinds</option>${kinds.map(k => `<option ${k === kind ? "selected" : ""}>${esc(k)}</option>`).join("")}</select>

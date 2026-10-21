@@ -7,15 +7,12 @@ For export/<project>/_learn/packs/<code>NNN.md, per verse:
     the alignment lexicon links to a word of the verse (or whose gloss is in it), formulas whose source
     phrase occurs in the verse, names, and the gaps recorded for this verse;
   - for every content word of the assisting verse, the lexicon's renderings with counts
-    (export/<project>/_learn/lexicon_eng.tsv, if present), and '—' where it has none: the words that
-    still need a search;
+    (export/<project>/_learn/lexicon_eng.tsv, if present; with --lexicon units, on trial, scripts/build_units.py's
+    lexicon_units.tsv in its place), and '—' where it has none: the words that still need a search;
   - phrases: the verse's 2-4-word phrases of the assisting translation that occur in the style corpus
     (light stemming: lie/lies, morning), chosen to cover the verse, each with its shortest corpus verses,
     source and target side by side. These show constructions, which shared single words don't;
-  - the K most similar verses of the style corpus by word overlap (rare shared words weigh more); or, with a budget
-    (pack v3, `--budget CHARS` or the project's `pack_budget`, full level only), as many corpus verses as fit in
-    CHARS characters of target text, chosen by silnlp's greedy coverage step on the verse's English content words and
-    word pairs: the closest verses first, then each next verse the one that best covers what is not covered yet;
+  - the K most similar verses of the style corpus by word overlap (rare shared words weigh more);
   - "still needs a search": the content words that no store entry, lexicon row or phrase covers;
   - with --grammar or the project's `pack_grammar: true` (pack v4, on trial; `binding`: the block as a rule): the verbs whose cell is marked (negated, a subject other than 3rd
     singular) with the store's pattern for the cell, and the paradigm once in the header (scripts/verse_analysis.py).
@@ -32,12 +29,8 @@ Levels (`--level`, default from the project's mode, scripts/modes.py):
   memory    the header and each verse's store hits only (known: the model writes the language; the pack
             keeps the project's decisions in front of it).
 
-Pack v3 is on trial: the default is v2, and a project opts in with `pack_budget`. Offline, a larger budget (2k to 8k
-characters a verse) covers more of the verse's words and more of its rare words; the coverage step adds a little more at
-equal budget.
-
 Usage: python3 scripts/verse_pack.py <project> <code> <chapter> [--level full|dialect|memory] [--similar K]
-                                     [--budget CHARS] [--grammar] [--out FILE]
+                                     [--grammar] [--lexicon units|words] [--out FILE]
 """
 import collections, glob, json, math, os, re, sys, unicodedata
 
@@ -147,7 +140,7 @@ def main():
     pname, code, chapter = args[0], args[1], int(args[2])
     k = int(args[args.index("--similar") + 1]) if "--similar" in args else 2
     p = project(pname)
-    budget = int(args[args.index("--budget") + 1]) if "--budget" in args else p.get("pack_budget")
+    lexicon = args[args.index("--lexicon") + 1] if "--lexicon" in args else "words"
     import modes
     level = args[args.index("--level") + 1] if "--level" in args else modes.mode(p)["pack"]
     if level not in ("full", "dialect", "memory"):
@@ -187,7 +180,10 @@ def main():
         for n in (2, 3, 4):
             for j in range(len(ts) - n + 1):
                 grams[tuple(ts[j:j + n])].add(i)
-    lex = load_lexicon(os.path.join(pdir, "_learn", "lexicon_eng.tsv"))
+    units = os.path.join(pdir, "_learn", "lexicon_units.tsv")
+    if lexicon == "units" and not os.path.exists(units):
+        raise SystemExit(f"--lexicon units: {units} is missing (scripts/build_units.py)")
+    lex = load_lexicon(units if lexicon == "units" else os.path.join(pdir, "_learn", "lexicon_eng.tsv"))
     prof = load_profile(os.path.join(pdir, "profile"))
     marks = set()
     for fn in ("observations.json", "decisions.json"):
@@ -199,6 +195,8 @@ def main():
     terms = [e for e in prof if e["kind"] == "term"]
     formulas = [e for e in prof if e["kind"] == "formula"]
     names = [e for e in prof if e["kind"] == "name"]
+    import gloss as G
+    glossed = [e for e in prof if e["kind"] in ("term", "formula", "name") and G.glosses(e)]
     gaps = [e for e in prof if e["kind"] == "gap"]
     features = [e for e in prof if e["kind"] == "feature"]
     letters = [e for e in prof if e["kind"] == "letter"]
@@ -313,60 +311,6 @@ def main():
         best = sorted(corpus, key=score, reverse=True)[:k]
         return [(r, score(r)) for r in best]
 
-    idf = {t: math.log(N / (1 + c)) for t, c in df.items()}
-    content_toks = [[t for t in tokens(r[1]) if t not in STOP] for r in corpus]
-    postings = collections.defaultdict(list)
-    for i, ts in enumerate(content_toks):
-        for t in set(ts):
-            postings[t].append(i)
-
-    def covering(bsb_text, skip):
-        """Pack v3: corpus rows by silnlp's greedy coverage on English words and word pairs (as retrieval_bench.py's
-        cov-word), the largest selection whose target text fits the budget."""
-        import numpy as np
-        qt = [t for t in tokens(bsb_text) if t not in STOP]
-        fs = sorted(set(qt) | {a + " " + b for a, b in zip(qt, qt[1:])})
-        sc = collections.Counter()
-        for t in set(qt):
-            for i in postings.get(t, ()):
-                sc[i] += idf[t]
-        cands = [i for i, _ in sc.most_common(200) if corpus[i][0] not in skip]
-        if not cands or not fs:
-            return []
-        top = max(idf.values())
-        w = np.array([idf.get(f, top) if " " not in f else 1.5 * max(idf.get(x, 0) for x in f.split()) for f in fs])
-        F = np.zeros((len(cands), len(fs)), bool)
-        for ci, i in enumerate(cands):
-            ts = content_toks[i]
-            have = set(ts) | {a + " " + b for a, b in zip(ts, ts[1:])}
-            F[ci] = [f in have for f in fs]
-        simw = F @ w
-        order = list(np.argsort(-simw, kind="stable"))
-        s, Fo = simw[order], F[order]
-        ww, rel = w / w.sum(), s / max(float(s.max()), 1e-12)
-        tlen = [len(corpus[cands[o]][2]) for o in order]
-        best = []
-        for kk in (2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 25, 30, 40, 50, 65, 80, 100):   # the ladder of k
-            chosen = list(range(min(20, max(1, kk // 2), len(order))))
-            avail = np.ones(len(order), bool)
-            avail[chosen] = False
-            counts = Fo[chosen].sum(axis=0).astype(float)
-            while len(chosen) < min(kk, len(order)):
-                gain = Fo @ (ww / (1.0 + counts))
-                gain = gain / max(float(gain[avail].max()), 1e-12)
-                util = 0.7 * rel + 0.3 * gain
-                util[~avail] = -np.inf
-                b = int(np.argmax(util))
-                chosen.append(b)
-                avail[b] = False
-                counts += Fo[b]
-            if sum(tlen[c] for c in chosen) > budget:
-                break
-            best = chosen
-            if len(chosen) >= len(order):
-                break
-        return [corpus[cands[order[c]]] for c in (best or [0])]
-
     book_title = (p.get("book_titles") or {}).get(code, BY_CODE[code][1])
     L = [f"# Verse pack: {book_title} {chapter} ({code}{nnn}), project {pname}", "",
          f"Built by scripts/verse_pack.py from {orig_dir}, {assist_dir}, the style corpus ({', '.join(p['style_from'])}, "
@@ -441,21 +385,32 @@ def main():
         th = term_hits(bw)
         fh = formula_hits(" ".join(orig.get(vn, [])), bsb)
         nh = name_hits(" ".join(orig.get(vn, [])), bsb)
+        if glossed:                        # the store's Greek and Hebrew glosses against the verse's own words
+            keys = G.verse_keys(code, chapter, vn)
+            have = {e["id"] for e in nh + fh} | {e["id"] for e, _ in th}
+            for e in glossed:
+                why = e["id"] not in have and G.matches(e, keys)
+                if why:
+                    if e["kind"] == "term":
+                        th.append((e, why))
+                    else:
+                        (nh if e["kind"] == "name" else fh).append(e)
         vstems = {stem(w) for w in bw}
         gh = [e for e in gaps if (e.get("source") or "").upper() == f"{code.upper()} {chapter}:{vn}"
               or any(r.get("ref") == f"{code.upper()} {chapter}:{vn}" for r in e.get("evidence", []))
               or {stem(w.lower()) for w in e.get("words") or []} & vstems]
         if th or fh or nh or gh:
             L += ["Store:", ""]
+            gl = lambda e: f" · gloss {G.short(e)}" if G.glosses(e) else ""
             for e in nh:
-                L.append(f"- name **{e['value']}** ({e.get('attested', 'team')})")
+                L.append(f"- name **{e['value']}** ({e.get('attested', 'team')}){gl(e)}")
             for e, why in th:
                 alts = "; alternatives: " + ", ".join(a["value"] for a in e.get("alternatives", [])) if e.get("alternatives") else ""
                 ev = ", ".join(r["ref"] for r in e.get("evidence", [])[:2])
-                L.append(f"- term {e['source']} → **{e['value']}** [{'TEAM, ' if e.get('method') == 'team-decision' else ''}{e.get('attested', '')}, {e['confidence']}, {e['status']}] ({ev}; via {why}){alts}" + (f" — {e['note']}" if e.get("note") else ""))
+                L.append(f"- term {e['source']} → **{e['value']}**{gl(e)} [{'TEAM, ' if e.get('method') == 'team-decision' else ''}{e.get('attested', '')}, {e['confidence']}, {e['status']}] ({ev}; via {why}){alts}" + (f" — {e['note']}" if e.get("note") else ""))
             for e in fh:
                 ev = ", ".join(r["ref"] for r in e.get("evidence", [])[:2])
-                L.append(f"- formula {e['source']} → **{e['value']}** [{e['attested']}, {e['confidence']}] ({ev})" + (f" — {e['note']}" if e.get("note") else ""))
+                L.append(f"- formula {e['source']} → **{e['value']}**{gl(e)} [{e['attested']}, {e['confidence']}] ({ev})" + (f" — {e['note']}" if e.get("note") else ""))
             for e in gh:
                 L.append(f"- gap [{e['status']}]" + (f" ({', '.join(e['words'])})" if e.get("words") else "") + f": {e['value']}")
             L.append("")
@@ -492,15 +447,7 @@ def main():
                     shown.add(ref)
                     L += [f"  - {ref}: {a}", f"    → {t}"]
             L.append("")
-        if level == "full" and budget:
-            cov = covering(bsb, shown)
-            if cov:
-                L += [f"Corpus verses chosen to cover this verse's words ({len(cov)} verses, at most {budget} characters; "
-                      "the closest first):", ""]
-                for ref, a, t in cov:
-                    L += [f"- {ref}: {a}", f"  → {t}"]
-                L.append("")
-        sim = [x for x in similar(bsb) if x[0][0] not in shown] if level == "full" and not budget else []
+        sim = [x for x in similar(bsb) if x[0][0] not in shown] if level == "full" else []
         if sim:
             L += ["Most similar corpus verses (word overlap):", ""]
             for (ref, a, t), sc in sim:

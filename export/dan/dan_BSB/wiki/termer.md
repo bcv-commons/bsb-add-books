@@ -64,154 +64,39 @@ Daniel-stilarkene og de ensretninger review-oversigterne har gennemført.
   - answers: israelites
   - DFB 235×. Jos-stilarket: israelitterne. I 1 Mos, hvor det er Jakobs sønner, er formen åben (gen-oversigten 9).
   - agent:memory-setup, 2026-10-14
-- **`term:H1285`** H1285 בְּרִית → **pagt** [high, decided, attested]
-  - NT: 1KI 3:15 *pagt*; 1KI 6:19 *pagt*; DAN 9:4 *pagt*
-  - answers: covenant
-  - Lexicon: covenant → pagt 102 (0,76) + pagts/pagtens/pagten.
-  - agent:memory-setup, 2026-10-14
-- **`term:aron_brit_yhwh`** אֲרוֹן בְּרִית יְהוָה → **HERRENS pagts ark** [high, decided, attested]
-  - NT: 1KI 6:19 *HERRENS pagts ark*; 1KI 8:1 *HERRENS pagts ark*; JOS 3:17 *HERRENS pagts ark*
-  - answers: ark of the covenant of the lord
-  - agent:memory-setup, 2026-10-14
 - **`term:levites_priests`** הַכֹּהֲנִים הַלְוִיִּם → **levitpræsterne** [high, decided, attested]
   - NT: JOS 3:3 *levitpræst*; JOS 8:33 *levitpræst*; JER 33:18 *levitpræst*
   - answers: levitical priests
   - DFB Jer 33,18.
-  - agent:memory-setup, 2026-10-14
-- **`term:H2763`** H2763 חָרַם (verbum) → **lægge band på** [high, decided, by-rule]
-  - NT: DAN 11:44 *lægge band på*; JOS 2:10 *lagde band på*; JOS 6:17 *lægges band på*; JDG 1:17 *lagde band på*
-  - answers: devote to destruction, devoted to destruction, destroy completely
-  - DFB: 'lagde band på' (Dom 1,17; 21,11), 'bandlyse' 2×. Udkastene 24×.
-  - agent:memory-setup, 2026-10-14
-- **`term:H7782`** H7782 שׁוֹפָר → **vædderhorn** [high, decided, attested]
-  - NT: JDG 3:27 *vædderhorn*; JDG 6:34 *vædderhorn*; JOS 6:4 *vædderhorn*
-  - answers: ram's horn, rams' horns, trumpet
-  - DFB 13× (Dom 3,27; 6,34; 7).
-  - agent:memory-setup, 2026-10-14
-- **`term:H2181`** H2181 זוֹנָה → **skøge** [high, decided, attested]
-  - NT: ISA 23:15 *skøge*; GEN 34:31 *skøge*; GEN 38:15 *skøge*
-  - answers: prostitute, harlot
-  - DFB 16×; harmoniseret i Jos 2 og 6 (kap. 2 havde 'prostitueret').
   - agent:memory-setup, 2026-10-14
 - **`term:H7270`** H7270 רִגֵּל → **udspionere** [high, decided, attested]
   - NT: GAL 2:4 *udspionere*; JOS 2:2 *udspionere*; JOS 2:3 *udspionere*
   - answers: spy, spy out
   - DFB 8×. Personerne: 'spejdere' (Jos 2,1; 6,17.23).
   - agent:memory-setup, 2026-10-14
-- **`term:H4603`** H4603 מָעַל מַעַל → **handle troløst** [high, decided, by-rule]
-  - NT: EXO 21:8 *handlet troløst*; ISA 21:2 *handler troløst*; JOS 7:1 *handlede troløst*
-  - answers: unfaithful, act unfaithfully, breach of faith
-  - DFB 12-13×; Jos 7,1 og 22,20 ens.
-  - agent:memory-setup, 2026-10-14
-- **`term:edah`** עֵדָה → **menighed** [medium, open, attested]
-  - NT: JOS 18:1 *israelitternes menighed*; JOS 22:16 *HERRENS menighed*; EXO 12:3 *Israels menighed*
-  - answers: congregation, assembly
-  - Afgjort for Josva: עֲדַת בְּנֵי־יִשְׂרָאֵל = israelitternes menighed (18,1; 22,12), עֲדַת יִשְׂרָאֵל = Israels menighed, עֲדַת יְהוָה = HERRENS menighed. Ét valg for hele projektet (menighed eller forsamling) udestår (jos 27).
-  - agent:memory-setup, 2026-10-14
-- **`term:H7860`** H7860 שֹׁטְרִים → **ledere** [high, decided, attested]
-  - NT: JOS 1:10 *folkets ledere*; DAN 9:6 *ledere*
-  - answers: officers
-  - Jos-stilarket (BSB-sporet); 'opsynsmænd' var det andet spor.
-  - agent:memory-setup, 2026-10-14
-- **`term:torah`** H8451 תּוֹרָה → **lov** [high, decided, attested]
-  - NT: JOS 1:7 *lov*; JOS 1:8 *lovbog*; 1KI 2:3 *Moses’ lov*
-  - answers: law
-  - Jos: 'lov', 'Moses' lovbog', 'Guds lovbog' (1,7-8; 8,31-34; 24,26).
-  - agent:memory-setup, 2026-10-14
-- **`term:heniah`** הֵנִיחַ → **give hvile** [high, decided, by-rule]
-  - NT: JOS 1:13 *giver jer hvile*; JOS 21:44 *gav dem hvile*
-  - answers: give rest
-  - Jos 1,13.15; 21,44; 22,4; 23,1.
-  - agent:memory-setup, 2026-10-14
 - **`term:hazaq_amats`** חֲזַק וֶאֱמָץ → **stærk og modig** [high, decided, attested]
   - NT: JOS 1:6 *stærk og modig*; JOS 1:7 *stærk og meget modig*; JOS 1:9 *stærk og modig*
   - answers: strong and courageous
   - Jos 1,6.7.9.18; 10,25. 23,6 har kun חזק: 'meget stærke'.
   - agent:memory-setup, 2026-10-14
-- **`term:migrash`** מִגְרָשׁ → **marker** [high, decided, attested]
-  - NT: JOS 14:4 *tilhørende marker*; JOS 21:2 *tilhørende marker*; NUM 35:7 *tilhørende marker*
-  - answers: pasturelands
-  - Efter DFB 4 Mos 35 ('48 byer med tilhørende marker').
-  - agent:memory-setup, 2026-10-14
-- **`term:miqlat`** עָרֵי הַמִּקְלָט → **tilflugtsbyer** [high, decided, attested]
-  - NT: NUM 35:6 *tilflugtsby*; JOS 20:2 *tilflugtsby*
-  - answers: cities of refuge
-  - Med 'blodhævneren', 'drabsmand', 'ved et uheld', alle fra 4 Mos 35.
-  - agent:memory-setup, 2026-10-14
 - **`term:goel_hadam`** גֹּאֵל הַדָּם → **blodhævneren** [high, decided, attested]
   - NT: NUM 35:12 *blodhævner*; JOS 20:3 *blodhævner*
   - answers: avenger of blood
-  - agent:memory-setup, 2026-10-14
-- **`term:yam_suf`** יַם־סוּף → **Sivhavet** [high, decided, attested]
-  - NT: 1KI 9:26 *Sivhavet*; EXO 10:19 *Sivhavet*; JOS 2:10 *Sivhavet*
-  - answers: red sea
-  - agent:memory-setup, 2026-10-14
-- **`term:great_sea`** הַיָּם הַגָּדוֹל → **Det Store Hav** [high, decided, attested]
-  - NT: NUM 34:6 *Det Store Hav*; JOS 1:4 *Det Store Hav*
-  - answers: great sea, mediterranean
-  - agent:memory-setup, 2026-10-14
-- **`term:salt_sea`** יָם הַמֶּלַח → **Salthavet** [high, decided, attested]
-  - NT: GEN 14:3 *Salthavet*; JOS 3:16 *Salthavet*
-  - answers: salt sea, dead sea
   - agent:memory-setup, 2026-10-14
 - **`term:arabah`** הָעֲרָבָה → **Araba** [high, decided, attested]
   - NT: JOS 3:16 *Araba*; JOS 8:14 *Araba*; JER 39:4 *Araba*
   - answers: arabah
   - Også 'Araba-sletten', 'Arabahavet' (Jos 12,3).
   - agent:memory-setup, 2026-10-14
-- **`term:negev`** הַנֶּגֶב → **sydlandet** [high, decided, attested]
-  - NT: JDG 1:9 *sydlandet*; JOS 10:40 *sydlandet*
-  - answers: negev
-  - 'sydlandet' i geografiske opremsninger som Dom 1,9.
-  - agent:memory-setup, 2026-10-14
-- **`term:shephelah`** הַשְּׁפֵלָה → **lavlandet** [high, decided, attested]
-  - NT: 1KI 10:27 *lavlandet*; JOS 9:1 *lavlandet*
-  - answers: foothills, lowland
-  - agent:memory-setup, 2026-10-14
 - **`term:hahar`** הָהָר → **bjerglandet** [high, decided, attested]
   - NT: 1KI 5:29 *bjerglandet*; JOS 2:16 *bjerglandet*
   - answers: hill country
   - 'Efraims bjergland' (udkast 14×) mod DFB's 'Efraims Bjerge' (Dom 12×) er åbent (jos 45).
   - agent:memory-setup, 2026-10-14
-- **`term:H7585`** H7585 שְׁאוֹל → **dødsriget** [high, decided, attested]
-  - NT: HAB 2:5 *dødsriget*; GEN 37:35 *dødsriget*; GEN 42:38 *dødsriget*
-  - answers: sheol, grave
-  - DFB 40×; lexicon sheol → dødsriget 0,64 + dødsrigets 0,19. {N: Sheol} er åbent.
-  - agent:memory-setup, 2026-10-14
-- **`term:hesed`** H2617 חֶסֶד → **trofasthed** [high, decided, attested]
-  - NT: DAN 9:4 *trofasthed*; GEN 20:13 *trofasthed*; 1KI 3:6 *trofasthed*
-  - answers: loving devotion, kindness, loyalty
-  - *ḥæsæd wæʔæmæt* = 'trofasthed og troskab' (1 Mos 24,27); valget for hele bogen er åbent (gen024 spm. 1). DFB har også 'nåde' med {N: nåde}.
-  - agent:memory-setup, 2026-10-14
-- **`term:H8198`** H8198 שִׁפְחָה → **trælkvinde** [medium, open, attested]
-  - NT: GEN 20:17 *trælkvinde*; GEN 25:12 *trælkvinde*; 1KI 1:2 *tjenestepige*
-  - answers: maidservant, servant
-  - Udkastene: trælkvinde 22×, tjenestepige 2×, slavinde 4×. DFB's 1 Mos 16 (Hagar) har nu 'tjenestepige' – gen-oversigten 1 og 7 er åbne.
-  - agent:memory-setup, 2026-10-14
-- **`term:allup`** אַלּוּף → **stammehøvding** [medium, open, attested]
-  - NT: GEN 36:15 *stammehøvding*; GEN 36:16 *stammehøvding*
-  - answers: chief, chiefs
-  - 1 Mos 36 (gen-oversigten 13).
-  - agent:memory-setup, 2026-10-14
-- **`term:toledot`** תּוֹלְדוֹת → **slægtshistorie** [medium, open, attested]
-  - NT: GEN 6:9 *slægtshistorie*; GEN 10:1 *slægtshistorie*; GEN 25:12 *slægtshistorie*
-  - answers: account, generations, records
-  - DFB 1 Mos 6,9; 10,1; 11,10.27: 'Dette er X's slægtshistorie'; udkastene 25,12.19; 36,1.9 følger. Gen-oversigten 3 er åben.
-  - agent:memory-setup, 2026-10-14
 - **`term:hinneh`** H2009 הִנֵּה → **se** [high, decided, attested]
   - NT: 1KI 1:14 *Se, *; 1KI 1:22 *Se, *; DAN 4:7 *Se, *
   - answers: behold, look
   - Lexicon behold → se 186 (0,89). DFB 'Se, ' 336×.
-  - agent:memory-setup, 2026-10-14
-- **`term:qanna`** אֵל קַנָּא / קַנּוֹא → **skinsyg** [medium, open, attested]
-  - NT: EXO 34:14 *skinsyg*; JOS 24:19 *skinsyg Gud*
-  - answers: jealous
-  - DFB 2 Mos 34,14 'skinsyg'; jos 47 åbent.
-  - agent:memory-setup, 2026-10-14
-- **`term:sar_tabbahim`** שַׂר הַטַּבָּחִים → **chefen for livvagten** [high, decided, attested]
-  - NT: JER 39:9 *chefen for livvagten*; GEN 37:36 *chefen for livvagten*; GEN 39:1 *chefen for livvagten*
-  - answers: captain of the guard
-  - Husform fra Jer 39; 52 (DFB 15×); 1 Mos 37; 39; 40; 41.
   - agent:memory-setup, 2026-10-14
 - **`term:sar_bet_sohar`** שַׂר בֵּית־הַסֹּהַר → **fængselsforvalteren** [high, decided, attested]
   - NT: GEN 39:21 *fængselsforvalter*
@@ -223,9 +108,264 @@ Daniel-stilarkene og de ensretninger review-oversigterne har gennemført.
   - answers: steward
   - 1 Mos 43-44; tungt ved gentagelse (gen043 spm. 3).
   - agent:memory-setup, 2026-10-14
-- **`term:elon`** H436 אֵלוֹן → **eg** [high, decided, attested]
+- **`term:H3068.gloss`** H3068 יהוה → **HERREN** [high, decided, attested]
+  - gloss: יהוה: יהוָ֤ה (1KI 1:17) [proposed] — English (generated): by the LORD
+  - NT: 1KI 1:17 *HERREN*; 1KI 1:29 *HERREN*; DAN 9:2 *HERREN*
+  - answers: lord
+  - Med versaler; genitiv HERRENS. DFB 3.005× i 2.584 vers. Ikke 'Jahve' i teksten.
+  - script:gloss.py, 2026-10-14, supersedes `term:H3068`
+- **`term:H430.gloss`** H430 אֱלֹהִים → **Gud** [high, decided, attested]
+  - gloss: אֱלֹהִים: אֱלֹהֶ֨י (1KI 1:17) [proposed] — English (generated): your God
+  - gloss: θεός: Θεός (MAT 1:23) [proposed] — English (generated): God
+  - NT: 1KI 1:17 *Gud*; 1KI 1:30 *Gud*; DAN 1:9 *Gud*
+  - answers: god
+  - Om hedenske guder: 'guder' med lille (Jos 24,2.14-16).
+  - script:gloss.py, 2026-10-14, supersedes `term:H430`
+- **`term:yhwh_elohim.gloss`** יְהוָה אֱלֹהִים → **Gud HERREN** [high, decided, attested]
+  - gloss: יהוה: יְהוָ֥ה (GEN 2:4) [proposed] — English (generated): that the LORD
+  - gloss: θεός: Θεός (MAT 1:23) [proposed] — English (generated): God
+  - NT: GEN 2:4 *Gud HERREN*; GEN 2:5 *Gud HERREN*; GEN 2:7 *Gud HERREN*
+  - answers: lord god
+  - DFB 27× (1 Mos 2-3; Es 42,5). Stilarkets valg for 1 Mos 2-3.
+  - script:gloss.py, 2026-10-14, supersedes `term:yhwh_elohim`
+- **`term:adonai_yhwh.gloss`** אֲדֹנָי יְהוִה → **Herre HERRE** [medium, open, attested]
+  - gloss: אֲדֹנָי: אֲדֹנָ֣ (JOS 7:7) [proposed] — English (generated): Lord
+  - gloss: κύριος: Κύριε (MAT 7:21) [proposed] — English (generated): Lord
+  - NT: JOS 7:7 *Herre HERRE*; JDG 16:28 *Herre HERRE*; JER 14:13 *Herre HERRE*; JDG 6:22 *Herre, HERRE*
+  - answers: lord god, sovereign lord
+  - I tiltale: 'Herre HERRE' 6× og 'Herre, HERRE' 8× i DFB; udkastet Jos 7,7 'Ak, Herre HERRE!'. Uden for tiltale 'Herren HERREN' (22×). Gen015 spm. 1 er åbent, og DFB's egen 1 Mos 15,2 har 'Gud HERREN!'.
+  - script:gloss.py, 2026-10-14, supersedes `term:adonai_yhwh`
+- **`term:adonai.gloss`** אֲדֹנָי → **Herren** [high, decided, attested]
+  - gloss: אֲדֹנָי: אֲדֹנָ֨ (DAN 1:2) [proposed] — English (generated): And the Lord
+  - NT: DAN 1:2 *Herren*; DAN 9:3 *Herren*; 1KI 8:44 *Herren*
+  - answers: lord
+  - Dan 9,3 'Herren Gud' for *ʔădōnāy hāʔĕlōhîm* (dan-oversigten 4); 'Herre, HERRE' kun for *ʔădōnāy YHWH*.
+  - script:gloss.py, 2026-10-14, supersedes `term:adonai`
+- **`term:H7706.gloss`** H7706 אֵל שַׁדַּי → **Gud den Almægtige** [high, decided, attested]
+  - gloss: אֵל: אֵ֤ל (GEN 28:3) [proposed] — English (generated): May God
+  - gloss: θεός: Θεός (MAT 1:23) [proposed] — English (generated): God
+  - NT: GEN 28:3 *Gud den Almægtige*; GEN 35:11 *Gud den Almægtige*; GEN 43:14 *Gud den Almægtige*
+  - answers: god almighty, almighty
+  - Bindende i 1 Mos-stilarket og brugt i 35,11; 43,14; 48,3; 49,25 ('den Almægtige'). DFB: 1 Mos 28,3 'Gud den Almægtige', men 17,1 'El Shadaj' og 2 Mos 6,3 'almægtig Gud' – se spørgsmål.
+  - script:gloss.py, 2026-10-14, supersedes `term:H7706`
+- **`term:el_elyon.gloss`** אֵל עֶלְיוֹן → **Gud den Højeste** [high, decided, attested]
+  - gloss: אֵל: אֵ֥ל (GEN 14:18) [proposed] — English (generated): of God
+  - gloss: θεός: Θεός (MAT 1:23) [proposed] — English (generated): God
+  - NT: GEN 14:18 *Gud den Højeste*; GEN 14:19 *Gud den Højeste*; DAN 5:18 *Gud den Højeste*
+  - answers: god most high, most high
+  - DFB 1 Mos 14,18-22 (7×).
+  - script:gloss.py, 2026-10-14, supersedes `term:el_elyon`
+- **`term:el_olam.gloss`** אֵל עוֹלָם → **Gud den Evige** [medium, decided, attested]
+  - gloss: אֵל: אֵ֥ל (GEN 21:33) [proposed] — English (generated): God
+  - gloss: θεός: Θεός (MAT 1:23) [proposed] — English (generated): God
+  - NT: GEN 21:33 *Gud den Evige*
+  - answers: eternal god, everlasting god
+  - Ny form (gap:el_olam), analog til Gud den Højeste / den Almægtige.
+  - script:gloss.py, 2026-10-14, supersedes `term:el_olam`
+- **`term:tsebaot.gloss`** יְהוָה צְבָאוֹת → **Hærskarers HERRE** [high, decided, attested]
+  - gloss: יהוה: יְהוָ֣ה (HAB 2:13) [proposed] — English (generated): the LORD
+  - gloss: κύριος: Κύριε (MAT 7:21) [proposed] — English (generated): Lord
+  - NT: HAB 2:13 *Hærskarers HERRE*; HAG 1:2 *Hærskarers HERRE*; HAG 1:5 *Hærskarers HERRE*
+  - answers: lord of hosts
+  - DFB 218× (profeterne), med glossenoten {N: Hærskarers} (65×). Endnu ikke brugt i udkastene.
+  - script:gloss.py, 2026-10-14, supersedes `term:tsebaot`
+- **`term:malak_yhwh.gloss`** מַלְאַךְ יְהוָה → **HERRENS engel** [high, decided, attested]
+  - gloss: יהוה: יְהוָ֛ה (GEN 16:7) [proposed] — English (generated): of the LORD
+  - gloss: κύριος: Κυρίου (MAT 1:20) [proposed] — English (generated): of Lord
+  - NT: GEN 16:7 *HERRENS engel*; GEN 16:9 *HERRENS engel*; GEN 22:11 *HERRENS engel*
+  - answers: angel of the lord
+  - DFB 44×.
+  - script:gloss.py, 2026-10-14, supersedes `term:malak_yhwh`
+- **`term:elah_shemayya.gloss`** אֱלָהּ שְׁמַיָּא (aram.) → **himlens Gud** [high, decided, attested]
+  - gloss: אֱלֹהִים: אֱלֹהֵ֤י (JON 1:9) [proposed] — English (generated): the God
+  - gloss: θεός: Θεός (MAT 1:23) [proposed] — English (generated): God
+  - NT: DAN 2:18 *himlens Gud*; DAN 2:19 *himlens Gud*; JON 1:9 *himlens Gud*
+  - answers: god of heaven
+  - Dan 2,18-19.37.44; DFB Jon 1,9.
+  - script:gloss.py, 2026-10-14, supersedes `term:elah_shemayya`
+- **`term:god_of_israel.gloss`** יְהוָה אֱלֹהֵי יִשְׂרָאֵל → **HERREN, Israels Gud** [high, decided, attested]
+  - gloss: θεός: Θεός (MAT 1:23) [proposed] — English (generated): God
+  - NT: 1KI 1:30 *HERREN, Israels Gud*; 1KI 1:48 *HERREN, Israels Gud*; JOS 7:13 *HERREN, Israels Gud*
+  - answers: god of israel
+  - DFB 30×; med komma.
+  - script:gloss.py, 2026-10-14, supersedes `term:god_of_israel`
+- **`term:H1285.gloss`** H1285 בְּרִית → **pagt** [high, decided, attested]
+  - gloss: בְּרִית: בְּרִית (1KI 3:15) [proposed] — English (generated): of the covenant
+  - gloss: διαθήκη: διαθήκης (MAT 26:28) [proposed] — English (generated): covenant
+  - NT: 1KI 3:15 *pagt*; 1KI 6:19 *pagt*; DAN 9:4 *pagt*
+  - answers: covenant
+  - Lexicon: covenant → pagt 102 (0,76) + pagts/pagtens/pagten.
+  - script:gloss.py, 2026-10-14, supersedes `term:H1285`
+- **`term:aron_brit_yhwh.gloss`** אֲרוֹן בְּרִית יְהוָה → **HERRENS pagts ark** [high, decided, attested]
+  - gloss: יהוה: יְהוָֽה (1KI 6:19) [proposed] — English (generated): of the LORD
+  - gloss: κύριος: Κυρίου (MAT 1:20) [proposed] — English (generated): of Lord
+  - NT: 1KI 6:19 *HERRENS pagts ark*; 1KI 8:1 *HERRENS pagts ark*; JOS 3:17 *HERRENS pagts ark*
+  - answers: ark of the covenant of the lord
+  - script:gloss.py, 2026-10-14, supersedes `term:aron_brit_yhwh`
+- **`term:H2763.gloss`** H2763 חָרַם (verbum) → **lægge band på** [high, decided, by-rule]
+  - gloss: חָרַם: הַחֲרִ֖ים (DAN 11:44) [proposed] — English (generated): and devote them to destruction
+  - NT: DAN 11:44 *lægge band på*; JOS 2:10 *lagde band på*; JOS 6:17 *lægges band på*; JDG 1:17 *lagde band på*
+  - answers: devote to destruction, devoted to destruction, destroy completely
+  - DFB: 'lagde band på' (Dom 1,17; 21,11), 'bandlyse' 2×. Udkastene 24×.
+  - script:gloss.py, 2026-10-14, supersedes `term:H2763`
+- **`term:H7782.gloss`** H7782 שׁוֹפָר → **vædderhorn** [high, decided, attested]
+  - gloss: שֹׁופָר: שּׁוֹפָ֖ר (JDG 3:27) [proposed] — English (generated): the ram s horn
+  - NT: JDG 3:27 *vædderhorn*; JDG 6:34 *vædderhorn*; JOS 6:4 *vædderhorn*
+  - answers: ram's horn, rams' horns, trumpet
+  - DFB 13× (Dom 3,27; 6,34; 7).
+  - script:gloss.py, 2026-10-14, supersedes `term:H7782`
+- **`term:H2181.gloss`** H2181 זוֹנָה → **skøge** [high, decided, attested]
+  - gloss: זָנָה: זּוֹנָֽה (ISA 23:15) [proposed] — English (generated): of the harlot
+  - NT: ISA 23:15 *skøge*; GEN 34:31 *skøge*; GEN 38:15 *skøge*
+  - answers: prostitute, harlot
+  - DFB 16×; harmoniseret i Jos 2 og 6 (kap. 2 havde 'prostitueret').
+  - script:gloss.py, 2026-10-14, supersedes `term:H2181`
+- **`term:H4603.gloss`** H4603 מָעַל מַעַל → **handle troløst** [high, decided, by-rule]
+  - gloss: בָּגַד: בִגְד (EXO 21:8) [proposed] — English (generated): since he has broken faith
+  - NT: EXO 21:8 *handlet troløst*; ISA 21:2 *handler troløst*; JOS 7:1 *handlede troløst*
+  - answers: unfaithful, act unfaithfully, breach of faith
+  - DFB 12-13×; Jos 7,1 og 22,20 ens.
+  - script:gloss.py, 2026-10-14, supersedes `term:H4603`
+- **`term:edah.gloss`** עֵדָה → **menighed** [medium, open, attested]
+  - gloss: עֵדָה: עֲדַ֤ת (JOS 18:1) [proposed] — English (generated): congregation
+  - NT: JOS 18:1 *israelitternes menighed*; JOS 22:16 *HERRENS menighed*; EXO 12:3 *Israels menighed*
+  - answers: congregation, assembly
+  - Afgjort for Josva: עֲדַת בְּנֵי־יִשְׂרָאֵל = israelitternes menighed (18,1; 22,12), עֲדַת יִשְׂרָאֵל = Israels menighed, עֲדַת יְהוָה = HERRENS menighed. Ét valg for hele projektet (menighed eller forsamling) udestår (jos 27).
+  - script:gloss.py, 2026-10-14, supersedes `term:edah`
+- **`term:H7860.gloss`** H7860 שֹׁטְרִים → **ledere** [high, decided, attested]
+  - gloss: שֹׁטֵר: שֹׁטְרֵ֥י (JOS 1:10) [proposed] — English (generated): the officers
+  - NT: JOS 1:10 *folkets ledere*; DAN 9:6 *ledere*
+  - answers: officers
+  - Jos-stilarket (BSB-sporet); 'opsynsmænd' var det andet spor.
+  - script:gloss.py, 2026-10-14, supersedes `term:H7860`
+- **`term:torah.gloss`** H8451 תּוֹרָה → **lov** [high, decided, attested]
+  - gloss: תּוֹרָה: תּוֹרָ֗ה (JOS 1:7) [proposed] — English (generated): the law
+  - gloss: νόμος: νόμον (MAT 5:17) [proposed] — English (generated): Law
+  - NT: JOS 1:7 *lov*; JOS 1:8 *lovbog*; 1KI 2:3 *Moses’ lov*
+  - answers: law
+  - Jos: 'lov', 'Moses' lovbog', 'Guds lovbog' (1,7-8; 8,31-34; 24,26).
+  - script:gloss.py, 2026-10-14, supersedes `term:torah`
+- **`term:heniah.gloss`** הֵנִיחַ → **give hvile** [high, decided, by-rule]
+  - gloss: נָתַן: נָתַ֥ן (JOS 1:13) [proposed] — English (generated): and He will give
+  - gloss: δίδωμι: δώσω (MAT 4:9) [proposed] — English (generated): I will give
+  - NT: JOS 1:13 *giver jer hvile*; JOS 21:44 *gav dem hvile*
+  - answers: give rest
+  - Jos 1,13.15; 21,44; 22,4; 23,1.
+  - script:gloss.py, 2026-10-14, supersedes `term:heniah`
+- **`term:migrash.gloss`** מִגְרָשׁ → **marker** [high, decided, attested]
+  - gloss: מִגְרָשׁ: מִ֨גְרְשֵׁי (JOS 14:4) [proposed] — English (generated): along with pasturelands
+  - NT: JOS 14:4 *tilhørende marker*; JOS 21:2 *tilhørende marker*; NUM 35:7 *tilhørende marker*
+  - answers: pasturelands
+  - Efter DFB 4 Mos 35 ('48 byer med tilhørende marker').
+  - script:gloss.py, 2026-10-14, supersedes `term:migrash`
+- **`term:miqlat.gloss`** עָרֵי הַמִּקְלָט → **tilflugtsbyer** [high, decided, attested]
+  - gloss: מִקְלָט: מִּקְלָ֔ט (NUM 35:6) [proposed] — English (generated): of refuge
+  - NT: NUM 35:6 *tilflugtsby*; JOS 20:2 *tilflugtsby*
+  - answers: cities of refuge
+  - Med 'blodhævneren', 'drabsmand', 'ved et uheld', alle fra 4 Mos 35.
+  - script:gloss.py, 2026-10-14, supersedes `term:miqlat`
+- **`term:yam_suf.gloss`** יַם־סוּף → **Sivhavet** [high, decided, attested]
+  - gloss: סוּף: ס֖וּף (1KI 9:26) [proposed] — English (generated): of the Red
+  - NT: 1KI 9:26 *Sivhavet*; EXO 10:19 *Sivhavet*; JOS 2:10 *Sivhavet*
+  - answers: red sea
+  - script:gloss.py, 2026-10-14, supersedes `term:yam_suf`
+- **`term:great_sea.gloss`** הַיָּם הַגָּדוֹל → **Det Store Hav** [high, decided, attested]
+  - gloss: גָּדוֹל: גָּד֖וֹל (NUM 34:6) [proposed] — English (generated): of the Great
+  - NT: NUM 34:6 *Det Store Hav*; JOS 1:4 *Det Store Hav*
+  - answers: great sea, mediterranean
+  - script:gloss.py, 2026-10-14, supersedes `term:great_sea`
+- **`term:salt_sea.gloss`** יָם הַמֶּלַח → **Salthavet** [high, decided, attested]
+  - gloss: מֶלַח: מֶּֽלַח (GEN 14:3) [proposed] — English (generated): the Salt
+  - NT: GEN 14:3 *Salthavet*; JOS 3:16 *Salthavet*
+  - answers: salt sea, dead sea
+  - script:gloss.py, 2026-10-14, supersedes `term:salt_sea`
+- **`term:negev.gloss`** הַנֶּגֶב → **sydlandet** [high, decided, attested]
+  - gloss: נֶגֶב: נֶּ֖גֶב (JDG 1:9) [proposed] — English (generated): in the Negev
+  - NT: JDG 1:9 *sydlandet*; JOS 10:40 *sydlandet*
+  - answers: negev
+  - 'sydlandet' i geografiske opremsninger som Dom 1,9.
+  - script:gloss.py, 2026-10-14, supersedes `term:negev`
+- **`term:shephelah.gloss`** הַשְּׁפֵלָה → **lavlandet** [high, decided, attested]
+  - gloss: שְׁפֵלָה: שְּׁפֵלָ֖ה (1KI 10:27) [proposed] — English (generated): in the foothills
+  - NT: 1KI 10:27 *lavlandet*; JOS 9:1 *lavlandet*
+  - answers: foothills, lowland
+  - script:gloss.py, 2026-10-14, supersedes `term:shephelah`
+- **`term:H7585.gloss`** H7585 שְׁאוֹל → **dødsriget** [high, decided, attested]
+  - gloss: שְׁאוֹל: שְׁא֜וֹל (HAB 2:5) [proposed] — English (generated): like Sheol
+  - NT: HAB 2:5 *dødsriget*; GEN 37:35 *dødsriget*; GEN 42:38 *dødsriget*
+  - answers: sheol, grave
+  - DFB 40×; lexicon sheol → dødsriget 0,64 + dødsrigets 0,19. {N: Sheol} er åbent.
+  - script:gloss.py, 2026-10-14, supersedes `term:H7585`
+- **`term:hesed.gloss`** H2617 חֶסֶד → **trofasthed** [high, decided, attested]
+  - gloss: חֶסֶד: חַסְדְּ (GEN 19:19) [proposed] — English (generated): kindness
+  - NT: DAN 9:4 *trofasthed*; GEN 20:13 *trofasthed*; 1KI 3:6 *trofasthed*
+  - answers: loving devotion, kindness, loyalty
+  - *ḥæsæd wæʔæmæt* = 'trofasthed og troskab' (1 Mos 24,27); valget for hele bogen er åbent (gen024 spm. 1). DFB har også 'nåde' med {N: nåde}.
+  - script:gloss.py, 2026-10-14, supersedes `term:hesed`
+- **`term:H8198.gloss`** H8198 שִׁפְחָה → **trælkvinde** [medium, open, attested]
+  - gloss: אָמָה: אַמְהֹתָ֖י (GEN 20:17) [proposed] — English (generated): and his maidservants
+  - NT: GEN 20:17 *trælkvinde*; GEN 25:12 *trælkvinde*; 1KI 1:2 *tjenestepige*
+  - answers: maidservant, servant
+  - Udkastene: trælkvinde 22×, tjenestepige 2×, slavinde 4×. DFB's 1 Mos 16 (Hagar) har nu 'tjenestepige' – gen-oversigten 1 og 7 er åbne.
+  - script:gloss.py, 2026-10-14, supersedes `term:H8198`
+- **`term:allup.gloss`** אַלּוּף → **stammehøvding** [medium, open, attested]
+  - gloss: אַלּוּף: אַלּוּפֵ֣י (GEN 36:15) [proposed] — English (generated): are the chiefs
+  - NT: GEN 36:15 *stammehøvding*; GEN 36:16 *stammehøvding*
+  - answers: chief, chiefs
+  - 1 Mos 36 (gen-oversigten 13).
+  - script:gloss.py, 2026-10-14, supersedes `term:allup`
+- **`term:toledot.gloss`** תּוֹלְדוֹת → **slægtshistorie** [medium, open, attested]
+  - gloss: תּוֹלֵדוֹת: תּוֹלְדֹ֣ת (GEN 6:9) [proposed] — English (generated): the account
+  - NT: GEN 6:9 *slægtshistorie*; GEN 10:1 *slægtshistorie*; GEN 25:12 *slægtshistorie*
+  - answers: account, generations, records
+  - DFB 1 Mos 6,9; 10,1; 11,10.27: 'Dette er X's slægtshistorie'; udkastene 25,12.19; 36,1.9 følger. Gen-oversigten 3 er åben.
+  - script:gloss.py, 2026-10-14, supersedes `term:toledot`
+- **`term:qanna.gloss`** אֵל קַנָּא / קַנּוֹא → **skinsyg** [medium, open, attested]
+  - gloss: קַנָּא: קַנָּ֣א (EXO 34:14) [proposed] — English (generated): Jealous
+  - NT: EXO 34:14 *skinsyg*; JOS 24:19 *skinsyg Gud*
+  - answers: jealous
+  - DFB 2 Mos 34,14 'skinsyg'; jos 47 åbent.
+  - script:gloss.py, 2026-10-14, supersedes `term:qanna`
+- **`term:sar_tabbahim.gloss`** שַׂר הַטַּבָּחִים → **chefen for livvagten** [high, decided, attested]
+  - gloss: רַב: רַב (JER 39:9) [proposed] — English (generated): captain
+  - NT: JER 39:9 *chefen for livvagten*; GEN 37:36 *chefen for livvagten*; GEN 39:1 *chefen for livvagten*
+  - answers: captain of the guard
+  - Husform fra Jer 39; 52 (DFB 15×); 1 Mos 37; 39; 40; 41.
+  - script:gloss.py, 2026-10-14, supersedes `term:sar_tabbahim`
+- **`term:tselem.gloss`** צְלֵם (aram.) → **billedstøtte** [high, decided, attested]
+  - gloss: צְלֵם: צְלֵ֥ם (DAN 2:31) [proposed]
+  - NT: DAN 2:31 *billedstøtte*; DAN 2:34 *billedstøtte*; NUM 33:52 *billedstøtte*
+  - answers: statue, image
+  - Ensrettet i Dan 2,31-45 og kap. 3 (2 havde 'statue').
+  - script:gloss.py, 2026-10-14, supersedes `term:tselem`
+- **`term:shiqquts.gloss`** שִׁקּוּץ מְשֹׁמֵם → **ødelæggelsens vederstyggelighed** [high, decided, attested]
+  - gloss: βδέλυγμα: βδέλυγμα (MAT 24:15) [proposed] — English (generated): abomination
+  - NT: MAT 24:15 *ødelæggelsens vederstyggelighed*; DAN 9:27 *ødelæggelsens vederstyggelighed*; DAN 11:31 *ødelæggelsens vederstyggelighed*
+  - answers: abomination of desolation, abomination that causes desolation
+  - Som DFB Matt 24,15 (Mark 13,14 har 'modbydelighed', meldt som fejl). 9,27 i flertal som hebraisk.
+  - script:gloss.py, 2026-10-14, supersedes `term:shiqquts`
+- **`term:tsevi.gloss`** אֶרֶץ הַצְּבִי → **det herlige land** [high, decided, attested]
+  - gloss: אֶרֶץ: אֶֽרֶץ (DAN 11:16) [proposed] — English (generated): Land
+  - NT: DAN 8:9 *det herlige land*; DAN 11:16 *det herlige land*; ZEC 7:14 *det herlige land*
+  - answers: beautiful land, glorious land
+  - script:gloss.py, 2026-10-14, supersedes `term:tsevi`
+- **`term:king_south.gloss`** מֶלֶךְ הַנֶּגֶב / מֶלֶךְ הַצָּפוֹן → **Sydens konge** [medium, decided, attested]
+  - gloss: מֶלֶךְ: מֶֽלֶךְ (DAN 11:5) [proposed] — English (generated): The king
+  - gloss: βασιλεύς: βασιλέα (MAT 1:6) [proposed] — English (generated): king
+  - NT: DAN 11:5 *Sydens konge*; DAN 11:6 *Sydens konge*; DAN 11:6 *Nordens konge*
+  - answers: king of the south, king of the north
+  - Og 'Nordens konge'; 'kongen i Syd' er alternativet (dan011 spm. 2).
+  - script:gloss.py, 2026-10-14, supersedes `term:king_south`
+- **`term:elon.gloss`** H436 אֵלוֹן → **eg** [high, decided, attested]
+  - gloss: אֵלוֹן: אֵלֹנֵ֥י (GEN 13:18) [proposed] — English (generated): near the Oaks
   - NT: GEN 13:18 *Mamres ege*; DAN 3:28 *egen*
   - answers: oak, oaks, terebinth, great trees
   - 'Mamres ege' (DFB 1 Mos 13,18), 'Morehs eg' (DFB 12,6; stilarket skrev 'Mores eg'); 'terebinte' kun i {T:}. DFB 18,1 har dog 'egetræerne i Mamre'.
-  - agent:memory-setup, 2026-10-14
-<!-- store:end sha=730b10ef -->
+  - script:gloss.py, 2026-10-14, supersedes `term:elon`
+- **`term:goyim.gloss`** עַמְמַיָּא אֻמַּיָּא וְלִשָּׁנַיָּא (aram.) → **folk, nationer og tungemål** [high, decided, attested]
+  - gloss: λαός: λαὸν (MAT 1:21) [proposed] — English (generated): people
+  - NT: DAN 3:4 *folk, nationer og tungemål*; DAN 3:4 *tungemål*; DAN 3:7 *tungemål*
+  - answers: peoples, nations, and languages, every nation and language
+  - Fast trehed i Dan 3-7.
+  - script:gloss.py, 2026-10-14, supersedes `term:goyim`
+<!-- store:end sha=81ddf8a9 -->

@@ -582,6 +582,55 @@ METHOD = "morphs try 1"
 HOSTS = {"verb": ("verb",), "noun": ("noun",), "adj": ("adj",), "pron": ("pron",)}  # any other host: every class
 
 
+def affix_tokens(pname, S):
+    """[(Greek class, {(affix, position)}, stem, Greek features, even verse, ref)]: one row per target token of the NT
+    linked to the Greek (its first link), segmented by the store's morphs"""
+    import sqlite3
+    import lang
+    _, con = lang.connect(pname)
+    con.row_factory = sqlite3.Row
+    gtok = {r["key"]: r for r in con.execute("select * from g.tokens")}
+    feat = lang.greek_features(con, gtok)
+    rows = con.execute("""select l.book as bk, l.ch as cc, l.v as vv, t.raw, g.* from nt_links l join nt_tokens t on t.book=l.book and t.ch=l.ch
+        and t.v=l.v and t.pos=l.pos join g.tokens g on g.key=l.key""").fetchall()
+    toks, seen = [], set()
+    for r in rows:
+        k = (r["raw"], r["key"])
+        if k in seen or not r["raw"]:
+            continue
+        seen.add(k)
+        ms = S.split(r["raw"])
+        stem = next((m.form for m in ms if m.slot == "stem"), "")
+        toks.append((r["class"], {(m.form, m.position) for m in ms if m.slot != "stem"}, stem, feat(r), r["vv"] % 2 == 0,
+                     f"{r['bk'].upper()} {r['cc']}:{r['vv']}"))
+    return toks
+
+
+def measure(e, toks, want, only=None):
+    """an affix entry on its host words ({"all"|"even": (n, stems, lift, odds)}, the host words it comes off): want the
+    Greek features ({name: {values}}) whose lift and odds are measured; only: the host words to count, by their Greek
+    features (transitive clauses: {"transitive": {"yes"}})"""
+    form, pos = e["form"], int(e.get("position") or 0)
+    cls = HOSTS.get(e.get("host"))
+    has = lambda fv, w: all(any((k, v) in fv for v in vs) for k, vs in w.items())
+    out, host_on = {}, []
+    for half in ("all", "even"):
+        host = [t for t in toks if (cls is None or t[0] in cls) and (half == "all" or t[4]) and (not only or has(t[3], only))]
+        on = [t for t in host if (form, pos) in t[1] or (not pos and any(f == form for f, _ in t[1]))]
+        n, stems = len(on), len({t[2] for t in on})
+        lift = odds = None
+        if want and n and host:
+            k = sum(has(t[3], want) for t in on)
+            base = sum(has(t[3], want) for t in host)
+            lift = round((k / n) / (base / len(host)), 2) if base else 0.0
+            rest, krest = len(host) - n, base - k   # the odds of the feature where it comes off, against elsewhere
+            odds = round(((k + .5) / (n - k + .5)) / ((krest + .5) / (rest - krest + .5)), 2)
+        out[half] = (n, stems, lift, odds)
+        if half == "all":
+            host_on = on
+    return out, host_on
+
+
 def try_morphs(pname, ids, P, S, write=False, by="script:morphs.py", min_n=20, min_stems=5, min_odds=2.0):
     """Each affix entry (prefix, infix, suffix; those named, else all) measured on the NT aligned to the Greek, under the
     store's whole segmentation (a chain's other affixes included): how often it comes off (n), on how many different
@@ -600,44 +649,13 @@ def try_morphs(pname, ids, P, S, write=False, by="script:morphs.py", min_n=20, m
     cands = [e for e in G.morphs if e.get("slot") in ("prefix", "infix", "suffix") and (not ids or e.get("id") in ids)]
     if ids and len(cands) < len(set(ids)):
         raise SystemExit(f"not affix entries of the store: {', '.join(sorted(set(ids) - {e['id'] for e in cands}))}")
-    _, con = lang.connect(pname)
-    con.row_factory = sqlite3.Row
-    gtok = {r["key"]: r for r in con.execute("select * from g.tokens")}
-    feat = lang.greek_features(con, gtok)
-    rows = con.execute("""select l.book as bk, l.ch as cc, l.v as vv, t.raw, g.* from nt_links l join nt_tokens t on t.book=l.book and t.ch=l.ch
-        and t.v=l.v and t.pos=l.pos join g.tokens g on g.key=l.key""").fetchall()
-    toks, seen = [], set()
-    for r in rows:                                   # one row per target token (its first link)
-        k = (r["raw"], r["key"])
-        if k in seen or not r["raw"]:
-            continue
-        seen.add(k)
-        ms = S.split(r["raw"])
-        stem = next((m.form for m in ms if m.slot == "stem"), "")
-        toks.append((r["class"], {(m.form, m.position) for m in ms if m.slot != "stem"}, stem, feat(r), r["vv"] % 2 == 0,
-                     f"{r['bk'].upper()} {r['cc']}:{r['vv']}"))
+    toks = affix_tokens(pname, S)
     gr = lambda e: " ".join(f"{a}={'|'.join(b) if isinstance(b, list) else b}" for a, b in sorted((e.get("greek") or {}).items()))
     res = []
     for e in cands:
         form, pos = e["form"], int(e.get("position") or 0)
-        cls = HOSTS.get(e.get("host"))
         want = {k: set(v) if isinstance(v, list) else {v} for k, v in (e.get("greek") or {}).items()}
-        has = lambda fv: all(any((k, v) in fv for v in vs) for k, vs in want.items())
-        out = {}
-        for half in ("all", "even"):
-            host = [t for t in toks if (cls is None or t[0] in cls) and (half == "all" or t[4])]
-            on = [t for t in host if (form, pos) in t[1] or (not pos and any(f == form for f, _ in t[1]))]
-            n, stems = len(on), len({t[2] for t in on})
-            lift = odds = None
-            if want and n and host:
-                k = sum(has(t[3]) for t in on)
-                base = sum(has(t[3]) for t in host)
-                lift = round((k / n) / (base / len(host)), 2) if base else 0.0
-                rest, krest = len(host) - n, base - k   # the odds of the feature where it comes off, against elsewhere
-                odds = round(((k + .5) / (n - k + .5)) / ((krest + .5) / (rest - krest + .5)), 2)
-            out[half] = (n, stems, lift, odds)
-            if half == "all":
-                host_on = on
+        out, host_on = measure(e, toks, want)
         n, stems, lift, odds = out["all"]
         tl, todds = out["even"][2], out["even"][3]
         kept = n >= min_n and stems >= min_stems and (not want or (odds or 0) >= min_odds and (todds or 0) >= min_odds)

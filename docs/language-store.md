@@ -27,7 +27,9 @@ Required in every entry: `id`, `kind`, `value`, `confidence`, `method`, `by`, `d
 |---|---|
 | `id` | unique among live entries (`speech_frame`, `term:H7458`, `name:naomi`, `m:<form>:<host>`, `c:<paradigm>:<bundle>`, `claim:<name>`) |
 | `kind` | `feature`, `letter`, `gap`, `morph`, `cell`, `claim`; `term`, `formula`, `name` |
-| `value` | the finding: a string, or a small object for a formula |
+| `value` | the finding: a string, or a small object for a formula; for terms, formulas and names the target language only |
+| `gloss` | terms, formulas, names (and their `alternatives`): the Greek or Hebrew word the value renders (below) |
+| `interlinear` | optional, a form built by rule with no source word: a Leipzig line, `1PL.HORT-go` |
 | `evidence` | `[{"ref": "BOOK C:V", "form": ..., "n": ...}]`: USFM code, the edition's numbering; `form` the attested word or phrase, `n` a count |
 | `confidence` | `high`, `medium`, `low` |
 | `method` | `corpus-observed` (read off the edition), `corpus-derived` (a statistic by script, confirmed by an agent), `project-decision`, `external` (needs `external_source`), `team-decision` |
@@ -63,6 +65,31 @@ Rules:
   cite a verse the edition doesn't have.
 - **`term`**, **`formula`**, **`name`**: a source lexeme, phrase or name → the target form. A `by-rule` name cites
   the letter entries' names; `by-rule` entries are for a speaker's review.
+
+### Glosses
+
+A term, formula or name says what its target form means with a `gloss` in Greek or Hebrew, never in English: the
+bridge between an NT translated from the Greek and the Hebrew OT being drafted.
+
+```json
+"gloss": [
+  {"lang": "hbo", "form": "נֵלְכָ֖ה", "lemma": "הָלַךְ", "ref": "GEN 37:17"},
+  {"lang": "grc", "form": "Ἄγωμεν", "lemma": "ἄγω", "ref": "MRK 1:38"}
+]
+```
+
+- `lang`: `grc`, `hbo`, or `arc` (Aramaic). `form`: the word or phrase as the verse `ref` writes it. `lemma`: as
+  `orig/grc.sqlite` or `orig/heb.sqlite` writes it (for Hebrew the consonants are enough).
+- Greek from an NT verse (the project's Greek text, BGB or RP, or MACULA's); Hebrew and Aramaic from the WLC (MACULA
+  Hebrew), never BHSA: a form with accents is the WLC word as written; one may leave out the accents, or all marks.
+- Order: Hebrew first in a decision about the OT drafts; otherwise the language of the evidence first.
+- `"proposed": true`: proposed by `scripts/gloss.py propose`, to be checked by an agent or the team.
+- English is for people and generated, never stored: the wiki, `concord.py store` and `gloss.py show` add the BSB
+  words aligned to the gloss's form in its verse (the `bsb` tables), labelled *English (generated)*. Notes stay
+  English.
+- The verse packs match entries by gloss: a Hebrew gloss by the lemmas of the verse drafted, a confirmed Greek gloss
+  also through the LXX (`orig/heb.sqlite` `lxx`: the Greek words that usually render the verse's Hebrew words).
+- `morph`, `cell` and `claim` entries keep their Leipzig glosses (2.SG, NEG.IND).
 
 ### Morphs
 
@@ -113,6 +140,11 @@ Top-level fields of `observations.json`. A change makes the tests that depended 
   give no tone morphs; `absent: neutral` makes an unmarked vowel a tone of its own. `morphs.py tone --write` detects
   and stores it (kept unless `--force`).
 - **`analysis.match`**: `strings` (default: affixes matched at a word's edges) or `morphs` (on the morph view).
+- **`analysis.align`**: `parts+fill` (the default once the store has confirmed affixes), `parts` or `words` (the
+  default without them): `align.py` aligns the target as the words' parts (an affix by its store form, the stem, a
+  grammatical tone by its label) and maps each link back to its word; `+fill` adds a word link where neither its source
+  nor its target word got one by parts. It also writes `lexicon_<side>_parts.tsv`, the source words each affix links
+  to. Rerun `lang.py build` after it.
 - **`analysis.model_text`**: `words` (default) or `morphs`: the second-draft model's target as words or parts
   (`be+`, `+gu`, `~PROH` for grammatical tone, `~H1` for lexical tone; `scripts/nllb/model_text.py`).
   `analysis.model_join` and `analysis.model_tone` change the signs `+` and `~`.
@@ -147,6 +179,9 @@ Top-level fields of `observations.json`. A change makes the tests that depended 
 3. every `attested` term, formula and name occurs in a cited verse (case, `ignore_marks` and `<slots>` ignored);
 4. live ids are unique; `supersedes` points to an existing entry;
 5. morph, cell and claim fields as above; team decisions as above;
+5a. glosses: `lang`, script, the lemma in the source database, the form in its verse (the WLC for Hebrew); English in
+   a term's or formula's value (in brackets, or with `--project` words of the BSB the corpus never writes) is a
+   warning, and left out of the value's checks and of the attested forms (`langtools.store_forms`);
 6. with `--project`, for a non-free style edition: an evidence `form` is at most 4 words; a `note`, `pattern` or
    `value` quotes at most 15 words, from the published text, as written;
 7. reported only: agreement with lexeme-aligner's `gram-struct` (`download/lexeme-aligner/grammar/gs_<iso>.json`).
@@ -159,12 +194,14 @@ It also lists value words the edition writes only with other marks.
 |---|---|
 | `memory_prompt.py <project> [--init]` | the prompt for the agent that builds store and wiki; `--init` creates an empty store |
 | `grammar.py status\|plan\|show` | what the store holds; what to settle next |
-| `grammar.py run --write` | writes `gb:GBnnn` features the store's morphs answer (`grambank_recipes.tsv`, `from_store: yes`); `plan` lists the rest |
+| `grammar.py run --write` | writes `gb:GBnnn` features the store's morphs answer (`grambank_recipes.tsv`, `from_store: yes`): by tag or `greek`; S and A indexing (GB089-GB092) measured on the NT's intransitive and transitive clauses; the chain's order in the note; `plan` lists the rest |
 | `grammar.py from-tsv` | writes morphs, cells, claims from a working store's TSV files (other entries kept) |
 | `morphs.py try --write`, `tone --write` | affix stats and claims; `orthography.tone` |
 | `cell_check.py try --write` | kept forms as cell alternatives; a claim per form tried |
 | `team_input.py prompt` | the curation agent's prompt for new team items |
 | `verse_pack.py` | reads the store into the per-verse pack (team decisions first) |
+| `gloss.py propose [--write]` | glosses for entries without one, from the alignment lexicons and the entry's source; English in a value to its note |
+| `gloss.py check\|show\|words` | the store's glosses checked; an entry's glosses with the generated English; a verse's words and lemmas |
 | `wiki.py sync\|lint` | the wiki's generated store blocks; links and quotations |
 
 `grambank_recipes.tsv` columns: `gb_id`, `method`, `inputs`, `test`, `decide`, `relevance`, `from_store`, `note`.

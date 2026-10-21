@@ -17,7 +17,11 @@ Commands:
                                           and thin cells, open claims, open morphs: the curation agent's list
   run <project|dir> [GBnnn ...] [--write] the Grambank features the store's morphs answer (docs/
                                           language-store/grambank_recipes.tsv, from_store: yes): a morph tagged with
-                                          the code, or for NEG, FUT, mood, tense and object morphs the tag; a feature
+                                          the code, or for NEG, FUT, mood, tense and object morphs the tag (or the
+                                          Greek feature it marks, `greek`); for S and A indexing (GB089-GB092) an
+                                          affix marking the subject's person and number, measured on the NT's
+                                          intransitive and transitive clauses apart (lift >= 3 on all verses and on
+                                          the even ones, scripts/morphs.py measure); a chain's order in the note; a feature
                                           entry gb:GBnnn (value 1, evidence the morphs' verses), never a 0 (no evidence
                                           is no entry). Prints them; --write puts them into observations.json (its own
                                           earlier entries replaced, an agent's or the team's left alone)
@@ -217,14 +221,21 @@ def gb_codes(es):
     return out
 
 
-def answering(G, gb):
-    """the store's verb morphs that answer a Grambank feature with 1 (see run)"""
+ARGUMENT = {"GB089": ("suffix", "no"), "GB090": ("prefix", "no"), "GB091": ("suffix", "yes"), "GB092": ("prefix", "yes")}
+
+
+def answering(G, gb, where=None):
+    """the store's verb morphs that answer a Grambank feature with 1 (see run); for GB089-GB092 measured on the NT
+    (where: the project, with its language DB), else only a morph tagged with the code"""
     live = [m for m in G.morphs if m.get("host") in ("verb", "any") and m.get("status") in ("observed", "decided")]
     coded = [m for m in live if gb in (m.get("codes") or [])]
-    if coded or gb in ("GB089", "GB090", "GB091", "GB092"):   # intransitive / transitive: only from a tagged morph
+    if coded:
         return coded
+    if gb in ARGUMENT:
+        return [m for m, _ in argument_markers(where, G, gb)] if where else []
+    greek = lambda m: m.get("greek") or {}
     tags = lambda m: set(re.split(r"[.;_ ]", (m.get("value") or "").upper()))
-    obj = lambda m: (m.get("value") or "").upper().startswith(("P.", "O.", "OBJ"))
+    obj = lambda m: (m.get("value") or "").upper().startswith(("P.", "O.", "OBJ")) or "object" in greek(m)
     rule = {"GB079": lambda m: m.get("slot") == "prefix" and tags(m) & TAM and not obj(m),
             "GB080": lambda m: m.get("slot") == "suffix" and tags(m) & TAM and not obj(m),
             "GB084": lambda m: "FUT" in tags(m),
@@ -239,6 +250,46 @@ def answering(G, gb):
     return [m for m in live if rule(m)] if rule else []
 
 
+CHAIN = {"GB079", "GB080", "GB089", "GB090", "GB091", "GB092", "GB093", "GB094", "GB107"}
+
+
+def argument_markers(where, G, gb, min_lift=3.0, min_n=20):
+    """[(morph, figures)]: the live verb affixes of GB089-GB092's slot marking the subject's person and number
+    (`greek` person+number, no object), with lift >= min_lift on all verses and on the even ones, counted on the verbs
+    of the NT's intransitive (GB089, GB090) or transitive (GB091, GB092) Greek clauses"""
+    import morphs
+    slot, trans = ARGUMENT[gb]
+    cands = [m for m in G.morphs if m.get("host") in ("verb", "any") and m.get("status") in ("observed", "decided")
+             and m.get("slot") == slot and "person+number" in (m.get("greek") or {}) and "object" not in m["greek"]]
+    from project import project_dir
+    if not cands or os.path.isdir(where) or not os.path.exists(os.path.join(project_dir(where), "_learn", "lang.sqlite")):
+        return []
+    cache = argument_markers.__dict__.setdefault("toks", {})
+    if where not in cache:
+        S = morphs.load(where)
+        cache[where] = morphs.affix_tokens(where, S) if S else []
+    out = []
+    for m in cands:
+        want = {k: set(v) if isinstance(v, list) else {v} for k, v in m["greek"].items()}
+        r, _ = morphs.measure(m, cache[where], want, only={"transitive": {trans}})
+        (n, stems, lift, _), (_, _, tl, _) = r["all"], r["even"]
+        if n >= min_n and (lift or 0) >= min_lift and (tl or 0) >= min_lift:
+            out.append((m, f"{m['form']} n {n}, lift {lift} (even verses {tl})"))
+    return out
+
+
+def chain(G):
+    """a verb's chain by the store's positions: 'ti-(1) tu-(2) aá-(3) mu-(4) STEM -e(3)', or '' without positions"""
+    live = [m for m in G.morphs if m.get("host") == "verb" and m.get("status") in ("observed", "decided") and m.get("position")]
+    if not live:
+        return ""
+    by = collections.defaultdict(list)
+    for m in live:
+        by[(m.get("slot"), int(m["position"]))].append(m["form"])
+    side = lambda s: [f"{'/'.join(dict.fromkeys(by[k]))}({k[1]})" for k in sorted(by) if k[0] == s]
+    return " ".join(side("prefix") + ["STEM"] + side("suffix"))
+
+
 def derive(where, only=()):
     """the feature entries run writes: gb:GBnnn for each from_store recipe the store's morphs answer"""
     G, out = load(where), []
@@ -246,7 +297,9 @@ def derive(where, only=()):
         gb = r["gb_id"]
         if r.get("from_store") != "yes" or (only and gb not in only):
             continue
-        ms = answering(G, gb)
+        figs = dict((m["id"], f) for m, f in argument_markers(where, G, gb)) if gb in ARGUMENT and not any(
+            gb in (m.get("codes") or []) for m in G.morphs) else {}
+        ms = answering(G, gb, where) if not figs else [m for m in G.morphs if m["id"] in figs]
         if not ms:
             continue
         ev, seen = [], set()
@@ -259,7 +312,10 @@ def derive(where, only=()):
                     "codes": [gb], "evidence": ev, "confidence": conf, "method": "corpus-derived",
                     "by": "script:grammar.py", "date": datetime.date.today().isoformat(), "status": "observed",
                     "note": f"grammar.py run: answered by the store's morphs ({', '.join(m['id'] for m in ms)}); "
-                            f"recipe: {r['test']}"})
+                            + (f"measured on the NT's {'transitive' if ARGUMENT[gb][1] == 'yes' else 'intransitive'} "
+                               f"clauses: {'; '.join(figs.values())}; " if figs else "")
+                            + (f"the verb's chain: {chain(G)}; " if chain(G) and gb in CHAIN else "")
+                            + f"recipe: {r['test']}"})
     return out
 
 
@@ -301,7 +357,7 @@ def plan(where):
     todo = sorted((r for r in recipes() if r["gb_id"] not in have), key=lambda r: (RELEVANCE.get(r["relevance"], 3), r["gb_id"]))
     print("## Grambank features a recipe can decide, not in the store yet")
     for r in todo:
-        how = "run (the store's morphs answer it)" if r.get("from_store") == "yes" and answering(G, r["gb_id"]) else \
+        how = "run (the store's morphs answer it)" if r.get("from_store") == "yes" and answering(G, r["gb_id"], where) else \
             f"{r['method']}: {r['test']}"
         print(f"- {r['gb_id']} ({r['relevance']}) {q.get(r['gb_id'], '')}: {how}")
     cells = [c for c in G.cells if not c.get("gap") and (c.get("status") == "open" or c.get("confidence") == "low")]

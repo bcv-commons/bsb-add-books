@@ -34,7 +34,12 @@ language, `python3 scripts/onboard.py` imports and fetches the editions it finds
 3. **Quarantine:** a book that a non-free edition (also `CC-ND/`, `CC-NC/`) has is drafted only in quarantine
    (`python3 scripts/quarantine.py <project> <code>`; `make_prompt.py` enforces it). Keep reports that quote the
    edition out of the agents' reach (`do_not_open:` in the project).
-4. **Check:** `python3 scripts/project.py <project>` for a project that uses it shows the edition in `style_from`
+4. **The team's SFM conventions** (an edition with their Paratext files in `source/`): `python3 scripts/sfm_profile.py
+   <edition>` prints what their books show (Unicode form, line endings, versification with its evidence, headings,
+   paragraph markers, the divine name, `\id` line, file names) and what is uncertain (which book is the newest);
+   show it to the user, then `--write` puts it into `edition.yaml` (`sfm:`). On a later delivery it reports the
+   changes before anything is overwritten.
+5. **Check:** `python3 scripts/project.py <project>` for a project that uses it shows the edition in `style_from`
    and the inherited `nt_basis` and quarantine.
 
 Ask the user before adding an edition that isn't public domain to git. Don't commit; the user commits.
