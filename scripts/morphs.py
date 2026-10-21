@@ -28,8 +28,12 @@ Affixes: the store's morphs of slot prefix, infix and suffix (any host), longest
 what remains is attested: a word of the corpus itself, or what two affixed words leave (so a stem that merely begins
 like a prefix stays whole). The view is word-class blind: it is measured, not assumed (cell_check.py, rough_check.py).
 Affix chains: where the store's affixes have a `position` (prefixes counted from the word's start, suffixes from the
-stem outward), several of each are taken off, each position once and in order (ni-tu-ka-mu-sohoz-a), on the same
-evidence; of the parses, the one that takes off most letters in the fewest pieces (ba-, not b-a-).
+stem outward), several of each are taken off, each position once and in order (ni-tu-ka-mu-sohoz-a). The evidence is
+then by letters: each affix comes off only where another form of the stem lacks the letters from it to the stem
+(tu-ka-batiz-ibw-a, as every form of tiz has ba before it). Of the parses, the one that takes off most letters in the
+fewest pieces (ba-, not b-a-). Chains are host-aware where the NT is aligned to the Greek (lang.py build): a host's
+affixes (verb) come off only words linked to that Greek class in at least half their tokens, and off other words only
+where they leave the stem of such a word, so nouns keep their class prefixes (abaantu) unless the store lists them.
 
     S = morphs.load(<project>)          None when the store has no morph entries
     S.split(exact_token)                [Morph(slot, form, text)]: text is the morph as written; ''.join of the texts,
@@ -227,7 +231,7 @@ class ToneMorph:
 
 
 class Segmenter:
-    def __init__(self, G, orth, vocab):
+    def __init__(self, G, orth, vocab, classes=None):
         self.spec = ToneSpec(orth)
         self.ignore = {CH(m) for m in (orth or {}).get("ignore_marks") or []}
         aff = lambda slot, host=None: sorted({e["form"].strip("-=") for e in G.morphs if e.get("slot") == slot
@@ -238,13 +242,18 @@ class Segmenter:
         # word's start, suffixes from the stem outward; several of them per word, each position once, in order
         self.chain = any(e.get("position") for e in G.morphs if e.get("slot") in ("prefix", "suffix"))
         if self.chain:
-            def by_pos(slot):
+            def by_pos(slot, hosts=None):
                 out = collections.defaultdict(set)
                 for e in G.morphs:
-                    if e.get("slot") == slot and e.get("form", "").strip("-="):
+                    if (e.get("slot") == slot and e.get("form", "").strip("-=")
+                            and (hosts is None or (e.get("host") or "any") in hosts)):
                         out[int(e.get("position") or 1)].add(e["form"].strip("-="))
                 return {p: sorted(v, key=len, reverse=True) for p, v in sorted(out.items())}
             self.pre_at, self.suf_at = by_pos("prefix"), by_pos("suffix")
+            self.chain_hosts = {e.get("host") or "any" for e in G.morphs if e.get("position")} - {"any"}
+            self.at_for = {}                              # hosts -> (prefixes, suffixes) by position
+            for hs in [frozenset({"any", h}) for h in self.chain_hosts] + [frozenset({"any"})]:
+                self.at_for[hs] = (by_pos("prefix", hs), by_pos("suffix", hs))
         hosts = {e.get("host") for e in G.morphs if e.get("slot") in ("prefix", "suffix")}
         self.free = {self.plain(e["form"]) for e in G.morphs if e.get("slot") == "free" and e.get("form")}
         self.pairs_by_host = {h: {(p, q) for p in aff("prefix", h) for q in aff("suffix", h)} for h in hosts}
@@ -292,18 +301,68 @@ class Segmenter:
                 ok += sum(1 for w in ws if any(self.attested(w[:-len(a)], none, o, self.vocab[w]) for o in ones) if side == "s")
                 if len(ws) >= 10 and ok >= self.min_productive * len(ws):
                     self.productive.add(a + "-" if side == "p" else "-" + a)
+        # host-aware chains: a word's classes from the NT aligned to the Greek (classes: {word: Counter(Greek class:
+        # tokens linked to one, and "" all its linked tokens)}): each class linked in at least half its tokens (2 or
+        # more), so a verb that also renders its subject's article (bakagaamba: οἱ ... εἶπον) is still a verb. A chain's
+        # affixes of a host (verb) come off only that class's words, and off a word the NT doesn't link where what they
+        # leave is the stem of such a word (stems_of)
+        self.word_class, self.stems_of = {}, {}
+        if self.chain and classes:
+            acc = collections.defaultdict(collections.Counter)
+            for w, c in classes.items():
+                acc[self.plain(w)].update(c)
+            for w, c in acc.items():
+                if c[""] >= 2:
+                    self.word_class[w] = frozenset(k for k, n in c.items() if k and n >= 0.5 * c[""])
         self.cache = {}
+
+    def hosts_of(self, s):
+        """the hosts whose chain affixes may come off the plain word s (None: all, no word classes known)"""
+        if not self.word_class:
+            return None
+        k = self.word_class.get(s)
+        if k:                                            # no class in half its tokens: as a word the NT doesn't link
+            hs = k & self.chain_hosts
+            return frozenset({"any", min(hs)}) if hs else frozenset({"any"})   # one host's chain (verb before noun)
+        for h in sorted(self.chain_hosts):
+            if h not in self.stems_of:
+                self.stems_of[h] = {r[0] for w, c in self.word_class.items() if h in c
+                                    for r in [self.chain_parse(w, frozenset({"any", h}))] if r}
+            r = self.chain_parse(s, frozenset({"any", h}))
+            if r and r[0] in self.stems_of[h]:
+                return frozenset({"any", h})
+        return frozenset({"any"})
+
+    def chain_parse(self, s, hosts=None, cut_ok=lambda n: True):
+        """(stem, prefix chain, suffix chain) of the plain word s, or None: of the chains that leave an attested stem
+        (or are all productive), the one that takes off most letters in the fewest pieces (ba-, not b-a-), then the stem
+        with most other forms. cut_ok(n): a boundary n letters from the start may be cut"""
+        at = self.at_for.get(hosts) if hosts is not None else None
+        best = None
+        for pc, lp in self.chains(s, "p", cut_ok, at):
+            for sc, ls in self.chains(s, "s", lambda n: cut_ok(len(s) - n), at):
+                if not (pc or sc) or len(s) - lp - ls < self.min_stem:
+                    continue
+                core = s[lp:len(s) - ls]
+                ev = self.attested(core, pc, sc, self.vocab[s]) or (
+                    len(core) >= 2 and all(a + "-" in self.productive for _, a in pc)
+                    and all("-" + a in self.productive for _, a in sc))
+                if ev:
+                    key = (lp + ls, -len(pc) - len(sc), ev)
+                    if best is None or key > best[0]:
+                        best = (key, core, pc, sc)
+        return best[1:] if best else None
 
     def plain(self, w):
         return unicodedata.normalize("NFC", "".join(c for c in unicodedata.normalize("NFD", w.lower())
                                                     if c not in self.ignore))
 
-    def chains(self, s, side, ok=lambda n: True):
+    def chains(self, s, side, ok=lambda n: True, at_=None):
         """[(chain of (position, form), length)] of every affix chain that fits the start (side p) or the end (side s) of the plain
         string s, the empty one included; positions rise from the word's start (prefixes) or from the stem outward
         (suffixes: the outermost is taken first, so from the end they fall). ok(n): a boundary n letters from that edge
         may be cut (a cluster boundary)"""
-        at = self.pre_at if side == "p" else self.suf_at
+        at = (at_[0] if side == "p" else at_[1]) if at_ else (self.pre_at if side == "p" else self.suf_at)
         out = []
 
         def walk(i, last, ch):
@@ -323,11 +382,22 @@ class Segmenter:
         ge-nanim-ák beside qo-nanim, nanim-im; a stem that is a word of its own is not enough (n-amba), nor the same
         affix on another word (n-dap beside n-dap-eáv); and the stem's other forms are not rare beside this one (a
         frequent word that merely looks affixed: n-øme, 2,343 times, beside 41: under min_share). Returns the stem's
-        other forms' tokens (the evidence), 0 when not attested"""
+        other forms' tokens (the evidence), 0 when not attested. For a chain, each of its affixes: tu-ka-batiz-ibw-a,
+        not tu-ka-ba-tiz-, as every form of tiz has ba- before it"""
         F = self.forms.get(stem, {})
         others = {k: v for k, v in F.items() if k != (p, q)}
-        ok = (len(stem) >= self.min_stem and (not p or any(k[0] != p for k in others)) and (not q or any(k[1] != q for k in others))
-              and sum(others.values()) >= self.min_share * n)
+        if self.chain:                                   # p, q chains: each affix missing or replaced in another form
+            # by letters, not parses: an affix comes off where another form of the stem lacks the letters from it to the
+            # stem (any parse: ku-b-a-tiz has the letters of ba- before tiz, so ba- stays in batiz)
+            pre = lambda ch: "".join(f for _, f in ch)                 # prefixes from the word's start
+            suf = lambda ch: "".join(f for _, f in reversed(ch))       # suffixes from the stem outward
+            ok = (len(stem) >= self.min_stem
+                  and all(any(not pre(k[0]).endswith(pre(p[i:])) for k in others) for i in range(len(p)))
+                  and all(any(not suf(k[1]).startswith(suf(q[i:])) for k in others) for i in range(len(q)))
+                  and sum(others.values()) >= self.min_share * n)
+        else:
+            ok = (len(stem) >= self.min_stem and (not p or any(k[0] != p for k in others))
+                  and (not q or any(k[1] != q for k in others)) and sum(others.values()) >= self.min_share * n)
         return sum(others.values()) if ok else 0
 
     def split(self, w):
@@ -362,19 +432,7 @@ class Segmenter:
                     Morph("suffix", "-" + q, cut(k, j))]
                 return self.cache[w]
         if self.chain and s not in self.free and not w.startswith("-"):
-            best = None
-            for pc, lp in self.chains(s, "p", lambda n: at(n) is not None):
-                for sc, ls in self.chains(s, "s", lambda n: at(len(s) - n) is not None):
-                    if not (pc or sc) or len(s) - lp - ls < self.min_stem:
-                        continue
-                    core = s[lp:len(s) - ls]
-                    ev = self.attested(core, pc, sc, self.vocab[s]) or (
-                        len(core) >= 2 and all(a + "-" in self.productive for _, a in pc)
-                        and all("-" + a in self.productive for _, a in sc))
-                    if ev:                               # the most letters taken off, in the fewest pieces
-                        key = (lp + ls, -len(pc) - len(sc), ev)   # (ba- whole, not b-a-), then the stem with most forms
-                        if best is None or key > best[0]:
-                            best = (key, pc, sc)
+            best = self.chain_parse(s, self.hosts_of(s), lambda n: at(n) is not None)
             tail = []
             if best:
                 _, pc, sc = best
@@ -456,7 +514,26 @@ def load(pname, P=None):
     vocab = collections.Counter()
     for r in P.corpus():
         vocab.update(P.tok.tokens(r[4], exact=True))
-    return Segmenter(G, orth, {w: n for w, n in vocab.items() if n >= 2})
+    return Segmenter(G, orth, {w: n for w, n in vocab.items() if n >= 2}, word_classes(pname, P))
+
+
+def word_classes(pname, P):
+    """{exact token: Counter(Greek word class: its tokens linked to one; "": its linked tokens)} of the NT aligned to the
+    Greek (lang.py build), for host-aware chains; None without it"""
+    import sqlite3
+    import lang
+    if not os.path.exists(lang.db_path(P)):
+        return None
+    _, con = lang.connect(pname)
+    tok = collections.defaultdict(set)
+    for b, c, v, p, raw, cls in con.execute("""select l.book, l.ch, l.v, l.pos, t.raw, g.class from nt_links l join nt_tokens t
+            on t.book=l.book and t.ch=l.ch and t.v=l.v and t.pos=l.pos join g.tokens g on g.key=l.key"""):
+        if raw and cls:
+            tok[(b, c, v, p, raw)].add(cls)
+    out = collections.defaultdict(collections.Counter)
+    for k, cs in tok.items():
+        out[k[4]].update(cs | {""})
+    return out
 
 
 METHOD = "morphs try 1"

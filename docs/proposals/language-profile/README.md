@@ -139,8 +139,10 @@ Rules:
   ni-tu-ka-mu-sohoz-a): `position`, the affix's place in its chain (prefixes counted from the word's start, suffixes
   from the stem outward; each position once per word, so one form can hold two, subject *mu-* at 2 and object *mu-*
   at 4), and `greek`, the Greek feature it marks, named as `lang.py report` names them (`{"person+number": "fp"}`;
-  a list for several values). With any `position` in the store the morph view takes the chains off (`scripts/morphs.py`);
-  without, one affix of each slot, as before. `python3 scripts/morphs.py <project> try [id ...] --write` measures the
+  a list for several values). With any `position` in the store the morph view takes the chains off (`scripts/morphs.py`),
+  by host where the NT is aligned to the Greek: a verb's affixes only off words linked to Greek verbs in at least half
+  their tokens, or that leave such a word's stem; without `position`, one affix of each slot, word-class blind, as
+  before. `python3 scripts/morphs.py <project> try [id ...] --write` measures the
   entries on the NT aligned to the Greek: n, stems, lift and odds ratio of the `greek` feature (all verses, even
   verses); kept: n ≥ 20, stems ≥ 5, both odds ≥ 2; it writes the stats, status `observed` or `open`, and a claim
   `claim:morph.<id>` with its rerun recipe and basis.
