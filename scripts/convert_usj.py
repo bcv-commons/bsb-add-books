@@ -82,6 +82,12 @@ def convert_chapter(ed, book_id, title, number, items):
     return chapter_text(*EDITIONS[ed], book_id, title, number, items)
 
 
+def bracket_to_next(text):
+    """an opening [ printed before a verse number (a traditional verse a critical text keeps in brackets) belongs to
+    that verse, not to the end of the one before: "… X. [ v21 Y]" -> "… X. v21 [Y]"."""
+    return re.sub(r"[ \t]*\[(\s*)(v\d+) ", lambda m: (m[1] or " ") + m[2] + " [", text)
+
+
 def chapter_text(name, source, book_id, title, number, items):
     """One chapter file from USJ paragraph items (also used by fetch_edition.py)."""
     lines = ["!!<Translation: %s>!!" % name, "!!<Source: %s>!!" % source, "",
@@ -116,7 +122,7 @@ def chapter_text(name, source, book_id, title, number, items):
     flush()
     while lines and lines[-1] == "":
         lines.pop()
-    return "\n".join(lines) + "\n"
+    return bracket_to_next("\n".join(lines) + "\n")
 
 
 def main():

@@ -34,7 +34,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", "..", "..", ".."))
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from books import BOOKS, heb_chapters  # noqa: E402
-from convert_usj import chapter_text, split_chapters  # noqa: E402
+from convert_usj import bracket_to_next, chapter_text, split_chapters  # noqa: E402
 from usfm_usj import usfm_to_usj  # noqa: E402
 
 REPO = "https://github.com/EzerIT/DFB.git"
@@ -84,13 +84,15 @@ def checkout(commit):
 
 
 def upstream_files():
-    """text/ file name -> content (bytes): tekst/ files as they are, plus the published sfm/ chapters converted."""
+    """text/ file name -> content (bytes): tekst/ files as they are (an opening [ before a verse number moved into
+    that verse, convert_usj.bracket_to_next), plus the published sfm/ chapters converted."""
     src = os.path.join(CACHE, "tekst")
     out, unknown = {}, []
     for f in sorted(os.listdir(src)):
         m = re.fullmatch(r"(.+?)(\d{3})\.txt", f)
         if m and m[1] in STEM_TO_CODE:
-            out[f"{STEM_TO_CODE[m[1]]}{m[2]}.txt"] = open(os.path.join(src, f), "rb").read()
+            raw = open(os.path.join(src, f), "rb").read()
+            out[f"{STEM_TO_CODE[m[1]]}{m[2]}.txt"] = bracket_to_next(raw.decode("utf-8")).encode("utf-8")
         elif f.endswith(".txt") and f != "translators.txt":
             unknown.append(f)
     for name, data in sfm_chapters().items():
