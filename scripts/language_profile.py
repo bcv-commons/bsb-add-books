@@ -34,6 +34,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from books import BY_CODE  # noqa: E402
 from project import project_dir  # noqa: E402
+from langtools import WORD_MARKS  # noqa: E402
 
 KINDS = {"feature", "letter", "gap", "term", "formula", "name", "morph", "cell", "claim"}
 NEEDS_EVIDENCE = {"feature", "term", "formula", "name", "morph"}
@@ -89,7 +90,7 @@ def morph_in(form, slot, verse, marks):
     bare = normal(form.strip("-="), marks)
     if not bare:
         return False
-    words = [w for t in re.findall(r"[\w\u0300-\u036f\u1dc0-\u1dff\ua789'-]+", normal(verse, marks)) for w in [t] + t.split("-")]
+    words = [w for t in re.findall(rf"[\w{WORD_MARKS}\ua789'-]+", normal(verse, marks)) for w in [t] + t.split("-")]
     if slot == "prefix":
         return any(w.startswith(bare) and len(w) > len(bare) for w in words)
     if slot == "suffix":
@@ -266,7 +267,7 @@ def main():
         print("  note:", n)
     # the value is what agents copy: a word the edition writes only with other marks is flagged (matching ignores them)
     if spelling and text:
-        wrx = re.compile(r"[\w\u0300-\u036f\u1dc0-\u1dff\ua789]+")
+        wrx = re.compile(rf"[\w{WORD_MARKS}\ua789]+")
         exact, plain = set(), {}
         for t in text.values():
             for w in wrx.findall(normal(t, ())):

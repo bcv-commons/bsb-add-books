@@ -125,14 +125,15 @@ def write_status_md(pname, pdir, p):
             theirs = {int(os.path.basename(f)[3:6]) for f in fs if re.fullmatch(r"[0-9a-z]{3}\d{3}\.txt", os.path.basename(f))}
             whole = not fs or any(re.fullmatch(r"[0-9a-z]{3}\.txt", os.path.basename(f)) for f in fs)
             both = ours if whole else ours & theirs
-            if not both:
-                ex.append(f"{e} ({cls}) has chapters {ranges(sorted(theirs))}: ours continue it")
-            elif cls == "non-free" and missing_text(e):
+            if missing_text(e):           # any licence: a fresh clone has no fetched or synced texts
                 m = re.search(rf"{re.escape(e)} \(.*?(?=; [\w.-]+ \((?:non-free|public-domain|attributable|share-alike)\)|$)",
                               prev.get(code, ""))  # this edition's whole entry (it contains '; ' itself)
                 old = m[0] if m else None
-                ex.append(old or f"{e} ({cls}): not shown; ours drafted independently (its text is not on this machine, "
-                                 "so the overlap is not measured here)")
+                ex.append(old or (f"{e} ({cls}): not shown; ours drafted independently (its text is not on this machine, "
+                                  "so the overlap is not measured here)" if cls == "non-free" else
+                                  f"{e} ({cls}): its text is not on this machine"))
+            elif not both:
+                ex.append(f"{e} ({cls}) has chapters {ranges(sorted(theirs))}: ours continue it")
             elif cls == "non-free":
                 if Q is None:
                     import quotes

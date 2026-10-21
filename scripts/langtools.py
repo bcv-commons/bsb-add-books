@@ -21,6 +21,71 @@ from project import project, sources, edition, project_dir  # noqa: E402
 import vrs  # noqa: E402
 
 
+def _word_marks():
+    """A regex class body: every combining mark (Unicode categories Mn, Mc, Me) and the zero-width (non-)joiner. In
+    many scripts they sit inside words (Indic vowel signs and virama, Hebrew points, Arabic vowels, Thai vowels, tone
+    marks), and \\w doesn't match them: without them a word in Odia or Devanagari falls apart into its letters."""
+    rs, start = [], None
+    for c in [*range(0x20000), *range(0xE0100, 0xE01F0)] + [None]:
+        m = c is not None and unicodedata.category(chr(c))[0] == "M"
+        if m and start is None:
+            start = c
+        elif not m and start is not None:
+            rs.append((start, prev))
+            start = None
+        prev = c
+    return "".join(re.escape(chr(a)) + ("-" + re.escape(chr(b)) if b > a else "") for a, b in rs) + "\u200c\u200d"
+
+
+WORD_MARKS = _word_marks()
+
+_INHERENT = None
+
+
+def romanise(s):
+    """A rough Latin reading of a word in another script, from the Unicode character names, with for each Latin letter
+    the index of the character it comes from: (latin, owners). Latin letters stay as they are. In the scripts with an
+    inherent vowel (those that have a virama: Devanagari, Bengali, Odia, Tamil, ...) a consonant reads with 'a'
+    ('ORIYA LETTER KA' -> ka), a vowel sign replaces it, the virama removes it; anusvara and candrabindu read n, visarga
+    h. Elsewhere a letter reads as its name's last word (CYRILLIC SMALL LETTER EF -> ef): only good enough to line names
+    up, as scripts/lang.py's name letters do."""
+    global _INHERENT
+    if _INHERENT is None:
+        _INHERENT = {unicodedata.name(chr(c)).split(" SIGN ")[0] for c in range(0x900, 0x2000)
+                     if unicodedata.name(chr(c), "").endswith("SIGN VIRAMA")}
+    out, own = [], []
+    for i, c in enumerate(s):
+        n = unicodedata.name(c, "")
+        if not n or "LATIN" in n or not c.isalpha() and unicodedata.category(c)[0] != "M":
+            if c.isalpha():
+                out.append(c.lower()); own.append(i)
+            continue
+        script = re.split(r" (?:CAPITAL |SMALL )?(?:LETTER|VOWEL SIGN|SIGN) ", n)[0]
+        word = n.split()[-1].lower()
+        if script in _INHERENT:
+            if " VOWEL SIGN " in n:
+                if out and out[-1] == "a":
+                    out.pop(); own.pop()
+                word = n.split(" VOWEL SIGN ")[-1].split()[0].lower()
+            elif n.endswith("SIGN VIRAMA"):
+                if out and out[-1] == "a":
+                    out.pop(); own.pop()
+                continue
+            elif n.endswith(("SIGN ANUSVARA", "SIGN CANDRABINDU")):
+                word = "n"
+            elif n.endswith("SIGN VISARGA"):
+                word = "h"
+            elif " SIGN " in n and " LETTER " not in n:
+                continue                                  # nukta, avagraha and other signs: no sound of their own
+        elif " LETTER " not in n:
+            continue
+        elif len(word) > 1:                               # an alphabet's letter name: its consonant (ef, be, ghe, beh)
+            word = (word[1:] if word[0] == "e" else word[:-2] if word.endswith("eh") else
+                    word[:-1] if word[-1] in "ae" and word[0] not in "aeiou" else word)
+        out += list(word); own += [i] * len(word)
+    return "".join(out), own
+
+
 def verses_of(path):
     """{(chapter, verse): text} of a repo chapter file (<code>NNN.txt: vN markers; notes, headings and poetry
     marks removed; a bridge 'v21-22' is keyed by its first verse), or of a book file (<code>.txt: lines
@@ -48,11 +113,11 @@ class Tokeniser:
         wc = cfg.get("word_chars") or []
         self.extra = "".join(ch(c) for c in (wc if isinstance(wc, list) else list(wc)))
         self.marks = {ch(m) for m in (cfg.get("ignore_marks") or marks)}
-        cls = re.escape(self.extra)
-        self.rx = re.compile(rf"[\w{cls}]+(?:-[\w{cls}]+)*" if self.split else rf"[\w{cls}]+")
-        # the exact forms keep every mark: combining marks belong to the word (\w doesn't match them)
-        cm = cls + "\u0300-\u036f\u1ab0-\u1aff\u1dc0-\u1dff\u20d0-\u20ff"
-        self.rx_exact = re.compile(rf"[\w{cm}]+(?:-[\w{cm}]+)*" if self.split else rf"[\w{cm}]+")
+        # combining marks belong to the word (\w doesn't match them): the plain forms keep those not ignored, the exact
+        # forms every one
+        cm = re.escape(self.extra) + WORD_MARKS
+        self.rx = re.compile(rf"[\w{cm}]+(?:-[\w{cm}]+)*" if self.split else rf"[\w{cm}]+")
+        self.rx_exact = self.rx
 
     def plain(self, s):
         """Lower case, the ignored marks removed (NFC)."""
@@ -68,6 +133,7 @@ class Tokeniser:
         ignored marks removed: an agent's search finds every spelling); exact=True keeps the marks, for spelling."""
         out = []
         for w in (self.rx_exact.findall(self.exact(s)) if exact else self.rx.findall(self.plain(s))):
+            w = w.strip("\u200c\u200d")                    # a joiner at the word's edge is display (after a final virama)
             if self.split and "-" in w:
                 first, *rest = w.split("-")
                 out += ([first] if first else []) + ["-" + r for r in rest if r]

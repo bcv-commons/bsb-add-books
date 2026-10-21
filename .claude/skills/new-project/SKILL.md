@@ -39,6 +39,6 @@ of the editions.
    with the prompt from `python3 scripts/memory_prompt.py <project>`. For `familiarity: unknown` use the
    `learn-language` skill instead.
 6. **Reference chapter:** draft one chapter with the draft-chapter skill, review it with the
-   user, and adjust the style guide before drafting in waves.
+   user, and adjust the style guide before the book agent drafts the rest, chapter after chapter.
 
 Don't commit; the user commits.

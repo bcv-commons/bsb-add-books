@@ -59,8 +59,7 @@ def build(pname, links=None):
     toks = {}
     # the same tokens with every mark kept (the project's tokenizer drops the ignored tone marks): `raw`, for the marks test
     import unicodedata
-    combining = "".join(chr(c) for r in ((0x0300, 0x0370), (0x1DC0, 0x1E00), (0x20D0, 0x2100)) for c in range(*r))
-    raw_rx = re.compile(rf"[\w{re.escape(P.tok.extra + combining)}]+")
+    raw_rx = re.compile(rf"[\w{re.escape(P.tok.extra)}{LT.WORD_MARKS}]+")
     mismatch = 0
     for ref, code, key, _, text in P.corpus():
         if BY_CODE[code][2] != "nt":
@@ -514,10 +513,15 @@ def derive(pname, quiet=False):
     for l, c in nm.items():
         f, n = c.most_common(1)[0]
         a, b = latin(l), f.lower()
+        own = None
+        if any(ch.isalpha() and "LATIN" not in unicodedata.name(ch, "") for ch in b):   # another script: lined up
+            b_, own = LT.romanise(b)                     # through a Latin reading, the letters kept in the target's script
+            b, orig = b_, b
         sm = difflib.SequenceMatcher(None, a, b, autojunk=False)
         for op, i1, i2, j1, j2 in sm.get_opcodes():
             if op == "replace" and (i2 - i1) <= 2 and (j2 - j1) <= 3:
-                let[(a[i1:i2], b[j1:j2])] += n
+                tl = b[j1:j2] if own is None else orig[min(own[j1:j2]):max(own[j1:j2]) + 1]
+                let[(a[i1:i2], tl)] += n
     con.executemany("insert into d_letters values(?,?,?)", [(g, t, n) for (g, t), n in let.most_common(60) if n >= 5])
     # 6. formulas: Greek lemma trigrams of a verse, frequent, with the target words linked to them
     seq = collections.defaultdict(list)

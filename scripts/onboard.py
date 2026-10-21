@@ -39,7 +39,7 @@ Answers (all optional; the wizard prints the file it used, so a run can be repea
     dialect_id: null               # an interim id instead of the ISO code, for a variety without one
     editions: [dbt:JAMBSWN_ET]     # source:id from the list, or the id of an edition already in import/
     licence_folder: {dbt:JAMBSWN_ET: non-free}   # only where the licence can't be read; default non-free
-    project: jam_BSB               books: [gen, exo]            familiarity: null (set by the probe)
+    project: jam_BSB               first_book: gen    first_chapter: 1    familiarity: null (set by the probe)
     quotes: "“”"                   chapter_word: Chapter
     ai_route: api | claude-code    probe_model: claude-opus-5-5 (API route)   close_to: null   go_ahead: true
     run_setup: true                run_align: true              init_memory: true
@@ -938,9 +938,11 @@ def draft_first_chapter(pname, code, ch):
         return False
     if os.path.exists(draft[:-4] + "_notes.md"):
         run("scripts/notes_hebrew.py", pname, code, str(ch))
-    run("scripts/check_draft.py", pname, code)
-    if BY_CODE[code][2] != "nt":
-        run("scripts/full_align.py", "check", pname, code, str(ch))
+    # the book agent's checks after each chapter (format, alignment, quotations to fix; negations, verb marking, names
+    # to review): the same list here, for the first chapter
+    if run("scripts/chapter_check.py", pname, code, str(ch)):
+        say(f"  some FIX lines are left: in Claude Code, \"Fix {BY_CODE[code][1]} {ch} in {pname}: run "
+            f"scripts/chapter_check.py {pname} {code} {ch} and fix what it lists\"")
     run("scripts/status.py", pname)
     if tokens:
         run("scripts/usage.py", pname, "add", f"{code}{nnn}", "--tokens", str(tokens), "--calls", str(calls),
