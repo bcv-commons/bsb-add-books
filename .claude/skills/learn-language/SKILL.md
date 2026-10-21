@@ -46,6 +46,10 @@ of another language in this working copy, if there is one, is the worked example
    adds the Grambank features its morphs answer (questions: `python3 scripts/setup.py --only grambank`), and
    `grammar.py plan <project>` lists what to settle next: the features a recipe can decide, open and thin cells,
    claims to test. Give it to the curation agent; it proposes, the corpus counts decide.
+   A language that stacks affixes (subject, tense, object before a verb stem: many Bantu languages): the agent writes
+   them as morph entries with `position` and `greek` (`docs/proposals/language-profile/`), and `python3
+   scripts/morphs.py <project> try --write` measures each one against the Greek (lift, odds ratio); the agent revises the
+   ones it rejects. Check that the corpus still rebuilds word for word: `python3 scripts/morphs.py <project> check`.
 5. **Draft with packs:** for each chapter `python3 scripts/verse_pack.py <project> <code> <ch>`, then the
    `draft-chapter` skill (fresh agent per chapter; the pack and `wiki/index.md` in `style_guides`).
 6. **Test** (if a book is held out): score each chapter with `python3 scripts/score.py <project> <draft>

@@ -27,6 +27,9 @@ for "digits" the mark is the digit ("3"). Every element must match.
 Affixes: the store's morphs of slot prefix, infix and suffix (any host), longest first, one of each, stripped only where
 what remains is attested: a word of the corpus itself, or what two affixed words leave (so a stem that merely begins
 like a prefix stays whole). The view is word-class blind: it is measured, not assumed (cell_check.py, rough_check.py).
+Affix chains: where the store's affixes have a `position` (prefixes counted from the word's start, suffixes from the
+stem outward), several of each are taken off, each position once and in order (ni-tu-ka-mu-sohoz-a), on the same
+evidence; of the parses, the one that takes off most letters in the fewest pieces (ba-, not b-a-).
 
     S = morphs.load(<project>)          None when the store has no morph entries
     S.split(exact_token)                [Morph(slot, form, text)]: text is the morph as written; ''.join of the texts,
@@ -34,6 +37,9 @@ like a prefix stays whole). The view is word-class blind: it is measured, not as
     S.labels(exact_token)               {"qo-", "-eav", "tone-proh", ...}: the morph forms, for matching
 
     python3 scripts/morphs.py <project> check      every corpus token rebuilt from its morphs; what the view finds
+    python3 scripts/morphs.py <project> try [id ...] [--write]
+        each affix entry measured on the NT aligned to the Greek (lang.py build): n, stems, and for the feature its
+        `greek` names the lift and odds ratio (try_morphs); --write records them and a claim with its rerun recipe
     python3 scripts/morphs.py <project> show <word> ...
     python3 scripts/morphs.py <project> tone [--write [--force]]
         how the corpus writes tone, detected (detect_tone): marks, digits or none, the tone marks, the letters that carry
@@ -161,6 +167,7 @@ class Morph(NamedTuple):
     slot: str       # prefix, infix, stem, tone, suffix
     form: str       # the store's form (qo-, -eav, tone-proh) or, for the stem, its plain text
     text: str       # as written (NFC); for a tone morph the marks it took, as "pos:mark" items
+    position: int = 0   # an affix of a chain: its position (the store's `position`), else 0
 
 
 def clusters(w):
@@ -227,6 +234,17 @@ class Segmenter:
                                               and e.get("form") and (host is None or e.get("host") == host)} - {""},
                                              key=len, reverse=True)
         self.pre, self.inf, self.suf = aff("prefix"), aff("infix"), aff("suffix")
+        # affix chains (a Bantu verb: ni-tu-ka-mu-sohoz-a): morph entries with a `position`, prefixes counted from the
+        # word's start, suffixes from the stem outward; several of them per word, each position once, in order
+        self.chain = any(e.get("position") for e in G.morphs if e.get("slot") in ("prefix", "suffix"))
+        if self.chain:
+            def by_pos(slot):
+                out = collections.defaultdict(set)
+                for e in G.morphs:
+                    if e.get("slot") == slot and e.get("form", "").strip("-="):
+                        out[int(e.get("position") or 1)].add(e["form"].strip("-="))
+                return {p: sorted(v, key=len, reverse=True) for p, v in sorted(out.items())}
+            self.pre_at, self.suf_at = by_pos("prefix"), by_pos("suffix")
         hosts = {e.get("host") for e in G.morphs if e.get("slot") in ("prefix", "suffix")}
         self.free = {self.plain(e["form"]) for e in G.morphs if e.get("slot") == "free" and e.get("form")}
         self.pairs_by_host = {h: {(p, q) for p in aff("prefix", h) for q in aff("suffix", h)} for h in hosts}
@@ -237,7 +255,14 @@ class Segmenter:
         for w, n in (vocab.items() if isinstance(vocab, dict) else ((w, 1) for w in vocab)):
             self.vocab[self.plain(w)] += n
         self.forms = collections.defaultdict(collections.Counter)  # a possible stem -> {(prefix, suffix): tokens}
+        self.min_stem = 2 if self.chain else 3
         for w, n in self.vocab.items():
+            if self.chain:                                # (prefix chain, suffix chain) as tuples of forms
+                for pc, lp in self.chains(w, "p"):
+                    for sc, ls in self.chains(w, "s"):
+                        if len(w) - lp - ls >= self.min_stem:
+                            self.forms[w[lp:len(w) - ls]][(pc, sc)] += n
+                continue
             for p in [""] + [p for p in self.pre if w.startswith(p)]:
                 for q in [""] + [q for q in self.suf if w.endswith(q)]:
                     if len(w) - len(p) - len(q) >= 3:
@@ -258,8 +283,13 @@ class Segmenter:
             for a in affs:
                 ws = [w for w in self.vocab if (w.startswith(a) if side == "p" else w.endswith(a))
                       and len(w) - len(a) >= 3 and w not in self.free]
-                ok = sum(1 for w in ws if self.attested(w[len(a):], a, "", self.vocab[w]) if side == "p")
-                ok += sum(1 for w in ws if self.attested(w[:-len(a)], "", a, self.vocab[w]) if side == "s")
+                if self.chain:                            # the affix alone, at any of its positions
+                    at_ = self.pre_at if side == "p" else self.suf_at
+                    ones, none = [((p, a),) for p, fs in at_.items() if a in fs], ()
+                else:
+                    ones, none = [a], ""
+                ok = sum(1 for w in ws if any(self.attested(w[len(a):], o, none, self.vocab[w]) for o in ones) if side == "p")
+                ok += sum(1 for w in ws if any(self.attested(w[:-len(a)], none, o, self.vocab[w]) for o in ones) if side == "s")
                 if len(ws) >= 10 and ok >= self.min_productive * len(ws):
                     self.productive.add(a + "-" if side == "p" else "-" + a)
         self.cache = {}
@@ -267,6 +297,26 @@ class Segmenter:
     def plain(self, w):
         return unicodedata.normalize("NFC", "".join(c for c in unicodedata.normalize("NFD", w.lower())
                                                     if c not in self.ignore))
+
+    def chains(self, s, side, ok=lambda n: True):
+        """[(chain of (position, form), length)] of every affix chain that fits the start (side p) or the end (side s) of the plain
+        string s, the empty one included; positions rise from the word's start (prefixes) or from the stem outward
+        (suffixes: the outermost is taken first, so from the end they fall). ok(n): a boundary n letters from that edge
+        may be cut (a cluster boundary)"""
+        at = self.pre_at if side == "p" else self.suf_at
+        out = []
+
+        def walk(i, last, ch):
+            out.append((tuple(ch), i))
+            for p in (sorted(at) if side == "p" else sorted(at, reverse=True)):
+                if (side == "p" and p <= last) or (side == "s" and p >= last):
+                    continue
+                for f in at[p]:
+                    hit = s.startswith(f, i) if side == "p" else s[:len(s) - i].endswith(f)
+                    if hit and len(s) - i - len(f) >= self.min_stem and ok(i + len(f)):
+                        walk(i + len(f), p, ch + [(p, f)])
+        walk(0, 0 if side == "p" else 10 ** 6, [])
+        return out
 
     def attested(self, stem, p, q, n):
         """a paradigm: an affix is taken off only where the stem also occurs with another one in its place (or none):
@@ -276,7 +326,7 @@ class Segmenter:
         other forms' tokens (the evidence), 0 when not attested"""
         F = self.forms.get(stem, {})
         others = {k: v for k, v in F.items() if k != (p, q)}
-        ok = (len(stem) >= 3 and (not p or any(k[0] != p for k in others)) and (not q or any(k[1] != q for k in others))
+        ok = (len(stem) >= self.min_stem and (not p or any(k[0] != p for k in others)) and (not q or any(k[1] != q for k in others))
               and sum(others.values()) >= self.min_share * n)
         return sum(others.values()) if ok else 0
 
@@ -311,7 +361,32 @@ class Segmenter:
                     [Morph("tone", tone[0].form, " ".join(f"{a}:U+{ord(m):04X}" for a, m in tone[1]))] if tone else []) + [
                     Morph("suffix", "-" + q, cut(k, j))]
                 return self.cache[w]
-        if s not in self.free and not w.startswith("-"):   # a free morph (a pronoun, a conjunction) is a word
+        if self.chain and s not in self.free and not w.startswith("-"):
+            best = None
+            for pc, lp in self.chains(s, "p", lambda n: at(n) is not None):
+                for sc, ls in self.chains(s, "s", lambda n: at(len(s) - n) is not None):
+                    if not (pc or sc) or len(s) - lp - ls < self.min_stem:
+                        continue
+                    core = s[lp:len(s) - ls]
+                    ev = self.attested(core, pc, sc, self.vocab[s]) or (
+                        len(core) >= 2 and all(a + "-" in self.productive for _, a in pc)
+                        and all("-" + a in self.productive for _, a in sc))
+                    if ev:                               # the most letters taken off, in the fewest pieces
+                        key = (lp + ls, -len(pc) - len(sc), ev)   # (ba- whole, not b-a-), then the stem with most forms
+                        if best is None or key > best[0]:
+                            best = (key, pc, sc)
+            tail = []
+            if best:
+                _, pc, sc = best
+                for p, a in pc:
+                    k = at(idx[i] + len(a))
+                    out.append(Morph("prefix", a + "-", cut(i, k), p))
+                    i = k
+                for p, a in sc:                          # from the outside in; written from the stem outward
+                    k = at(idx[j] - len(a))
+                    tail.insert(0, Morph("suffix", "-" + a, cut(k, j), p))
+                    j = k
+        elif s not in self.free and not w.startswith("-"):   # a free morph (a pronoun, a conjunction) is a word
             best = None                                  # prefix and suffix chosen together: génanimák = ge-nanim-ák
             for p in [""] + [p for p in self.pre if s.startswith(p) and at(len(p))]:
                 for q in [""] + [q for q in self.suf if s.endswith(q) and at(len(s) - len(q)) and len(s) > len(p) + len(q)]:
@@ -384,6 +459,118 @@ def load(pname, P=None):
     return Segmenter(G, orth, {w: n for w, n in vocab.items() if n >= 2})
 
 
+METHOD = "morphs try 1"
+HOSTS = {"verb": ("verb",), "noun": ("noun",), "adj": ("adj",), "pron": ("pron",)}  # any other host: every class
+
+
+def try_morphs(pname, ids, P, S, write=False, by="script:morphs.py", min_n=20, min_stems=5, min_odds=2.0):
+    """Each affix entry (prefix, infix, suffix; those named, else all) measured on the NT aligned to the Greek, under the
+    store's whole segmentation (a chain's other affixes included): how often it comes off (n), on how many different
+    stems, and, where the entry names the Greek feature it marks (`greek`: {"person+number": "fp"}, the names of
+    lang.py report; a list for any of several values, {"mood": ["subjunctive", "imperative"]}), its lift (the feature's
+    share among the host words it comes off, over its share among all of them) and its odds ratio (the feature's odds
+    where it comes off, against the other host words: unlike the lift not capped for a common feature, the aorist), on
+    every verse and on the even verses alone (a second count on half the data).
+    Kept: n >= min_n, stems >= min_stems, and both odds ratios >= min_odds (without `greek`: the counts only, verdict
+    open).
+    With write: the entry's `stats`, status observed (kept) or open (not), and one claim per entry (id claim:morph.<id>)
+    with its rerun recipe and basis, so that grammar.py retest reruns it when the store changes"""
+    import json, sqlite3, datetime
+    import lang
+    G = grammar.load(pname)
+    cands = [e for e in G.morphs if e.get("slot") in ("prefix", "infix", "suffix") and (not ids or e.get("id") in ids)]
+    if ids and len(cands) < len(set(ids)):
+        raise SystemExit(f"not affix entries of the store: {', '.join(sorted(set(ids) - {e['id'] for e in cands}))}")
+    _, con = lang.connect(pname)
+    con.row_factory = sqlite3.Row
+    gtok = {r["key"]: r for r in con.execute("select * from g.tokens")}
+    feat = lang.greek_features(con, gtok)
+    rows = con.execute("""select l.book as bk, l.ch as cc, l.v as vv, t.raw, g.* from nt_links l join nt_tokens t on t.book=l.book and t.ch=l.ch
+        and t.v=l.v and t.pos=l.pos join g.tokens g on g.key=l.key""").fetchall()
+    toks, seen = [], set()
+    for r in rows:                                   # one row per target token (its first link)
+        k = (r["raw"], r["key"])
+        if k in seen or not r["raw"]:
+            continue
+        seen.add(k)
+        ms = S.split(r["raw"])
+        stem = next((m.form for m in ms if m.slot == "stem"), "")
+        toks.append((r["class"], {(m.form, m.position) for m in ms if m.slot != "stem"}, stem, feat(r), r["vv"] % 2 == 0,
+                     f"{r['bk'].upper()} {r['cc']}:{r['vv']}"))
+    gr = lambda e: " ".join(f"{a}={'|'.join(b) if isinstance(b, list) else b}" for a, b in sorted((e.get("greek") or {}).items()))
+    res = []
+    for e in cands:
+        form, pos = e["form"], int(e.get("position") or 0)
+        cls = HOSTS.get(e.get("host"))
+        want = {k: set(v) if isinstance(v, list) else {v} for k, v in (e.get("greek") or {}).items()}
+        has = lambda fv: all(any((k, v) in fv for v in vs) for k, vs in want.items())
+        out = {}
+        for half in ("all", "even"):
+            host = [t for t in toks if (cls is None or t[0] in cls) and (half == "all" or t[4])]
+            on = [t for t in host if (form, pos) in t[1] or (not pos and any(f == form for f, _ in t[1]))]
+            n, stems = len(on), len({t[2] for t in on})
+            lift = odds = None
+            if want and n and host:
+                k = sum(has(t[3]) for t in on)
+                base = sum(has(t[3]) for t in host)
+                lift = round((k / n) / (base / len(host)), 2) if base else 0.0
+                rest, krest = len(host) - n, base - k   # the odds of the feature where it comes off, against elsewhere
+                odds = round(((k + .5) / (n - k + .5)) / ((krest + .5) / (rest - krest + .5)), 2)
+            out[half] = (n, stems, lift, odds)
+            if half == "all":
+                host_on = on
+        n, stems, lift, odds = out["all"]
+        tl, todds = out["even"][2], out["even"][3]
+        kept = n >= min_n and stems >= min_stems and (not want or (odds or 0) >= min_odds and (todds or 0) >= min_odds)
+        verdict = ("confirmed" if kept else "contradicted") if want else ("open" if kept else "contradicted")
+        refs = list(dict.fromkeys(t[5] for t in host_on))[:3]
+        res.append((e, n, stems, lift, tl, odds, todds, verdict, refs))
+        print(f"  {e['id']:24} {form:7} position {pos or '-'}  n {n:5}  stems {stems:4}"
+              + (f"  lift {lift}, odds {odds} (even verses {todds}) for {gr(e)}" if want else "")
+              + f"  -> {verdict}")
+    if not write:
+        return res
+    f = os.path.join(P.profile, "observations.json")
+    d = json.load(open(f, encoding="utf-8"))
+    today = datetime.date.today().isoformat()
+    by_id = {x.get("id"): x for x in d["entries"]}
+    for e, n, stems, lift, tl, odds, todds, verdict, refs in res:
+        x = by_id[e["id"]]
+        if not x.get("evidence") and refs:          # a proposal without evidence gets the first verses it comes off in
+            x["evidence"] = [{"ref": refs[0], "n": n}] + [{"ref": r} for r in refs[1:]]
+        x["stats"] = {**(x.get("stats") or {}), "count": n, "hosts": stems,
+                      **({"lift": lift, "test_lift": tl, "odds": odds, "test_odds": todds} if lift is not None else {})}
+        if x.get("status") in ("open", "observed"):  # a decided entry stays decided: the figures go beside it
+            x["status"] = "observed" if verdict == "confirmed" else "open"
+        want = gr(e)
+        c = {"id": f"claim:morph.{e['id'].removeprefix('m:')}", "kind": "claim",
+             "value": f"{e['form']} ({e.get('slot')}" + (f", position {e['position']}" if e.get("position") else "")
+                      + f", {e.get('host') or 'any'}) is an affix" + (f" marking {want}" if want else ""),
+             "area": "morph", "source": e.get("by") or "", "tests": ["corpus"],
+             "figures": f"n {n}, stems {stems}" + (f", lift {lift} (even verses {tl}), odds ratio {odds} (even verses "
+                                                   f"{todds})" if lift is not None else ""),
+             "verdict": verdict, "next": {"confirmed": "the morph stays (observed)", "open": "counts only: name its "
+                                          "Greek feature (`greek`) to test it",
+                                          "contradicted": "the morph stays open: revise or supersede it"}[verdict],
+             "confidence": "medium" if verdict == "confirmed" else "low", "method": "corpus-derived", "by": by,
+             "date": today, "status": "observed", "rerun": ["morphs.py", "try", e["id"]], "rerun_method": METHOD}
+        if c["id"] in by_id:
+            d["entries"] = [c if y.get("id") == c["id"] else y for y in d["entries"]]
+        else:
+            d["entries"].append(c)
+    json.dump(d, open(f, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    open(f, "a").write("\n")
+    b = grammar.basis(pname, None, METHOD)       # after the write: the store as the test leaves it
+    claims = {f"claim:morph.{e['id'].removeprefix('m:')}" for e, *_ in res}
+    for y in d["entries"]:
+        if y.get("id") in claims:
+            y["basis"], y["basis_corpus"] = b, grammar.corpus(pname)
+    json.dump(d, open(f, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    open(f, "a").write("\n")
+    print(f"written: {len(res)} morph(s) and their claims into {os.path.relpath(f)}")
+    return res
+
+
 def main(a):
     if len(a) < 2:
         raise SystemExit(__doc__)
@@ -392,6 +579,10 @@ def main(a):
     S = load(a[0], P) if a[1] != "tone" else None
     if S is None and a[1] != "tone":
         raise SystemExit(f"{a[0]}: the store has no morph entries")
+    if a[1] == "try":
+        ids = [x for x in a[2:] if not x.startswith("--")]
+        try_morphs(a[0], ids, P, S, write="--write" in a)
+        return
     if a[1] == "tone":
         import datetime, json
         tok = collections.Counter()

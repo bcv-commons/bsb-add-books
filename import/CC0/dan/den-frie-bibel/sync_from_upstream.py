@@ -23,7 +23,7 @@ coverage and, for sfm/, which chapters have text and which Den Frie Bibel publis
 oversigt.inc.php) into edition.yaml and README.md, and prints what was added, changed and
 removed. Nothing is committed; review the change with git diff.
 
-Not copied: the 1871/1907 OSIS files (the separate edition ../dan-1871-1907/), tekst/orig/
+Not copied: the 1871/1907 OSIS files, tekst/orig/
 (the Hebrew/Aramaic text, not public domain) and translators.txt (e-mail addresses).
 
 Needs git (a sparse, shallow clone of tekst/ is kept in download/editions/EzerIT-DFB/).
@@ -39,7 +39,7 @@ from usfm_usj import usfm_to_usj  # noqa: E402
 
 REPO = "https://github.com/EzerIT/DFB.git"
 SPARSE = ["/tekst/", "/sfm/", "/oversigt.inc.php"]
-CACHE = os.path.join(ROOT, "download", "editions", "EzerIT-DFB")    # shared with ../dan-1871-1907/sync_from_upstream.py
+CACHE = os.path.join(ROOT, "download", "editions", "EzerIT-DFB")
 TEXT = os.path.join(HERE, "text")
 QUAR = os.path.join(HERE, "quarantine")      # quarantined books (scripts/quarantine.py), git-ignored
 SFM = os.path.join(HERE, "sfm")

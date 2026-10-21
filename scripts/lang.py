@@ -321,6 +321,49 @@ def latin(s):
     return "".join(GREEK_LATIN.get(c, c) for c in s)
 
 
+def greek_features(con, gtok=None):
+    """features(row) -> {(feature, value)} of a linked Greek token (a row of g.tokens): person, number, tense, mood,
+    gcase, voice, and in pairs (person+number "fs", tense+mood "aorist.indicative", person+number+mood "fp.subjunctive"),
+    degree, and for verbs three clause-level ones: negated "yes" (οὐ / μή in the Greek clause), object (the clause's
+    object pronoun, "3s") and subject_gender (through the subject referent). The names lang.py report shows, which a
+    morph entry's `greek` names (scripts/morphs.py try)"""
+    gtok = gtok or {r["key"]: r for r in con.execute("select * from g.tokens")}
+    NEG = {"οὐ", "μή", "οὐδέ", "μηδέ", "οὐχί", "οὐκέτι", "μηκέτι"}
+    neg_clause = {t["clause"] for t in gtok.values() if t["lemma"] in NEG and t["clause"]}
+    obj_of = {}
+    for t in gtok.values():
+        if t["role"] in ("o", "io") and t["class"] == "pron" and t["clause"]:
+            m_ = re.match(r"P-(\d)?", t["morph"] or "")
+            if m_:
+                obj_of.setdefault(t["clause"], f"{m_[1] or '3'}{(t['number'] or '')[:1]}")
+    subj_gender = {}
+    for k, kind, target in con.execute("select key, kind, target from g.refs where kind='subjref'"):
+        tg = gtok.get(target)
+        if tg and tg["gender"]:
+            subj_gender.setdefault(k, tg["gender"])
+
+    def features(r):
+        out = {(f, r[f]) for f in ("person", "number", "tense", "mood", "gcase", "voice") if r[f]}
+        if r["person"] and r["number"]:
+            out.add(("person+number", f"{r['person'][:1]}{r['number'][:1]}"))
+        if r["tense"] and r["mood"]:
+            out.add(("tense+mood", f"{r['tense']}.{r['mood']}"))
+        if r["person"] and r["number"] and r["mood"] in ("subjunctive", "imperative", "optative"):
+            out.add(("person+number+mood", f"{r['person'][:1]}{r['number'][:1]}.{r['mood']}"))  # 1p subjunctive = 'let us'
+        if r["degree"]:
+            out.add(("degree", r["degree"]))
+        if r["class"] == "verb":
+            if r["clause"] in neg_clause:  # only the marked value: "not negated" is every other verb and says nothing
+                out.add(("negated", "yes"))
+            if r["clause"] in obj_of:
+                out.add(("object", obj_of[r["clause"]]))
+            if r["key"] in subj_gender:
+                out.add(("subject_gender", subj_gender[r["key"]]))
+        return out
+    features.neg_clause = neg_clause           # the Greek clauses with a negation, for derive's own counts
+    return features
+
+
 def derive(pname, quiet=False):
     import difflib, math
     P, con = connect(pname)
@@ -360,38 +403,8 @@ def derive(pname, quiet=False):
     #    for verbs also the subject's gender (through the subject referent)
     import unicodedata
     fold = lambda w: "".join(c for c in unicodedata.normalize("NFD", w) if not unicodedata.combining(c))
-    NEG = {"οὐ", "μή", "οὐδέ", "μηδέ", "οὐχί", "οὐκέτι", "μηκέτι"}
-    neg_clause = {t["clause"] for t in gtok.values() if t["lemma"] in NEG and t["clause"]}
-    obj_of = {}
-    for t in gtok.values():
-        if t["role"] in ("o", "io") and t["class"] == "pron" and t["clause"]:
-            m_ = re.match(r"P-(\d)?", t["morph"] or "")
-            if m_:
-                obj_of.setdefault(t["clause"], f"{m_[1] or '3'}{(t['number'] or '')[:1]}")
-    subj_gender = {}
-    for k, kind, target in con.execute("select key, kind, target from g.refs where kind='subjref'"):
-        tg = gtok.get(target)
-        if tg and tg["gender"]:
-            subj_gender.setdefault(k, tg["gender"])
-
-    def features(r):
-        out = {(f, r[f]) for f in ("person", "number", "tense", "mood", "gcase", "voice") if r[f]}
-        if r["person"] and r["number"]:
-            out.add(("person+number", f"{r['person'][:1]}{r['number'][:1]}"))
-        if r["tense"] and r["mood"]:
-            out.add(("tense+mood", f"{r['tense']}.{r['mood']}"))
-        if r["person"] and r["number"] and r["mood"] in ("subjunctive", "imperative", "optative"):
-            out.add(("person+number+mood", f"{r['person'][:1]}{r['number'][:1]}.{r['mood']}"))  # 1p subjunctive = 'let us'
-        if r["degree"]:
-            out.add(("degree", r["degree"]))
-        if r["class"] == "verb":
-            if r["clause"] in neg_clause:  # only the marked value: "not negated" is every other verb and says nothing
-                out.add(("negated", "yes"))
-            if r["clause"] in obj_of:
-                out.add(("object", obj_of[r["clause"]]))
-            if r["key"] in subj_gender:
-                out.add(("subject_gender", subj_gender[r["key"]]))
-        return out
+    features = greek_features(con, gtok)
+    neg_clause = features.neg_clause
     import priors
     prior_affixes = priors.inflection_affixes(pname)  # tested as themselves, whatever their length (-schte)
     base, joint, cnt_aff = collections.Counter(), collections.Counter(), collections.Counter()

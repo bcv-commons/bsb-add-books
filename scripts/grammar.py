@@ -335,7 +335,8 @@ def basis(where, cell=None, method=""):
     d = json.load(open(os.path.join(profile_dir(where), "observations.json"), encoding="utf-8"))
     G = Grammar(d.get("entries", []))
     parts = {"orthography": d.get("orthography") or {}, "analysis": d.get("analysis") or {}, "method": method,
-             "morphs": sorted([e.get("form"), e.get("slot"), e.get("host"), e.get("tone_pattern")] for e in G.morphs)}
+             "morphs": sorted([e.get("form"), e.get("slot"), e.get("host"), e.get("tone_pattern")]
+                               + ([e["position"]] if e.get("position") else []) for e in G.morphs)}
     if cell:
         ce = G.cell(*cell)
         parts["cell"] = [ce.get("value"), sorted(x.get("value") for x in ce.get("alternatives", [])
@@ -399,8 +400,8 @@ def retest(where, run_them):
     for e, cur in out:
         r = e["rerun"]
         print(f"  {e['id']}: basis {e.get('basis') or 'none'} -> {cur}  ({' '.join(r)})")
-        key = tuple(r[:4]) if r[:2] == ["cell_check.py", "try"] else tuple(r)
-        groups.setdefault(key, []).extend(r[4:] if r[:2] == ["cell_check.py", "try"] else [])
+        n = 4 if r[:2] == ["cell_check.py", "try"] else 2 if r[:2] == ["morphs.py", "try"] else len(r)
+        groups.setdefault(tuple(r[:n]), []).extend(r[n:])   # one run per cell, one for all the morphs
     for f, b in stale_data(where):
         print(f"  model data {os.path.relpath(f, ROOT)}: built on basis {b}, the store is now at "
               f"{basis(where, None, 'model_text 1')}: rebuild it (scripts/nllb/data.py) before the next training")

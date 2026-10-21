@@ -36,7 +36,7 @@ Fields are explained in `docs/configuration.md`; the template has comments.
      reports that the source changed, show the user before passing `--update`.
    - **A text with one source of its own** (e.g. a GitHub repository): write a
      `sync_from_upstream.py` in the edition folder, on the model of
-     `import/CC0/dan/den-frie-bibel/` or `import/CC0/dan/dan-1871-1907/`: the files git-ignored, copied
+     `import/CC0/dan/den-frie-bibel/`: the files git-ignored, copied
      from the commit pinned in the edition (`--latest` or `--commit` moves the pin), `--check` to only
      report, and the commit and coverage or checksums recorded in the edition's `README.md`; set
      `get_text` to the command.

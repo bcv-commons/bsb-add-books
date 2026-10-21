@@ -85,16 +85,17 @@ def text_dir_of(args, iso, edition):
     return os.path.join(ROOT, e["dir"], e.get("text_dir", "text"))
 
 
-def morph_in(form, slot, verse, marks):
-    """does the morph occur in the verse, on its side of a word (parts of a hyphenated word count as words)"""
+def morph_in(form, slot, verse, marks, chain=False):
+    """does the morph occur in the verse, on its side of a word (parts of a hyphenated word count as words); an affix
+    of a chain (an entry with `position`) may stand inside the word, after (before) the chain's other affixes"""
     bare = normal(form.strip("-="), marks)
     if not bare:
         return False
     words = [w for t in re.findall(rf"[\w{WORD_MARKS}\ua789'-]+", normal(verse, marks)) for w in [t] + t.split("-")]
     if slot == "prefix":
-        return any(w.startswith(bare) and len(w) > len(bare) for w in words)
+        return any((bare in w[:-1] if chain else w.startswith(bare)) and len(w) > len(bare) for w in words)
     if slot == "suffix":
-        return any(w.endswith(bare) and len(w) > len(bare) for w in words)
+        return any((bare in w[1:] if chain else w.endswith(bare)) and len(w) > len(bare) for w in words)
     if slot == "infix":
         return any(bare in w[1:-1] for w in words)
     return any(w == bare or bare in w for w in words)
@@ -205,7 +206,7 @@ def main():
                     problems.append(f"{where}: {r['ref']} is not in the edition")
                     continue
                 if text and k == "morph" and e.get("slot") != "tone" and e.get("form"):
-                    found_form = found_form or morph_in(e["form"], e.get("slot"), text[key], marks)
+                    found_form = found_form or morph_in(e["form"], e.get("slot"), text[key], marks, bool(e.get("position")))
                 if text and e.get("kind") in ("term", "formula", "name") and e.get("attested") != "by-rule":
                     form = r.get("form") or (e["value"] if isinstance(e["value"], str) else "")
                     form = re.sub(r"<[^>]*>", "", form).strip()

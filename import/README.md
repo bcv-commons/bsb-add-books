@@ -42,12 +42,29 @@ edition can be published with this repository:
     openbible through the bcv-commons/bibles catalogue, or eBible.
     `python3 scripts/fetch_edition.py --find <iso>` lists what exists, with licences;
     `python3 scripts/fetch_edition.py <edition>` fetches it into `text/`. The recipe and
-    `fetch.lock.json` (source version, a SHA-256 per file) are in git, the text isn't;
+    `fetch.lock.json` (source version, a SHA-256 per file) are in git, the text isn't
+    (`non-free/jam/jambswn-et/`, `CC-BY/sbs/sbs_doo/`, `CC-BY-SA/zin/zin_wbt/`);
   - **synced from its own source** (e.g. one GitHub repository) by a script in the edition
     folder, `sync_from_upstream.py`: it copies the files from the commit pinned in the edition (`--latest` or `--commit`
     moves the pin), reports what changed, and writes the commit and the coverage or checksums into the
     edition's `README.md` (and `edition.yaml`). The synced files are git-ignored by the
     edition's `.gitignore`; the script, `edition.yaml` and `README.md` are in git
-    (`CC0/dan/den-frie-bibel/`, `CC0/dan/dan-1871-1907/`);
+    (`CC0/dan/den-frie-bibel/`);
   - **copied in by hand**, with a `README.md` that says where from.
 - **Quarantined books** are removed from `text/` before drafting (`docs/workflow.md`).
+
+## Sample editions
+
+Four editions come with the repository, one for each open folder and one non-free; their texts are fetched or
+synced, not kept in git:
+
+| Edition | Folder | Language | Licence | Text | Used by |
+|---|---|---|---|---|---|
+| `den-frie-bibel` | `CC0/dan/` | Danish | public domain | `python3 import/CC0/dan/den-frie-bibel/sync_from_upstream.py` | the Danish demo project (`export/dan/dan_BSB/`) |
+| `jambswn-et` | `non-free/jam/` | Jamaican Creole | © Bible Society of the West Indies | `python3 scripts/fetch_edition.py jambswn-et` (needs `DBT_API_KEY`) | the Jamaican demo project (`export/jam/jam_BSB/`) |
+| `sbs_doo` | `CC-BY/sbs/` | Kuhane (Bantu), NT | CC BY 4.0 | `python3 scripts/fetch_edition.py sbs_doo` | a test corpus for affix chains (`scripts/morphs.py`) |
+| `zin_wbt` | `CC-BY-SA/zin/` | Zinza (Bantu), NT | CC BY-SA 4.0 | `python3 scripts/fetch_edition.py zin_wbt` | a test corpus for affix chains and tone written with an acute |
+
+The two Bantu NTs have no demo project: they are languages the model hardly knows, with only the NT, the case of
+`docs/onboarding.md` that the demos don't cover. Start a project on one with `python3 scripts/onboard.py` or the
+new-project skill. Delete any edition you don't want, with the projects that use it.

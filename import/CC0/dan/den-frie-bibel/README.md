@@ -11,8 +11,7 @@ this README, `edition.yaml` and the script are in git.
 - Commit: `9c44026e060b9a6c29c4c25d5dafd9a9d46f7296` (2026-10-08, "Opdateret Klagesangene")
 - Synced: 2026-10-13, 726 chapter files
 
-Not copied: the OSIS files of the 1871/1907 authorised version (a separate edition,
-`../dan-1871-1907/`), the Hebrew/Aramaic text in `tekst/orig/` (not public domain),
+Not copied: the OSIS files of the 1871/1907 authorised version, the Hebrew/Aramaic text in `tekst/orig/` (not public domain),
 `translators.txt` (e-mail addresses; the translators are named in `edition.yaml` and in each
 file's header).
 

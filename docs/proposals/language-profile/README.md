@@ -133,8 +133,17 @@ Rules:
   {"at": "-1", "mark": "U+1DC4"}]`, `"<-1"` any unit before the last: only such a morph is taken out of a word into its own
   morph, `scripts/morphs.py`; tone without one is lexical, part of the word);
   `host` the word class (`verb`, `noun`, `pron`, `any`); `unimorph` the same gloss in UniMorph tags; `stats` the
-  figures a script computed (`count`, `hosts`, `lift`, `test_lift` on held-out books); evidence verses where it
-  occurs (the validator finds the form on its side of a word in at least one). Id `m:<form>:<host>[.<use>]`.
+  figures a script computed (`count`, `hosts`, `lift`, `test_lift` on held-out books; `odds`, `test_odds` from
+  `morphs.py try`); evidence verses where it occurs (the validator finds the form on its side of a word in at least
+  one). Id `m:<form>:<host>[.<use>]`. Two fields for affix chains (several affixes per word, as in a Bantu verb,
+  ni-tu-ka-mu-sohoz-a): `position`, the affix's place in its chain (prefixes counted from the word's start, suffixes
+  from the stem outward; each position once per word, so one form can hold two, subject *mu-* at 2 and object *mu-*
+  at 4), and `greek`, the Greek feature it marks, named as `lang.py report` names them (`{"person+number": "fp"}`;
+  a list for several values). With any `position` in the store the morph view takes the chains off (`scripts/morphs.py`);
+  without, one affix of each slot, as before. `python3 scripts/morphs.py <project> try [id ...] --write` measures the
+  entries on the NT aligned to the Greek: n, stems, lift and odds ratio of the `greek` feature (all verses, even
+  verses); kept: n ≥ 20, stems ≥ 5, both odds ≥ 2; it writes the stats, status `observed` or `open`, and a claim
+  `claim:morph.<id>` with its rerun recipe and basis.
 - **`cell`**: a paradigm cell, the form that fills one bundle of grammatical values. `paradigm` as the source-to-cell
   table names it (`verb.subject`, `verb.polarity`, `poss.pronoun`: `scripts/source_cells.py`), `bundle` its tags
   (`3.SG.IND`), `value` the form pattern (`z…-ap`, `Ø` for no mark; a form without hyphens is a separate word that marks the
@@ -157,8 +166,11 @@ Profile-level settings that the tools read beside the entries:
   everyday Pinyin; `absent: neutral` where a missing mark is a tone of its own). `scripts/morphs.py <project> tone`
   detects it from the corpus: the tone marks are the layer of marks that never share a letter (a two-layer orthography's
   other layer, Vietnamese â ă ơ, Yoruba's dot below, is the vowel quality), spread over the vowels, and telling words apart
-  (twins: ambá and amba); `--write` stores it with `derived` (the figures). Checked on eight corpora: Kuni, Vietnamese and
-  Yoruba found with their marks, French, Spanish, Danish, Jamaican Creole and Lingala (tone not written) none.
+  (twins: ambá and amba); an orthography that marks one tone only (a high tone with the acute, the other unmarked) is
+  told from a stress accent by the mark standing twice in a word, which a stress accent never does; `--write` stores
+  it with `derived` (the figures). Checked on thirteen corpora: four found with their marks (a Papuan language,
+  Vietnamese, Yoruba and Zinza, whose acute is high tone), none for French, Spanish, Danish, Jamaican Creole and five
+  Bantu languages that don't write tone (Lingala, Kuhane, Kutu, Mwera, Yao).
 - `analysis.match`: `strings` (default: a cell's affixes are matched at a word's edges) or `morphs` (on the morph view:
   prefix, stem, grammatical tone, suffix; `scripts/morphs.py`). Chosen by measurement (`cell_check.py`'s lifts on the
   human text), and like every setting, a change makes the tests that depended on it stale.
