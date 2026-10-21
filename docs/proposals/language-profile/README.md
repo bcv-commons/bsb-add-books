@@ -142,7 +142,8 @@ Rules:
   a list for several values). With any `position` in the store the morph view takes the chains off (`scripts/morphs.py`),
   by host where the NT is aligned to the Greek: a verb's affixes only off words linked to Greek verbs in at least half
   their tokens, or that leave such a word's stem; without `position`, one affix of each slot, word-class blind, as
-  before. `python3 scripts/morphs.py <project> try [id ...] --write` measures the
+  before. A chain affix told apart from another by tone alone is written with its mark (`aá-` past beside `aa-`): the
+  view finds it on the plain letters and labels it by the mark as written. `python3 scripts/morphs.py <project> try [id ...] --write` measures the
   entries on the NT aligned to the Greek: n, stems, lift and odds ratio of the `greek` feature (all verses, even
   verses); kept: n ≥ 20, stems ≥ 5, both odds ≥ 2; it writes the stats, status `observed` or `open`, and a claim
   `claim:morph.<id>` with its rerun recipe and basis.

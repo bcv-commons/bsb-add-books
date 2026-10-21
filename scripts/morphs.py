@@ -34,6 +34,8 @@ then by letters: each affix comes off only where another form of the stem lacks 
 fewest pieces (ba-, not b-a-). Chains are host-aware where the NT is aligned to the Greek (lang.py build): a host's
 affixes (verb) come off only words linked to that Greek class in at least half their tokens, and off other words only
 where they leave the stem of such a word, so nouns keep their class prefixes (abaantu) unless the store lists them.
+A chain affix's form may carry a tone mark that orthography.ignore_marks drops for finding words (aá- past beside aa-,
+one tone apart): the parse runs on the plain letters, and the label follows the mark as written (tone_label).
 
     S = morphs.load(<project>)          None when the store has no morph entries
     S.split(exact_token)                [Morph(slot, form, text)]: text is the morph as written; ''.join of the texts,
@@ -247,8 +249,16 @@ class Segmenter:
                 for e in G.morphs:
                     if (e.get("slot") == slot and e.get("form", "").strip("-=")
                             and (hosts is None or (e.get("host") or "any") in hosts)):
-                        out[int(e.get("position") or 1)].add(e["form"].strip("-="))
+                        out[int(e.get("position") or 1)].add(self.plain(e["form"].strip("-=")))
                 return {p: sorted(v, key=len, reverse=True) for p, v in sorted(out.items())}
+            # affixes told apart by tone alone (aá- past beside aa- future): forms with an ignored mark, matched on
+            # their plain letters, labelled by the mark as written: {(slot, position, plain): {written: store form}}
+            self.tone_forms = collections.defaultdict(dict)
+            for e in G.morphs:
+                fm = unicodedata.normalize("NFC", (e.get("form") or "").lower())
+                if e.get("position") and e.get("slot") in ("prefix", "suffix") and fm.strip("-="):
+                    self.tone_forms[(e["slot"], int(e["position"]), self.plain(fm.strip("-=")))][fm.strip("-=")] = fm
+            self.tone_forms = {k: v for k, v in self.tone_forms.items() if len(v) > 1 or any(w != k[2] for w in v)}
             self.pre_at, self.suf_at = by_pos("prefix"), by_pos("suffix")
             self.chain_hosts = {e.get("host") or "any" for e in G.morphs if e.get("position")} - {"any"}
             self.at_for = {}                              # hosts -> (prefixes, suffixes) by position
@@ -315,6 +325,18 @@ class Segmenter:
                 if c[""] >= 2:
                     self.word_class[w] = frozenset(k for k, n in c.items() if k and n >= 0.5 * c[""])
         self.cache = {}
+
+    def tone_label(self, slot, pos, plain, text):
+        """the store form of a chain affix: where the store tells its forms apart by tone (aá- beside aa-), the one
+        written so (marks as in the text), the unmarked one where the text has no mark, else the form as written"""
+        v = self.tone_forms.get((slot, pos, plain))
+        dash = (lambda x: x + "-") if slot == "prefix" else (lambda x: "-" + x)
+        if not v:
+            return dash(plain)
+        t = unicodedata.normalize("NFC", text.lower())
+        if t in v:
+            return v[t]
+        return v.get(plain) or dash(plain) if t == plain else dash(t)
 
     def hosts_of(self, s):
         """the hosts whose chain affixes may come off the plain word s (None: all, no word classes known)"""
@@ -438,11 +460,11 @@ class Segmenter:
                 _, pc, sc = best
                 for p, a in pc:
                     k = at(idx[i] + len(a))
-                    out.append(Morph("prefix", a + "-", cut(i, k), p))
+                    out.append(Morph("prefix", self.tone_label("prefix", p, a, cut(i, k)), cut(i, k), p))
                     i = k
                 for p, a in sc:                          # from the outside in; written from the stem outward
                     k = at(idx[j] - len(a))
-                    tail.insert(0, Morph("suffix", "-" + a, cut(k, j), p))
+                    tail.insert(0, Morph("suffix", self.tone_label("suffix", p, a, cut(k, j)), cut(k, j), p))
                     j = k
         elif s not in self.free and not w.startswith("-"):   # a free morph (a pronoun, a conjunction) is a word
             best = None                                  # prefix and suffix chosen together: génanimák = ge-nanim-ák
