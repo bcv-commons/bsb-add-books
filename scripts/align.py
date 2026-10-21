@@ -284,6 +284,14 @@ def main():
             if model == "eflomal":
                 raise SystemExit("eflomal is not installed (docs/onboarding.md: External tools)")
             model = "ibm2"
+            rf = os.path.join(P.learn, "align_report.txt")
+            before = open(rf, encoding="utf-8").readline() if os.path.exists(rf) else ""
+            if "model eflomal" in before:              # the lexicons there are eflomal's: a silent switch would mix them
+                raise SystemExit(f"eflomal is not installed for {sys.executable}, and the lexicons in "
+                                 f"{os.path.relpath(P.learn, LT.ROOT)} were built with it. "
+                                 "Run with the python that has eflomal, or pass --model ibm2 to replace them.")
+            print(f"WARNING: eflomal is not installed for {sys.executable}: aligning with the built-in IBM2 model "
+                  "(less precise; docs/onboarding.md: External tools)", file=sys.stderr)
     obs = os.path.join(P.profile, "observations.json")
     store = json.load(open(obs, encoding="utf-8")) if os.path.exists(obs) else {}
     affixes = any(e.get("kind") == "morph" and e.get("slot") in ("prefix", "infix", "suffix")

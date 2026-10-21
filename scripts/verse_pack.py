@@ -14,7 +14,8 @@ For export/<project>/_learn/packs/<code>NNN.md, per verse:
     source and target side by side. These show constructions, which shared single words don't;
   - the K most similar verses of the style corpus by word overlap (rare shared words weigh more);
   - "still needs a search": the content words that no store entry, lexicon row or phrase covers;
-  - with --grammar or the project's `pack_grammar: true` (pack v4, on trial; `binding`: the block as a rule): the verbs whose cell is marked (negated, a subject other than 3rd
+  - with --grammar or the project's `pack_grammar` (pack v4; scripts/modes.py pack_grammar: `binding`, the block as a
+    rule, by default for an unknown language once the store has clearly marked cells): the verbs whose cell is marked (negated, a subject other than 3rd
     singular) with the store's pattern for the cell, and the paradigm once in the header (scripts/verse_analysis.py).
 And a chapter header: the store's features in one line each, an index of all live terms, formulas and
 names (one line each; `concord.py store <id>` prints an entry in full), the names in the chapter, the
@@ -362,12 +363,14 @@ def main():
         L += ["## Glossary entries whose English occurs in this chapter", ""] + [f"- **{g[0]}** = {g[1]}" for g in gh] + [""]
 
     gverses = {}
-    if "--grammar" in args or p.get("pack_grammar"):   # pack v4 (on trial): the verbs' required marking
+    import modes
+    pg = modes.pack_grammar(pname, p)
+    if "--grammar" in args or pg:                       # pack v4: the verbs' required marking
         import verse_analysis
         ghead, gverses = verse_analysis.grammar_block(pname, code, chapter)
         if ghead:
             L += ["## Verb marking (pack v4)", ""] + ghead
-            if p.get("pack_grammar") == "binding":     # on trial: the block as a rule, checked per verb
+            if pg == "binding":                        # the block as a rule, checked per verb
                 L += ["**Binding:** the verbs of the cells the human translation clearly marks are listed in the chapter "
                       "prompt; `chapter_check.py` reports each one whose tagged words lack the pattern as FIX, unless the "
                       f"chapter's notes have a line `unmarked {chapter}:<verse> <cell>: <reason>`.", ""]

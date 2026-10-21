@@ -238,7 +238,7 @@ def main():
     import quotes, modes
     qrule = quotes.rule_text(pname)
     mrules = modes.mode_rules(pname, p, modes.have_tools(pname))
-    if p.get("pack_grammar") == "binding":        # on trial: the verbs to mark, here in the prompt (not only in the pack)
+    if modes.pack_grammar(pname, p) == "binding":  # the verbs to mark, here in the prompt (not only in the pack)
         import cell_check
         bl = cell_check.binding_list(pname, code, chapter)
         if bl:

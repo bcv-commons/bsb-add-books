@@ -263,11 +263,15 @@ def short(e):
 BRACKETS = re.compile(r"\s*\(([^()]*)\)")
 
 
-def split_value(v):
-    """(value without bracketed text, [bracketed texts]): during the transition, brackets in a value hold English"""
+def split_value(v, english=None):
+    """(value without bracketed text, [bracketed texts]): during the transition, brackets in a value hold English.
+    With english (a function: the English words of a text, langtools.Project.english_words), only brackets with an
+    English word in them: one in the language itself stays in the value (a name's meaning told in the language)"""
     if not isinstance(v, str):
         return v, []
-    return BRACKETS.sub("", v).strip(), [x.strip() for x in BRACKETS.findall(v)]
+    keep = lambda x: english is not None and not english(x)
+    out = BRACKETS.sub(lambda m: m.group(0) if keep(m.group(1)) else "", v).strip()
+    return out, [x.strip() for x in BRACKETS.findall(v) if not keep(x)]
 
 
 def lexicon(P, side, min_share=0.1):
@@ -356,35 +360,7 @@ def from_evidence(P, e, lex_g, lex_h):
             _, written, t = best
             out.append({"lang": "grc" if nt else ("arc" if is_aramaic(t[0]) else "hbo"), "form": nfc(written),
                         "lemma": nfc(t[3]), "ref": r["ref"], "proposed": True})
-    if not any(g["lang"] == "grc" for g in out) and lex_g:   # not in the cited verses: where the Greek word first occurs
-        value = re.sub(r"<[^>]*>", " ", str(split_value(e.get("value"))[0]))
-        cands = [(n, src) for w in (P.tok.plain(x) for x in P.tok.tokens(value)) for src, n in lex_g.get(w, {}).items()]
-        for n, src in sorted(cands, reverse=True):
-            row = first_greek(P).get(src)
-            if row:
-                out.append({"lang": "grc", "form": row[1], "lemma": row[2], "ref": row[0], "proposed": True})
-                break
     return out
-
-
-_first = {}
-
-
-def first_greek(P):
-    """{Greek key (greek_key): (ref, word as the project's Greek text writes it, lemma)}: its first content-word occurrence"""
-    ed, d = greek_edition(P)
-    if ed not in _first:
-        lem = dict(db("grc").execute("select key, lemma from tokens where kind='c'"))
-        keys = {(b, c, v, p): k for b, c, v, p, k in db("grc").execute("select book, ch, v, pos, key from map where edition=?", (ed,))}
-        out = _first[ed] = {}
-        for code in (c for c, b in BY_CODE.items() if b[2] == "nt"):
-            for f in sorted(glob.glob(os.path.join(ROOT, "orig", d, f"{code}[0-9][0-9][0-9].txt"))):
-                for (c, v), t in sorted(greek_verses(f).items()):
-                    for i, w in enumerate(re.findall(r"[^\W\d_]+", nfc(t))):
-                        k = keys.get((code.upper(), c, v, i))
-                        if k in lem:
-                            out.setdefault(greek_key(w), (f"{code.upper()} {c}:{v}", w, nfc(lem[k])))
-    return _first[ed]
 
 
 def is_aramaic(key):
@@ -458,7 +434,7 @@ def propose(pname, write=False):
         for e in d.get("entries", []):
             if e.get("kind") not in KINDS or e.get("status") == "superseded":
                 continue
-            value, english = split_value(e.get("value"))
+            value, english = split_value(e.get("value"), P.english_words)
             if glosses(e) and not english:
                 report["glossed already"] += 1
                 continue
@@ -490,7 +466,7 @@ def propose(pname, write=False):
                        by="script:gloss.py", gloss=gs)
             for a in new.get("alternatives") or []:
                 if isinstance(a, dict) and isinstance(a.get("value"), str):
-                    a["value"], extra = split_value(a["value"])
+                    a["value"], extra = split_value(a["value"], P.english_words)
                     if extra:
                         a["note"] = "; ".join([a.get("note", "")] * bool(a.get("note")) + [f"English: {x}" for x in extra])
             if english:

@@ -89,6 +89,31 @@ def mode_rules(pname, p, have):
     return out
 
 
+_grammar = {}
+
+
+def pack_grammar(pname, p=None):
+    """the verb-marking block of the packs (pack v4): the project's `pack_grammar` where set (true, binding, or false
+    for none); else `binding` for familiarity unknown once the store has cells the style corpus's human OT clearly
+    marks (scripts/cell_check.py binding_cells: then the chapter prompt lists their verbs and chapter_check.py checks
+    them), and nothing otherwise. Measured on an unknown language (3 rounds, a control against binding): the bound cells
+    marked far more often (2SG 18% -> 94%, negation 77% -> 96%), the others unchanged, no meaning lost by script
+    (scripts/compare_arms.py), about 12% more tokens"""
+    p = p if p is not None else project(pname)
+    if "pack_grammar" in p:
+        return p["pack_grammar"] or None
+    if mode(p)["familiarity"] != "unknown":
+        return None
+    if pname not in _grammar:
+        try:
+            import cell_check, grammar
+            import langtools as LT
+            _grammar[pname] = "binding" if cell_check.binding_cells(LT.Project(pname), grammar.load(pname)) else None
+        except (FileNotFoundError, KeyError, ValueError):
+            _grammar[pname] = None                  # no store, no cells, no corpus to measure them on
+    return _grammar[pname]
+
+
 def have_tools(pname):
     d = project_dir(pname)
     out = set()
@@ -117,8 +142,10 @@ def main():
     print(f"  output: {m['output']}" + (f" (derived from {', '.join(m['derived_from'])})" if m["derived_from"] else "")
           + {"export": "; our own work, CC0, public", "export/CC-NC": "; derived work under the edition's licence, non-commercial",
              "local_output": "; derived work, returned to the rights holder, never published"}[m["output"]])
+    g = pack_grammar(pname, p)
     print(f"  verse pack: {m['pack']}; style check in the prompt: {'yes' if m['style_check'] else 'no'}; "
-          f"spell check: {'yes' if m['spell_check'] else 'no'}")
+          f"spell check: {'yes' if m['spell_check'] else 'no'}; verb marking: {g or 'off'}"
+          + (" (set in project.yaml)" if "pack_grammar" in p else " (the default for the mode and the store)"))
     print("  drafting: one book agent, one chapter after another, each pack built just in time (make_prompt.py --book)")
     print(f"  memory tools present: {', '.join(sorted(have)) or 'none'}"
           + ("" if {"store", "wiki"} <= have else f" (set up: docs/onboarding.md, step 4)"))

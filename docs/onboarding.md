@@ -101,6 +101,7 @@ The thresholds are provisional; read the answers too. `python3 scripts/modes.py 
 | Language memory (store `profile/` + `wiki/`) | the project's decisions: terms, names, style | + the variety's grammar and forms | + a term base and the gaps |
 | Verse pack (`verse_pack.py`) | `memory`: decisions touching each verse | `dialect`: + lexicon renderings, corpus phrases | `full`: + similar verses, open searches |
 | Rule bundle in the prompt (`docs/prompts/modes.md`) | use and extend the memory | + the variety, not the standard language | + no knowledge assumed; names by the letter rules |
+| Verb marking (`pack_grammar`) | off | off | `binding` once the store has cells the human OT clearly marks: the chapter's verbs of those cells listed in the prompt, checked in the loop |
 | Style check (`style.py`) | off | on | on |
 | Spell check against the corpus (`spell_check`) | off | on | on |
 | Held-out test book (`learn-language` skill) | no | optional | yes, if the corpus has an OT book |

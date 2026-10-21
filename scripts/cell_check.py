@@ -330,8 +330,9 @@ def binding_list(pname, code, ch):
 def binding_fix(pname, code, ch):
     """FIX lines for chapter_check.py: in a binding project, a verb of a binding cell whose tagged words lack the
     pattern, unless the chapter's notes have a line `unmarked <ch>:<v> ...` saying why"""
-    from project import project, project_dir
-    if project(pname).get("pack_grammar") != "binding":
+    from project import project_dir
+    import modes
+    if modes.pack_grammar(pname) != "binding":
         return []
     d = os.path.join(project_dir(pname), code)
     tg = os.path.join(d, f"{code}{ch:03d}.tagged")

@@ -172,11 +172,12 @@ class Quotes:
         ts, runs = self.runs(text)
         wt = self.w(self.written_tok, text)
         same = len(wt) == len(ts)
-        verses, quoted, unpublished, marks = collections.Counter(), 0, [], []
+        verses, quoted, unpublished, marks, seen = collections.Counter(), 0, [], [], set()
         for a, b, vs in runs:
             vs = {v for v in vs if self.rows[v][6] and self.rows[v][1] != own_book}  # limited (non-free) editions only
-            if not vs:
+            if not vs or tuple(ts[a:b]) in seen:    # the same quotation again in one file (a superseded entry and its copy)
                 continue
+            seen.add(tuple(ts[a:b]))
             quoted += b - a
             verses[self.rows[min(vs)][1]] += b - a
             run = ts[a:b]

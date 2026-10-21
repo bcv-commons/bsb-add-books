@@ -128,7 +128,7 @@ python3 scripts/quotes.py <project> [--credits|--rule] # quotations within docs/
 python3 scripts/check_project.py <project>           # the final double check: drafts, store, wiki, quotations, status
 python3 scripts/align.py <project> [--sides eng,hbo,grc] [--by words|parts|parts+fill] # lexicons of the style corpus (eflomal or IBM2); by parts (+ gap fill) once the store has confirmed affixes
 python3 scripts/concord.py <project> <cmd> <arg>     # agents' search tool: eng, tgt, like, lex, hlex, forms, gloss, store; parts, stem, morph (the morph view)
-python3 scripts/verse_pack.py <project> <code> <ch> [--grammar] [--lexicon units] # precompiled per-verse pack (store hits, lexicon, similar verses; --grammar: pack v4, --lexicon units, on trial)
+python3 scripts/verse_pack.py <project> <code> <ch> [--grammar] [--lexicon units] # precompiled per-verse pack (store hits, lexicon, similar verses; --grammar: pack v4, binding by default for an unknown language with marked cells; --lexicon units, on trial)
 python3 scripts/build_units.py <project> [--mode grc|fill|agree|union] # English <-> target units from the English links and, in the NT, the Greek route
 python3 scripts/score.py <project> <draft>           # chrF (and SIL's chrF3) against a held-out human translation, with floors
 python3 scripts/judge.py prepare|prompt|tally <project> ... # blind meaning judge of N versions (or a corrections report for a team's chapter)

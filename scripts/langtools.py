@@ -230,8 +230,11 @@ class Project:
         if getattr(self, "_eng", None) is None:
             self._eng = {w.lower() for r in self.corpus() for w in re.findall(r"[A-Za-z]+", r[3])}
         sp = self.spellings()
-        return [w for w in re.findall(r"[A-Za-z]+", re.sub(r"<[^<>]*>", " ", text or ""))
-                if len(w) > 1 and w.lower() in self._eng and self.tok.plain(w) not in sp]
+        # the language's own words (its tokeniser: its letters, marks and word characters), so that a word with a
+        # letter outside a-z is never cut into an English one (tøgoat is not "goat", até not "at"); a word counts only
+        # whole, in ASCII letters, and where the corpus never writes it
+        return [w for w in self.tok.tokens(re.sub(r"<[^<>]*>", " ", text or ""), exact=True)
+                if re.fullmatch(r"[A-Za-z]{2,}", w) and w.lower() in self._eng and self.tok.plain(w) not in sp]
 
     def store_forms(self):
         """Exact tokens of the live term, formula and name entries' values and alternatives (they count as attested): the

@@ -211,8 +211,9 @@ def main():
                             (notes if p.startswith("not checked") else problems).append(f"{where}: {p}")
                     if item.get("interlinear") is not None and not isinstance(item["interlinear"], str):
                         problems.append(f"{where}: interlinear is a Leipzig line (a string)")
-                    if G.split_value(item.get("value"))[1]:
-                        warnings.append(f"{where}: gloss in value ({G.split_value(item['value'])[1][0]!r}): move it to gloss")
+                    inval = G.split_value(item.get("value"), LP.english_words if LP else None)[1]
+                    if inval:
+                        warnings.append(f"{where}: gloss in value ({inval[0]!r}): move it to gloss")
                     elif LP and k != "name" and isinstance(item.get("value"), str) and LP.english_words(item["value"]):
                         warnings.append(f"{where}: English in value ({' '.join(LP.english_words(item['value'])[:6])}): "
                                         "the value holds the target language only (English goes to the note)")
