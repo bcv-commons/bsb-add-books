@@ -175,6 +175,9 @@ def main():
                         problems.append(f"{where}: a morph needs {f}")
                 if e.get("slot") and e["slot"] not in SLOTS:
                     problems.append(f"{where}: slot {e['slot']!r}")
+                if e.get("written") and (e["written"] not in ("fused", "hyphen", "both")
+                                         or e.get("slot") not in ("prefix", "suffix")):
+                    problems.append(f"{where}: written {e['written']!r} (fused, hyphen or both; a prefix or suffix)")
             if k == "word":                       # a protected word: one whole word, no affix sign
                 if not e.get("form"):
                     problems.append(f"{where}: a protected word needs form")

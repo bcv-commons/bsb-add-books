@@ -155,7 +155,13 @@ class Codec:
 
     def encode_word(self, w, S):
         cl = clusters(w)
-        ms = S.split(w) if S and w.lower() not in getattr(self, "names", ()) else []
+        names = getattr(self, "names", ())
+        hy = bool(S) and getattr(S, "hyphen", False) and "-" in w.strip("-")
+        name = w.lower() in names or (hy and w.lower().split("-")[0] in names)
+        if name and hy:
+            ms = S.split_hyphen(w, whole=True) or []        # a name stays whole; a clitic after a hyphen comes off
+        else:
+            ms = S.split(w) if S and not name else []
         if not ms or len(clusters(w.lower())) != len(cl):
             t, c = self.lex(cl)
             return [t] + c
@@ -243,9 +249,9 @@ def loops(ids):
 def generate(model, tok, lines, bos, max_len=200, max_new=256, beams=2, batch=16):
     """The model's drafts of the source lines, and how many looped. A looping verse (or one cut at the length limit) is
     drafted again with no 4-token run repeated; the others keep their beam search as it was. Not a guard on every verse:
-    the human Kuni repeats a 4-token run in 32% of its verses (reduplication, repeated verb forms), a 6-token run in 12%,
-    and runs of three never (0 of 1,244 test verses). Kuni from the Greek, Genesis 1-30: 24 of 871 verses looped, chrF3 on
-    them 31.6 -> 37.4 (the whole set 38.3 -> 38.5)."""
+    a human translation may repeat a 4-token run in a third of its verses (reduplication, repeated verb forms) and still
+    never a run three times. Measured on one test language, Genesis 1-30 from the Greek: 24 of 871 verses looped, chrF3
+    on them 31.6 -> 37.4 (the whole set 38.3 -> 38.5)."""
     import torch
 
     def gen(ls, **kw):

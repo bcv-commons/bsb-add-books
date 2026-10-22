@@ -107,7 +107,7 @@ working; this file adds the rules that hold for any task here.
 ## Commands
 
 ```
-python3 scripts/setup.py [--heb bhsa,bcv-query,macula] [--drafting LAYOUT] [--only bsb,msb,bgb,rp,vrs,src,spk,names,editions,grambank,glottolog] [--force]
+python3 scripts/setup.py [--heb bhsa,bcv-query,macula] [--drafting LAYOUT] [--only bsb,msb,bgb,rp,vrs,src,spk,names,editions,grambank,glottolog,vamvas-align] [--force]
 python3 scripts/onboard.py [--answers F] [--yes] [--dry-run] # wizard for a new language: editions, project, memory
 python3 scripts/fetch_edition.py --find <iso>       # editions of a language (bcv-commons/bibles, eBible)
 python3 scripts/fetch_edition.py <edition> | --all  # fetch an edition by its recipe into import/
@@ -166,7 +166,8 @@ python3 scripts/src.py build [code ...] | layouts [--layout L] | map | speakers 
 python3 scripts/lang.py build|derive|report <project> | hbo <project> <lexeme> | grc <project> <strong> | layers <project> [--write] # the project's language DB: NT occurrences of any Hebrew word via the LXX; derived grammar statistics; the bcv-commons alignment layers built on our text
 python3 scripts/donor.py tree <iso> | shortlist|run <project> [--write] # a language's relatives: by descent (Glottolog) and the nearest one the model writes (write probes) -> donor:
 python3 scripts/seeds.py prompt|status|check <project> # a related language's grammar as hypotheses (profile/seeds.json): the seed agent's prompt; what is still untested
-python3 scripts/morphs.py <project> check | show <word> ... | tone [--write] | try [id ...] [--seeds] [--write] | audit [id ...] | rates | review <code> <ch> # the morph view (prefix, stem, grammatical tone, suffix; affix chains by position) from the store; every word rebuilt; how the corpus writes tone; affix entries measured against the Greek; each affix on the words it splits (the words against it: protect, restrict, retire); what the loop checks, and the check on an OT draft
+python3 scripts/morphs.py <project> check | show <word> ... | tone [--write] | try [id ...] [--seeds] [--write] | audit [id ...] [--route nt|ot|lxx|vamvas|all] | rates | review <code> <ch> # the morph view (prefix, stem, grammatical tone, suffix; affix chains by position) from the store; every word rebuilt; how the corpus writes tone; affix entries measured against the Greek; each affix on the words it splits (the words against it: protect, restrict, retire; on the OT by the Hebrew, its LXX and its Vamvas word, a combined verdict); what the loop checks, and the check on an OT draft
+python3 scripts/ot_routes.py <project>              # the audit's OT routes: links per book and route, the Vamvas fingerprints, the Greek ending table
 python3 scripts/cell_check.py <project> unmarked | try <paradigm> <bundle> <form> ... [--write] # agents' unmarked notes; candidate forms measured on the human text
 python3 scripts/grammar.py retest <project> [--run]  # tests whose store settings changed since they ran (rerun them)
 python3 scripts/gloss.py check|propose|show|words <project> [--write | <id> | "<BOOK C:V>"] # the store's Greek/Hebrew glosses: checked, proposed from the alignment, shown with generated English; a verse's words and lemmas

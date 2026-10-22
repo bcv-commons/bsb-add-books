@@ -101,6 +101,7 @@ bridge between an NT translated from the Greek and the Hebrew OT being drafted.
 | `host` | required: `verb`, `noun`, `pron`, `any` |
 | `value`, `unimorph` | the Leipzig gloss (`2.PL`); optionally the UniMorph tags |
 | `position` | optional: the place in an affix chain (prefixes from the word's start, suffixes from the stem outward); one form can hold two (subject *mu-* at 2, object *mu-* at 4) |
+| `written` | optional, a prefix or suffix: `fused` (the default: written onto its stem), `hyphen` (only as a whole piece before or after a hyphen: a bound person part in *x-stem*, a clitic in *noun-x*) or `both` |
 | `greek` | optional: the Greek feature it marks, as `lang.py report` names them (`{"person+number": "fp"}`; a list for several values) |
 | `tone_pattern` | a grammatical tone morph's marks by position from the word's end: `[{"at": "-2", "mark": "U+0300"}, {"at": "-1", "mark": "U+1DC4"}]`; `"<-1"` any unit before the last |
 | `productive` | from `morphs.py try`: `true` where the affix, taken off every word, still marks its Greek feature (confirmed, with at least half its odds ratio) (its words split without a stem attested elsewhere); `false` where it doesn't |
@@ -180,20 +181,44 @@ Top-level fields of `observations.json`. A change makes the tests that depended 
   wins.
 - **Host view**: with the NT aligned to the Greek (`lang.py build`), a verb's affixes come off words linked to Greek
   verbs in at least half their tokens, or that leave such a word's stem; nouns keep their class prefixes.
+- **Hyphenated words** (a store with `written: hyphen` or `both`): a word with an internal hyphen is one word with a
+  boundary inside. A hyphen prefix is the whole first piece, a hyphen suffix the whole last piece (several clitics come
+  off from the end), and the piece between is split as any word; a grammatical tone pattern is read on the whole word,
+  across the hyphen. A `hyphen` part never comes off a fused word. `check` counts the corpus's hyphen words apart
+  (their pieces are separate tokens to the tokeniser), `audit` and the NT links take them whole, and the model text
+  (`nllb/model_text.py`) keeps the hyphen inside its part, so it decodes back exactly; a name keeps its inside whole.
 - **Tone-marked affixes**: an affix told apart by tone alone keeps its mark (*aá-* past beside *aa-*): the parse runs
   on plain letters, the label follows the mark as written.
 - **`try [id ...] [--write]`**: each affix measured on the NT aligned to the Greek (n, stems, lift and odds ratio of
   its `greek` feature, on all verses and even verses). Kept: n ≥ 20, stems ≥ 5, both odds ratios ≥ 2. `--write` sets
   `stats`, status `observed` or `open` (`decided` stays), and a claim `claim:morph.<id>`.
-- **`audit [id ...]`**: each affix checked on the words it splits (the NT aligned to the Greek; an OT route, on the
-  Hebrew of the aligned OT books, is to come): its tokens and stems, the stems also seen bare or with another affix of
+- **`audit [id ...] [--route nt|ot|lxx|vamvas|all]`**: each affix checked on the words it splits, by default on the NT
+  aligned to the Greek (`--route` picks others; `ot` is the Hebrew, `all` the four): its tokens and stems, the stems also seen bare or with another affix of
   the slot; the share of its `greek` feature among the host-class Greek words linked to it, with the affix and on the
   same stems without it, and their odds ratio; its top words with their Greek lemmas; the **words against it** (the
   feature on under 20% of 3 or more host links, or host links under 30% of the word's links: a noun that only begins
   like a verb prefix). Verdict: `retire` (odds ratio under 2), `confirm` (the words against it under 10% of its
   tokens), `protect-words` (under 40%: make them `word` entries), `restrict` (it holds only on the stems it names),
-  `no-claim` (no `greek`), `too-few` (under 10 host links). Thresholds in `morphs.AUDIT`. Read-only: the store is
-  changed by the agent (`.claude/skills/audit-store/`), then measured again.
+  `no-claim` (no `greek`), `too-few` (under 10 host links). Where its stems never occur without it, the odds are taken
+  against every host word without it, and the audit says so (it doesn't confirm on nothing). Thresholds in
+  `morphs.AUDIT`. Read-only: the store is changed by the agent (`.claude/skills/audit-store/`), then measured again.
+  Ids of superseded entries are measured as if live again (a retired affix checked on new evidence).
+- **The OT routes** (`scripts/ot_routes.py`, for the OT books the style corpus has): the target words linked to a Hebrew
+  token (`_learn/links_hbo.tsv` where the lexeme occurs once in its verse, or `lang.sqlite`'s `ot_links` by position),
+  read three ways: **hebrew** (the token itself, `orig/heb.sqlite`: person and number, negation in the clause,
+  imperative / jussive / cohortative as `mood=imperative`, infinitive, participle, the clause's object suffix; tense
+  only as a class, wayyiqtol and qatal past, yiqtol and weqatal non-past: a *weak* reading, marked so), **lxx** (the
+  Septuagint word MACULA gives for it, parsed by an identical NT form, else an ending table) and **vamvas** (its Vamvas
+  word(s) through bcv-commons/full-alignments-llm, `setup.py --only vamvas-align`, parsed by the same table and the
+  auxiliaries θα / θέλω, να, ας, έχω). The features keep the Greek names, so one `greek` claim is tested on every route;
+  a claim a route can't read (subjunctive on the Hebrew; negation or object on the Greek routes) is `n.a.` there. Per
+  route: n, shares, odds and a state: holds (odds ≥ 2 on 20 or more links), fails, thin, or flat (the feature on 75% or
+  more both with and without it: third singular in narrative, no lift possible). **Combined verdict**: `confirm` (the
+  NT and an OT route hold, none fails), `re-label` (one route holds, another fails: it marks the holding route's
+  category; the audit names that route's strongest value), `nt-only` (only the NT holds and an OT route fails: possibly
+  the Greek leaking through the alignment; flagged, not retired), `ot-only` (only the OT holds: kept, noted), else the
+  NT's verdict (retire when no route holds). `python3 scripts/ot_routes.py <project>` prints the coverage per route and
+  book and the Vamvas fingerprint check.
 - **Protected words** (kind `word`) are never split and are no evidence for another word's split.
 - **The loop**: `rates` lists the features the confirmed affixes mark; one is checked where the human NT marks it on
   60% or more of 20 or more Greek verbs that have it. `review <code> <ch>` (run by `chapter_check.py`) flags OT verbs

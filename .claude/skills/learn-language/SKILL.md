@@ -47,7 +47,8 @@ worked example.
      confirmed affixes, rerun `align.py <project>` (then `lang.py build`): it aligns the affixes themselves (by parts,
      gaps filled by word links); `morphs.py try` and `rates` before and after show what it changed. Words an affix
      only seems to begin or end (a noun beginning like a verb prefix): `morphs.py <project> audit` and the
-     `audit-store` skill (protected words, kind `word`).
+     `audit-store` skill (protected words, kind `word`). Parts written with a hyphen (a person part in *x-stem*, a clitic
+     after a noun): `written: hyphen` on the morph (`docs/language-store.md`); with OT books, `audit --route all`.
    - **A related language the model knows** (the project's `donor`: `python3 scripts/donor.py run <project> --write`,
      Glottolog and write probes; the wizard does it): a fresh agent with `python3 scripts/seeds.py prompt <project>`
      writes what the model knows of it, from memory, as seeds (`profile/seeds.json`, `docs/language-store.md`, *Seeds*):

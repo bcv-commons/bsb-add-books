@@ -49,7 +49,12 @@ STEPBible TIPNR (proper names with their referents, CC BY 4.0, STEPBible.org / T
 one participant per named person or place for scripts/participants.py, into download/stepbible/; with --only names (also
 in the default set: one 8 MB file).
 
-Usage: python3 scripts/setup.py [--heb bhsa,bcv-query,macula] [--drafting LAYOUT] [--force] [--only bsb,msb,bgb,rp,vrs,src,spk,names,editions,grambank,glottolog]
+The Vamvas alignment (bcv-commons/full-alignments-llm, layer ell_GreVamvas+llm+jev-v4, CC0; pinned commit and the
+SHA-256 of its files' SHA256SUMS): the modern Greek of each OT Hebrew word, for the affix audit's Vamvas route
+(scripts/morphs.py audit --route vamvas; needs import/CC0/ell/vamvas/text/), into download/full-alignments-llm/; only on
+request, with --only vamvas-align.
+
+Usage: python3 scripts/setup.py [--heb bhsa,bcv-query,macula] [--drafting LAYOUT] [--force] [--only bsb,msb,bgb,rp,vrs,src,spk,names,editions,grambank,glottolog,vamvas-align]
   --force   download again even if the file is already in download/
   --only    build only the named sources
 Details and licences: docs/sources.md.
@@ -77,6 +82,10 @@ GL_URL = f"https://raw.githubusercontent.com/glottolog/glottolog-cldf/{GL_TAG}/c
 TIPNR_COMMIT = "1f3423d42400f59f1f30fe08f74e38fcd3bbf7bc"  # STEPBible/STEPBible-Data, 2026-10-05
 TIPNR_URL = (f"https://raw.githubusercontent.com/STEPBible/STEPBible-Data/{TIPNR_COMMIT}/Proper%20Nouns/"
              "TIPNR%20-%20Translators%20Individualised%20Proper%20Names%20with%20all%20References%20-%20STEPBible.org%20CC%20BY.txt")
+VAMVAS_COMMIT = "49f2972c6201f39ccc90f2a9bcf236a8272362d0"   # bcv-commons/full-alignments-llm, 2026-10-21
+VAMVAS_LAYER = "ell_GreVamvas+llm+jev-v4"                  # Vamvas (1850) aligned to MACULA, model-checked; CC0
+VAMVAS_URL = f"https://huggingface.co/datasets/bcv-commons/full-alignments-llm/resolve/{VAMVAS_COMMIT}/{{f}}"
+VAMVAS_SHA256 = "5ab99b6fd66e346550c11d83afd0903518a1e771698c76bb3125b80d1462e75a"  # the SHA-256 of the SHA256SUMS lines of the fetched files (manifest, _layer, OT books)
 SRC_V = "v1"  # the prepared source structures, published by bcv-query (built by scripts/src.py; verified row by row)
 SRC_URL = "https://files.qombi.com/files/source-structure-{v}-{f}"
 SOURCES = {
@@ -132,6 +141,50 @@ def fetch(key, force):
         print(f"  WARNING: {name} differs from the version this repo was built with (sha256 {digest}).")
         print("           Check the result before relying on it; see docs/sources.md.")
     return path
+
+
+def fetch_vamvas_align(force):
+    """bcv-commons/full-alignments-llm, layer ell_GreVamvas+llm+jev-v4 at the pinned commit: manifest.json, the layer's
+    _layer.json and its OT book files (<BOOK>_<fingerprint>.json and .meta.json) into
+    download/full-alignments-llm/e/ell/<layer>/, with SHA256SUMS; the SHA-256 of those lines is pinned (VAMVAS_SHA256).
+    The files are data (JSON), read by scripts/ot_routes.py; their names carry the fingerprint of the Vamvas text they
+    were made on (the module's KJV numbering; ot_routes.py checks our import/CC0/ell/vamvas/ copy against it)."""
+    from books import BY_CODE
+    d = os.path.join(DL, "full-alignments-llm", "e", "ell", VAMVAS_LAYER)
+    os.makedirs(d, exist_ok=True)
+
+    def get(rel, dest):
+        if force or not os.path.exists(dest):
+            print(f"  downloading {rel}")
+            for attempt in range(4):                    # Hugging Face resets connections now and then
+                try:
+                    with urllib.request.urlopen(urllib.request.Request(VAMVAS_URL.format(f=urllib.request.quote(rel)),
+                                                                       headers=UA), timeout=300) as r:
+                        open(dest + ".part", "wb").write(r.read())
+                    os.replace(dest + ".part", dest)
+                    break
+                except OSError as e:
+                    if attempt == 3:
+                        raise
+                    print(f"  download failed ({e}); retrying")
+        return dest
+    man = json.load(open(get("manifest.json", os.path.join(d, "manifest.json")), encoding="utf-8"))
+    get(f"e/ell/{VAMVAS_LAYER}/_layer.json", os.path.join(d, "_layer.json"))
+    books = man["languages"]["ell"]["layers"][VAMVAS_LAYER]["books"]
+    names = ["manifest.json", "_layer.json"]
+    for b, f in sorted(books.items()):
+        if BY_CODE.get(b.lower(), (0, 0, ""))[2] != "ot":
+            continue
+        for name in (f, f[:-5] + ".meta.json"):
+            get(f"e/ell/{VAMVAS_LAYER}/{name}", os.path.join(d, name))
+            names.append(name)
+    sums = "".join(f"{hashlib.sha256(open(os.path.join(d, n), 'rb').read()).hexdigest()}  {n}\n" for n in sorted(names))
+    open(os.path.join(d, "SHA256SUMS"), "w").write(sums)
+    digest = hashlib.sha256(sums.encode()).hexdigest()
+    if digest != VAMVAS_SHA256:
+        raise SystemExit(f"  {d}: SHA256SUMS digest {digest} is not the pinned {VAMVAS_SHA256}; delete the folder and run "
+                         "again (or check what changed)")
+    print(f"  {len(names) - 2} OT files of {VAMVAS_LAYER} at {VAMVAS_COMMIT[:12]} (SHA256SUMS digest {digest[:16]}…)")
 
 
 def unzip_flat(zpath, dest):
@@ -239,6 +292,9 @@ def main():
         print(f"download/glottolog/{GL_TAG}/ (Glottolog: the family tree, for a language's relatives; scripts/donor.py)")
         for f in ("languages", "values"):
             fetch(f"gl-{f}", force)
+    if "vamvas-align" in only:
+        print(f"download/full-alignments-llm/ (the Vamvas alignment {VAMVAS_LAYER}, CC0: the audit's OT Vamvas route)")
+        fetch_vamvas_align(force)
     if "editions" in only:
         print("import/: editions with a fetch recipe")
         run("fetch_edition.py", "--all", *(["--force"] if force else []))

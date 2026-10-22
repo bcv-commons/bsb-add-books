@@ -6,13 +6,18 @@ description: Check a language store's affixes on the words they split (morphs.py
 # Audit the store's affixes
 
 The store's format: `docs/language-store.md` (*Morphs*, *Protected words*, *The morph view*). Needs the project's NT
-aligned to the Greek (`python3 scripts/lang.py build <project>`); the OT route is to come.
+aligned to the Greek (`python3 scripts/lang.py build <project>`); the OT routes need the OT books aligned to the Hebrew
+(`align.py`, `_learn/links_hbo.tsv`) and, for the Vamvas route, `python3 scripts/setup.py --only vamvas-align`.
 
 1. **Before:** note the figures to compare with: `python3 scripts/morphs.py <project> check` (tokens split, every type
    rebuilt) and `python3 scripts/morphs.py <project> try` (n, stems, odds ratio per affix).
 2. **Audit:** `python3 scripts/morphs.py <project> audit [id ...]` (read-only; all live affixes without ids). Per affix:
    tokens and stems, the Greek feature's share with and without it on the same stems, its top words with their Greek,
-   the words against it, a verdict.
+   the words against it, a verdict. Where the style corpus has OT books, add `--route all`: the same claim on the OT
+   linked to the Hebrew, read by the Hebrew token, its LXX word and its Vamvas word (`setup.py --only vamvas-align`),
+   one row per route and a combined verdict: `re-label` (one route holds, another fails: propose the holding route's
+   category to a person), `nt-only` (flag, don't retire), `ot-only` (keep, note); `flat` routes (third singular in
+   narrative) say nothing either way.
 3. **Decide per verdict.** Look at two or three verses of a word before acting on it
    (`python3 scripts/concord.py <project> tgt <word>`, `... parts <word>`); a figure alone is not enough.
    - `confirm`: keep it. An `open` entry becomes `observed` with `morphs.py try <id> --write`.

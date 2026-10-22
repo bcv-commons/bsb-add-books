@@ -87,7 +87,7 @@ def main():
     print(f"device {dev}; added {len(missing)} characters: {''.join(missing)}; target code {trg_code}"
           + (f" (new, from {init_lang})" if new_code else ""), flush=True)
 
-    # the target's limit: a target in parts (model_text morphs) is longer than the text (Kuni: 39% more pieces)
+    # the target's limit: a target in parts (model_text morphs) is longer than the text (39% more pieces in one test language)
     longest = max(len(x) for x in tok(text_target=tr[1] + va[1], add_special_tokens=True)["input_ids"])
     trg_len = args.max_trg_len or min(512, max(args.max_len, longest))
     print(f"target limit {trg_len} pieces (longest {longest})", flush=True)

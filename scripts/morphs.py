@@ -49,11 +49,14 @@ one tone apart): the parse runs on the plain letters, and the label follows the 
     python3 scripts/morphs.py <project> try --seeds [seed id ...] [--write]
         the affix seeds (profile/seeds.json: a related language's forms, scripts/seeds.py) measured the same way, as if
         they were in the store; --write records one claim per seed (claim:seed.<name>, seed: <id>), the seeds unchanged
-    python3 scripts/morphs.py <project> audit [id ...]
-        each affix checked on the words it splits (NT aligned to the Greek; the OT route is to come): tokens, stems, stems
-        also bare or with another affix of the slot, the feature's share with and without it on the same stems, its top
-        words with their Greek, the words against it, and a verdict: confirm, protect-words (as kind `word` entries),
-        restrict, retire (audit; read-only)
+    python3 scripts/morphs.py <project> audit [id ...] [--route nt|ot|lxx|vamvas|all]
+        each affix checked on the words it splits: tokens, stems, stems also bare or with another affix of the slot, the
+        feature's share with and without it on the same stems (on every host word without it when its stems never occur
+        without it, and said so), its top words with their Greek, the words against it, and a verdict: confirm,
+        protect-words (as kind `word` entries), restrict, retire (audit; read-only). --route: the NT aligned to the
+        Greek (nt, the default), the OT books linked to the Hebrew read by the Hebrew token (ot), its LXX word (lxx) or
+        its Vamvas word (vamvas), or all four (all; scripts/ot_routes.py), one row per route and a combined verdict:
+        confirm, re-label, nt-only, ot-only, or the NT's own. Ids of superseded entries are measured as if live again
     python3 scripts/morphs.py <project> show <word> ...
     python3 scripts/morphs.py <project> rates      the features the confirmed affixes mark, and how often the human NT
         marks them on the Greek verbs that have them: those marked on 60% or more are checked in the loop
@@ -66,7 +69,7 @@ one tone apart): the parse runs on the plain letters, and the label follows the 
         ignore_marks if the store has none), marked as derived; a setting already there is kept unless --force. Like every
         store setting, a change makes the tests that depended on it stale (grammar.py retest)
 """
-import collections, os, re, sys, unicodedata
+import collections, os, re, sys, types, unicodedata
 from typing import NamedTuple
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -249,6 +252,19 @@ class Segmenter:
     def __init__(self, G, orth, vocab, classes=None):
         self.spec = ToneSpec(orth)
         self.ignore = {CH(m) for m in (orth or {}).get("ignore_marks") or []}
+        # parts written with a hyphen (a morph's `written`: "fused", the default; "hyphen": only as a whole piece before
+        # or after a hyphen; "both"): a word with an internal hyphen is one word with a boundary inside. A prefix written
+        # so is the whole first piece (a bound person/TAM part before the stem: x-stem), a suffix the whole last piece
+        # (a clitic: noun-postposition); what is between is segmented as a word. Grammatical tone is read on the whole
+        # word, across the hyphen. A "hyphen" morph never comes off a fused word
+        wr = lambda e: e.get("written") or "fused"
+        self.hy_pre = {self.plain(e["form"].strip("-=")): e["form"] for e in G.morphs
+                       if e.get("slot") == "prefix" and wr(e) in ("hyphen", "both") and e.get("form", "").strip("-=")}
+        self.hy_suf = {self.plain(e["form"].strip("-=")): e["form"] for e in G.morphs
+                       if e.get("slot") == "suffix" and wr(e) in ("hyphen", "both") and e.get("form", "").strip("-=")}
+        self.hyphen = bool(self.hy_pre or self.hy_suf)
+        if any(wr(e) == "hyphen" for e in G.morphs):
+            G = types.SimpleNamespace(morphs=[e for e in G.morphs if wr(e) != "hyphen"], words=getattr(G, "words", []))
         aff = lambda slot, host=None: sorted({e["form"].strip("-=") for e in G.morphs if e.get("slot") == slot
                                               and e.get("form") and (host is None or e.get("host") == host)} - {""},
                                              key=len, reverse=True)
@@ -297,7 +313,8 @@ class Segmenter:
             self.tones = []
         self.vocab = collections.Counter()
         for w, n in (vocab.items() if isinstance(vocab, dict) else ((w, 1) for w in vocab)):
-            self.vocab[self.plain(w)] += n
+            # with hyphen parts, a piece after a hyphen (a tokeniser's "-x") is the rest of a word: evidence for its stem
+            self.vocab[self.plain(w[1:] if self.hyphen and w.startswith("-") and len(w) > 1 else w)] += n
         self.forms = collections.defaultdict(collections.Counter)  # a possible stem -> {(prefix, suffix): tokens}
         self.min_stem = 2 if self.chain else 3
         for w, n in self.vocab.items():
@@ -456,13 +473,62 @@ class Segmenter:
                   and (not q or any(k[1] != q for k in others)) and sum(others.values()) >= self.min_share * n)
         return sum(others.values()) if ok else 0
 
-    def split(self, w):
-        """[Morph] of an exact token, in the order prefix, infix, stem, tone, suffix"""
-        if w in self.cache:
-            return self.cache[w]
+    def split(self, w, tones=True):
+        """[Morph] of an exact token, in the order prefix, infix, stem, tone, suffix (a word with hyphen parts: the
+        hyphen prefix first, the hyphen suffixes last). tones=False: no grammatical tone is read (a word's inside)"""
+        key = w if tones else ("\0", w)
+        if key not in self.cache:
+            r = self.split_hyphen(w, tones) if self.hyphen and "-" in w.strip("-") else None
+            self.cache[key] = r or self.split_plain(w, self.tones if tones else ())
+        return self.cache[key]
+
+    def read_tone(self, cl, tones):
+        for t in tones:
+            took = t.match(self.spec, cl)
+            if took:
+                return t, took
+        return None
+
+    def split_hyphen(self, w, tones=True, whole=False):
+        """a word with an internal hyphen and a store part written with one: [hyphen prefix] + its inside segmented +
+        [tone] + [hyphen suffixes], or None (the word is segmented as any other). whole: the inside is not segmented (a
+        name: Zelani-ko is the name + a clitic)"""
+        cl = clusters(w.lower())
+        if self.plain("".join(cl)) in self.free:
+            return None
+        hy = [i for i, c in enumerate(cl) if c == "-" and 0 < i < len(cl) - 1 and cl[i - 1] != "-"]
+        if not hy:
+            return None
+        piece = lambda a, b: self.plain("".join(cl[a:b]))
+        a, b, pre, post = 0, len(cl), [], []
+        f = piece(0, hy[0])
+        if f in self.hy_pre:
+            a, hy = hy[0] + 1, hy[1:]
+        while hy and piece(hy[-1] + 1, b) in self.hy_suf:
+            post.insert(0, (hy[-1], b, self.hy_suf[piece(hy[-1] + 1, b)]))
+            b = hy[-1]
+            hy = hy[:-1]
+        if not a and not post:
+            return None
+        tone = self.read_tone(cl, self.tones) if tones else None
+        if tone:
+            cl = list(cl)
+            for i, m in tone[1]:
+                cl[i] = cl[i].replace(m, "", 1)
+        cut = lambda x, y: unicodedata.normalize("NFC", "".join(cl[x:y]))
+        out = [Morph("prefix", self.hy_pre[f], cut(0, a))] if a else []
+        inner = ([Morph("stem", self.plain(cut(a, b)), cut(a, b))] if whole else self.split(cut(a, b), tones=False)) if b > a else []
+        k = next((n for n, m in enumerate(inner) if m.slot == "stem"), len(inner)) + 1
+        out += inner[:k] + ([Morph("tone", tone[0].form, " ".join(f"{i}:U+{ord(m):04X}" for i, m in tone[1]))]
+                           if tone else []) + inner[k:]
+        out += [Morph("suffix", form, cut(x, y)) for x, y, form in post]
+        return out
+
+    def split_plain(self, w, tone_morphs=()):
+        """split's work, uncached; tone_morphs: the grammatical tone patterns to read"""
         cl = clusters(w.lower())
         tone = None
-        for t in self.tones:
+        for t in tone_morphs:
             took = t.match(self.spec, cl)
             if took:
                 tone = (t, took)
@@ -483,10 +549,9 @@ class Segmenter:
         for p, q in self.pairs:
             if s == p + q and at(len(p)):
                 k = at(len(p))
-                self.cache[w] = [Morph("prefix", p + "-", cut(0, k)), Morph("stem", "", "")] + (
+                return [Morph("prefix", p + "-", cut(0, k)), Morph("stem", "", "")] + (
                     [Morph("tone", tone[0].form, " ".join(f"{a}:U+{ord(m):04X}" for a, m in tone[1]))] if tone else []) + [
                     Morph("suffix", "-" + q, cut(k, j))]
-                return self.cache[w]
         if self.chain and s not in self.free and not w.startswith("-"):
             def fit(pc, sc):                             # +1 an affix written with a store form's mark, -1 one written
                 score, a, b = 0, 0, len(cl)              # with a mark no store form of it has
@@ -559,7 +624,6 @@ class Segmenter:
         if tone:
             out.append(Morph("tone", tone[0].form, " ".join(f"{a}:U+{ord(m):04X}" for a, m in tone[1])))
         out += tail
-        self.cache[w] = out
         return out
 
     def labels(self, w):
@@ -621,6 +685,23 @@ METHOD = "morphs try 2"
 HOSTS = {"verb": ("verb",), "noun": ("noun",), "adj": ("adj",), "pron": ("pron",)}  # any other host: every class
 
 
+def hyphen_words(con):
+    """{(book, ch, v, pos): the whole word} of the NT tokens (lang.py build) where the tokeniser split a word at its
+    hyphens (a piece "-x" joins the token before it): tamu + -ko -> tamu-ko, for a store with hyphen parts"""
+    out, cur = {}, None
+    for b, c, v, p, surf, raw in con.execute("select book, ch, v, pos, surface, raw from nt_tokens order by book, ch, v, pos"):
+        if (surf or "").startswith("-") and cur and cur[0] == (b, c, v):
+            cur[1].append(p)
+            cur[2] += "-" + (raw or "")
+        else:
+            if cur and len(cur[1]) > 1:
+                out.update({(*cur[0], q): cur[2] for q in cur[1]})
+            cur = [(b, c, v), [p], raw or ""]
+    if cur and len(cur[1]) > 1:
+        out.update({(*cur[0], q): cur[2] for q in cur[1]})
+    return out
+
+
 def affix_tokens(pname, S):
     """[(Greek class, {(affix, position)}, stem, Greek features, even verse, ref, token, Greek lemma)]: one row per
     target token form and Greek word of the NT linked to each other, the token segmented by the store's morphs"""
@@ -630,18 +711,20 @@ def affix_tokens(pname, S):
     con.row_factory = sqlite3.Row
     gtok = {r["key"]: r for r in con.execute("select * from g.tokens")}
     feat = lang.greek_features(con, gtok)
-    rows = con.execute("""select l.book as bk, l.ch as cc, l.v as vv, t.raw, g.* from nt_links l join nt_tokens t on t.book=l.book and t.ch=l.ch
+    rows = con.execute("""select l.book as bk, l.ch as cc, l.v as vv, l.pos as pp, t.raw, g.* from nt_links l join nt_tokens t on t.book=l.book and t.ch=l.ch
         and t.v=l.v and t.pos=l.pos join g.tokens g on g.key=l.key""").fetchall()
+    hw = hyphen_words(con) if getattr(S, "hyphen", False) else {}   # a piece of a hyphen word: the whole word
     toks, seen = [], set()
     for r in rows:
-        k = (r["raw"], r["key"])
+        w = hw.get((r["bk"], r["cc"], r["vv"], r["pp"]), r["raw"])
+        k = (w, r["key"])
         if k in seen or not r["raw"]:
             continue
         seen.add(k)
-        ms = S.split(r["raw"])
+        ms = S.split(w)
         stem = next((m.form for m in ms if m.slot == "stem"), "")
         toks.append((r["class"], {(m.form, m.position) for m in ms if m.slot != "stem"}, stem, feat(r), r["vv"] % 2 == 0,
-                     f"{r['bk'].upper()} {r['cc']}:{r['vv']}", r["raw"], r["lemma"]))
+                     f"{r['bk'].upper()} {r['cc']}:{r['vv']}", w, r["lemma"]))   # w: a hyphen word whole
     return toks
 
 
@@ -883,38 +966,174 @@ def try_morphs(pname, ids, P, S, write=False, by="script:morphs.py", min_n=20, m
 # ---------- the affix audit: does an affix hold on the words it splits? ----------
 
 AUDIT = {"min_links": 10, "word_links": 3, "off_share": 0.2, "host_share": 0.3, "min_odds": 2.0,
-         "protect_max": 0.1, "restrict_min": 0.4}
+         "protect_max": 0.1, "restrict_min": 0.4, "route_n": 20, "flat": 0.75}
 
 
-def audit(pname, ids, P, S, G=None, top=8, A=AUDIT):
-    """Each affix entry (those named, else every live prefix, infix and suffix) checked on the words it splits, on the
-    NT aligned to the Greek (the OT route, the Hebrew of the aligned OT books, is to come):
+def _odds(k, n, ko, no):
+    return round(((k + .5) / (n - k + .5)) / ((ko + .5) / (no - ko + .5)), 2)
+
+
+def route_stats(e, toks, want, S, A=AUDIT, top=8, words=None, stem_by=None, alt_keys=()):
+    """an affix entry on one route's linked rows (affix_tokens' shape): its host links, the claim's share with it and
+    on the same stems without it, the odds ratio (against every host link without it when its stems never occur
+    without it: odds_basis "all words"), the words against it, its top words, the route's own verdict, and for
+    alt_keys the value of each that its links show most (odds, n): the re-label candidates"""
+    has = lambda fv, w=want: all(any((k, v) in fv for v in vs) for k, vs in w.items())
+    share = lambda ts: sum(has(t[3]) for t in ts) / len(ts) if ts and want else None
+    cls = HOSTS.get(e.get("host"))
+    mine = [t for t in toks if comes_off(e, t[1])]
+    on = [t for t in mine if cls is None or t[0] in cls]
+    on_stems = {t[2] for t in on}
+    host = [t for t in toks if cls is None or t[0] in cls]
+    off = [t for t in host if t[2] in on_stems and not comes_off(e, t[1])]
+    basis = "same stems"
+    if on and not off:                               # its stems never occur without it: against every host word
+        off, basis = [t for t in host if not comes_off(e, t[1])], "all words"
+    links, host_links = collections.defaultdict(list), collections.defaultdict(list)
+    for t in mine:
+        links[S.plain(t[6])].append(t)
+        if cls is None or t[0] in cls:
+            host_links[S.plain(t[6])].append(t)
+    words = words if words is not None else collections.Counter({w: len(ts) for w, ts in links.items()})
+    against = {w: n for w, n in words.items() if want and (
+        (len(host_links[w]) >= A["word_links"] and share(host_links[w]) < A["off_share"])
+        or (len(links[w]) >= A["word_links"] and len(host_links[w]) < A["host_share"] * len(links[w])))}
+    off_tok = sum(against.values()) / max(1, sum(words.values()))
+    odds = None
+    if want and on and off:
+        odds = _odds(sum(has(t[3]) for t in on), len(on), sum(has(t[3]) for t in off), len(off))
+    if not want:
+        verdict = "no-claim"
+    elif len(on) < A["min_links"]:
+        verdict = "too-few"
+    elif odds is not None and odds < A["min_odds"]:
+        verdict = "retire"
+    else:
+        verdict = ("confirm" if off_tok < A["protect_max"] else "protect-words" if off_tok < A["restrict_min"]
+                   else "restrict")
+    holds = collections.Counter()
+    for w, n in words.items():
+        if w not in against and stem_by:
+            holds[stem_by.get(w, w)] += n
+    alt = {}
+    for k in alt_keys:                               # the value of k its links show most, against the rest
+        vals = collections.Counter(v for t in on for (kk, v) in t[3] if kk == k)
+        best = None
+        for v, kv in vals.most_common(8):
+            ko = sum((k, v) in t[3] for t in off)
+            o = _odds(kv, len(on), ko, len(off)) if off else None
+            if o is not None and (best is None or o > best[1]):
+                best = (v, o, kv / len(on))
+        if best:
+            alt[k] = best
+    return dict(links=len(on), link_stems=len(on_stems), share_with=share(on), links_without=len(off),
+                share_without=share(off), odds=odds, odds_basis=basis,
+                share_rest=share([t for t in on if S.plain(t[6]) not in against]),
+                top=[(w, n, len(links[w]), len(host_links[w]), share(host_links[w]),
+                      collections.Counter(t[7] for t in links[w]).most_common(3)) for w, n in words.most_common(top)],
+                against=sorted(against.items(), key=lambda x: -x[1]), against_share=off_tok,
+                holds=[st for st, _ in holds.most_common(10)], verdict=verdict, alt=alt)
+
+
+def route_state(r, A=AUDIT):
+    """holds / fails / thin / flat / n.a. of one route's result: flat where the feature is on `flat` or more of the
+    host links both with it and without it (3rd singular in narrative): no lift is possible, so neither holds nor fails"""
+    if r is None or r.get("untestable"):
+        return "n.a."
+    if r["links"] < A["route_n"] or r["odds"] is None or not (r["share_with"] or r["share_without"]):
+        return "thin"                                # too few links, or the feature on none of them: no evidence
+    if r["odds"] >= A["min_odds"]:
+        return "holds"
+    return "flat" if min(r["share_with"] or 0, r["share_without"] or 0) >= A["flat"] else "fails"
+
+
+def combine(rs, A=AUDIT):
+    """(verdict, note) from the routes' results ({route: result}), the design's rules in order: confirm (the NT and an
+    OT route hold, none fails), re-label (one route holds, another fails: it marks the holding route's category),
+    nt-only (only the NT holds, an OT route fails: possibly the Greek leaking through the alignment; flagged, not
+    retired), ot-only (only the OT holds: kept, noted), and else the NT's own verdict (retire, protect-words,
+    restrict, too-few, no-claim). A weak route (tense from the Hebrew conjugation) counts, and is named in the note"""
+    st = {k: route_state(v, A) for k, v in rs.items()}
+    held = [k for k, s in st.items() if s == "holds"]
+    failed = [k for k, s in st.items() if s == "fails"]
+    weak = [k for k in held if rs[k].get("weak")]
+    nt = rs.get("nt")
+    base = nt["verdict"] if nt else None
+    if not held:
+        if failed:
+            return "retire", "no route holds"
+        return (base, "") if base == "no-claim" else (base or "too-few", "no route has enough links")
+    if not failed:
+        if "nt" in held and len(held) > 1:
+            v = base if base in ("protect-words", "restrict") else "confirm"
+            return v, (f"the NT and {', '.join(NAMES_OF[k] for k in held if k != 'nt')} hold"
+                       + (" (the Hebrew on the weak reading: tense from the conjugation)" if weak else ""))
+        if held == ["nt"]:
+            return base, "the OT routes are thin, flat or can't test the claim"
+        return "ot-only", f"{', '.join(NAMES_OF[k] for k in held)} hold(s), the NT is thin: kept, noted"
+    if held == ["nt"]:
+        return "nt-only", (f"only the NT holds; {', '.join(NAMES_OF[k] for k in failed)} fail(s): possibly the Greek "
+                           "leaking through the alignment (flagged, not retired)")
+    if "nt" not in held and "nt" in failed:
+        return "ot-only", (f"{', '.join(NAMES_OF[k] for k in held)} hold(s), the NT fails: kept, noted (the NT may use "
+                           "another construction)")
+    k = next(x for x in ("hebrew", "vamvas", "lxx", "nt") if x in failed)
+    h = next(x for x in ("hebrew", "nt", "vamvas", "lxx") if x in held)
+    alt = rs[h].get("alt") or {}
+    best = max(alt.items(), key=lambda x: x[1][1]) if alt else None
+    prop = f"; its strongest value on {NAMES_OF[h]}: {best[0]}={best[1][0]} (odds {best[1][1]})" if best else ""
+    return "re-label", (f"{', '.join(NAMES_OF[x] + (' (weak)' if x in weak else '') for x in held)} hold(s), {', '.join(NAMES_OF[x] for x in failed)} "
+                        f"fail(s): it marks the category of the holding route, not the claim as worded{prop}")
+
+
+HYPHEN_WORD = re.compile(r"[^\W_](?:[\w\u0300-\u036f\u1dc0-\u1dff\ua789]|-(?=\w))*")
+NAMES_OF = {"nt": "NT (Greek)", "hebrew": "OT Hebrew", "lxx": "OT LXX", "vamvas": "OT Vamvas"}
+
+
+def audit(pname, ids, P, S, G=None, top=8, A=AUDIT, routes=("nt",), route_toks=None):
+    """Each affix entry (those named, else every live prefix, infix and suffix) checked on the words it splits, on
+    each route (routes: nt = the NT aligned to the Greek; hebrew, lxx, vamvas = the target's OT books linked to the
+    Hebrew, read by the Hebrew token, its Septuagint word, its Vamvas word: scripts/ot_routes.py):
     - its tokens and stems in the corpus; the stems also seen bare (no affix of the slot) or with another affix of the
       slot (the stem is a real stem, the affix a real choice);
-    - with a `greek` feature: the feature's share among its linked Greek words of the host's class, with the affix and
-      on the same stems without it (a stem's own meaning is no evidence for the affix), and the odds ratio of the two;
-    - its top words, by tokens, with their linked Greek lemmas and their own share of the feature;
+    - per route, with a `greek` feature the route can test (ot_routes.route_want): the feature's share among its
+      linked words of the host's class, with the affix and on the same stems without it (a stem's own meaning is no
+      evidence for the affix), and the odds ratio of the two; where its stems never occur without it, against every
+      host word without it, and said so (odds_basis "all words");
+    - its top words, by tokens, with their linked lemmas and their own share of the feature;
     - the words against it: the feature under off_share on word_links or more host links, or host links under
       host_share of the word's links (a noun that only begins like a verb prefix);
-    - a verdict: retire (odds ratio under min_odds), confirm (the words against it under protect_max of its tokens),
-      protect-words (under restrict_min: they become kind `word` entries), restrict (it holds only on the stems named),
-      no-claim (no `greek`) or too-few (under min_links host links).
-    Read-only. -> [dict] per entry"""
+    - the NT verdict: retire (odds ratio under min_odds), confirm (the words against it under protect_max of its
+      tokens), protect-words (under restrict_min: they become kind `word` entries), restrict (it holds only on the stems
+      named), no-claim (no `greek`) or too-few (under min_links host links);
+    - with more than one route, the combined verdict (combine): confirm, re-label, nt-only, ot-only, or the NT's own.
+    route_toks: {route: rows} in place of reading them (tests). Read-only. -> [dict] per entry; the first route's
+    figures at the top level, every route's under "routes", the combined verdict under "combined" """
+    import ot_routes as OR
     G = G or grammar.load(pname)
     ents = [e for e in G.morphs if e.get("slot") in ("prefix", "infix", "suffix") and e.get("form")
             and (not ids or e["id"] in ids)]
     if ids and len(ents) < len(set(ids)):
         raise SystemExit(f"not live affix entries of the store: {', '.join(sorted(set(ids) - {e['id'] for e in ents}))}")
     vocab = getattr(S, "vocab_exact", None) or S.vocab     # as written: a tone label needs the word's marks
+    if getattr(S, "hyphen", False) and P is not None:      # hyphen parts: the corpus's hyphen words, whole, as well
+        vocab = collections.Counter(vocab)                 # each whole, its pieces no longer counted apart
+        for r in P.corpus():
+            for w in HYPHEN_WORD.findall(r[4]):
+                if "-" in w:
+                    vocab[w] += 1
+                    vocab.subtract(P.tok.tokens(w, exact=True))
+        vocab = collections.Counter({w: n for w, n in vocab.items() if n > 0})
     split = {w: S.split(w) for w in vocab}
     stem_of = lambda ms: next((m.form for m in ms if m.slot == "stem"), "")
-    toks = affix_tokens(pname, S)
+    route_toks = dict(route_toks or {})
+    for r in routes:
+        if r not in route_toks:
+            route_toks[r] = affix_tokens(pname, S) if r == "nt" else OR.route_tokens(pname, S, r, P)
     res = []
     for e in ents:
-        slot, pos = e["slot"], int(e.get("position") or 0)
+        slot = e["slot"]
         want = {k: set(v) if isinstance(v, list) else {v} for k, v in (e.get("greek") or {}).items()}
-        has = lambda fv: all(any((k, v) in fv for v in vs) for k, vs in want.items())
-        share = lambda ts: sum(has(t[3]) for t in ts) / len(ts) if ts and want else None
         words, stems, stem_by = collections.Counter(), collections.Counter(), {}   # words by their plain letters
         for w, ms in split.items():
             if comes_off(e, {(m.form, m.position) for m in ms if m.slot == slot}):
@@ -926,47 +1145,43 @@ def audit(pname, ids, P, S, G=None, top=8, A=AUDIT):
             st = stem_of(ms)
             if st in stems and not comes_off(e, {(m.form, m.position) for m in ms if m.slot == slot}):
                 (other if any(m.slot == slot for m in ms) else bare).add(st)
-        cls = HOSTS.get(e.get("host"))
-        mine = [t for t in toks if comes_off(e, t[1])]
-        on = [t for t in mine if cls is None or t[0] in cls]
-        on_stems = {t[2] for t in on}
-        off = [t for t in toks if (cls is None or t[0] in cls) and t[2] in on_stems and not comes_off(e, t[1])]
-        links, host_links = collections.defaultdict(list), collections.defaultdict(list)   # a word's links: all, host
-        for t in mine:
-            links[S.plain(t[6])].append(t)
-            if cls is None or t[0] in cls:
-                host_links[S.plain(t[6])].append(t)
-        against = {w: n for w, n in words.items() if want and (
-            (len(host_links[w]) >= A["word_links"] and share(host_links[w]) < A["off_share"])
-            or (len(links[w]) >= A["word_links"] and len(host_links[w]) < A["host_share"] * len(links[w])))}
-        off_tok = sum(against.values()) / max(1, sum(words.values()))
-        odds = None
-        if want and on and off:
-            k, ko = sum(has(t[3]) for t in on), sum(has(t[3]) for t in off)
-            odds = round(((k + .5) / (len(on) - k + .5)) / ((ko + .5) / (len(off) - ko + .5)), 2)
-        if not want:
-            verdict = "no-claim"
-        elif len(on) < A["min_links"]:
-            verdict = "too-few"
-        elif odds is not None and odds < A["min_odds"]:
-            verdict = "retire"
-        else:
-            verdict = ("confirm" if off_tok < A["protect_max"] else "protect-words" if off_tok < A["restrict_min"]
-                       else "restrict")
-        holds = collections.Counter()                    # the stems of the words it holds on
-        for w, n in words.items():
-            if w not in against:
-                holds[stem_by[w]] += n
-        res.append(dict(entry=e, tokens=sum(words.values()), stems=len(stems), bare=len(bare), other=len(other),
-                        links=len(on), link_stems=len(on_stems), share_with=share(on), links_without=len(off),
-                        share_without=share(off), odds=odds,
-                        share_rest=share([t for t in on if S.plain(t[6]) not in against]),
-                        top=[(w, n, len(links[w]), len(host_links[w]), share(host_links[w]),
-                              collections.Counter(t[7] for t in links[w]).most_common(3))
-                             for w, n in words.most_common(top)],
-                        against=sorted(against.items(), key=lambda x: -x[1]), against_share=off_tok,
-                        holds=[st for st, _ in holds.most_common(10)], verdict=verdict))
+        per = {}
+        for r in routes:
+            w2, weak, why = OR.route_want(r, want)
+            if want and w2 is None:
+                per[r] = dict(untestable=why, verdict="n.a.")
+                continue
+            x = route_stats(e, route_toks[r], w2 or {}, S, A, top, words, stem_by, OR.ALT_KEYS.get(r, ())
+                            if any(k in want for k in ("tense", "mood", "tense+mood")) else
+                            ("person+number",) if want else ())
+            x["weak"], x["claim"] = weak, w2
+            per[r] = x
+        first = per[routes[0]] if not per[routes[0]].get("untestable") else route_stats(e, [], {}, S, A, top, words,
+                                                                                        stem_by)
+        row = dict(entry=e, tokens=sum(words.values()), stems=len(stems), bare=len(bare), other=len(other),
+                   **{k: v for k, v in first.items() if k not in ("weak", "claim", "alt")}, routes=per)
+        if len(routes) > 1:
+            row["combined"] = combine(per, A)
+        res.append(row)
     return res
+
+
+def revive(pname, ids):
+    """(grammar view, ids revived): the named entries that are superseded in the store put back as live, to measure
+    a retired affix again (audit m:-tez:verb); None and [] when every named entry is live"""
+    import json
+    f = os.path.join(grammar.profile_dir(pname), "observations.json")
+    if not ids or not os.path.exists(f):
+        return None, []
+    G = grammar.load(pname)
+    live = {e["id"] for e in G.morphs}
+    old = [dict(e, status="superseded (revived for the audit)") for e in json.load(open(f, encoding="utf-8"))
+           .get("entries", []) if e.get("id") in ids and e["id"] not in live and e.get("kind") == "morph"]
+    if not old:
+        return None, []
+    G.morphs = G.morphs + old
+    G._by_id.update({e["id"]: e for e in old})
+    return G, [e["id"] for e in old]
 
 
 def print_audit(res, A=AUDIT):
@@ -979,24 +1194,44 @@ def print_audit(res, A=AUDIT):
               f"{e.get('status')})")
         print(f"  tokens {r['tokens']}, stems {r['stems']}; stems also bare {r['bare']}, with another {e['slot']} "
               f"{r['other']}")
-        print(f"  Greek links of its host class: with it {r['links']} on {r['link_stems']} stems, {pc(r['share_with'])} "
-              f"with the feature; the same stems without it {r['links_without']}, {pc(r['share_without'])}; "
-              f"odds ratio {r['odds']}")
-        print(f"    {'word':18} {'tokens':>6} {'links':>5} {'host':>5} {'feature':>7}  linked Greek lemmas")
-        for w, n, k, kh, sh, lem in r["top"]:
-            print(f"    {w:18} {n:6} {k:5} {kh:5} {pc(sh):>7}  " + ", ".join(f"{l} {c}" for l, c in lem))
-        if r["against"]:
-            print(f"  words against it ({len(r['against'])}, {r['against_share']:.0%} of its tokens): "
-                  + ", ".join(f"{w} {n}" for w, n in r["against"][:20])
-                  + f"; without them {pc(r['share_rest'])} with the feature")
-        print(f"  verdict: {r['verdict']}" + {
-            "protect-words": " (the words against it as store entries of kind word, affixes: [" + e["id"] + "])",
-            "restrict": f" (it holds on the stems {', '.join(r['holds'])})",
-            "retire": " (the feature is no likelier with it than without: supersede it)",
-            "too-few": f" (under {A['min_links']} host links)"}.get(r["verdict"], ""))
-    n = collections.Counter(r["verdict"] for r in res)
+        many = len(r["routes"]) > 1
+        for name, x in r["routes"].items():
+            lab = NAMES_OF[name]
+            if x.get("untestable"):
+                print(f"  {lab:11} can't test the claim: {x['untestable']}")
+                continue
+            cl = " ".join(f"{k}={'|'.join(sorted(v))}" for k, v in (x.get("claim") or {}).items())
+            print(f"  {lab:11} with it {pc(x['share_with'])} / without {pc(x['share_without'])}"
+                  + (" (all host words: its stems never occur without it)" if x["odds_basis"] == "all words" else "")
+                  + f"   odds {x['odds']}   n {x['links']} on {x['link_stems']} stems (without: {x['links_without']})"
+                  + (f"   [{cl}" + ("; weak: tense from the Hebrew conjugation" if x["weak"] else "") + "]"
+                     if name != "nt" else "") + f"   -> {route_state(x, A)}")
+            for k, (v, o, sh) in ((x.get("alt") or {}).items() if many else ()):
+                print(f"      most marked {k}: {v} ({sh:.0%} of its links, odds {o})")
+            if not many or name == "nt":
+                print(f"    {'word':18} {'tokens':>6} {'links':>5} {'host':>5} {'feature':>7}  linked lemmas")
+                for w, n, k, kh, sh, lem in x["top"]:
+                    print(f"    {w:18} {n:6} {k:5} {kh:5} {pc(sh):>7}  " + ", ".join(f"{l} {c}" for l, c in lem))
+                if x["against"]:
+                    print(f"    words against it ({len(x['against'])}, {x['against_share']:.0%} of its tokens): "
+                          + ", ".join(f"{w} {n}" for w, n in x["against"][:20])
+                          + f"; without them {pc(x['share_rest'])} with the feature")
+        first = next(iter(r["routes"].values()))
+        if r["verdict"] != "n.a.":
+            print(f"  verdict" + (f" ({NAMES_OF[next(iter(r['routes']))]})" if many else "") + f": {r['verdict']}" + {
+                "protect-words": " (the words against it as store entries of kind word, affixes: [" + e["id"] + "])",
+                "restrict": f" (it holds on the stems {', '.join(r['holds'])})",
+                "retire": " (the feature is no likelier with it than without: supersede it)",
+                "too-few": f" (under {A['min_links']} host links)"}.get(r["verdict"], "")
+                + (" -- odds against all host words: its stems never occur without it" if
+                   first.get("odds_basis") == "all words" and r["verdict"] not in ("no-claim", "too-few") else ""))
+        if "combined" in r:
+            v, note = r["combined"]
+            print(f"  -> combined: {v}" + (f" ({note})" if note else ""))
+    key = "combined" if res and "combined" in res[0] else None
+    n = collections.Counter(r[key][0] if key else r["verdict"] for r in res)
     if len(res) > 1:
-        print("\n" + ", ".join(f"{k} {v}" for k, v in n.most_common()))
+        print("\n" + ("combined: " if key else "") + ", ".join(f"{k} {v}" for k, v in n.most_common()))
 
 
 # ---------- the morph view for the drafting agents: a word's parts, a stem's forms, and the loop's check ----------
@@ -1374,7 +1609,33 @@ def main(a):
                   + ("  checked" if (dim, label) in ok else ""))
         return
     if a[1] == "audit":
-        print_audit(audit(a[0], [x for x in a[2:] if not x.startswith("--")], P, S))
+        route = a[a.index("--route") + 1] if "--route" in a else "nt"
+        routes = {"all": ("nt", "hebrew", "lxx", "vamvas"), "ot": ("hebrew",)}.get(route, tuple(route.split(",")))
+        if set(routes) - {"nt", "hebrew", "lxx", "vamvas"}:
+            raise SystemExit(f"--route: nt, ot (the Hebrew), lxx, vamvas, all, or a list; got {route}")
+        ids = [x for i, x in enumerate(a[2:], 2) if not x.startswith("--") and a[i - 1] != "--route"]
+        G, revived = revive(a[0], ids)
+        if revived:
+            S = load(a[0], P, G)
+            print(f"{a[0]}: measured as if live again (superseded in the store): {', '.join(revived)}")
+        if routes != ("nt",):
+            import ot_routes as OR
+            rep = {}
+            for r in routes:
+                if r != "nt":
+                    rep[r] = {}
+                    OR.route_tokens(a[0], S, r, P, rep[r])
+            for r, by in rep.items():
+                if by:
+                    print(f"{a[0]}: {OR.NAMES[r]} links per book: " + "; ".join(
+                        f"{b} {c.get('links', 0)} ({c.get('verb links', 0)} verbs" + (
+                        f", {sum(v for k, v in c.items() if k.startswith('parsed'))} of {c.get('with a word', 0)} "
+                        "parsed" if r != "hebrew" else "") + (f"; skipped: {c['why']}" if c.get("skipped") else "") + ")"
+                    for b, (_, c) in sorted(by.items())))
+            if not any(rep.values()):
+                print(f"{a[0]}: no OT books in the corpus linked to the Hebrew (_learn/links_hbo.tsv): the OT routes are "
+                      "empty")
+        print_audit(audit(a[0], ids, P, S, G=G, routes=routes))
         return
     if a[1] == "review":
         for l in chain_review(a[0], a[2], int(a[3]), P, S):
@@ -1398,6 +1659,16 @@ def main(a):
         for m in ms:
             if m.slot != "stem":
                 by[(m.slot, m.form)] += n
+    if S.hyphen:                                  # with hyphen parts: the corpus's hyphen words, whole, as well
+        hyw = collections.Counter(w for r in P.corpus() for w in HYPHEN_WORD.findall(r[4])
+                                  if "-" in w)
+        for t, n in hyw.items():
+            ms = S.split(t)
+            if S.rebuild(ms) != unicodedata.normalize("NFC", t.lower()):
+                bad.append(t)
+        hsplit = sum(n for t, n in hyw.items() if any(m.slot != "stem" for m in S.split(t)))
+        print(f"{a[0]}: {len(hyw)} hyphen word types, {sum(hyw.values())} tokens; {hsplit} with a part "
+              f"({hsplit / max(sum(hyw.values()), 1):.0%})")
     split = sum(n for t, n in tok.items() if len(S.split(t)) > 1)
     print(f"{a[0]}: {len(tok)} word types, {sum(tok.values())} tokens; tone written as {S.spec.written}"
           f" ({len(S.tones)} grammatical tone pattern(s)); {split} tokens ({split / sum(tok.values()):.0%}) split")

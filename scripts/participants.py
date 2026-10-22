@@ -9,7 +9,7 @@ No project: the result is a property of the source text. The language follows th
 Every mention (a noun, a pronoun, an adjective or demonstrative with a MACULA reference, and a verb's implicit subject
 via `subjref`) gets a participant id (pid) = the MACULA word key of the participant's first mention in the book. The
 chapters 1..max(ch) of the book are read, so the ids and the book-level first mentions are stable whatever chapter is
-asked for. Five passes, each recorded per join:
+asked for. Six passes, each recorded per join:
 
   1 names       proper nouns -> one participant per TIPNR entity (STEPBible TIPNR, CC BY 4.0: Strong's + verse
                 disambiguation, e.g. Nahor@Gen.11.22 vs Nahor@Gen.11.24); without a TIPNR hit, by Strong's in the book
@@ -21,6 +21,9 @@ asked for. Five passes, each recorded per join:
                 kept apart by MACULA's references (both already linked to different participants)
   4 speaker     the speaker layer's speakers (Hebrew) / the epistle's author (Greek) are matched by name; a 1st-person
                 singular mention inside the quotation with no MACULA reference joins the speaker
+  5 kinship     a singular kinship noun with a possessor ("my son", "his wife") joins the possessor's TIPNR relative of
+                that kind and gender when exactly one such relative is named in the chapter ("my son" in GEN 24 =
+                Isaac); pass 3 never joins two named participants, nor a kinship noun with an owner to one without
 
 Output: build/participants/<code>.participants.tsv (participants with a mention in the chapters asked) and, with
 --mentions, <code>.mentions.tsv (key, pid, name). Standard library only. TIPNR is read from download/stepbible/
@@ -102,6 +105,41 @@ def load_tipnr():
             refs = {re.sub(r'[a-z]$', '', r.strip()) for r in c[4].split(';') if r.strip()}
             idx[(m.group(1), int(m.group(2)))].append((unique, kind, m.group(3).lower(), esv, refs))
     return idx, f
+
+
+_RELATIONS = {}
+
+
+def load_tipnr_relations():
+    """uniqueName -> {'parents', 'siblings', 'partners', 'children': set of uniqueNames, 'gender': Male/Female/None},
+    from the TIPNR record lines ('Isaac@Gen.17.19-Jas=H3327<TAB>description<TAB>parents 'A + B'<TAB>siblings<TAB>
+    partners<TAB>children<TAB>...<TAB>Male')."""
+    if _RELATIONS:
+        return _RELATIONS
+    f = next(iter(sorted(glob.glob(os.path.join(TIPNR_DIR, 'TIPNR-*.txt')))), None)
+    if not f:
+        return _RELATIONS
+    with open(f, encoding='utf-8-sig') as fh:
+        for line in fh:
+            if line[:1] in ('$', '–', '#', ' ', '\t', '\n'):
+                continue
+            c = line.rstrip('\n').split('\t')
+            if len(c) < 6 or not re.match(r'^[^\t=]+@[^\t=]+=[HG]\d', c[0]):
+                continue
+            names = lambda x: {y.strip() for y in re.split(r'[,+]', x) if '@' in y}
+            _RELATIONS[c[0].split('=')[0].strip()] = {
+                'parents': names(c[2]), 'siblings': names(c[3]), 'partners': names(c[4]), 'children': names(c[5]),
+                'gender': next((x for x in c[6:] if x in ('Male', 'Female')), None)}
+    return _RELATIONS
+
+
+# possessed kinship nouns -> (TIPNR relation of the possessor, gender of the relative or None)
+KINSHIP = {nfc(k): v for k, v in {
+    'בֵּן': ('children', 'Male'), 'בַּת': ('children', 'Female'), 'אָב': ('parents', 'Male'), 'אֵם': ('parents', 'Female'),
+    'אִשָּׁה': ('partners', 'Female'), 'אָח': ('siblings', 'Male'), 'אָחוֹת': ('siblings', 'Female'),
+    'υἱός': ('children', 'Male'), 'θυγάτηρ': ('children', 'Female'), 'πατήρ': ('parents', 'Male'),
+    'μήτηρ': ('parents', 'Female'), 'γυνή': ('partners', 'Female'), 'ἀνήρ': ('partners', 'Male'),
+    'ἀδελφός': ('siblings', 'Male'), 'ἀδελφή': ('siblings', 'Female')}.items()}
 
 
 def tipnr_entity(idx, letter, strong, book, ch, v):
@@ -295,6 +333,10 @@ class Resolver:
                     last[L] = k
                     if not prev or self.uf.find(prev) == self.uf.find(k):
                         continue
+                    # never join two named participants (Bethuel, "the son of Milcah", and Isaac, "my son")
+                    named = {self.uf.find(n) for n in self.entity}
+                    if self.uf.find(prev) in named and self.uf.find(k) in named:
+                        continue
                     if L not in HONORIFIC_PL and (T[prev].get('number') or '') != (t.get('number') or ''):
                         continue
                     if not (self.definite(t) or linked[self.uf.find(k)] > 1):
@@ -303,6 +345,9 @@ class Resolver:
                     # a description in apposition to a name ("Milcah, wife of Nahor") belongs to the name only
                     if k in self.appos_desc:
                         continue
+                    # a kinship noun is relative to its owner: "the son of Milcah" and "a son" (born to Abraham) differ
+                    if L in KINSHIP and bool(pa) != bool(pb):
+                        continue
                     if pa and pb and self.uf.find(pa) != self.uf.find(pb):
                         if _round == 2:
                             self.joined_by['repeat-other-owner'] += 1
@@ -310,7 +355,59 @@ class Resolver:
                     self._join(prev, k, 'repeat')
         # pass 4: speakers
         self._speakers()
+        # pass 5: possessed kinship nouns ("my son" = Isaac), once the possessors are resolved
+        self._kinship()
         self._finish()
+
+    def _kinship(self):
+        """A singular kinship noun with a possessor ("my son", "his wife") joins the possessor's relative of that kind
+        (TIPNR: children, parents, partners, siblings; the relative's gender) when exactly one such relative is named
+        in the same chapter. Conservative: the possessor must be a TIPNR person, the noun's participant must not
+        already hold a name or a mention with another possessor."""
+        rel = load_tipnr_relations()
+        if not rel or not self.entity:
+            return
+        ent_of_root = {}
+        for node, e in self.entity.items():
+            ent_of_root.setdefault(self.uf.find(node), set()).add(e[0])
+        node_of = {e[0]: node for node, e in self.entity.items()}
+        in_ch = collections.defaultdict(set)              # chapter -> roots with a mention there
+        for k in self.mention_keys:
+            in_ch[self.toks[k]['ch']].add(self.uf.find(k))
+        for k in self.mention_keys:
+            t = self.toks[k]
+            kin = KINSHIP.get(t['lemma'])
+            if not kin or t['class'] != 'noun' or self.is_proper(t) or self.number(t) != 'singular':
+                continue
+            pk = self.possessor(t)
+            if not pk:
+                continue
+            owners = ent_of_root.get(self.uf.find(pk), set())
+            if len(owners) != 1:
+                continue
+            info = rel.get(next(iter(owners)))
+            if not info:
+                continue
+            kind, gender = kin
+            cands = set()
+            for u in info[kind]:
+                if u not in node_of or (rel.get(u, {}).get('gender') or gender) != gender:
+                    continue
+                r = self.uf.find(node_of[u])
+                if r in in_ch[t['ch']]:
+                    cands.add(r)
+            if len(cands) != 1:
+                continue
+            target, root = next(iter(cands)), self.uf.find(k)
+            if root == target or root in ent_of_root:
+                continue
+            # every possessed mention of the noun's participant must have the same possessor
+            mates = [m for m in self.mention_keys if self.uf.find(m) == root]
+            if any(self.possessor(self.toks[m]) and self.uf.find(self.possessor(self.toks[m])) != self.uf.find(pk)
+                   for m in mates if self.toks[m]['class'] == 'noun'):
+                continue
+            self._join(target, k, 'kinship')
+            ent_of_root[self.uf.find(k)] = ent_of_root.get(target, set())
 
     def chapters_all(self):
         return sorted({t['ch'] for t in self.toks.values() if t['book'] == self.book})
