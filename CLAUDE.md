@@ -137,6 +137,7 @@ python3 scripts/icl_draft.py <project> <code> <ch>       # in-context second dra
 python3 scripts/triage.py <project> <code> <ch> [--overview] # verses where the draft and the second drafts disagree most: review these first
 python3 scripts/rough_check.py <project> <chapter file> ... [--strict] # lost negations (original vs markers learned from the corpus) and English words left in a draft
 python3 scripts/nllb/data.py <project> [--source vamvas|bsb] [--test rut] # the second-draft model (fine-tuned NLLB, for triage; source: nllb_source, Vamvas Greek by default): verse pairs, then
+python3 scripts/script_code.py <project>             # the target's script (ISO 15924: recorded, else the corpus's), its NLLB code and init
 python3 scripts/nllb/train.py --data DIR             # train here (CUDA, Apple GPU) or: scripts/nllb/remote.py push|train|status|fetch <project> (NLLB_HOST in .env)
 python3 scripts/nllb/draft.py src|run|collect ...    # second drafts into _eval/local/second/nllb/ (triage), or a rough pass with --out
 python3 scripts/nllb/model_text.py <project> check | show <text> # the model's target in parts (analysis.model_text morphs), decoded back exactly

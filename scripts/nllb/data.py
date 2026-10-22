@@ -17,11 +17,13 @@ drafting decode as the data was built.
 Usage: python3 scripts/nllb/data.py <project> [--source vamvas|bsb|<edition>] [--test rut[,jon]] [--nt-only]
                                     [--trg-code xxx_Latn] [--init-lang tpi_Latn] [--model-text words|morphs] [--out DIR]
   --model-text overrides the store's analysis.model_text (for a comparison)
-  --trg-code  default: the project's language code (ISO 639-3, first part) + _Latn (dan_Latn is NLLB's own; a code NLLB
-              lacks is added at training)
+  --trg-code  default: the project's language code (ISO 639-3, first part) + _ + its script (scripts/script_code.py:
+              `script:` recorded, else the corpus's letters; dan_Latn is NLLB's own; a code NLLB lacks is added at
+              training)
   --init-lang the NLLB language a new code starts from (default: the project's donor.nllb_init, else eng_Latn; better a
               related language: tpi_Latn for a language where Tok Pisin is the language of wider communication,
-              deu_Latn for a German dialect)
+              deu_Latn for a German dialect). Not given, an init in another script than the target is replaced by one
+              in the target's script (the same language if NLLB has it there), with a warning
 """
 import json, os, random, sys
 
@@ -32,6 +34,7 @@ import langtools as LT  # noqa: E402
 from books import BY_CODE  # noqa: E402
 from project import project_dir  # noqa: E402
 import model_text as MT  # noqa: E402
+import script_code as SC  # noqa: E402
 from source import Source  # noqa: E402
 
 
@@ -63,7 +66,14 @@ def main():
                 v.write(r[0] + "\n")
     import lang as LG
     lang = LG.iso3(P) or str(P.p.get("language") or a[0].split("/")[0]).split("-")[0].lower()
-    meta = {"project": a[0], "source": src.name, "src_code": src.code, "trg_code": opt("--trg-code") or f"{lang}_Latn", "init_lang": opt("--init-lang") or (P.p.get("donor") or {}).get("nllb_init") or "eng_Latn",
+    script, how = SC.target_script(P)
+    init = opt("--init-lang") or (P.p.get("donor") or {}).get("nllb_init") or "eng_Latn"
+    if not opt("--init-lang"):
+        init, why = SC.init_for_script(init, script)
+        if why:
+            print("warning:", why, file=sys.stderr)
+    meta = {"project": a[0], "source": src.name, "src_code": src.code, "trg_code": opt("--trg-code") or SC.nllb_code(lang, script),
+            "script": script, "script_from": how, "init_lang": init,
             "test": sorted(test), "nt_only": "--nt-only" in a, "model_text": C.spec}
     json.dump(meta, open(os.path.join(out, "meta.json"), "w", encoding="utf-8"), indent=1)
     print({n: len(p) for n, p in (("train", tr), ("val", va), ("test", te))}, f"{src.name} ({src.code}) ->", meta["trg_code"], "target as",

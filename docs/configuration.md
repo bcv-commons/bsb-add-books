@@ -12,6 +12,7 @@ In `import/<licence>/<language>/<edition>/`; the text is in `text/`. The licence
 | `name`, `language` | readable name; language code |
 | `role` | `style` (corpus only), `continue` (drafts continue it), `revise`, `source` (a source for the second-draft model, not a corpus) |
 | `nllb_code` | a source edition's NLLB language code (`ell_Grek`) |
+| `script` | optional: the text's writing system as an ISO 15924 code (`Latn`, `Orya`, `Arab`); without it, `scripts/script_code.py` takes the script of most of the corpus's letters |
 | `text_dir` | folder with the imported files (default `text`) |
 | `nt_basis` | Greek text of the edition's NT: `critical`, `majority` or `tr` |
 | `books` | BSB codes of the books present (optional) |
@@ -50,6 +51,7 @@ with `role: revise` must be CC0; `scripts/project.py` refuses any other.
 | `notes_language` | language of the translator notes (default: `school_language`) |
 | `style_check` | run `scripts/style.py` on each chapter and work through its flags (default: on for `partial` and `unknown`) |
 | `spell_check` | `check_draft.py --spell`: word forms the corpus writes only with other marks, and forms it lacks (default: on for `partial` and `unknown`) |
+| `script` | optional: the target's writing system (ISO 15924), over its style editions' `script`; it makes the second-draft model's target code (`<iso>_<script>`) and keeps its init in the same script (`scripts/script_code.py`) |
 | `tokenise` | target tokenising (`scripts/langtools.py`): `split_hyphens`, `word_chars` (`U+A789` or literal), `ignore_marks` (default: the store's `orthography.ignore_marks`) |
 | `second_draft` | `nllb` or `none`, set by the wizard: whether the project plans a fine-tuned NLLB as a second opinion for review triage (`scripts/triage.py`, from `_eval/local/second/nllb/`); never a draft |
 | `nllb_source` | the second-draft model's source: a source edition (default `vamvas`, modern Greek) or `bsb` (the assisting translation, English); `scripts/nllb/source.py` |
