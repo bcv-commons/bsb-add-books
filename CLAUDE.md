@@ -27,6 +27,7 @@ working; this file adds the rules that hold for any task here.
    - `import-edition`: add an existing translation to `import/`;
    - `draft-chapter`: draft chapters, one book agent per book, chapter after chapter, each checked in the loop.
    - `learn-language`: prepare a language the model doesn't know (aligner, concordance, store, wiki, packs, tests).
+   - `audit-store`: check the store's affixes on the words they split and act on each verdict (protect, restrict, retire).
 
 ## Decisions (binding)
 
@@ -106,7 +107,7 @@ working; this file adds the rules that hold for any task here.
 ## Commands
 
 ```
-python3 scripts/setup.py [--heb bhsa,bcv-query,macula] [--drafting LAYOUT] [--only bsb,msb,bgb,rp,vrs,src,spk,editions,grambank] [--force]
+python3 scripts/setup.py [--heb bhsa,bcv-query,macula] [--drafting LAYOUT] [--only bsb,msb,bgb,rp,vrs,src,spk,names,editions,grambank,glottolog] [--force]
 python3 scripts/onboard.py [--answers F] [--yes] [--dry-run] # wizard for a new language: editions, project, memory
 python3 scripts/fetch_edition.py --find <iso>       # editions of a language (bcv-commons/bibles, eBible)
 python3 scripts/fetch_edition.py <edition> | --all  # fetch an edition by its recipe into import/
@@ -141,7 +142,7 @@ python3 scripts/nllb/draft.py src|run|collect ...    # second drafts into _eval/
 python3 scripts/nllb/model_text.py <project> check | show <text> # the model's target in parts (analysis.model_text morphs), decoded back exactly
 python3 scripts/style.py <project> <draft> [--brief]  # style against the human translations: flags, watch items, models
 python3 scripts/language_profile.py check <dir>      # validate a language profile (docs/language-store.md)
-python3 scripts/grammar.py show <project> [morph|cell|claim] | status|plan <project> | run <project> [--write] | from-tsv <tsv dir> <profile dir> # the store's grammar: morphs, cells, claims; what to settle next; the Grambank features its morphs answer
+python3 scripts/grammar.py show <project> [morph|cell|claim|word] | status|plan <project> | run <project> [--write] | from-tsv <tsv dir> <profile dir> # the store's grammar: morphs, cells, claims, protected words; what to settle next; the Grambank features its morphs answer
 python3 scripts/wiki.py sync|lint <project>          # a project's language wiki: pages + generated store blocks
 python3 scripts/wiki.py view <project>               # one offline HTML file to read the wiki and search the store
 python3 scripts/team_input.py <project> init|list|add|prompt # the team's plain-language input (wiki/team-input.md) -> binding store entries
@@ -160,9 +161,12 @@ python3 scripts/clause_lines.py check <project> [<code> <ch>] | show <project> <
 python3 scripts/bridge_align.py <project> <code> <ch> | --all # word alignment (.align) by script, no model
 python3 scripts/full_align.py listing|prompt <project> <code> <ch> | check <project> [<code> [<ch>]] | export <project> # .align (bcv-commons format): the agent's sheet and prompt, checks, the HF layer
 python3 scripts/full_align.py tag|split <project> <code> <ch> # the tagged interim format (word^n) <-> prose + .align
+python3 scripts/participants.py <code> <ch|a-b> ... [--check] [--mentions] # who is who in a chapter (OT orig/heb.sqlite + speakers, NT orig/grc.sqlite; names from STEPBible TIPNR): build/participants/
 python3 scripts/src.py build [code ...] | layouts [--layout L] | map | speakers | speaker-layer DIR | show <code> <c>:<v> | bridge <lexeme> | export-open DIR # orig/heb.sqlite, orig/grc.sqlite (MACULA + numbering + BSB tables; local)
 python3 scripts/lang.py build|derive|report <project> | hbo <project> <lexeme> | grc <project> <strong> | layers <project> [--write] # the project's language DB: NT occurrences of any Hebrew word via the LXX; derived grammar statistics; the bcv-commons alignment layers built on our text
-python3 scripts/morphs.py <project> check | show <word> ... | tone [--write] | try [id ...] [--write] | rates | review <code> <ch> # the morph view (prefix, stem, grammatical tone, suffix; affix chains by position) from the store; every word rebuilt; how the corpus writes tone; affix entries measured against the Greek; what the loop checks, and the check on an OT draft
+python3 scripts/donor.py tree <iso> | shortlist|run <project> [--write] # a language's relatives: by descent (Glottolog) and the nearest one the model writes (write probes) -> donor:
+python3 scripts/seeds.py prompt|status|check <project> # a related language's grammar as hypotheses (profile/seeds.json): the seed agent's prompt; what is still untested
+python3 scripts/morphs.py <project> check | show <word> ... | tone [--write] | try [id ...] [--seeds] [--write] | audit [id ...] | rates | review <code> <ch> # the morph view (prefix, stem, grammatical tone, suffix; affix chains by position) from the store; every word rebuilt; how the corpus writes tone; affix entries measured against the Greek; each affix on the words it splits (the words against it: protect, restrict, retire); what the loop checks, and the check on an OT draft
 python3 scripts/cell_check.py <project> unmarked | try <paradigm> <bundle> <form> ... [--write] # agents' unmarked notes; candidate forms measured on the human text
 python3 scripts/grammar.py retest <project> [--run]  # tests whose store settings changed since they ran (rerun them)
 python3 scripts/gloss.py check|propose|show|words <project> [--write | <id> | "<BOOK C:V>"] # the store's Greek/Hebrew glosses: checked, proposed from the alignment, shown with generated English; a verse's words and lemmas

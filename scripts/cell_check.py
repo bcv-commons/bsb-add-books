@@ -102,6 +102,15 @@ def patterns(ce):
     return out
 
 
+def has_prefix(labels, pre):
+    """the morph labels carry the prefix: as it is (ka-), or reduplicated (kaka-, a store morph of its own that repeats
+    it: the same prefix, not another one)"""
+    if pre + "-" in labels:
+        return True
+    return any(l.endswith("-") and len(l) - 1 > len(pre) and (len(l) - 1) % len(pre) == 0 and l[:-1] == pre * ((len(l) - 1) // len(pre))
+               for l in labels)
+
+
 def carries(tokens, pats, exact=None, seg=None, tones=None):
     """the number of tokens that carry one of the patterns. A free word is matched as written, on `exact` (the same
     tokens with every mark kept: Tokeniser.tokens(s, exact=True)); without it, with the marks folded on both sides.
@@ -111,22 +120,27 @@ def carries(tokens, pats, exact=None, seg=None, tones=None):
     n = 0
     for i, t in enumerate(tokens):
         lab = None
+        # a word written with a hyphen after its prefix (ká-bonà: tokens ka, -bona) is the same form as kábonà:
+        # the prefix token is read together with the stem token after it
+        joined = i + 1 < len(tokens) and tokens[i + 1].startswith("-") and len(tokens[i + 1]) > 1 and not t.startswith("-")
         for pre, suf, w, tn in pats:
             if tn or (seg is not None and (pre or suf)):
                 if lab is None:
                     S = seg or tones
                     lab = S.labels(exact[i]) if S is not None and exact is not None else set()
+                    if joined and S is not None and exact is not None:
+                        lab = lab | S.labels(exact[i] + exact[i + 1][1:])
             if tn:
                 ok = tn in lab
             elif w:
                 ok = exact[i] == w if exact is not None else fold(t) == fold(w)
             elif seg is not None and (not pre or pre in seg.pre) and (not suf or suf in seg.suf):
-                ok = (t == "-" + suf and not pre) or ((not pre or pre + "-" in lab) and (not suf or "-" + suf in lab
+                ok = (t == "-" + suf and not pre) or ((not pre or has_prefix(lab, pre)) and (not suf or "-" + suf in lab
                       or (i + 1 < len(tokens) and tokens[i + 1] == "-" + suf)))
             elif pre and suf:
                 ok = t.startswith(pre) and (t.endswith(suf) or (i + 1 < len(tokens) and tokens[i + 1] == "-" + suf))
             elif pre:
-                ok = t.startswith(pre) and len(t) > len(pre) + 1
+                ok = t.startswith(pre) and (len(t) > len(pre) + 1 or (t == pre and joined))
             else:
                 ok = t == "-" + suf or (t.endswith(suf) and len(t) > len(suf) + 1)
             if ok:

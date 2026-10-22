@@ -42,7 +42,14 @@ only on request, with --only editions (scripts/fetch_edition.py --all).
 Grambank v1.0.3 (CC BY 4.0, pinned tag and SHA-256): the feature questions and their value codes, for the language
 store's typology (scripts/grammar.py plan|run), into download/grambank/v1.0.3/; only on request, with --only grambank.
 
-Usage: python3 scripts/setup.py [--heb bhsa,bcv-query,macula] [--drafting LAYOUT] [--force] [--only bsb,msb,bgb,rp,vrs,src,spk,editions,grambank]
+Glottolog v5.3 (glottolog-cldf, CC BY 4.0, pinned tag and SHA-256): the family tree, for the relatives of a language the
+model doesn't know (scripts/donor.py), into download/glottolog/v5.3/; only on request, with --only glottolog.
+
+STEPBible TIPNR (proper names with their referents, CC BY 4.0, STEPBible.org / Tyndale House; pinned commit and SHA-256):
+one participant per named person or place for scripts/participants.py, into download/stepbible/; with --only names (also
+in the default set: one 8 MB file).
+
+Usage: python3 scripts/setup.py [--heb bhsa,bcv-query,macula] [--drafting LAYOUT] [--force] [--only bsb,msb,bgb,rp,vrs,src,spk,names,editions,grambank,glottolog]
   --force   download again even if the file is already in download/
   --only    build only the named sources
 Details and licences: docs/sources.md.
@@ -65,6 +72,11 @@ SPK_URL = f"https://huggingface.co/datasets/bcv-commons/hebrew-speaker-layer/res
 RP_COMMIT = "27a45ff1b7be6c17ccbfeac414f3f55732ae8e28"     # byztxt/byzantine-majority-text, 2024-12-31
 GB_TAG = "v1.0.3"                                         # grambank/grambank (Skirgård et al. 2023)
 GB_URL = f"https://raw.githubusercontent.com/grambank/grambank/{GB_TAG}/cldf/{{f}}.csv"
+GL_TAG = "v5.3"                                           # glottolog/glottolog-cldf (Hammarström et al.), CC BY 4.0
+GL_URL = f"https://raw.githubusercontent.com/glottolog/glottolog-cldf/{GL_TAG}/cldf/{{f}}.csv"
+TIPNR_COMMIT = "1f3423d42400f59f1f30fe08f74e38fcd3bbf7bc"  # STEPBible/STEPBible-Data, 2026-10-05
+TIPNR_URL = (f"https://raw.githubusercontent.com/STEPBible/STEPBible-Data/{TIPNR_COMMIT}/Proper%20Nouns/"
+             "TIPNR%20-%20Translators%20Individualised%20Proper%20Names%20with%20all%20References%20-%20STEPBible.org%20CC%20BY.txt")
 SRC_V = "v1"  # the prepared source structures, published by bcv-query (built by scripts/src.py; verified row by row)
 SRC_URL = "https://files.qombi.com/files/source-structure-{v}-{f}"
 SOURCES = {
@@ -75,6 +87,8 @@ SOURCES = {
     "spk": (SPK_URL, f"hebrew-speaker-layer/hebrew-speaker-layer-{SPK_TAG}.tar.gz"),
     "rp": (f"https://github.com/byztxt/byzantine-majority-text/archive/{RP_COMMIT}.zip", f"rp-{RP_COMMIT[:12]}.zip"),
     **{f"gb-{f}": (GB_URL.format(f=f), f"grambank/{GB_TAG}/{f}.csv") for f in ("parameters", "codes")},
+    **{f"gl-{f}": (GL_URL.format(f=f), f"glottolog/{GL_TAG}/{f}.csv") for f in ("languages", "values")},
+    "names": (TIPNR_URL, f"stepbible/TIPNR-{TIPNR_COMMIT[:12]}.txt"),
     **{f"src-{f}": (SRC_URL.format(v=SRC_V, f=f), f"source-structure-{SRC_V}/source-structure-{SRC_V}-{f}")
        for f in ("heb-open.sqlite.gz", "grc-open.sqlite.gz", "heb-bcv-query.sqlite.gz")},
 }
@@ -84,11 +98,14 @@ SHA256 = {
     "spk": "68ec601e456d535ca56bbada485153aa645da67947055c73b8bf372978843b16",
     "gb-parameters": "ff5a675e6e2417b6e1746230b6649429be688f4e16df0da99bbabe4eff52dc80",
     "gb-codes": "cdcf17f53d56c6b58d52a76cb82c77fe6fd919abb3b9ac836c80f97c537f3263",
+    "gl-languages": "1a50a393bc81568b656f9522be18aa4f80f38e94309ba6c863d583234adfbb89",
+    "gl-values": "a8601cb04ccc6a310538217f772d2461853aa0ea49e3bfe24c7396570fc4ea25",
+    "names": "aaec5b0af6e539b74536bd3b8b93e3acbe344290865c5e0728252787d0a8358e",
     "src-heb-open.sqlite.gz": "7a3613f19c450746afb304c02f688963c556e3e74fd469caaf27d44e7d70e543",
     "src-grc-open.sqlite.gz": "d707cd1f7ef3e25a0cd6d3008f5ef74d13f7e29bb96e7177b2fa5f281a743611",
     "src-heb-bcv-query.sqlite.gz": "00e3ab016ca5537d66b6a0a2a245428c71c425a3abb6e2d191474b3776c14efc",
 }
-PINNED = {"hcl", "spk", "gb-parameters", "gb-codes", "src-heb-open.sqlite.gz", "src-grc-open.sqlite.gz", "src-heb-bcv-query.sqlite.gz"}  # never another file
+PINNED = {"hcl", "spk", "gb-parameters", "gb-codes", "gl-languages", "gl-values", "names", "src-heb-open.sqlite.gz", "src-grc-open.sqlite.gz", "src-heb-bcv-query.sqlite.gz"}  # never another file
 
 
 def fetch(key, force):
@@ -188,7 +205,7 @@ def main():
     force = "--force" in argv
     hebs = argv[argv.index("--heb") + 1].split(",") if "--heb" in argv else []
     drafting = argv[argv.index("--drafting") + 1] if "--drafting" in argv else None
-    only = set(argv[argv.index("--only") + 1].split(",")) if "--only" in argv else {"bsb", "msb", "bgb", "rp", "vrs", "src", "spk"}
+    only = set(argv[argv.index("--only") + 1].split(",")) if "--only" in argv else {"bsb", "msb", "bgb", "rp", "vrs", "src", "spk", "names"}
     for h in hebs + ([drafting] if drafting else []):
         if h not in LAYOUTS:
             raise SystemExit(f"--heb / --drafting: expected one of {', '.join(LAYOUTS)}, got {h!r}")
@@ -215,6 +232,13 @@ def main():
         print(f"download/grambank/{GB_TAG}/ (Grambank: the feature questions and codes)")
         for f in ("parameters", "codes"):
             fetch(f"gb-{f}", force)
+    if "names" in only:
+        print("download/stepbible/ (STEPBible TIPNR: proper names, for scripts/participants.py)")
+        fetch("names", force)
+    if "glottolog" in only:
+        print(f"download/glottolog/{GL_TAG}/ (Glottolog: the family tree, for a language's relatives; scripts/donor.py)")
+        for f in ("languages", "values"):
+            fetch(f"gl-{f}", force)
     if "editions" in only:
         print("import/: editions with a fetch recipe")
         run("fetch_edition.py", "--all", *(["--force"] if force else []))

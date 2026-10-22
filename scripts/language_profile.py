@@ -13,7 +13,7 @@ edition. `check` validates them against the contract without any library:
   5a. grammar entries (morph, cell, claim; README, *Kinds*): their fields and enums; a morph's form occurs in at least
      one cited verse on its side of a word (a prefix at the start, a suffix at the end, an infix inside; marks
      ignored as in 3; tone morphs are not matched); a cell's morphs are morph entries; a cell cites evidence unless
-     it is a gap;
+     it is a gap; a protected word (kind word) is one whole word and occurs whole in a cited verse;
   5b. team decisions (`method: team-decision`, `by: team:<who>`) name their source (`team_source`, an item of the wiki's
      team-input page) instead of needing verse evidence, and are binding: an entry by anyone else that supersedes a team
      decision, or replaces it under the same id, is an error (only the team changes its own facts);
@@ -40,8 +40,8 @@ from books import BY_CODE  # noqa: E402
 from project import project_dir  # noqa: E402
 from langtools import WORD_MARKS  # noqa: E402
 
-KINDS = {"feature", "letter", "gap", "term", "formula", "name", "morph", "cell", "claim"}
-NEEDS_EVIDENCE = {"feature", "term", "formula", "name", "morph"}
+KINDS = {"feature", "letter", "gap", "term", "formula", "name", "morph", "cell", "claim", "word"}
+NEEDS_EVIDENCE = {"feature", "term", "formula", "name", "morph", "word"}
 SLOTS = {"prefix", "suffix", "infix", "clitic", "free", "tone"}
 VERDICTS = {"confirmed", "corpus-only", "contradicted", "new", "open"}
 TESTS = {"corpus", "greek", "hebrew", "nllb", "team"}
@@ -175,6 +175,11 @@ def main():
                         problems.append(f"{where}: a morph needs {f}")
                 if e.get("slot") and e["slot"] not in SLOTS:
                     problems.append(f"{where}: slot {e['slot']!r}")
+            if k == "word":                       # a protected word: one whole word, no affix sign
+                if not e.get("form"):
+                    problems.append(f"{where}: a protected word needs form")
+                elif re.search(r"[\s=]|^-|-$", e["form"]):
+                    problems.append(f"{where}: form {e['form']!r} is one whole word (no space, no hyphen at an edge)")
             if k == "cell":
                 for f in ("paradigm", "bundle"):
                     if not e.get(f):
@@ -233,6 +238,8 @@ def main():
                         continue      # a gap may cite a verse the edition doesn't have yet
                     problems.append(f"{where}: {r['ref']} is not in the edition")
                     continue
+                if text and k == "word" and e.get("form"):
+                    found_form = found_form or normal(e["form"], marks) in re.findall(rf"[\w{WORD_MARKS}\ua789'-]+", normal(text[key], marks))
                 if text and k == "morph" and e.get("slot") != "tone" and e.get("form"):
                     found_form = found_form or morph_in(e["form"], e.get("slot"), text[key], marks, bool(e.get("position")))
                 if text and e.get("kind") in ("term", "formula", "name") and e.get("attested") != "by-rule":
@@ -242,6 +249,8 @@ def main():
                         found_form = True
             if text and e.get("kind") in ("term", "formula", "name") and e.get("attested") != "by-rule" and e.get("evidence") and not found_form and not team:
                 problems.append(f"{where}: value {e.get('value')!r} not found in any cited verse")
+            if text and k == "word" and e.get("evidence") and not found_form:
+                problems.append(f"{where}: word {e.get('form')!r} not found as a whole word in any cited verse")
             if text and k == "morph" and e.get("slot") != "tone" and e.get("evidence") and not found_form:
                 problems.append(f"{where}: morph {e.get('form')!r} not found ({e.get('slot')}) in any cited verse")
             if text and marks and e.get("kind") in ("term", "formula", "name") and e.get("status") != "superseded" \
@@ -262,6 +271,8 @@ def main():
         for m in e.get("morphs", []) if e.get("kind") == "cell" else []:
             if entries.get(m, {}).get("kind") != "morph":
                 problems.append(f"{eid}: morph {m} is not a morph entry")
+    import seeds as SD          # the donor's hypotheses (profile/seeds.json): their own format, never store facts
+    problems += SD.check(folder, {k: e for k, e in entries.items() if e.get("status") != "superseded"})
     for where, e in others:      # only the team changes a team decision
         if e.get("status") != "superseded" and (e.get("supersedes") in team_ids or e.get("id") in team_ids):
             problems.append(f"{where}: replaces a team decision ({e.get('supersedes') or e.get('id')}); "

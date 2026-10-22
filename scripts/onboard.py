@@ -21,7 +21,9 @@ The steps:
  5. how the AI work runs: the API (ANTHROPIC_API_KEY in the environment or .env, billed per token) or Claude Code
     (claude -p, no tools);
  6. the probes (scripts/probe_language.py run): write, read, tell apart; the scores, the model's slips, one verse
-    beside the edition, and a suggested familiarity the user accepts or overrides (close_to where it applies);
+    beside the edition, and a suggested familiarity the user accepts or overrides (close_to where it applies); for an
+    unknown language the donor (scripts/donor.py): its relatives by descent, and the nearest one the model writes, by a
+    write probe each (the seeds' source and the second-draft model's start; close_to);
  7. the tools that familiarity switches on, with the tokens per chapter logged so far in that mode (scripts/usage.py);
  8. the sources (scripts/setup.py; for OT books the Hebrew layout and scripts/src.py's prepared structure), the
     alignment lexicons (scripts/align.py; for an unknown language also the NT occurrence index, scripts/lang.py), for a
@@ -42,7 +44,7 @@ Answers (all optional; the wizard prints the file it used, so a run can be repea
     project: jam_BSB               first_book: gen    first_chapter: 1    familiarity: null (set by the probe)
     quotes: "“”"                   chapter_word: Chapter
     ai_route: api | claude-code    probe_model: claude-opus-5-5 (API route)   close_to: null   go_ahead: true
-    run_setup: true                run_align: true              init_memory: true
+    run_setup: true                run_align: true              init_memory: true    donor: true
 """
 import collections, datetime, glob, json, os, re, subprocess, sys
 
@@ -684,7 +686,10 @@ def main():
     else:
         fam, slips = probe_step(pname, name, route, bool(eds))
         fields["familiarity"] = fam
-        if fam == "partial" or (fam == "unknown" and READS_WELL[0]):
+        known = donor_step(pname, name, route) if fam == "unknown" else None
+        if known:                    # the related language the model knows, measured (scripts/donor.py)
+            fields["close_to"] = ANSWERS.get("close_to") or known
+        elif fam == "partial" or (fam == "unknown" and READS_WELL[0]):
             fields["close_to"] = ANSWERS.get("close_to") or guess_close_to(name, iso, route, slips, fam)
         if not DRY:
             set_project_lines(pf, {"familiarity": fam, "close_to": fields.get("close_to")})
@@ -825,6 +830,31 @@ def main():
         + " and ".join(("the chapter" if "read" in x else "the next steps") for x in pages))
     say(f"  the pages: {os.path.relpath(pages[-1], ROOT)}; the project: {project_rel(pname)}/")
     say("  to see them again: python3 scripts/build_site.py --preview; to put them online (Netlify): docs/website.md")
+
+def donor_step(pname, name, route):
+    """For a language the model doesn't know: its relatives by descent (Glottolog) and the nearest one the model writes
+    (a write probe on up to three candidates, about 5k tokens each), into project.yaml's donor: block; the seeds' source
+    and the second-draft model's start. -> the known relative's name, or None"""
+    import donor
+    if ANSWERS.get("donor") is False:
+        say("  donor: skipped (answers: donor: false)")
+        return None
+    if not os.path.exists(os.path.join(donor.GL, "values.csv")):
+        say("  - Glottolog, for the language's relatives (setup.py --only glottolog, 24 MB)")
+        if not DRY:
+            run("scripts/setup.py", "--only", "glottolog")
+    say(f"  {name}'s relatives: by descent (Glottolog), and the nearest one the model writes (a write probe each)")
+    if DRY or not route:
+        donor.main(["shortlist", pname])
+        say("  (not probed: " + ("dry run" if DRY else "no model route") + f"; later: python3 scripts/donor.py run {pname} --write)")
+        return None
+    try:
+        block = donor.main(["run", pname, "--route", route, "--write"])
+    except SystemExit as e:
+        say(f"  donor: not set ({e}); later: python3 scripts/donor.py run {pname} --write")
+        return None
+    return block.get("name") if block and block.get("known") != "none" else None
+
 
 def guess_close_to(name, iso, route, slips, fam):
     """The standard language a partly known language is drafted against (the agents must not fall back on it), or for an

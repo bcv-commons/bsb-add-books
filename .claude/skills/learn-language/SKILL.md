@@ -45,7 +45,14 @@ worked example.
      agent revises the rejected ones), and `morphs.py <project> check` must rebuild the corpus word for word. The
      packs, `concord.py`, the spelling check and `chapter_check.py` then work with the words' parts. Once the store has
      confirmed affixes, rerun `align.py <project>` (then `lang.py build`): it aligns the affixes themselves (by parts,
-     gaps filled by word links); `morphs.py try` and `rates` before and after show what it changed.
+     gaps filled by word links); `morphs.py try` and `rates` before and after show what it changed. Words an affix
+     only seems to begin or end (a noun beginning like a verb prefix): `morphs.py <project> audit` and the
+     `audit-store` skill (protected words, kind `word`).
+   - **A related language the model knows** (the project's `donor`: `python3 scripts/donor.py run <project> --write`,
+     Glottolog and write probes; the wizard does it): a fresh agent with `python3 scripts/seeds.py prompt <project>`
+     writes what the model knows of it, from memory, as seeds (`profile/seeds.json`, `docs/language-store.md`, *Seeds*):
+     hypotheses that nothing enforces, which the memory agent tests (`morphs.py <project> try --seeds --write`) and
+     answers with entries naming them (`seed: <id>`). `python3 scripts/seeds.py status <project>` shows what is left.
    - **The team:** `python3 scripts/team_input.py <project> init`, then `prompt` for a curation agent: their items
      become binding store entries. `python3 scripts/wiki.py view <project>` gives them one offline HTML file to read
      (a copy: edits go into the `.md` pages).

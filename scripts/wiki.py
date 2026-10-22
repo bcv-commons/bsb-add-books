@@ -89,6 +89,8 @@ def render(e):
         head += f" {e.get('paradigm')} {e.get('bundle')}" + (" (gap)" if e.get("gap") else "")
     elif e.get("kind") == "claim":
         tags.append(e.get("verdict", ""))
+    elif e.get("kind") == "word":
+        head += f" `{e.get('form')}` (a protected word: never split)"
     head += f" [{', '.join(t for t in tags if t)}]"
     if e.get("pattern"):
         head += f" — `{e['pattern']}`"

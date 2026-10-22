@@ -138,7 +138,10 @@ def main():
             "its `form` (`aá-` past, `aa-`). Then `python3 scripts/morphs.py " + pname + " try --write` measures each one on the "
             "whole segmentation (n, stems, lift, odds ratio, on all verses and on the even ones) and keeps the confirmed "
             "as observed; revise or supersede the contradicted (a wrong feature, a wrong position, a form that is really "
-            "two) and try them again. `python3 scripts/morphs.py " + pname + " show <word>` shows a word's parts.\n"
+            "two) and try them again. `python3 scripts/morphs.py " + pname + " show <word>` shows a word's parts. "
+            "`python3 scripts/morphs.py " + pname + " audit` lists the words an affix only seems to carry (a noun that "
+            "begins like a verb prefix): after a look at their verses, write them as `word` entries (protected words, "
+            "never split; `.claude/skills/audit-store/`).\n"
             f"- **The occurrence index:** `python3 scripts/lang.py hbo {pname} <Hebrew Strong's, e.g. H2617>` shows how "
             "the NT renders a Hebrew word through the Septuagint (its Greek equivalents, the target words with counts, "
             f"example verses); `python3 scripts/lang.py grc {pname} <Greek Strong's>` the same for one Greek lemma. Use "
@@ -147,6 +150,20 @@ def main():
             "about the language before the corpus was studied, each item checked against the corpus (confirmed, weak, "
             "not found, ABSENT). Correct the file where the corpus contradicts it (change the item, add `source: corpus` "
             "and the evidence), and don't carry an unconfirmed prior into the store.")
+    import seeds
+    sd = seeds.of_project(pname)
+    if sd and derived_lines:
+        dn = p.get("donor") or {}
+        name = dn.get("name") or sd.get("donor")
+        derived_lines += (
+            f"\n- **Seeds** `{project_rel(pname)}/profile/seeds.json` ({len(sd.get('entries', []))}): what the model knows "
+            f"of {name}, a related language, as hypotheses: the donor's forms and categories, each with a `test` in plain "
+            "words, never a fact of this language. Test each against the corpus as you do the report's lines: "
+            f"`python3 scripts/morphs.py {pname} try --seeds --write` measures the affix seeds against the Greek (a claim "
+            "per seed). Where the corpus has the category, write the language's own entry with `seed: <seed id>` (the "
+            "form as the corpus has it, whether it is the donor's or not); where it contradicts a seed, a claim with "
+            "`verdict: contradicted` and `seed: <seed id>`. Never copy a seed's form into the store untested, and never "
+            f"edit `seeds.json`. `python3 scripts/seeds.py status {pname}` lists what is still untested.")
     example = next((e for e in EXAMPLES if e != pname and os.path.isdir(os.path.join(ROOT, "export", e, "wiki"))), None)
     out = text.format(
         store_dir=store_dir, wiki_dir=wiki_dir, derived_lines=derived_lines,

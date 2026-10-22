@@ -32,7 +32,13 @@ through the `new-project` skill. The steps:
 5. **AI work:** the probes run through the API when `ANTHROPIC_API_KEY` is set (billed per token), else through
    Claude Code (`claude -p`, no tools). Drafting always runs in Claude Code.
 6. **The probes** (about a minute): the scores, the model's slips, and a suggested familiarity. A speaker accepts or
-   overrides it; for `partial` the wizard asks `close_to`.
+   overrides it; for `partial` the wizard asks `close_to`. For `unknown`, **the donor** (`scripts/donor.py`, about 15k
+   tokens): the language's relatives by descent from Glottolog (`structure`: whole levels of the tree until five), and
+   the nearest relative the model writes, measured by a write probe on up to three candidates (a Bible to probe
+   against, and an NLLB code or a Wikipedia of 1,000+ articles; the largest of each level, nearest first). The
+   nearest one written well (58 by verse) wins over a better-scoring one further away, which the seed prompt names
+   as a cross-check; `known: none` where the model writes none of them. The `donor:` block sets the seeds' source
+   (`scripts/seeds.py prompt`), the second-draft model's start (`nllb_init`) and `close_to`.
 7. **The tools** the familiarity switches on, with the tokens per chapter logged so far in that mode
    (`scripts/usage.py`). For an `unknown` language it also offers the second-draft model (below).
 8. **Set-up:** sources and the Hebrew layout, alignment lexicons, a matching alignment layer
@@ -121,7 +127,9 @@ an Apple GPU with about 32 GB, or a rented GPU.
 
 1. **Import the editions** (`import-edition` skill): the licence folder, `credit`, and `get_text` (how a clone gets
    the text). `python3 scripts/fetch_edition.py --find <iso>` lists what can be fetched.
-2. **Probe the familiarity** (`probe_language.py`): set `familiarity`, and `close_to` for a variety.
+2. **Probe the familiarity** (`probe_language.py`): set `familiarity`, and `close_to` for a variety; for an unknown
+   language the donor (`python3 scripts/donor.py run <project> --write`) and, where it knows one, the seeds
+   (`python3 scripts/seeds.py prompt <project>` for a fresh agent).
 3. **Create the project** (`new-project` skill): `project.yaml` from `export/_template/`, the style guide, the
    divine names.
 4. **Build the memory:**

@@ -88,18 +88,18 @@ def romanise(s):
 
 def verses_of(path):
     """{(chapter, verse): text} of a repo chapter file (<code>NNN.txt: vN markers; notes, headings and poetry
-    marks removed; a bridge 'v21-22' is keyed by its first verse), or of a book file (<code>.txt: lines
-    'chapter:verse<TAB>text', headings '== … ==' and 'Chapter N' lines skipped)."""
-    if re.fullmatch(r"[0-9a-z]{3}\.txt", os.path.basename(path)):
+    marks removed; a bridge 'v21-22' is keyed by its first verse), or of a file in lines 'chapter:verse text' (a tab or a space; a
+    book file <code>.txt, or a chapter of orig/grc; headings '== … ==' and 'Chapter N' lines skipped)."""
+    lines = open(path, encoding="utf-8").read().splitlines()
+    if re.fullmatch(r"[0-9a-z]{3}\.txt", os.path.basename(path)) or any(re.match(r"\d+:\d+\s", l) for l in lines[:5]):
         out = {}
-        for l in open(path, encoding="utf-8").read().splitlines():
-            m = re.match(r"(\d+):(\d+)\t(.*)$", l)
+        for l in lines:
+            m = re.match(r"(\d+):(\d+)\s(.*)$", l)
             if m:
                 out[(int(m[1]), int(m[2]))] = re.sub(r"\s+", " ", re.sub(r"\{[A-Z]:[^{}]*\}", " ", m[3])).strip()
         return out
     ch = int(os.path.basename(path)[3:6])
-    body = [re.sub(r"^//\d+ ", "", l) for l in open(path, encoding="utf-8").read().splitlines()
-            if not l.startswith(("!!", "===")) and not re.fullmatch(r"==.*==", l)]
+    body = [re.sub(r"^//\d+ ", "", l) for l in lines if not l.startswith(("!!", "===")) and not re.fullmatch(r"==.*==", l)]
     text = re.sub(r"\{[A-Z]:[^{}]*\}", " ", " ".join(body))
     parts = re.split(r"(?<![\w>.])v(\d+)(?:-\d+)?(?=\s)", text)
     return {(ch, int(parts[i])): re.sub(r"\s+", " ", parts[i + 1]).strip() for i in range(1, len(parts) - 1, 2)}

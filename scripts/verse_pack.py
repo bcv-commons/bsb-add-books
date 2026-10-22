@@ -17,6 +17,8 @@ For export/<project>/_learn/packs/<code>NNN.md, per verse:
   - with --grammar or the project's `pack_grammar` (pack v4; scripts/modes.py pack_grammar: `binding`, the block as a
     rule, by default for an unknown language once the store has clearly marked cells): the verbs whose cell is marked (negated, a subject other than 3rd
     singular) with the store's pattern for the cell, and the paradigm once in the header (scripts/verse_analysis.py).
+  - with seeds (profile/seeds.json, scripts/seeds.py: a related language's grammar from the model's memory): the untested
+    seeds whose category occurs in the chapter, once in the header, marked unconfirmed.
 And a chapter header: the store's features in one line each, an index of all live terms, formulas and
 names (one line each; `concord.py store <id>` prints an entry in full), the names in the chapter, the
 glossary entries (edition glossary.tsv) whose English equivalent occurs in the chapter.
@@ -374,6 +376,9 @@ def main():
                 L += ["**Binding:** the verbs of the cells the human translation clearly marks are listed in the chapter "
                       "prompt; `chapter_check.py` reports each one whose tagged words lack the pattern as FIX, unless the "
                       f"chapter's notes have a line `unmarked {chapter}:<verse> <cell>: <reason>`.", ""]
+    import seeds                                        # a related language's grammar, as hypotheses (scripts/seeds.py)
+    dn = p.get("donor") or {}
+    L += seeds.pack_lines(pname, code, chapter, {dn.get("known"): dn.get("name")})
     L += ["## Verses", ""]
     need_total = []
     for v in sorted(assist):

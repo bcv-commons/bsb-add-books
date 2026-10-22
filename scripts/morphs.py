@@ -46,6 +46,14 @@ one tone apart): the parse runs on the plain letters, and the label follows the 
     python3 scripts/morphs.py <project> try [id ...] [--write]
         each affix entry measured on the NT aligned to the Greek (lang.py build): n, stems, and for the feature its
         `greek` names the lift and odds ratio (try_morphs); --write records them and a claim with its rerun recipe
+    python3 scripts/morphs.py <project> try --seeds [seed id ...] [--write]
+        the affix seeds (profile/seeds.json: a related language's forms, scripts/seeds.py) measured the same way, as if
+        they were in the store; --write records one claim per seed (claim:seed.<name>, seed: <id>), the seeds unchanged
+    python3 scripts/morphs.py <project> audit [id ...]
+        each affix checked on the words it splits (NT aligned to the Greek; the OT route is to come): tokens, stems, stems
+        also bare or with another affix of the slot, the feature's share with and without it on the same stems, its top
+        words with their Greek, the words against it, and a verdict: confirm, protect-words (as kind `word` entries),
+        restrict, retire (audit; read-only)
     python3 scripts/morphs.py <project> show <word> ...
     python3 scripts/morphs.py <project> rates      the features the confirmed affixes mark, and how often the human NT
         marks them on the Greek verbs that have them: those marked on 60% or more are checked in the loop
@@ -252,8 +260,11 @@ class Segmenter:
             def by_pos(slot, hosts=None):
                 out = collections.defaultdict(set)
                 for e in G.morphs:
+                    # the host filter is the chain's: an affix without a position is not part of a chain and comes
+                    # off any word, as in a store without positions (a position switched on for two prefixes must not
+                    # stop the store's other affixes)
                     if (e.get("slot") == slot and e.get("form", "").strip("-=")
-                            and (hosts is None or (e.get("host") or "any") in hosts)):
+                            and (hosts is None or not e.get("position") or (e.get("host") or "any") in hosts)):
                         out[int(e.get("position") or 1)].add(self.plain(e["form"].strip("-=")))
                 return {p: sorted(v, key=len, reverse=True) for p, v in sorted(out.items())}
             # affixes told apart by tone alone (aá- past beside aa- future): forms with an ignored mark, matched on
@@ -265,12 +276,21 @@ class Segmenter:
                     self.tone_forms[(e["slot"], int(e["position"]), self.plain(fm.strip("-=")))][fm.strip("-=")] = fm
             self.tone_forms = {k: v for k, v in self.tone_forms.items() if len(v) > 1 or any(w != k[2] for w in v)}
             self.pre_at, self.suf_at = by_pos("prefix"), by_pos("suffix")
+            # (slot, position, plain form) of the affixes the store gives a position: the others are parsed at
+            # position 1 and reported without one (position 0, as the store has them)
+            self.positioned = {(e["slot"], int(e["position"]), self.plain(e["form"].strip("-=")))
+                               for e in G.morphs if e.get("position") and e.get("slot") in ("prefix", "suffix")
+                               and (e.get("form") or "").strip("-=")}
             self.chain_hosts = {e.get("host") or "any" for e in G.morphs if e.get("position")} - {"any"}
             self.at_for = {}                              # hosts -> (prefixes, suffixes) by position
             for hs in [frozenset({"any", h}) for h in self.chain_hosts] + [frozenset({"any"})]:
                 self.at_for[hs] = (by_pos("prefix", hs), by_pos("suffix", hs))
         hosts = {e.get("host") for e in G.morphs if e.get("slot") in ("prefix", "suffix")}
+        # words never split: free morphs (a pronoun, a conjunction) and the store's protected words (kind word: a name,
+        # a word that only begins like a prefix: Danish uge 'week', not u-ge); matched on plain lowercase letters
         self.free = {self.plain(e["form"]) for e in G.morphs if e.get("slot") == "free" and e.get("form")}
+        self.protected = {self.plain(e["form"]) for e in getattr(G, "words", []) if e.get("form")}
+        self.free |= self.protected
         self.pairs_by_host = {h: {(p, q) for p in aff("prefix", h) for q in aff("suffix", h)} for h in hosts}
         self.tones = [ToneMorph(e) for e in G.morphs if e.get("slot") == "tone" and e.get("tone_pattern")]
         if self.spec.written in ("letters", "none"):
@@ -281,6 +301,8 @@ class Segmenter:
         self.forms = collections.defaultdict(collections.Counter)  # a possible stem -> {(prefix, suffix): tokens}
         self.min_stem = 2 if self.chain else 3
         for w, n in self.vocab.items():
+            if w in self.protected:                       # a protected word is no evidence for a split either
+                continue
             if self.chain:                                # (prefix chain, suffix chain) as tuples of forms
                 for pc, lp in self.chains(w, "p"):
                     for sc, ls in self.chains(w, "s"):
@@ -484,11 +506,21 @@ class Segmenter:
                 _, pc, sc = best
                 for p, a in pc:
                     k = at(idx[i] + len(a))
-                    out.append(Morph("prefix", self.tone_label("prefix", p, a, cut(i, k)), cut(i, k), p))
+                    out.append(Morph("prefix", self.tone_label("prefix", p, a, cut(i, k)), cut(i, k),
+                                     p if ("prefix", p, a) in self.positioned else 0))
                     i = k
+                if pc and self.inf:                      # an infix after the prefixes, as without a chain
+                    r = s[idx[i]:len(s) - sum(len(a) for _, a in sc)]
+                    for f in self.inf:
+                        if r.startswith(f) and at(idx[i] + len(f)) and len(r) - len(f) >= 3:
+                            k = at(idx[i] + len(f))
+                            out.append(Morph("infix", "-" + f + "-", cut(i, k)))
+                            i = k
+                            break
                 for p, a in sc:                          # from the outside in; written from the stem outward
                     k = at(idx[j] - len(a))
-                    tail.insert(0, Morph("suffix", self.tone_label("suffix", p, a, cut(k, j)), cut(k, j), p))
+                    tail.insert(0, Morph("suffix", self.tone_label("suffix", p, a, cut(k, j)), cut(k, j),
+                                         p if ("suffix", p, a) in self.positioned else 0))
                     j = k
         elif s not in self.free and not w.startswith("-"):   # a free morph (a pronoun, a conjunction) is a word
             best = None                                  # prefix and suffix chosen together: génanimák = ge-nanim-ák
@@ -545,12 +577,13 @@ class Segmenter:
         return unicodedata.normalize("NFC", "".join(cl))
 
 
-def load(pname, P=None):
-    """the project's Segmenter (P: a langtools.Project, else built here), or None without morph entries"""
+def load(pname, P=None, G=None):
+    """the project's Segmenter (P: a langtools.Project, else built here; G: a grammar view in place of the store's), or
+    None without morph entries"""
     import json
     import langtools as LT
     P = P or LT.Project(pname)
-    G = grammar.load(pname)
+    G = G or grammar.load(pname)
     if not (G.morphs):
         return None
     orth = {}
@@ -589,8 +622,8 @@ HOSTS = {"verb": ("verb",), "noun": ("noun",), "adj": ("adj",), "pron": ("pron",
 
 
 def affix_tokens(pname, S):
-    """[(Greek class, {(affix, position)}, stem, Greek features, even verse, ref)]: one row per target token of the NT
-    linked to the Greek (its first link), segmented by the store's morphs"""
+    """[(Greek class, {(affix, position)}, stem, Greek features, even verse, ref, token, Greek lemma)]: one row per
+    target token form and Greek word of the NT linked to each other, the token segmented by the store's morphs"""
     import sqlite3
     import lang
     _, con = lang.connect(pname)
@@ -608,8 +641,14 @@ def affix_tokens(pname, S):
         ms = S.split(r["raw"])
         stem = next((m.form for m in ms if m.slot == "stem"), "")
         toks.append((r["class"], {(m.form, m.position) for m in ms if m.slot != "stem"}, stem, feat(r), r["vv"] % 2 == 0,
-                     f"{r['bk'].upper()} {r['cc']}:{r['vv']}"))
+                     f"{r['bk'].upper()} {r['cc']}:{r['vv']}", r["raw"], r["lemma"]))
     return toks
+
+
+def comes_off(e, labs):
+    """the affix entry is among a token's parts ({(form, position)}); an entry without a position at any"""
+    form, pos = e["form"], int(e.get("position") or 0)
+    return (form, pos) in labs or (not pos and any(f == form for f, _ in labs))
 
 
 def measure(e, toks, want, only=None):
@@ -622,7 +661,7 @@ def measure(e, toks, want, only=None):
     out, host_on = {}, []
     for half in ("all", "even"):
         host = [t for t in toks if (cls is None or t[0] in cls) and (half == "all" or t[4]) and (not only or has(t[3], only))]
-        on = [t for t in host if (form, pos) in t[1] or (not pos and any(f == form for f, _ in t[1]))]
+        on = [t for t in host if comes_off(e, t[1])]
         n, stems = len(on), len({t[2] for t in on})
         lift = odds = None
         if want and n and host:
@@ -637,7 +676,106 @@ def measure(e, toks, want, only=None):
     return out, host_on
 
 
-def try_morphs(pname, ids, P, S, write=False, by="script:morphs.py", min_n=20, min_stems=5, min_odds=2.0):
+def with_seeds(pname):
+    """the store's grammar with the seeds' affixes added (scripts/seeds.py): what the segmenter would make of the corpus
+    if they held. -> (G, seeds to measure, seeds the store already has [(seed, store morph)], seeds the try can't
+    measure [(seed, why)], donor). A seed's form is normalised by its slot (ta-, -ibw, -ir-), a suffix's position is
+    the store's where the store has the same gloss at one position (suffixes are numbered from the stem outward, and
+    a store may count the extensions apart), and a seed the store already has (form, slot,
+    host, position) isn't measured again: it would measure the store's morph"""
+    import seeds
+    d = seeds.of_project(pname) or {}
+    G = grammar.load(pname)
+    plain = lambda f: unicodedata.normalize("NFC", (f or "").strip("-=").lower())
+    store = [m for m in G.morphs if m.get("slot") in ("prefix", "infix", "suffix")]
+    at = collections.defaultdict(set)                 # a suffix's position by its gloss, where the store has one
+    for m in store:
+        if m.get("position") and m["slot"] == "suffix":
+            at[(m["slot"], m.get("host"), m.get("value"))].add(m["position"])
+    pos_by_gloss = {k: next(iter(v)) for k, v in at.items() if len(v) == 1}
+    sd, same, skip = [], [], []
+    for e in d.get("entries", []):
+        if e.get("kind") != "morph" or e.get("slot") not in ("prefix", "infix", "suffix"):
+            continue
+        f = seeds.norm_form(e)
+        if not f:
+            skip.append((e, f"{e.get('form')!r} is not one form (a zero or an alternation: a feature)"))
+            continue
+        if e.get("host") not in ("verb", "noun"):
+            skip.append((e, f"host {e.get('host')}: the try measures verb and noun affixes"))
+            continue
+        x = dict(e, form=f, status="observed")
+        p = pos_by_gloss.get((e["slot"], e.get("host"), e.get("value")))
+        if p and e.get("position") and p != e["position"]:
+            x["position"], x["seed_position"] = p, e["position"]
+        m = next((m for m in store if plain(m["form"]) == plain(f) and m["slot"] == e["slot"]
+                  and m.get("host") in (e.get("host"), "any") and (not m.get("position") or not x.get("position")
+                                                                    or m["position"] == x["position"])), None)
+        if m:
+            same.append((e, m))
+            continue
+        sd.append(x)
+    G.morphs = G.morphs + sd
+    G._by_id.update({e["id"]: e for e in sd})
+    return G, sd, same, skip, d.get("donor")
+
+
+def seed_result(n, stems, odds, todds, want, min_n=20, min_stems=5, min_odds=2.0):
+    """(result, claim verdict) of a measured seed: confirmed; refuted (enough cases, the feature not marked); thin (too
+    few to say: stays open); absent (the form never comes off); counts only (no Greek feature named)"""
+    if not n:
+        return "absent", "contradicted"
+    if n < min_n or stems < min_stems:
+        return "thin", "open"
+    if not want:
+        return "counts only", "open"
+    if (odds or 0) >= min_odds and (todds or 0) >= min_odds:
+        return "confirmed", "confirmed"
+    return "refuted", "contradicted"
+
+
+def write_seed_claims(pname, P, res, same, skip, donor, by="script:morphs.py try --seeds"):
+    """one claim per seed (claim:seed.<name>, `seed: <seed id>`, `result`): measured, already in the store (`same_as`),
+    or not measurable by the try (open); the seed stays as it is"""
+    import json, datetime
+    f = os.path.join(P.profile, "observations.json")
+    d = json.load(open(f, encoding="utf-8"))
+    today = datetime.date.today().isoformat()
+    NEXT = {"confirmed": "write the morph as the corpus has it (seed: this seed), or say why not",
+            "refuted": "the form doesn't mark the category here: look for the language's own form of it",
+            "absent": "the form doesn't occur as an affix here: look for the language's own form of the category",
+            "thin": "too few cases to say: look at them, or test the category another way",
+            "counts only": "the seed names no Greek feature: look at the words it comes off",
+            "in store": "the store has it already: nothing to do",
+            "untestable": "test it by hand (concord.py), or as a feature"}
+    rows = []
+    for e, n, stems, lift, tl, odds, todds, verdict, refs, prod in res:
+        g = " ".join(f"{a}={'|'.join(b) if isinstance(b, list) else b}" for a, b in sorted((e.get("greek") or {}).items()))
+        result, verdict = seed_result(n, stems, odds, todds, e.get("greek"))
+        fig = (f"n {n}, stems {stems}" + (f", lift {lift} (even verses {tl}), odds ratio {odds} (even verses {todds})"
+                                          if lift is not None else "") + (f"; first verses {', '.join(refs)}" if refs else "")
+               + (f"; measured at the store's position {e['position']} (the seed's {e['seed_position']})"
+                  if e.get("seed_position") else ""))
+        rows.append((e, result, verdict, fig, g, {}))
+    for e, m in same:
+        rows.append((e, "in store", "confirmed", f"the store has it: {m['id']} ({m['form']}, {m.get('status')})", "",
+                     {"same_as": m["id"]}))
+    for e, why in skip:
+        rows.append((e, "untestable", "open", why, "", {}))
+    for e, result, verdict, fig, g, extra in rows:
+        c = {"id": f"claim:seed.{e['id'].removeprefix('seed:')}", "kind": "claim", "seed": e["id"], "result": result,
+             "value": f"the {donor} affix {e['form']} ({e.get('slot')}" + (f", position {e['position']}" if e.get("position")
+                                                                           else "") + ") occurs here" + (f", marking {g}" if g else ""),
+             "area": "morph", "source": e["id"], "tests": ["corpus", "greek"] if g else ["corpus"], "figures": fig,
+             "verdict": verdict, "next": NEXT[result], "confidence": "medium" if verdict == "confirmed" else "low",
+             "method": "corpus-derived", "by": by, "date": today, "status": "observed"} | extra
+        d["entries"] = [x for x in d["entries"] if x.get("id") != c["id"]] + [c]
+    json.dump(d, open(f, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    open(f, "a").write("\n")
+    print(f"written: {len(rows)} seed claim(s) into {os.path.relpath(f)}")
+
+
+def try_morphs(pname, ids, P, S, write=False, by="script:morphs.py", min_n=20, min_stems=5, min_odds=2.0, G=None):
     """Each affix entry (prefix, infix, suffix; those named, else all) measured on the NT aligned to the Greek, under the
     store's whole segmentation (a chain's other affixes included): how often it comes off (n), on how many different
     stems, and, where the entry names the Greek feature it marks (`greek`: {"person+number": "fp"}, the names of
@@ -656,7 +794,7 @@ def try_morphs(pname, ids, P, S, write=False, by="script:morphs.py", min_n=20, m
     with its rerun recipe and basis, so that grammar.py retest reruns it when the store changes"""
     import json, sqlite3, datetime
     import lang
-    G = grammar.load(pname)
+    G = G or grammar.load(pname)
     cands = [e for e in G.morphs if e.get("slot") in ("prefix", "infix", "suffix") and (not ids or e.get("id") in ids)]
     if ids and len(cands) < len(set(ids)):
         raise SystemExit(f"not affix entries of the store: {', '.join(sorted(set(ids) - {e['id'] for e in cands}))}")
@@ -740,6 +878,125 @@ def try_morphs(pname, ids, P, S, write=False, by="script:morphs.py", min_n=20, m
     open(f, "a").write("\n")
     print(f"written: {len(res)} morph(s) and their claims into {os.path.relpath(f)}")
     return res
+
+
+# ---------- the affix audit: does an affix hold on the words it splits? ----------
+
+AUDIT = {"min_links": 10, "word_links": 3, "off_share": 0.2, "host_share": 0.3, "min_odds": 2.0,
+         "protect_max": 0.1, "restrict_min": 0.4}
+
+
+def audit(pname, ids, P, S, G=None, top=8, A=AUDIT):
+    """Each affix entry (those named, else every live prefix, infix and suffix) checked on the words it splits, on the
+    NT aligned to the Greek (the OT route, the Hebrew of the aligned OT books, is to come):
+    - its tokens and stems in the corpus; the stems also seen bare (no affix of the slot) or with another affix of the
+      slot (the stem is a real stem, the affix a real choice);
+    - with a `greek` feature: the feature's share among its linked Greek words of the host's class, with the affix and
+      on the same stems without it (a stem's own meaning is no evidence for the affix), and the odds ratio of the two;
+    - its top words, by tokens, with their linked Greek lemmas and their own share of the feature;
+    - the words against it: the feature under off_share on word_links or more host links, or host links under
+      host_share of the word's links (a noun that only begins like a verb prefix);
+    - a verdict: retire (odds ratio under min_odds), confirm (the words against it under protect_max of its tokens),
+      protect-words (under restrict_min: they become kind `word` entries), restrict (it holds only on the stems named),
+      no-claim (no `greek`) or too-few (under min_links host links).
+    Read-only. -> [dict] per entry"""
+    G = G or grammar.load(pname)
+    ents = [e for e in G.morphs if e.get("slot") in ("prefix", "infix", "suffix") and e.get("form")
+            and (not ids or e["id"] in ids)]
+    if ids and len(ents) < len(set(ids)):
+        raise SystemExit(f"not live affix entries of the store: {', '.join(sorted(set(ids) - {e['id'] for e in ents}))}")
+    vocab = getattr(S, "vocab_exact", None) or S.vocab     # as written: a tone label needs the word's marks
+    split = {w: S.split(w) for w in vocab}
+    stem_of = lambda ms: next((m.form for m in ms if m.slot == "stem"), "")
+    toks = affix_tokens(pname, S)
+    res = []
+    for e in ents:
+        slot, pos = e["slot"], int(e.get("position") or 0)
+        want = {k: set(v) if isinstance(v, list) else {v} for k, v in (e.get("greek") or {}).items()}
+        has = lambda fv: all(any((k, v) in fv for v in vs) for k, vs in want.items())
+        share = lambda ts: sum(has(t[3]) for t in ts) / len(ts) if ts and want else None
+        words, stems, stem_by = collections.Counter(), collections.Counter(), {}   # words by their plain letters
+        for w, ms in split.items():
+            if comes_off(e, {(m.form, m.position) for m in ms if m.slot == slot}):
+                words[S.plain(w)] += vocab[w]
+                stems[stem_of(ms)] += vocab[w]
+                stem_by[S.plain(w)] = stem_of(ms)
+        bare, other = set(), set()                       # its stems seen without it
+        for w, ms in split.items():
+            st = stem_of(ms)
+            if st in stems and not comes_off(e, {(m.form, m.position) for m in ms if m.slot == slot}):
+                (other if any(m.slot == slot for m in ms) else bare).add(st)
+        cls = HOSTS.get(e.get("host"))
+        mine = [t for t in toks if comes_off(e, t[1])]
+        on = [t for t in mine if cls is None or t[0] in cls]
+        on_stems = {t[2] for t in on}
+        off = [t for t in toks if (cls is None or t[0] in cls) and t[2] in on_stems and not comes_off(e, t[1])]
+        links, host_links = collections.defaultdict(list), collections.defaultdict(list)   # a word's links: all, host
+        for t in mine:
+            links[S.plain(t[6])].append(t)
+            if cls is None or t[0] in cls:
+                host_links[S.plain(t[6])].append(t)
+        against = {w: n for w, n in words.items() if want and (
+            (len(host_links[w]) >= A["word_links"] and share(host_links[w]) < A["off_share"])
+            or (len(links[w]) >= A["word_links"] and len(host_links[w]) < A["host_share"] * len(links[w])))}
+        off_tok = sum(against.values()) / max(1, sum(words.values()))
+        odds = None
+        if want and on and off:
+            k, ko = sum(has(t[3]) for t in on), sum(has(t[3]) for t in off)
+            odds = round(((k + .5) / (len(on) - k + .5)) / ((ko + .5) / (len(off) - ko + .5)), 2)
+        if not want:
+            verdict = "no-claim"
+        elif len(on) < A["min_links"]:
+            verdict = "too-few"
+        elif odds is not None and odds < A["min_odds"]:
+            verdict = "retire"
+        else:
+            verdict = ("confirm" if off_tok < A["protect_max"] else "protect-words" if off_tok < A["restrict_min"]
+                       else "restrict")
+        holds = collections.Counter()                    # the stems of the words it holds on
+        for w, n in words.items():
+            if w not in against:
+                holds[stem_by[w]] += n
+        res.append(dict(entry=e, tokens=sum(words.values()), stems=len(stems), bare=len(bare), other=len(other),
+                        links=len(on), link_stems=len(on_stems), share_with=share(on), links_without=len(off),
+                        share_without=share(off), odds=odds,
+                        share_rest=share([t for t in on if S.plain(t[6]) not in against]),
+                        top=[(w, n, len(links[w]), len(host_links[w]), share(host_links[w]),
+                              collections.Counter(t[7] for t in links[w]).most_common(3))
+                             for w, n in words.most_common(top)],
+                        against=sorted(against.items(), key=lambda x: -x[1]), against_share=off_tok,
+                        holds=[st for st, _ in holds.most_common(10)], verdict=verdict))
+    return res
+
+
+def print_audit(res, A=AUDIT):
+    pc = lambda x: "-" if x is None else f"{x:.0%}"
+    for r in res:
+        e = r["entry"]
+        g = " ".join(f"{k}={'|'.join(v) if isinstance(v, list) else v}" for k, v in (e.get("greek") or {}).items())
+        print(f"\n{e['id']}  {e['form']} ({e['slot']}, {e.get('host') or 'any'}"
+              + (f", position {e['position']}" if e.get("position") else "") + f"; {g or 'no greek feature'}; "
+              f"{e.get('status')})")
+        print(f"  tokens {r['tokens']}, stems {r['stems']}; stems also bare {r['bare']}, with another {e['slot']} "
+              f"{r['other']}")
+        print(f"  Greek links of its host class: with it {r['links']} on {r['link_stems']} stems, {pc(r['share_with'])} "
+              f"with the feature; the same stems without it {r['links_without']}, {pc(r['share_without'])}; "
+              f"odds ratio {r['odds']}")
+        print(f"    {'word':18} {'tokens':>6} {'links':>5} {'host':>5} {'feature':>7}  linked Greek lemmas")
+        for w, n, k, kh, sh, lem in r["top"]:
+            print(f"    {w:18} {n:6} {k:5} {kh:5} {pc(sh):>7}  " + ", ".join(f"{l} {c}" for l, c in lem))
+        if r["against"]:
+            print(f"  words against it ({len(r['against'])}, {r['against_share']:.0%} of its tokens): "
+                  + ", ".join(f"{w} {n}" for w, n in r["against"][:20])
+                  + f"; without them {pc(r['share_rest'])} with the feature")
+        print(f"  verdict: {r['verdict']}" + {
+            "protect-words": " (the words against it as store entries of kind word, affixes: [" + e["id"] + "])",
+            "restrict": f" (it holds on the stems {', '.join(r['holds'])})",
+            "retire": " (the feature is no likelier with it than without: supersede it)",
+            "too-few": f" (under {A['min_links']} host links)"}.get(r["verdict"], ""))
+    n = collections.Counter(r["verdict"] for r in res)
+    if len(res) > 1:
+        print("\n" + ", ".join(f"{k} {v}" for k, v in n.most_common()))
 
 
 # ---------- the morph view for the drafting agents: a word's parts, a stem's forms, and the loop's check ----------
@@ -1045,6 +1302,29 @@ def main(a):
         raise SystemExit(__doc__)
     import langtools as LT
     P = LT.Project(a[0])
+    if a[1] == "try" and "--seeds" in a:          # the donor's affixes measured as if they were in the store
+        G, sd, same, skip, donor = with_seeds(a[0])
+        ids = [x for x in a[2:] if not x.startswith("--")]
+        if ids:
+            sd, same, skip = [e for e in sd if e["id"] in ids], [x for x in same if x[0]["id"] in ids], \
+                [x for x in skip if x[0]["id"] in ids]
+        if not (sd or same or skip):
+            raise SystemExit(f"{a[0]}: no affix seeds (profile/seeds.json)")
+        print(f"{a[0]}: {len(sd) + len(same) + len(skip)} affix seed(s) from {donor}: {len(sd)} measured with the store's "
+              f"{sum(not m['id'].startswith('seed:') for m in G.morphs)} morph(s), "
+              f"{len(same)} already in the store, {len(skip)} not measurable by the try")
+        res = try_morphs(a[0], [e["id"] for e in sd], P, load(a[0], P, G), G=G) if sd else []
+        for (e, n, stems, lift, tl, odds, todds, *_r) in res:
+            r, _ = seed_result(n, stems, odds, todds, e.get("greek"))
+            print(f"    {e['id']}: {r}" + (f" (measured at the store's position {e['position']}, the seed's "
+                                           f"{e['seed_position']})" if e.get("seed_position") else ""))
+        for e, m in same:
+            print(f"  {e['id']:24} {e['form']:7} already in the store as {m['id']}")
+        for e, why in skip:
+            print(f"  {e['id']:24} {str(e.get('form')):7} not measured: {why}")
+        if "--write" in a:
+            write_seed_claims(a[0], P, res, same, skip, donor)
+        return
     S = load(a[0], P) if a[1] != "tone" else None
     if S is None and a[1] != "tone":
         raise SystemExit(f"{a[0]}: the store has no morph entries")
@@ -1092,6 +1372,9 @@ def main(a):
         for (dim, label), (n, k, forms) in sorted(rates.items()):
             print(f"  {dim:9} {label:34} {', '.join(sorted(f for f, _ in forms)):18} {k:5}/{n:<5} {k / n:4.0%}"
                   + ("  checked" if (dim, label) in ok else ""))
+        return
+    if a[1] == "audit":
+        print_audit(audit(a[0], [x for x in a[2:] if not x.startswith("--")], P, S))
         return
     if a[1] == "review":
         for l in chain_review(a[0], a[2], int(a[3]), P, S):

@@ -122,6 +122,29 @@ names; `--write` sets the best as `lexeme_aligner` in `project.yaml`, and `lang.
   question; the recipes in `docs/language-store/grambank_recipes.tsv` decide features from a Bible corpus. No
   Grambank language values enter a store.
 
+## download/glottolog/: the Glottolog family tree
+
+- **What:** every languoid's name, ISO 639-3 code and level (`languages.csv`) and its classification, the path of its
+  ancestors (`values.csv`, parameter `classification`), for a language's relatives (`scripts/donor.py`).
+- **From:** github.com/glottolog/glottolog-cldf, tag **v5.3**, `cldf/languages.csv` (SHA-256 `1a50a393…bb89`) and
+  `cldf/values.csv` (SHA-256 `a8601cb0…ea25`), pinned in `setup.py`.
+- **Licence:** CC BY 4.0. Credit: Hammarström, H., Forkel, R., Haspelmath, M. & Bank, S. *Glottolog 5.3*, Leipzig:
+  Max Planck Institute for Evolutionary Anthropology.
+- **Build:** `setup.py --only glottolog` (on request; the wizard fetches it for an unknown language). `donor.py`
+  caches the tree in `download/glottolog/v5.3/tree.json`. A project's `donor:` block names relatives by ISO code.
+
+## download/stepbible/: STEPBible TIPNR proper names
+
+- **What:** TIPNR (Translators' Individualised Proper Names with all References): every person and place name with its
+  disambiguated Strong's number and the verses of each individual (two Nahors, the Zechariahs), for
+  `scripts/participants.py`.
+- **From:** github.com/STEPBible/STEPBible-Data, commit **1f3423d4** (2026-10-05), `Proper Nouns/TIPNR - Translators
+  Individualised Proper Names with all References - STEPBible.org CC BY.txt` (SHA-256 `aaec5b0a…358e`), pinned in
+  `setup.py`. (An older JSON copy of TIPNR, from 2019, was released under CC BY-NC; this file is the CC BY one.)
+- **Licence:** CC BY 4.0. Credit: "TIPNR, STEPBible.org, based on work at Tyndale House Cambridge (CC BY 4.0)".
+  STEPBible asks that the data be fetched from its repository, not redistributed: it stays in `download/`.
+- **Build:** `setup.py --only names` (in the default set). Read only; nothing from it enters a store or a draft.
+
 ## books.tsv
 
 Written by `scripts/books.py`: BSB code, English name, testament, chapter count, RP file code (NT).

@@ -6,6 +6,7 @@ analysis, the draft check).
 As a library:
   G = grammar.load(<project> | <profile dir>)
   G.morphs                 [entry], live ones only (superseded left out); G.cells, G.claims likewise
+  G.words                  [entry] of kind word: whole words the morph view never splits
   G.affixes(host, slot)    the forms without their hyphens, longest first (host "verb", slot "prefix")
   G.cell(paradigm, bundle) the cell entry or None; G.paradigm(paradigm) {bundle: entry}
   G.morph(id)              one morph entry
@@ -25,7 +26,7 @@ Commands:
                                           entry gb:GBnnn (value 1, evidence the morphs' verses), never a 0 (no evidence
                                           is no entry). Prints them; --write puts them into observations.json (its own
                                           earlier entries replaced, an agent's or the team's left alone)
-  show <project|dir> [morph|cell|claim]   the entries, one line each
+  show <project|dir> [morph|cell|claim|word]   the entries, one line each
   retest <project> [--run]                the tests a script ran on the store (claims with `rerun`) whose basis changed:
                                           the store learned something since (orthography.tone, a tone pattern, a morph,
                                           analysis.match) or the method did; --run reruns them (and rewrites their claims)
@@ -47,6 +48,8 @@ class Grammar:
         self.morphs = [e for e in live if e.get("kind") == "morph"]
         self.cells = [e for e in live if e.get("kind") == "cell"]
         self.claims = [e for e in live if e.get("kind") == "claim"]
+        # whole words the morph view never splits (kind word: a name, a lexical z- word): their forms
+        self.words = [e for e in live if e.get("kind") == "word"]
         self._by_id = {e["id"]: e for e in live}
 
     def morph(self, mid):
@@ -380,6 +383,8 @@ def line(e):
         return f"{e['id']:28} {e['form']:12} {e['slot']:7} {e['host']:5} {e['value']:14} {e.get('stats', {})}"
     if k == "cell":
         return f"{e['id']:36} {e['value']:12} {e.get('stats', {})}" + (" gap" if e.get("gap") else "")
+    if k == "word":
+        return f"{e['id']:28} {e['form']:12} {e['value']:14} {', '.join(e.get('affixes', []))}"
     return f"{e['id']:28} {e['verdict']:12} {e['value'][:80]}"
 
 
@@ -480,7 +485,7 @@ def main(a):
         return
     if a[:1] == ["show"] and len(a) >= 2:
         G = load(a[1])
-        for k in (a[2:3] or list(GRAMMAR)):
+        for k in (a[2:3] or list(GRAMMAR) + ["word"]):
             for e in getattr(G, k + "s"):
                 print(line(e))
     elif a[:1] == ["status"] and len(a) >= 2:

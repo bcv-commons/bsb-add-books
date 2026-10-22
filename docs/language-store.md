@@ -25,8 +25,8 @@ Required in every entry: `id`, `kind`, `value`, `confidence`, `method`, `by`, `d
 
 | field | values |
 |---|---|
-| `id` | unique among live entries (`speech_frame`, `term:H7458`, `name:naomi`, `m:<form>:<host>`, `c:<paradigm>:<bundle>`, `claim:<name>`) |
-| `kind` | `feature`, `letter`, `gap`, `morph`, `cell`, `claim`; `term`, `formula`, `name` |
+| `id` | unique among live entries (`speech_frame`, `term:H7458`, `name:naomi`, `m:<form>:<host>`, `c:<paradigm>:<bundle>`, `claim:<name>`, `w:<form>`) |
+| `kind` | `feature`, `letter`, `gap`, `morph`, `cell`, `claim`, `word`; `term`, `formula`, `name` |
 | `value` | the finding: a string, or a small object for a formula; for terms, formulas and names the target language only |
 | `gloss` | terms, formulas, names (and their `alternatives`): the Greek or Hebrew word the value renders (below) |
 | `interlinear` | optional, a form built by rule with no source word: a Leipzig line, `1PL.HORT-go` |
@@ -45,7 +45,7 @@ Required in every entry: `id`, `kind`, `value`, `confidence`, `method`, `by`, `d
 
 Rules:
 
-- `feature`, `term`, `formula`, `name` and `morph` need evidence.
+- `feature`, `term`, `formula`, `name`, `morph` and `word` need evidence.
 - Absent means not looked at; `open` means looked at and not settled.
 - To change an entry, add one with `supersedes`.
 - **Team decisions** (`method: team-decision`, `by: team:<who>`, `team_source: wiki/team-input.md#T3`) need no
@@ -65,6 +65,7 @@ Rules:
   cite a verse the edition doesn't have.
 - **`term`**, **`formula`**, **`name`**: a source lexeme, phrase or name → the target form. A `by-rule` name cites
   the letter entries' names; `by-rule` entries are for a speaker's review.
+- **`morph`**, **`cell`**, **`claim`**: the grammar (below); **`word`**: a protected word, never split (below).
 
 ### Glosses
 
@@ -107,6 +108,24 @@ bridge between an NT translated from the Greek and the Hebrew OT being drafted.
 
 The form must occur on its side of a word in at least one cited verse (tone morphs are not matched). Only a tone morph
 with a `tone_pattern` is grammatical and taken out of the word; other tone is lexical and stays in the stem.
+
+### Protected words
+
+A `word` entry is a whole word the morph view never splits: a name, or a word that only begins or ends like an affix
+(Danish *uge* "week" is not *u-* "un-" + *ge*). `morphs.py audit` lists the candidates (verdict `protect-words`).
+
+| field | values |
+|---|---|
+| `form` | required: the word as written, one word (no space, no hyphen at an edge); matched on plain lower-case letters (`orthography.ignore_marks` dropped), so one entry covers its tonal variants and a capital |
+| `id` | `w:<form>` (`w:uge`) |
+| `value` | `WORD`, or `NAME` for a name |
+| `gloss` | optional: the Greek or Hebrew word it renders, as for terms (`χείρ`); never English in the value |
+| `affixes` | optional: the morph ids it was protected from (`["m:u-:adj"]`) |
+| `stats` | optional: the audit's figures (`tokens`, `links`, `host_links`, `feature_share`) |
+
+The form must occur as a whole word in at least one cited verse. A protected word is never split and is no evidence for
+a split of another word (a stem it would leave is not attested by it). A `free` morph with
+`host: word` (`m:<word>:word`) has the same effect and still works; a `word` entry says what it is.
 
 ### Cells
 
@@ -166,10 +185,51 @@ Top-level fields of `observations.json`. A change makes the tests that depended 
 - **`try [id ...] [--write]`**: each affix measured on the NT aligned to the Greek (n, stems, lift and odds ratio of
   its `greek` feature, on all verses and even verses). Kept: n ≥ 20, stems ≥ 5, both odds ratios ≥ 2. `--write` sets
   `stats`, status `observed` or `open` (`decided` stays), and a claim `claim:morph.<id>`.
+- **`audit [id ...]`**: each affix checked on the words it splits (the NT aligned to the Greek; an OT route, on the
+  Hebrew of the aligned OT books, is to come): its tokens and stems, the stems also seen bare or with another affix of
+  the slot; the share of its `greek` feature among the host-class Greek words linked to it, with the affix and on the
+  same stems without it, and their odds ratio; its top words with their Greek lemmas; the **words against it** (the
+  feature on under 20% of 3 or more host links, or host links under 30% of the word's links: a noun that only begins
+  like a verb prefix). Verdict: `retire` (odds ratio under 2), `confirm` (the words against it under 10% of its
+  tokens), `protect-words` (under 40%: make them `word` entries), `restrict` (it holds only on the stems it names),
+  `no-claim` (no `greek`), `too-few` (under 10 host links). Thresholds in `morphs.AUDIT`. Read-only: the store is
+  changed by the agent (`.claude/skills/audit-store/`), then measured again.
+- **Protected words** (kind `word`) are never split and are no evidence for another word's split.
 - **The loop**: `rates` lists the features the confirmed affixes mark; one is checked where the human NT marks it on
   60% or more of 20 or more Greek verbs that have it. `review <code> <ch>` (run by `chapter_check.py`) flags OT verbs
   whose draft word lacks the part for the Hebrew verb's person and number, negation, object or mood.
 - `check` rebuilds every corpus token from its parts; `show <word>` shows one.
+
+## Seeds
+
+A language the model doesn't know may have a relative it knows well (the project's `donor`, measured by
+`scripts/donor.py`). What the model knows of that language can go into the project as **seeds**, written by a fresh
+agent from memory (`python3 scripts/seeds.py prompt <project>`, `docs/prompts/seed_prompt.md`): hypotheses, never facts, in a file of their own,
+`profile/seeds.json` (`scripts/seeds.py`). Nothing that checks or splits the language reads it (the morph view, the cell
+check, the binding pack block, Grambank, glosses, the concordance), so a seed can't be enforced or copied by a script.
+
+```json
+{"donor": "swh", "by": "agent:seed", "date": "YYYY-MM-DD",
+ "template": {"verb": [{"slot": "subject", "position": 2, "morphs": ["seed:m.tu.verb"]}, ...]},
+ "entries": [{"id": "seed:m.tu.verb", "kind": "morph", "value": "1.PL", "form": "tu-", "slot": "prefix", "host": "verb",
+              "position": 2, "greek": {"person+number": "fp"}, "cells": ["verb.subject: 1.PL"],
+              "donor_form": "tu-", "donor_note": "Swahili tu-na-soma 'we read'",
+              "test": "a verb prefix on the 1st plural verbs, after a negation prefix where there is one",
+              "codes": ["GB089"], "confidence": "low", "method": "donor:swh", "by": "agent:seed",
+              "date": "YYYY-MM-DD", "status": "seed"}]}
+```
+
+- `kind` `morph` (with `form`, `slot`, `host`, optionally `position` and `greek`, as above) or `feature`; `value` the
+  gloss or the claim; `form` and `donor_form` the **donor's** form, never one of the target language.
+- `test`: in plain words, what to look for in the corpus; `cells` (`paradigm: TAGS` as `scripts/source_cells.py` names
+  them, every tag must be in the token's bundle) and `pos` say when a chapter needs the seed.
+- `template.verb`: the donor's verb template, slots in order, each with its seed morphs.
+- A seed is **tested** once a live store entry names it, `seed: <seed id>`: the language's own entry (the form as the
+  corpus has it, confirmed or corrected), or a claim with `verdict` confirmed or contradicted (an open claim, a thin
+  result, leaves it untested). `morphs.py try --seeds --write`
+  measures the affix seeds as if they were in the store and writes a claim per seed. The seed file itself isn't edited.
+- The verse pack lists a chapter's untested seeds whose `cells` or `pos` occur in it, once in the header, marked
+  "(unconfirmed, from <donor>; check)". `check_project.py` reports how many are untested; `seeds.py status` lists them.
 
 ## The validator
 
@@ -179,13 +239,14 @@ Top-level fields of `observations.json`. A change makes the tests that depended 
 2. every reference resolves to a verse of the edition (with `--project`, also of the project's drafts);
 3. every `attested` term, formula and name occurs in a cited verse (case, `ignore_marks` and `<slots>` ignored);
 4. live ids are unique; `supersedes` points to an existing entry;
-5. morph, cell and claim fields as above; team decisions as above;
+5. morph, cell, claim and word fields as above (a protected word occurs whole in a cited verse); team decisions as above;
 5a. glosses: `lang`, script, the lemma in the source database, the form in its verse (the WLC for Hebrew); English in
    a term's or formula's value (in brackets, or with `--project` words of the BSB the corpus never writes) is a
    warning, and left out of the value's checks and of the attested forms (`langtools.store_forms`);
 6. with `--project`, for a non-free style edition: an evidence `form` is at most 4 words; a `note`, `pattern` or
    `value` quotes at most 15 words, from the published text, as written;
-7. reported only: agreement with lexeme-aligner's `gram-struct` (`download/lexeme-aligner/grammar/gs_<iso>.json`).
+7. seeds (`profile/seeds.json`): the format above, ids unique, `seed:` links resolve;
+8. reported only: agreement with lexeme-aligner's `gram-struct` (`download/lexeme-aligner/grammar/gs_<iso>.json`).
 
 It also lists value words the edition writes only with other marks.
 
@@ -198,6 +259,7 @@ It also lists value words the edition writes only with other marks.
 | `grammar.py run --write` | writes `gb:GBnnn` features the store's morphs answer (`grambank_recipes.tsv`, `from_store: yes`): by tag or `greek`; S and A indexing (GB089-GB092) measured on the NT's intransitive and transitive clauses; the chain's order in the note; `plan` lists the rest |
 | `grammar.py from-tsv` | writes morphs, cells, claims from a working store's TSV files (other entries kept) |
 | `morphs.py try --write`, `tone --write` | affix stats and claims; `orthography.tone` |
+| `morphs.py audit` | read-only: each affix on the words it splits, the words against it, a verdict (confirm, protect-words, restrict, retire) |
 | `cell_check.py try --write` | kept forms as cell alternatives; a claim per form tried |
 | `team_input.py prompt` | the curation agent's prompt for new team items |
 | `verse_pack.py` | reads the store into the per-verse pack (team decisions first) |

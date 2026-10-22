@@ -6,6 +6,7 @@
   - the wiki: links, generated blocks, quotations (wiki.py lint), if the project has one;
   - quotations in every publishable file, and CREDITS.md (quotes.py);
   - draft status: no published chapter changed since it was published (status.py check).
+  - seeds (a related language's grammar as hypotheses, scripts/seeds.py): how many are still untested (reported only).
 
 The agents are expected to comply as they write (the chapter prompt carries the rules, and they run the store
 validator, the wiki lint and quotes.py on their own files); this is the double check afterwards.
@@ -77,6 +78,19 @@ def main():
             ok &= run("store", ["scripts/language_profile.py", "check", os.path.join(d, "profile"), "--project", p])
         if os.path.isdir(os.path.join(d, "wiki")):
             ok &= run("wiki", ["scripts/wiki.py", "lint", p])
+        q = set(P.project(p).get("quarantine") or [])
+        lf = os.path.join(d, "_learn", "links_grc_pos.tsv")
+        if q and os.path.exists(lf):         # a book held out of the corpus is held out of what was learned from it
+            inq = {l[:3].lower() for l in open(lf, encoding="utf-8") if l[:3].lower() in q}
+            if inq:
+                print(f"warn learned: _learn/ still has the quarantined {', '.join(sorted(inq))} (built before the "
+                      f"quarantine): python3 scripts/align.py {p}, then python3 scripts/lang.py build {p}")
+        import seeds
+        sd, left = seeds.untested(p)
+        if sd:
+            n = len(sd.get("entries", []))
+            print(f"{'note' if left else 'ok  '} seeds: {n - len(left)} of {n} seeds from {sd.get('donor')} tested"
+                  + (f"; {len(left)} untested (python3 scripts/seeds.py status {p})" if left else ""))
         if any(f.endswith(".align") for _, _, fs in os.walk(d) for f in fs):
             ok &= run("alignments", ["scripts/full_align.py", "check", p])
         ok &= run("quotations", ["scripts/quotes.py", p])

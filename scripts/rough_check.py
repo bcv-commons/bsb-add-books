@@ -88,8 +88,8 @@ def segmenter(P):
 
 
 def features(P, text):
-    """The candidate negation markers of a verse: its word forms and the endings of their hyphen parts (2-4 characters,
-    as '-ending'), each both as written (every mark kept: a negation may differ from another form only by a tone mark) and
+    """The candidate negation markers of a verse: its word forms, the endings of their hyphen parts (2-4 characters,
+    as '-ending') and their beginnings (as '^beginning-'), each both as written (every mark kept: a negation may differ from another form only by a tone mark) and
     plain; with the morph view also each word's morphs (as '~-eav', '~tone-proh': a negation that is a suffix or a tone
     pattern, not a word's last letters)."""
     out = set()
@@ -103,6 +103,12 @@ def features(P, text):
                 for n in (2, 3, 4):
                     if len(part) > n + 1:
                         out.add("-" + part[-n:])
+            # and the word's beginnings (2-4 characters, as 'beginning-'): a negation that is a verb prefix (Zinza
+            # ti-/tii-: tiínkumanya, titukweésiga) is neither a word of its own nor an ending
+            head = x.split("-")[0] if "-" in x else x
+            for n in (2, 3, 4):
+                if len(head) > n + 1:
+                    out.add("^" + head[:n] + "-")
     return out
 
 
@@ -117,11 +123,27 @@ def learn_markers(P, min_n=15, min_prec=0.6):
         for f in fs:
             n_f[f] += 1
             n_neg[f] += g
-    cand = {f for f in n_f if n_f[f] >= min_n and n_neg[f] / n_f[f] >= min_prec}
     negated = {i for i, g in enumerate(neg) if g}
+    # word beginnings ('^ti-') only where words and endings leave the negated verses poorly covered (a language that
+    # negates with a verb prefix, Zinza ti-): elsewhere they only add weak markers and false "added" flags
+    for begin in (False, True):
+        cand = {f for f in n_f if n_f[f] >= min_n and n_neg[f] / n_f[f] >= min_prec and (begin or not f.startswith("^"))}
+        chosen, cov = _greedy(cand, feats, negated)
+        if cov >= BEGIN_BELOW:
+            break
+    return chosen, cov, len(negated)
+
+
+BEGIN_BELOW = 0.75   # coverage of the negated corpus verses under which word beginnings are learned too
+
+
+def _greedy(cand, feats, negated):
+    cand = set(cand)
     left, chosen = set(negated), []
     while True:
-        best = max(cand, key=lambda f: sum(1 for i in left if f in feats[i]), default=None)
+        # the marker that covers most verses still left; a tie by the form, so that the choice doesn't follow the
+        # set's order (which changes with PYTHONHASHSEED)
+        best = max(sorted(cand), key=lambda f: sum(1 for i in left if f in feats[i]), default=None)
         if best is None:
             break
         gain = {i for i in left if best in feats[i]}
@@ -131,7 +153,7 @@ def learn_markers(P, min_n=15, min_prec=0.6):
         left -= gain
         cand.discard(best)
     cov = 1 - len(left) / max(1, len(negated))
-    return chosen, cov, len(negated)
+    return chosen, cov
 
 
 def marker_count(P, text, markers):
