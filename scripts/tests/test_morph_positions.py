@@ -43,10 +43,32 @@ def run():
     assert split_on >= split_off, (split_on, split_off)
 
 
+def same_form():
+    """one form both a chain affix of the verb (an infinitive tu- at position 2) and a noun prefix without a position
+    (tu- of a noun class): the chain's reading wins on the verbs, the noun prefix's on the nouns"""
+    vocab = {w: 5 for w in "tusolu solu nisolu tubemi bemi nibemi tupelo pelo kapelo tumitu mitu kamitu".split()}
+    cls = {w: collections.Counter({"": 4, "verb": 4}) for w in ("tusolu", "solu", "nisolu", "tubemi", "bemi", "nibemi")}
+    cls.update({w: collections.Counter({"": 4, "noun": 4}) for w in ("tupelo", "pelo", "kapelo", "tumitu", "mitu",
+                                                                       "kamitu")})
+    G = types.SimpleNamespace(morphs=[
+        dict(id="m:ni-", slot="prefix", form="ni-", host="verb", value="1SG", position=1),
+        dict(id="m:tu-:inf", slot="prefix", form="tu-", host="verb", value="INF", position=2),
+        dict(id="m:tu-:noun", slot="prefix", form="tu-", host="noun", value="CL13"),
+        dict(id="m:ka-:noun", slot="prefix", form="ka-", host="noun", value="CL12")])
+    S = morphs.Segmenter(G, {}, vocab, cls)
+    assert parts(S, "tusolu") == [("prefix", "tu-", 2)], parts(S, "tusolu")
+    assert parts(S, "tupelo") == [("prefix", "tu-", 0)], parts(S, "tupelo")
+
+
 def test_positions_keep_other_affixes():
     run()
 
 
+def test_chain_affix_wins_on_its_host():
+    same_form()
+
+
 if __name__ == "__main__":
     run()
+    same_form()
     print("ok")

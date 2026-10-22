@@ -376,6 +376,12 @@ def view(pname, out_file, notice=None):
     data = json.dumps({"project": pname, "pages": pg, "store": store, "questions": questions, "credits": credits,
                        "notice": notice or NOTICE}, ensure_ascii=False)
     tpl = open(os.path.join(ROOT, "scripts", "wiki_view.html"), encoding="utf-8").read()
+    import script_code as SC
+    rtl = SC.direction(pname)      # a right-to-left target: its forms (the store values) get dir and lang
+    if rtl:
+        val = '<span class="val">${esc(v)}</span>'
+        assert val in tpl, "wiki_view.html: the store value's span changed"
+        tpl = tpl.replace(val, f'<span class="val" dir="rtl" lang="{rtl[1]}">${{esc(v)}}</span>')
     html = tpl.replace("/*DATA*/null", data.replace("</", "<\\/")).replace("{{project}}", pname)
     open(out_file, "w", encoding="utf-8").write(html)
     print(f"{os.path.relpath(out_file, ROOT)}: {len(pg)} pages, {len(store)} store entries ({len(live)} live), "

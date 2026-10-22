@@ -49,6 +49,11 @@ worked example.
      only seems to begin or end (a noun beginning like a verb prefix): `morphs.py <project> audit` and the
      `audit-store` skill (protected words, kind `word`). Parts written with a hyphen (a person part in *x-stem*, a clitic
      after a noun): `written: hyphen` on the morph (`docs/language-store.md`); with OT books, `audit --route all`.
+   - **The family brief first** (before the store work): a fresh research agent, effort high, with
+     `python3 scripts/seeds.py brief <project>` reads the grammars of the language, its relatives and the family and
+     writes the brief (`docs/language-store.md`, *The brief*: `profile/brief.md`, or `_eval/local/brief.md` when a
+     source is NC/ND/non-free) and a seed per testable point. The memory agent then tests the seeds on the corpus;
+     `python3 scripts/seeds.py brief --check <project>` shows which points are confirmed, contradicted or open.
    - **A related language the model knows** (the project's `donor`: `python3 scripts/donor.py run <project> --write`,
      Glottolog and write probes; the wizard does it): a fresh agent with `python3 scripts/seeds.py prompt <project>`
      writes what the model knows of it, from memory, as seeds (`profile/seeds.json`, `docs/language-store.md`, *Seeds*):

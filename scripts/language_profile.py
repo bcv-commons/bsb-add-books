@@ -53,6 +53,37 @@ CODE = re.compile(r"^(GB\d{3}|WALS:\d{1,3}[A-Z])$")
 GRAM_SLOTS = {"constituent_order": None, "adposition": "adposition", "possessor": "possessor", "article": "article_bound"}
 
 
+def agree_problems(e):
+    """a morph's `agree` (a verb affix's claim on its subject's or object's class or gender: {role, class, by}) and
+    `class` (a noun prefix's class: "7", "9/10", {"singular": "9", "plural": "10"}, {"default": "1/3", "stems": {..}})
+    (scripts/agree_route.py)"""
+    out, a, c = [], e.get("agree"), e.get("class")
+    if a is not None:
+        if not isinstance(a, dict):
+            out.append("agree is {role, class, by}")
+        else:
+            if a.get("role") not in ("subject", "object"):
+                out.append(f"agree role {a.get('role')!r} (subject or object)")
+            v = a.get("class")
+            if not v or not all(isinstance(x, (str, int)) and str(x) for x in (v if isinstance(v, list) else [v])):
+                out.append("agree needs class (an id or a list)")
+            if a.get("by", "class") not in ("class", "gender"):
+                out.append(f"agree by {a.get('by')!r} (class or gender)")
+            if set(a) - {"role", "class", "by"}:
+                out.append(f"agree: unknown key(s) {', '.join(sorted(set(a) - {'role', 'class', 'by'}))}")
+    if c is not None:
+        if e.get("host") != "noun":
+            out.append("class is for a noun prefix (host noun); a verb affix claims a class with agree")
+        elif isinstance(c, dict):
+            if set(c) - {"singular", "plural", "default", "stems"} or not c:
+                out.append("class as a dict: singular, plural, default, stems")
+            elif "stems" in c and not isinstance(c["stems"], dict):
+                out.append("class stems: {stem: class}")
+        elif not isinstance(c, (str, int)) or not str(c):
+            out.append("class: an id (\"7\", \"9/10\") or a dict")
+    return out
+
+
 def verses_of(path):
     """{(chapter, verse): text} of a repo chapter file (vN markers, notes and headings removed)."""
     ch = int(os.path.basename(path)[3:6])
@@ -178,6 +209,7 @@ def main():
                 if e.get("written") and (e["written"] not in ("fused", "hyphen", "both")
                                          or e.get("slot") not in ("prefix", "suffix")):
                     problems.append(f"{where}: written {e['written']!r} (fused, hyphen or both; a prefix or suffix)")
+                problems += [f"{where}: {p}" for p in agree_problems(e)]
             if k == "word":                       # a protected word: one whole word, no affix sign
                 if not e.get("form"):
                     problems.append(f"{where}: a protected word needs form")

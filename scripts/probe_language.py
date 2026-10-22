@@ -243,16 +243,21 @@ DEFAULT_MODEL = "claude-opus-5-5"     # for the API route: the model that drafts
 
 # ---------- the three probes: prompt and score ----------
 
+# display names of ISO 15924 codes where the Unicode name is not the one people use
+SCRIPT_NAMES = {"Latn": "Latin", "Orya": "Odia", "Deva": "Devanagari", "Cyrl": "Cyrillic", "Arab": "Arabic",
+                "Hebr": "Hebrew", "Grek": "Greek", "Beng": "Bengali", "Ethi": "Ethiopic", "Hani": "Chinese (Han)",
+                "Jpan": "Japanese", "Hang": "Hangul", "Mymr": "Myanmar", "Khmr": "Khmer", "Laoo": "Lao", "Tibt": "Tibetan",
+                "Taml": "Tamil", "Telu": "Telugu", "Knda": "Kannada", "Mlym": "Malayalam", "Gujr": "Gujarati",
+                "Guru": "Gurmukhi", "Sinh": "Sinhala", "Thai": "Thai", "Geor": "Georgian", "Armn": "Armenian",
+                "Syrc": "Syriac", "Thaa": "Thaana", "Nkoo": "N'Ko", "Adlm": "Adlam", "Tfng": "Tifinagh", "Cans": "Canadian Syllabics"}
+
+
 def script_of(P):
-    """The writing system of the corpus (Unicode script of its letters), e.g. 'Latin', 'Oriya', 'Arabic'."""
-    import collections, unicodedata
-    n = collections.Counter()
-    for r in P.corpus()[:400]:
-        for c in r[4]:
-            if c.isalpha():
-                n[unicodedata.name(c, "UNKNOWN").split()[0]] += 1
-    top = n.most_common(1)[0][0] if n else "LATIN"
-    return {"ORIYA": "Odia", "DEVANAGARI": "Devanagari"}.get(top, top.title())
+    """The writing system's display name, e.g. 'Latin', 'Odia', 'Arabic': from the ISO 15924 code that
+    scripts/script_code.py gives (recorded `script:`, else the corpus letters)."""
+    import script_code as SC
+    code, _ = SC.target_script(P)
+    return SCRIPT_NAMES.get(code, code)
 
 
 def prompt_write(P, n=16):

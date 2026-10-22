@@ -56,6 +56,7 @@ import fetch_edition as FE  # noqa: E402
 import project as P  # noqa: E402
 from project import project_dir, project_rel  # noqa: E402
 import probe_language as PL  # noqa: E402
+import script_code as SC  # noqa: E402
 import usage  # noqa: E402
 
 OPEN = FE.OPEN
@@ -485,10 +486,22 @@ def import_edition(c, iso, lang_dir):
     y["books"] = codes
     if basis:
         y["nt_basis"] = basis
-    note = f"# nt_basis read from the text by scripts/onboard.py: {why}. Check it (import-edition skill).\n"
+    y["script"], rtl = text_script(text)
+    note = (f"# nt_basis read from the text by scripts/onboard.py: {why}. Check it (import-edition skill).\n"
+            f"# script (ISO 15924) detected from the text's letters (scripts/script_code.py): {y['script']}{rtl}.\n")
     open(os.path.join(path, "edition.yaml"), "w", encoding="utf-8").write(head + note + yaml.safe_dump(y, allow_unicode=True, sort_keys=False, width=110))
-    say(f"  {len(codes)} books; nt_basis {y['nt_basis']} ({why})")
+    say(f"  {len(codes)} books; nt_basis {y['nt_basis']} ({why}); script {y['script']}{rtl}")
     return eid
+
+
+def text_script(text):
+    """(ISO 15924 code, note) of the converted text: the dominant script of its letters (scripts/script_code.py)."""
+    def lines():
+        for f in sorted(os.listdir(text)):
+            if f.endswith(".txt"):
+                yield open(os.path.join(text, f), encoding="utf-8").read()
+    s = SC.dominant_script(lines())
+    return s, ", right-to-left" if s in SC.RTL else ""
 
 
 def import_own_files(iso, lang_dir):
@@ -533,8 +546,9 @@ def import_own_files(iso, lang_dir):
     basis, why = nt_basis(text)
     if basis:
         y["nt_basis"] = basis
+    y["script"], rtl = text_script(text)
     open(os.path.join(path, "edition.yaml"), "w", encoding="utf-8").write(head + yaml.safe_dump(y, allow_unicode=True, sort_keys=False, width=110))
-    say(f"  {len(y['books'])} books; nt_basis {y['nt_basis']} ({why})")
+    say(f"  {len(y['books'])} books; nt_basis {y['nt_basis']} ({why}); script {y['script']}{rtl}")
     sfm_step(eid)
     return eid
 

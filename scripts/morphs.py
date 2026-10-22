@@ -49,14 +49,16 @@ one tone apart): the parse runs on the plain letters, and the label follows the 
     python3 scripts/morphs.py <project> try --seeds [seed id ...] [--write]
         the affix seeds (profile/seeds.json: a related language's forms, scripts/seeds.py) measured the same way, as if
         they were in the store; --write records one claim per seed (claim:seed.<name>, seed: <id>), the seeds unchanged
-    python3 scripts/morphs.py <project> audit [id ...] [--route nt|ot|lxx|vamvas|all]
+    python3 scripts/morphs.py <project> audit [id ...] [--route nt|ot|lxx|vamvas|agree|all]
         each affix checked on the words it splits: tokens, stems, stems also bare or with another affix of the slot, the
         feature's share with and without it on the same stems (on every host word without it when its stems never occur
         without it, and said so), its top words with their Greek, the words against it, and a verdict: confirm,
         protect-words (as kind `word` entries), restrict, retire (audit; read-only). --route: the NT aligned to the
         Greek (nt, the default), the OT books linked to the Hebrew read by the Hebrew token (ot), its LXX word (lxx) or
         its Vamvas word (vamvas), or all four (all; scripts/ot_routes.py), one row per route and a combined verdict:
-        confirm, re-label, nt-only, ot-only, or the NT's own. Ids of superseded entries are measured as if live again
+        confirm, re-label, nt-only, ot-only, or the NT's own; agree (scripts/agree_route.py, in a list: nt,agree): an
+        `agree` claim (subject/object class or gender) against the verb's own subject or object noun in the target.
+        Ids of superseded entries are measured as if live again
     python3 scripts/morphs.py <project> show <word> ...
     python3 scripts/morphs.py <project> rates      the features the confirmed affixes mark, and how often the human NT
         marks them on the Greek verbs that have them: those marked on 60% or more are checked in the loop
@@ -409,7 +411,10 @@ class Segmenter:
         """(stem, prefix chain, suffix chain) of the plain word s, or None: of the chains that leave an attested stem
         (or are all productive), the one that takes off most letters in the fewest pieces (ba-, not b-a-), then the one
         whose affixes are written as the store writes them (fit: b-aá-, not ba-á-, where aá- is a form and á- is not),
-        then the stem with most other forms. cut_ok(n): a boundary n letters from the start may be cut"""
+        then the one with more of the chain's own (positioned) affixes: where a form is both a chain affix of this host and
+        an affix without a position (an infinitive oku- at 2 beside a class-15 noun prefix oku-), the chain's reading wins
+        on the words of its host; then the stem with most other forms. cut_ok(n): a boundary n letters from the start may
+        be cut"""
         at = self.at_for.get(hosts) if hosts is not None else None
         best = None
         for pc, lp in self.chains(s, "p", cut_ok, at):
@@ -421,7 +426,9 @@ class Segmenter:
                     len(core) >= 2 and all(a + "-" in self.productive for _, a in pc)
                     and all("-" + a in self.productive for _, a in sc))
                 if ev:
-                    key = (lp + ls, -len(pc) - len(sc), fit(pc, sc), ev)
+                    own = sum(("prefix", p, a) in self.positioned for p, a in pc) + sum(
+                        ("suffix", p, a) in self.positioned for p, a in sc)
+                    key = (lp + ls, -len(pc) - len(sc), fit(pc, sc), own, ev)
                     if best is None or key > best[0]:
                         best = (key, core, pc, sc)
         return best[1:] if best else None
@@ -911,7 +918,7 @@ def try_morphs(pname, ids, P, S, write=False, by="script:morphs.py", min_n=20, m
         res.append((e, n, stems, lift, tl, odds, todds, verdict, refs, prod))
         print(f"  {e['id']:24} {form:7} position {pos or '-'}  n {n:5}  stems {stems:4}"
               + (f"  lift {lift}, odds {odds} (even verses {todds}) for {gr(e)}" if want else "")
-              + f"  -> {verdict}"
+              + f"  -> {verdict if n else 'absent (it never comes off)'}"
               + (f"; off every word: n {prod[1]}, stems {prod[2]}, odds {prod[3]} (even verses {prod[4]}) -> "
                  + ("productive" if prod[0] else "not productive") if prod else ""))
     if not write:
@@ -1087,7 +1094,31 @@ def combine(rs, A=AUDIT):
 
 
 HYPHEN_WORD = re.compile(r"[^\W_](?:[\w\u0300-\u036f\u1dc0-\u1dff\ua789]|-(?=\w))*")
-NAMES_OF = {"nt": "NT (Greek)", "hebrew": "OT Hebrew", "lxx": "OT LXX", "vamvas": "OT Vamvas"}
+NAMES_OF = {"nt": "NT (Greek)", "hebrew": "OT Hebrew", "lxx": "OT LXX", "vamvas": "OT Vamvas", "agree": "agreement"}
+
+
+def combine_agree(rs, A=AUDIT):
+    """combine() with the agreement route (scripts/agree_route.py) beside the feature routes: where it holds and no
+    feature route does (a concord has no Greek feature), it confirms (or keeps its own protect-words / restrict); where
+    it fails and no feature route holds, retire; else the feature routes' verdict, the agreement route named in the note"""
+    ag = rs.get("agree")
+    rest = {k: v for k, v in rs.items() if k != "agree"}
+    if ag is None:
+        return combine(rs, A)
+    s = route_state(ag, A)
+    base, note = combine(rest, A) if rest else (None, "")
+    other = any(route_state(v, A) == "holds" for v in rest.values())
+    add = lambda t: f"{note}; {t}" if note else t
+    if s == "holds" and not other:
+        return (ag["verdict"] if ag["verdict"] in ("protect-words", "restrict") else "confirm"), add(
+            f"the agreement route holds (odds {ag['odds']}, n {ag['links']})")
+    if s == "fails" and not other:
+        return "retire", add(f"the agreement route fails (odds {ag['odds']}, n {ag['links']})")
+    if s in ("holds", "fails", "flat"):
+        return base, add(f"the agreement route {s}")
+    if s == "thin" and base in (None, "no-claim"):     # a claim there is, but too few pairs to judge it
+        return "too-few", add(f"the agreement route is thin (n {ag['links']})")
+    return (base or ag.get("verdict") or "too-few"), note
 
 
 def audit(pname, ids, P, S, G=None, top=8, A=AUDIT, routes=("nt",), route_toks=None):
@@ -1127,7 +1158,14 @@ def audit(pname, ids, P, S, G=None, top=8, A=AUDIT, routes=("nt",), route_toks=N
     split = {w: S.split(w) for w in vocab}
     stem_of = lambda ms: next((m.form for m in ms if m.slot == "stem"), "")
     route_toks = dict(route_toks or {})
+    if "agree" in routes:                            # the agreement route: verb-noun pairs, the store's noun classes
+        import agree_route as AR
+        if "agree" not in route_toks:
+            route_toks["agree"] = AR.pairs(pname, S, P)
+        n_classes, a_cache = AR.noun_classes(G), {}
     for r in routes:
+        if r == "agree":
+            continue
         if r not in route_toks:
             route_toks[r] = affix_tokens(pname, S) if r == "nt" else OR.route_tokens(pname, S, r, P)
     res = []
@@ -1147,6 +1185,9 @@ def audit(pname, ids, P, S, G=None, top=8, A=AUDIT, routes=("nt",), route_toks=N
                 (other if any(m.slot == slot for m in ms) else bare).add(st)
         per = {}
         for r in routes:
+            if r == "agree":
+                per[r] = AR.stats(e, S, route_toks[r], n_classes, A, top, words, stem_by, a_cache)
+                continue
             w2, weak, why = OR.route_want(r, want)
             if want and w2 is None:
                 per[r] = dict(untestable=why, verdict="n.a.")
@@ -1161,7 +1202,7 @@ def audit(pname, ids, P, S, G=None, top=8, A=AUDIT, routes=("nt",), route_toks=N
         row = dict(entry=e, tokens=sum(words.values()), stems=len(stems), bare=len(bare), other=len(other),
                    **{k: v for k, v in first.items() if k not in ("weak", "claim", "alt")}, routes=per)
         if len(routes) > 1:
-            row["combined"] = combine(per, A)
+            row["combined"] = combine_agree(per, A) if "agree" in per else combine(per, A)
         res.append(row)
     return res
 
@@ -1206,6 +1247,10 @@ def print_audit(res, A=AUDIT):
                   + f"   odds {x['odds']}   n {x['links']} on {x['link_stems']} stems (without: {x['links_without']})"
                   + (f"   [{cl}" + ("; weak: tense from the Hebrew conjugation" if x["weak"] else "") + "]"
                      if name != "nt" else "") + f"   -> {route_state(x, A)}")
+            if name == "agree":
+                k, n, ko, no = x["cells"]
+                print(f"      against every verb without it: {k}/{n} vs {ko}/{no}, odds {x['odds_all']}; pairs "
+                      + ", ".join(f"{a} {b}" for a, b in sorted(x["pairs"].items())))
             for k, (v, o, sh) in ((x.get("alt") or {}).items() if many else ()):
                 print(f"      most marked {k}: {v} ({sh:.0%} of its links, odds {o})")
             if not many or name == "nt":
@@ -1536,6 +1581,9 @@ def main(a):
     if len(a) < 2:
         raise SystemExit(__doc__)
     import langtools as LT
+    if a[1] == "decide":                          # words or parts for analysis.model_text, by measurement
+        import decide_text
+        return decide_text.main([a[0]] + a[2:])
     P = LT.Project(a[0])
     if a[1] == "try" and "--seeds" in a:          # the donor's affixes measured as if they were in the store
         G, sd, same, skip, donor = with_seeds(a[0])
@@ -1611,18 +1659,21 @@ def main(a):
     if a[1] == "audit":
         route = a[a.index("--route") + 1] if "--route" in a else "nt"
         routes = {"all": ("nt", "hebrew", "lxx", "vamvas"), "ot": ("hebrew",)}.get(route, tuple(route.split(",")))
-        if set(routes) - {"nt", "hebrew", "lxx", "vamvas"}:
-            raise SystemExit(f"--route: nt, ot (the Hebrew), lxx, vamvas, all, or a list; got {route}")
+        if set(routes) - {"nt", "hebrew", "lxx", "vamvas", "agree"}:
+            raise SystemExit(f"--route: nt, ot (the Hebrew), lxx, vamvas, agree, all, or a list; got {route}")
         ids = [x for i, x in enumerate(a[2:], 2) if not x.startswith("--") and a[i - 1] != "--route"]
         G, revived = revive(a[0], ids)
         if revived:
             S = load(a[0], P, G)
             print(f"{a[0]}: measured as if live again (superseded in the store): {', '.join(revived)}")
+        if "agree" in routes:
+            import agree_route as AR
+            print(AR.summary(G or grammar.load(a[0]), a[0]))
         if routes != ("nt",):
             import ot_routes as OR
             rep = {}
             for r in routes:
-                if r != "nt":
+                if r not in ("nt", "agree"):
                     rep[r] = {}
                     OR.route_tokens(a[0], S, r, P, rep[r])
             for r, by in rep.items():
@@ -1632,7 +1683,7 @@ def main(a):
                         f", {sum(v for k, v in c.items() if k.startswith('parsed'))} of {c.get('with a word', 0)} "
                         "parsed" if r != "hebrew" else "") + (f"; skipped: {c['why']}" if c.get("skipped") else "") + ")"
                     for b, (_, c) in sorted(by.items())))
-            if not any(rep.values()):
+            if rep and not any(rep.values()):
                 print(f"{a[0]}: no OT books in the corpus linked to the Hebrew (_learn/links_hbo.tsv): the OT routes are "
                       "empty")
         print_audit(audit(a[0], ids, P, S, G=G, routes=routes))

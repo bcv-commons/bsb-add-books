@@ -25,8 +25,11 @@ through the `new-project` skill. The steps:
    Paratext) work too (`m`): the wizard says where to copy them and converts them. From SFM files it also reads the
    team's conventions (Unicode form, line endings, versification, headings, the divine name, the `\id` line and file
    names; `scripts/sfm_profile.py`) and asks you to confirm them: the drafts sent back as SFM follow them.
-3. **Import and fetch** into the right licence folder. Texts stay out of git. The NT basis and the quote marks are
-   read from the text.
+3. **Import and fetch** into the right licence folder. Texts stay out of git. The NT basis, the quote marks and the
+   script (ISO 15924, `script:` in edition.yaml; `scripts/script_code.py`) are read from the text. The script is named
+   in the probes, picks a donor's `nllb_init` in the same script, and sets the reading direction of the target text
+   in the site and the wiki view (right to left for Arabic, Hebrew, Syriac, Thaana, N'Ko, Adlam). The USFM export
+   needs nothing for it: Paratext takes the direction from the project's language settings.
 4. **The project** `export/<language>/<language>_BSB/` and the first chapter to draft. A book that a non-free edition
    has is quarantined now, before the probes.
 5. **AI work:** the probes run through the API when `ANTHROPIC_API_KEY` is set (billed per token), else through
@@ -43,7 +46,10 @@ through the `new-project` skill. The steps:
    (`scripts/usage.py`). For an `unknown` language it also offers the second-draft model (below).
 8. **Set-up:** sources and the Hebrew layout, alignment lexicons, a matching alignment layer
    (`scripts/lang.py layers <project> --write`), the empty store and wiki with the probe's slips as first entries,
-   `CREDITS.md`, `STATUS.md`.
+   `CREDITS.md`, `STATUS.md`. A language written without spaces between words (Thai, Lao, Khmer, Myanmar, Tibetan,
+   Chinese, Japanese: `script_code.NO_SPACES`) gets its words as tokenizer v2 cuts them (compact-alignments' tokenizer,
+   also bibles' `tools/verse-text`; our copy is `scripts/full_align.py`): Han per character, Myanmar per syllable,
+   Thai/Khmer/Lao at the zero-width space. The lexicons, concordance and packs then count these units as words.
 9. **What comes next**, asked for in Claude Code: the memory, the style guide, a reference chapter, then the
    chapters. At the end the wizard opens the website's local preview (`docs/website.md`).
 
@@ -129,7 +135,11 @@ an Apple GPU with about 32 GB, or a rented GPU.
    the text). `python3 scripts/fetch_edition.py --find <iso>` lists what can be fetched.
 2. **Probe the familiarity** (`probe_language.py`): set `familiarity`, and `close_to` for a variety; for an unknown
    language the donor (`python3 scripts/donor.py run <project> --write`) and, where it knows one, the seeds
-   (`python3 scripts/seeds.py prompt <project>` for a fresh agent).
+   (`python3 scripts/seeds.py prompt <project>` for a fresh agent). Then the **family brief**: a research agent
+   (effort high) with `python3 scripts/seeds.py brief <project>` writes what the language and its relatives mark, from
+   their grammars, with a status and sources per point, and turns the points into seeds (`docs/language-store.md`,
+   *The brief*; local in `_eval/local/` when a source is NC/ND). Know what you are looking for, know where to look;
+   the corpus decides.
 3. **Create the project** (`new-project` skill): `project.yaml` from `export/_template/`, the style guide, the
    divine names.
 4. **Build the memory:**

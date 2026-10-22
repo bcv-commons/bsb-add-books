@@ -20,6 +20,9 @@ Usage: python3 scripts/seeds.py prompt <project>     the seed agent's prompt (do
                                                    project's donor: block (scripts/donor.py); for a fresh agent
        python3 scripts/seeds.py status <project>     the seeds and their test state
        python3 scripts/seeds.py check <project>      the seed file's format (also run by language_profile.py check)
+       python3 scripts/seeds.py brief <project>      the family brief's research agent's prompt (scripts/brief.py)
+       python3 scripts/seeds.py brief --check <project>   the brief's points: tested, confirmed, contradicted
+Seeds from the family brief carry `method: brief:<source language iso or glottocode>` and `brief: <point id>`.
 """
 import collections, json, os, re, sys
 
@@ -67,7 +70,8 @@ def check(profile, store=None):
     if d is None:
         return [f"{eid}: seed {s} is not in profile/{FILE}" for s, eid in seeded.items()]
     donor = d.get("donor")
-    if not re.fullmatch(r"[a-z]{3}", str(donor or "")):
+    from_donor = any(str(e.get("method", "")).startswith("donor:") for e in d.get("entries", []))
+    if (from_donor or donor) and not re.fullmatch(r"[a-z]{3}", str(donor or "")):
         problems.append(f"{FILE}: donor {donor!r} (the ISO 639-3 code of the language the seeds come from)")
     ids = set()
     for e in d.get("entries", []):
@@ -82,8 +86,10 @@ def check(profile, store=None):
         if e.get("status") != "seed":
             problems.append(f"{where}: status {e.get('status')!r} (a seed stays a seed; its test is a store entry with "
                             "seed: <id>)")
-        if e.get("method") != f"donor:{donor}":
-            problems.append(f"{where}: method {e.get('method')!r} (donor:{donor})")
+        if e.get("method") != f"donor:{donor}" and not re.fullmatch(r"brief:[a-z0-9]{3,8}", str(e.get("method"))):
+            problems.append(f"{where}: method {e.get('method')!r} (donor:{donor}, or brief:<iso> for a brief's seed)")
+        elif str(e.get("method")).startswith("brief:") and not e.get("brief"):
+            problems.append(f"{where}: a brief's seed names its point (brief: b.<id>)")
         if e.get("kind") not in KINDS:
             problems.append(f"{where}: kind {e.get('kind')!r} ({', '.join(sorted(KINDS))})")
         if e.get("confidence") not in ("high", "medium", "low"):
@@ -228,8 +234,11 @@ def prompt(pname):
 
 
 def main(a):
-    if len(a) < 2 or a[0] not in ("status", "check", "prompt"):
+    if len(a) < 2 or a[0] not in ("status", "check", "prompt", "brief"):
         raise SystemExit(__doc__)
+    if a[0] == "brief":
+        import brief
+        return brief.main(a[1:])
     if a[0] == "prompt":
         print(prompt(a[1]))
         return

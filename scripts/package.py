@@ -11,6 +11,12 @@ Per clause line:
                                                     it Clear's MACULA Quotation and Speaker Data, one level, CC BY 4.0)
      <n> <Hebrew> <gloss> [<morphology for verbs; the referent for pronouns and suffixes>] · ...
      BSB: the BSB words that render these tokens, each with its token numbers (word^n), gaps as …
+     who: <n> <n>s=<participant>(p<k>) · ...   who the line's referring tokens are (a pronoun, a suffix, a finite verb's
+          implicit subject: <n>s, a kinship or common noun that is a named person: "my son" = Isaac) when they refer to a
+          named or recurring person or group;
+          names themselves are left out (scripts/participants.py: MACULA references, STEPBible TIPNR names and
+          relatives, CC BY 4.0, the speaker layer). p<k> numbers the chapter's participants (header line); absent when
+          the participants can't be resolved
      had: what this project already wrote for these lexemes (earlier chapters' .align), the store's decisions,
           and for an NT-only language how the NT renders them (Hebrew -> LXX Greek -> the NT's words)
 Writes export/<project>/_learn/packs/<code>NNN.pkg.md (git-ignored, like the verse packs).
@@ -195,6 +201,52 @@ def morph(t):
     return ""
 
 
+def participant_ids(code, ch, toks, lines):
+    """lines: {token key: drafting-layout line}. ({token key: [(token number, "<n>s" for a verb's subject, "<name>(p<k>)")]},
+    the header legend) for the chapter's referring words that point to a named or recurring participant. ({}, "") when
+    the resolver can't run (no TIPNR is fine; no data is not), said on stderr: a package without the lines is still one"""
+    try:
+        import participants as P
+        res = P.resolve("hbo", code, [ch])
+    except Exception as e:  # noqa: BLE001
+        print(f"package.py: no participant ids for {code} {ch} ({type(e).__name__}: {e})", file=sys.stderr)
+        return {}, ""
+    line_of = lambda k: (res.toks[k]["v"], lines.get(k))
+    line_names = collections.defaultdict(set)
+    for t in toks:
+        if t["key"] in res.toks and res.is_proper(res.toks[t["key"]]) and res.pid(t["key"]):
+            line_names[line_of(t["key"])].add(res.pid(t["key"]))
+    here = {k for k in res.mention_keys if res.toks[k]["ch"] == ch}
+    count = collections.Counter(res.pid(k) for k in here)
+    named = lambda pid: any(res.is_proper(res.toks[m]) for m in res.info.get(pid, {}).get("members", []) if m in res.toks)
+    num, who = {}, collections.defaultdict(list)
+    for t in toks:
+        k = t["key"]
+        if k not in here or t["n"] is None or res.is_proper(res.toks[k]):
+            continue
+        pid = res.pid(k)
+        if not pid or pid == k:  # not joined to anything earlier: a first mention
+            continue
+        cls = t["class"]
+        if cls == "verb" and t["type"] in ("infinitive construct", "infinitive absolute", "participle active", "participle passive"):
+            continue
+        if cls not in ("pron", "verb", "noun"):
+            continue
+        parts = pid.split("+")
+        if not all(res.info.get(p, {}).get("kind") in ("PERSON", "GROUP") and (named(p) or count[p] >= 2) for p in parts):
+            continue
+        if cls == "noun" and not all(named(p) for p in parts):  # a common noun only as a named one (my son = Isaac)
+            continue
+        if pid in line_names.get(line_of(k), ()):  # the name is on the line already (and Abraham said)
+            continue
+        for p in parts:
+            num.setdefault(p, len(num) + 1)
+        name = "+".join(f"{res.name(p) or '?'}(p{num[p]})" for p in parts)
+        who[k].append((f"{t['n']}{'s' if cls == 'verb' else ''}", name))
+    legend = " · ".join(f"p{i} {res.name(p) or '?'}" for p, i in num.items())
+    return who, legend
+
+
 def build(pname, code, ch, level=None):
     p = project(pname)
     level = level or p.get("familiarity") or "known"
@@ -234,6 +286,7 @@ def build(pname, code, ch, level=None):
         here = t["ch"] == ch and t["n"] is not None
         return f"{(t['english'] or t['gloss'] or '').replace(' ', '_')}{('(' + str(t['n']) + ('' if t['v'] == cur_v else ' v' + str(t['v'])) + ')') if here else ''}"
 
+    pwho, plegend = participant_ids(code, ch, toks, {k: v[0] for k, v in line_of.items()})
     out = [f"# {book} {ch}: clause packages ({lay} layout, level {level}). Write your words with these numbers: word^n.",
            ("# Per line: §verse.line L(level) rule [speech] / tokens: n Hebrew (function words with a gloss) / had: this "
             "project's renderings (count) and the store's decisions" if lean else
@@ -277,6 +330,10 @@ def build(pname, code, ch, level=None):
                     " Quotation and Speaker Data, CC BY 4.0, and SIL Glyssen, MIT)."] + (
             [f"# Frame: the chapter as a whole is spoken by {frame} (a psalm, a first-person account): that is not a"
              " quotation, so no quotation marks for it; a [speech] inside it is one."] if frame else [])
+    if plegend:
+        out[2:2] = ["# Who: `who: 3s 7=X(p2)` = token 3's implied subject (s) and token 7 refer to participant p2 (a pronoun,"
+                    " a suffix, a verb's subject, a noun that is a named person). participants.py; names STEPBible TIPNR,"
+                    " CC BY 4.0. " + plegend]
     has_sp = con.execute("select count(*) from sqlite_master where name='speakers'").fetchone()[0]
     booknum = list(BY_CODE).index(code) + 1
     spans = []
@@ -331,6 +388,12 @@ def build(pname, code, ch, level=None):
                 extra.append("ref=" + "+".join(names))
             cells.append(f"{t['n']} {heb} {gl}" + (f" [{'; '.join(extra)}]" if extra else ""))
         out.append("  " + " · ".join(cells))
+        w = collections.OrderedDict()
+        for t in group:
+            for n, name in pwho.get(t["key"], []):
+                w.setdefault(name, []).append(n)
+        if w:
+            out.append("  who: " + " · ".join(" ".join(dict.fromkeys(ns)) + "=" + name for name, ns in w.items()))
         # BSB: the words linked to this line's tokens, in BSB order, with the token numbers
         pos = collections.defaultdict(set)
         for t in group:

@@ -330,6 +330,8 @@ def test_drafts(pname, tracked):
 def tests(pname, p, tracked, od, ui, banner, built, nav, lc):
     """The project's test drafts, apart from its drafts: an index (folders, chapters, the reports in _eval/) and one
     page per test chapter, each under a test banner. They are not in the reader's selectors (nav.js)."""
+    import script_code as SC
+    tdir = SC.html_dir(pname)       # right-to-left target text: dir and lang, else ''
     from books import BY_CODE
     depth = pname.count("/") + 1
     td = os.path.join(od, "tests")
@@ -345,11 +347,11 @@ def tests(pname, p, tracked, od, ui, banner, built, nav, lc):
             name = book_title(p, code, title)
             slug = folder.replace("/", "_") + f"_{code}{n:03d}"
             text = "".join(f"<h2>{h}</h2>" if k == "h" else f"<p>{h}</p>" for k, h in blocks)
-            nt = "".join(f'<p id="n{j}"><a class="k" href="#r{j}">{j}</a>{h}</p>' for j, h in enumerate(notes, 1))
+            nt = "".join(f'<p id="n{j}"{tdir}><a class="k" href="#r{j}">{j}</a>{h}</p>' for j, h in enumerate(notes, 1))
             nf = f[:-4] + "_notes.md"
             extra = ""
             if nf in tracked:
-                vv = verse_view(p, code, n, os.path.join(ROOT, f), open(os.path.join(ROOT, nf), encoding="utf-8").read(), ui)
+                vv = verse_view(p, code, n, os.path.join(ROOT, f), open(os.path.join(ROOT, nf), encoding="utf-8").read(), ui, tdir)
                 extra += f'<details class="notes"><summary><strong>{H.escape(ui["v_verse"])}</strong> ({H.escape(os.path.basename(nf))})</summary>' \
                          + (vv or wiki.md_html(wiki.read_page(os.path.join(ROOT, nf))[1], os.path.basename(nf))) + "</details>"
             rf = f"{pre}{code}{n:03d}_report.md"
@@ -357,7 +359,7 @@ def tests(pname, p, tracked, od, ui, banner, built, nav, lc):
                 extra += f'<p><a href="{os.path.basename(rf)[:-3]}.html">{H.escape(ui["reports"])}: {H.escape(os.path.basename(rf))}</a></p>'
             body = (f'<p class="muted"><a href="index.html">{H.escape(ui["tests"])}</a> · {H.escape(folder)}</p>'
                     f'<h1>{H.escape(name)} {n} <span class="muted">({H.escape(ui["test"].lower())}, {H.escape(folder)})</span></h1>'
-                    f'<div class="text">{text}</div>'
+                    f'<div class="text"{tdir}>{text}</div>'
                     + (f'<div class="notes"><strong>{H.escape(ui["notes"])}</strong>{nt}</div>' if notes else "") + extra)
             open(os.path.join(td, slug + ".html"), "w", encoding="utf-8").write(
                 page(f"{name} {n} ({ui['test'].lower()}) · {p.get('language_name')}", body, nav("t"), tb, built, depth + 1, ui, lc))
@@ -602,9 +604,10 @@ def bsb_verses(p, code, ch, verses):
     return out
 
 
-def verse_view(p, code, n, draft_file, notes_md, ui):
+def verse_view(p, code, n, draft_file, notes_md, ui, tdir=""):
     """The chapter verse by verse: each verse of the draft with the original, the BSB and the notes' rows for it, then
-    the rest of the notes. -> html ('' without notes)."""
+    the rest of the notes. -> html ('' without notes). tdir: the attributes for target-language text (dir and lang of
+    a right-to-left script, script_code.html_dir), '' for left-to-right."""
     import langtools as LT
     if not notes_md:
         return ""
@@ -621,7 +624,7 @@ def verse_view(p, code, n, draft_file, notes_md, ui):
     nt = BY_CODE[code][2] == "nt"
     items = []
     for v in sorted(draft):
-        cell = [f'<div class="vv-t"><sup class="v">{v}</sup> {inline_md(draft[v])}</div>']
+        cell = [f'<div class="vv-t"{tdir}><sup class="v">{v}</sup> {inline_md(draft[v])}</div>']
         if src.get(v):
             cell.append(f'<div class="vv-o"{"" if nt else rtl}>{H.escape(src[v])}</div>')
         if bsb.get(v):
@@ -634,7 +637,7 @@ def verse_view(p, code, n, draft_file, notes_md, ui):
             else:
                 heb, tgt = (r[1] if len(r) > 1 else ""), (r[2] if len(r) > 2 else "")
                 eng, cm = (r[3] if len(r) > 4 else ""), (r[-1] if len(r) > 3 else "")
-                line = (f'<span{"" if nt else rtl}>{inline_md(heb)}</span> → <strong>{inline_md(tgt)}</strong>'
+                line = (f'<span{"" if nt else rtl}>{inline_md(heb)}</span> → <strong{tdir}>{inline_md(tgt)}</strong>'
                         + (f' <span class="muted">({inline_md(eng)})</span>' if eng else ""))
                 cell.append(f'<div class="vv-c">{line}' + (f'<br>{inline_md(cm)}' if cm else "") + "</div>")
         items.append(f'<div class="vv" id="vv{v}">' + "".join(cell) + "</div>")
@@ -646,7 +649,9 @@ def verse_view(p, code, n, draft_file, notes_md, ui):
 def reader(pname, p, tracked, od, ui, banner, built, nav, lc, rows):
     """The project's reader: a page of books and chapters, and one page per chapter."""
     from books import BY_CODE
+    import script_code as SC
     depth = pname.count("/") + 2
+    tdir = SC.html_dir(pname)       # dir="rtl" lang=... on the draft's text for a right-to-left script, else nothing
     chapters = [(ch, f, r) for ch, f, r in rows if os.path.relpath(f, ROOT) in tracked]
     if not chapters:
         return None
@@ -668,7 +673,7 @@ def reader(pname, p, tracked, od, ui, banner, built, nav, lc, rows):
         books.setdefault(code, {"title": book_title(p, code, title), "chs": []})["chs"].append(n)
         nf = f[:-4] + "_notes.md"
         views["verse"] = verse_view(p, code, n, f, open(nf, encoding="utf-8").read()
-                                    if os.path.relpath(nf, ROOT) in tracked else "", ui)
+                                    if os.path.relpath(nf, ROOT) in tracked else "", ui, tdir)
         pages.append((code, n, title, blocks, notes, r, views))
     rd = os.path.join(od, "read")
     os.makedirs(rd, exist_ok=True)
@@ -702,18 +707,20 @@ def reader(pname, p, tracked, od, ui, banner, built, nav, lc, rows):
                 return ""
             body_ = "".join(f"<h2>{x[1]}</h2>" if x[0] == "h" else f'<div class="l" style="--lv:{x[1]}">{x[2]}</div>' for x in rows)
             notice = ui["n_bhsa"] if lay == "bhsa" else ui["n_hcl"]
-            return f'<div class="lic">{H.escape(notice)}</div><div class="text cls">{body_}</div>'
+            rtl_css = ("<style>.cls[dir=rtl] .l { padding-left:0; padding-right:min(calc(var(--lv) * 1.6em), "
+                       "calc(var(--lv) * 3.5vw)); margin:0 0.6em 2px 0; }</style>") if tdir else ""
+            return f'{rtl_css}<div class="lic">{H.escape(notice)}</div><div class="text cls"{tdir}>{body_}</div>'
         modes = [("std", ui["v_std"], True), ("verse", ui["v_verse"], bool(views.get("verse"))),
                  ("bhsa", ui["v_bhsa"], "bhsa" in views), ("hcl", ui["v_hcl"], "bcv-query" in views)]
         none = H.escape(ui["v_none"])
         switch = ('<div class="modes" role="tablist">' + "".join(
             f'<button type="button" data-mode="{m}"' + ("" if ok else f' disabled title="{none}"') + f">{H.escape(lab)}</button>"
             for m, lab, ok in modes) + "</div>")
-        text = (f'<div class="view" data-view="std">{text}</div>'
+        text = (f'<div class="view" data-view="std"{tdir}>{text}</div>'
                 f'<div class="view" data-view="verse" hidden>{views.get("verse", "")}</div>'
                 f'<div class="view" data-view="bhsa" hidden>{clause_view("bhsa")}</div>'
                 f'<div class="view" data-view="hcl" hidden>{clause_view("bcv-query")}</div>')
-        nt = "".join(f'<p id="n{j}"><a class="k" href="#r{j}">{j}</a>{h}</p>' for j, h in enumerate(notes, 1))
+        nt = "".join(f'<p id="n{j}"{tdir}><a class="k" href="#r{j}">{j}</a>{h}</p>' for j, h in enumerate(notes, 1))
         link = lambda x, arrow_first: (f'<a href="{rel(*x)}">' + (f"← {H.escape(books[x[0]]['title'])} {x[1]}" if arrow_first
                                        else f"{H.escape(books[x[0]]['title'])} {x[1]} →") + "</a>") if x else ""
         pager = f'<nav class="pager"><span>{link(prev, True)}</span><span>{link(nxt, False)}</span></nav>'
@@ -721,7 +728,7 @@ def reader(pname, p, tracked, od, ui, banner, built, nav, lc, rows):
             bn = f"<strong>{H.escape(ui['published'].capitalize())}.</strong> {H.escape(r.get('statement', ''))}"
         else:
             bn = banner + (f" <em>({H.escape(ui['review'])})</em>" if r.get("status") == "in-review" else "")
-        body = (pick + f'<h1>{H.escape(title or books[code]["title"] + " " + str(n))}</h1>{switch}<div class="text">{text}</div>'
+        body = (pick + f'<h1{tdir}>{H.escape(title or books[code]["title"] + " " + str(n))}</h1>{switch}<div class="text">{text}</div>'
                 + (f'<div class="notes"><strong>{H.escape(ui["notes"])}</strong>{nt}</div>' if notes else "") + pager
                 + f'<script>window.HERE={json.dumps({"p": pname, "b": code, "c": n})}</script>'
                 + f'<script src="{"../" * (depth + 1)}nav.js"></script>')

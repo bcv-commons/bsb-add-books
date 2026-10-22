@@ -103,6 +103,8 @@ bridge between an NT translated from the Greek and the Hebrew OT being drafted.
 | `position` | optional: the place in an affix chain (prefixes from the word's start, suffixes from the stem outward); one form can hold two (subject *mu-* at 2, object *mu-* at 4) |
 | `written` | optional, a prefix or suffix: `fused` (the default: written onto its stem), `hyphen` (only as a whole piece before or after a hyphen: a bound person part in *x-stem*, a clitic in *noun-x*) or `both` |
 | `greek` | optional: the Greek feature it marks, as `lang.py report` names them (`{"person+number": "fp"}`; a list for several values) |
+| `agree` | optional, a verb affix that agrees with a noun: `{"role": "subject" \| "object", "class": "7" (or a list), "by": "class" \| "gender"}`. `by: class` (the default) reads the noun's class from its noun prefix (`class` below); `by: gender` reads the source noun's gender (`masculine`, `feminine`, `neuter`), for languages that mark the referent's sex or kind. Tested by `morphs.py audit --route agree` |
+| `class` | optional, a noun prefix (host `noun`): its noun class, `"7"`, a pair `"9/10"`, `{"singular": "9", "plural": "10"}` (told apart by the source noun's number) or `{"default": "1/3", "stems": {"ti": "3"}}` (a lexical split). Without it a `value` like `CL7` / `CL9/10` is read |
 | `tone_pattern` | a grammatical tone morph's marks by position from the word's end: `[{"at": "-2", "mark": "U+0300"}, {"at": "-1", "mark": "U+1DC4"}]`; `"<-1"` any unit before the last |
 | `productive` | from `morphs.py try`: `true` where the affix, taken off every word, still marks its Greek feature (confirmed, with at least half its odds ratio) (its words split without a stem attested elsewhere); `false` where it doesn't |
 | `stats` | from scripts: `count`, `hosts`, `lift`, `test_lift`, `odds`, `test_odds`; `productive_count`, `productive_hosts`, `productive_odds`, `productive_test_odds` |
@@ -168,7 +170,12 @@ Top-level fields of `observations.json`. A change makes the tests that depended 
   to. Rerun `lang.py build` after it.
 - **`analysis.model_text`**: `words` (default) or `morphs`: the second-draft model's target as words or parts
   (`be+`, `+gu`, `~PROH` for grammatical tone, `~H1` for lexical tone; `scripts/nllb/model_text.py`).
-  `analysis.model_join` and `analysis.model_tone` change the signs `+` and `~`.
+  `analysis.model_join` and `analysis.model_tone` change the signs `+` and `~`. `python3 scripts/morphs.py <project>
+  decide` measures the choice: tokens per type over the first 100,000 tokens (lexeme-aligner's `should_stem`, rich in
+  forms at 13 or below), the share of tokens the confirmed affixes split (10% or more) and an exact decode of every
+  type; `morphs` where all three hold, else `words`. It is a suggestion to train and compare, not a switch: `--write`
+  records it with its figures as `analysis.model_text_measured`, and `model_text` changes only by hand. So far the
+  trained comparisons were level or favoured `words`.
 
 ## The morph view
 
@@ -219,6 +226,17 @@ Top-level fields of `observations.json`. A change makes the tests that depended 
   the Greek leaking through the alignment; flagged, not retired), `ot-only` (only the OT holds: kept, noted), else the
   NT's verdict (retire when no route holds). `python3 scripts/ot_routes.py <project>` prints the coverage per route and
   book and the Vamvas fingerprint check.
+- **The agreement route** (`--route agree`, or in a list: `nt,agree`; `scripts/agree_route.py`): an affix's `agree`
+  claim tested inside the target. The source only finds the pair: each verb's subject (Greek and Hebrew `subjref`,
+  explicit or not; the OT books through their Hebrew links) and object (a Greek accusative third-person αὐτός of a
+  one-verb clause, through its referent); the verb and the noun must be linked to different target words. The noun's
+  class comes from its noun prefix (`class`), or with `by: gender` from the source noun's gender. A pair counts for
+  the claim where the noun's class lies inside the claimed classes, against it where it lies outside; ambiguous ones
+  (a `1/3` noun for a class-1 claim), names (no class prefix) and nouns without a class are left out and counted. Then
+  as every route: shares with and without it on the same stems, odds, words against it, state, and `odds_all` (against
+  every verb without it: the plain 2x2 of class and affix). In the combined verdict it confirms an affix that no
+  feature route can test (a concord has no Greek feature) and retires one it fails when no feature route holds. The
+  audit's first line says how many affixes claim `agree` and how many noun prefixes have a class, and what is missing.
 - **Protected words** (kind `word`) are never split and are no evidence for another word's split.
 - **The loop**: `rates` lists the features the confirmed affixes mark; one is checked where the human NT marks it on
   60% or more of 20 or more Greek verbs that have it. `review <code> <ch>` (run by `chapter_check.py`) flags OT verbs
@@ -255,6 +273,28 @@ check, the binding pack block, Grambank, glosses, the concordance), so a seed ca
   measures the affix seeds as if they were in the store and writes a claim per seed. The seed file itself isn't edited.
 - The verse pack lists a chapter's untested seeds whose `cells` or `pos` occur in it, once in the header, marked
   "(unconfirmed, from <donor>; check)". `check_project.py` reports how many are untested; `seeds.py status` lists them.
+
+## The brief
+
+Before the store work for an unknown language, a research agent (effort high, about 20-30 minutes) writes the **family
+brief**: what the language and its relatives mark and how, from grammars of the language, its nearest relatives and
+the family (`python3 scripts/seeds.py brief <project>`, `docs/prompts/brief_prompt.md`, from the Glottolog lineage of
+`scripts/donor.py tree` and the project's `donor:` block). It tells the agents what to look for and where; the corpus
+decides (in the projects so far, measurement overruled part of each brief).
+
+- **Where:** `profile/brief.md` when every source is open; `_eval/local/brief.md` when any source is NC, ND, non-free,
+  paywalled or of unknown licence (a brief on such sources stays local; only corpus-confirmed results go to the store).
+  `seeds.py brief --check` reports a brief in `profile/` whose Sources name such a licence.
+- **Format:** a `## Sources` table (id, source, URL, licence, used for, status); one `## <category>` section per
+  category (nominal classification, agreement, person of actor and undergoer, TAM, negation, mood, orientation, valency,
+  clitics, tone and length, clause linking, then the family's own); in each, points
+  `- **b.<category>.<topic>** [attested|relative|family] expected: <markers>; S1. Test: <what to count>.`:
+  `attested` in the language itself, `relative` in a named close relative, `family` inferred from the family or a
+  reconstruction. Then *Open questions* and *Not reached*.
+- **To tests:** each testable point becomes a seed in `profile/seeds.json` (*Seeds*) with `method: brief:<iso>` (the
+  language the form is from) and `brief: <point id>`: affixes as `morph` seeds (`morphs.py try --seeds`), agreements as
+  `feature` seeds naming the agreeing words (for the agreement route of `morphs.py audit` where the toolkit has it).
+  `python3 scripts/seeds.py brief --check <project>` lists each point as confirmed, contradicted, untested or no test.
 
 ## The validator
 

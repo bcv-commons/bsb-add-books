@@ -96,6 +96,37 @@ def nllb_codes():
     return {l.split("_")[0]: l.strip() for l in open(NLLB, encoding="utf-8") if l.strip() and not l.startswith("#")}
 
 
+def nllb_by_iso():
+    """{iso: [NLLB codes]}: a language can have codes in several scripts (ace_Arab, ace_Latn)"""
+    out = collections.defaultdict(list)
+    for l in open(NLLB, encoding="utf-8"):
+        if l.strip() and not l.startswith("#"):
+            out[l.split("_")[0]].append(l.strip())
+    return out
+
+
+def pick_init(order, script):
+    """(nllb_init or None, note): the first relative's NLLB code in the target `script`, else the first code at all,
+    moved to the script by script_code.init_for_script. `order`: iso codes, nearest/best first. note is None when
+    nothing changed; a Latin target keeps the choice it had before scripts counted."""
+    import script_code as SC
+    by = nllb_by_iso()
+    codes = [c for i in order for c in by.get(i, [])]
+    if not codes:
+        return None, None
+    first = next(by[i][-1] for i in order if by.get(i))     # the code nllb_codes() gives: the choice before scripts
+    if script == "Latn":
+        return first, None                                  # Latin targets: unchanged
+    same = [c for c in codes if c.endswith("_" + script)]
+    if same:
+        if same[0] == first or same[0].split("_")[0] == first.split("_")[0]:
+            return same[0], None
+        return same[0], (f"nllb_init {same[0]}: the nearest relative in NLLB written in {script} like the target "
+                         f"({first} is nearer or better known but in another script)")
+    ni, why = SC.init_for_script(first, script)
+    return ni, (f"nllb_init: no relative in NLLB is written in {script}; " + why) if why else None
+
+
 def bible_isos():
     """the languages with a Bible text in the sources fetch_edition.py fetches (cached listings; DBT where a key is set)"""
     import io
@@ -269,8 +300,9 @@ def probe(pname, c, route, model, out_dir):
     return dict(PL.score_write(TP, PL.answers(path)), edition=label, tokens=u)
 
 
-def choose(cands, T, levels, iso):
-    """(known iso or None, its score, why, nllb_init)"""
+def choose(cands, T, levels, iso, script="Latn"):
+    """(known iso or None, its score, why, nllb_init); nllb_init in the target `script` (ISO 15924) where a relative
+    has one, and why in `why`"""
     import probe_language as PL
     done = [c for c in cands if c.get("write")]
     well = [c for c in done if c["write"]["chrf_by_verse"] >= PL.KNOWN_BY_VERSE]
@@ -291,10 +323,11 @@ def choose(cands, T, levels, iso):
         why = (f"the model writes none of the probed relatives of {tname} "
                + (f"({', '.join(c['name'] + ' ' + str(c['write']['chrf_by_verse']) for c in done)})" if done else "(none probed)")
                + ": no seeds from memory; the structure relatives' typology only")
-    ni = (k or {}).get("nllb") or next((c["nllb"] for c in sorted(some, key=lambda c: c["distance"]) if c["nllb"]), None)
-    if not ni:
-        nl = nllb_codes()
-        ni = next((nl[T.iso(x)] for _, _, new in levels for x in new if T.iso(x) in nl), None)
+    order = ([k["iso"]] if k else []) + [c["iso"] for c in sorted(some, key=lambda c: c["distance"]) if c["nllb"]] \
+        + [T.iso(x) for _, _, new in levels for x in new if T.iso(x)]
+    ni, note = pick_init(list(dict.fromkeys(order)), script)
+    if note:
+        why += "; " + note
     if not ni:
         why += ("; nllb_init: no relative in NLLB-200, so English; a language of wider communication may serve better "
                 "(tpi_Latn where Tok Pisin is one)")
@@ -388,7 +421,9 @@ def main(a):
         print(f"    write {w['chrf_by_verse']} by verse (floor {w['floor']}; {w['answered']}/{w['n']} answered) against {w['edition']}")
     if todo and not any(c.get("write") for c in todo):
         raise SystemExit("no candidate could be probed: nothing chosen, nothing written")
-    known, score, why, ni = choose(cands, T, levels, iso)
+    import langtools as LT, script_code as SC
+    script, _ = SC.target_script(LT.Project(target))
+    known, score, why, ni = choose(cands, T, levels, iso, script)
     block = {"known": known or "none"}
     if known:
         block["name"] = next(c["name"] for c in cands if c["iso"] == known)

@@ -67,6 +67,29 @@ def target_script(P):
     return dominant_script(r[4] for r in P.corpus()), "corpus"
 
 
+def direction(pname):
+    """(script, bcp47 lang) of a project's target text when its script is written right to left, else None: what the
+    site, the wiki view and other HTML put on target-language text (dir="rtl" lang=...). Left-to-right: None, so
+    nothing changes for them."""
+    sys.path.insert(0, os.path.join(ROOT, "scripts"))
+    import langtools as LT
+    try:
+        P = LT.Project(pname)
+        s, _ = target_script(P)
+    except (Exception, SystemExit):   # no project or corpus here (a fresh clone without editions): nothing recorded either
+        return None
+    if s not in RTL:
+        return None
+    lang = str(P.p.get("language") or "").strip() or "und"
+    return s, f"{lang}-{s}"
+
+
+def html_dir(pname):
+    """' dir="rtl" lang="xx-Arab"' for a right-to-left target, else ''."""
+    d = direction(pname)
+    return f' dir="rtl" lang="{d[1]}"' if d else ""
+
+
 def nllb_languages():
     f = os.path.join(ROOT, "scripts", "nllb", "languages.txt")
     return [l.strip() for l in open(f, encoding="utf-8") if l.strip() and not l.startswith("#")]

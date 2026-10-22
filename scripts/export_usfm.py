@@ -19,6 +19,8 @@ The team's conventions come from the style edition's `sfm:` block in edition.yam
 marker, paragraph markers, footnote parts, \\id line, \\ide, file names, the divine name, Unicode form, line endings,
 versification), each field overridable in the project's own `sfm:`; without a block they are detected from the files at
 every export, as above.
+Right-to-left scripts (Arabic, Hebrew, Syriac, ...; scripts/script_code.py RTL) need nothing here: USFM carries no
+direction, Paratext takes it from the project's language settings, and the text keeps its logical order.
 The file is checked with usfmtc (pip install usfmtc) and its verses counted against the draft.
 
 Where it goes: a file in the team's structure is derived from their edition (docs/licensing.md), so it is written to the

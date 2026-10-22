@@ -173,14 +173,20 @@ def _unspaced(tok):
     return out + [cur] if cur else out
 
 
+def dropped(ch):
+    """a character tokenizer v2 drops before it reads words: a mark with a combining class (not Myanmar's virama and
+    asat) or a variation selector"""
+    cp = ord(ch)
+    return bool(unicodedata.combining(ch) and cp not in MYA_KEEP) or 0xFE00 <= cp <= 0xFE0F or 0xE0100 <= cp <= 0xE01EF
+
+
 def tokenize(text):
     """compact-alignments' tokenizer v2 (tokenize.js, usj_source.tokenize): marks with a combining class dropped (not
     Myanmar's virama and asat), variation selectors dropped, then maximal runs of letters and marks; punctuation, white
     space and digits separate; scripts without spaces segmented by rule (_unspaced)."""
     toks, cur = [], []
     for ch in unicodedata.normalize("NFC", text):
-        cp = ord(ch)
-        if (unicodedata.combining(ch) and cp not in MYA_KEEP) or 0xFE00 <= cp <= 0xFE0F or 0xE0100 <= cp <= 0xE01EF:
+        if dropped(ch):
             continue
         if unicodedata.category(ch)[0] in ("L", "M"):
             cur.append(ch)

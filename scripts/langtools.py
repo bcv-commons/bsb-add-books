@@ -105,9 +105,35 @@ def verses_of(path):
     return {(ch, int(parts[i])): re.sub(r"\s+", " ", parts[i + 1]).strip() for i in range(1, len(parts) - 1, 2)}
 
 
+def _segment_like_bcv(w):
+    """Cut the token w where tokenizer v2 cuts it (compact-alignments' and bibles' tools/verse-text bcv_tokenize; our
+    copy is full_align.tokenize): its segmentation runs on the form without the marks it drops, so it is run on that
+    form and the cuts are carried back; a dropped mark stays with the letter before it (our tokens keep the marks:
+    plain and exact forms, spelling)."""
+    import full_align as FA
+    kept = [i for i, c in enumerate(w) if not FA.dropped(c)]
+    if not kept:
+        return [w]
+    starts, n = set(), 0
+    for p in FA._unspaced("".join(w[i] for i in kept)):
+        starts.add(kept[n]); n += len(p)
+    out, cur = [], ""
+    for i, c in enumerate(w):
+        if i in starts and cur:
+            out.append(cur); cur = ""
+        cur += c
+    return out + ([cur] if cur else [])
+
+
 class Tokeniser:
-    def __init__(self, cfg=None, marks=()):
+    def __init__(self, cfg=None, marks=(), script=None):
         cfg = cfg or {}
+        # a script written without spaces between words (script_code.NO_SPACES): each token is cut further as tokenizer
+        # v2 cuts it (Han per character, Japanese at script changes, Myanmar per syllable; Thai, Khmer, Lao already break
+        # at the zero-width space, Tibetan at the tsheg), so our words are compact-alignments' tokens. `tokenise:
+        # {segment: none}` turns it off
+        from script_code import NO_SPACES
+        self.segment = _segment_like_bcv if script in NO_SPACES and cfg.get("segment", "bcv") != "none" else None
         self.split = bool(cfg.get("split_hyphens", False))
         ch = lambda m: chr(int(m[2:], 16)) if m.upper().startswith("U+") else m
         wc = cfg.get("word_chars") or []
@@ -134,7 +160,9 @@ class Tokeniser:
         out = []
         for w in (self.rx_exact.findall(self.exact(s)) if exact else self.rx.findall(self.plain(s))):
             w = w.strip("\u200c\u200d")                    # a joiner at the word's edge is display (after a final virama)
-            if self.split and "-" in w:
+            if self.segment and w:
+                out += [x for x in self.segment(w) if x]
+            elif self.split and "-" in w:
                 first, *rest = w.split("-")
                 out += ([first] if first else []) + ["-" + r for r in rest if r]
             else:
@@ -207,11 +235,25 @@ class Project:
             f = os.path.join(self.profile, fn)
             if os.path.exists(f):
                 marks += (json.load(open(f, encoding="utf-8")).get("orthography") or {}).get("ignore_marks", [])
-        self.tok = Tokeniser(self.p.get("tokenise"), marks)
+        self._marks = marks
+        self._tok = None
         self.editions = [edition(e) for e in self.p["style_from"]]
         self._rows = None
         self._spell = None
         self._seg = None
+
+    @property
+    def tok(self):
+        """The tokeniser, built on first use: the corpus's script decides whether words are segmented (no spaces)."""
+        if self._tok is None:
+            from script_code import recorded_script, dominant_script
+            script = recorded_script(self) or dominant_script(r[4] for r in self.corpus())
+            self._tok = Tokeniser(self.p.get("tokenise"), self._marks, script)
+        return self._tok
+
+    @tok.setter
+    def tok(self, t):
+        self._tok = t
 
     def spellings(self):
         """{plain token: Counter(exact token)}: how the corpus writes each form that matching sees without the ignored
