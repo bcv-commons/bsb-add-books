@@ -41,7 +41,7 @@ def measure(pname, code, chs, R, markers):
     """the counts of one arm over its chapters"""
     P = LT.Project(pname)
     t = collections.Counter()
-    eng, store, sp = RC.english_forms(R), P.store_forms(), P.spellings()
+    (eng, names), store, sp = RC.english_forms(R), P.store_forms(), P.spellings()
     book = code.upper()
     files = []
     for ch in chs:
@@ -66,7 +66,7 @@ def measure(pname, code, chs, R, markers):
             t["neg-"] += n_src > n_tgt
             t["neg+"] += bool(n_tgt and not n_src)
             t["eng"] += any(w not in store and not sp.get(P.tok.plain(w)) and w.lower() in eng
-                            for w in P.tok.tokens(text, exact=True))
+                            and w.lower() not in names for w in P.tok.tokens(text, exact=True))
         t["review"] += len(re.findall(r"^\s+REVIEW", run("scripts/chapter_check.py", pname, code, str(ch)), re.M))
     out = run("scripts/cell_check.py", R.name, *files)
     m = re.search(r"judged cells: draft (\d+)/(\d+)", out)

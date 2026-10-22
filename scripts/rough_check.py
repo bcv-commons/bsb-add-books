@@ -162,16 +162,50 @@ def marker_count(P, text, markers):
 
 
 def english_forms(P):
-    """The word forms of the assisting translation, the whole Bible (reference/BSB, or MSB), not only the corpus's books."""
+    """(the word forms of the assisting translation, the whole Bible (reference/BSB, or MSB), not only the corpus's books;
+    its names). A name kept in the draft (Meshullam, Jozabad) is no English left behind. Its names: the forms it writes
+    never lowercase (a part after a hyphen not counted: En-gedi, Hazar-shual) that are a person's or place's name in
+    STEPBible TIPNR, or one with an ending (Israelites, Philistines, Egyptians); a capitalized term that is no name
+    (Sabbath, Passover, I) stays English. Without TIPNR (setup.py --only names): every form of two letters or more it
+    writes only capitalized, sentence and verse starts not counted."""
     import glob
-    eng = set()
+    eng, upper, lower = set(), set(), set()
     for r in P.corpus():
         eng.update(LT.eng_tokens(r[3]))
     for d in {os.path.join(ROOT, P.assist_dir(c)) for c in ("gen", "mat")}:
         for f in glob.glob(os.path.join(d, "*.txt")):
             for t in LT.verses_of(f).values():
                 eng.update(LT.eng_tokens(t))
-    return eng
+                for m in re.finditer(r"(?<![A-Za-z-])[A-Za-z]+", t):
+                    w = m.group(0)
+                    if w[0].islower():
+                        lower.add(w)
+                    elif m.start() and not re.search(r"[.!?:;\"“‘(]\s*$", t[:m.start()]):
+                        upper.add(w.lower())
+    tipnr = tipnr_words()
+    if not tipnr:
+        return eng, {w for w in upper - lower if len(w) > 1}
+    base = lambda w: next((w[:-len(e)] for e in ("ites", "ite", "ians", "ian", "ines", "ine", "s") if w.endswith(e)
+                           and w[:-len(e)] in tipnr), w)
+    return eng, {w for w in eng - lower if w in tipnr or base(w) in tipnr or base(w) + "a" in tipnr}
+
+
+def tipnr_words():
+    """the lower-case words of STEPBible TIPNR's English names of persons and places, one word each, hyphens
+    allowed (its OTHER records, such as Sabbath or Selah, left out), or set() without the file (participants.py reads it)"""
+    import glob
+    import participants as PA
+    f = next(iter(sorted(glob.glob(os.path.join(PA.TIPNR_DIR, "TIPNR-*.txt")))), None)
+    out, keep = set(), False
+    for line in open(f, encoding="utf-8-sig") if f else ():
+        if line.startswith("$=========="):
+            keep = line[11:].split("\t")[0].strip() in ("PERSON(s)", "PLACE")
+        elif keep and line.startswith("– "):
+            c = line.split("\t")
+            name = re.split(r"\s*[=;(]", c[3])[0].strip() if len(c) > 3 else ""
+            if name and " " not in name:                   # one word (hyphens allowed): not 'Galilee of the Gentiles'
+                out.update(w.lower() for w in re.findall(r"[A-Za-z]+", name))
+    return out
 
 
 def main():
@@ -185,7 +219,7 @@ def main():
           + ", ".join(markers))
     if "--markers" in a:
         return
-    ms, eng = set(markers), english_forms(P)
+    ms, (eng, names) = set(markers), english_forms(P)
     sp, store = P.spellings(), P.store_forms()
     for f in files:
         b = os.path.basename(f)
@@ -201,7 +235,7 @@ def main():
             elif n_tgt and not n_src and "--no-added" not in a:
                 flags.append((v, f"negation added? the draft has {n_tgt} marker(s), the original no negation"))
             leak = [w for w in P.tok.tokens(text, exact=True)
-                    if w not in store and not sp.get(P.tok.plain(w)) and w.lower() in eng]
+                    if w not in store and not sp.get(P.tok.plain(w)) and w.lower() in eng and w.lower() not in names]
             if leak:
                 flags.append((v, "English? not in the corpus but in the English: " + ", ".join(dict.fromkeys(leak))))
         print(f"\n## {code} {ch} ({os.path.relpath(f, ROOT) if f.startswith(ROOT) else f}): {len({v for v, _ in flags})} verses flagged")
