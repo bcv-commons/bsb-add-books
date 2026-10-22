@@ -30,15 +30,22 @@ MAX_QUOTE = 15                 # words in one quotation (a store note, a notes l
 # orig/grc), never copied from orig/heb/ (our BHSA copy, the BHS text, CC BY-NC): scripts/notes_hebrew.py fills the
 # notes' verses. A run of more Hebrew or Greek words than this must be the open text word for word.
 CHECK_ORIGINAL = 6
-ORIGINAL_RUN = re.compile(r"(?:[\u0590-\u05FF\uFB1D-\uFB4F]+[\s\u05BE\u05C0\u05C3.,;:()…·-]*)+|"
-                          r"(?:[\u0370-\u03FF\u1F00-\u1FFF]+[\s.,;:·’'()…-]*)+")
-ORIGINAL_WORD = re.compile(r"[\u05D0-\u05EA][\u0591-\u05C7\u05D0-\u05EA]*|[\u0370-\u03FF\u1F00-\u1FFF]+")
+# "…" marks a left-out part (the quoting rule), so it ends a run
+ORIGINAL_RUN = re.compile(r"(?:[\u0590-\u05FF\uFB1D-\uFB4F]+[\s\u05BE\u05C0\u05C3.,;:()·-]*)+|"
+                          r"(?:[\u0370-\u03FF\u1F00-\u1FFF]+[\s.,;:·’'()-]*)+")
+# Greek words without the Greek punctuation of the block (U+037E question mark, U+0387 ano teleia; numeral signs)
+ORIGINAL_WORD = re.compile(r"[\u05D0-\u05EA][\u0591-\u05C7\u05D0-\u05EA]*|"
+                           r"[\u0370-\u0373\u0376-\u037D\u037F-\u0386\u0388-\u03FF\u1F00-\u1FFF]+")
+# A Greek reading that differs from the BGB is accepted when the line names it as a Majority Text variant and it is
+# Robinson-Pierpont (orig/grc-rp) word for word: "RP", "BYZ", "Byz", "Robinson-Pierpont" or "Majority Text" in the same
+# line. A TR-only reading stays a problem: we have no open TR text to check it against.
+VARIANT_MARK = re.compile(r"\b(?:RP|BYZ|Byz|Robinson-Pierpont|Majority[ -]Text)\b")
 _OPEN = {}
 
 
 def open_text(script):
     """The open original as one string of words: 'heb' the WLC (orig/heb.sqlite, verse by verse, prefixes joined to their
-    words as printed), 'grc' the BGB (orig/grc). NFC. '' if absent."""
+    words as printed), 'grc' the BGB (orig/grc), 'rp' Robinson-Pierpont (orig/grc-rp). NFC. '' if absent."""
     import unicodedata
     if script not in _OPEN:
         words = []
@@ -56,7 +63,7 @@ def open_text(script):
                 words += ORIGINAL_WORD.findall("".join(verse))
         else:
             import langtools as LT
-            for f in sorted(glob.glob(os.path.join(ROOT, "orig", "grc", "*.txt"))):
+            for f in sorted(glob.glob(os.path.join(ROOT, "orig", "grc-rp" if script == "rp" else "grc", "*.txt"))):
                 if re.fullmatch(r"[0-9a-z]{3}\d{3}\.txt", os.path.basename(f)):
                     for t in LT.verses_of(f).values():
                         words += ORIGINAL_WORD.findall(t)
@@ -69,7 +76,8 @@ ACCENT = re.compile(r"[\u0591-\u05AF]")   # Hebrew cantillation: only copied tex
 
 def original_runs(text, limit=CHECK_ORIGINAL):
     """Runs of more than `limit` Hebrew or Greek words copied from a text (Hebrew: with accents) that are not the open text
-    word for word, i.e. not the WLC / BGB: [(words, first words)]."""
+    word for word, i.e. not the WLC / BGB (or RP, for a Greek reading its line marks as a variant: VARIANT_MARK):
+    [(words, first words)]."""
     out = []
     for m in ORIGINAL_RUN.finditer(text):
         words = ORIGINAL_WORD.findall(m[0])
@@ -80,7 +88,12 @@ def original_runs(text, limit=CHECK_ORIGINAL):
             continue                      # written by hand (no accents): the agent's own phrase or a list, not a copy
         import unicodedata
         ref = open_text("heb" if heb else "grc")
-        if ref and unicodedata.normalize("NFC", " " + " ".join(words) + " ") not in ref:
+        run = unicodedata.normalize("NFC", " " + " ".join(words) + " ")
+        if ref and run not in ref:
+            end = text.find("\n", m.end())
+            line = text[text.rfind("\n", 0, m.start()) + 1:end if end >= 0 else len(text)]
+            if not heb and VARIANT_MARK.search(line) and run.casefold() in open_text("rp").casefold():
+                continue                  # a Majority Text variant, marked, word for word RP
             out.append((len(words), " ".join(words[:4])))
     return out
 
@@ -213,7 +226,8 @@ class Quotes:
             quoted, verses, unpub, marks = self.check_text(text, m[1] if test else None)
             for n, start in original_runs(text):
                 problems.append(f"{os.path.relpath(f, ROOT)}: {n} Hebrew/Greek words (“{start} …”) that are not the open text "
-                                f"word for word: quote the WLC or the BGB (scripts/notes_hebrew.py), never orig/heb/")
+                                f"word for word: quote the WLC or the BGB (scripts/notes_hebrew.py), never orig/heb/; a Majority "
+                                f"Text variant word for word RP, with RP/BYZ named in its line")
             total += quoted
             rel = os.path.relpath(f, ROOT)
             if not quoted:
@@ -276,6 +290,11 @@ def publishable(pname):
     return [f for f in files if f not in ignored]
 
 
+VARIANT_RULE = ("A Greek variant the BGB doesn't have may be quoted when it is Robinson-Pierpont word for word "
+                "(`orig/grc-rp`) and the same line names it: `RP`, `BYZ` or `Majority Text` (e.g. `BYZ + διελθὼν διὰ "
+                "μέσου αὐτῶν`); describe a TR-only reading in words. Mark a gap with `…`.")
+
+
 def rule_text(pname):
     """The quotation rule for an agent's prompt (make_prompt.py puts it in every chapter prompt; print it with
     --rule for other agents, e.g. a curation agent). Empty when no style edition is non-free. On a derived path
@@ -300,7 +319,7 @@ def rule_text(pname):
             "verse). Copy a quotation exactly as written (tone marks, accents, punctuation; `…` for a left-out part) "
             "and give its reference. Never paste a verse, a verse pack's lines or search output into a file. Your "
             f"draft is your own translation: never take a verse into it whole. At the end run `python3 scripts/quotes.py "
-            f"{pname} <the notes and wiki files you wrote>` and fix every problem.")
+            f"{pname} <the notes and wiki files you wrote>` and fix every problem. " + VARIANT_RULE)
 
 
 def write_credits(Q):

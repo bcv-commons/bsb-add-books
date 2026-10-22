@@ -23,7 +23,7 @@ instead if lang.sqlite has an `ot_links` table (book, ch, v, pos, key) beside nt
 
     python3 scripts/ot_routes.py <project>          coverage per route and book; the Vamvas fingerprint check
 """
-import collections, json, os, re, sqlite3, sys, unicodedata
+import collections, hashlib, json, os, re, sqlite3, sys, unicodedata
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
@@ -32,6 +32,7 @@ GRC = os.path.join(ROOT, "orig", "grc.sqlite")
 VAMVAS_LAYER = "ell_GreVamvas+llm+jev-v4"
 VAMVAS_DIR = os.path.join(ROOT, "download", "full-alignments-llm", "e", "ell", VAMVAS_LAYER)
 VAMVAS_TEXT = os.path.join(ROOT, "import", "CC0", "ell", "vamvas", "text")
+FPS = os.path.join(VAMVAS_TEXT, "_fingerprints.json")
 ROUTES = ("nt", "hebrew", "lxx", "vamvas")
 NAMES = {"nt": "NT (Greek)", "hebrew": "OT Hebrew", "lxx": "OT LXX", "vamvas": "OT Vamvas"}
 
@@ -348,6 +349,13 @@ def vamvas_check():
         theirs = f[:-5].split("_", 1)[1][:8]
         rows = vamvas_rows(b)
         mine = FA.text_fingerprint(english_rows(b, rows))[0][:8] if rows else None
+        if mine != theirs and os.path.exists(FPS):
+            # a Hebrew verse that holds two English ones (ISA 63:19 + 64:1) can't be split back: the fetch recorded the
+            # fingerprint of the module's own numbering, valid while our file is the one it wrote (its SHA-256)
+            rec = json.load(open(FPS, encoding="utf-8")).get(b) or {}
+            ours = os.path.join(VAMVAS_TEXT, f"{b.lower()}.txt")
+            if rec.get("text_sha256") == hashlib.sha256(open(ours, "rb").read()).hexdigest():
+                mine = rec["module"][:8]
         out[b] = (path, mine, theirs, mine == theirs)
     return out
 

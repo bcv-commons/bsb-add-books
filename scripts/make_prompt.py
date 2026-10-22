@@ -18,7 +18,7 @@ names. See docs/configuration.md for the fields.
 import datetime, os, re, sys
 from books import BY_CODE
 from project import edition, project, sources, must_quarantine, missing_texts, ROOT, project_dir, project_rel, derived_dir
-import vrs
+import quotes, vrs
 
 NAMES = {
     "orig/heb": ("Hebrew/Aramaic text (Hebrew verse numbering, one clause per line as `verse:indent text`)", "Hebrew"),
@@ -209,7 +209,8 @@ def main():
                    f"not free: consult its clause lines, don't copy its text): a phrase from the clause package, or a verse "
                    f"from `python3 scripts/notes_hebrew.py show {code} {chapter}:<verse>`. In a table with a row per verse, leave "
                    f"the {orig_word} cell empty. When the notes are written, run `python3 scripts/notes_hebrew.py {pname} "
-                   f"{code} {chapter}`: it fills the verses from the WLC (or the BGB) and adds the credit line.")
+                   f"{code} {chapter}`: it fills the verses from the WLC (or the BGB) and adds the credit line."
+                   + (" " + quotes.VARIANT_RULE if nt else ""))
     footnotes = p.get("footnotes", True)
     fh = p.get("footnotes_header")
     fh = (" It starts with " + ", ".join(f"`{l.format(file=f'{code}{nnn}.txt', date=date)}`" for l in fh)
@@ -235,7 +236,7 @@ def main():
         "If this book has no finished chapters yet, the style model is: " + "; ".join(f"`{s}`" for s in sm)
         + ". Read them in full the same way." if sm else
         f"If this book has no finished chapters yet, use the nearest finished book in `{project_rel(pname)}/` the same way.")
-    import quotes, modes
+    import modes
     qrule = quotes.rule_text(pname)
     mrules = modes.mode_rules(pname, p, modes.have_tools(pname))
     if modes.pack_grammar(pname, p) == "binding":  # the verbs to mark, here in the prompt (not only in the pack)

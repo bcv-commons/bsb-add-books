@@ -120,8 +120,9 @@ files with their `.meta.json`; the SHA-256 of the files' `SHA256SUMS` lines is p
 `morphs.py audit --route vamvas`): the modern Greek word(s) of each OT Hebrew word, read on our copy of the text
 (`import/CC0/ell/vamvas/`, built by its `fetch_vamvas.py`). The layer's file names carry the fingerprint of the SWORD
 module's text in its own (KJV) numbering; our copy is filed in the Hebrew numbering, so `ot_routes.py` puts it back
-(`english_rows`) before comparing. Measured 2026-10-22: 36 of 39 OT books match; Isaiah, Nehemiah and the Psalms don't
-(verses the renumbering merges or splits) and are skipped. Positions count compact-alignments' tokens in our
+(`english_rows`) before comparing. Where it can't be put back (a Hebrew verse holding two English ones), the check uses
+the module's fingerprint that the fetch recorded in `text/_fingerprints.json`, as long as the book file is still the
+one the fetch wrote (its SHA-256). Measured 2026-10-22: all 39 OT books match. Positions count compact-alignments' tokens in our
 Hebrew-numbered verse (checked on Jonah 2:1 = 1:17).
 
 ## download/grambank/: Grambank feature questions

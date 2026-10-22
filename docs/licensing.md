@@ -40,6 +40,13 @@ Quotations are not ours and not under our CC0; each place that has them says so.
 write (prompts, the store validator, `wiki.py lint`); `python3 scripts/check_project.py <project>` double-checks every
 publishable file before a commit (`docs/workflow.md`).
 
+**The original in notes** is quoted from the open texts, never from `orig/heb/` (BHSA): the WLC for Hebrew, the BGB
+(`orig/grc`) for Greek; `scripts/notes_hebrew.py` fills the verses. A Greek **Majority Text variant** may be quoted
+when it is Robinson-Pierpont (`orig/grc-rp`, public domain) word for word and its line names it: `RP`, `BYZ`,
+`Robinson-Pierpont` or `Majority Text` (e.g. `8,59 | BYZ, TR + διελθὼν διὰ μέσου αὐτῶν …`). A TR-only
+reading (not in RP) is described in words, not quoted at length: we have no open TR text to check it against. `…`
+marks a gap and ends the run that is checked. `scripts/quotes.py` reports any other run of more than 6 words.
+
 ## Kept local
 
 Out of git and off any site (all rebuildable with the scripts):
