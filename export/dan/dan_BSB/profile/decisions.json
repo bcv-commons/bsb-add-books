@@ -1,0 +1,6160 @@
+{
+ "iso": "da",
+ "edition": "dan_BSB",
+ "partition": "decisions",
+ "licence": "CC0-1.0 (single words and short phrases with references; quotations credited in ../CREDITS.md)",
+ "orthography": {
+  "normalization": "NFC",
+  "ignore_marks": []
+ },
+ "entries": [
+  {
+   "id": "term:H3068",
+   "kind": "term",
+   "source": "H3068 יהוה",
+   "value": "HERREN",
+   "attested": "attested",
+   "words": [
+    "lord"
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 1:17",
+     "form": "HERREN",
+     "n": 3005
+    },
+    {
+     "ref": "1KI 1:29",
+     "form": "HERREN"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "Med versaler; genitiv HERRENS. DFB 3.005× i 2.584 vers. Ikke 'Jahve' i teksten."
+  },
+  {
+   "id": "term:H430",
+   "kind": "term",
+   "source": "H430 אֱלֹהִים",
+   "value": "Gud",
+   "attested": "attested",
+   "words": [
+    "god"
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 1:17",
+     "form": "Gud",
+     "n": 1701
+    },
+    {
+     "ref": "1KI 1:30",
+     "form": "Gud"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "Om hedenske guder: 'guder' med lille (Jos 24,2.14-16)."
+  },
+  {
+   "id": "term:yhwh_elohim",
+   "kind": "term",
+   "source": "יְהוָה אֱלֹהִים",
+   "value": "Gud HERREN",
+   "attested": "attested",
+   "words": [
+    "lord god"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 2:4",
+     "form": "Gud HERREN",
+     "n": 27
+    },
+    {
+     "ref": "GEN 2:5",
+     "form": "Gud HERREN"
+    },
+    {
+     "ref": "GEN 2:7",
+     "form": "Gud HERREN"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB 27× (1 Mos 2-3; Es 42,5). Stilarkets valg for 1 Mos 2-3."
+  },
+  {
+   "id": "term:adonai_yhwh",
+   "kind": "term",
+   "source": "אֲדֹנָי יְהוִה",
+   "value": "Herre HERRE",
+   "attested": "attested",
+   "words": [
+    "lord god",
+    "sovereign lord"
+   ],
+   "alternatives": [
+    {
+     "value": "Herre, HERRE",
+     "note": "DFB 8× i tiltale (Dom 6,22; Jer 1,6)"
+    },
+    {
+     "value": "Herren HERREN",
+     "note": "DFB 22× uden for tiltale (Ez 37,5)"
+    },
+    {
+     "value": "Gud HERREN",
+     "note": "DFB 1 Mos 15,2 (tiltale)"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "JDG 16:28",
+     "form": "Herre HERRE",
+     "n": 2
+    },
+    {
+     "ref": "JER 14:13",
+     "form": "Herre HERRE"
+    },
+    {
+     "ref": "JDG 6:22",
+     "form": "Herre, HERRE",
+     "n": 6
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "I tiltale: 'Herre HERRE' 6× og 'Herre, HERRE' 8× i DFB; udkastet Jos 7,7 'Ak, Herre HERRE!'. Uden for tiltale 'Herren HERREN' (22×). Gen015 spm. 1 er åbent, og DFB's egen 1 Mos 15,2 har 'Gud HERREN!'."
+  },
+  {
+   "id": "term:adonai",
+   "kind": "term",
+   "source": "אֲדֹנָי",
+   "value": "Herren",
+   "attested": "attested",
+   "words": [
+    "lord"
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 8:44",
+     "form": "Herren",
+     "n": 395
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "Dan 9,3 'Herren Gud' for *ʔădōnāy hāʔĕlōhîm* (dan-oversigten 4); 'Herre, HERRE' kun for *ʔădōnāy YHWH*."
+  },
+  {
+   "id": "term:H7706",
+   "kind": "term",
+   "source": "H7706 אֵל שַׁדַּי",
+   "value": "Gud den Almægtige",
+   "attested": "attested",
+   "words": [
+    "god almighty",
+    "almighty"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 28:3",
+     "form": "Gud den Almægtige",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "Bindende i 1 Mos-stilarket og brugt i 35,11; 43,14; 48,3; 49,25 ('den Almægtige'). DFB: 1 Mos 28,3 'Gud den Almægtige', men 17,1 'El Shadaj' og 2 Mos 6,3 'almægtig Gud' – se spørgsmål."
+  },
+  {
+   "id": "term:el_elyon",
+   "kind": "term",
+   "source": "אֵל עֶלְיוֹן",
+   "value": "Gud den Højeste",
+   "attested": "attested",
+   "words": [
+    "god most high",
+    "most high"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 14:18",
+     "form": "Gud den Højeste",
+     "n": 7
+    },
+    {
+     "ref": "GEN 14:19",
+     "form": "Gud den Højeste"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB 1 Mos 14,18-22 (7×)."
+  },
+  {
+   "id": "term:tsebaot",
+   "kind": "term",
+   "source": "יְהוָה צְבָאוֹת",
+   "value": "Hærskarers HERRE",
+   "attested": "attested",
+   "words": [
+    "lord of hosts"
+   ],
+   "alternatives": [
+    {
+     "value": "HERREN, Hærskarers Gud",
+     "note": "for יְהוָה אֱלֹהֵי צְבָאוֹת (Jer 5,14; 35,17)"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "HAB 2:13",
+     "form": "Hærskarers HERRE",
+     "n": 218
+    },
+    {
+     "ref": "HAG 1:2",
+     "form": "Hærskarers HERRE"
+    },
+    {
+     "ref": "HAG 1:5",
+     "form": "Hærskarers HERRE"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB 218× (profeterne), med glossenoten {N: Hærskarers} (65×). Endnu ikke brugt i udkastene."
+  },
+  {
+   "id": "term:malak_yhwh",
+   "kind": "term",
+   "source": "מַלְאַךְ יְהוָה",
+   "value": "HERRENS engel",
+   "attested": "attested",
+   "words": [
+    "angel of the lord"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 16:7",
+     "form": "HERRENS engel",
+     "n": 44
+    },
+    {
+     "ref": "GEN 16:9",
+     "form": "HERRENS engel"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB 44×."
+  },
+  {
+   "id": "term:elah_shemayya",
+   "kind": "term",
+   "source": "אֱלָהּ שְׁמַיָּא (aram.)",
+   "value": "himlens Gud",
+   "attested": "attested",
+   "words": [
+    "god of heaven"
+   ],
+   "evidence": [
+    {
+     "ref": "JON 1:9",
+     "form": "himlens Gud",
+     "n": 4
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "Dan 2,18-19.37.44; DFB Jon 1,9."
+  },
+  {
+   "id": "term:god_of_israel",
+   "kind": "term",
+   "source": "יְהוָה אֱלֹהֵי יִשְׂרָאֵל",
+   "value": "HERREN, Israels Gud",
+   "attested": "attested",
+   "words": [
+    "god of israel"
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 1:30",
+     "form": "HERREN, Israels Gud",
+     "n": 30
+    },
+    {
+     "ref": "1KI 1:48",
+     "form": "HERREN, Israels Gud"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB 30×; med komma."
+  },
+  {
+   "id": "term:bene_israel",
+   "kind": "term",
+   "source": "בְּנֵי יִשְׂרָאֵל",
+   "value": "israelitterne",
+   "attested": "attested",
+   "words": [
+    "israelites"
+   ],
+   "alternatives": [
+    {
+     "value": "Israels børn",
+     "note": "DFB 93× (især 2 Mos); udkast 1 Mos 32,33"
+    },
+    {
+     "value": "Israels sønner",
+     "note": "DFB 26×; udkast 1 Mos 42,5; 45,21; 46,8; 50,25"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 6:1",
+     "form": "israelitterne",
+     "n": 279
+    },
+    {
+     "ref": "1KI 6:13",
+     "form": "israelitterne"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "DFB 235×. Jos-stilarket: israelitterne. I 1 Mos, hvor det er Jakobs sønner, er formen åben (gen-oversigten 9)."
+  },
+  {
+   "id": "term:H1285",
+   "kind": "term",
+   "source": "H1285 בְּרִית",
+   "value": "pagt",
+   "attested": "attested",
+   "words": [
+    "covenant"
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 3:15",
+     "form": "pagt",
+     "n": 142
+    },
+    {
+     "ref": "1KI 6:19",
+     "form": "pagt"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "Lexicon: covenant → pagt 102 (0,76) + pagts/pagtens/pagten."
+  },
+  {
+   "id": "term:aron_brit_yhwh",
+   "kind": "term",
+   "source": "אֲרוֹן בְּרִית יְהוָה",
+   "value": "HERRENS pagts ark",
+   "attested": "attested",
+   "words": [
+    "ark of the covenant of the lord"
+   ],
+   "alternatives": [
+    {
+     "value": "pagtens ark",
+     "note": "for אֲרוֹן הַבְּרִית (Jos 3,6; Hebr 9,4)"
+    },
+    {
+     "value": "arken",
+     "note": "for הָאָרוֹן"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 6:19",
+     "form": "HERRENS pagts ark",
+     "n": 6
+    },
+    {
+     "ref": "1KI 8:1",
+     "form": "HERRENS pagts ark"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded"
+  },
+  {
+   "id": "term:levites_priests",
+   "kind": "term",
+   "source": "הַכֹּהֲנִים הַלְוִיִּם",
+   "value": "levitpræsterne",
+   "attested": "attested",
+   "words": [
+    "levitical priests"
+   ],
+   "evidence": [
+    {
+     "ref": "JER 33:18",
+     "form": "levitpræst",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "DFB Jer 33,18."
+  },
+  {
+   "id": "term:H2763",
+   "kind": "term",
+   "source": "H2763 חָרַם (verbum)",
+   "value": "lægge band på",
+   "attested": "by-rule",
+   "words": [
+    "devote to destruction",
+    "devoted to destruction",
+    "destroy completely"
+   ],
+   "alternatives": [
+    {
+     "value": "det der er lagt band på / bandet",
+     "note": "nomen חֵרֶם (Jos 6,17-18; 7); åbent, jos 3"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "JDG 1:17",
+     "form": "lagde band på",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB: 'lagde band på' (Dom 1,17; 21,11), 'bandlyse' 2×. Udkastene 24×."
+  },
+  {
+   "id": "term:H7782",
+   "kind": "term",
+   "source": "H7782 שׁוֹפָר",
+   "value": "vædderhorn",
+   "attested": "attested",
+   "words": [
+    "ram's horn",
+    "rams' horns",
+    "trumpet"
+   ],
+   "evidence": [
+    {
+     "ref": "JDG 3:27",
+     "form": "vædderhorn",
+     "n": 13
+    },
+    {
+     "ref": "JDG 6:34",
+     "form": "vædderhorn"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB 13× (Dom 3,27; 6,34; 7)."
+  },
+  {
+   "id": "term:H2181",
+   "kind": "term",
+   "source": "H2181 זוֹנָה",
+   "value": "skøge",
+   "attested": "attested",
+   "words": [
+    "prostitute",
+    "harlot"
+   ],
+   "evidence": [
+    {
+     "ref": "ISA 23:15",
+     "form": "skøge",
+     "n": 16
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB 16×; harmoniseret i Jos 2 og 6 (kap. 2 havde 'prostitueret')."
+  },
+  {
+   "id": "term:H7270",
+   "kind": "term",
+   "source": "H7270 רִגֵּל",
+   "value": "udspionere",
+   "attested": "attested",
+   "words": [
+    "spy",
+    "spy out"
+   ],
+   "evidence": [
+    {
+     "ref": "GAL 2:4",
+     "form": "udspionere",
+     "n": 8
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "DFB 8×. Personerne: 'spejdere' (Jos 2,1; 6,17.23)."
+  },
+  {
+   "id": "term:H4603",
+   "kind": "term",
+   "source": "H4603 מָעַל מַעַל",
+   "value": "handle troløst",
+   "attested": "by-rule",
+   "words": [
+    "unfaithful",
+    "act unfaithfully",
+    "breach of faith"
+   ],
+   "evidence": [
+    {
+     "ref": "EXO 21:8",
+     "form": "handlet troløst",
+     "n": 12
+    },
+    {
+     "ref": "ISA 21:2",
+     "form": "handler troløst"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB 12-13×; Jos 7,1 og 22,20 ens."
+  },
+  {
+   "id": "term:edah",
+   "kind": "term",
+   "source": "עֵדָה",
+   "value": "menighed",
+   "attested": "attested",
+   "words": [
+    "congregation",
+    "assembly"
+   ],
+   "alternatives": [
+    {
+     "value": "forsamling",
+     "note": "DFB 4 Mos: 'israelitternes forsamling' 19×, 'hele forsamlingen' 25×"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "EXO 12:3",
+     "form": "Israels menighed",
+     "n": 4
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "Afgjort for Josva: עֲדַת בְּנֵי־יִשְׂרָאֵל = israelitternes menighed (18,1; 22,12), עֲדַת יִשְׂרָאֵל = Israels menighed, עֲדַת יְהוָה = HERRENS menighed. Ét valg for hele projektet (menighed eller forsamling) udestår (jos 27)."
+  },
+  {
+   "id": "term:torah",
+   "kind": "term",
+   "source": "H8451 תּוֹרָה",
+   "value": "lov",
+   "attested": "attested",
+   "words": [
+    "law"
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 2:3",
+     "form": "Moses’ lov",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "Jos: 'lov', 'Moses' lovbog', 'Guds lovbog' (1,7-8; 8,31-34; 24,26)."
+  },
+  {
+   "id": "term:migrash",
+   "kind": "term",
+   "source": "מִגְרָשׁ",
+   "value": "marker",
+   "attested": "attested",
+   "words": [
+    "pasturelands"
+   ],
+   "evidence": [
+    {
+     "ref": "NUM 35:7",
+     "form": "tilhørende marker",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "Efter DFB 4 Mos 35 ('48 byer med tilhørende marker')."
+  },
+  {
+   "id": "term:miqlat",
+   "kind": "term",
+   "source": "עָרֵי הַמִּקְלָט",
+   "value": "tilflugtsbyer",
+   "attested": "attested",
+   "words": [
+    "cities of refuge"
+   ],
+   "evidence": [
+    {
+     "ref": "NUM 35:6",
+     "form": "tilflugtsby",
+     "n": 9
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "Med 'blodhævneren', 'drabsmand', 'ved et uheld', alle fra 4 Mos 35."
+  },
+  {
+   "id": "term:goel_hadam",
+   "kind": "term",
+   "source": "גֹּאֵל הַדָּם",
+   "value": "blodhævneren",
+   "attested": "attested",
+   "words": [
+    "avenger of blood"
+   ],
+   "evidence": [
+    {
+     "ref": "NUM 35:12",
+     "form": "blodhævner",
+     "n": 5
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided"
+  },
+  {
+   "id": "term:yam_suf",
+   "kind": "term",
+   "source": "יַם־סוּף",
+   "value": "Sivhavet",
+   "attested": "attested",
+   "words": [
+    "red sea"
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 9:26",
+     "form": "Sivhavet",
+     "n": 15
+    },
+    {
+     "ref": "EXO 10:19",
+     "form": "Sivhavet"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded"
+  },
+  {
+   "id": "term:great_sea",
+   "kind": "term",
+   "source": "הַיָּם הַגָּדוֹל",
+   "value": "Det Store Hav",
+   "attested": "attested",
+   "words": [
+    "great sea",
+    "mediterranean"
+   ],
+   "evidence": [
+    {
+     "ref": "NUM 34:6",
+     "form": "Det Store Hav",
+     "n": 2
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded"
+  },
+  {
+   "id": "term:salt_sea",
+   "kind": "term",
+   "source": "יָם הַמֶּלַח",
+   "value": "Salthavet",
+   "attested": "attested",
+   "words": [
+    "salt sea",
+    "dead sea"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 14:3",
+     "form": "Salthavet",
+     "n": 3
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded"
+  },
+  {
+   "id": "term:arabah",
+   "kind": "term",
+   "source": "הָעֲרָבָה",
+   "value": "Araba",
+   "attested": "attested",
+   "words": [
+    "arabah"
+   ],
+   "evidence": [
+    {
+     "ref": "JER 39:4",
+     "form": "Araba",
+     "n": 2
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Også 'Araba-sletten', 'Arabahavet' (Jos 12,3)."
+  },
+  {
+   "id": "term:negev",
+   "kind": "term",
+   "source": "הַנֶּגֶב",
+   "value": "sydlandet",
+   "attested": "attested",
+   "words": [
+    "negev"
+   ],
+   "alternatives": [
+    {
+     "value": "Negev",
+     "note": "som egennavn (1 Mos 20,1)"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "JDG 1:9",
+     "form": "sydlandet",
+     "n": 4
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "'sydlandet' i geografiske opremsninger som Dom 1,9."
+  },
+  {
+   "id": "term:shephelah",
+   "kind": "term",
+   "source": "הַשְּׁפֵלָה",
+   "value": "lavlandet",
+   "attested": "attested",
+   "words": [
+    "foothills",
+    "lowland"
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 10:27",
+     "form": "lavlandet",
+     "n": 6
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded"
+  },
+  {
+   "id": "term:hahar",
+   "kind": "term",
+   "source": "הָהָר",
+   "value": "bjerglandet",
+   "attested": "attested",
+   "words": [
+    "hill country"
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 5:29",
+     "form": "bjerglandet",
+     "n": 9
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "'Efraims bjergland' (udkast 14×) mod DFB's 'Efraims Bjerge' (Dom 12×) er åbent (jos 45)."
+  },
+  {
+   "id": "term:H7585",
+   "kind": "term",
+   "source": "H7585 שְׁאוֹל",
+   "value": "dødsriget",
+   "attested": "attested",
+   "words": [
+    "sheol",
+    "grave"
+   ],
+   "evidence": [
+    {
+     "ref": "HAB 2:5",
+     "form": "dødsriget",
+     "n": 40
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB 40×; lexicon sheol → dødsriget 0,64 + dødsrigets 0,19. {N: Sheol} er åbent."
+  },
+  {
+   "id": "term:hesed",
+   "kind": "term",
+   "source": "H2617 חֶסֶד",
+   "value": "trofasthed",
+   "attested": "attested",
+   "words": [
+    "loving devotion",
+    "kindness",
+    "loyalty"
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 3:6",
+     "form": "trofasthed",
+     "n": 31
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "*ḥæsæd wæʔæmæt* = 'trofasthed og troskab' (1 Mos 24,27); valget for hele bogen er åbent (gen024 spm. 1). DFB har også 'nåde' med {N: nåde}."
+  },
+  {
+   "id": "term:H8198",
+   "kind": "term",
+   "source": "H8198 שִׁפְחָה",
+   "value": "trælkvinde",
+   "attested": "attested",
+   "words": [
+    "maidservant",
+    "servant"
+   ],
+   "alternatives": [
+    {
+     "value": "tjenestepige",
+     "note": "DFB 1 Mos 12,16; 16,1-2 om Hagar; udkast 20,14; 24,35"
+    },
+    {
+     "value": "slavinde",
+     "note": "for אָמָה i 21,10-13 (Gal 4,30)"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 1:2",
+     "form": "tjenestepige",
+     "n": 28
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "Udkastene: trælkvinde 22×, tjenestepige 2×, slavinde 4×. DFB's 1 Mos 16 (Hagar) har nu 'tjenestepige' – gen-oversigten 1 og 7 er åbne."
+  },
+  {
+   "id": "term:toledot",
+   "kind": "term",
+   "source": "תּוֹלְדוֹת",
+   "value": "slægtshistorie",
+   "attested": "attested",
+   "words": [
+    "account",
+    "generations",
+    "records"
+   ],
+   "alternatives": [
+    {
+     "value": "historien om",
+     "note": "DFB 1 Mos 2,4"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 6:9",
+     "form": "slægtshistorie",
+     "n": 6
+    },
+    {
+     "ref": "GEN 10:1",
+     "form": "slægtshistorie"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB 1 Mos 6,9; 10,1; 11,10.27: 'Dette er X's slægtshistorie'; udkastene 25,12.19; 36,1.9 følger. Gen-oversigten 3 er åben."
+  },
+  {
+   "id": "term:hinneh",
+   "kind": "term",
+   "source": "H2009 הִנֵּה",
+   "value": "se",
+   "attested": "attested",
+   "words": [
+    "behold",
+    "look"
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 1:14",
+     "form": "Se, ",
+     "n": 336
+    },
+    {
+     "ref": "1KI 1:22",
+     "form": "Se, "
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Lexicon behold → se 186 (0,89). DFB 'Se, ' 336×."
+  },
+  {
+   "id": "term:qanna",
+   "kind": "term",
+   "source": "אֵל קַנָּא / קַנּוֹא",
+   "value": "skinsyg",
+   "attested": "attested",
+   "words": [
+    "jealous"
+   ],
+   "alternatives": [
+    {
+     "value": "nidkær",
+     "note": "DFB 6× (Sl 69,10; Sak 1,14)"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "EXO 34:14",
+     "form": "skinsyg",
+     "n": 4
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB 2 Mos 34,14 'skinsyg'; jos 47 åbent."
+  },
+  {
+   "id": "term:sar_tabbahim",
+   "kind": "term",
+   "source": "שַׂר הַטַּבָּחִים",
+   "value": "chefen for livvagten",
+   "attested": "attested",
+   "words": [
+    "captain of the guard"
+   ],
+   "evidence": [
+    {
+     "ref": "JER 39:9",
+     "form": "chefen for livvagten",
+     "n": 15
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "Husform fra Jer 39; 52 (DFB 15×); 1 Mos 37; 39; 40; 41."
+  },
+  {
+   "id": "term:hartummim",
+   "kind": "term",
+   "source": "חַרְטֻמִּים",
+   "value": "mirakelmagere",
+   "attested": "attested",
+   "words": [
+    "magicians"
+   ],
+   "evidence": [
+    {
+     "ref": "EXO 7:11",
+     "form": "mirakelmager",
+     "n": 6
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Husform fra 2 Mos 7-8; 1 Mos 41,8; Dan 1,20; 2,2."
+  },
+  {
+   "id": "term:kasdim",
+   "kind": "term",
+   "source": "כַּשְׂדִּים",
+   "value": "kaldæerne",
+   "attested": "attested",
+   "words": [
+    "chaldeans",
+    "astrologers"
+   ],
+   "evidence": [
+    {
+     "ref": "HAB 1:6",
+     "form": "kaldæer",
+     "n": 51
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided"
+  },
+  {
+   "id": "term:tselem",
+   "kind": "term",
+   "source": "צְלֵם (aram.)",
+   "value": "billedstøtte",
+   "attested": "attested",
+   "words": [
+    "statue",
+    "image"
+   ],
+   "evidence": [
+    {
+     "ref": "NUM 33:52",
+     "form": "billedstøtte",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "Ensrettet i Dan 2,31-45 og kap. 3 (2 havde 'statue')."
+  },
+  {
+   "id": "term:shiqquts",
+   "kind": "term",
+   "source": "שִׁקּוּץ מְשֹׁמֵם",
+   "value": "ødelæggelsens vederstyggelighed",
+   "attested": "attested",
+   "words": [
+    "abomination of desolation",
+    "abomination that causes desolation"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 24:15",
+     "form": "ødelæggelsens vederstyggelighed",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "Som DFB Matt 24,15 (Mark 13,14 har 'modbydelighed', meldt som fejl). 9,27 i flertal som hebraisk."
+  },
+  {
+   "id": "term:tsevi",
+   "kind": "term",
+   "source": "אֶרֶץ הַצְּבִי",
+   "value": "det herlige land",
+   "attested": "attested",
+   "words": [
+    "beautiful land",
+    "glorious land"
+   ],
+   "evidence": [
+    {
+     "ref": "ZEC 7:14",
+     "form": "det herlige land",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded"
+  },
+  {
+   "id": "term:elon",
+   "kind": "term",
+   "source": "H436 אֵלוֹן",
+   "value": "eg",
+   "attested": "attested",
+   "words": [
+    "oak",
+    "oaks",
+    "terebinth",
+    "great trees"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 13:18",
+     "form": "Mamres ege",
+     "n": 2
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "'Mamres ege' (DFB 1 Mos 13,18), 'Morehs eg' (DFB 12,6; stilarket skrev 'Mores eg'); 'terebinte' kun i {T:}. DFB 18,1 har dog 'egetræerne i Mamre'."
+  },
+  {
+   "id": "term:kikkar",
+   "kind": "term",
+   "source": "כִּכַּר הַיַּרְדֵּן",
+   "value": "Jordansletten",
+   "attested": "attested",
+   "words": [
+    "plain of the jordan",
+    "plain"
+   ],
+   "alternatives": [
+    {
+     "value": "egnen ved Jordan",
+     "note": "gen-oversigtens ensretning for 13; 19 (Matt 3,5), nu overhalet af DFB 13,10-11"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 13:10",
+     "form": "Jordansletten",
+     "n": 2
+    },
+    {
+     "ref": "GEN 13:11",
+     "form": "Jordansletten"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "open",
+   "note": "Gen-oversigten valgte 'egnen' for 1 Mos 13 og 19, men DFB's udgivne 13,10-11 har 'Jordansletten' og 19,17 'sletten'. Udkastene til 20-50 har ikke ordet endnu."
+  },
+  {
+   "id": "formula:say_to",
+   "kind": "formula",
+   "source": "וַיֹּאמֶר אֵלָיו",
+   "value": "<taler> sagde til ham: >>",
+   "attested": "attested",
+   "words": [
+    "said to him",
+    "said to her",
+    "said to them"
+   ],
+   "evidence": [
+    {
+     "ref": "EXO 4:2",
+     "form": "sagde til ham: >>",
+     "n": 140
+    },
+    {
+     "ref": "EXO 4:18",
+     "form": "sagde til ham: >>"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Se feature speech_frame."
+  },
+  {
+   "id": "formula:koh_amar",
+   "kind": "formula",
+   "source": "כֹּה אָמַר יְהוָה",
+   "value": "Sådan siger HERREN",
+   "attested": "attested",
+   "words": [
+    "this is what the lord says",
+    "thus says the lord"
+   ],
+   "alternatives": [
+    {
+     "value": "Dette siger Hærskarers HERRE",
+     "note": "Hag 1,2"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "EXO 7:26",
+     "form": "Sådan siger HERREN",
+     "n": 69
+    },
+    {
+     "ref": "ISA 37:6",
+     "form": "Sådan siger HERREN"
+    },
+    {
+     "ref": "ISA 37:21",
+     "form": "Sådan siger HERREN"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB 69×."
+  },
+  {
+   "id": "formula:neum_yhwh",
+   "kind": "formula",
+   "source": "נְאֻם יְהוָה",
+   "value": "siger HERREN",
+   "attested": "attested",
+   "words": [
+    "declares the lord"
+   ],
+   "evidence": [
+    {
+     "ref": "ISA 1:11",
+     "form": "siger HERREN",
+     "n": 150
+    },
+    {
+     "ref": "ISA 1:18",
+     "form": "siger HERREN"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB 150× (inkl. 'Sådan siger HERREN'); udkast 1 Mos 22,16; Jos 7,13; 24,2."
+  },
+  {
+   "id": "formula:word_came",
+   "kind": "formula",
+   "source": "וַיְהִי דְבַר־יְהוָה אֶל",
+   "value": "HERRENS ord kom til <modtager>",
+   "attested": "attested",
+   "words": [
+    "the word of the lord came to"
+   ],
+   "evidence": [
+    {
+     "ref": "EZK 33:23",
+     "form": "HERRENS ord kom til",
+     "n": 15
+    },
+    {
+     "ref": "JER 1:4",
+     "form": "HERRENS ord kom til"
+    },
+    {
+     "ref": "JER 1:11",
+     "form": "HERRENS ord kom til"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB 15× (Jer, Ez)."
+  },
+  {
+   "id": "formula:oath_life",
+   "kind": "formula",
+   "source": "חַי־יְהוָה / חַי פַּרְעֹה",
+   "value": "så sandt <HERREN> lever",
+   "attested": "attested",
+   "words": [
+    "as surely as the lord lives",
+    "as surely as pharaoh lives"
+   ],
+   "evidence": [
+    {
+     "ref": "JER 23:8",
+     "form": "så sandt HERREN lever",
+     "n": 2
+    },
+    {
+     "ref": "RUT 3:13",
+     "form": "så sandt HERREN lever"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB 'så sandt' 19×; 'så sandt jeg lever' (4 Mos 14,21) for Guds ed."
+  },
+  {
+   "id": "formula:hinneni",
+   "kind": "formula",
+   "source": "הִנֵּנִי",
+   "value": "Her er jeg",
+   "attested": "attested",
+   "words": [
+    "here i am"
+   ],
+   "alternatives": [
+    {
+     "value": "Se, her er jeg",
+     "note": "DFB 2 Mos 3,4; Es 6,8"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "EXO 3:4",
+     "form": "Se, her er jeg",
+     "n": 6
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "open",
+   "note": "Udkastene 1 Mos 22,1.7.11; 27,1.18; 31,11; 46,2 har 'Her er jeg' (gen027 spm. 6)."
+  },
+  {
+   "id": "formula:genealogy",
+   "kind": "formula",
+   "source": "וַיְחִי X … וַיּוֹלֶד אֶת־Y",
+   "value": "Da <X> havde levet <N> år, fik han <Y>",
+   "pattern": "Da X havde levet N år, fik han Y. X levede, efter han havde fået Y, i M år, og han fik sønner og døtre. X's levealder blev i alt T år. Så døde han.",
+   "attested": "attested",
+   "words": [
+    "had lived",
+    "became the father of",
+    "fathered"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 5:3",
+     "form": "Da Adam havde levet 130 år, fik han",
+     "n": 8
+    },
+    {
+     "ref": "GEN 5:6",
+     "form": "Da Set havde levet 105 år, fik han"
+    },
+    {
+     "ref": "GEN 5:9",
+     "form": "Da Enosh havde levet 90 år, fik han"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "DFB's udgivne 1 Mos 5 ('Da X havde levet N år', 8×) og 11 ('Da Arpakshad var 35 år, fik han Shela', 11,12) – 'fik han' 16×, 'levealder blev i alt' 9×, 'Så døde han' 8×). Gen-oversigtens ensrettede formel ('blev han far til … levede han M år') står kun i karantæne-udkastene og er overhalet. 'blev far til' bruger DFB i 1 Mos 4,18 og udkastene 22,23; 25,3."
+  },
+  {
+   "id": "formula:evening_morning",
+   "kind": "formula",
+   "source": "וַיְהִי־עֶרֶב וַיְהִי־בֹקֶר",
+   "value": "Og det blev aften, og det blev morgen",
+   "attested": "attested",
+   "words": [
+    "and there was evening, and there was morning"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 1:5",
+     "form": "Og det blev aften, og det blev morgen",
+     "n": 6
+    },
+    {
+     "ref": "GEN 1:8",
+     "form": "Og det blev aften, og det blev morgen"
+    },
+    {
+     "ref": "GEN 1:13",
+     "form": "Og det blev aften, og det blev morgen"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB 1 Mos 1: '…, én dag' (v5), ellers '…, anden dag' osv.; stilarkets tankestreg-form er overhalet."
+  },
+  {
+   "id": "formula:be_fruitful",
+   "kind": "formula",
+   "source": "פְּרוּ וּרְבוּ",
+   "value": "Bliv frugtbare og talrige",
+   "attested": "attested",
+   "words": [
+    "be fruitful and multiply"
+   ],
+   "alternatives": [
+    {
+     "value": "Vær frugtbar og bliv mange",
+     "note": "udkast 1 Mos 35,11 (efter det karantænede kap. 1)"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 1:22",
+     "form": "Bliv frugtbare og talrige",
+     "n": 3
+    },
+    {
+     "ref": "GEN 1:28",
+     "form": "Bliv frugtbare og talrige"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB 1 Mos 1,22.28; 9,1; 28,3 ('gøre dig frugtbar og talrig'). Udkastet 35,11 bør nok følge DFB (gen009 spm. 1)."
+  },
+  {
+   "id": "formula:full_of_days",
+   "kind": "formula",
+   "source": "זָקֵן וּשְׂבַע יָמִים",
+   "value": "gammel og mæt af dage",
+   "attested": "attested",
+   "words": [
+    "old and full of years"
+   ],
+   "evidence": [
+    {
+     "ref": "JOB 42:17",
+     "form": "mæt af dage",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "Efter Job 42,17."
+  },
+  {
+   "id": "formula:evil_eyes",
+   "kind": "formula",
+   "source": "וַיַּעֲשׂוּ הָרַע בְּעֵינֵי יְהוָה",
+   "value": "handlede ondt i HERRENS øjne",
+   "attested": "attested",
+   "words": [
+    "did evil in the sight of the lord",
+    "evil in the sight of the lord"
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 11:6",
+     "form": "handlede ondt i HERRENS øjne",
+     "n": 5
+    },
+    {
+     "ref": "JDG 2:11",
+     "form": "handlede israelitterne ondt i HERRENS øjne"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB Dom 2,11; 3,7 osv. (12× 'ondt i HERRENS øjne')."
+  },
+  {
+   "id": "formula:call_name",
+   "kind": "formula",
+   "source": "וַיִּקְרָא בְּשֵׁם יְהוָה",
+   "value": "påkaldte HERRENS navn",
+   "attested": "attested",
+   "words": [
+    "called on the name of the lord"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 12:8",
+     "form": "påkaldte HERRENS navn",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded"
+  },
+  {
+   "id": "formula:cut_covenant",
+   "kind": "formula",
+   "source": "כָּרַת בְּרִית",
+   "value": "slutte en pagt",
+   "attested": "by-rule",
+   "words": [
+    "made a covenant",
+    "make a covenant"
+   ],
+   "alternatives": [
+    {
+     "value": "oprette en pagt",
+     "note": "הֵקִים בְּרִית"
+    },
+    {
+     "value": "indgå en pagt",
+     "note": "DFB 1 Mos 15,18; udkast Jos 9,15"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 8:9",
+     "form": "sluttede pagt",
+     "n": 20
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB 'slutte … pagt' 12×; stilarkets faste form."
+  },
+  {
+   "id": "formula:blessed_be",
+   "kind": "formula",
+   "source": "בָּרוּךְ יְהוָה",
+   "value": "Lovet være HERREN",
+   "attested": "attested",
+   "words": [
+    "blessed be the lord"
+   ],
+   "alternatives": [
+    {
+     "value": "Velsignet være",
+     "note": "DFB 9× (1 Kong 1,48; 8,15); udkast Dan 3,28"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "EXO 18:10",
+     "form": "Lovet være HERREN",
+     "n": 10
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB 'Lovet være' 15×, 'Velsignet være' 9×. 1 Mos 24 bruger 'Lovet være' (v27) og 'lovede' (v48); 'velsignet' ville bevare forbindelsen til v1.31.35.60 (gen024 spm. 3)."
+  },
+  {
+   "id": "formula:sword",
+   "kind": "formula",
+   "source": "הִכָּה לְפִי־חֶרֶב",
+   "value": "slog <dem> ned med sværd",
+   "attested": "attested",
+   "words": [
+    "put to the sword",
+    "struck with the sword"
+   ],
+   "alternatives": [
+    {
+     "value": "huggede ned med sværd",
+     "note": "udkast Jos 6,21; 11,10-12 (6×); DFB Job 1,15.17"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "JDG 1:8",
+     "form": "slog indbyggerne ned med sværd",
+     "n": 4
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB Dom 1,8.25; 18,27; 20,48 'slog … ned med sværd' (4×). Jos 17: ét valg for bogen; DFB peger på 'slog'."
+  },
+  {
+   "id": "formula:find_favor",
+   "kind": "formula",
+   "source": "מָצָא חֵן בְּעֵינֵי",
+   "value": "finde nåde for <X>s øjne",
+   "attested": "by-rule",
+   "words": [
+    "found favor in the eyes of",
+    "find favor"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 6:8",
+     "form": "fandt nåde",
+     "n": 1
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB 1 Mos 6,8 'fandt nåde'; udkast 39,21 'finde nåde for … øjne'."
+  },
+  {
+   "id": "name:joshua",
+   "kind": "name",
+   "source": "יְהוֹשֻׁעַ Joshua",
+   "value": "Josva",
+   "attested": "attested",
+   "words": [
+    "joshua"
+   ],
+   "evidence": [
+    {
+     "ref": "EXO 17:9",
+     "form": "Josva",
+     "n": 34
+    },
+    {
+     "ref": "EXO 17:10",
+     "form": "Josva"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "'Josva, Nuns søn' (DFB 11×); 'HERRENS tjener Moses' (udkast 14×)."
+  },
+  {
+   "id": "name:caleb",
+   "kind": "name",
+   "source": "כָּלֵב Caleb",
+   "value": "Kaleb",
+   "attested": "attested",
+   "words": [
+    "caleb"
+   ],
+   "evidence": [
+    {
+     "ref": "JDG 1:12",
+     "form": "Kaleb",
+     "n": 14
+    },
+    {
+     "ref": "JDG 1:13",
+     "form": "Kaleb"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "'Kaleb, kenizzitten Jefunnes søn' (4 Mos 32,12; Jos 14,6)."
+  },
+  {
+   "id": "name:rahab",
+   "kind": "name",
+   "source": "רָחָב Rahab",
+   "value": "Rahab",
+   "attested": "attested",
+   "words": [
+    "rahab"
+   ],
+   "evidence": [
+    {
+     "ref": "HEB 11:31",
+     "form": "Rahab",
+     "n": 8
+    },
+    {
+     "ref": "ISA 30:7",
+     "form": "Rahab"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded"
+  },
+  {
+   "id": "name:jericho",
+   "kind": "name",
+   "source": "יְרִיחוֹ Jericho",
+   "value": "Jeriko",
+   "attested": "attested",
+   "words": [
+    "jericho"
+   ],
+   "evidence": [
+    {
+     "ref": "JER 39:5",
+     "form": "Jeriko",
+     "n": 15
+    },
+    {
+     "ref": "LUK 10:30",
+     "form": "Jeriko"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded"
+  },
+  {
+   "id": "name:ai",
+   "kind": "name",
+   "source": "הָעַי Ai",
+   "value": "Aj",
+   "attested": "attested",
+   "words": [
+    "ai"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 12:8",
+     "form": "Aj",
+     "n": 3
+    },
+    {
+     "ref": "GEN 13:3",
+     "form": "Aj"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB 1 Mos 12,8; 13,3; Jer 49,3."
+  },
+  {
+   "id": "name:hazor",
+   "kind": "name",
+   "source": "חָצוֹר Hazor",
+   "value": "Hasor",
+   "attested": "attested",
+   "words": [
+    "hazor"
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 9:15",
+     "form": "Hasor",
+     "n": 4
+    },
+    {
+     "ref": "JDG 4:2",
+     "form": "Hasor"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "ḥ → h, ṣ → s; ikke Hazor."
+  },
+  {
+   "id": "name:mizpah",
+   "kind": "name",
+   "source": "מִצְפָּה Mizpah",
+   "value": "Mispa",
+   "attested": "attested",
+   "words": [
+    "mizpah"
+   ],
+   "evidence": [
+    {
+     "ref": "JDG 10:17",
+     "form": "Mispa",
+     "n": 20
+    },
+    {
+     "ref": "JDG 20:1",
+     "form": "Mispa"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB 20×; Jos 15,38; 18,26 har 'Mispe' (MT-vokalisering) – åbent (jos 28)."
+  },
+  {
+   "id": "name:beersheba",
+   "kind": "name",
+   "source": "בְּאֵר שֶׁבַע Beersheba",
+   "value": "Be'ersheba",
+   "attested": "attested",
+   "words": [
+    "beersheba"
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 5:5",
+     "form": "Be’ersheba",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "DFB staver både Beersheba (1 Mos 28,10), Be’ersheba (1 Kong 5,5) og Be'ersheba (Dom 20,1). Udkastene 12× Be'ersheba."
+  },
+  {
+   "id": "name:shinar",
+   "kind": "name",
+   "source": "שִׁנְעָר Shinar",
+   "value": "Sinear",
+   "attested": "attested",
+   "words": [
+    "shinar"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 10:10",
+     "form": "Sinear",
+     "n": 6
+    },
+    {
+     "ref": "GEN 11:2",
+     "form": "Sinear"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "Husform (DFB 1 Mos 10,10; 11,2; Zak 5,11) går forud for translitterationsreglen."
+  },
+  {
+   "id": "name:haran_city",
+   "kind": "name",
+   "source": "חָרָן Harran (byen)",
+   "value": "Karan",
+   "attested": "attested",
+   "words": [
+    "haran"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 11:31",
+     "form": "Karan",
+     "n": 6
+    },
+    {
+     "ref": "GEN 11:32",
+     "form": "Karan"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "Byen Karan ≠ broderen Haran (הָרָן). DFB 1 Mos 11,31; 12,4; Es 37,12."
+  },
+  {
+   "id": "name:nahor",
+   "kind": "name",
+   "source": "נָחוֹר Nahor",
+   "value": "Nakor",
+   "attested": "attested",
+   "words": [
+    "nahor"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 11:22",
+     "form": "Nakor",
+     "n": 7
+    },
+    {
+     "ref": "GEN 11:23",
+     "form": "Nakor"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB 1 Mos 11,22-29 har 'Nakor' (8×) og Jos 24,2-udkastet ligeså; 1 Mos-udkastene 22,20.23; 24 har 'Nahor' (8×). Bør ensrettes til DFB."
+  },
+  {
+   "id": "name:canaan",
+   "kind": "name",
+   "source": "כְּנַעַן Canaan",
+   "value": "Kana'an",
+   "attested": "attested",
+   "words": [
+    "canaan"
+   ],
+   "evidence": [
+    {
+     "ref": "EXO 6:4",
+     "form": "Kana’an",
+     "n": 32
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "'i Kana'ans land' / 'landet Kana'an' (gen023 spm. 4)."
+  },
+  {
+   "id": "name:rachel",
+   "kind": "name",
+   "source": "רָחֵל Rachel",
+   "value": "Rakel",
+   "attested": "attested",
+   "words": [
+    "rachel"
+   ],
+   "evidence": [
+    {
+     "ref": "JER 31:15",
+     "form": "Rakel",
+     "n": 3
+    },
+    {
+     "ref": "MAT 2:18",
+     "form": "Rakel"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded"
+  },
+  {
+   "id": "name:leah",
+   "kind": "name",
+   "source": "לֵאָה Leah",
+   "value": "Lea",
+   "attested": "attested",
+   "words": [
+    "leah"
+   ],
+   "evidence": [
+    {
+     "ref": "RUT 4:11",
+     "form": "Lea",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded"
+  },
+  {
+   "id": "name:rebekah",
+   "kind": "name",
+   "source": "רִבְקָה Rebekah",
+   "value": "Rebekka",
+   "attested": "attested",
+   "words": [
+    "rebekah"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 28:5",
+     "form": "Rebekka",
+     "n": 2
+    },
+    {
+     "ref": "ROM 9:10",
+     "form": "Rebekka"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded"
+  },
+  {
+   "id": "name:bethuel",
+   "kind": "name",
+   "source": "בְּתוּאֵל Bethuel",
+   "value": "Betuel",
+   "attested": "attested",
+   "words": [
+    "bethuel"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 28:5",
+     "form": "Betuel",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Uden apostrof, som Samuel, Israel."
+  },
+  {
+   "id": "name:esau",
+   "kind": "name",
+   "source": "עֵשָׂו Esau",
+   "value": "Esau",
+   "attested": "attested",
+   "words": [
+    "esau"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 28:6",
+     "form": "Esau",
+     "n": 7
+    },
+    {
+     "ref": "GEN 28:8",
+     "form": "Esau"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded"
+  },
+  {
+   "id": "name:laban",
+   "kind": "name",
+   "source": "לָבָן Laban",
+   "value": "Laban",
+   "attested": "attested",
+   "words": [
+    "laban"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 28:5",
+     "form": "Laban",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded"
+  },
+  {
+   "id": "name:joseph",
+   "kind": "name",
+   "source": "יוֹסֵף Joseph",
+   "value": "Josef",
+   "attested": "attested",
+   "words": [
+    "joseph"
+   ],
+   "evidence": [
+    {
+     "ref": "EXO 1:5",
+     "form": "Josef",
+     "n": 23
+    },
+    {
+     "ref": "EXO 1:6",
+     "form": "Josef"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded"
+  },
+  {
+   "id": "name:pharaoh",
+   "kind": "name",
+   "source": "פַּרְעֹה Pharaoh",
+   "value": "Farao",
+   "attested": "attested",
+   "words": [
+    "pharaoh"
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 3:1",
+     "form": "Farao",
+     "n": 100
+    },
+    {
+     "ref": "1KI 9:16",
+     "form": "Farao"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "Uden artikel, som egennavn."
+  },
+  {
+   "id": "name:perez",
+   "kind": "name",
+   "source": "פֶּרֶץ Perez",
+   "value": "Peres",
+   "attested": "attested",
+   "words": [
+    "perez"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 1:3",
+     "form": "Peres",
+     "n": 6
+    },
+    {
+     "ref": "NUM 26:20",
+     "form": "Peres"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded"
+  },
+  {
+   "id": "name:ishmael",
+   "kind": "name",
+   "source": "יִשְׁמָעֵאל Ishmael",
+   "value": "Ismael",
+   "attested": "attested",
+   "words": [
+    "ishmael"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 16:11",
+     "form": "Ismael",
+     "n": 30
+    },
+    {
+     "ref": "GEN 16:15",
+     "form": "Ismael"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded"
+  },
+  {
+   "id": "name:isaac",
+   "kind": "name",
+   "source": "יִצְחָק Isaac",
+   "value": "Isak",
+   "attested": "attested",
+   "words": [
+    "isaac"
+   ],
+   "evidence": [
+    {
+     "ref": "DEU 30:20",
+     "form": "Isak",
+     "n": 24
+    },
+    {
+     "ref": "EXO 2:24",
+     "form": "Isak"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded"
+  },
+  {
+   "id": "name:abimelech",
+   "kind": "name",
+   "source": "אֲבִימֶלֶךְ Abimelech",
+   "value": "Abimelek",
+   "attested": "attested",
+   "words": [
+    "abimelech"
+   ],
+   "evidence": [
+    {
+     "ref": "JDG 8:31",
+     "form": "Abimelek",
+     "n": 43
+    },
+    {
+     "ref": "JDG 9:1",
+     "form": "Abimelek"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded"
+  },
+  {
+   "id": "name:shechem",
+   "kind": "name",
+   "source": "שְׁכֶם Shechem",
+   "value": "Sikem",
+   "attested": "attested",
+   "words": [
+    "shechem"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 12:6",
+     "form": "Sikem",
+     "n": 31
+    },
+    {
+     "ref": "JDG 8:31",
+     "form": "Sikem"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded"
+  },
+  {
+   "id": "name:bethel",
+   "kind": "name",
+   "source": "בֵּית־אֵל Bethel",
+   "value": "Betel",
+   "attested": "attested",
+   "words": [
+    "bethel"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 12:8",
+     "form": "Betel",
+     "n": 13
+    },
+    {
+     "ref": "GEN 13:3",
+     "form": "Betel"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided"
+  },
+  {
+   "id": "name:philistines",
+   "kind": "name",
+   "source": "פְּלִשְׁתִּים Philistines",
+   "value": "filistrene",
+   "attested": "attested",
+   "words": [
+    "philistines"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 10:14",
+     "form": "filistrene",
+     "n": 22
+    },
+    {
+     "ref": "ISA 2:6",
+     "form": "filistrene"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded"
+  },
+  {
+   "id": "name:ephrath",
+   "kind": "name",
+   "source": "אֶפְרָת Ephrath",
+   "value": "Efrat",
+   "attested": "attested",
+   "words": [
+    "ephrath",
+    "ephrathah"
+   ],
+   "evidence": [
+    {
+     "ref": "RUT 1:2",
+     "form": "Efrat",
+     "n": 1
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB Ruth 1,2 'Efrat', Ruth 4,11 og Sl 132,6 'Efrata'; udkastene 'Efrat' (1 Mos 35,16.19; 48,7)."
+  },
+  {
+   "id": "name:nebuchadnezzar",
+   "kind": "name",
+   "source": "נְבוּכַדְנֶאצַּר Nebuchadnezzar",
+   "value": "Nebukadnesar",
+   "attested": "attested",
+   "words": [
+    "nebuchadnezzar"
+   ],
+   "evidence": [
+    {
+     "ref": "JER 21:2",
+     "form": "Nebukadnesar",
+     "n": 25
+    },
+    {
+     "ref": "JER 24:1",
+     "form": "Nebukadnesar"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded"
+  },
+  {
+   "id": "name:darius",
+   "kind": "name",
+   "source": "דָּרְיָוֶשׁ Darius",
+   "value": "Darius",
+   "attested": "attested",
+   "words": [
+    "darius"
+   ],
+   "evidence": [
+    {
+     "ref": "ZEC 7:1",
+     "form": "Darius",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded"
+  },
+  {
+   "id": "name:cyrus",
+   "kind": "name",
+   "source": "כּוֹרֶשׁ Cyrus",
+   "value": "Kyros",
+   "attested": "attested",
+   "words": [
+    "cyrus"
+   ],
+   "evidence": [
+    {
+     "ref": "ISA 41:24",
+     "form": "Kyros",
+     "n": 4
+    },
+    {
+     "ref": "ISA 44:28",
+     "form": "Kyros"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded"
+  },
+  {
+   "id": "name:michael",
+   "kind": "name",
+   "source": "מִיכָאֵל Michael",
+   "value": "Mikael",
+   "attested": "attested",
+   "words": [
+    "michael"
+   ],
+   "evidence": [
+    {
+     "ref": "JUD 1:9",
+     "form": "Mikael",
+     "n": 2
+    },
+    {
+     "ref": "REV 12:7",
+     "form": "Mikael"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded"
+  },
+  {
+   "id": "name:babylon",
+   "kind": "name",
+   "source": "בָּבֶל Babylon",
+   "value": "Babylon",
+   "attested": "attested",
+   "words": [
+    "babylon"
+   ],
+   "evidence": [
+    {
+     "ref": "1PE 5:13",
+     "form": "Babylon",
+     "n": 86
+    },
+    {
+     "ref": "ISA 21:9",
+     "form": "Babylon"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "'Babel' i 1 Mos 10-11 (DFB)."
+  },
+  {
+   "id": "name:media_persia",
+   "kind": "name",
+   "source": "מָדַי וּפָרַס Media and Persia",
+   "value": "Medien",
+   "attested": "attested",
+   "words": [
+    "media",
+    "medes"
+   ],
+   "evidence": [
+    {
+     "ref": "ISA 13:17",
+     "form": "Medien",
+     "n": 2
+    },
+    {
+     "ref": "ISA 21:2",
+     "form": "Medien"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "Og Persien, Grækenland (Javan i {T:}); 'Medien og Persien' eller 'mederne og perserne' er åbent (dan005 spm. 6)."
+  },
+  {
+   "id": "name:moses",
+   "kind": "name",
+   "source": "מֹשֶׁה Moses",
+   "value": "Moses",
+   "attested": "attested",
+   "words": [
+    "moses"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 10:2",
+     "form": "Moses",
+     "n": 597
+    },
+    {
+     "ref": "1KI 2:3",
+     "form": "Moses"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "Genitiv 'Moses'' (Moses' lovbog)."
+  },
+  {
+   "id": "name:kadesh",
+   "kind": "name",
+   "source": "קָדֵשׁ Kadesh",
+   "value": "Kadesh",
+   "attested": "attested",
+   "words": [
+    "kadesh"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 14:7",
+     "form": "Kadesh",
+     "n": 14
+    },
+    {
+     "ref": "JDG 11:16",
+     "form": "Kadesh"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB 14×; 1 Mos 16,14 dog 'Qadesh'."
+  },
+  {
+   "id": "name:gilgal",
+   "kind": "name",
+   "source": "גִּלְגָּל Gilgal",
+   "value": "Gilgal",
+   "attested": "attested",
+   "words": [
+    "gilgal"
+   ],
+   "evidence": [
+    {
+     "ref": "JDG 2:1",
+     "form": "Gilgal",
+     "n": 2
+    },
+    {
+     "ref": "JDG 3:19",
+     "form": "Gilgal"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded"
+  },
+  {
+   "id": "name:gibeon",
+   "kind": "name",
+   "source": "גִּבְעוֹן Gibeon",
+   "value": "Gibeon",
+   "attested": "attested",
+   "words": [
+    "gibeon"
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 3:4",
+     "form": "Gibeon",
+     "n": 7
+    },
+    {
+     "ref": "1KI 3:5",
+     "form": "Gibeon"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded"
+  },
+  {
+   "id": "name:arpachshad",
+   "kind": "name",
+   "source": "אַרְפַּכְשַׁד Arphaxad",
+   "value": "Arpakshad",
+   "attested": "attested",
+   "words": [
+    "arphaxad"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 10:22",
+     "form": "Arpakshad",
+     "n": 6
+    },
+    {
+     "ref": "GEN 10:24",
+     "form": "Arpakshad"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB 1 Mos 10-11; stilarket havde 'Arpaksad'."
+  },
+  {
+   "id": "name:lamech",
+   "kind": "name",
+   "source": "לֶמֶךְ Lamech",
+   "value": "Lemek",
+   "attested": "attested",
+   "words": [
+    "lamech"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 4:18",
+     "form": "Lemek",
+     "n": 8
+    },
+    {
+     "ref": "GEN 4:19",
+     "form": "Lemek"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "superseded",
+   "note": "DFB 1 Mos 4-5; stilarket havde 'Lamek'."
+  },
+  {
+   "id": "name:shaddai_dfb",
+   "kind": "name",
+   "source": "שַׁדַּי (1 Mos 17,1, DFB)",
+   "value": "El Shadaj",
+   "attested": "attested",
+   "words": [
+    "god almighty"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 17:1",
+     "form": "El Shadaj",
+     "n": 1
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "open",
+   "note": "DFB's 1 Mos 17,1 translittererer; projektet bruger 'Gud den Almægtige' (term:H7706). Spørgsmål til redaktionen."
+  },
+  {
+   "id": "term:H3068.gloss",
+   "kind": "term",
+   "source": "H3068 יהוה",
+   "value": "HERREN",
+   "attested": "attested",
+   "words": [
+    "lord"
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 1:17",
+     "form": "HERREN",
+     "n": 3005
+    },
+    {
+     "ref": "1KI 1:29",
+     "form": "HERREN"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Med versaler; genitiv HERRENS. DFB 3.005× i 2.584 vers. Ikke 'Jahve' i teksten.",
+   "supersedes": "term:H3068",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "יהוָ֤ה",
+     "lemma": "יהוה",
+     "ref": "1KI 1:17",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:H430.gloss",
+   "kind": "term",
+   "source": "H430 אֱלֹהִים",
+   "value": "Gud",
+   "attested": "attested",
+   "words": [
+    "god"
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 1:17",
+     "form": "Gud",
+     "n": 1701
+    },
+    {
+     "ref": "1KI 1:30",
+     "form": "Gud"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Om hedenske guder: 'guder' med lille (Jos 24,2.14-16).",
+   "supersedes": "term:H430",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "אֱלֹהֶ֨י",
+     "lemma": "אֱלֹהִים",
+     "ref": "1KI 1:17",
+     "proposed": true
+    },
+    {
+     "lang": "grc",
+     "form": "Θεός",
+     "lemma": "θεός",
+     "ref": "MAT 1:23",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:yhwh_elohim.gloss",
+   "kind": "term",
+   "source": "יְהוָה אֱלֹהִים",
+   "value": "Gud HERREN",
+   "attested": "attested",
+   "words": [
+    "lord god"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 2:4",
+     "form": "Gud HERREN",
+     "n": 27
+    },
+    {
+     "ref": "GEN 2:5",
+     "form": "Gud HERREN"
+    },
+    {
+     "ref": "GEN 2:7",
+     "form": "Gud HERREN"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "DFB 27× (1 Mos 2-3; Es 42,5). Stilarkets valg for 1 Mos 2-3.",
+   "supersedes": "term:yhwh_elohim",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "יְהוָ֥ה",
+     "lemma": "יהוה",
+     "ref": "GEN 2:4",
+     "proposed": true
+    },
+    {
+     "lang": "grc",
+     "form": "Θεός",
+     "lemma": "θεός",
+     "ref": "MAT 1:23",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:adonai_yhwh.gloss",
+   "kind": "term",
+   "source": "אֲדֹנָי יְהוִה",
+   "value": "Herre HERRE",
+   "attested": "attested",
+   "words": [
+    "lord god",
+    "sovereign lord"
+   ],
+   "alternatives": [
+    {
+     "value": "Herre, HERRE",
+     "note": "DFB 8× i tiltale (Dom 6,22; Jer 1,6)"
+    },
+    {
+     "value": "Herren HERREN",
+     "note": "DFB 22× uden for tiltale (Ez 37,5)"
+    },
+    {
+     "value": "Gud HERREN",
+     "note": "DFB 1 Mos 15,2 (tiltale)"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "JDG 16:28",
+     "form": "Herre HERRE",
+     "n": 2
+    },
+    {
+     "ref": "JER 14:13",
+     "form": "Herre HERRE"
+    },
+    {
+     "ref": "JDG 6:22",
+     "form": "Herre, HERRE",
+     "n": 6
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "open",
+   "note": "I tiltale: 'Herre HERRE' 6× og 'Herre, HERRE' 8× i DFB; udkastet Jos 7,7 'Ak, Herre HERRE!'. Uden for tiltale 'Herren HERREN' (22×). Gen015 spm. 1 er åbent, og DFB's egen 1 Mos 15,2 har 'Gud HERREN!'.",
+   "supersedes": "term:adonai_yhwh",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "אֲדֹנָ֣",
+     "lemma": "אֲדֹנָי",
+     "ref": "JOS 7:7",
+     "proposed": true
+    },
+    {
+     "lang": "grc",
+     "form": "Κύριε",
+     "lemma": "κύριος",
+     "ref": "MAT 7:21",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:adonai.gloss",
+   "kind": "term",
+   "source": "אֲדֹנָי",
+   "value": "Herren",
+   "attested": "attested",
+   "words": [
+    "lord"
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 8:44",
+     "form": "Herren",
+     "n": 395
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Dan 9,3 'Herren Gud' for *ʔădōnāy hāʔĕlōhîm* (dan-oversigten 4); 'Herre, HERRE' kun for *ʔădōnāy YHWH*.",
+   "supersedes": "term:adonai",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "אֲדֹנָ֨",
+     "lemma": "אֲדֹנָי",
+     "ref": "DAN 1:2",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:H7706.gloss",
+   "kind": "term",
+   "source": "H7706 אֵל שַׁדַּי",
+   "value": "Gud den Almægtige",
+   "attested": "attested",
+   "words": [
+    "god almighty",
+    "almighty"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 28:3",
+     "form": "Gud den Almægtige",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Bindende i 1 Mos-stilarket og brugt i 35,11; 43,14; 48,3; 49,25 ('den Almægtige'). DFB: 1 Mos 28,3 'Gud den Almægtige', men 17,1 'El Shadaj' og 2 Mos 6,3 'almægtig Gud' – se spørgsmål.",
+   "supersedes": "term:H7706",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "אֵ֤ל",
+     "lemma": "אֵל",
+     "ref": "GEN 28:3",
+     "proposed": true
+    },
+    {
+     "lang": "grc",
+     "form": "Θεός",
+     "lemma": "θεός",
+     "ref": "MAT 1:23",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:el_elyon.gloss",
+   "kind": "term",
+   "source": "אֵל עֶלְיוֹן",
+   "value": "Gud den Højeste",
+   "attested": "attested",
+   "words": [
+    "god most high",
+    "most high"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 14:18",
+     "form": "Gud den Højeste",
+     "n": 7
+    },
+    {
+     "ref": "GEN 14:19",
+     "form": "Gud den Højeste"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "DFB 1 Mos 14,18-22 (7×).",
+   "supersedes": "term:el_elyon",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "אֵ֥ל",
+     "lemma": "אֵל",
+     "ref": "GEN 14:18",
+     "proposed": true
+    },
+    {
+     "lang": "grc",
+     "form": "Θεός",
+     "lemma": "θεός",
+     "ref": "MAT 1:23",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:tsebaot.gloss",
+   "kind": "term",
+   "source": "יְהוָה צְבָאוֹת",
+   "value": "Hærskarers HERRE",
+   "attested": "attested",
+   "words": [
+    "lord of hosts"
+   ],
+   "alternatives": [
+    {
+     "value": "HERREN, Hærskarers Gud",
+     "note": "for יְהוָה אֱלֹהֵי צְבָאוֹת (Jer 5,14; 35,17)"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "HAB 2:13",
+     "form": "Hærskarers HERRE",
+     "n": 218
+    },
+    {
+     "ref": "HAG 1:2",
+     "form": "Hærskarers HERRE"
+    },
+    {
+     "ref": "HAG 1:5",
+     "form": "Hærskarers HERRE"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "DFB 218× (profeterne), med glossenoten {N: Hærskarers} (65×). Endnu ikke brugt i udkastene.",
+   "supersedes": "term:tsebaot",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "יְהוָ֣ה",
+     "lemma": "יהוה",
+     "ref": "HAB 2:13",
+     "proposed": true
+    },
+    {
+     "lang": "grc",
+     "form": "Κύριε",
+     "lemma": "κύριος",
+     "ref": "MAT 7:21",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:malak_yhwh.gloss",
+   "kind": "term",
+   "source": "מַלְאַךְ יְהוָה",
+   "value": "HERRENS engel",
+   "attested": "attested",
+   "words": [
+    "angel of the lord"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 16:7",
+     "form": "HERRENS engel",
+     "n": 44
+    },
+    {
+     "ref": "GEN 16:9",
+     "form": "HERRENS engel"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "DFB 44×.",
+   "supersedes": "term:malak_yhwh",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "יְהוָ֛ה",
+     "lemma": "יהוה",
+     "ref": "GEN 16:7",
+     "proposed": true
+    },
+    {
+     "lang": "grc",
+     "form": "Κυρίου",
+     "lemma": "κύριος",
+     "ref": "MAT 1:20",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:elah_shemayya.gloss",
+   "kind": "term",
+   "source": "אֱלָהּ שְׁמַיָּא (aram.)",
+   "value": "himlens Gud",
+   "attested": "attested",
+   "words": [
+    "god of heaven"
+   ],
+   "evidence": [
+    {
+     "ref": "JON 1:9",
+     "form": "himlens Gud",
+     "n": 4
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Dan 2,18-19.37.44; DFB Jon 1,9.",
+   "supersedes": "term:elah_shemayya",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "אֱלֹהֵ֤י",
+     "lemma": "אֱלֹהִים",
+     "ref": "JON 1:9",
+     "proposed": true
+    },
+    {
+     "lang": "grc",
+     "form": "Θεός",
+     "lemma": "θεός",
+     "ref": "MAT 1:23",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:god_of_israel.gloss",
+   "kind": "term",
+   "source": "יְהוָה אֱלֹהֵי יִשְׂרָאֵל",
+   "value": "HERREN, Israels Gud",
+   "attested": "attested",
+   "words": [
+    "god of israel"
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 1:30",
+     "form": "HERREN, Israels Gud",
+     "n": 30
+    },
+    {
+     "ref": "1KI 1:48",
+     "form": "HERREN, Israels Gud"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "DFB 30×; med komma.",
+   "supersedes": "term:god_of_israel",
+   "gloss": [
+    {
+     "lang": "grc",
+     "form": "Θεός",
+     "lemma": "θεός",
+     "ref": "MAT 1:23",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:H1285.gloss",
+   "kind": "term",
+   "source": "H1285 בְּרִית",
+   "value": "pagt",
+   "attested": "attested",
+   "words": [
+    "covenant"
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 3:15",
+     "form": "pagt",
+     "n": 142
+    },
+    {
+     "ref": "1KI 6:19",
+     "form": "pagt"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Lexicon: covenant → pagt 102 (0,76) + pagts/pagtens/pagten.",
+   "supersedes": "term:H1285",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "בְּרִית",
+     "lemma": "בְּרִית",
+     "ref": "1KI 3:15",
+     "proposed": true
+    },
+    {
+     "lang": "grc",
+     "form": "διαθήκης",
+     "lemma": "διαθήκη",
+     "ref": "MAT 26:28",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:aron_brit_yhwh.gloss",
+   "kind": "term",
+   "source": "אֲרוֹן בְּרִית יְהוָה",
+   "value": "HERRENS pagts ark",
+   "attested": "attested",
+   "words": [
+    "ark of the covenant of the lord"
+   ],
+   "alternatives": [
+    {
+     "value": "pagtens ark",
+     "note": "for אֲרוֹן הַבְּרִית (Jos 3,6; Hebr 9,4)"
+    },
+    {
+     "value": "arken",
+     "note": "for הָאָרוֹן"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 6:19",
+     "form": "HERRENS pagts ark",
+     "n": 6
+    },
+    {
+     "ref": "1KI 8:1",
+     "form": "HERRENS pagts ark"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "term:aron_brit_yhwh",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "יְהוָֽה",
+     "lemma": "יהוה",
+     "ref": "1KI 6:19",
+     "proposed": true
+    },
+    {
+     "lang": "grc",
+     "form": "Κυρίου",
+     "lemma": "κύριος",
+     "ref": "MAT 1:20",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:H2763.gloss",
+   "kind": "term",
+   "source": "H2763 חָרַם (verbum)",
+   "value": "lægge band på",
+   "attested": "by-rule",
+   "words": [
+    "devote to destruction",
+    "devoted to destruction",
+    "destroy completely"
+   ],
+   "alternatives": [
+    {
+     "value": "det der er lagt band på / bandet",
+     "note": "nomen חֵרֶם (Jos 6,17-18; 7); åbent, jos 3"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "JDG 1:17",
+     "form": "lagde band på",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "DFB: 'lagde band på' (Dom 1,17; 21,11), 'bandlyse' 2×. Udkastene 24×.",
+   "supersedes": "term:H2763",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "הַחֲרִ֖ים",
+     "lemma": "חָרַם",
+     "ref": "DAN 11:44",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:H7782.gloss",
+   "kind": "term",
+   "source": "H7782 שׁוֹפָר",
+   "value": "vædderhorn",
+   "attested": "attested",
+   "words": [
+    "ram's horn",
+    "rams' horns",
+    "trumpet"
+   ],
+   "evidence": [
+    {
+     "ref": "JDG 3:27",
+     "form": "vædderhorn",
+     "n": 13
+    },
+    {
+     "ref": "JDG 6:34",
+     "form": "vædderhorn"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "DFB 13× (Dom 3,27; 6,34; 7).",
+   "supersedes": "term:H7782",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "שּׁוֹפָ֖ר",
+     "lemma": "שֹׁופָר",
+     "ref": "JDG 3:27",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:H2181.gloss",
+   "kind": "term",
+   "source": "H2181 זוֹנָה",
+   "value": "skøge",
+   "attested": "attested",
+   "words": [
+    "prostitute",
+    "harlot"
+   ],
+   "evidence": [
+    {
+     "ref": "ISA 23:15",
+     "form": "skøge",
+     "n": 16
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "DFB 16×; harmoniseret i Jos 2 og 6 (kap. 2 havde 'prostitueret').",
+   "supersedes": "term:H2181",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "זּוֹנָֽה",
+     "lemma": "זָנָה",
+     "ref": "ISA 23:15",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:H4603.gloss",
+   "kind": "term",
+   "source": "H4603 מָעַל מַעַל",
+   "value": "handle troløst",
+   "attested": "by-rule",
+   "words": [
+    "unfaithful",
+    "act unfaithfully",
+    "breach of faith"
+   ],
+   "evidence": [
+    {
+     "ref": "EXO 21:8",
+     "form": "handlet troløst",
+     "n": 12
+    },
+    {
+     "ref": "ISA 21:2",
+     "form": "handler troløst"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "DFB 12-13×; Jos 7,1 og 22,20 ens.",
+   "supersedes": "term:H4603",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "בִגְד",
+     "lemma": "בָּגַד",
+     "ref": "EXO 21:8",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:edah.gloss",
+   "kind": "term",
+   "source": "עֵדָה",
+   "value": "menighed",
+   "attested": "attested",
+   "words": [
+    "congregation",
+    "assembly"
+   ],
+   "alternatives": [
+    {
+     "value": "forsamling",
+     "note": "DFB 4 Mos: 'israelitternes forsamling' 19×, 'hele forsamlingen' 25×"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "EXO 12:3",
+     "form": "Israels menighed",
+     "n": 4
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "open",
+   "note": "Afgjort for Josva: עֲדַת בְּנֵי־יִשְׂרָאֵל = israelitternes menighed (18,1; 22,12), עֲדַת יִשְׂרָאֵל = Israels menighed, עֲדַת יְהוָה = HERRENS menighed. Ét valg for hele projektet (menighed eller forsamling) udestår (jos 27).",
+   "supersedes": "term:edah",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "עֲדַ֤ת",
+     "lemma": "עֵדָה",
+     "ref": "JOS 18:1",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:torah.gloss",
+   "kind": "term",
+   "source": "H8451 תּוֹרָה",
+   "value": "lov",
+   "attested": "attested",
+   "words": [
+    "law"
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 2:3",
+     "form": "Moses’ lov",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Jos: 'lov', 'Moses' lovbog', 'Guds lovbog' (1,7-8; 8,31-34; 24,26).",
+   "supersedes": "term:torah",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "תּוֹרָ֗ה",
+     "lemma": "תּוֹרָה",
+     "ref": "JOS 1:7",
+     "proposed": true
+    },
+    {
+     "lang": "grc",
+     "form": "νόμον",
+     "lemma": "νόμος",
+     "ref": "MAT 5:17",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:migrash.gloss",
+   "kind": "term",
+   "source": "מִגְרָשׁ",
+   "value": "marker",
+   "attested": "attested",
+   "words": [
+    "pasturelands"
+   ],
+   "evidence": [
+    {
+     "ref": "NUM 35:7",
+     "form": "tilhørende marker",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Efter DFB 4 Mos 35 ('48 byer med tilhørende marker').",
+   "supersedes": "term:migrash",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "מִ֨גְרְשֵׁי",
+     "lemma": "מִגְרָשׁ",
+     "ref": "JOS 14:4",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:miqlat.gloss",
+   "kind": "term",
+   "source": "עָרֵי הַמִּקְלָט",
+   "value": "tilflugtsbyer",
+   "attested": "attested",
+   "words": [
+    "cities of refuge"
+   ],
+   "evidence": [
+    {
+     "ref": "NUM 35:6",
+     "form": "tilflugtsby",
+     "n": 9
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Med 'blodhævneren', 'drabsmand', 'ved et uheld', alle fra 4 Mos 35.",
+   "supersedes": "term:miqlat",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "מִּקְלָ֔ט",
+     "lemma": "מִקְלָט",
+     "ref": "NUM 35:6",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:yam_suf.gloss",
+   "kind": "term",
+   "source": "יַם־סוּף",
+   "value": "Sivhavet",
+   "attested": "attested",
+   "words": [
+    "red sea"
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 9:26",
+     "form": "Sivhavet",
+     "n": 15
+    },
+    {
+     "ref": "EXO 10:19",
+     "form": "Sivhavet"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "term:yam_suf",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "ס֖וּף",
+     "lemma": "סוּף",
+     "ref": "1KI 9:26",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:great_sea.gloss",
+   "kind": "term",
+   "source": "הַיָּם הַגָּדוֹל",
+   "value": "Det Store Hav",
+   "attested": "attested",
+   "words": [
+    "great sea",
+    "mediterranean"
+   ],
+   "evidence": [
+    {
+     "ref": "NUM 34:6",
+     "form": "Det Store Hav",
+     "n": 2
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "term:great_sea",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "גָּד֖וֹל",
+     "lemma": "גָּדוֹל",
+     "ref": "NUM 34:6",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:salt_sea.gloss",
+   "kind": "term",
+   "source": "יָם הַמֶּלַח",
+   "value": "Salthavet",
+   "attested": "attested",
+   "words": [
+    "salt sea",
+    "dead sea"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 14:3",
+     "form": "Salthavet",
+     "n": 3
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "term:salt_sea",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "מֶּֽלַח",
+     "lemma": "מֶלַח",
+     "ref": "GEN 14:3",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:negev.gloss",
+   "kind": "term",
+   "source": "הַנֶּגֶב",
+   "value": "sydlandet",
+   "attested": "attested",
+   "words": [
+    "negev"
+   ],
+   "alternatives": [
+    {
+     "value": "Negev",
+     "note": "som egennavn (1 Mos 20,1)"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "JDG 1:9",
+     "form": "sydlandet",
+     "n": 4
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "'sydlandet' i geografiske opremsninger som Dom 1,9.",
+   "supersedes": "term:negev",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "נֶּ֖גֶב",
+     "lemma": "נֶגֶב",
+     "ref": "JDG 1:9",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:shephelah.gloss",
+   "kind": "term",
+   "source": "הַשְּׁפֵלָה",
+   "value": "lavlandet",
+   "attested": "attested",
+   "words": [
+    "foothills",
+    "lowland"
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 10:27",
+     "form": "lavlandet",
+     "n": 6
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "term:shephelah",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "שְּׁפֵלָ֖ה",
+     "lemma": "שְׁפֵלָה",
+     "ref": "1KI 10:27",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:H7585.gloss",
+   "kind": "term",
+   "source": "H7585 שְׁאוֹל",
+   "value": "dødsriget",
+   "attested": "attested",
+   "words": [
+    "sheol",
+    "grave"
+   ],
+   "evidence": [
+    {
+     "ref": "HAB 2:5",
+     "form": "dødsriget",
+     "n": 40
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "DFB 40×; lexicon sheol → dødsriget 0,64 + dødsrigets 0,19. {N: Sheol} er åbent.",
+   "supersedes": "term:H7585",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "שְׁא֜וֹל",
+     "lemma": "שְׁאוֹל",
+     "ref": "HAB 2:5",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:hesed.gloss",
+   "kind": "term",
+   "source": "H2617 חֶסֶד",
+   "value": "trofasthed",
+   "attested": "attested",
+   "words": [
+    "loving devotion",
+    "kindness",
+    "loyalty"
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 3:6",
+     "form": "trofasthed",
+     "n": 31
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "*ḥæsæd wæʔæmæt* = 'trofasthed og troskab' (1 Mos 24,27); valget for hele bogen er åbent (gen024 spm. 1). DFB har også 'nåde' med {N: nåde}.",
+   "supersedes": "term:hesed",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "חַסְדְּ",
+     "lemma": "חֶסֶד",
+     "ref": "GEN 19:19",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:H8198.gloss",
+   "kind": "term",
+   "source": "H8198 שִׁפְחָה",
+   "value": "trælkvinde",
+   "attested": "attested",
+   "words": [
+    "maidservant",
+    "servant"
+   ],
+   "alternatives": [
+    {
+     "value": "tjenestepige",
+     "note": "DFB 1 Mos 12,16; 16,1-2 om Hagar; udkast 20,14; 24,35"
+    },
+    {
+     "value": "slavinde",
+     "note": "for אָמָה i 21,10-13 (Gal 4,30)"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 1:2",
+     "form": "tjenestepige",
+     "n": 28
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "open",
+   "note": "Udkastene: trælkvinde 22×, tjenestepige 2×, slavinde 4×. DFB's 1 Mos 16 (Hagar) har nu 'tjenestepige' – gen-oversigten 1 og 7 er åbne.",
+   "supersedes": "term:H8198",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "אַמְהֹתָ֖י",
+     "lemma": "אָמָה",
+     "ref": "GEN 20:17",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:toledot.gloss",
+   "kind": "term",
+   "source": "תּוֹלְדוֹת",
+   "value": "slægtshistorie",
+   "attested": "attested",
+   "words": [
+    "account",
+    "generations",
+    "records"
+   ],
+   "alternatives": [
+    {
+     "value": "historien om",
+     "note": "DFB 1 Mos 2,4"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 6:9",
+     "form": "slægtshistorie",
+     "n": 6
+    },
+    {
+     "ref": "GEN 10:1",
+     "form": "slægtshistorie"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "open",
+   "note": "DFB 1 Mos 6,9; 10,1; 11,10.27: 'Dette er X's slægtshistorie'; udkastene 25,12.19; 36,1.9 følger. Gen-oversigten 3 er åben.",
+   "supersedes": "term:toledot",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "תּוֹלְדֹ֣ת",
+     "lemma": "תּוֹלֵדוֹת",
+     "ref": "GEN 6:9",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:qanna.gloss",
+   "kind": "term",
+   "source": "אֵל קַנָּא / קַנּוֹא",
+   "value": "skinsyg",
+   "attested": "attested",
+   "words": [
+    "jealous"
+   ],
+   "alternatives": [
+    {
+     "value": "nidkær",
+     "note": "DFB 6× (Sl 69,10; Sak 1,14)"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "EXO 34:14",
+     "form": "skinsyg",
+     "n": 4
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "open",
+   "note": "DFB 2 Mos 34,14 'skinsyg'; jos 47 åbent.",
+   "supersedes": "term:qanna",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "קַנָּ֣א",
+     "lemma": "קַנָּא",
+     "ref": "EXO 34:14",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:sar_tabbahim.gloss",
+   "kind": "term",
+   "source": "שַׂר הַטַּבָּחִים",
+   "value": "chefen for livvagten",
+   "attested": "attested",
+   "words": [
+    "captain of the guard"
+   ],
+   "evidence": [
+    {
+     "ref": "JER 39:9",
+     "form": "chefen for livvagten",
+     "n": 15
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Husform fra Jer 39; 52 (DFB 15×); 1 Mos 37; 39; 40; 41.",
+   "supersedes": "term:sar_tabbahim",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "רַב",
+     "lemma": "רַב",
+     "ref": "JER 39:9",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:tselem.gloss",
+   "kind": "term",
+   "source": "צְלֵם (aram.)",
+   "value": "billedstøtte",
+   "attested": "attested",
+   "words": [
+    "statue",
+    "image"
+   ],
+   "evidence": [
+    {
+     "ref": "NUM 33:52",
+     "form": "billedstøtte",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Ensrettet i Dan 2,31-45 og kap. 3 (2 havde 'statue').",
+   "supersedes": "term:tselem",
+   "gloss": [
+    {
+     "lang": "arc",
+     "form": "צְלֵ֥ם",
+     "lemma": "צְלֵם",
+     "ref": "DAN 2:31",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:shiqquts.gloss",
+   "kind": "term",
+   "source": "שִׁקּוּץ מְשֹׁמֵם",
+   "value": "ødelæggelsens vederstyggelighed",
+   "attested": "attested",
+   "words": [
+    "abomination of desolation",
+    "abomination that causes desolation"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 24:15",
+     "form": "ødelæggelsens vederstyggelighed",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Som DFB Matt 24,15 (Mark 13,14 har 'modbydelighed', meldt som fejl). 9,27 i flertal som hebraisk.",
+   "supersedes": "term:shiqquts",
+   "gloss": [
+    {
+     "lang": "grc",
+     "form": "βδέλυγμα",
+     "lemma": "βδέλυγμα",
+     "ref": "MAT 24:15",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:tsevi.gloss",
+   "kind": "term",
+   "source": "אֶרֶץ הַצְּבִי",
+   "value": "det herlige land",
+   "attested": "attested",
+   "words": [
+    "beautiful land",
+    "glorious land"
+   ],
+   "evidence": [
+    {
+     "ref": "ZEC 7:14",
+     "form": "det herlige land",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "term:tsevi",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "אֶֽרֶץ",
+     "lemma": "אֶרֶץ",
+     "ref": "DAN 11:16",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "term:elon.gloss",
+   "kind": "term",
+   "source": "H436 אֵלוֹן",
+   "value": "eg",
+   "attested": "attested",
+   "words": [
+    "oak",
+    "oaks",
+    "terebinth",
+    "great trees"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 13:18",
+     "form": "Mamres ege",
+     "n": 2
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "'Mamres ege' (DFB 1 Mos 13,18), 'Morehs eg' (DFB 12,6; stilarket skrev 'Mores eg'); 'terebinte' kun i {T:}. DFB 18,1 har dog 'egetræerne i Mamre'.",
+   "supersedes": "term:elon",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "אֵלֹנֵ֥י",
+     "lemma": "אֵלוֹן",
+     "ref": "GEN 13:18",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "formula:koh_amar.gloss",
+   "kind": "formula",
+   "source": "כֹּה אָמַר יְהוָה",
+   "value": "Sådan siger HERREN",
+   "attested": "attested",
+   "words": [
+    "this is what the lord says",
+    "thus says the lord"
+   ],
+   "alternatives": [
+    {
+     "value": "Dette siger Hærskarers HERRE",
+     "note": "Hag 1,2"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "EXO 7:26",
+     "form": "Sådan siger HERREN",
+     "n": 69
+    },
+    {
+     "ref": "ISA 37:6",
+     "form": "Sådan siger HERREN"
+    },
+    {
+     "ref": "ISA 37:21",
+     "form": "Sådan siger HERREN"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "DFB 69×.",
+   "supersedes": "formula:koh_amar",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "יְהוָה֙",
+     "lemma": "יהוה",
+     "ref": "EXO 7:26",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "formula:neum_yhwh.gloss",
+   "kind": "formula",
+   "source": "נְאֻם יְהוָה",
+   "value": "siger HERREN",
+   "attested": "attested",
+   "words": [
+    "declares the lord"
+   ],
+   "evidence": [
+    {
+     "ref": "ISA 1:11",
+     "form": "siger HERREN",
+     "n": 150
+    },
+    {
+     "ref": "ISA 1:18",
+     "form": "siger HERREN"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "DFB 150× (inkl. 'Sådan siger HERREN'); udkast 1 Mos 22,16; Jos 7,13; 24,2.",
+   "supersedes": "formula:neum_yhwh",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "יְהוָ֔ה",
+     "lemma": "יהוה",
+     "ref": "ISA 1:11",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "formula:word_came.gloss",
+   "kind": "formula",
+   "source": "וַיְהִי דְבַר־יְהוָה אֶל",
+   "value": "HERRENS ord kom til <modtager>",
+   "attested": "attested",
+   "words": [
+    "the word of the lord came to"
+   ],
+   "evidence": [
+    {
+     "ref": "EZK 33:23",
+     "form": "HERRENS ord kom til",
+     "n": 15
+    },
+    {
+     "ref": "JER 1:4",
+     "form": "HERRENS ord kom til"
+    },
+    {
+     "ref": "JER 1:11",
+     "form": "HERRENS ord kom til"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "DFB 15× (Jer, Ez).",
+   "supersedes": "formula:word_came",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "יְהֹוָ֖ה",
+     "lemma": "יהוה",
+     "ref": "EZK 33:23",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "formula:oath_life.gloss",
+   "kind": "formula",
+   "source": "חַי־יְהוָה / חַי פַּרְעֹה",
+   "value": "så sandt <HERREN> lever",
+   "attested": "attested",
+   "words": [
+    "as surely as the lord lives",
+    "as surely as pharaoh lives"
+   ],
+   "evidence": [
+    {
+     "ref": "JER 23:8",
+     "form": "så sandt HERREN lever",
+     "n": 2
+    },
+    {
+     "ref": "RUT 3:13",
+     "form": "så sandt HERREN lever"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "DFB 'så sandt' 19×; 'så sandt jeg lever' (4 Mos 14,21) for Guds ed.",
+   "supersedes": "formula:oath_life",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "יְהוָ֗ה",
+     "lemma": "יהוה",
+     "ref": "JER 23:8",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "formula:evening_morning.gloss",
+   "kind": "formula",
+   "source": "וַיְהִי־עֶרֶב וַיְהִי־בֹקֶר",
+   "value": "Og det blev aften, og det blev morgen",
+   "attested": "attested",
+   "words": [
+    "and there was evening, and there was morning"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 1:5",
+     "form": "Og det blev aften, og det blev morgen",
+     "n": 6
+    },
+    {
+     "ref": "GEN 1:8",
+     "form": "Og det blev aften, og det blev morgen"
+    },
+    {
+     "ref": "GEN 1:13",
+     "form": "Og det blev aften, og det blev morgen"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "DFB 1 Mos 1: '…, én dag' (v5), ellers '…, anden dag' osv.; stilarkets tankestreg-form er overhalet.",
+   "supersedes": "formula:evening_morning",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "בֹ֖קֶר",
+     "lemma": "בֹּקֶר",
+     "ref": "GEN 1:5",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "formula:be_fruitful.gloss",
+   "kind": "formula",
+   "source": "פְּרוּ וּרְבוּ",
+   "value": "Bliv frugtbare og talrige",
+   "attested": "attested",
+   "words": [
+    "be fruitful and multiply"
+   ],
+   "alternatives": [
+    {
+     "value": "Vær frugtbar og bliv mange",
+     "note": "udkast 1 Mos 35,11 (efter det karantænede kap. 1)"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 1:22",
+     "form": "Bliv frugtbare og talrige",
+     "n": 3
+    },
+    {
+     "ref": "GEN 1:28",
+     "form": "Bliv frugtbare og talrige"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "open",
+   "note": "DFB 1 Mos 1,22.28; 9,1; 28,3 ('gøre dig frugtbar og talrig'). Udkastet 35,11 bør nok følge DFB (gen009 spm. 1).",
+   "supersedes": "formula:be_fruitful",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "רְב֗וּ",
+     "lemma": "רָבָה",
+     "ref": "GEN 1:22",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "formula:full_of_days.gloss",
+   "kind": "formula",
+   "source": "זָקֵן וּשְׂבַע יָמִים",
+   "value": "gammel og mæt af dage",
+   "attested": "attested",
+   "words": [
+    "old and full of years"
+   ],
+   "evidence": [
+    {
+     "ref": "JOB 42:17",
+     "form": "mæt af dage",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Efter Job 42,17.",
+   "supersedes": "formula:full_of_days",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "יָמִֽים",
+     "lemma": "יוֹם",
+     "ref": "JOB 42:17",
+     "proposed": true
+    },
+    {
+     "lang": "grc",
+     "form": "ἡμέρας",
+     "lemma": "ἡμέρα",
+     "ref": "MAT 4:2",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "formula:evil_eyes.gloss",
+   "kind": "formula",
+   "source": "וַיַּעֲשׂוּ הָרַע בְּעֵינֵי יְהוָה",
+   "value": "handlede ondt i HERRENS øjne",
+   "attested": "attested",
+   "words": [
+    "did evil in the sight of the lord",
+    "evil in the sight of the lord"
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 11:6",
+     "form": "handlede ondt i HERRENS øjne",
+     "n": 5
+    },
+    {
+     "ref": "JDG 2:11",
+     "form": "handlede israelitterne ondt i HERRENS øjne"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "DFB Dom 2,11; 3,7 osv. (12× 'ondt i HERRENS øjne').",
+   "supersedes": "formula:evil_eyes",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "יְהוָ֑ה",
+     "lemma": "יהוה",
+     "ref": "1KI 11:6",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "formula:call_name.gloss",
+   "kind": "formula",
+   "source": "וַיִּקְרָא בְּשֵׁם יְהוָה",
+   "value": "påkaldte HERRENS navn",
+   "attested": "attested",
+   "words": [
+    "called on the name of the lord"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 12:8",
+     "form": "påkaldte HERRENS navn",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "formula:call_name",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "יהוָ֔ה",
+     "lemma": "יהוה",
+     "ref": "GEN 12:8",
+     "proposed": true
+    },
+    {
+     "lang": "grc",
+     "form": "Κυρίου",
+     "lemma": "κύριος",
+     "ref": "MAT 1:20",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "formula:cut_covenant.gloss",
+   "kind": "formula",
+   "source": "כָּרַת בְּרִית",
+   "value": "slutte en pagt",
+   "attested": "by-rule",
+   "words": [
+    "made a covenant",
+    "make a covenant"
+   ],
+   "alternatives": [
+    {
+     "value": "oprette en pagt",
+     "note": "הֵקִים בְּרִית"
+    },
+    {
+     "value": "indgå en pagt",
+     "note": "DFB 1 Mos 15,18; udkast Jos 9,15"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 8:9",
+     "form": "sluttede pagt",
+     "n": 20
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "DFB 'slutte … pagt' 12×; stilarkets faste form.",
+   "supersedes": "formula:cut_covenant",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "בְּרִֽית",
+     "lemma": "בְּרִית",
+     "ref": "GEN 21:27",
+     "proposed": true
+    },
+    {
+     "lang": "grc",
+     "form": "διαθήκης",
+     "lemma": "διαθήκη",
+     "ref": "MAT 26:28",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "formula:blessed_be.gloss",
+   "kind": "formula",
+   "source": "בָּרוּךְ יְהוָה",
+   "value": "Lovet være HERREN",
+   "attested": "attested",
+   "words": [
+    "blessed be the lord"
+   ],
+   "alternatives": [
+    {
+     "value": "Velsignet være",
+     "note": "DFB 9× (1 Kong 1,48; 8,15); udkast Dan 3,28"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "EXO 18:10",
+     "form": "Lovet være HERREN",
+     "n": 10
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "open",
+   "note": "DFB 'Lovet være' 15×, 'Velsignet være' 9×. 1 Mos 24 bruger 'Lovet være' (v27) og 'lovede' (v48); 'velsignet' ville bevare forbindelsen til v1.31.35.60 (gen024 spm. 3).",
+   "supersedes": "formula:blessed_be",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "יְהוָה֙",
+     "lemma": "יהוה",
+     "ref": "GEN 24:27",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "formula:sword.gloss",
+   "kind": "formula",
+   "source": "הִכָּה לְפִי־חֶרֶב",
+   "value": "slog <dem> ned med sværd",
+   "attested": "attested",
+   "words": [
+    "put to the sword",
+    "struck with the sword"
+   ],
+   "alternatives": [
+    {
+     "value": "huggede ned med sværd",
+     "note": "udkast Jos 6,21; 11,10-12 (6×); DFB Job 1,15.17"
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "JDG 1:8",
+     "form": "slog indbyggerne ned med sværd",
+     "n": 4
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "open",
+   "note": "DFB Dom 1,8.25; 18,27; 20,48 'slog … ned med sværd' (4×). Jos 17: ét valg for bogen; DFB peger på 'slog'.",
+   "supersedes": "formula:sword",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "חָ֑רֶב",
+     "lemma": "חֶרֶב",
+     "ref": "JDG 1:8",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "formula:find_favor.gloss",
+   "kind": "formula",
+   "source": "מָצָא חֵן בְּעֵינֵי",
+   "value": "finde nåde for <X>s øjne",
+   "attested": "by-rule",
+   "words": [
+    "found favor in the eyes of",
+    "find favor"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 6:8",
+     "form": "fandt nåde",
+     "n": 1
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "DFB 1 Mos 6,8 'fandt nåde'; udkast 39,21 'finde nåde for … øjne'.",
+   "supersedes": "formula:find_favor",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "מָ֥צָא",
+     "lemma": "מָצָא",
+     "ref": "GEN 6:8",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:joshua.gloss",
+   "kind": "name",
+   "source": "יְהוֹשֻׁעַ Joshua",
+   "value": "Josva",
+   "attested": "attested",
+   "words": [
+    "joshua"
+   ],
+   "evidence": [
+    {
+     "ref": "EXO 17:9",
+     "form": "Josva",
+     "n": 34
+    },
+    {
+     "ref": "EXO 17:10",
+     "form": "Josva"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "'Josva, Nuns søn' (DFB 11×); 'HERRENS tjener Moses' (udkast 14×).",
+   "supersedes": "name:joshua",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "יְהוֹשֻׁ֨עַ֙",
+     "lemma": "יְהֹושֻׁעַ",
+     "ref": "EXO 17:9",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:caleb.gloss",
+   "kind": "name",
+   "source": "כָּלֵב Caleb",
+   "value": "Kaleb",
+   "attested": "attested",
+   "words": [
+    "caleb"
+   ],
+   "evidence": [
+    {
+     "ref": "JDG 1:12",
+     "form": "Kaleb",
+     "n": 14
+    },
+    {
+     "ref": "JDG 1:13",
+     "form": "Kaleb"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "'Kaleb, kenizzitten Jefunnes søn' (4 Mos 32,12; Jos 14,6).",
+   "supersedes": "name:caleb",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "כָּלֵ֔ב",
+     "lemma": "כָּלֵב",
+     "ref": "JDG 1:12",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:rahab.gloss",
+   "kind": "name",
+   "source": "רָחָב Rahab",
+   "value": "Rahab",
+   "attested": "attested",
+   "words": [
+    "rahab"
+   ],
+   "evidence": [
+    {
+     "ref": "HEB 11:31",
+     "form": "Rahab",
+     "n": 8
+    },
+    {
+     "ref": "ISA 30:7",
+     "form": "Rahab"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "name:rahab",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "רַ֥הַב",
+     "lemma": "רַהַב",
+     "ref": "ISA 30:7",
+     "proposed": true
+    },
+    {
+     "lang": "grc",
+     "form": "Ῥαὰβ",
+     "lemma": "Ῥαάβ",
+     "ref": "HEB 11:31",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:jericho.gloss",
+   "kind": "name",
+   "source": "יְרִיחוֹ Jericho",
+   "value": "Jeriko",
+   "attested": "attested",
+   "words": [
+    "jericho"
+   ],
+   "evidence": [
+    {
+     "ref": "JER 39:5",
+     "form": "Jeriko",
+     "n": 15
+    },
+    {
+     "ref": "LUK 10:30",
+     "form": "Jeriko"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "name:jericho",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "יְרֵחוֹ֒",
+     "lemma": "יְרִיחֹו יְרִחֹו",
+     "ref": "JER 39:5",
+     "proposed": true
+    },
+    {
+     "lang": "grc",
+     "form": "Ἰεριχὼ",
+     "lemma": "Ἰεριχώ",
+     "ref": "LUK 10:30",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:ai.gloss",
+   "kind": "name",
+   "source": "הָעַי Ai",
+   "value": "Aj",
+   "attested": "attested",
+   "words": [
+    "ai"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 12:8",
+     "form": "Aj",
+     "n": 3
+    },
+    {
+     "ref": "GEN 13:3",
+     "form": "Aj"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "DFB 1 Mos 12,8; 13,3; Jer 49,3.",
+   "supersedes": "name:ai",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "עַ֣י",
+     "lemma": "עַי",
+     "ref": "GEN 12:8",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:hazor.gloss",
+   "kind": "name",
+   "source": "חָצוֹר Hazor",
+   "value": "Hasor",
+   "attested": "attested",
+   "words": [
+    "hazor"
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 9:15",
+     "form": "Hasor",
+     "n": 4
+    },
+    {
+     "ref": "JDG 4:2",
+     "form": "Hasor"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "ḥ → h, ṣ → s; ikke Hazor.",
+   "supersedes": "name:hazor",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "חָצֹ֥ר",
+     "lemma": "חָצוֹר",
+     "ref": "1KI 9:15",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:mizpah.gloss",
+   "kind": "name",
+   "source": "מִצְפָּה Mizpah",
+   "value": "Mispa",
+   "attested": "attested",
+   "words": [
+    "mizpah"
+   ],
+   "evidence": [
+    {
+     "ref": "JDG 10:17",
+     "form": "Mispa",
+     "n": 20
+    },
+    {
+     "ref": "JDG 20:1",
+     "form": "Mispa"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "DFB 20×; Jos 15,38; 18,26 har 'Mispe' (MT-vokalisering) – åbent (jos 28).",
+   "supersedes": "name:mizpah",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "מִּצְפָּֽה",
+     "lemma": "מִצְפָּה",
+     "ref": "JDG 10:17",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:shinar.gloss",
+   "kind": "name",
+   "source": "שִׁנְעָר Shinar",
+   "value": "Sinear",
+   "attested": "attested",
+   "words": [
+    "shinar"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 10:10",
+     "form": "Sinear",
+     "n": 6
+    },
+    {
+     "ref": "GEN 11:2",
+     "form": "Sinear"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Husform (DFB 1 Mos 10,10; 11,2; Zak 5,11) går forud for translitterationsreglen.",
+   "supersedes": "name:shinar",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "שִׁנְעָֽר",
+     "lemma": "שִׁנְעָר",
+     "ref": "GEN 10:10",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:haran_city.gloss",
+   "kind": "name",
+   "source": "חָרָן Harran (byen)",
+   "value": "Karan",
+   "attested": "attested",
+   "words": [
+    "haran"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 11:31",
+     "form": "Karan",
+     "n": 6
+    },
+    {
+     "ref": "GEN 11:32",
+     "form": "Karan"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Byen Karan ≠ broderen Haran (הָרָן). DFB 1 Mos 11,31; 12,4; Es 37,12.",
+   "supersedes": "name:haran_city",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "חָרָ֖ן",
+     "lemma": "חָרָן",
+     "ref": "GEN 11:31",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:nahor.gloss",
+   "kind": "name",
+   "source": "נָחוֹר Nahor",
+   "value": "Nakor",
+   "attested": "attested",
+   "words": [
+    "nahor"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 11:22",
+     "form": "Nakor",
+     "n": 7
+    },
+    {
+     "ref": "GEN 11:23",
+     "form": "Nakor"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "open",
+   "note": "DFB 1 Mos 11,22-29 har 'Nakor' (8×) og Jos 24,2-udkastet ligeså; 1 Mos-udkastene 22,20.23; 24 har 'Nahor' (8×). Bør ensrettes til DFB.",
+   "supersedes": "name:nahor",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "נָחֽוֹר",
+     "lemma": "נָחוֹר",
+     "ref": "GEN 11:22",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:canaan.gloss",
+   "kind": "name",
+   "source": "כְּנַעַן Canaan",
+   "value": "Kana'an",
+   "attested": "attested",
+   "words": [
+    "canaan"
+   ],
+   "evidence": [
+    {
+     "ref": "EXO 6:4",
+     "form": "Kana’an",
+     "n": 32
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "'i Kana'ans land' / 'landet Kana'an' (gen023 spm. 4).",
+   "supersedes": "name:canaan",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "כְּנָ֑עַן",
+     "lemma": "כְּנַעַן",
+     "ref": "GEN 23:2",
+     "proposed": true
+    },
+    {
+     "lang": "grc",
+     "form": "Κανὰ",
+     "lemma": "Κανά",
+     "ref": "JHN 2:1",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:rachel.gloss",
+   "kind": "name",
+   "source": "רָחֵל Rachel",
+   "value": "Rakel",
+   "attested": "attested",
+   "words": [
+    "rachel"
+   ],
+   "evidence": [
+    {
+     "ref": "JER 31:15",
+     "form": "Rakel",
+     "n": 3
+    },
+    {
+     "ref": "MAT 2:18",
+     "form": "Rakel"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "name:rachel",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "רָחֵ֖ל",
+     "lemma": "רָחֵל",
+     "ref": "JER 31:15",
+     "proposed": true
+    },
+    {
+     "lang": "grc",
+     "form": "Ῥαχὴλ",
+     "lemma": "Ῥαχήλ",
+     "ref": "MAT 2:18",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:leah.gloss",
+   "kind": "name",
+   "source": "לֵאָה Leah",
+   "value": "Lea",
+   "attested": "attested",
+   "words": [
+    "leah"
+   ],
+   "evidence": [
+    {
+     "ref": "RUT 4:11",
+     "form": "Lea",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "name:leah",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "לֵאָה֙",
+     "lemma": "לֵאָה",
+     "ref": "RUT 4:11",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:rebekah.gloss",
+   "kind": "name",
+   "source": "רִבְקָה Rebekah",
+   "value": "Rebekka",
+   "attested": "attested",
+   "words": [
+    "rebekah"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 28:5",
+     "form": "Rebekka",
+     "n": 2
+    },
+    {
+     "ref": "ROM 9:10",
+     "form": "Rebekka"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "name:rebekah",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "רִבְקָ֔ה",
+     "lemma": "רִבְקָה",
+     "ref": "GEN 28:5",
+     "proposed": true
+    },
+    {
+     "lang": "grc",
+     "form": "Ῥεβέκκα",
+     "lemma": "Ῥεβέκκα",
+     "ref": "ROM 9:10",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:esau.gloss",
+   "kind": "name",
+   "source": "עֵשָׂו Esau",
+   "value": "Esau",
+   "attested": "attested",
+   "words": [
+    "esau"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 28:6",
+     "form": "Esau",
+     "n": 7
+    },
+    {
+     "ref": "GEN 28:8",
+     "form": "Esau"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "name:esau",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "עֵשָׂ֗ו",
+     "lemma": "עֵשָׂו",
+     "ref": "GEN 28:6",
+     "proposed": true
+    },
+    {
+     "lang": "grc",
+     "form": "Ἠσαῦ",
+     "lemma": "Ἠσαῦ",
+     "ref": "ROM 9:13",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:laban.gloss",
+   "kind": "name",
+   "source": "לָבָן Laban",
+   "value": "Laban",
+   "attested": "attested",
+   "words": [
+    "laban"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 28:5",
+     "form": "Laban",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "name:laban",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "לָבָ֤ן",
+     "lemma": "לָבָן",
+     "ref": "GEN 28:5",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:joseph.gloss",
+   "kind": "name",
+   "source": "יוֹסֵף Joseph",
+   "value": "Josef",
+   "attested": "attested",
+   "words": [
+    "joseph"
+   ],
+   "evidence": [
+    {
+     "ref": "EXO 1:5",
+     "form": "Josef",
+     "n": 23
+    },
+    {
+     "ref": "EXO 1:6",
+     "form": "Josef"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "name:joseph",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "יוֹסֵ֖ף",
+     "lemma": "יוֹסֵף",
+     "ref": "EXO 1:5",
+     "proposed": true
+    },
+    {
+     "lang": "grc",
+     "form": "Ἰωσὴφ",
+     "lemma": "Ἰωσήφ",
+     "ref": "MAT 1:16",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:pharaoh.gloss",
+   "kind": "name",
+   "source": "פַּרְעֹה Pharaoh",
+   "value": "Farao",
+   "attested": "attested",
+   "words": [
+    "pharaoh"
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 3:1",
+     "form": "Farao",
+     "n": 100
+    },
+    {
+     "ref": "1KI 9:16",
+     "form": "Farao"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Uden artikel, som egennavn.",
+   "supersedes": "name:pharaoh",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "פַּרְעֹ֖ה",
+     "lemma": "פַּרְעֹה",
+     "ref": "1KI 3:1",
+     "proposed": true
+    },
+    {
+     "lang": "grc",
+     "form": "Φαραὼ",
+     "lemma": "Φαραώ",
+     "ref": "ACT 7:10",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:perez.gloss",
+   "kind": "name",
+   "source": "פֶּרֶץ Perez",
+   "value": "Peres",
+   "attested": "attested",
+   "words": [
+    "perez"
+   ],
+   "evidence": [
+    {
+     "ref": "MAT 1:3",
+     "form": "Peres",
+     "n": 6
+    },
+    {
+     "ref": "NUM 26:20",
+     "form": "Peres"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "name:perez",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "פֶ֕רֶץ",
+     "lemma": "פֶּרֶץ",
+     "ref": "NUM 26:20",
+     "proposed": true
+    },
+    {
+     "lang": "grc",
+     "form": "Φαρὲς",
+     "lemma": "Φάρες",
+     "ref": "MAT 1:3",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:ishmael.gloss",
+   "kind": "name",
+   "source": "יִשְׁמָעֵאל Ishmael",
+   "value": "Ismael",
+   "attested": "attested",
+   "words": [
+    "ishmael"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 16:11",
+     "form": "Ismael",
+     "n": 30
+    },
+    {
+     "ref": "GEN 16:15",
+     "form": "Ismael"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "name:ishmael",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "יִשְׁמָעֵ֔אל",
+     "lemma": "יִשְׁמָעֵאל",
+     "ref": "GEN 16:11",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:isaac.gloss",
+   "kind": "name",
+   "source": "יִצְחָק Isaac",
+   "value": "Isak",
+   "attested": "attested",
+   "words": [
+    "isaac"
+   ],
+   "evidence": [
+    {
+     "ref": "DEU 30:20",
+     "form": "Isak",
+     "n": 24
+    },
+    {
+     "ref": "EXO 2:24",
+     "form": "Isak"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "name:isaac",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "יִצְחָ֥ק",
+     "lemma": "יִצְחָק",
+     "ref": "DEU 30:20",
+     "proposed": true
+    },
+    {
+     "lang": "grc",
+     "form": "Ἰσαάκ",
+     "lemma": "Ἰσαάκ",
+     "ref": "MAT 1:2",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:abimelech.gloss",
+   "kind": "name",
+   "source": "אֲבִימֶלֶךְ Abimelech",
+   "value": "Abimelek",
+   "attested": "attested",
+   "words": [
+    "abimelech"
+   ],
+   "evidence": [
+    {
+     "ref": "JDG 8:31",
+     "form": "Abimelek",
+     "n": 43
+    },
+    {
+     "ref": "JDG 9:1",
+     "form": "Abimelek"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "name:abimelech",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "אֲבִימֶֽלֶךְ",
+     "lemma": "אֲבִימֶלֶךְ",
+     "ref": "JDG 8:31",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:shechem.gloss",
+   "kind": "name",
+   "source": "שְׁכֶם Shechem",
+   "value": "Sikem",
+   "attested": "attested",
+   "words": [
+    "shechem"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 12:6",
+     "form": "Sikem",
+     "n": 31
+    },
+    {
+     "ref": "JDG 8:31",
+     "form": "Sikem"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "name:shechem",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "שְׁכֶ֔ם",
+     "lemma": "שְׁכֶם",
+     "ref": "GEN 12:6",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:philistines.gloss",
+   "kind": "name",
+   "source": "פְּלִשְׁתִּים Philistines",
+   "value": "filistrene",
+   "attested": "attested",
+   "words": [
+    "philistines"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 10:14",
+     "form": "filistrene",
+     "n": 22
+    },
+    {
+     "ref": "ISA 2:6",
+     "form": "filistrene"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "name:philistines",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "פְּלִשְׁתִּ֖ים",
+     "lemma": "פְּלִשְׁתִּי",
+     "ref": "GEN 10:14",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:ephrath.gloss",
+   "kind": "name",
+   "source": "אֶפְרָת Ephrath",
+   "value": "Efrat",
+   "attested": "attested",
+   "words": [
+    "ephrath",
+    "ephrathah"
+   ],
+   "evidence": [
+    {
+     "ref": "RUT 1:2",
+     "form": "Efrat",
+     "n": 1
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "open",
+   "note": "DFB Ruth 1,2 'Efrat', Ruth 4,11 og Sl 132,6 'Efrata'; udkastene 'Efrat' (1 Mos 35,16.19; 48,7).",
+   "supersedes": "name:ephrath",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "אֶפְרָתִ֔ים",
+     "lemma": "אֶפְרָתִי",
+     "ref": "RUT 1:2",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:nebuchadnezzar.gloss",
+   "kind": "name",
+   "source": "נְבוּכַדְנֶאצַּר Nebuchadnezzar",
+   "value": "Nebukadnesar",
+   "attested": "attested",
+   "words": [
+    "nebuchadnezzar"
+   ],
+   "evidence": [
+    {
+     "ref": "JER 21:2",
+     "form": "Nebukadnesar",
+     "n": 25
+    },
+    {
+     "ref": "JER 24:1",
+     "form": "Nebukadnesar"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "name:nebuchadnezzar",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "נְבוּכַדְרֶאצַּ֥ר",
+     "lemma": "נְבוּכַדְרֶאצַּר",
+     "ref": "JER 21:2",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:darius.gloss",
+   "kind": "name",
+   "source": "דָּרְיָוֶשׁ Darius",
+   "value": "Darius",
+   "attested": "attested",
+   "words": [
+    "darius"
+   ],
+   "evidence": [
+    {
+     "ref": "ZEC 7:1",
+     "form": "Darius",
+     "n": 1
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "name:darius",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "דָרְיָ֖וֶשׁ",
+     "lemma": "דָּרְיָוֶשׁ",
+     "ref": "ZEC 7:1",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:cyrus.gloss",
+   "kind": "name",
+   "source": "כּוֹרֶשׁ Cyrus",
+   "value": "Kyros",
+   "attested": "attested",
+   "words": [
+    "cyrus"
+   ],
+   "evidence": [
+    {
+     "ref": "ISA 41:24",
+     "form": "Kyros",
+     "n": 4
+    },
+    {
+     "ref": "ISA 44:28",
+     "form": "Kyros"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "name:cyrus",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "כ֨וֹרֶשׁ֙",
+     "lemma": "כּוֹרֶשׁ",
+     "ref": "ISA 44:28",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:michael.gloss",
+   "kind": "name",
+   "source": "מִיכָאֵל Michael",
+   "value": "Mikael",
+   "attested": "attested",
+   "words": [
+    "michael"
+   ],
+   "evidence": [
+    {
+     "ref": "JUD 1:9",
+     "form": "Mikael",
+     "n": 2
+    },
+    {
+     "ref": "REV 12:7",
+     "form": "Mikael"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "name:michael",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "מִיכָאֵֽל",
+     "lemma": "מִיכָאֵל",
+     "ref": "NUM 13:13",
+     "proposed": true
+    },
+    {
+     "lang": "grc",
+     "form": "Μιχαὴλ",
+     "lemma": "Μιχαήλ",
+     "ref": "JUD 1:9",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:babylon.gloss",
+   "kind": "name",
+   "source": "בָּבֶל Babylon",
+   "value": "Babylon",
+   "attested": "attested",
+   "words": [
+    "babylon"
+   ],
+   "evidence": [
+    {
+     "ref": "1PE 5:13",
+     "form": "Babylon",
+     "n": 86
+    },
+    {
+     "ref": "ISA 21:9",
+     "form": "Babylon"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "'Babel' i 1 Mos 10-11 (DFB).",
+   "supersedes": "name:babylon",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "בָּבֶ֔ל",
+     "lemma": "בָּבֶל",
+     "ref": "ISA 21:9",
+     "proposed": true
+    },
+    {
+     "lang": "grc",
+     "form": "Βαβυλῶνι",
+     "lemma": "Βαβυλών",
+     "ref": "1PE 5:13",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:media_persia.gloss",
+   "kind": "name",
+   "source": "מָדַי וּפָרַס Media and Persia",
+   "value": "Medien",
+   "attested": "attested",
+   "words": [
+    "media",
+    "medes"
+   ],
+   "evidence": [
+    {
+     "ref": "ISA 13:17",
+     "form": "Medien",
+     "n": 2
+    },
+    {
+     "ref": "ISA 21:2",
+     "form": "Medien"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Og Persien, Grækenland (Javan i {T:}); 'Medien og Persien' eller 'mederne og perserne' er åbent (dan005 spm. 6).",
+   "supersedes": "name:media_persia",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "מָדָ֑י",
+     "lemma": "מָדַי",
+     "ref": "ISA 13:17",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:moses.gloss",
+   "kind": "name",
+   "source": "מֹשֶׁה Moses",
+   "value": "Moses",
+   "attested": "attested",
+   "words": [
+    "moses"
+   ],
+   "evidence": [
+    {
+     "ref": "1CO 10:2",
+     "form": "Moses",
+     "n": 597
+    },
+    {
+     "ref": "1KI 2:3",
+     "form": "Moses"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Genitiv 'Moses'' (Moses' lovbog).",
+   "supersedes": "name:moses",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "מֹשֶׁ֑ה",
+     "lemma": "מֹשֶׁה",
+     "ref": "1KI 2:3",
+     "proposed": true
+    },
+    {
+     "lang": "grc",
+     "form": "Μωϋσῆν",
+     "lemma": "Μωϋσῆς",
+     "ref": "1CO 10:2",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:kadesh.gloss",
+   "kind": "name",
+   "source": "קָדֵשׁ Kadesh",
+   "value": "Kadesh",
+   "attested": "attested",
+   "words": [
+    "kadesh"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 14:7",
+     "form": "Kadesh",
+     "n": 14
+    },
+    {
+     "ref": "JDG 11:16",
+     "form": "Kadesh"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "DFB 14×; 1 Mos 16,14 dog 'Qadesh'.",
+   "supersedes": "name:kadesh",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "קָדֵ֔שׁ",
+     "lemma": "קָדֵשׁ",
+     "ref": "GEN 14:7",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:gilgal.gloss",
+   "kind": "name",
+   "source": "גִּלְגָּל Gilgal",
+   "value": "Gilgal",
+   "attested": "attested",
+   "words": [
+    "gilgal"
+   ],
+   "evidence": [
+    {
+     "ref": "JDG 2:1",
+     "form": "Gilgal",
+     "n": 2
+    },
+    {
+     "ref": "JDG 3:19",
+     "form": "Gilgal"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "name:gilgal",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "גִּלְגָּ֖ל",
+     "lemma": "גִּלְגָּל",
+     "ref": "JDG 2:1",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:gibeon.gloss",
+   "kind": "name",
+   "source": "גִּבְעוֹן Gibeon",
+   "value": "Gibeon",
+   "attested": "attested",
+   "words": [
+    "gibeon"
+   ],
+   "evidence": [
+    {
+     "ref": "1KI 3:4",
+     "form": "Gibeon",
+     "n": 7
+    },
+    {
+     "ref": "1KI 3:5",
+     "form": "Gibeon"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "supersedes": "name:gibeon",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "גִּבְעֹ֨נָ",
+     "lemma": "גִּבְעוֹן",
+     "ref": "1KI 3:4",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:arpachshad.gloss",
+   "kind": "name",
+   "source": "אַרְפַּכְשַׁד Arphaxad",
+   "value": "Arpakshad",
+   "attested": "attested",
+   "words": [
+    "arphaxad"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 10:22",
+     "form": "Arpakshad",
+     "n": 6
+    },
+    {
+     "ref": "GEN 10:24",
+     "form": "Arpakshad"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "DFB 1 Mos 10-11; stilarket havde 'Arpaksad'.",
+   "supersedes": "name:arpachshad",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "אַרְפַּכְשַׁ֖ד",
+     "lemma": "אַרְפַּכְשַׁד",
+     "ref": "GEN 10:22",
+     "proposed": true
+    }
+   ]
+  },
+  {
+   "id": "name:lamech.gloss",
+   "kind": "name",
+   "source": "לֶמֶךְ Lamech",
+   "value": "Lemek",
+   "attested": "attested",
+   "words": [
+    "lamech"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 4:18",
+     "form": "Lemek",
+     "n": 8
+    },
+    {
+     "ref": "GEN 4:19",
+     "form": "Lemek"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "script:gloss.py",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "DFB 1 Mos 4-5; stilarket havde 'Lamek'.",
+   "supersedes": "name:lamech",
+   "gloss": [
+    {
+     "lang": "hbo",
+     "form": "לָֽמֶךְ",
+     "lemma": "לֶמֶךְ",
+     "ref": "GEN 4:18",
+     "proposed": true
+    }
+   ]
+  }
+ ]
+}

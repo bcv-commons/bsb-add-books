@@ -1,0 +1,17 @@
+# A Bantu NT (Zinza, Tanzania) that writes high tone with the acute: a test corpus for affix chains and written tone
+# (scripts/morphs.py). Fetched by its recipe: python3 scripts/fetch_edition.py zin_wbt (the text is not in git;
+# fetch.lock.json pins it).
+name: "Endagano Eénsha omu Chiziinza (Zinza NT)"
+language: zin
+role: style
+text_dir: text
+format: "one .txt file per chapter (fetched)"
+nt_basis: critical
+quarantine: []
+fetch:
+  source: helloao
+  id: zin_wbt
+source: "bible.helloao.org, translation zin_wbt; eBible zin (copyright 2024 Wycliffe Bible Translators, Inc.)"
+licence: "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)"
+attribution: "Endagano Eénsha omu Chiziinza, copyright 2024 Wycliffe Bible Translators, Inc., CC BY-SA 4.0"
+credit: "Zinza NT, Wycliffe Bible Translators (CC BY-SA 4.0)"

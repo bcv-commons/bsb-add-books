@@ -1,0 +1,97 @@
+# Danish drafts, from the Hebrew/Greek with the BSB as the only assisting translation,
+# continuing Den Frie Bibel in its house style. Drafts go to
+# export/dan/dan_BSB/<code>/. Everything in export/ is public domain (CC0); see export/README.md.
+# Project id for the scripts: dan/dan_BSB  (e.g. python3 scripts/make_prompt.py dan/dan_BSB dan 3)
+
+language: da
+language_name: Danish (dansk)
+# The model writes Danish well: the 'known' mode (scripts/modes.py, docs/onboarding.md).
+familiarity: known
+corpus_name: Den Frie Bibel             # how the prompts name the style corpus
+notes_language: Danish
+school_language: Danish        # the team's working language: wiki, store notes, analysis; quotations stay in the language
+
+# Den Frie Bibel (import/CC0/dan/den-frie-bibel/): the edition these drafts continue. It supplies the
+# style corpus and nt_basis (critical).
+based_on: den-frie-bibel
+style_from: [den-frie-bibel]
+
+# Books to keep from the drafting agents (added to the editions' quarantine).
+quarantine: []
+
+# Files or folders the agents must not open: test drafts and evaluations, not a model for new chapters.
+do_not_open: [export/dan/dan_BSB/_eval/local/]
+
+# Presentation, as in Den Frie Bibel and the drafts so far.
+quotes: ">><<"                       # >>…<< (Den Frie Bibel's own markup), nested ›…‹ as in its files
+chapter_word: kapitel
+book_titles:                         # the drafts' own titles for gen/jos/dan; Den Frie Bibel's for the rest
+  gen: 1 Mosebog
+  exo: Anden Mosebog
+  num: Fjerde Mosebog
+  jos: Josvabogen
+  jdg: Dommerbogen
+  rut: Ruths bog
+  1ki: Første Kongebog
+  job: Jobs Bog
+  isa: Esajas’ Bog
+  jer: Jeremias' Bog
+  dan: Daniels Bog
+  jon: Jonas’ Bog
+  oba: Obadias’ Bog
+  nam: Nahums Bog
+  hab: Habakkuks Bog
+  zep: Sefanias' Bog
+  hag: Haggajs Bog
+  zec: Zakarias' Bog
+  mat: Matthæusevangeliet
+  mrk: Markusevangeliet
+  luk: Lukasevangeliet
+  jhn: Johannesevangeliet
+  act: Apostlenes Gerninger
+
+# The prompt's own parts (scripts/make_prompt.py). Den Frie Bibel has no footnotes: everything goes into
+# the inline notes and the _notes.md file.
+footnotes: false
+report_items: inline notes by kind (T/E/H/N)
+header:
+  - "!!<Modenhed: Udkast>!!"
+  - "!!<Oversættelse: Maskinudkast fra grundteksten ({file}), sammenholdt med Berean Standard Bible>!!"
+  - "!!<Eksegetisk bearbejdning: Endnu ikke sket>!!"
+  - "!!<Litterært tjek: Endnu ikke sket>!!"
+  - "!!<Dato for denne version: {date}>!!"
+notes_structure: "what the draft is; a table Vers / Hebraisk / Dansk / BSB / Kommentar; numbered exegetical observations, each flagged as an {E:}/{T:}/{H:} candidate; consistency points against Den Frie Bibel; »Nye navneformer«; open questions."
+book_title_rule: "Neither the drafts nor Den Frie Bibel have a title for this book yet: use the traditional Danish title in Den Frie Bibel's style (e.g. »Første Samuelsbog«, as »Første Kongebog«) and list it under open questions."
+
+# Style guides for the prompt's contract, besides the book's own <code>/<code>_style_guide.md:
+# default_style_guide is read when the book has none yet.
+default_style_guide: jos/jos_style_guide.md
+
+# Inline notes in the text, Den Frie Bibel's house style (as in the drafts so far). The prompt
+# gives these rules, and check_draft.py checks the kinds, the glossary keys and the placement.
+inline_notes:
+  T: "only where the literal wording changes the meaning or carries a recognisable image or wordplay; about 5-10 per chapter"
+  E: "2-4 per chapter, cautious wording, with transliterated Hebrew in *…*"
+  H: "only for direct NT quotations of the verse (e.g. 1 Mos 2,24 -> Matt 19,5), not for allusions; about 0-2 per chapter"
+  N: "a glossary reference, about 0-2 per chapter"
+  glossary: [gt-mål, nåde, Sjæl, Ansigt, Hjerte, Hærskarers]
+  placement: "a note attaches with no space to the preceding token; anything beyond these goes into the _notes.md file"
+
+# Project rules, added to every chapter prompt.
+rules:
+  - "**Headings** `==Overskrift==` in sentence form."
+  - "**Divine name:** HERREN in capitals for YHWH."
+  - "**Numbers:** digits for 10 and above, words for 1-9."
+  - "**Transliteration** as in Den Frie Bibel: ʔ (aleph), ʕ (ayin), ᵊ (shewa); never ʾ/ʿ. Inside notes, write verse references as »v. 12« (dot and space), never »v12«, which is reserved for verse markers."
+
+# Free-text addition to the style section of the prompt.
+style_notes: "Den Frie Bibel is the edition these drafts continue: wherever the chapter has parallels already translated there (same names, formulas, parallel passages), reuse their wording. Read its house style for the same genre, e.g. `jdg004.txt` for narrative with dialogue, the psalms (`psa…`) for poetry, and `exo001.txt` for the density of notes."
+
+# Shown with every draft (STATUS.md, the website) and recorded when a chapter is published (scripts/status.py)
+draft_statement: >-
+  Udkast. Oversat med AI-agenter direkte fra hebraisk og græsk, med Berean Standard Bible (BSB) som eneste
+  hjælpeoversættelse; endnu ikke gennemset eller godkendt af et sprogteam. Ikke til brug som udgivet bibeltekst.
+  Fri af ophavsret (CC0).
+publish_statement: >-
+  Udgivet {date} af {by} efter gennemsyn af sprogteamet. Udarbejdet med AI-agenter direkte fra hebraisk og græsk og
+  bearbejdet af teamet. Fri af ophavsret (CC0).

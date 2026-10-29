@@ -1,0 +1,113 @@
+# Priors: what was believed about the language before its corpus was studied (scripts/priors.py).
+# Each item is a hypothesis; `python3 scripts/priors.py check` tests it against the corpus. The team may
+# correct or add items (mark them `source: team`); a speaker's entry outranks the model's.
+# 2026-10-16, agent:memory-setup: items checked against Di Jamiekan Nyuu Testiment; where the corpus contradicts a
+# prior the item is changed and marked `source: corpus` with its evidence (the store has the full entries).
+source: 'model knowledge (claude-code, 2026-10-16): hypotheses until the corpus or the team confirms them'
+language: Jamaican Creole English
+word_forming_prefixes:
+- an-
+- ri-
+word_forming_suffixes:
+- -nis
+- -ful
+- -li
+- -man
+- -in
+inflection:
+- affix: -a
+  expect: degree=comparative
+  note: 'not productive in the corpus: comparison is (muo) + adjective + dan; beta, biga, iiziya, wosa are lexical
+    forms (store: comparison; HEB 11:4 beta, MAT 10:15 iiziya dan)'
+  confidence: low
+  source: corpus
+- affix: -is
+  expect: degree=superlative
+  note: 'superlative is di muos + adjective (17x, MRK 12:29); -is only in a few words (liklis, MAT 5:18)'
+  confidence: low
+  source: corpus
+- affix: -dem
+  expect: number=plural
+  note: 'not a suffix: plural dem is a separate word after the noun phrase (di piipl dem, "di N dem" 2,342x; LUK 15:1);
+    never hyphenated'
+  confidence: low
+  source: corpus
+- affix: -in
+  expect: mood=participle
+  note: 'not found: verbs have no endings; progressive is preverbal a (mi a tel unu, LUK 15:7); -in only in nouns
+    (iivnin, maanin)'
+  confidence: low
+  source: corpus
+function_words:
+  # corrected to the corpus forms (source: corpus): ina -> iina, ova -> uova, kyaan -> kyaahn, duon/noh -> no/naa,
+  # fi-mi/fi-yu/fi-im -> written apart (fi mi), wahn -> wan, i -> (absent), bikaa -> kaa, till -> til, if -> ef,
+  # nonaa/kaaz a dropped (absent)
+  articles:
+  - di
+  - wan
+  pronouns:
+  - mi
+  - yu
+  - im
+  - shi
+  - ar
+  - it
+  - wi
+  - unu
+  - dem
+  prepositions:
+  - iina
+  - pan
+  - fi
+  - wid
+  - fram
+  - tu
+  - a
+  - bout
+  - anda
+  - uova
+  - outa
+  - infronta
+  conjunctions:
+  - an
+  - bot
+  - ar
+  - so
+  - ef
+  - se
+  - wen
+  - kaaz
+  - kaa
+  - fi
+  - dat
+  - til
+  negation:
+  - 'no'
+  - neva
+  - neehn
+  - naa
+  - kyaahn
+  - nobadi
+  - notn
+notes:
+- 'Basic word order is SVO; adjectives precede nouns; questions keep SVO with a fronted question word: wa, uu, ou, wen,
+  wich paat (where, 141x; not "wichpaat"), wa mek (why, 49x; wai only 6x). [source: corpus]'
+- 'Verbs are uninflected. Corrected by the corpus: the narrative past is the bare verb; did = past of states and backgrounds;
+  did a = past progressive; en and ben are not markers here (en op = end up, ben = bend); a = progressive; future is
+  ago (1,573x), gweehn (119x) or wi; don = completive; mos, kuda, wuda, afi, maita are modals. [source: corpus; store:
+  narrative_tense, past_did, future]'
+- Hortative 'let us' is 'mek wi' + verb (32 of 52 BSB "let us" verses; MRK 1:38); 'mek' + subject + verb renders 'let
+  him/them' and the causative. [confirmed by the corpus; the derived report's "nothing" was wrong]
+- 'Pronouns have one form for subject, object and possessor (mi, im, dem); im = he/him/his/it; women are shi/ar (shi
+  161, ar 145, im 32 in she/her-only verses); unu is 2nd plural. [source: corpus]'
+- 'Possession is by juxtaposition (Gad kindom, Lat waif) or emphatic fi + possessor written apart (fi mi Laad, MAT 22:44);
+  contracted fi''im and fu''unu occur. [source: corpus]'
+- Equative copula is 'a' (im a wan, MRK 12:29), locative 'de'; adjectives are predicates with no copula (im glad 70x,
+  im a glad 0x). [confirmed]
+- Complement clauses after say/know/think are introduced by 'se'; speech frame "X se tu Y se" (355x). [confirmed]
+- 'Spelling follows the Cassidy-JLU orthography: long vowels doubled (aa, ii, uu), ie and uo, ky/gy/ny, no apostrophes
+  except a few contractions (fi''im, na''av), English h never written, nasal vowels written -hn (waahn, kyaahn); names
+  respelled from English sound (Jiizas, Gad, Jan, Piita, not Pita). [source: corpus]'
+- Plurality is often left unmarked when a numeral or quantifier shows it (tuu bwai pikni, GAL 4:22). [confirmed]
+- Passive is expressed by get + verb (get siev), by the bare verb with the patient as subject, or by impersonal dem (we
+  dem kaal). [confirmed]

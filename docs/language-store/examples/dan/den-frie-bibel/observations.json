@@ -1,0 +1,83 @@
+{
+  "iso": "dan",
+  "edition": "den-frie-bibel",
+  "partition": "observations",
+  "licence": "CC0-1.0",
+  "orthography": { "normalization": "NFC", "ignore_marks": [] },
+  "entries": [
+    {
+      "id": "adposition",
+      "kind": "feature",
+      "value": "before the noun phrase (prepositions)",
+      "codes": ["WALS:85A"],
+      "evidence": [ { "ref": "JON 1:1" }, { "ref": "JON 1:3" }, { "ref": "GEN 11:2" } ],
+      "confidence": "high",
+      "method": "corpus-observed",
+      "by": "person:example",
+      "date": "2026-10-14",
+      "status": "observed",
+      "note": "til Jonas; fra HERREN til Tarshish; i landet Sinear."
+    },
+    {
+      "id": "article",
+      "kind": "feature",
+      "value": "definite article suffixed to a bare noun; a free preposed article when an adjective precedes the noun",
+      "pattern": "<noun>-en/-et | den/det <adjective> <noun>",
+      "evidence": [ { "ref": "GEN 11:2", "form": "landet" }, { "ref": "JON 1:2", "form": "den store by" }, { "ref": "JDG 4:6", "form": "folket" } ],
+      "confidence": "high",
+      "method": "corpus-observed",
+      "by": "person:example",
+      "date": "2026-10-14",
+      "status": "observed"
+    },
+    {
+      "id": "speech_frame",
+      "kind": "feature",
+      "value": "speaker, 'sagde til' addressee, colon, the quote in the edition's quote marks; the frame precedes the quote",
+      "pattern": "<speaker> sagde til <addressee>: >><quote><<",
+      "evidence": [ { "ref": "JDG 4:6" }, { "ref": "JDG 4:14" }, { "ref": "GEN 11:4", "form": "De sagde: »…«" } ],
+      "confidence": "high",
+      "method": "corpus-observed",
+      "by": "person:example",
+      "date": "2026-10-14",
+      "status": "observed",
+      "note": "The tekst/ files mark quotes as >>…<< (older files »…«); nested quotes ›…‹."
+    },
+    {
+      "id": "quotation_marks",
+      "kind": "feature",
+      "value": ">>…<< outer, ›…‹ inner",
+      "evidence": [ { "ref": "JON 1:2" }, { "ref": "JDG 4:14" } ],
+      "confidence": "high",
+      "method": "corpus-observed",
+      "by": "person:example",
+      "date": "2026-10-14",
+      "status": "observed"
+    },
+    {
+      "id": "letter:sh",
+      "kind": "letter",
+      "value": "שׁ → sh",
+      "evidence": [ { "ref": "JON 1:3", "form": "Tarshish" } ],
+      "confidence": "high",
+      "method": "corpus-observed",
+      "by": "person:example",
+      "date": "2026-10-14",
+      "status": "observed",
+      "note": "Also Bashan, Ashdod, Shilo (jos style guide)."
+    },
+    {
+      "id": "gap:qanno",
+      "kind": "gap",
+      "value": "קַנּוֹא (a jealous God): the edition has nidkær, skinsyg and lidenskabelig in different places; one choice is needed for the whole edition",
+      "source": "H7072",
+      "evidence": [ { "ref": "JOS 24:19" } ],
+      "confidence": "medium",
+      "method": "project-decision",
+      "by": "agent:jos024",
+      "date": "2026-08-17",
+      "status": "open",
+      "note": "From the drafting agent's notes on Joshua 24; the cited verse is in the draft, not in the edition."
+    }
+  ]
+}

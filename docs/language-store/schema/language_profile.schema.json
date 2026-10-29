@@ -1,0 +1,552 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://huggingface.co/datasets/bcv-commons/language-profiles/schema/language_profile.schema.json",
+  "title": "Language profile",
+  "description": "One of observations.json, decisions.json or external.json for a language and edition: what a drafting agent has to know, recorded with evidence. See README.md for the contract.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "iso",
+    "edition",
+    "partition",
+    "entries"
+  ],
+  "properties": {
+    "iso": {
+      "type": "string",
+      "pattern": "^[a-z]{3}$",
+      "description": "ISO 639-3 code of the edition's language."
+    },
+    "edition": {
+      "type": "string",
+      "description": "Edition id (bcv-commons/bibles or lexeme-aligner id), or the draft project id when no published edition exists."
+    },
+    "partition": {
+      "enum": [
+        "observations",
+        "decisions",
+        "external"
+      ]
+    },
+    "licence": {
+      "type": "string",
+      "description": "SPDX-like licence of this file: CC0-1.0 for observations; the edition's licence for decisions; per entry for external."
+    },
+    "orthography": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "normalization": {
+          "enum": [
+            "NFC",
+            "NFD"
+          ]
+        },
+        "ignore_marks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^U\\+[0-9A-F]{4,6}$"
+          },
+          "description": "Combining marks the validator ignores when matching forms (e.g. tone marks)."
+        }
+      }
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/entry"
+      }
+    }
+  },
+  "$defs": {
+    "ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ref"
+      ],
+      "properties": {
+        "ref": {
+          "type": "string",
+          "pattern": "^[1-3A-Z][A-Z0-9]{2} \\d{1,3}:\\d{1,3}$",
+          "description": "USFM book code, chapter:verse in the edition's numbering."
+        },
+        "n": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Occurrences of the form or pattern in the whole corpus (optional, given once per entry)."
+        },
+        "form": {
+          "type": "string",
+          "description": "The exact form found in this verse, when it differs from value (inflection, tone)."
+        }
+      }
+    },
+    "entry": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "value",
+        "confidence",
+        "method",
+        "by",
+        "date",
+        "status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_:.-]*$"
+        },
+        "kind": {
+          "enum": [
+            "feature",
+            "letter",
+            "gap",
+            "term",
+            "formula",
+            "name",
+            "morph",
+            "cell",
+            "claim"
+          ]
+        },
+        "value": {
+          "type": [
+            "string",
+            "object"
+          ]
+        },
+        "pattern": {
+          "type": "string",
+          "description": "Schematic form with <slots> (feature, formula)."
+        },
+        "source": {
+          "type": "string",
+          "description": "term: Strong's number (H7458, G2316) or a gloss; formula: the source phrase (Hebrew/Greek or BSB wording); name: the source-language name."
+        },
+        "alternatives": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "value"
+            ],
+            "properties": {
+              "value": {
+                "type": "string"
+              },
+              "n": {
+                "type": "integer"
+              },
+              "note": {
+                "type": "string"
+              },
+              "gloss": {
+                "type": "array",
+                "description": "terms, formulas, names: the Greek or Hebrew word the value renders, as its verse writes it (docs/language-store.md, Glosses)",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "lang",
+                    "form",
+                    "lemma",
+                    "ref"
+                  ],
+                  "properties": {
+                    "lang": {
+                      "enum": [
+                        "grc",
+                        "hbo",
+                        "arc"
+                      ]
+                    },
+                    "form": {
+                      "type": "string"
+                    },
+                    "lemma": {
+                      "type": "string"
+                    },
+                    "ref": {
+                      "type": "string",
+                      "pattern": "^[1-3A-Z][A-Z0-9]{2} \\d{1,3}:\\d{1,3}$"
+                    },
+                    "proposed": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              },
+              "interlinear": {
+                "type": "string",
+                "description": "a form built by rule with no source word: a Leipzig line (1PL.HORT-go)"
+              }
+            }
+          }
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ref"
+          }
+        },
+        "confidence": {
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "method": {
+          "enum": [
+            "corpus-observed",
+            "corpus-derived",
+            "project-decision",
+            "external",
+            "team-decision"
+          ]
+        },
+        "by": {
+          "type": "string",
+          "description": "agent:<chapter>, a person, or script:<name>."
+        },
+        "date": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "status": {
+          "enum": [
+            "observed",
+            "decided",
+            "open",
+            "superseded"
+          ]
+        },
+        "supersedes": {
+          "type": "string"
+        },
+        "codes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(GB\\d{3}|WALS:\\d{1,3}[A-Z])$"
+          }
+        },
+        "external_source": {
+          "type": "string",
+          "description": "external only: dataset and licence, e.g. 'gram-struct/external (WALS, CC-BY-4.0)'."
+        },
+        "attested": {
+          "enum": [
+            "attested",
+            "by-rule"
+          ],
+          "description": "term, formula, name: 'attested' = the value occurs as such in a cited verse; 'by-rule' = built by analogy from the cited models."
+        },
+        "words": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Words of the assisting translation (BSB) this entry answers, lower case: a tool that prepares a verse matches the entry by them, so the same word is never looked up twice."
+        },
+        "note": {
+          "type": "string"
+        },
+        "form": {
+          "type": "string",
+          "description": "morph: the morph as written, a hyphen on the side it attaches (ge-, -eav, -zø-, =te); for slot tone a name (tone-proh) and the pattern in tone. cell: see value."
+        },
+        "slot": {
+          "enum": [
+            "prefix",
+            "suffix",
+            "infix",
+            "clitic",
+            "free",
+            "tone"
+          ],
+          "description": "morph: where it attaches."
+        },
+        "host": {
+          "type": "string",
+          "description": "morph: the word class it attaches to (verb, noun, pron, adj, any)."
+        },
+        "tone": {
+          "type": "string",
+          "description": "morph with slot tone: the pattern in words (grave on the penult + U+1DC4 on the last vowel)."
+        },
+        "unimorph": {
+          "type": "string",
+          "description": "morph: the gloss in UniMorph tags (2;PL)."
+        },
+        "stats": {
+          "type": "object",
+          "description": "morph, cell: figures computed by script: count, hosts, share, lift, test_lift (on held-out books).",
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "paradigm": {
+          "type": "string",
+          "pattern": "^[a-z]+(\\.[a-z]+)*$",
+          "description": "cell: the paradigm (verb.subject, verb.polarity, poss.pronoun), as scripts/source_cells.py names them."
+        },
+        "bundle": {
+          "type": "string",
+          "description": "cell: the Leipzig tags of the cell, .-joined (3.SG.IND, NEG.PST)."
+        },
+        "morphs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "cell: ids of the morph entries that build the form."
+        },
+        "gap": {
+          "type": "boolean",
+          "description": "cell: true when the corpus has no case of the cell (evidence then optional)."
+        },
+        "area": {
+          "type": "string",
+          "description": "claim: the part of the grammar (verbs, pronouns, word order)."
+        },
+        "tests": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "corpus",
+              "greek",
+              "hebrew",
+              "nllb",
+              "team"
+            ]
+          },
+          "description": "claim: how it was tested."
+        },
+        "figures": {
+          "type": "string",
+          "description": "claim: the test results in short."
+        },
+        "verdict": {
+          "enum": [
+            "confirmed",
+            "corpus-only",
+            "contradicted",
+            "new",
+            "open"
+          ],
+          "description": "claim: the outcome of the tests."
+        },
+        "next": {
+          "type": "string",
+          "description": "claim: what to check or refine next."
+        },
+        "team_source": {
+          "type": "string",
+          "description": "team-decision: the item on the wiki's team-input page."
+        },
+        "gloss": {
+          "type": "array",
+          "description": "terms, formulas, names: the Greek or Hebrew word the value renders, as its verse writes it (docs/language-store.md, Glosses)",
+          "items": {
+            "type": "object",
+            "required": [
+              "lang",
+              "form",
+              "lemma",
+              "ref"
+            ],
+            "properties": {
+              "lang": {
+                "enum": [
+                  "grc",
+                  "hbo",
+                  "arc"
+                ]
+              },
+              "form": {
+                "type": "string"
+              },
+              "lemma": {
+                "type": "string"
+              },
+              "ref": {
+                "type": "string",
+                "pattern": "^[1-3A-Z][A-Z0-9]{2} \\d{1,3}:\\d{1,3}$"
+              },
+              "proposed": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "interlinear": {
+          "type": "string",
+          "description": "a form built by rule with no source word: a Leipzig line (1PL.HORT-go)"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "enum": [
+                  "feature",
+                  "term",
+                  "formula",
+                  "name",
+                  "morph"
+                ]
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "required": [
+              "evidence"
+            ],
+            "properties": {
+              "evidence": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "enum": [
+                  "term",
+                  "formula"
+                ]
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "required": [
+              "source"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "enum": [
+                  "term",
+                  "formula",
+                  "name"
+                ]
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "required": [
+              "attested"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "name"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "required": [
+              "source"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "method": {
+                "const": "external"
+              }
+            },
+            "required": [
+              "method"
+            ]
+          },
+          "then": {
+            "required": [
+              "external_source"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "morph"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "required": [
+              "form",
+              "slot",
+              "host"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "cell"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "required": [
+              "paradigm",
+              "bundle"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "claim"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "required": [
+              "verdict"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

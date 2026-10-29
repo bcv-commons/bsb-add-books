@@ -1,0 +1,62 @@
+!!<Modenhed: Udkast>!!
+!!<Oversættelse: Maskinudkast fra grundteksten (orig/heb/dan012.txt), sammenholdt med Berean Standard Bible>!!
+!!<Eksegetisk bearbejdning: Endnu ikke sket>!!
+!!<Litterært tjek: Endnu ikke sket>!!
+!!<Dato for denne version: 09.10.2026>!!
+
+===Daniels Bog, kapitel 12===
+
+
+==Endens tid==
+
+v1 >>Ved den tid skal Mikael stå frem, den store fyrste som står vagt over dit folk.{T: Ordret:
+>>som står over dit folks sønner<<. Mikael kaldes også >>jeres fyrste<< i 10,21.}{E: Mikael
+(>>Hvem er som Gud?<<) er i Daniels Bog en af de øverste fyrster blandt englene (10,13.21), som
+kæmper for Israel. I NT nævnes han som ærkeengel (Jud 9) og som den der fører krig mod Dragen (Åb
+12,7).} Da kommer der en trængselstid som der ikke har været, siden der blev et folk, og indtil den
+tid.{H: Matt 24,21; Mark 13,19} Men ved den tid skal dit folk reddes, enhver som findes skrevet i
+bogen. v2 Og mange af dem som sover i jordens støv, skal vågne,{T: Ordret: >>i støvets jord<<
+(*ʔadmat-ʕāpār*); jf. 1 Mos 3,19 >>til støv skal du vende tilbage<<.} nogle til evigt liv, andre
+til skam og evig afsky.{E: Verset er det klareste udsagn i GT om de dødes opstandelse til både liv og
+dom; jf. Es 26,19. Ordet for >>afsky<< (*dērāʔôn*) findes ellers kun i Es 66,24 om ligene af dem
+der gjorde oprør mod Gud. Jesus tager tanken op i Joh 5,28-29.} v3 De forstandige skal stråle som
+himmelhvælvingens glans,{T: Ordret: >>skal glimte som hvælvingens glimt<< (*yazhirû kᵊzōhar
+hārāqîaʕ*). *rāqîaʕ* er det samme ord som >>hvælvingen<< i 1 Mos 1,6-8.} og de som fører de mange
+til retfærdighed, som stjernerne for evigt og altid.{E: >>De forstandige<< (*hammaśkîlîm*) er de
+samme som i 11,33.35, de der underviser folket i forfølgelsens tid. Udtrykket >>fører de mange til
+retfærdighed<< (*maṣdîqê hārabbîm*) minder om Herrens tjener i Es 53,11, som >>skal gøre de mange
+retfærdige<<.}
+
+v4 Men du, Daniel, luk ordene inde og forsegl bogen indtil endens tid. Mange skal fare frem og
+tilbage, og kundskaben skal vokse.<<{T: Ordret: >>skal strejfe omkring<< (*yᵊšōṭᵊṭû*); jf. Am 8,12,
+hvor folk farer omkring for at søge Herrens ord uden at finde det. Den græske oversættelse har
+>>indtil mange bliver rasende og jorden fyldes med uret<<.}
+
+==Hvor længe?==
+
+v5 Og jeg, Daniel, så, og se, der stod to andre, den ene på denne side af floden og den anden på den
+anden side af floden.{T: Ordet *yᵊʔōr* bruges ellers mest om Nilen; her er det Tigris (10,4).} v6
+Den ene sagde til manden i linnedklæder, som var oven over flodens vande: >>Hvor længe varer det før
+disse underfulde ting får ende?<< v7 Og jeg hørte manden i linnedklæder, som var oven over flodens
+vande: Han løftede sin højre og sin venstre hånd mod himlen og svor ved ham som lever evigt: >>En
+tid, tider og en halv tid.{T: Ordret: >>en fastsat tid, fastsatte tider og en halv<<. Udtrykket
+forstås normalt som tre et halvt år; jf. 7,25 og Åb 12,14.} Når magten hos det hellige folk er
+blevet knust helt, skal alt dette fuldbyrdes.<<{T: Ordret: >>når knusningen af det hellige folks
+hånd er til ende<<. Teksten er vanskelig; nogle læser: >>når det er forbi med ham der knuser det
+hellige folks magt<<.}
+
+v8 Jeg hørte det, men jeg forstod det ikke. Så sagde jeg: >>Min herre, hvad bliver udgangen på
+dette?<< v9 Han sagde: >>Gå, Daniel, for ordene er lukket inde og forseglet indtil endens tid. v10
+Mange skal renses, gøres hvide og lutres, men de ugudelige skal blive ved at handle ugudeligt. Ingen
+af de ugudelige skal forstå, men de forstandige skal forstå.
+
+v11 Fra den tid da det daglige offer bliver taget bort og ødelæggelsens vederstyggelighed bliver
+stillet op,{T: Ordret: >>en ødelæggende vederstyggelighed<< (*šiqqûṣ šōmēm*); jf. 9,27 og
+11,31.}{H: Matt 24,15; Mark 13,14} skal der gå 1290 dage. v12 Salig er den som venter og når frem
+til de 1335 dage.{E: Tallene er ikke forklaret i teksten. 1290 dage ligger tæt på >>en tid, tider og
+en halv tid<< (v. 7), forstået som tre et halvt år; jf. 1260 dage i Åb 11,3 og 12,6, og 2300
+aftener og morgener i 8,14. De 45 ekstra dage i v. 12 kan pege på en ventetid ud over trængslen.}
+
+v13 Men du, gå hen til enden. Du skal hvile, og du skal opstå til din lod ved dagenes ende.<<{T:
+>>Lod<< (*gôrāl*) er ordet for den lodtrækning hvormed landet blev fordelt mellem stammerne (Jos
+14,2); Daniel får sin arvelod ved dagenes ende.}

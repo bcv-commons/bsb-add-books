@@ -1,0 +1,3 @@
+project jam/jam_BSB, model eflomal, corpus 7942 verses
+eng: 7940 verse pairs, 5979 source words
+grc: 7940 verse pairs, 8148 source words

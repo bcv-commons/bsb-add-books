@@ -1,0 +1,32 @@
+# Fetched by fetch_vamvas.py in this folder (CrossWire SWORD module GreVamvas 1.0.3, pinned SHA-256); text/ is
+# git-ignored: the text comes from the source.
+# One edition = one existing translation (a whole Bible, an NT, or single books).
+
+name: "Η Αγία Γραφή, μετάφραση Νεοφύτου Βάμβα (1850)"
+language: ell
+role: source                     # a source for the second-draft model (scripts/nllb/source.py), not a style corpus
+nllb_code: ell_Grek              # its NLLB language code
+text_dir: text
+format: >-
+  one book file per book, text/<code>.txt, lines 'chapter:verse<TAB>text'; the OT in the Hebrew verse numbering
+  (renumbered from the module's KJV versification by orig/vrs), the NT in its own (KJV) numbering; monotonic
+  accents, katharevousa; psalm superscriptions inside verse 1
+
+# The NT was translated from the Textus Receptus: Mt 17:21, Acts 8:37 and the Comma Johanneum (1 Jn 5:7) are in it.
+nt_basis: tr
+
+books: [gen, exo, lev, num, deu, jos, jdg, rut, 1sa, 2sa, 1ki, 2ki, 1ch, 2ch, ezr, neh, est, job,
+        psa, pro, ecc, sng, isa, jer, lam, ezk, dan, hos, jol, amo, oba, jon, mic, nam, hab, zep,
+        hag, zec, mal, mat, mrk, luk, jhn, act, rom, 1co, 2co, gal, eph, php, col, 1th, 2th, 1ti,
+        2ti, tit, phm, heb, jas, 1pe, 2pe, 1jn, 2jn, 3jn, jud, rev]
+quarantine: []
+
+get_text: python3 import/CC0/ell/vamvas/fetch_vamvas.py   # needs pysword (pip install pysword==0.2.8) and orig/
+source: >-
+  CrossWire Bible Society, SWORD module GreVamvas 1.0.3 (2022-08-05),
+  https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=GreVamvas; text source www.theword.gr. Translation by
+  Neophytos Vamvas with others, published with the British and Foreign Bible Society (NT 1833, whole Bible 1850).
+licence: >-
+  public domain: the module's DistributionLicense is "Public Domain"; the translation was published in 1850.
+attribution: ""
+credit: "Vamvas (1850), public domain; text from CrossWire's SWORD module GreVamvas"

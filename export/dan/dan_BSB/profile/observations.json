@@ -1,0 +1,741 @@
+{
+ "iso": "da",
+ "edition": "dan_BSB",
+ "partition": "observations",
+ "licence": "CC0-1.0 (feature values and references; quotations credited in ../CREDITS.md)",
+ "orthography": {
+  "normalization": "NFC",
+  "ignore_marks": []
+ },
+ "entries": [
+  {
+   "id": "quotation_marks",
+   "kind": "feature",
+   "value": "Direkte tale i >>…<< (Den Frie Bibels egen markering); projektet bruger kun denne form",
+   "pattern": ">><tale><<",
+   "evidence": [
+    {
+     "ref": "1CO 1:12",
+     "form": ">>Jeg tilhører Paulus, jeg Apoll",
+     "n": 2717
+    },
+    {
+     "ref": "1CO 1:31",
+     "form": ">>Den, som roser sig, skal rose "
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "DFB: >> 2.717× i 2.493 vers. Nyere DFB-filer (1 Mos 1-19 og 28, 1 Kong, enkelte salmer) har »…« (222×); udkastene har aldrig » «. Projektets valg (project.yaml quotes: >><<) er >>…<<."
+  },
+  {
+   "id": "quotation_nested",
+   "kind": "feature",
+   "value": "Citat i citat: åbent punkt. DFB har oftest >…< (433×), sjældnere ›…‹ (29×, kun i »«-filerne); udkastene blander >…< (29×) og ›…‹ (13×)",
+   "evidence": [
+    {
+     "ref": "EXO 3:13",
+     "form": ">Hvad er hans navn?<",
+     "n": 99
+    },
+    {
+     "ref": "EXO 6:3",
+     "form": ">HERREN<"
+    },
+    {
+     "ref": "1KI 1:25",
+     "form": "›Længe leve kong Adonija!‹",
+     "n": 8
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "open",
+   "note": "project.yaml siger ›…‹ »som i dens filer«, men >…< er DFB's hyppigste form i >>…<<-filerne (jdg002, jdg006, exo005, num035). Jos-oversigten punkt 46 og gen024 spm. 7 venter på en afgørelse; se spørgsmålssiden."
+  },
+  {
+   "id": "speech_frame",
+   "kind": "feature",
+   "value": "Replikken indledes med kolon: <taler> sagde til <tiltalt>: >>…<<; kolon foran >> i langt de fleste tilfælde",
+   "pattern": "<taler> sagde til <tiltalt>: >><tale><<",
+   "evidence": [
+    {
+     "ref": "EXO 1:18",
+     "form": "sagde til dem: >>",
+     "n": 289
+    },
+    {
+     "ref": "EXO 2:8",
+     "form": "sagde til hende: >>"
+    },
+    {
+     "ref": "EXO 2:9",
+     "form": "sagde til hende: >>"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "DFB: ': >>' 2.276× mod ', >>' 18×; 'sagde til ham/hende/dem:' 327×, 'sagde:' 652×, 'svarede' 277×. Udkastene følger det (': >>' 505×)."
+  },
+  {
+   "id": "inquit_inside",
+   "kind": "feature",
+   "value": "Inkvit midt i eller efter replikken er sjældent: >>…<< svarede/sagde X. >>…<<",
+   "pattern": ">><tale><< svarede <taler>. >><tale><<",
+   "evidence": [
+    {
+     "ref": "ISA 57:19",
+     "form": "<< sagde HERREN",
+     "n": 4
+    },
+    {
+     "ref": "JDG 1:2",
+     "form": "<< svarede HERREN"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "DFB: '<< sagde/svarede' 7× (Dom 1,2; 1,24; 3,19-20). Udkastene 10× (mest Jos 2; 5; 7). Brug det sparsomt, til korte svar."
+  },
+  {
+   "id": "connective_sequence",
+   "kind": "feature",
+   "value": "Fortællingens sætningsstart i DFB's GT-fortælling: Da 342, De 331, Han 312, Og 301, Men 274, Så 223 af 5.434 sætninger; »Da« (tidsbisætning eller 'da' + inversion) bærer handlingsfølgen",
+   "evidence": [
+    {
+     "ref": "1KI 1:11",
+     "form": "Da sagde Natan til Batseba,",
+     "n": 362
+    },
+    {
+     "ref": "1KI 1:49",
+     "form": "Da blev de rædselsslagne og brød op,"
+    },
+    {
+     "ref": "1KI 2:1",
+     "form": "Da tiden nærmede sig for at David skulle dø,"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Talt over 1 Mos, 2 Mos, 4 Mos, Dom, Ruth, 1 Kong, 2 Kong, 2 Sam, Jon. Wayyiqtol gengives med datid; hebraisk *wa-* gengives ofte uden 'og' i sætningsstart."
+  },
+  {
+   "id": "divine_name_caps",
+   "kind": "feature",
+   "value": "YHWH skrives HERREN med versaler (genitiv HERRENS); Adonaj = Herren med lille",
+   "evidence": [
+    {
+     "ref": "1KI 1:17",
+     "form": "HERREN ",
+     "n": 2267
+    },
+    {
+     "ref": "1KI 1:29",
+     "form": "HERREN "
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "DFB: HERREN 3.005× i 2.584 vers; udkastene 288×. Projektregel i project.yaml."
+  },
+  {
+   "id": "numerals",
+   "kind": "feature",
+   "value": "Tal 1-9 med bogstaver, 10 og derover med cifre; tusinder med punktum (30.000)",
+   "pattern": "tre dage · 12 mænd · 2.000 alen",
+   "evidence": [
+    {
+     "ref": "1CO 10:8",
+     "form": "23.000",
+     "n": 138
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Projektregel (project.yaml, jos-stilarket). DFB følger den ikke helt: tal ≥ 10 med bogstaver 266× (fx 'tolv', 'tyve') mod cifre 439×; ordenstal i datoer skriver DFB både med bogstaver (2 Mos 12,6; 4 Mos 28,16) og cifre (1 Mos 8,14; Haggaj, 12×), se spørgsmålssiden. DFB 1 Mos 4,24 har '77 gange'."
+  },
+  {
+   "id": "measures",
+   "kind": "feature",
+   "value": "Hebraiske måleenheder bevares (alen, sekel, efa …) med glossenoten {N: gt-mål} ved første forekomst i kapitlet",
+   "pattern": "2.000 alen{N: gt-mål}",
+   "evidence": [
+    {
+     "ref": "1KI 10:16",
+     "form": "600 sekel",
+     "n": 43
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "DFB: {N: gt-mål} 52×; udkastene 7×. Lexicon: cubits → alen 87 (1,00), shekels → sekel 48 (0,96)."
+  },
+  {
+   "id": "headings",
+   "kind": "feature",
+   "value": "Overskrifter ==…== er redaktionelle resuméer i sætningsform (»Juda indtager Hebron og Debir«), ca. 3 pr. kapitel",
+   "pattern": "==<subjekt> <verbum> <objekt>==",
+   "evidence": [
+    {
+     "ref": "JDG 4:1"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "DFB: 2.156 overskrifter i 722 filer (3,0 pr. kapitel); udkastene 232 i 66 (3,5). Fx DFB Dom 4: »Gennem Jabin og Sisera plager HERREN Israel i 20 år«. Josva-udkastene følger BSB's inddeling (typisk 2)."
+  },
+  {
+   "id": "inline_notes",
+   "kind": "feature",
+   "value": "Inline-noter {T:} oversættelse, {E:} eksegese, {H:} henvisning, {N:} glosse, sat uden mellemrum efter ordet de gælder",
+   "pattern": "ord,{T: Ordret: >>…<<.}",
+   "evidence": [
+    {
+     "ref": "JDG 4:2"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "DFB i alt: T 2.596, H 1.664, E 1.525, N 548 (pr. kapitel 3,6 / 2,3 / 2,1 / 0,8). Udkastene: T 591, E 240, H 90, N 31 (pr. kapitel 9,0 / 3,6 / 1,4 / 0,5). {T: Ordret: …} er den hyppigste T-form (DFB 1.041, udkast 278); {T: Eller …} 142 / 30; {T: Dvs. …} 64 / 26. Projektets normer: T 5-10, E 2-4, H 0-2 (kun direkte NT-citater), N 0-2."
+  },
+  {
+   "id": "transliteration",
+   "kind": "feature",
+   "value": "Hebraisk i noter i *kursiv* med ʔ (alef), ʕ (ajin), ᵊ (shva); aldrig ʾ/ʿ",
+   "pattern": "*hā-ʔādām*",
+   "evidence": [
+    {
+     "ref": "PSA 23:4"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Talt i gen-oversigten: DFB ʔ 337×, ʕ 371×, ᵊ 436×, ingen ʾ/ʿ. Versangivelser i noter skrives »v. 12«, ikke »v12«."
+  },
+  {
+   "id": "poetry_layout",
+   "kind": "feature",
+   "value": "Poesi sættes linje for linje med //N-markører; udkastene bruger //1 og //2 for første og anden halvlinje, DFB numre for indrykningsniveau (0-10)",
+   "pattern": "//1 <første halvlinje>\n//2 <anden halvlinje>",
+   "evidence": [
+    {
+     "ref": "PSA 23:1"
+    },
+    {
+     "ref": "RUT 1:1"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "DFB: 18.977 //-linjer (//1 4.818, //6 2.131, //7 2.067 …: niveauer efter klausulstrukturen); udkastene 189 (//1 91, //2 94). I udkastene: 1 Mos 49; 27,27-29.39-40; 48,15-16; Jos 6,26; 10,12-13; Dan 2,20-23; 3,33; 4,31-32; 6,27-28; 7,9-10.13-14."
+  },
+  {
+   "id": "dash",
+   "kind": "feature",
+   "value": "Tankestreg – (U+2013) med mellemrum til indskud; DFB blander – (321×) og ' - ' (287×), udkastene kun –",
+   "evidence": [
+    {
+     "ref": "1CO 7:10",
+     "n": 279
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "apostrophe",
+   "kind": "feature",
+   "value": "Apostrof i navne (ʔ/ʕ inde i ord): udkastene bruger lige ' (187×), DFB mest typografisk ’ (222×) og ellers ' (132×); åbent",
+   "evidence": [
+    {
+     "ref": "1KI 1:8",
+     "form": "m’i",
+     "n": 222
+    },
+    {
+     "ref": "1KI 11:23",
+     "form": "d'ezer",
+     "n": 132
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "open",
+   "note": "Jos-oversigten punkt 37: én global beslutning; kan rettes maskinelt. Samme navn står i DFB på begge måder (Kana'an 9 / Kana’an 32)."
+  },
+  {
+   "id": "gentilics",
+   "kind": "feature",
+   "value": "Folkenavne med lille begyndelsesbogstav og -itter/-æere/-ere: kana'anæerne, amoritterne, hittitterne, jebusitterne, filistrene, kaldæerne",
+   "evidence": [
+    {
+     "ref": "1KI 5:1",
+     "form": "filistrene",
+     "n": 38
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "DFB: kana'anæ-/kana’anæ- 42×, filistre- 41×, kaldæer- 51×. DFB 1 Mos 12,6 har 'kananæerne' uden apostrof (1×)."
+  },
+  {
+   "id": "possessive_1pl",
+   "kind": "feature",
+   "value": "1. person flertal: »vores« foretrækkes for »vor« (DFB 504 mod 71; 'vores Gud' 68 mod 32); projektet har afgjort »HERREN vores Gud«",
+   "evidence": [
+    {
+     "ref": "1KI 8:57",
+     "form": "HERREN vores Gud",
+     "n": 20
+    },
+    {
+     "ref": "1KI 8:59",
+     "form": "HERREN vores Gud"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Jos-oversigten: 'HERREN vor Guds' → 'HERREN vores Guds' i begge spor. 'vor' står fast i Kristi navn og i 5 Mos 6,4 ('HERREN vor Gud')."
+  },
+  {
+   "id": "address_plural",
+   "kind": "feature",
+   "value": "2. person flertal I / jer / jeres (aldrig De/Dem); HERREN jeres Gud",
+   "evidence": [
+    {
+     "ref": "DEU 10:17",
+     "form": "HERREN jeres Gud",
+     "n": 12
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "DFB: 'I' + lille ord 2.592×, 'jer' 1.770×. Udkastene 'HERREN jeres Gud' 28×."
+  },
+  {
+   "id": "wife_word",
+   "kind": "feature",
+   "value": "»hustru« er normalordet for kone/ægtefælle (DFB 203× mod 'kone' 24×); 'kone' i DFB mest i faste forbindelser (Lots kone)",
+   "evidence": [
+    {
+     "ref": "1KI 2:17",
+     "form": "hustru",
+     "n": 139
+    },
+    {
+     "ref": "1KI 2:21",
+     "form": "hustru"
+    },
+    {
+     "ref": "1KI 9:16",
+     "form": "kone",
+     "n": 24
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "dfb_gen_1_19",
+   "kind": "feature",
+   "value": "DFB har siden udgivet 1 Mos 1-19 og 28 selv; dens former afviger flere steder fra stilarkets valg for de kapitler, og udkastene til 1 Mos 20-50 skal fortsætte DFB's former",
+   "evidence": [
+    {
+     "ref": "GEN 5:6"
+    },
+    {
+     "ref": "GEN 17:1"
+    },
+    {
+     "ref": "GEN 15:2"
+    },
+    {
+     "ref": "GEN 11:24"
+    },
+    {
+     "ref": "GEN 16:1"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Fx slægtsformlen (1 Mos 5; 11), 'Og det blev aften …, én dag', 'El Shadaj' (17,1), 'Gud HERREN!' for *ʔădōnāy YHWH* (15,2), 'Nakor' (ikke Nahor), 'tjenestepige' om Hagar (16,1), 'Jordansletten' (13,10), 'Arpakshad', 'Lemek', 'levende sjæl' (2,7), 'uangribelig' (6,9; 17,1). Se wikisiden om 1 Mos 1-19."
+  },
+  {
+   "id": "letter:shin",
+   "kind": "letter",
+   "value": "šin → sh",
+   "evidence": [],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Bashan, Shilo, Shittim, Kadesh, Asher; men husformer går forud (Sinear, Sikem)."
+  },
+  {
+   "id": "letter:sin_samek",
+   "kind": "letter",
+   "value": "śin, samek → s",
+   "evidence": [
+    {
+     "ref": "1KI 7:46",
+     "form": "Sukkot",
+     "n": 56
+    },
+    {
+     "ref": "EXO 12:37",
+     "form": "Sukkot"
+    },
+    {
+     "ref": "EXO 13:20",
+     "form": "Sukkot"
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "letter:tsade",
+   "kind": "letter",
+   "value": "ṣade → s",
+   "evidence": [
+    {
+     "ref": "JDG 10:17",
+     "form": "Mispa",
+     "n": 20
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Mispa (22× i DFB, ikke Mizpa); Soar, Peres."
+  },
+  {
+   "id": "letter:zayin",
+   "kind": "letter",
+   "value": "zajin → z",
+   "evidence": [],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Derfor Zilpa (ikke Silpa)."
+  },
+  {
+   "id": "letter:het",
+   "kind": "letter",
+   "value": "ḥet → h (ikke ch/kh)",
+   "evidence": [],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Hasor (ikke Hazor). Undtagelser fra DFB's husformer: Karan (byen Haran), Nakor (Nahor), Jakle'el; se spørgsmål."
+  },
+  {
+   "id": "letter:kaf_qof",
+   "kind": "letter",
+   "value": "kaf, qof → k",
+   "evidence": [],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "DFB 1 Mos 16,14 har dog 'Qadesh' (1×); ellers Kadesh 14×."
+  },
+  {
+   "id": "letter:aleph_ayin",
+   "kind": "letter",
+   "value": "ʔ/ʕ inde i ordet → apostrof",
+   "evidence": [],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Om apostroffen er lige eller typografisk er åbent (feature apostrophe). Ved ord- eller navnestart skrives intet (Ai → Aj, Ekron)."
+  },
+  {
+   "id": "letter:final_het",
+   "kind": "letter",
+   "value": "sluttende ח udelades",
+   "evidence": [
+    {
+     "ref": "2PE 2:5",
+     "form": "Noa",
+     "n": 38
+    }
+   ],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Zera, Jefta, Kora, Noa → Tappua, Janoa (jos-oversigten 16; stilarkets »Tappuah« er rettet)."
+  },
+  {
+   "id": "letter:compound",
+   "kind": "letter",
+   "value": "sammensatte navne med bindestreg, begge led med stort",
+   "evidence": [],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "letter:pe",
+   "kind": "letter",
+   "value": "pe i navnestart → p (Pikol), ellers f efter vokal (Efraim, Efrat)",
+   "evidence": [],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed",
+   "note": "Pikol følger DA 1871; om 'Fikol' er bedre er åbent (gen026 spm. 8)."
+  },
+  {
+   "id": "letter:yod",
+   "kind": "letter",
+   "value": "jod → j (Jeriko, Jarmut, Jizre'el); kendte navne beholder dansk form (Josef, Juda, Jakob)",
+   "evidence": [],
+   "confidence": "high",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "observed"
+  },
+  {
+   "id": "letter:known_forms",
+   "kind": "letter",
+   "value": "indarbejdede danske former bruges uændret: Jerusalem, Betlehem, Jordan, Libanon, Egypten, Gilead, Efraim, Manasse, Juda, Ruben, Gad, Zebulon, Issakar, Asher, Naftali, Dan, Benjamin, Simeon, Levi",
+   "evidence": [],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided"
+  },
+  {
+   "id": "gap:aramaic_officials",
+   "kind": "gap",
+   "value": "De syv embedstitler i Dan 3,2-3 har intet DFB-forbillede: satraperne, præfekterne, statholderne, rådsherrerne, skatmestrene, dommerne, øvrighedsmændene",
+   "words": [
+    "satraps",
+    "prefects",
+    "governors",
+    "advisers",
+    "treasurers",
+    "judges",
+    "magistrates"
+   ],
+   "evidence": [
+    {
+     "ref": "DAN 3:2"
+    },
+    {
+     "ref": "DAN 3:3"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "open",
+   "note": "'rådsherrerne' (*ʔădargāzᵊrayyāʔ*) og 'øvrighedsmændene' (*tiftāyēʔ*) er gæt (dan003 spm. 1). Satrapper bruges også i kap. 6."
+  },
+  {
+   "id": "gap:instruments",
+   "kind": "gap",
+   "value": "Instrumentlisten i Dan 3,5.7.10.15: horn, fløjte, citer, lyre, harpe, sækkepibe; efter BSB, intet DFB-forbillede",
+   "words": [
+    "horn",
+    "flute",
+    "zither",
+    "lyre",
+    "harp",
+    "pipes"
+   ],
+   "evidence": [
+    {
+     "ref": "DAN 3:5"
+    },
+    {
+     "ref": "DAN 3:15"
+    }
+   ],
+   "confidence": "low",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "open",
+   "note": "Ordbøgerne har *sabbᵊkāʔ* = trekantet harpe, *pᵊsantērîn* = psalter (dan003 spm. 2)."
+  },
+  {
+   "id": "gap:el_olam",
+   "kind": "gap",
+   "value": "*ʔēl ʕôlām* (1 Mos 21,33): 'Gud den Evige', dannet efter 'Gud den Højeste' og 'Gud den Almægtige'; DFB har ikke gudsnavnet",
+   "words": [
+    "eternal god",
+    "everlasting god"
+   ],
+   "evidence": [
+    {
+     "ref": "GEN 21:33"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided"
+  },
+  {
+   "id": "gap:mishor",
+   "kind": "gap",
+   "value": "*hammîšōr* (Jos 13,9.16.17.21): 'højsletten'; intet fortilfælde i DFB",
+   "words": [
+    "plateau",
+    "tableland"
+   ],
+   "evidence": [
+    {
+     "ref": "JOS 13:9"
+    },
+    {
+     "ref": "JOS 13:16"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:missaviv",
+   "kind": "gap",
+   "value": "*missāvîv* 'ro/hvile til alle sider' (Jos 21,44) mod 'for alle deres fjender rundt omkring' (23,1); intet fortilfælde i DFB",
+   "words": [
+    "on every side",
+    "all around"
+   ],
+   "evidence": [
+    {
+     "ref": "JOS 21:44"
+    },
+    {
+     "ref": "JOS 23:1"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "open"
+  },
+  {
+   "id": "gap:satrap",
+   "kind": "gap",
+   "value": "satrap: intet DFB-forbillede; udkastene 'satrapper' (Dan 3; 6)",
+   "words": [
+    "satraps"
+   ],
+   "evidence": [
+    {
+     "ref": "DAN 3:2"
+    },
+    {
+     "ref": "DAN 6:2"
+    }
+   ],
+   "confidence": "medium",
+   "method": "corpus-observed",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided"
+  },
+  {
+   "id": "parallel_reuse",
+   "kind": "feature",
+   "value": "Hvor DFB allerede har en parallel (samme navne, formler, citerede steder), genbruges dens ordlyd næsten ordret",
+   "evidence": [
+    {
+     "ref": "JOS 16:10"
+    }
+   ],
+   "confidence": "high",
+   "method": "project-decision",
+   "by": "agent:memory-setup",
+   "date": "2026-10-14",
+   "status": "decided",
+   "note": "Eksempel: Jos 16,10 efter Dom 1,29. Rækkefølge for navneformer: 1) DFB's husform, 2) tidligere udkast i samme bog (»Nye navneformer«), 3) translitterationsreglerne."
+  }
+ ]
+}
