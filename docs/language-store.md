@@ -60,7 +60,7 @@ Rules:
   `connective_sequence`, `relative_clause`, `conditional`, `vocative`, `numerals`, `pronouns`, `plural`, `tone_marks`.
   A Grambank feature: id `gb:GBnnn`, `codes: [GBnnn]`, value starting with its value (`1 (present): ...`); never a 0
   for "not found". One that `grammar.py run` writes names what it rests on: `rule` (what the rule reads, or "an affix
-  the store codes GBnnn"), `basis_by_morph` (each affix that answers it) and `basis`, the strongest of them: `team` (a
+  the store codes GBnnn"), `basis_by_morph` (each affix that answers it) and `answer_basis`, the strongest of them: `team` (a
   team's decision), `derived` (the affix passes the rule's test on the NT aligned to the Greek, the recipe's
   thresholds, on all verses and on the even ones; the figures in the note), `labelled` (only the agent's tag or code).
   A `labelled` feature is the agent's judgement until a test or the team backs it.
@@ -174,7 +174,7 @@ MACULA Hebrew gives for the Hebrew the draft word renders, so it needs the chapt
 | `verdict` | required: `confirmed`, `corpus-only`, `contradicted`, `new`, `open` |
 | `figures`, `next` | the results in short; what to do next |
 | `rerun`, `rerun_method` | for a script's test: the command (`["cell_check.py", "try", paradigm, bundle, form]`) and the method's version |
-| `basis`, `basis_corpus` | a fingerprint of what the result depends on (the settings, every live morph, the cell's value) and the style corpus |
+| `basis`, `basis_corpus` | a fingerprint of what the result depends on (the settings, every live morph, the cell's value; 16 hex digits, `grammar.basis`) and the style corpus. A Grambank answer's team/derived/labelled is `answer_basis`, not this |
 
 ## Settings
 

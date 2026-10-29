@@ -4,6 +4,24 @@ Tags are `vMAJOR.MINOR.PATCH`. A work copy merges a tag; make-tanakh-grammar pin
 Each entry has a **Format changes** section for the stable formats listed in `docs/related-repos.md`, section 4:
 what changed and how existing files move over. Before 1.0 a breaking format change raises the minor version.
 
+## v0.1.1
+
+A fix: in v0.1.0 a store entry's `basis` had two meanings. `grammar.py run --write` put a Grambank answer's
+team/derived/labelled there, and the validator accepted only those three values, but `basis` is also the settings
+fingerprint that `morphs.py try --write` and `cell_check.py try` write on a measured claim and `grammar.py retest`
+compares. Every store with measured claims failed validation.
+
+**Format changes:**
+
+- language store: a Grambank answer's (`gb:GBnnn`) team/derived/labelled moves from `basis` to **`answer_basis`**.
+  `basis` is only the settings fingerprint (16 hex digits, `grammar.basis`), and the validator now checks that shape.
+  **Migration:** `python3 scripts/grammar.py run <project> --write` rewrites the script's `gb:` entries with the new
+  field; the validator names any old one left (`a Grambank answer's basis is answer_basis`). A `gb:` entry an agent or
+  team wrote by hand needs the field renamed by hand. Measured claims need nothing.
+
+New test: `scripts/tests/test_store_basis.py` (a measured claim and a Grambank answer side by side, a claim going
+stale, the migration message).
+
 ## v0.1.0
 
 The first tagged version: the baseline the work copy and make-tanakh-grammar start from.

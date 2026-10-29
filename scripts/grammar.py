@@ -396,7 +396,7 @@ def derive(where, only=()):
         out.append({"id": f"gb:{gb}", "kind": "feature", "value": "1 (present): " + ", ".join(dict.fromkeys(m["form"] for m in ms)),
                     "codes": [gb], "evidence": ev, "confidence": conf, "method": "corpus-derived",
                     "by": "script:grammar.py", "date": datetime.date.today().isoformat(), "status": "observed",
-                    "basis": best, "rule": rule,
+                    "answer_basis": best, "rule": rule,
                     "basis_by_morph": {k: b for k, (b, _) in by.items()},
                     "note": f"grammar.py run: answered by the store's morphs ({', '.join(m['id'] for m in ms)}); "
                             + (f"measured on the NT's {'transitive' if ARGUMENT[gb][1] == 'yes' else 'intransitive'} "
@@ -412,7 +412,7 @@ def run(where, only, write):
     q = questions()
     for e in new:
         gb = e["codes"][0]
-        print(f"{e['id']:10} {q.get(gb, '')[:60]:60} {e['basis']:9} {e['value']} ({e['confidence']})")
+        print(f"{e['id']:10} {q.get(gb, '')[:60]:60} {e['answer_basis']:9} {e['value']} ({e['confidence']})")
         print(f"{'':10} rule: {e['rule']}; " + ", ".join(f"{k} {b}" for k, b in e["basis_by_morph"].items()))
     if not write:
         print(f"{len(new)} features; --write puts them into the store")

@@ -48,7 +48,8 @@ VERDICTS = {"confirmed", "corpus-only", "contradicted", "new", "open"}
 TESTS = {"corpus", "greek", "hebrew", "nllb", "team"}
 ENUMS = {"confidence": {"high", "medium", "low"}, "method": {"corpus-observed", "corpus-derived", "project-decision", "external", "team-decision"},
          "status": {"observed", "decided", "open", "superseded"}, "partition": {"observations", "decisions", "external"},
-         "basis": {"team", "derived", "labelled"}}
+         "answer_basis": {"team", "derived", "labelled"}}
+BASIS = re.compile(r"^[0-9a-f]{16}$")   # a test's settings fingerprint (grammar.basis)
 REQUIRED = ["id", "kind", "value", "confidence", "method", "by", "date", "status"]
 REF = re.compile(r"^([1-3A-Z][A-Z0-9]{2}) (\d{1,3}):(\d{1,3})$")
 CODE = re.compile(r"^(GB\d{3}|WALS:\d{1,3}[A-Z])$")
@@ -192,6 +193,12 @@ def main():
             for k, allowed in ENUMS.items():
                 if k in e and e[k] not in allowed:
                     problems.append(f"{where}: {k} {e[k]!r}")
+            if "basis" in e and not BASIS.match(str(e["basis"])):
+                if str(eid).startswith("gb:") and e["basis"] in ENUMS["answer_basis"]:
+                    problems.append(f"{where}: a Grambank answer's basis is `answer_basis` (CHANGELOG.md, v0.1.1): "
+                                    "python3 scripts/grammar.py run <project> --write rewrites it")
+                else:
+                    problems.append(f"{where}: basis {e['basis']!r} is not a settings fingerprint (grammar.basis)")
             team = e.get("method") == "team-decision"
             if team:
                 team_ids.add(eid)
