@@ -32,8 +32,10 @@ through the `new-project` skill. The steps:
    in the probes, picks a donor's `nllb_init` in the same script, and sets the reading direction of the target text
    in the site and the wiki view (right to left for Arabic, Hebrew, Syriac, Thaana, N'Ko, Adlam). The USFM export
    needs nothing for it: Paratext takes the direction from the project's language settings.
-4. **The project** `export/<language>/<language>_BSB/` and the first chapter to draft. A book that a non-free edition
-   has is quarantined now, before the probes.
+4. **The project** `export/<language>/<language>_BSB/`, its book order and the first chapter to draft. The book order
+   is the Hebrew Bible's (`tanakh`) unless the team's Bible follows another: `protestant` (Genesis … Malachi) or
+   `septuagint` (Orthodox); it orders the lists, the site and book ranges, never the file names (`book_order`,
+   `docs/configuration.md`). A book that a non-free edition has is quarantined now, before the probes.
 5. **AI work:** the probes run through the API when `ANTHROPIC_API_KEY` is set (billed per token), else through
    Claude Code (`claude -p`, no tools). Drafting always runs in Claude Code.
 6. **The probes** (about a minute): the scores, the model's slips, and a suggested familiarity. A speaker accepts or

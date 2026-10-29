@@ -91,6 +91,38 @@ BOOKS = [
 
 BY_CODE = {b[0]: b for b in BOOKS}
 
+# BOOKS is the numbering order (the BSB's): book numbers for Paratext and MACULA come from it, and it never changes.
+# The reading order, in which lists, ranges and the site show the books, is a project's `book_order` (project.yaml):
+#   tanakh      Torah, Nevi'im, Ketuvim as in BHS (the default; the order of orig/heb's sources)
+#   protestant  Genesis ... Malachi, as in the BSB and most Protestant Bibles (Catholic ones for these 39 books)
+#   septuagint  the Greek order (Rahlfs; Orthodox Bibles): the Writings after Esther, the Twelve before Isaiah
+# The NT is the same in all three. Book codes and files stay the BSB's (1-2 Samuel, Kings, Chronicles, Ezra and
+# Nehemiah are separate books in every order).
+_NT = [b[0] for b in BOOKS if b[2] == "nt"]
+ORDERS = {
+    "tanakh": "gen exo lev num deu jos jdg 1sa 2sa 1ki 2ki isa jer ezk hos jol amo oba jon mic nam hab zep hag zec mal "
+              "psa job pro rut sng ecc lam est dan ezr neh 1ch 2ch".split() + _NT,
+    "protestant": [b[0] for b in BOOKS],
+    "septuagint": "gen exo lev num deu jos jdg rut 1sa 2sa 1ki 2ki 1ch 2ch ezr neh est psa pro ecc sng job "
+                  "hos amo mic jol oba jon nam hab zep hag zec mal isa jer lam ezk dan".split() + _NT,
+}
+DEFAULT_ORDER = "tanakh"
+assert all(sorted(o) == sorted(BY_CODE) for o in ORDERS.values())
+
+
+def order(name=None):
+    """the book codes in a reading order (ORDERS; None = the default)"""
+    name = name or DEFAULT_ORDER
+    if name not in ORDERS:
+        raise SystemExit(f"book_order must be one of {', '.join(ORDERS)}, not {name!r}")
+    return ORDERS[name]
+
+
+def in_order(codes, name=None):
+    """the given book codes sorted in a reading order"""
+    rank = {c: i for i, c in enumerate(order(name))}
+    return sorted(codes, key=lambda c: rank[c])
+
 
 def chapters(code):
     """Number of chapters, counted from the BSB files; before setup.py has built them, from books.tsv."""

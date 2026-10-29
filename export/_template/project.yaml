@@ -37,6 +37,7 @@ do_not_open: []
 # Presentation
 quotes: "“”"                         # opening + closing quote characters
 chapter_word: Chapter                # used in the ===Title, Chapter N=== header
+book_order: tanakh                   # the reading order: tanakh (default) | protestant | septuagint (docs/configuration.md)
 book_titles: {}                      # titles used in the chapter header, by BSB code (gen: …); default: the editions'
 
 # Style guides for the prompt's contract (paths relative to the project folder), besides the

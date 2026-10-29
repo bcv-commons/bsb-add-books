@@ -42,6 +42,7 @@ Answers (all optional; the wizard prints the file it used, so a run can be repea
     editions: [dbt:JAMBSWN_ET]     # source:id from the list, or the id of an edition already in import/
     licence_folder: {dbt:JAMBSWN_ET: non-free}   # only where the licence can't be read; default non-free
     project: jam_BSB               first_book: gen    first_chapter: 1    familiarity: null (set by the probe)
+    book_order: tanakh             # or protestant, septuagint (books.ORDERS)
     quotes: "“”"                   chapter_word: Chapter
     ai_route: api | claude-code    probe_model: claude-opus-5-5 (API route)   close_to: null   go_ahead: true
     run_setup: true                run_align: true              init_memory: true    donor: true
@@ -52,7 +53,7 @@ CODE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROOT = os.path.abspath(os.environ.get("MAKE_TANAKH_ROOT") or CODE)   # the data root (books.py)
 sys.path.insert(0, os.path.join(CODE, "scripts"))
 import yaml  # noqa: E402
-from books import BOOKS, BY_CODE, tools  # noqa: E402
+from books import BOOKS, BY_CODE, ORDERS, DEFAULT_ORDER, order, tools  # noqa: E402
 import fetch_edition as FE  # noqa: E402
 import project as P  # noqa: E402
 from project import project_dir, project_rel  # noqa: E402
@@ -154,22 +155,22 @@ def words(raw):
     return [w for w in re.split(r"[\s,]+", raw.strip()) if w]
 
 
-def books_of(spec):
-    """'ot', 'nt', 'gen-deu', 'rut jon' or a list -> BSB codes in canonical order."""
-    order = [b[0] for b in BOOKS]
+def books_of(spec, book_order=None):
+    """'ot', 'nt', 'gen-deu', 'rut jon' or a list -> BSB codes in the reading order (a range runs in it too)."""
+    order_ = order(book_order)
     out = set()
     for w in (spec if isinstance(spec, list) else words(spec or "")):
         w = str(w).lower()
         if w in ("ot", "nt"):
-            out |= {c for c in order if BY_CODE[c][2] == w}
+            out |= {c for c in order_ if BY_CODE[c][2] == w}
         elif "-" in w and all(x in BY_CODE for x in w.split("-", 1)):
-            a, b = (order.index(x) for x in w.split("-", 1))
-            out |= set(order[a:b + 1])
+            a, b = (order_.index(x) for x in w.split("-", 1))
+            out |= set(order_[a:b + 1])
         elif w in BY_CODE:
             out.add(w)
         else:
             raise SystemExit(f"books: {w!r} is not a BSB book code (books.tsv), 'ot', 'nt' or a range like gen-deu")
-    return [c for c in order if c in out]
+    return [c for c in order_ if c in out]
 
 
 def run(*cmd):
@@ -588,6 +589,7 @@ def write_project(pdir, fields, books, overlap):
         "",
         f"quotes: \"{fields['quotes']}\"                      # opening + closing quote marks (read from the corpus)",
         f"chapter_word: {fields['chapter_word']}",
+        f"book_order: {fields.get('book_order') or DEFAULT_ORDER}             # tanakh | protestant | septuagint (docs/configuration.md)",
         "# book_titles: {gen: …}   # titles for books the editions don't have; the others come from the edition",
         "",
         "rules:",
@@ -669,10 +671,15 @@ def main():
         books, overlap = [book], []
     else:
         say(f"  {project_rel(pname)}/")
-        ot_missing = [b[0] for b in BOOKS if BY_CODE[b[0]][2] == "ot" and b[0] not in all_have]
+        say("  The book order (how lists, the site and book ranges show the books; files keep the BSB codes):")
+        say("    tanakh      Torah, Prophets, Writings, as in the Hebrew Bible (the default)")
+        say("    protestant  Genesis ... Malachi, as in the BSB and most Protestant and Catholic Bibles")
+        say("    septuagint  the Greek order of Orthodox Bibles")
+        book_order = ask("book_order", "Book order", DEFAULT_ORDER, choices=list(ORDERS))
+        ot_missing = [c for c in order(book_order) if BY_CODE[c][2] == "ot" and c not in all_have]
         if all_have:
             say(f"  the editions have {len(all_have)} books: NT {sum(BY_CODE[c][2] == 'nt' for c in all_have)}, "
-                f"OT {sum(BY_CODE[c][2] == 'ot' for c in all_have)} ({' '.join(c for c in sorted(all_have) if BY_CODE[c][2] == 'ot') or 'none'})")
+                f"OT {sum(BY_CODE[c][2] == 'ot' for c in all_have)} ({' '.join(c for c in order(book_order) if c in all_have and BY_CODE[c][2] == 'ot') or 'none'})")
         say("  The first chapter to draft (more come later, chapter by chapter, in Claude Code):")
         book = str(ask("first_book", "Book (its code: gen, rut, jhn …)", (ot_missing[:1] or ["gen"])[0],
                        check=lambda v: None if str(v).lower() in BY_CODE else "a book code from books.tsv (gen, exo, rut, jhn …)")).lower()
@@ -682,7 +689,7 @@ def main():
         books = [book]
         overlap = [b for b in books if b in all_have]
         fields = {"pname": pname, "language": iso, "language_name": name, "school_language": school, "familiarity": None,
-                  "close_to": None, "style_from": eds, "quotes": ANSWERS.get("quotes") or quotes_of(dirs),
+                  "close_to": None, "style_from": eds, "book_order": book_order, "quotes": ANSWERS.get("quotes") or quotes_of(dirs),
                   "chapter_word": ANSWERS.get("chapter_word") or "Chapter", "first_chapter": f"{book} {chapter}"}
         say(f"  quote marks {fields['quotes']} (read from the text); the language memory can refine them and the word for 'chapter'")
         write_project(pdir, fields, books, overlap)

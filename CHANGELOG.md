@@ -4,6 +4,19 @@ Tags are `vMAJOR.MINOR.PATCH`. A work copy merges a tag; make-tanakh-grammar pin
 Each entry has a **Format changes** section for the stable formats listed in `docs/related-repos.md`, section 4:
 what changed and how existing files move over. Before 1.0 a breaking format change raises the minor version.
 
+## v0.2.0
+
+**The Tanakh order by default.** A project's reading order is now its own setting, `book_order` in `project.yaml`:
+`tanakh` (the default: Torah, Prophets, Writings, as in BHS), `protestant` (Genesis … Malachi, the BSB's order and
+the one every list followed before) or `septuagint` (the Greek order of Orthodox Bibles). The setup wizard asks for it.
+It orders `STATUS.md`, the site's book lists and the wizard's book ranges. Book codes, file names and the book numbers
+for Paratext and MACULA keep the BSB's numbering order (`books.BOOKS`); the NT order is the same in all three.
+
+**For an existing project:** without `book_order` it now lists its books in the Tanakh order. To keep the earlier
+order, add `book_order: protestant` to `project.yaml`; run `scripts/status.py <project>` to rewrite `STATUS.md`.
+
+**Format changes:** `project.yaml` gains the optional `book_order` (additive).
+
 ## v0.1.1
 
 A fix: in v0.1.0 a store entry's `basis` had two meanings. `grammar.py run --write` put a Grambank answer's

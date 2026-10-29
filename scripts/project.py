@@ -33,7 +33,7 @@ unless it sets its own. Command line:
 """
 import os, re, sys
 import yaml
-from books import BY_CODE, ROOT
+from books import BY_CODE, ROOT, order
 
 BASIS = {
     "critical": ("orig/grc", "reference/BSB"),
@@ -134,6 +134,8 @@ def project(name):
     if p["nt_basis"] not in BASIS:
         raise SystemExit(f"nt_basis must be one of {sorted(BASIS)}, not {p['nt_basis']!r}")
     p.setdefault("language", base.get("language"))
+    p["book_order"] = p.get("book_order") or "tanakh"     # the reading order (books.ORDERS)
+    order(p["book_order"])
     if not p.get("style_from"):     # missing or empty (the template has []): default to based_on
         p["style_from"] = [p["based_on"]] if p.get("based_on") else []
     p["own_quarantine"] = list(p.get("quarantine") or [])

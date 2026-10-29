@@ -50,6 +50,7 @@ with `role: revise` must be CC0; `scripts/project.py` refuses any other.
 | `style_from` | editions used as style corpus (default `[based_on]`) |
 | `derived_from` | editions the work derives from (only under `export/CC-NC/` or `local_output/`); reused there without quarantine or quotation limits; a `based_on` edition with `role: revise` is always included |
 | `nt_basis` | overrides the inherited basis |
+| `book_order` | the reading order: `tanakh` (default: Torah, Prophets, Writings, as in BHS), `protestant` (Genesis … Malachi, as in the BSB and most Protestant and Catholic Bibles) or `septuagint` (the Greek order of Orthodox Bibles). It orders `STATUS.md`, the site's book lists and the wizard's book ranges (`gen-deu`); file names, book codes and book numbers (Paratext, MACULA) keep the BSB's numbering order (`books.py`). The NT order is the same in all three |
 | `quarantine`, `do_not_open` | books and paths kept from the agents (`scripts/quarantine.py` maintains `quarantine`) |
 | `quarantine_attributable` | `true`: also quarantine books a CC BY / BY-SA style edition has |
 | `lexeme_aligner` | id of a bcv-commons alignment layer for the style edition (below) |

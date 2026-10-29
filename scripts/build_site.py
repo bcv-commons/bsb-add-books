@@ -336,7 +336,7 @@ def tests(pname, p, tracked, od, ui, banner, built, nav, lc):
     page per test chapter, each under a test banner. They are not in the reader's selectors (nav.js)."""
     import script_code as SC
     tdir = SC.html_dir(pname)       # right-to-left target text: dir and lang, else ''
-    from books import BY_CODE
+    from books import BY_CODE, order
     depth = pname.count("/") + 1
     td = os.path.join(od, "tests")
     os.makedirs(td, exist_ok=True)
@@ -346,7 +346,8 @@ def tests(pname, p, tracked, od, ui, banner, built, nav, lc):
     items = []
     for folder, chs in test_drafts(pname, tracked).items():
         links = []
-        for code, n, f in sorted(chs, key=lambda x: (list(BY_CODE).index(x[0]), x[1])):
+        rank = {c: i for i, c in enumerate(order(p.get("book_order")))}
+        for code, n, f in sorted(chs, key=lambda x: (rank[x[0]], x[1])):
             title, blocks, notes = parse_chapter(p, open(os.path.join(ROOT, f), encoding="utf-8").read(), "")
             name = book_title(p, code, title)
             slug = folder.replace("/", "_") + f"_{code}{n:03d}"
@@ -652,7 +653,7 @@ def verse_view(p, code, n, draft_file, notes_md, ui, tdir=""):
 
 def reader(pname, p, tracked, od, ui, banner, built, nav, lc, rows):
     """The project's reader: a page of books and chapters, and one page per chapter."""
-    from books import BY_CODE
+    from books import BY_CODE, order
     import script_code as SC
     depth = pname.count("/") + 2
     tdir = SC.html_dir(pname)       # dir="rtl" lang=... on the draft's text for a right-to-left script, else nothing
@@ -681,10 +682,10 @@ def reader(pname, p, tracked, od, ui, banner, built, nav, lc, rows):
         pages.append((code, n, title, blocks, notes, r, views))
     rd = os.path.join(od, "read")
     os.makedirs(rd, exist_ok=True)
-    order = [c for c in BY_CODE if c in books]
+    book_seq = [c for c in order(p.get("book_order")) if c in books]   # the project's reading order
     # the book list
     items = []
-    for c in order:
+    for c in book_seq:
         b = books[c]
         cls = {(x[0], x[1]): x[5].get("status", "draft") for x in pages}
         chs = "".join(f'<a href="{c}/{n:03d}.html" class="{cls.get((c, n), "draft")}" title="{H.escape(ui[{"in-review": "review"}.get(cls.get((c, n), "draft"), cls.get((c, n), "draft"))])}">{n}</a>'
@@ -693,7 +694,7 @@ def reader(pname, p, tracked, od, ui, banner, built, nav, lc, rows):
     body = f'<h1>{H.escape(p.get("language_name") or pname)}: {H.escape(ui["read"])}</h1><ul class="books">{"".join(items)}</ul>'
     open(os.path.join(rd, "index.html"), "w", encoding="utf-8").write(page(f"{p.get('language_name')}: {ui['read']}", body, nav("r"), banner, built, depth, ui, lc))
     # one page per chapter
-    seq = [(c, n) for c in order for n in books[c]["chs"]]
+    seq = [(c, n) for c in book_seq for n in books[c]["chs"]]
     for code, n, title, blocks, notes, r, views in pages:
         i = seq.index((code, n))
         prev = seq[i - 1] if i else None
@@ -746,7 +747,7 @@ def reader(pname, p, tracked, od, ui, banner, built, nav, lc, rows):
                            f"%UP%{pname}/index.html",
                            extra=f" ({r['date']})" if r.get("status") == "published" and r.get("date") and not r.get("changed") else ""),
                  published=r.get("status") == "published" and not r.get("changed")))
-    return {"name": p.get("language_name") or pname, "books": [[c, books[c]["title"], books[c]["chs"]] for c in order]}
+    return {"name": p.get("language_name") or pname, "books": [[c, books[c]["title"], books[c]["chs"]] for c in book_seq]}
 
 
 NAV_JS = """// The reader's selectors: language, book, chapter (scripts/build_site.py writes window.NAV below).

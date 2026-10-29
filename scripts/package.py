@@ -351,7 +351,7 @@ def build(pname, code, ch, level=None):
                     " a suffix, a verb's subject, a noun that is a named person). participants.py; names STEPBible TIPNR,"
                     " CC BY 4.0. " + plegend]
     has_sp = con.execute("select count(*) from sqlite_master where name='speakers'").fetchone()[0]
-    booknum = list(BY_CODE).index(code) + 1
+    booknum = list(BY_CODE).index(code) + 1    # MACULA's book number: the numbering order (books.BOOKS)
     spans = []
     if has_sp and not seg_of:  # Clear's spans, when the speaker layer isn't here  # the quotations touching this chapter (verses in English numbering, words as MACULA keys)
         lo, hi = booknum * 1000000 + max(ch - 1, 0) * 1000, booknum * 1000000 + (ch + 2) * 1000

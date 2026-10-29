@@ -41,7 +41,7 @@ KEEP = ("id", "ide", "h", "toc1", "toc2", "toc3", "mt", "mt1", "mt2", "mt3")
 
 
 def book_number(code):
-    i = [b[0] for b in BOOKS].index(code)
+    i = [b[0] for b in BOOKS].index(code)    # the numbering order (books.BOOKS), never the project's reading order
     return i + 1 if BY_CODE[code][2] == "ot" else i + 2          # Paratext: OT 01-39, NT 41-67
 
 

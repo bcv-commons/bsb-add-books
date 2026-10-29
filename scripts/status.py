@@ -28,7 +28,7 @@ CODE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROOT = os.path.abspath(os.environ.get("MAKE_TANAKH_ROOT") or CODE)   # the data root (books.py)
 sys.path.insert(0, os.path.join(CODE, "scripts"))
 from project import project, edition, editions_with_book, book_files, missing_text, project_dir  # noqa: E402
-from books import BY_CODE  # noqa: E402
+from books import BY_CODE, order  # noqa: E402
 
 DRAFT_STATEMENT = ("Draft. Translated with AI agents directly from the Hebrew and Greek, with the BSB as the only "
                    "assisting translation; not yet reviewed or approved by a language team. Not for use as "
@@ -42,14 +42,16 @@ def sha(path):
     return hashlib.sha256(open(path, "rb").read()).hexdigest()
 
 
-def chapter_files(pdir):
-    """{'gen001': path} of the project's drafted chapters (quarantine/ and _eval/ not included)."""
+def chapter_files(pdir, book_order=None):
+    """{'gen001': path} of the project's drafted chapters (quarantine/ and _eval/ not included), in the project's
+    reading order (books.ORDERS)."""
     out = {}
     for f in glob.glob(os.path.join(pdir, "*", "*.txt")):
         b = os.path.basename(f)
         if re.fullmatch(r"[0-9a-z]{3}\d{3}\.txt", b) and os.path.basename(os.path.dirname(f)) == b[:3]:
             out[b[:6]] = f
-    return dict(sorted(out.items(), key=lambda kv: (list(BY_CODE).index(kv[0][:3]), kv[0])))
+    rank = {c: i for i, c in enumerate(order(book_order))}
+    return dict(sorted(out.items(), key=lambda kv: (rank[kv[0][:3]], kv[0])))
 
 
 def load(pdir):
@@ -74,7 +76,7 @@ def state(pdir, p):
     """[(chapter, path, record)] for every drafted chapter; record has status and, if published, 'changed'."""
     chapters = load(pdir)
     out = []
-    for ch, f in chapter_files(pdir).items():
+    for ch, f in chapter_files(pdir, p.get("book_order")).items():
         r = dict(chapters.get(ch) or {"status": "draft"})
         if r["status"] == "published":
             r["changed"] = r.get("sha256") != sha(f)
@@ -106,7 +108,7 @@ def write_status_md(pname, pdir, p):
          f"{len(rows)} chapters: **{n['draft']} draft**, {n['in-review']} in review, {n['published']} published.", "",
          "> " + re.sub(r"^([^\s.]+\.)", r"**\1**", draft_st), "",
          "| Book | Chapters | Status | Existing edition |", "|---|---|---|---|"]
-    files = chapter_files(pdir)
+    files = chapter_files(pdir, p.get("book_order"))
     Q = None
     # the figures measured where the edition's text was present: kept when it is not here (a fresh clone has no
     # non-free texts), so that STATUS.md doesn't change with the machine it is written on
@@ -199,7 +201,7 @@ def main():
     today = datetime.date.today().isoformat()
     cmd = a[1] if len(a) > 1 else "show"
     chapters = load(pdir)
-    files = chapter_files(pdir)
+    files = chapter_files(pdir, p.get("book_order"))
     if cmd == "set":
         st = a[3]
         if st not in ("draft", "in-review"):
