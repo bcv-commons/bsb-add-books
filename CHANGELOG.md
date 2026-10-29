@@ -4,6 +4,17 @@ Tags are `vMAJOR.MINOR.PATCH`. A work copy merges a tag; make-tanakh-grammar pin
 Each entry has a **Format changes** section for the stable formats listed in `docs/related-repos.md`, section 4:
 what changed and how existing files move over. Before 1.0 a breaking format change raises the minor version.
 
+## v0.2.1
+
+**The speaker layer v0.15** (bcv-commons/hebrew-speaker-layer; `setup.py --only spk` fetches it). Its `speaker_id` now
+agrees with each quotation's inquit; a difference left between the id's name and the inquit is one person under two
+names (Jacob/Israel). A quotation spoken by several people has a group id, no `speaker_name`, and the new
+`speaker_members`. The clause packages mark a group with each named member's participant (`= p5+p6`, Rachel and Leah
+in GEN 31:14) instead of one member's, or with none where not all are named.
+
+**Format changes:** `orig/heb.sqlite`: `speaker_quotations` gains `speaker_members` (additive; `setup.py --only spk`
+rebuilds the table).
+
 ## v0.2.0
 
 **The Tanakh order by default.** A project's reading order is now its own setting, `book_order` in `project.yaml`:

@@ -205,7 +205,7 @@ def morph(t):
 
 def participant_ids(code, ch, toks, lines):
     """lines: {token key: drafting-layout line}. ({token key: [(token number, "<n>s" for a verb's subject, "<name>(p<k>)")]},
-    the header legend, {quotation id: "p<k>"}, the quotations whose v0.14 name contradicts their inquit) for the chapter's referring words that point to a named or recurring participant. ({}, "") when
+    the header legend, {quotation id: "p<k>" or "p<k>+p<m>" for a group}, the quotations whose name is shown from their inquit) for the chapter's referring words that point to a named or recurring participant. ({}, "") when
     the resolver can't run (no TIPNR is fine; no data is not), said on stderr: a package without the lines is still one"""
     try:
         import participants as P
@@ -253,8 +253,10 @@ def participant_ids(code, ch, toks, lines):
         pid = res.speaker_pid.get((res.speaker_key(q), ch))
         # only a named participant (a proper noun among its words): the resolver's joins of common nouns can be wrong
         # (in GEN 24 "the girl" of the servant's hypothetical speech goes to the servant), and the mark must not mislead
-        if pid and res.info.get(pid, {}).get("kind") in ("PERSON", "GROUP") and named(pid):
-            spk[q["id"]] = f"p{num.setdefault(pid, len(num) + 1)}"
+        # (a group, v0.15: each named member's participant, p5+p6)
+        parts = pid.split("+") if pid else []
+        if parts and all(res.info.get(p, {}).get("kind") in ("PERSON", "GROUP") and named(p) for p in parts):
+            spk[q["id"]] = "+".join(f"p{num.setdefault(p, len(num) + 1)}" for p in parts)
     legend = " · ".join(f"p{i} {res.name(p) or '?'}" for p, i in num.items())
     return who, legend, spk, res.name_conflict
 

@@ -77,7 +77,7 @@ LAYOUTS = {"bhsa": "ETCBC BHSA 2021; CC BY-NC: consulted for drafting, never pub
            "macula": "MACULA Hebrew + UHB via the shoresh API; this takes long"}
 HCL_TAG = "v0.37"                                         # bcv-commons/hebrew-clause-layout
 HCL_URL = f"https://huggingface.co/datasets/bcv-commons/hebrew-clause-layout/resolve/{HCL_TAG}/hebrew-clause-layout-{HCL_TAG}.tar.gz"
-SPK_TAG = "v0.14"                                          # bcv-commons/hebrew-speaker-layer
+SPK_TAG = "v0.15"                                          # bcv-commons/hebrew-speaker-layer
 SPK_URL = f"https://huggingface.co/datasets/bcv-commons/hebrew-speaker-layer/resolve/{SPK_TAG}/hebrew-speaker-layer-{SPK_TAG}.tar.gz"
 GNTL_TAG = "v0.5"                                          # bcv-commons/greek-nt-clause-layout
 GNTL_URL = f"https://huggingface.co/datasets/bcv-commons/greek-nt-clause-layout/resolve/{GNTL_TAG}/data/clauses.parquet"
@@ -112,7 +112,7 @@ SOURCES = {
 SHA256 = {
     "bgb": "56eb9ba026316e6d66d675a4f1812deae362d46244541b9071e937d77d21eac7",
     "hcl": "02f90e95caf01b941136fe2f03826f6dcdb93551dd6a78d86aa792235a864791",
-    "spk": "7f844f7283d6ae76204655e9a2577a6574d99cfa63c94d4b25ad76aee0b9298a",
+    "spk": "ec616e931b6348dd232080230f86403fcc5a18c238ac62faf3aa574e1e5c73c0",
     "gntl": "f70a0cb287a0cb4f15bfc06f73253b0b2b9face8221c97ef1dbdc35ad3ad208f",
     "gb-parameters": "ff5a675e6e2417b6e1746230b6649429be688f4e16df0da99bbabe4eff52dc80",
     "gb-codes": "cdcf17f53d56c6b58d52a76cb82c77fe6fd919abb3b9ac836c80f97c537f3263",

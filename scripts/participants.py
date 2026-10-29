@@ -534,9 +534,9 @@ class Resolver:
                     r = max((self.uf.find(x) for x in refs), key=lambda x: size.get(x, 0)) if refs else None
                     if r in size:
                         break
-                # the layer's character can contradict the inquit (GEN 24:58 Rebekah speaks, id Laban's; 1SA 17:55 Saul
-                # speaks, id Abner's) or narrow a group to one (RUT 1:10, GEN 31:14): where the inquit itself has a proper
-                # name other than speaker_name, or names several, its words stay in the mark
+                # where the inquit itself has a proper name other than speaker_name, its words stay in the mark: since
+                # v0.15 the layer's id agrees with the inquit, so this is one person under two names (Jacob/Israel), and
+                # the mark keeps the text's own; a group (v0.15: a group id, no speaker_name) never shows one member's
                 own = [self.toks[x] for x in (q.get('speaker_ref') or '').split() if x in self.toks]
                 # the head word's proper name (not a place in "the king of Sodom"); NFC: the layer and MACULA's lemmas
                 # can order the marks differently (שׂ + qamats)
@@ -545,8 +545,17 @@ class Resolver:
                 # construct of "the man of the in-between", 1SA 17:4)
                 group = ',' in (q['speaker'] or '') or bool(own and own[0]['class'] in ('noun', 'num')
                                                             and own[0].get('number') in ('plural', 'dual'))
+                group = group or bool(q.get('speaker_members'))
                 if q.get('speaker_name') and ((names_own and unicodedata.normalize('NFC', q['speaker_name']) not in names_own) or group):
                     self.name_conflict.add(q['id'])
+                if group:
+                    # several speak (Rachel and Leah, GEN 31:14): each named one's participant, joined (p5+p6), or none
+                    # at all; one member's participant for the group's words would put them in one mouth
+                    ps = list(dict.fromkeys(self.uf.find(x) for x in (q.get('speaker_ref') or '').split()
+                                            if x in self.toks and self.toks[x].get('type') == 'proper'))
+                    if len(ps) >= 2 and all(p in size for p in ps):
+                        self.speaker_pid[(self.speaker_key(q), ch)] = '+'.join(ps)
+                    continue
                 r = r if r in size else (match(q.get('speaker_name'), ch) or match(q['speaker'], ch)
                                          or match(q.get('alt_eng'), ch))
                 if r:
@@ -556,8 +565,7 @@ class Resolver:
                 elif q.get('speaker_id'):
                     unresolved.append((q, ch))
             # a quotation that names nobody here gets its character's participant (speaker_id, v0.14) from the chapter's other
-            # quotations; the character id only fills gaps: a quotation's own words decide first (the layer gives a group
-            # speaker one person's id, e.g. "Rachel and Leah" in GEN 31:14 as Rachel)
+            # quotations; the character id only fills gaps: a quotation's own words decide first
             for q, ch in unresolved:
                 c = votes.get((q['speaker_id'], ch))
                 if c:
@@ -679,7 +687,8 @@ class Resolver:
             self.info[pid] = {'pid': pid, 'name': name, 'lemma': lemma, 'strong': strong, 'members': ks,
                               'kind': self.kind(ent, nouns, ks), 'root': root}
         for spk, r in list(self.speaker_pid.items()):
-            self.speaker_pid[spk] = self.pid_of_root[self.uf.find(r)] if self.uf.find(r) in self.pid_of_root else None
+            ps = [self.pid_of_root.get(self.uf.find(x)) for x in r.split('+')]     # a group: p5+p6, each part
+            self.speaker_pid[spk] = '+'.join(ps) if all(ps) else None
         for k, tg in self.group.items():
             self.group[k] = sorted({self.pid(x) or x for x in tg})
 

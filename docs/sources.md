@@ -78,16 +78,19 @@ commercial user drafts on bcv-query (`--drafting bcv-query`).
   SHA-256 `f70a0cb287a0cb4f15bfc06f73253b0b2b9face8221c97ef1dbdc35ad3ad208f`, **CC BY 4.0** (bcv-commons, on MACULA
   Greek and Clear's quotation data). The NT's clause segments on MACULA Greek word ids, with quotations and speakers
   (`speaker_id`, `speaker_name`); `setup.py --only gntl`, read by `scripts/alternations.py` (speech context; needs pyarrow).
-- **Speaker layer:** Hugging Face **bcv-commons/hebrew-speaker-layer**, tag **v0.14**, archive SHA-256
-  `7f844f7283d6ae76204655e9a2577a6574d99cfa63c94d4b25ad76aee0b9298a`, **CC BY 4.0** (bcv-commons, on Clear's MACULA
+- **Speaker layer:** Hugging Face **bcv-commons/hebrew-speaker-layer**, tag **v0.15**, archive SHA-256
+  `ec616e931b6348dd232080230f86403fcc5a18c238ac62faf3aa574e1e5c73c0`, **CC BY 4.0** (bcv-commons, on Clear's MACULA
   Quotation and Speaker Data, CC BY 4.0, with SIL Glyssen / FCBH data, MIT). Each bcv-query segment's quotation,
   level (2+ = nested) and speaker, and a chapter's frame (a psalm's psalmist), in tables `speaker_segments` and
   `speaker_quotations`; the clause packages show it per line. Since v0.12 a speaker is named by the Hebrew words of
   the text (MACULA lemmas: אִשָּׁה, דָּוִד), with the keys of those words (`speaker_ref`); `alt_eng` keeps an English
   label only where no Hebrew name is found. Since v0.14 `speaker_id` is the character (a named person one id for the
   Bible, an unnamed one per book), `speaker_name` its proper name where the text gives one (רָחָב for the אִשָּׁה of
-  JOS 2), `speaker_name_ref` the word that gives it. The packages show that name, except where the inquit names
-  someone else or a group, and add the participant (`= p<k>`) where it is a named one.
+  JOS 2), `speaker_name_ref` the word that gives it. Since v0.15 `speaker_id` agrees with the inquit (a difference
+  left is one person under two names: Jacob/Israel), and where several speak the id is a group's (no `speaker_name`),
+  with `speaker_members` listing its members who also speak on their own. The packages show the name, except where
+  the inquit gives another of the person's names or names a group, and add the participant (`= p<k>`) where it is a
+  named one; a group gets each named member's (`= p5+p6`, Rachel and Leah) or none.
   `setup.py --only spk` (`src.py speaker-layer DIR`).
 
 ## orig/vrs/: Hebrew to BSB verse numbering

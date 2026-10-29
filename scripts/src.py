@@ -29,7 +29,7 @@ Tables:
   speaker_segments(book, ch, line, quotation, level, speaker, share, frame)   the speaker layer per bcv-query segment
                                    (line as in layout; level 0 = no quotation, 2+ = inside another quotation)
   speaker_quotations(id, level, parent, speaker, divine, basis, first, last, inquit, speaker_ref, speaker_basis,
-                     alt_eng, speaker_id, speaker_name, speaker_name_ref)   its quotations
+                     alt_eng, speaker_id, speaker_name, speaker_name_ref, speaker_members)   its quotations
   lxx(lexeme, greekstrong, greek, n)   the per-token LXX equivalents counted over the whole build (the bridge)
   meta(name, value)
 
@@ -610,7 +610,7 @@ def speaker_layer(rel):
                 "share real, frame text)")
     con.execute("create table speaker_quotations(id text primary key, level int, parent text, speaker text, divine int, "
                 "basis text, first text, last text, inquit text, speaker_ref text, speaker_basis text, alt_eng text, "
-                "speaker_id text, speaker_name text, speaker_name_ref text)")
+                "speaker_id text, speaker_name text, speaker_name_ref text, speaker_members text)")
     n = 0
     for f in sorted(glob.glob(os.path.join(rel, "segments", "*.tsv"))):
         book = os.path.basename(f)[:-4]
@@ -621,12 +621,14 @@ def speaker_layer(rel):
     q = [(r["id"], int(r["level"] or 1), r["parent"] or None, r["speaker"] or None, int(r["divine"] == "Y"), r["basis"] or None,
           r["first"], r["last"], r["inquit"] or None, r.get("speaker_ref") or None, r.get("speaker_basis") or None,
           r.get("alt_eng") or None, r.get("speaker_id") or None, r.get("speaker_name") or None,
-          r.get("speaker_name_ref") or None) for r in tsv(os.path.join(rel, "quotations.tsv"))]
+          r.get("speaker_name_ref") or None, r.get("speaker_members") or None) for r in tsv(os.path.join(rel, "quotations.tsv"))]
     # since v0.12 `speaker` is the Hebrew text's own naming (MACULA lemmas), `speaker_ref` the word keys that name the
     # speaker, `alt_eng` the English label only where no Hebrew name is found; earlier releases had an English `speaker`.
     # v0.14 adds `speaker_id` (one character: a named person across the Bible, an unnamed one per book), `speaker_name`
-    # (the character's proper name where the text gives one) and `speaker_name_ref` (the word that gives it)
-    con.executemany("insert into speaker_quotations values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", q)
+    # (the character's proper name where the text gives one) and `speaker_name_ref` (the word that gives it). v0.15:
+    # `speaker_id` agrees with the inquit (a difference left is one person under two names, Jacob/Israel); where several
+    # speak, a group id (no speaker_name) and `speaker_members`, the ids of its members who also speak on their own
+    con.executemany("insert into speaker_quotations values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", q)
     con.execute("create index if not exists speaker_segments_line on speaker_segments(book, ch, line)")
     con.execute("insert or replace into meta values('speaker_layer', ?)", (
         f"Hebrew Bible Speaker Layer ({os.path.basename(os.path.normpath(rel)).replace('hebrew-speaker-layer-', '')}), "
