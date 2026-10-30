@@ -4,6 +4,31 @@ Tags are `vMAJOR.MINOR.PATCH`. A work copy merges a tag; make-tanakh-grammar pin
 Each entry has a **Format changes** section for the stable formats listed in `docs/related-repos.md`, section 4:
 what changed and how existing files move over. Before 1.0 a breaking format change raises the minor version.
 
+## v0.3.0
+
+**Tagged drafting for the NT** (the work copy's request of 2026-10-29). An NT chapter is now drafted as an OT one is:
+clause packages first, a tagged draft, `full_align.py split` into the draft and its `.align`, the checks in the loop.
+
+- `package.py <project> <code> <ch>` builds NT packages: one block per line of the Greek NT clause layout
+  (`orig/grc-gntl`), with the words of the project's own Greek text (BGB for `nt_basis: critical`, RP otherwise), each
+  numbered as `full_align.numbering` numbers its MACULA Greek word; gloss, morphology for verbs, referents, speech
+  marks and clause rules (greek-nt-clause-layout v0.5, needs pyarrow), named participants (`who:`), BSB words, and
+  `had:` (earlier `.align` files, the store's `G` terms; for an unknown language the style edition's renderings in the
+  other NT books, never in the book being drafted).
+- **Which Greek the numbers count:** MACULA Greek (the compact-alignments index). A word of the project's text that
+  MACULA lacks is shown as `* word`, without a number: the agent renders it and leaves it untagged. A MACULA word the
+  project's text lacks isn't shown, and `split` doesn't ask for it (`full_align.absent`); it stays undecided in the
+  `.align`.
+- `make_prompt.py` drafts the NT tagged by default, in Greek wording; `--end-align` gives the earlier NT prompt (the
+  draft alone; `full_align.py prompt` aligns it later). The book agent builds the NT packages too.
+- `chapter_check.py` runs the alignment check and the names-across-the-book check on NT chapters, and `rough_check.py`
+  counts the negations an NT `.align` links.
+
+New test: `scripts/tests/test_nt_tagged.py` (package numbers, `*` words and absent ones, the split/tag round trip;
+skipped without the Greek sources).
+
+**Format changes:** none (an NT `.align` was already in the compact-alignments format).
+
 ## v0.2.1
 
 **The speaker layer v0.15** (bcv-commons/hebrew-speaker-layer; `setup.py --only spk` fetches it). Its `speaker_id` now

@@ -1,6 +1,8 @@
 # Outside source content is not kept in git: scripts/setup.py downloads it to download/
 # and builds reference/BSB/, reference/MSB/ and orig/ from it (see docs/sources.md).
 download/
+# Tools cloned at a pinned tag (lexeme-aligner: GPL-3.0, its own repo), with their venvs
+tools/
 reference/BSB/
 reference/MSB/
 orig/

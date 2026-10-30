@@ -7,9 +7,10 @@ Usage: python3 scripts/make_prompt.py <project> <code> <chapter> [--date DD.MM.Y
 each with its own chapter prompt and scripts/chapter_check.py, and hands over to a fresh agent after N chapters
 (default 10). Without a range: from the first chapter not yet drafted to the end of the book.
 
-OT chapters are drafted tagged by default: the agent reads the clause packages (scripts/package.py, built first)
-and writes <code>NNN.tagged, from which scripts/full_align.py split makes the draft and its word alignment.
---end-align: the old way instead, the draft first and the alignment as a last step (full_align.py listing).
+Chapters are drafted tagged by default, OT and NT: the agent reads the clause packages (scripts/package.py, built
+first; the NT's on the Greek NT clause layout) and writes <code>NNN.tagged, from which scripts/full_align.py split makes
+the draft and its word alignment. --end-align: the old way instead: on the OT the draft first and the alignment as a
+last step (full_align.py listing), on the NT the draft alone (full_align.py prompt aligns it later).
 
 Reads docs/prompts/chapter_prompt.md (everything below the first '---' line),
 export/<project>/project.yaml and the import/<licence>/<language>/<edition>/edition.yaml files it
@@ -75,8 +76,7 @@ def book(pname, code, rng):
               f"Chapter {before[0]} is drafted already" if before else "")
     if resume:
         resume += f": read `{state}` and the last of them, `{rel}/{code}/{code}{before[-1]:03d}.txt`, in full first."
-    materials = (f"`python3 scripts/verse_pack.py {pname} {code} N`" if nt else
-                 f"`python3 scripts/package.py {pname} {code} N` and `python3 scripts/verse_pack.py {pname} {code} N`")
+    materials = f"`python3 scripts/package.py {pname} {code} N` and `python3 scripts/verse_pack.py {pname} {code} N`"
     shut = tuple(d.rstrip("/") + "/" for d in p.get("do_not_open") or [])
     closed = [f"`{x}`" for x in p.get("do_not_open") or []]
     closed += [f"`{d}/`" for d in sibling_projects(pname) if not (d + "/").startswith(shut)]   # as the chapter prompt
@@ -86,7 +86,7 @@ def book(pname, code, rng):
     fields = dict(root=ROOT, project=pname, code=code, book_title=BY_CODE[code][1],
                   language_name=p.get("language_name", p.get("language")), first=first, last=last, resume=resume,
                   state=state, materials=materials, handoff=handoff,
-                  draft_kind="the draft" if nt else "the tagged draft and its split",
+                  draft_kind="the tagged draft and its split",
                   notes_language=p.get("notes_language", "English"), style_guide=f"{rel}/style_guide.md",
                   extra_rules=extra)
     template = open(os.path.join(CODE, "docs", "prompts", "book_prompt.md"), encoding="utf-8").read()
@@ -306,7 +306,7 @@ def main():
             raise SystemExit(f"{os.path.relpath(vp, ROOT)} is older than the store: this project drafts one chapter after "
                              f"another (modes.py: sequential), with each pack built just in time. Wait for the chapter in "
                              f"progress, then python3 scripts/verse_pack.py {pname} {code} {chapter}")
-    if not nt and "--end-align" not in sys.argv:  # OT default: tagged drafting with clause packages (scripts/package.py)
+    if "--end-align" not in sys.argv:  # the default: tagged drafting with clause packages (scripts/package.py)
         pkg = os.path.join(project_dir(pname), "_learn", "packs", f"{code}{nnn}.pkg.md")
         if not os.path.exists(pkg):
             raise SystemExit(f"no clause packages {os.path.relpath(pkg, ROOT)}: python3 scripts/package.py {pname} {code} {chapter} "

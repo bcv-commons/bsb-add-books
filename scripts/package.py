@@ -4,6 +4,13 @@ the drafting layout, built from orig/heb.sqlite (scripts/src.py), the project's 
 its store, and, for a language learnt from its NT, the occurrence index (scripts/lang.py). The numbers are the
 tagged format's verse-local token numbers (scripts/full_align.py): the agent writes them after its words.
 
+An NT chapter (build_nt): one block per line of the Greek NT clause layout (orig/grc-gntl, greek-nt-clause-layout,
+CC BY 4.0), with the words of the project's own Greek (BGB for nt_basis critical, RP otherwise) in its order, each
+numbered by its MACULA Greek word (orig/grc.sqlite's map). A word the MACULA text lacks is shown as `* word`, without a
+number; a MACULA word the project's text lacks is left out, and split doesn't ask for it. Speech marks and rules come
+from the layout's release (download/greek-nt-clause-layout, needs pyarrow); `who:` shows named participants only; for
+an unknown language, `NT:` is how the style edition renders the word in the other NT books, never in this one.
+
 Per clause line:
     §<verse>.<line> L<level> <MACULA clause rule>  [speech: <speaker>]   the line is (in) a quotation by that speaker
                                                     (the Hebrew words that name them; "= p<k>": their participant);
@@ -65,10 +72,11 @@ def drafting_layout(code, ch):
     return "bhsa"
 
 
-def memory(pname, con, skip):
-    """{lexeme: Counter(draft word)} and {(lexeme, sense): Counter} from the project's .align files (all OT chapters
-    but `skip`); the sense is MACULA's sensenumber (measured: in about half of the lexemes with several senses the
-    project's top rendering differs by sense, e.g. אִשָּׁה wife / women, ראה see / appear)."""
+def memory(pname, con, skip, lex_sql="select lexeme, sensenumber from tokens where key=?"):
+    """{lexeme: Counter(draft word)} and {(lexeme, sense): Counter} from the project's .align files (all chapters
+    but `skip` whose keys are in `con`: the OT's in orig/heb.sqlite, the NT's in orig/grc.sqlite); the sense is MACULA's
+    sensenumber (measured: in about half of the lexemes with several senses the project's top rendering differs by
+    sense, e.g. אִשָּׁה wife / women, ראה see / appear; the Greek has none: lex_sql gives the lemma and null)."""
     out = collections.defaultdict(collections.Counter)
     by_sense = collections.defaultdict(collections.Counter)
     for code, ch, draft, ap in FULL.chapters(pname):
@@ -88,7 +96,7 @@ def memory(pname, con, skip):
             for o, ids in FULL.parse(m).items():
                 if o >= len(keys) or not keys[o]:
                     continue
-                lex = con.execute("select lexeme, sensenumber from tokens where key=?", (keys[o].split("+")[0],)).fetchone()
+                lex = con.execute(lex_sql, (keys[o].split("+")[0],)).fetchone()
                 if lex and lex[0]:
                     w = " ".join(words[v][i] for i in ids if i < len(words[v]))
                     out[lex[0]][w] += 1
@@ -97,14 +105,15 @@ def memory(pname, con, skip):
     return out, by_sense
 
 
-def store_terms(pname):
-    """{lexeme: value} of the store's live term decisions keyed by a Hebrew Strong's number (term:H3068)."""
+def store_terms(pname, letter="H"):
+    """{Strong's number: value} of the store's live term decisions keyed by a Hebrew (term:H3068) or, with letter G, a
+    Greek Strong's number (G2316)."""
     import json
     out = {}
     f = os.path.join(project_dir(pname), "profile", "decisions.json")
     if os.path.exists(f):
         for e in json.load(open(f, encoding="utf-8")).get("entries", []):
-            m = re.fullmatch(r"H0*(\d+[a-z]?)", str(e.get("source", "")))
+            m = re.fullmatch(letter + r"0*(\d+[a-z]?)", str(e.get("source", "")))
             if e.get("kind") == "term" and m and e.get("status") not in ("superseded", "rejected"):
                 out[m[1].zfill(4)] = e.get("value")
     return out
@@ -203,13 +212,13 @@ def morph(t):
     return ""
 
 
-def participant_ids(code, ch, toks, lines):
+def participant_ids(code, ch, toks, lines, lang="hbo"):
     """lines: {token key: drafting-layout line}. ({token key: [(token number, "<n>s" for a verb's subject, "<name>(p<k>)")]},
     the header legend, {quotation id: "p<k>" or "p<k>+p<m>" for a group}, the quotations whose name is shown from their inquit) for the chapter's referring words that point to a named or recurring participant. ({}, "") when
     the resolver can't run (no TIPNR is fine; no data is not), said on stderr: a package without the lines is still one"""
     try:
         import participants as P
-        res = P.resolve("hbo", code, [ch])
+        res = P.resolve(lang, code, [ch])
     except Exception as e:  # noqa: BLE001
         print(f"package.py: no participant ids for {code} {ch} ({type(e).__name__}: {e})", file=sys.stderr)
         return {}, "", {}, set()
@@ -230,12 +239,16 @@ def participant_ids(code, ch, toks, lines):
         if not pid or pid == k:  # not joined to anything earlier: a first mention
             continue
         cls = t["class"]
-        if cls == "verb" and t["type"] in ("infinitive construct", "infinitive absolute", "participle active", "participle passive"):
+        if cls == "verb" and (t["type"] in ("infinitive construct", "infinitive absolute", "participle active", "participle passive")
+                              or (lang == "grc" and t["mood"] in ("infinitive", "participle"))):
             continue
         if cls not in ("pron", "verb", "noun"):
             continue
         parts = pid.split("+")
-        if not all(res.info.get(p, {}).get("kind") in ("PERSON", "GROUP") and (named(p) or count[p] >= 2) for p in parts):
+        # (the NT: named ones only; its resolver makes participants of forms of address and abstracts, "Sir" for the
+        # woman's κύριε to Jesus in JHN 4, "reaping" in 4:36)
+        if not all(res.info.get(p, {}).get("kind") in ("PERSON", "GROUP") and (named(p) or (count[p] >= 2 and lang == "hbo"))
+                   for p in parts):
             continue
         if cls == "noun" and not all(named(p) for p in parts):  # a common noun only as a named one (my son = Isaac)
             continue
@@ -264,6 +277,8 @@ def participant_ids(code, ch, toks, lines):
 def build(pname, code, ch, level=None):
     p = project(pname)
     level = level or p.get("familiarity") or "known"
+    if BY_CODE[code][2] == "nt":
+        return build_nt(pname, code, ch, level)
     lean = level == "known"
     if not os.path.exists(HEB):
         raise SystemExit("no orig/heb.sqlite: python3 scripts/setup.py --only src (the prepared structures; seconds)")
@@ -452,6 +467,203 @@ def build(pname, code, ch, level=None):
                 bits.append("OT:" + "/".join(f"{SP(w)}×{c}" for w, c in ot[lex]))
             if bridge.get(lex):
                 bits.append("NT:" + "/".join(f"{SP(w)}×{c}" for w, c in bridge[lex]))
+            if bits:
+                had.append(f"{t['n']}:" + " ".join(bits))
+        if had:
+            out.append("  had: " + " · ".join(had))
+    return "\n".join(out) + "\n"
+
+
+def speech_nt(book):
+    """{first word key of a greek-nt-clause-layout segment: (rule, speaker or None)} for one book, from the release's
+    parquet (setup.py --only gntl; needs pyarrow); {} without it: the package is still one, without rules and speech"""
+    import glob
+    files = sorted(glob.glob(os.path.join(ROOT, "download", "greek-nt-clause-layout", "v*", "clauses.parquet")))
+    try:
+        import pyarrow.parquet as pq
+    except ImportError:
+        files = []
+    if not files:
+        print("package.py: no rules or speech marks (greek-nt-clause-layout's parquet and pyarrow)", file=sys.stderr)
+        return {}
+    rows = pq.read_table(files[-1], columns=["book", "first", "rule", "quotation", "speaker", "speaker_name", "alt_eng"],
+                         filters=[("book", "=", book)]).to_pylist()
+    return {r["first"]: (r["rule"],
+                         (r["speaker_name"] or r["speaker"] or r["alt_eng"] or "?") if r["quotation"] else None) for r in rows}
+
+
+def nt_renderings(pname, book, strongs):
+    """{strong: [(form, count)]}: how the style edition's NT renders each Greek word in the OTHER books (lang.py's
+    occurrence index): the book being drafted is left out, so that a package never shows the edition's own text of it."""
+    import lang as L
+    P = LT.Project(pname)
+    if not strongs or not os.path.exists(L.db_path(P)):
+        return {}
+    _, con = L.connect(pname)
+    out = {}
+    for s in strongs:
+        c = collections.Counter(dict(con.execute(
+            "select t.form, count(*) from g.tokens gt join nt_links l on l.key = gt.key join nt_tokens t on t.book = l.book "
+            "and t.ch = l.ch and t.v = l.v and t.pos = l.pos where gt.strong = ? and upper(l.book) <> ? group by t.form",
+            (s, book)).fetchall()))
+        tot = sum(c.values())
+        got = [(f, k) for f, k in c.most_common(3) if k >= 2 and k / tot >= 0.1 and not f.startswith("-")]
+        if got:
+            out[s] = got
+    return out
+
+
+def build_nt(pname, code, ch, level):
+    """The NT's clause packages: one block per line of the Greek NT clause layout (orig/grc-gntl, greek-nt-clause-layout,
+    CC BY 4.0), the words of the project's own Greek text (BGB for nt_basis critical, RP otherwise) in its order, each
+    with the tagged number of its MACULA Greek word (orig/grc.sqlite: `map`, and `n`, which is full_align.numbering's).
+    A word of the project's text with no MACULA word has no number (`*`): rendered, left untagged. A MACULA word the
+    project's text lacks isn't shown, and split doesn't ask for it (full_align.absent)."""
+    import json
+    from project import sources
+    p = project(pname)
+    lean = level == "known"
+    gdb = os.path.join(ROOT, "orig", "grc.sqlite")
+    if not os.path.exists(gdb):
+        raise SystemExit("no orig/grc.sqlite: python3 scripts/setup.py --only src (the prepared structures; seconds)")
+    kf = os.path.join(ROOT, "orig", "grc-gntl-keys", f"{code}{ch:03d}.json")
+    if not os.path.exists(kf):
+        raise SystemExit(f"no {os.path.relpath(kf, ROOT)}: python3 scripts/setup.py --only gntl (the Greek NT clause layout)")
+    orig_dir = sources(p, code)[0]
+    ed = "bgb" if orig_dir == "orig/grc" else "rp"
+    con = sqlite3.connect(gdb)
+    con.row_factory = sqlite3.Row
+    book = code.upper()
+    toks = con.execute("select * from tokens where book=? and ch=? order by key", (book, ch)).fetchall()
+    by_key = {t["key"]: t for t in toks}
+    segs = json.load(open(kf, encoding="utf-8"))
+    indent = [l.split(" ", 1)[0].split(":")[1] for l in open(os.path.join(ROOT, "orig", "grc-gntl", f"{code}{ch:03d}.txt"),
+                                                            encoding="utf-8").read().splitlines()[1:]]
+    seg_of = {k: i for i, s in enumerate(segs) for k in s["words"]}
+    # the project's text, word by word, with its MACULA keys
+    text = {}
+    for l in open(os.path.join(ROOT, orig_dir, f"{code}{ch:03d}.txt"), encoding="utf-8").read().splitlines()[1:]:
+        m = re.match(r"(\d+):(\d+)\s+(.*)", l)
+        if m and int(m[1]) == ch:
+            text[int(m[2])] = re.findall(r"[^\W\d_]+", m[3])
+    keyed = collections.defaultdict(dict)
+    for v, pos, key in con.execute("select v, pos, key from map where edition=? and book=? and ch=?", (ed, book, ch)):
+        keyed[v][pos] = key
+    # each word to a clause line: its MACULA word's, else (no number) the line of the word before it (or after it)
+    lines = collections.defaultdict(list)          # segment index -> [(verse, position, word, key or None)]
+    for v, words in sorted(text.items()):
+        at = [seg_of.get(keyed[v].get(i)) for i in range(len(words))]
+        for i, w in enumerate(words):
+            s = at[i]
+            if s is None:
+                s = next((x for x in reversed(at[:i]) if x is not None), None)
+                s = s if s is not None else next((x for x in at[i + 1:] if x is not None), None)
+            if s is None:
+                s = next((j for j, sg in enumerate(segs) if sg["verse"] == v), 0)
+            lines[s].append((v, i, w, keyed[v].get(i)))
+    fwords = set()
+    for v in text:
+        fwords |= {k for n, c, o, parts in FULL.numbering(book, f"{book} {ch}:{v}") if c == "f" for k in parts}
+    mem, _ = memory(pname, con, (code, ch), "select lemma, null from tokens where key=?")
+    terms = store_terms(pname, "G")
+    rend = nt_renderings(pname, book, sorted({t["strong"] for t in toks if t["strong"] and t["key"] not in fwords})) \
+        if level == "unknown" else {}
+    SP = LT.Project(pname).spelled if rend else (lambda w: w)
+    speech = speech_nt(book)
+    pwho, plegend, _, _ = participant_ids(code, ch, toks, seg_of, "grc")
+    bsb_cache = {}
+
+    def bsb_tokens(v):
+        f = os.path.join(ROOT, "reference", "BSB", f"{code}{ch:03d}.txt")
+        if f not in bsb_cache:
+            bsb_cache[f] = LT.verses_of(f)
+        return FULL.tokenize(bsb_cache[f].get((ch, v), ""))
+
+    def who(key, cur_v):
+        t = by_key.get(key) or con.execute("select * from tokens where key=?", (key,)).fetchone()
+        if not t:
+            return None
+        here = t["ch"] == ch and t["n"] is not None
+        return f"{(t['gloss'] or t['lemma'] or '').replace(' ', '_')}{('(' + str(t['n']) + ('' if t['v'] == cur_v else ' v' + str(t['v'])) + ')') if here else ''}"
+
+    name = {"bgb": "BGB", "rp": "Robinson-Pierpont"}[ed]
+    out = [f"# {book} {ch}: clause packages (greek-nt-clause-layout, the {name} text, level {level}). Write your words with "
+           "these numbers: word^n.",
+           ("# Per line: §verse.line L(level) rule [speech] / tokens: n Greek (function words with a gloss) / had: this "
+            "project's renderings (count) and the store's decisions" if lean else
+            "# Per line: §verse.line L(level) rule [speech] / tokens: n Greek gloss [morphology for verbs; ref=referent] / BSB "
+            "words^n / had: this project's renderings (count), store decisions, NT: the style edition's words for it in "
+            "the other NT books"),
+           f"# `* word`: a word of the {name} text that MACULA Greek (the numbers' text) lacks: it has no number; render it "
+           "and leave it untagged. MACULA words your text lacks are not shown and need no decision.", ""]
+    if plegend:
+        out[2:2] = ["# Who: `who: 3s 7=X(p2)` = token 3's implied subject (s) and token 7 refer to participant p2 (a pronoun,"
+                    " a verb's subject). participants.py; names STEPBible TIPNR, CC BY 4.0. " + plegend]
+    if speech:
+        out[2:2] = ["# Speech: [speech: X] the line is (in) a quotation by X (the Greek words that name the speaker). From the"
+                    " Greek NT Clause Layout (bcv-commons, CC BY 4.0; with Clear Bible's MACULA Quotation and Speaker Data, CC BY 4.0)."]
+    seen_v, k = None, 0
+    for s in sorted(lines, key=lambda s: (min(v for v, *_ in lines[s]), s)):
+        group = sorted(lines[s], key=lambda x: (x[0], x[1]))
+        v = group[0][0]
+        if v != seen_v:
+            out.append(f"v{v}")
+            seen_v, k = v, 0
+        k += 1
+        rule, spk = speech.get(segs[s]["first"], ("", None))
+        out.append(f"§{v}.{k} L{indent[s] if s < len(indent) else ''} {rule or ''}".rstrip() + (f"  [speech: {spk}]" if spk else ""))
+        cells, gt = [], []
+        for vv, i, w, key in group:
+            t = by_key.get(key) if key else None
+            if t is None:
+                cells.append(f"* {w}")
+                continue
+            gt.append(t)
+            gl = (t["gloss"] or "").replace(" ", "_")
+            if lean:   # as on the OT: the number and the word; a function word also its gloss
+                cells.append(f"{t['n']} {w}" + (f" {gl}" if gl and key in fwords else ""))
+                continue
+            extra = [t["morph"]] if t["class"] == "verb" and t["morph"] else []
+            refs = [r[0] for r in con.execute("select target from refs where key=? and kind in ('referent','subjref')", (key,))]
+            names = [x for x in (who(r, vv) for r in refs[:2]) if x]
+            if names and t["class"] in ("pron", "verb"):
+                extra.append("ref=" + "+".join(names))
+            cells.append(f"{t['n']} {w} {gl}" + (f" [{'; '.join(extra)}]" if extra else ""))
+        out.append("  " + " · ".join(cells))
+        wh = collections.OrderedDict()
+        for t in gt:
+            for n, nm in pwho.get(t["key"], []):
+                wh.setdefault(nm, []).append(n)
+        if wh:
+            out.append("  who: " + " · ".join(" ".join(dict.fromkeys(ns)) + "=" + nm for nm, ns in wh.items()))
+        pos = collections.defaultdict(set)
+        for t in gt:
+            b = con.execute("select positions from bsb where key=?", (t["key"],)).fetchone()
+            for x in (b[0].split() if b and b[0] else []):
+                pos[(t["v"], int(x))].add(t["n"])
+        if pos and not lean:
+            words, last = [], None
+            for (bv, i) in sorted(pos):
+                bt = bsb_tokens(bv)
+                if i >= len(bt):
+                    continue
+                if last is not None and (bv, i) != (last[0], last[1] + 1):
+                    words.append("…")
+                words.append(bt[i] + "^" + ",".join(map(str, sorted(pos[(bv, i)]))))
+                last = (bv, i)
+            out.append("  BSB: " + " ".join(words))
+        had = []
+        for t in gt:
+            if t["key"] in fwords or not t["lemma"]:
+                continue
+            bits = []
+            if t["strong"] and t["strong"].zfill(4) in terms:
+                bits.append(f"store={terms[t['strong'].zfill(4)]}")
+            if mem.get(t["lemma"]):
+                tot = sum(mem[t["lemma"]].values())
+                bits += [f"{w}×{c}" for w, c in mem[t["lemma"]].most_common(2) if c >= 2 and c / tot >= 0.2]
+            if rend.get(t["strong"]):
+                bits.append("NT:" + "/".join(f"{SP(w)}×{c}" for w, c in rend[t["strong"]]))
             if bits:
                 had.append(f"{t['n']}:" + " ".join(bits))
         if had:

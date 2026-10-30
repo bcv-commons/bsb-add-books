@@ -11,7 +11,7 @@ draft for a team), and useful on any draft.
   Markers need precision >= 0.6 (--strict: 0.7, which flags more verses, and more of the human translation's too); how
   much of the corpus's negated verses they cover is printed first. A human translation gets some flags as well: a flag
   asks for a look, it is not an error.
-  A draft with a .align beside it (OT, scripts/full_align.py) also counts the original's negations its alignment links
+  A draft with a .align beside it (scripts/full_align.py) also counts the original's negations its alignment links
   to a draft word, so a marker the corpus can't learn because it is also a common other word (Hebrew אל "do not", also
   "to") is no false "missing" flag; a negation the draft leaves unlinked is counted by the markers alone.
 - English: word forms the corpus doesn't have but the assisting English does ("seven", "mules"): text the model copied
@@ -53,15 +53,17 @@ def source_negations(code, ch):
 
 
 def aligned_negations(path):
-    """{verse: number of the original's negations linked to a draft word} from the .align beside an OT draft; {} if none."""
+    """{verse: number of the original's negations linked to a draft word} from the .align beside a draft; {} if none."""
     import full_align as FA
     b = os.path.basename(path)
     code, ch = b[:3], int(b[3:6])
     al = path[:-4] + ".align"
-    if BY_CODE[code][2] != "ot" or not os.path.exists(al):
+    if not os.path.exists(al):
         return {}
-    con = sqlite3.connect(os.path.join(ROOT, "orig", "heb.sqlite"))
-    neg = {k for (k,) in con.execute("select key from tokens where book=? and ch=? and morph like 'Tn%'", (code.upper(), ch))}
+    nt = BY_CODE[code][2] == "nt"
+    con = sqlite3.connect(os.path.join(ROOT, "orig", "grc.sqlite" if nt else "heb.sqlite"))
+    neg = {k for (k,) in con.execute("select key from tokens where book=? and ch=? and " +
+                                     ("(ln like '69.2%' or ln like '69.3%')" if nt else "morph like 'Tn%'"), (code.upper(), ch))}
     out = collections.Counter()
     for v, (main, fn, _) in FA.read_chapter(al)[1].items():
         for links, kind in ((main, "keys"), (fn, "fn_keys")):           # content and function tokens (אל is one)

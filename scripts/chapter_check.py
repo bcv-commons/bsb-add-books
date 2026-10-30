@@ -3,7 +3,7 @@ The drafting agent runs it after each chapter and fixes what it finds before the
 
 To fix (the command fails while any is left):
   - format and verses: scripts/check_draft.py (--spell where the project's mode sets the spell check)
-  - alignment (OT, a .align beside the draft): scripts/full_align.py check
+  - alignment (a .align beside the draft, OT and NT): scripts/full_align.py check
   - quotations in the chapter's notes and footnotes: scripts/quotes.py
   - verb marking, in a binding project (`pack_grammar`, scripts/modes.py: by default for an unknown language with
     clearly marked cells): a verb of a cell the human OT clearly marks whose tagged words lack the pattern, unless the
@@ -21,7 +21,7 @@ To review (reported, not failed; each kept one explained in the chapter's notes)
   - alternations (store entries with an `alternation` block): a draft word written with marks whose cues in the NT
     (the word before or after, the Greek lemma; in the OT the LXX word of the Hebrew it renders) point only to another
     form, scripts/alternations.py (review)
-  - names against the book so far (OT, from the .align files): a name of the original rendered in this chapter
+  - names against the book so far (from the .align files, OT and NT): a name of the original rendered in this chapter
     otherwise than in the earlier chapters of the book (their most frequent rendering, seen at least twice)
 
 Usage: python3 scripts/chapter_check.py <project> <code> <chapter>
@@ -44,9 +44,14 @@ def run(*args):
 def names(pname, code, upto):
     """{lexeme: {chapter: Counter(rendering)}} of the original's proper names, from the .align files of chapters <= upto"""
     import full_align as FA
-    con = sqlite3.connect(os.path.join(ROOT, "orig", "heb.sqlite"))
-    proper = {k: lx for k, lx in con.execute("select key, lexeme from tokens where book = ? and type = 'proper'",
-                                             (code.upper(),))}
+    if BY_CODE[code][2] == "nt":
+        con = sqlite3.connect(os.path.join(ROOT, "orig", "grc.sqlite"))
+        proper = {k: lx for k, lx in con.execute("select key, lemma from tokens where book = ? and type = 'proper'",
+                                                 (code.upper(),))}
+    else:
+        con = sqlite3.connect(os.path.join(ROOT, "orig", "heb.sqlite"))
+        proper = {k: lx for k, lx in con.execute("select key, lexeme from tokens where book = ? and type = 'proper'",
+                                                 (code.upper(),))}
     out = collections.defaultdict(lambda: collections.defaultdict(collections.Counter))
     for c, ch, txt, al in FA.chapters(pname, code):
         if ch > upto or not os.path.exists(al):
@@ -106,7 +111,7 @@ def main(a):
     rc, out = run("scripts/check_draft.py", pname, code, "--chapter", str(ch), *(["--spell"] if m["spell_check"] else []))
     if rc or not re.search(r"\b0 with problems", out):
         fix += [f"check_draft: {l}" for l in out.splitlines() if l.strip() and "chapters checked" not in l]
-    if BY_CODE[code][2] == "ot" and os.path.exists(os.path.join(d, f"{code}{nnn}.align")):
+    if os.path.exists(os.path.join(d, f"{code}{nnn}.align")):
         rc, out = run("scripts/full_align.py", "check", pname, code, str(ch))
         if rc or not out.rstrip().endswith("ok"):
             fix += [f"alignment: {l}" for l in out.splitlines() if l.strip()]
@@ -121,8 +126,8 @@ def main(a):
     if (p.get("language") or "").split("-")[0] in ("he", "heb") and BY_CODE[code][2] == "ot":
         rc, out = run("scripts/heb_copy.py", pname, code, str(ch))
         review += [f"copy: {l}" for l in out.splitlines() if l.startswith(f"{code}{nnn}") and " 0 verses" not in l]
+    review += name_flags(pname, code, ch)
     if BY_CODE[code][2] == "ot":
-        review += name_flags(pname, code, ch)
         import cell_check
         fix += cell_check.binding_fix(pname, code, ch)
         review += cell_check.book_review(pname, code, ch)

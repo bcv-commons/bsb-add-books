@@ -430,6 +430,24 @@ def numbering(book, ref):
     return [(n, c, o, parts) for n, (_, c, o, parts) in enumerate(sorted(toks))]
 
 
+@functools.lru_cache(maxsize=None)
+def absent(pname, code, ch):
+    """{verse: {token number}} of an NT chapter's MACULA Greek words that the project's own Greek text (BGB, or RP for
+    nt_basis majority/tr) lacks (orig/grc.sqlite's map): they are in the numbering but not in what the agent translates,
+    so split doesn't ask for them; they stay undecided in the .align. {} for the OT."""
+    import sqlite3
+    from project import project, sources
+    if BY_CODE[code][2] != "nt":
+        return {}
+    ed = "bgb" if sources(project(pname), code)[0] == "orig/grc" else "rp"
+    con = sqlite3.connect(os.path.join(ROOT, "orig", "grc.sqlite"))
+    out = {}
+    for v, n in con.execute("select t.v, t.n from tokens t where t.book=? and t.ch=? and t.n is not null and not exists "
+                            "(select 1 from map m where m.edition=? and m.key=t.key)", (code.upper(), ch, ed)):
+        out.setdefault(v, set()).add(n)
+    return out
+
+
 def word_groups(text, toks):
     """The written words of a file: runs of tokens of one verse with no whitespace between them ("man’s" = man + s,
     "daughters-in-law" = three tokens). -> {(verse, start): [(verse, start) of every token of its word, in order]}"""
@@ -662,7 +680,8 @@ def split(pname, code, ch, profile="b", write=True, tagged=None):
             parts["f"].append("+" + ",".join(f"{pos}{owner(n)}" for pos, n in sorted(A, key=lambda x: x[0])))
         rows.append((v, " ".join(parts["c"]), " ".join(parts["f"]), profile if (L or A or D) else "a"))
         decided = {n for n, co in num(v).items() if co in L} | {n for n, _ in D}   # an added word naming n decides nothing
-        miss = [n if c == "c" else f"{n}f" for n, c, o, _ in numbering(book, f"{book} {ch}:{v}") if n not in decided]
+        gone = absent(pname, code, ch).get(v, set())     # NT: words the project's Greek text lacks
+        miss = [n if c == "c" else f"{n}f" for n, c, o, _ in numbering(book, f"{book} {ch}:{v}") if n not in decided | gone]
         if miss:
             untagged[v] = miss
     if write and not problems:
@@ -760,6 +779,22 @@ TAGGED_SOURCE = """
   under `had:` what this project wrote before for those words (and the store's decisions, and for an unknown
   language the NT's words for them). Read each block as you translate its clause."""
 
+TAGGED_SOURCE_LEAN_NT = """
+- `{pdir}/_learn/packs/{code}{nnn}.pkg.md`: the **clause packages**, one block per Greek clause line (the Greek NT
+  clause layout), with the words of `{orig}` in its order: each with its number (`13 καὶ and · 14 πιστοῖς`; function
+  words with a gloss), and under `had:` what this project wrote before for those words and the store's decisions. The
+  numbers are what you tag your words with. A word marked `*` (`* Ἰησοῦς`) has no number (the numbers count MACULA
+  Greek, which lacks it here): translate it and leave it untagged."""
+
+TAGGED_SOURCE_NT = """
+- `{pdir}/_learn/packs/{code}{nnn}.pkg.md`: the **clause packages**, one block per Greek clause line (the Greek NT
+  clause layout), with the words of `{orig}` in its order: each with its number (`0 Ἔρχεται Comes [V-PNI-3S] · 1 γυνὴ
+  a_woman`), gloss, verb form and the referent of pronouns and verbs (`ref=Jesus(8)`); who speaks (`[speech: Ἰησοῦς]`);
+  the BSB words that render the words (`woman^1`); and under `had:` what this project wrote before for those words (and
+  the store's decisions, and for an unknown language how the style edition renders them in the other NT books). Read
+  each block as you translate its clause. A word marked `*` (`* Ἰησοῦς`) has no number (the numbers count MACULA Greek,
+  which lacks it here): translate it and leave it untagged."""
+
 TAGGED_WRITE = """
 - **Write the draft tagged:** write it to `{pdir}/{code}/{code}{nnn}.tagged`, in the draft's usual layout,
   with the package's token numbers right after the letters of each word that renders Hebrew tokens:
@@ -788,7 +823,10 @@ def tagged_fields(pname, code, ch, orig):
     f = dict(project=pname, pdir=project_rel(pname), code=code, nnn=nnn, chapter=ch, orig=orig)
     from project import project
     lean = (project(pname).get("familiarity") or "known") == "known"
-    return {"package_line": (TAGGED_SOURCE_LEAN if lean else TAGGED_SOURCE).format(**f), "tagged_first": TAGGED_WRITE.format(**f),
+    nt = BY_CODE[code][2] == "nt"
+    src = (TAGGED_SOURCE_LEAN_NT if lean else TAGGED_SOURCE_NT) if nt else (TAGGED_SOURCE_LEAN if lean else TAGGED_SOURCE)
+    tw = greek(TAGGED_WRITE) if nt else TAGGED_WRITE
+    return {"package_line": src.format(**f), "tagged_first": tw.format(**f),
             "tagged_split": TAGGED_SPLIT.format(**f), "draft_ext": "tagged", "align_step": ""}
 
 
@@ -802,6 +840,11 @@ def greek(s):
     for a, b in (("(`cN` content, `fN`\n  function words: prefixes, article, object marker, suffixes)",
                   "(`cN` content, `fN`\n  function words: article, prepositions, conjunctions, particles, pronouns)"),
                  ("(»and« with\n    וַ, »in« with בְּ, a pronoun with its suffix)", "(»and« with\n    καί, »in« with ἐν, »the« with the article)"),
+                 ("(the narrative וַ where the language has no \"and\", the object marker\n    אֵת, a suffix the language leaves out)",
+                  "(καί or δέ where the language has no \"and\", an article the\n    language doesn't write, a particle such as γάρ or οὖν it leaves out)"),
+                 ("(an object marker before\n    the object, an article before its noun", "(a preposition before\n    its noun, an article before its noun"),
+                 ("the package's token numbers", "the package's numbers"),
+                 ("(a subject the Hebrew\n    verb implies: `Naomi^+13`)", "(a subject the Greek\n    verb implies: `Jesus^+5`)"),
                  ("Hebrew", "Greek")):
         s = s.replace(a, b)
     return s

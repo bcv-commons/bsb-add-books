@@ -4,6 +4,41 @@ Draft new Bible translations chapter by chapter, **directly from the Hebrew and 
 **MSB** for a majority-text NT) is the only assisting translation. Existing translations in the target language
 serve as **style** models. `docs/workflow.md` describes the way of working.
 
+## Why "Tanakh"
+
+**Tanakh** (תנ״ך) is the Jewish name for the Hebrew Bible. The word is an acronym of its three sections: **T**orah,
+**N**evi'im and **K**etuvim.
+
+- **Torah** ("instruction", "teaching") is the five books of Moses: Genesis, Exodus, Leviticus, Numbers and
+  Deuteronomy.
+- **Nevi'im** ("Prophets") has two parts. The *Former Prophets* tell Israel's history in the land: Joshua, Judges,
+  Samuel and Kings. The *Latter Prophets* are Isaiah, Jeremiah, Ezekiel and the Twelve, the shorter prophets from
+  Hosea to Malachi.
+- **Ketuvim** ("Writings") holds the rest: Psalms, Proverbs and Job; the five scrolls (Song of Songs, Ruth,
+  Lamentations, Ecclesiastes, Esther), read at the festivals; then Daniel, Ezra–Nehemiah and Chronicles.
+
+Counted the Jewish way, these are 24 books. Christian Bibles count the same text as 39 books, because they split
+Samuel, Kings, Chronicles, Ezra–Nehemiah and the Twelve. This repository follows the Tanakh's order by default,
+from Genesis to Chronicles (a project can choose another order: `book_order`, `docs/configuration.md`).
+
+**A text kept with great care.** For more than two thousand years, Jewish scribes copied these books by hand under
+strict rules. A Torah scroll was written letter by letter from a correct copy, and a scroll with errors was not
+used. From about the 7th to the 10th century, the **Masoretes** of Tiberias went further. They added vowel points
+and accents to fix how each word is read, and they wrote the *Masorah* in the margins: notes that count words and
+letters and mark unusual forms, so that later copyists could check their work. The Masoretes also marked the end of
+each verse, and our verse numbers still follow their divisions. Their work survives in codices such as the **Aleppo
+Codex** (about 930) and the **Leningrad Codex** (1008), the oldest complete Hebrew Bible. The Dead Sea Scrolls,
+copied a thousand years earlier, show how faithfully the text was handed down through exile, dispersion and
+persecution.
+
+This repository drafts from that text. The Hebrew it works with is the Leningrad Codex, in the Westminster
+Leningrad Codex (WLC) and the ETCBC's BHSA, and our drafts of the Tanakh keep the Hebrew verse numbering (`docs/sources.md`).
+
+**The foundation of the whole Bible.** The Tanakh is also the foundation of the other books of the Christian
+Bible. The Gospels and the Apostolic Writings quote it throughout and build on it. Yeshua himself speaks of "the
+Law of Moses, the Prophets and the Psalms" (Luke 24:44), the Tanakh's three sections. The toolkit drafts these
+writings as well, from the Greek.
+
 ## Start here: a new language
 
 ```
@@ -53,7 +88,7 @@ reference/      the assisting translations                                      
   BSB/          Berean Standard Bible, whole Bible           gen001.txt … rev022.txt
   MSB/          Majority Standard Bible, NT only             mat001.txt … rev022.txt
 orig/                                                                                  *
-  heb/          Hebrew/Aramaic OT (Hebrew verse numbering)   gen001.txt …
+  heb/          Hebrew/Aramaic Tanakh (Hebrew verse numbers) gen001.txt …
   grc/          Berean Greek Bible (BGB), the BSB's Greek    mat001.txt … (+ _notes.txt)
   grc-rp/       Robinson-Pierpont 2018, the MSB's Greek      mat001.txt … (+ _notes.txt)
   vrs/          Hebrew -> BSB verse numbering maps
@@ -87,7 +122,7 @@ for the second-draft model's Greek source (`import/CC0/ell/vamvas/`).
 In [Claude Code](https://claude.com/claude-code), `CLAUDE.md` gives the rules and four skills guide the main tasks:
 `import-edition`, `new-project`, `learn-language` (a language the model doesn't know) and `draft-chapter`.
 
-1. **Sources** (about a minute): `python3 scripts/setup.py`. For the OT add the Hebrew clause layouts:
+1. **Sources** (about a minute): `python3 scripts/setup.py`. For the Tanakh add the Hebrew clause layouts:
    `--heb bhsa,bcv-query`. BHSA (the default drafting layout) needs `text-fabric` and is for non-commercial use only.
    For an open setup use `--heb bcv-query --drafting bcv-query`.
 2. **Editions:** `python3 scripts/setup.py --only editions` fetches every edition with a `fetch:` recipe;
