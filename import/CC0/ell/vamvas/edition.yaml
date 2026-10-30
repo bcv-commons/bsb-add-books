@@ -8,7 +8,7 @@ role: source                     # a source for the second-draft model (scripts/
 nllb_code: ell_Grek              # its NLLB language code
 text_dir: text
 format: >-
-  one book file per book, text/<code>.txt, lines 'chapter:verse<TAB>text'; the OT in the Hebrew verse numbering
+  one book file per book, text/<code>.txt, lines 'chapter:verse<TAB>text'; the Tanakh in the Hebrew verse numbering
   (renumbered from the module's KJV versification by orig/vrs), the NT in its own (KJV) numbering; monotonic
   accents, katharevousa; psalm superscriptions inside verse 1
 

@@ -10,7 +10,7 @@ The path and its reasons: `docs/onboarding.md`; the store's format: `docs/langua
 worked example.
 
 1. **Ask first:** which edition is the corpus, its licence (the import folder, and whether lexicons, packs and wiki
-   can be published), whether it has OT books; whether a book with a human translation is **held out** as a test
+   can be published), whether it has Tanakh books; whether a book with a human translation is **held out** as a test
    (`python3 scripts/quarantine.py <project> <code>`, out of the corpus until the tests are done); who reviews the
    drafts (the language team), and their school language.
 2. **Import and set up:** `python3 scripts/onboard.py` (or the `import-edition` and `new-project` skills) with
@@ -23,7 +23,7 @@ worked example.
    `orig/grc.sqlite` (`python3 scripts/setup.py --only src`): `python3 scripts/lang.py build <project>` (the NT
    occurrence index; `lang.py hbo <project> <lexeme>` shows how the NT renders a Hebrew word through the LXX) and
    `lang.py derive <project>` + `report <project>`: word order, function words, connectors, affix hypotheses, name
-   letters, formulas, OT gaps.
+   letters, formulas, Tanakh gaps.
 4. **Build the store and the wiki:** `python3 scripts/memory_prompt.py <project> --init` creates them empty and prints
    the prompt for a fresh agent, which starts from the derived report and confirms or rejects each item against the
    corpus. A first test chapter's grammar sketch can seed the wiki (`python3 scripts/wiki.py init <project>
@@ -48,7 +48,7 @@ worked example.
      gaps filled by word links); `morphs.py try` and `rates` before and after show what it changed. Words an affix
      only seems to begin or end (a noun beginning like a verb prefix): `morphs.py <project> audit` and the
      `audit-store` skill (protected words, kind `word`). Parts written with a hyphen (a person part in *x-stem*, a clitic
-     after a noun): `written: hyphen` on the morph (`docs/language-store.md`); with OT books, `audit --route all`.
+     after a noun): `written: hyphen` on the morph (`docs/language-store.md`); with Tanakh books, `audit --route all`.
    - **The family brief first** (before the store work): a fresh research agent, effort high, with
      `python3 scripts/seeds.py brief <project>` reads the grammars of the language, its relatives and the family and
      writes the brief (`docs/language-store.md`, *The brief*: `profile/brief.md`, or `_eval/local/brief.md` when a

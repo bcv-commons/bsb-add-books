@@ -1193,7 +1193,7 @@ def combine(rs, A=AUDIT):
             return v, (f"the NT and {', '.join(NAMES_OF[k] for k in held if k != 'nt')} hold"
                        + (" (the Hebrew on the weak reading: tense from the conjugation)" if weak else ""))
         if held == ["nt"]:
-            return base, "the OT routes are thin, flat or can't test the claim"
+            return base, "the Tanakh routes are thin, flat or can't test the claim"
         return "ot-only", f"{', '.join(NAMES_OF[k] for k in held)} hold(s), the NT is thin: kept, noted"
     if held == ["nt"]:
         return "nt-only", (f"only the NT holds; {', '.join(NAMES_OF[k] for k in failed)} fail(s): possibly the Greek "
@@ -1211,7 +1211,7 @@ def combine(rs, A=AUDIT):
 
 
 HYPHEN_WORD = re.compile(r"[^\W_](?:[\w\u0300-\u036f\u1dc0-\u1dff\ua789]|-(?=\w))*")
-NAMES_OF = {"nt": "NT (Greek)", "hebrew": "OT Hebrew", "lxx": "OT LXX", "vamvas": "OT Vamvas", "agree": "agreement"}
+NAMES_OF = {"nt": "NT (Greek)", "hebrew": "Tanakh Hebrew", "lxx": "Tanakh LXX", "vamvas": "Tanakh Vamvas", "agree": "agreement"}
 
 
 def combine_agree(rs, A=AUDIT):
@@ -1801,7 +1801,7 @@ def main(a):
                         "parsed" if r != "hebrew" else "") + (f"; skipped: {c['why']}" if c.get("skipped") else "") + ")"
                     for b, (_, c) in sorted(by.items())))
             if rep and not any(rep.values()):
-                print(f"{a[0]}: no OT books in the corpus linked to the Hebrew (_learn/links_hbo.tsv): the OT routes are "
+                print(f"{a[0]}: no Tanakh books in the corpus linked to the Hebrew (_learn/links_hbo.tsv): the Tanakh routes are "
                       "empty")
         print_audit(audit(a[0], ids, P, S, G=G, routes=routes))
         return

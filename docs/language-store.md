@@ -74,7 +74,7 @@ Rules:
 ### Glosses
 
 A term, formula or name says what its target form means with a `gloss` in Greek or Hebrew, never in English: the
-bridge between an NT translated from the Greek and the Hebrew OT being drafted.
+bridge between an NT translated from the Greek and the Tanakh being drafted from the Hebrew.
 
 ```json
 "gloss": [
@@ -87,7 +87,7 @@ bridge between an NT translated from the Greek and the Hebrew OT being drafted.
   `orig/grc.sqlite` or `orig/heb.sqlite` writes it (for Hebrew the consonants are enough).
 - Greek from an NT verse (the project's Greek text, BGB or RP, or MACULA's); Hebrew and Aramaic from the WLC (MACULA
   Hebrew), never BHSA: a form with accents is the WLC word as written; one may leave out the accents, or all marks.
-- Order: Hebrew first in a decision about the OT drafts; otherwise the language of the evidence first.
+- Order: Hebrew first in a decision about the Tanakh drafts; otherwise the language of the evidence first.
 - `"proposed": true`: proposed by `scripts/gloss.py propose`, to be checked by an agent or the team.
 - English is for people and generated, never stored: the wiki, `concord.py store` and `gloss.py show` add the BSB
   words aligned to the gloss's form in its verse (the `bsb` tables), labelled *English (generated)*. Notes stay
@@ -151,8 +151,8 @@ and what tells them apart in the NT aligned to the Greek. `scripts/alternations.
 
 A cue is kept when it is stable on even and odd verses, ratio >= 10, >= 10 tokens and p >= 0.8, in 3 books or more
 with none above 60% of its tokens (`books`, `top_book`: not one book's habit or one repeated passage); a `lemma` cue
-counts only a Greek word linked to this target word alone (in the OT: a Hebrew word rendered by one draft word). `chapter_check.py`
-reports a draft word whose cues point only to another form; in the OT the `lemma` cue is the NT lemma of the LXX word
+counts only a Greek word linked to this target word alone (in the Tanakh: a Hebrew word rendered by one draft word). `chapter_check.py`
+reports a draft word whose cues point only to another form; in the Tanakh the `lemma` cue is the NT lemma of the LXX word
 MACULA Hebrew gives for the Hebrew the draft word renders, so it needs the chapter's alignment.
 
 ### Cells
@@ -235,7 +235,7 @@ Top-level fields of `observations.json`. A change makes the tests that depended 
   against every host word without it, and the audit says so (it doesn't confirm on nothing). Thresholds in
   `morphs.AUDIT`. Read-only: the store is changed by the agent (`.claude/skills/audit-store/`), then measured again.
   Ids of superseded entries are measured as if live again (a retired affix checked on new evidence).
-- **The OT routes** (`scripts/ot_routes.py`, for the OT books the style corpus has): the target words linked to a Hebrew
+- **The Tanakh routes** (`scripts/ot_routes.py`, for the Tanakh books the style corpus has): the target words linked to a Hebrew
   token (`_learn/links_hbo.tsv` where the lexeme occurs once in its verse, or `lang.sqlite`'s `ot_links` by position),
   read three ways: **hebrew** (the token itself, `orig/heb.sqlite`: person and number, negation in the clause,
   imperative / jussive / cohortative as `mood=imperative`, infinitive, participle, the clause's object suffix; tense
@@ -246,14 +246,14 @@ Top-level fields of `observations.json`. A change makes the tests that depended 
   a claim a route can't read (subjunctive on the Hebrew; negation or object on the Greek routes) is `n.a.` there. Per
   route: n, shares, odds and a state: holds (odds ≥ 2 on 20 or more links), fails, thin, or flat (the feature on 75% or
   more both with and without it: third singular in narrative, no lift possible). **Combined verdict**: `confirm` (the
-  NT and an OT route hold, none fails), `re-label` (one route holds, another fails: it marks the holding route's
-  category; the audit names that route's strongest value), `nt-only` (only the NT holds and an OT route fails: possibly
-  the Greek leaking through the alignment; flagged, not retired), `ot-only` (only the OT holds: kept, noted), else the
+  NT and a Tanakh route hold, none fails), `re-label` (one route holds, another fails: it marks the holding route's
+  category; the audit names that route's strongest value), `nt-only` (only the NT holds and a Tanakh route fails: possibly
+  the Greek leaking through the alignment; flagged, not retired), `ot-only` (only the Tanakh holds: kept, noted), else the
   NT's verdict (retire when no route holds). `python3 scripts/ot_routes.py <project>` prints the coverage per route and
   book and the Vamvas fingerprint check.
 - **The agreement route** (`--route agree`, or in a list: `nt,agree`; `scripts/agree_route.py`): an affix's `agree`
   claim tested inside the target. The source only finds the pair: each verb's subject (Greek and Hebrew `subjref`,
-  explicit or not; the OT books through their Hebrew links) and object (a Greek accusative third-person αὐτός of a
+  explicit or not; the Tanakh books through their Hebrew links) and object (a Greek accusative third-person αὐτός of a
   one-verb clause, through its referent); the verb and the noun must be linked to different target words. The noun's
   class comes from its noun prefix (`class`), or with `by: gender` from the source noun's gender. A pair counts for
   the claim where the noun's class lies inside the claimed classes, against it where it lies outside; ambiguous ones
@@ -264,7 +264,7 @@ Top-level fields of `observations.json`. A change makes the tests that depended 
   audit's first line says how many affixes claim `agree` and how many noun prefixes have a class, and what is missing.
 - **Protected words** (kind `word`) are never split and are no evidence for another word's split.
 - **The loop**: `rates` lists the features the confirmed affixes mark; one is checked where the human NT marks it on
-  60% or more of 20 or more Greek verbs that have it. `review <code> <ch>` (run by `chapter_check.py`) flags OT verbs
+  60% or more of 20 or more Greek verbs that have it. `review <code> <ch>` (run by `chapter_check.py`) flags Tanakh verbs
   whose draft word lacks the part for the Hebrew verb's person and number, negation, object or mood.
 - `check` rebuilds every corpus token from its parts; `show <word>` shows one.
 

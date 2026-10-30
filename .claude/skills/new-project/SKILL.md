@@ -24,7 +24,7 @@ language) and the **licence class** of the editions.
 3. **Familiarity:** `python3 scripts/probe_language.py <project> run` sends the probes (write, read, tell apart) to
    a fresh model with no tools and suggests a value; set `familiarity` (and `close_to` for a variety). Then
    `python3 scripts/project.py <project> <code>` (resolved sources) and `python3 scripts/modes.py <project>` (the mode
-   and what it switches on). The sources must exist (`python3 scripts/setup.py`, `--heb ...` for the OT).
+   and what it switches on). The sources must exist (`python3 scripts/setup.py`, `--heb ...` for the Tanakh).
 4. **`style_guide.md`**, short, with the user: divine names, quotes, numbers, poetry, names, a table of fixed
    renderings; take what you can from the corpus, with counts, and mark what the user must decide.
 5. **The memory** (`docs/onboarding.md`, step 4): `python3 scripts/align.py <project>`, then

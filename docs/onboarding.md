@@ -117,10 +117,10 @@ The thresholds are provisional; read the answers too. `python3 scripts/modes.py 
 | Language memory (store `profile/` + `wiki/`) | the project's decisions: terms, names, style | + the variety's grammar and forms | + a term base and the gaps |
 | Verse pack (`verse_pack.py`) | `memory`: decisions touching each verse | `dialect`: + lexicon renderings, corpus phrases | `full`: + similar verses, open searches |
 | Rule bundle in the prompt (`docs/prompts/modes.md`) | use and extend the memory | + the variety, not the standard language | + no knowledge assumed; names by the letter rules |
-| Verb marking (`pack_grammar`) | off | off | `binding` once the store has cells the human OT clearly marks: the chapter's verbs of those cells listed in the prompt, checked in the loop |
+| Verb marking (`pack_grammar`) | off | off | `binding` once the store has cells the human translation of the Tanakh clearly marks: the chapter's verbs of those cells listed in the prompt, checked in the loop |
 | Style check (`style.py`) | off | on | on |
 | Spell check against the corpus (`spell_check`) | off | on | on |
-| Held-out test book (`learn-language` skill) | no | optional | yes, if the corpus has an OT book |
+| Held-out test book (`learn-language` skill) | no | optional | yes, if the corpus has a Tanakh book |
 | Second-draft model (`second_draft`) | no | off (still being tested) | offered |
 
 In every mode the team's input page (`wiki/team-input.md`, `scripts/team_input.py`) turns their decisions into
@@ -148,7 +148,7 @@ an Apple GPU with about 32 GB, or a rented GPU.
    divine names.
 4. **Build the memory:**
    - `python3 scripts/align.py <project>`: the lexicons. The English and Greek sides take seconds. The Hebrew side
-     first fetches each OT chapter of the corpus from the scaffold API (cached in `download/scaffold/`): a whole OT
+     first fetches each Tanakh chapter of the corpus from the scaffold API (cached in `download/scaffold/`): a whole Tanakh
      takes 15–20 minutes the first time.
    - `python3 scripts/memory_prompt.py <project> --init`: creates the empty store and wiki and prints the prompt for
      an agent that builds them from the corpus.
@@ -159,7 +159,7 @@ an Apple GPU with about 32 GB, or a rented GPU.
    - `python3 scripts/wiki.py view <project>` gives the team one page to read; they correct it in the wiki.
 5. **Draft:** a reference chapter first, reviewed with the team. Then one book agent per book drafts the chapters
    one after another (`draft-chapter` skill, `make_prompt.py <project> <code> --book`, `chapter_check.py` in its
-   loop). For the OT, `package.py` builds the clause packages; the agent writes the draft tagged (`word^n`) and
+   loop). For the Tanakh, `package.py` builds the clause packages; the agent writes the draft tagged (`word^n`) and
    `full_align.py split` makes the draft and its word alignment.
 6. **Check** after each run: `python3 scripts/check_project.py <project>`. The agents keep to the rules as they
    write; this is the double check.

@@ -581,8 +581,8 @@ def candidates(iso):
                 out.append({"source": "dbt", "id": b["id"], "bible": b["bible"], "title": b["title"], "cls": "non-free",
                             "licence": "DBT: licensed for display; kept local", "books": None,
                             "nt": size in ("NT", "NTP", "C") or None, "ot": size in ("OT", "OTP", "C") or None,
-                            "coverage": {"NT": "New Testament", "NTP": "part of the New Testament", "OT": "Old Testament",
-                                         "OTP": "part of the Old Testament", "C": "whole Bible"}.get(size),
+                            "coverage": {"NT": "New Testament", "NTP": "part of the New Testament", "OT": "Tanakh",
+                                         "OTP": "part of the Tanakh", "C": "whole Bible"}.get(size),
                             "url": "https://www.bible.is/", "language": iso})
         else:
             out.append({"source": "dbt", "id": None, "title": "on the Digital Bible Platform (DBT)", "cls": "non-free",

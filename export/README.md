@@ -26,7 +26,7 @@ To keep that possible:
   `scripts/build_site.py` derives them at build time from the drafts and their `.align` files. Other data built on
   BHSA (sidecars, indexes) never goes here or anywhere public. Drafts made on the BHSA layout are our own text and go
   here as prose.
-- **Word alignments** (`<code>/<code>NNN.align`, next to each OT draft): which draft words render which Hebrew word,
+- **Word alignments** (`<code>/<code>NNN.align`, next to each Tanakh draft): which draft words render which Hebrew word,
   in the bcv-commons compact-alignments format (numbers only, no text; CC0; `scripts/full_align.py`). Made by script
   (`scripts/bridge_align.py`, profile `a`) or by the drafting agent (profile `b`); `full_align.py export` builds the
   Hugging Face layer `<edition>+auto+make-tanakh` from them.

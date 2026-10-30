@@ -193,7 +193,7 @@ def fetch_vamvas_align(force):
     if digest != VAMVAS_SHA256:
         raise SystemExit(f"  {d}: SHA256SUMS digest {digest} is not the pinned {VAMVAS_SHA256}; delete the folder and run "
                          "again (or check what changed)")
-    print(f"  {len(names) - 2} OT files of {VAMVAS_LAYER} at {VAMVAS_COMMIT[:12]} (SHA256SUMS digest {digest[:16]}…)")
+    print(f"  {len(names) - 2} Tanakh files of {VAMVAS_LAYER} at {VAMVAS_COMMIT[:12]} (SHA256SUMS digest {digest[:16]}…)")
 
 
 def unzip_flat(zpath, dest):
@@ -311,7 +311,7 @@ def main():
         for f in ("languages", "values"):
             fetch(f"gl-{f}", force)
     if "vamvas-align" in only:
-        print(f"download/full-alignments-llm/ (the Vamvas alignment {VAMVAS_LAYER}, CC0: the audit's OT Vamvas route)")
+        print(f"download/full-alignments-llm/ (the Vamvas alignment {VAMVAS_LAYER}, CC0: the audit's Tanakh Vamvas route)")
         fetch_vamvas_align(force)
     if "editions" in only:
         print("import/: editions with a fetch recipe")
@@ -349,7 +349,7 @@ def main():
         json.dump(meta, open(info, "w", encoding="utf-8"), indent=1)
         print(f"orig/heb/ = orig/heb-{drafting}/ (the drafting layout)")
     elif not os.path.isdir(heb_dir):
-        print("\nNo orig/heb/ yet. OT drafting needs it: run again with --heb bhsa (and --heb bcv-query for published structure).")
+        print("\nNo orig/heb/ yet. Drafting the Tanakh needs it: run again with --heb bhsa (and --heb bcv-query for published structure).")
     if "src" in only:  # last: the BHSA layout rows need orig/heb-bhsa, the mapping orig/grc and orig/grc-rp
         print(f"orig/heb.sqlite, orig/grc.sqlite (prepared source structures {SRC_V}, published by bcv-query)")
         install_src(force)

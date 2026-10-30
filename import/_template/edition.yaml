@@ -25,7 +25,7 @@ books: [mat, mrk, luk, act, rom, heb]   # BSB codes of the books present (option
 # them from text/ before drafting.
 quarantine: []
 
-# Optional hint added to the prompt, e.g. how this edition marks OT quotes,
+# Optional hint added to the prompt, e.g. how this edition marks quotes from the Tanakh,
 # so agents can take over its wording where it quotes the chapter.
 quote_hint: "Where it quotes the chapter being translated (marked like `(1 Mos 22,18)`), take over its wording."
 

@@ -66,7 +66,7 @@ with `role: revise` must be CC0; `scripts/project.py` refuses any other.
 | `second_draft` | `nllb` or `none`, set by the wizard: whether the project plans a fine-tuned NLLB as a second opinion for review triage (`scripts/triage.py`, from `_eval/local/second/nllb/`); never a draft |
 | `nllb_source` | the second-draft model's source: a source edition (default `vamvas`, modern Greek) or `bsb` (the assisting translation, English); `scripts/nllb/source.py` |
 | `donor` | the relatives of a language the model doesn't know, written by `scripts/donor.py run <project> --write`: `known` (ISO 639-3 of the nearest relative the model writes, by a write probe, or `none`; the seeds' source, `scripts/seeds.py`), `name`, `known_score` (its write probe, chrF by verse), `candidates` ({iso: score} of the probed ones), `structure` (the closest relatives by Glottolog, whatever the model knows), `structure_level`, `nllb_init` (the NLLB language the second-draft model starts from: `nllb/data.py --init-lang`'s default; for a target not in Latin script a relative written in the target's script first, else `script_code.init_for_script`'s choice, the reason added to `why`), `why` |
-| `pack_grammar` | the verb-marking block of the pack (pack v4, needs the store's verb cells). Unset: `binding` for familiarity `unknown` once the store has cells the human OT clearly marks, else off (`modes.py <project>` shows which); `false` turns it off, `true` gives the block alone. `binding` also lists the chapter's verbs of clearly marked cells in the prompt, and `chapter_check.py` reports one lacking the pattern unless the notes have `unmarked <ch>:<v> <cell>: <reason>` (`cell_check.py <project> unmarked \| try …` turns those into store entries); `verse_pack.py --grammar` for one pack |
+| `pack_grammar` | the verb-marking block of the pack (pack v4, needs the store's verb cells). Unset: `binding` for familiarity `unknown` once the store has cells the human translation of the Tanakh clearly marks, else off (`modes.py <project>` shows which); `false` turns it off, `true` gives the block alone. `binding` also lists the chapter's verbs of clearly marked cells in the prompt, and `chapter_check.py` reports one lacking the pattern unless the notes have `unmarked <ch>:<v> <cell>: <reason>` (`cell_check.py <project> unmarked \| try …` turns those into store entries); `verse_pack.py --grammar` for one pack |
 | `rules` | project rules added to every prompt |
 | `book_rules` | lines added to the book agent's prompt only (`make_prompt.py --book`) |
 | `style_notes` | free text for the prompt's style section |
@@ -96,7 +96,7 @@ majority   orig/grc-rp (RP 2018)    reference/MSB
 tr         orig/grc-rp (RP 2018)    reference/MSB
 ```
 
-The OT always uses `orig/heb` + `reference/BSB`. The project's `nt_basis` wins, else the `based_on` edition's, else
+The Tanakh always uses `orig/heb` + `reference/BSB`. The project's `nt_basis` wins, else the `based_on` edition's, else
 `critical`. `tr` maps to RP, the closest text in the repo (`docs/sources.md`). `python3 scripts/project.py <project>`
 shows the resolved setup.
 

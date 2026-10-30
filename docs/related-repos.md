@@ -8,7 +8,7 @@ make-tanakh's copy. The others: `RELATIONS.md` in the work copy and in make-tana
 | Repo | Role | History | Visibility |
 |---|---|---|---|
 | **bcv-commons/make-tanakh** (this repo) | the stable toolkit and template: scripts, formats, docs, skills | its own | public |
-| **make-tanakh-work** (today larsgson/bsb-add-books-work, to be renamed) | data only: projects, drafts, language stores, alignments, the website; a classical template copy | shared with make-tanakh | public |
+| **make-tanakh-work** (larsgson/make-tanakh-work) | data only: projects, drafts, language stores, alignments, the website; a classical template copy | shared with make-tanakh | public |
 | **bcv-commons/make-tanakh-grammar** | the rules-engine lab (how source grammar is rendered in a target language, measured component by component), the language analysis published as bcv-commons/language-analysis, and the place where new tools start | its own | public, screened (no protected texts) |
 
 Any team can make its own work copy the same way (`docs/workflow.md`, *Your work copy*).

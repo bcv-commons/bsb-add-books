@@ -320,7 +320,7 @@ def build(pname, code, ch, level=None):
            ("# Per line: §verse.line L(level) rule [speech] / tokens: n Hebrew (function words with a gloss) / had: this "
             "project's renderings (count) and the store's decisions" if lean else
             "# Per line: §verse.line L(level) rule / tokens: n Hebrew gloss [morph; ref=referent] / BSB words^n /"
-            " had: this project's renderings (count), store decisions, OT: the edition's own OT (the human text; its"
+            " had: this project's renderings (count), store decisions, Tanakh: the edition's own Tanakh (the human text; its"
             " words for this Hebrew word), NT: the NT's words through the LXX (unknown languages)"), ""]
     lines = collections.OrderedDict()
     for t in toks:
@@ -464,7 +464,7 @@ def build(pname, code, ch, level=None):
                 tot = sum(mem[lex].values())
                 bits += [f"{w}×{c}" for w, c in mem[lex].most_common(2) if c >= 2 and c / tot >= 0.2]
             if ot.get(lex):
-                bits.append("OT:" + "/".join(f"{SP(w)}×{c}" for w, c in ot[lex]))
+                bits.append("Tanakh:" + "/".join(f"{SP(w)}×{c}" for w, c in ot[lex]))
             if bridge.get(lex):
                 bits.append("NT:" + "/".join(f"{SP(w)}×{c}" for w, c in bridge[lex]))
             if bits:

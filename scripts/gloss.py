@@ -104,7 +104,7 @@ def check(g):
     if not m or m[1].lower() not in BY_CODE:
         return [f"gloss ref {g['ref']!r}"]
     if (BY_CODE[m[1].lower()][2] == "nt") != (side == "grc"):
-        return [f"gloss {lang} from {g['ref']}: Greek glosses come from the NT, Hebrew and Aramaic from the OT"]
+        return [f"gloss {lang} from {g['ref']}: Greek glosses come from the NT, Hebrew and Aramaic from the Tanakh"]
     form, lemma = nfc(g["form"]).strip(), nfc(g["lemma"]).strip()
     for k, v in (("form", form), ("lemma", re.sub(r" \([IV]+\)$", "", lemma))):   # MACULA's homonym number: δοῦλος (II)
         if not SCRIPT[side].match(v):

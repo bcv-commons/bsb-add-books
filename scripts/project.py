@@ -248,7 +248,7 @@ if __name__ == "__main__":
     print(f"based_on:    {p.get('based_on')}")
     style = [f"{e} ({edition_dir(e)})" for e in p["style_from"]]
     print(f"style_from:  {', '.join(style) or '-'}")
-    print(f"nt_basis:    {p['nt_basis']}  -> NT {BASIS[p['nt_basis']][0]} + {BASIS[p['nt_basis']][1]}; OT orig/heb + reference/BSB")
+    print(f"nt_basis:    {p['nt_basis']}  -> NT {BASIS[p['nt_basis']][0]} + {BASIS[p['nt_basis']][1]}; Tanakh orig/heb + reference/BSB")
     print(f"quarantine:  {', '.join(p['quarantine']) or '-'}")
     for code in sys.argv[2:]:
         print(code, sources(p, code))

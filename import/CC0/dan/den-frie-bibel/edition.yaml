@@ -28,7 +28,7 @@ books: [gen, exo, lev, num, deu, jdg, rut, 2sa, 1ki, 2ki, job, psa, pro, ecc, is
         rev]
 quarantine: []
 
-quote_hint: "It marks direct speech with `>>…<<` and OT quotations with a note like `{H: Es 7,14}`; where it quotes the chapter being translated, take over its wording."
+quote_hint: "It marks direct speech with `>>…<<` and quotations from the Tanakh with a note like `{H: Es 7,14}`; where it quotes the chapter being translated, take over its wording."
 
 # How a clone gets the text, which is not in git (scripts/project.py missing_text)
 get_text: python3 import/CC0/dan/den-frie-bibel/sync_from_upstream.py   # the pinned commit

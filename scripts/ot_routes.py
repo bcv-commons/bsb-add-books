@@ -35,7 +35,7 @@ VAMVAS_DIR = os.path.join(ROOT, "download", "full-alignments-llm", "e", "ell", V
 VAMVAS_TEXT = os.path.join(ROOT, "import", "CC0", "ell", "vamvas", "text")
 FPS = os.path.join(VAMVAS_TEXT, "_fingerprints.json")
 ROUTES = ("nt", "hebrew", "lxx", "vamvas")
-NAMES = {"nt": "NT (Greek)", "hebrew": "OT Hebrew", "lxx": "OT LXX", "vamvas": "OT Vamvas"}
+NAMES = {"nt": "NT (Greek)", "hebrew": "Tanakh Hebrew", "lxx": "Tanakh LXX", "vamvas": "Tanakh Vamvas"}
 
 HEB_NEG = {"לֹא", "לָא", "אַל", "בַּל", "בְּלִי", "אַיִן", "בִּלְתִּי"}
 TENSE_CLASS = {"aorist": "past", "imperfect": "past", "perfect": "past", "pluperfect": "past", "present": "nonpast",
@@ -607,7 +607,7 @@ def main(a):
     ck = vamvas_check()
     print("Vamvas layer (fingerprint of our text in the module's numbering / the layer file's):")
     bad = [b for b, x in sorted(ck.items()) if not x[3]]
-    print(f"  {len(ck) - len(bad)} of {len(ck)} OT books match" + (f"; not: {', '.join(bad)}" if bad else ""))
+    print(f"  {len(ck) - len(bad)} of {len(ck)} Tanakh books match" + (f"; not: {', '.join(bad)}" if bad else ""))
     acc, cov = ending_accuracy()
     print(f"Ending table on the NT's verb form types: parses {cov:.0%}; right: "
           + ", ".join(f"{k} {r / n:.0%} of {n}" for k, (r, n) in acc.items()))

@@ -9,7 +9,7 @@ The way of working is `docs/workflow.md`; this is the procedure.
 
 ## Before the first chapter
 
-1. **Sources:** `reference/BSB/`, `reference/MSB/` and `orig/` must exist, else `python3 scripts/setup.py`; for the OT
+1. **Sources:** `reference/BSB/`, `reference/MSB/` and `orig/` must exist, else `python3 scripts/setup.py`; for the Tanakh
    with `--heb bhsa,bcv-query` (a commercial project drafts with `--drafting bcv-query`: ask the user).
 2. **Project:** `python3 scripts/project.py <project> <code>` shows the original, the assisting translation, the style
    corpus and the quarantine; check anything unexpected with the user (e.g. the wrong `nt_basis`).
@@ -23,7 +23,7 @@ One agent per book drafts its chapters one after another, in every mode.
 1. **The prompt:** `python3 scripts/make_prompt.py <project> <code> --book [<first>-<last>] [--handoff N]`
    (`docs/prompts/book_prompt.md`); without a range it starts at the first chapter not drafted. Per chapter the agent
    builds the materials just in time (`verse_pack.py` and `package.py`), prints the chapter prompt
-   (`make_prompt.py <project> <code> <ch>`; tagged drafting, OT and NT), runs `python3 scripts/chapter_check.py <project>
+   (`make_prompt.py <project> <code> <ch>`; tagged drafting, Tanakh and NT), runs `python3 scripts/chapter_check.py <project>
    <code> <ch>` until nothing is left to fix, and writes the store entries and the state file `<code>/<code>_state.md`.
 2. **Start it as a new agent** (Agent tool, not a fork: a fork has seen other chapters and, for a quarantined book,
    perhaps the existing translation). Give it the prompt unchanged. One book agent at a time per project: its
@@ -35,7 +35,7 @@ One agent per book drafts its chapters one after another, in every mode.
      `python3 scripts/usage.py <project> add <code><nnn> --tokens N --calls N --minutes M`.
 3. **Check its report.** `chapter_check.py` already ran `check_draft.py` (verses, format), the alignment and the
    quotation checks, and the agent filled the notes' Hebrew/Greek from the WLC/BGB (`notes_hebrew.py`; never text
-   from `orig/heb/`). OT drafts keep the Hebrew numbering. A correction goes into the git-ignored
+   from `orig/heb/`). Tanakh drafts keep the Hebrew numbering. A correction goes into the git-ignored
    `<code>NNN.tagged`, then `python3 scripts/full_align.py split <project> <code> <ch>` (`tag` rebuilds a lost one);
    a chapter without an `.align` gets one from `python3 scripts/bridge_align.py <project> <code> <ch>`. After a
    handover or a book, `python3 scripts/check_project.py <project>` is the double check; when it finds something the

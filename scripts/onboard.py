@@ -214,7 +214,7 @@ def coverage(c):
     if c.get("coverage"):
         return c["coverage"]
     if "ot_books" in c:
-        return " + ".join(x for x in ((f"OT {c['ot_books']} books" if c["ot_books"] else ""),
+        return " + ".join(x for x in ((f"Tanakh {c['ot_books']} books" if c["ot_books"] else ""),
                                       (f"NT {c['nt_books']} books" if c["nt_books"] else "")) if x) or "no books"
     if c.get("books"):
         return f"{c['books']} books" + (" (NT)" if c.get("nt") and not c.get("ot") else "")
@@ -315,8 +315,8 @@ def pick_editions(iso, listed, name=None):
         default = [str(found.index(best) + 1)]
         for c in found:
             if c is not best and c.get("ot") and not best.get("ot"):
-                say(f"  note: {c['source']}:{c['id']} has OT books too ({c['books']} books, {c['cls'] or '?'}); the sources often carry"
-                    " the same translation: add it if it is another text, or for its OT books (they are then corpus,"
+                say(f"  note: {c['source']}:{c['id']} has Tanakh books too ({c['books']} books, {c['cls'] or '?'}); the sources often carry"
+                    " the same translation: add it if it is another text, or for its Tanakh books (they are then corpus,"
                     " and drafting them is the case 'an edition already has the book')")
         if len(usable) > 1:
             say("  The sources often carry the same translation: pick one per text.")
@@ -679,7 +679,7 @@ def main():
         ot_missing = [c for c in order(book_order) if BY_CODE[c][2] == "ot" and c not in all_have]
         if all_have:
             say(f"  the editions have {len(all_have)} books: NT {sum(BY_CODE[c][2] == 'nt' for c in all_have)}, "
-                f"OT {sum(BY_CODE[c][2] == 'ot' for c in all_have)} ({' '.join(c for c in order(book_order) if c in all_have and BY_CODE[c][2] == 'ot') or 'none'})")
+                f"Tanakh {sum(BY_CODE[c][2] == 'ot' for c in all_have)} ({' '.join(c for c in order(book_order) if c in all_have and BY_CODE[c][2] == 'ot') or 'none'})")
         say("  The first chapter to draft (more come later, chapter by chapter, in Claude Code):")
         book = str(ask("first_book", "Book (its code: gen, rut, jhn …)", (ot_missing[:1] or ["gen"])[0],
                        check=lambda v: None if str(v).lower() in BY_CODE else "a book code from books.tsv (gen, exo, rut, jhn …)")).lower()
@@ -750,9 +750,9 @@ def main():
             run("scripts/setup.py")
         if need_ot:
             if os.path.isdir(os.path.join(ROOT, "orig", "heb")):
-                say("  - the Hebrew OT and its clause layouts: already here")
+                say("  - the Hebrew Tanakh and its clause layouts: already here")
             else:
-                say("  - the Hebrew OT and its clause layouts")
+                say("  - the Hebrew Tanakh and its clause layouts")
                 try:
                     import text_fabric  # noqa: F401
                     run("scripts/setup.py", "--only", "none", "--heb", "bhsa,bcv-query")
@@ -1199,7 +1199,7 @@ def tools_step(pname, fam):
     m = modes.mode(p)
     f = modes.FEATURES[fam]
     on = lambda x: "on " if x else "off"
-    say(f"  {on(True)}  alignment lexicons (English, Greek; Hebrew where the corpus has OT books)")
+    say(f"  {on(True)}  alignment lexicons (English, Greek; Hebrew where the corpus has Tanakh books)")
     say(f"  {on(True)}  verse pack '{f['pack']}'" + {"memory": ": the decisions that touch each verse",
                                                       "dialect": ": + lexicon renderings and the corpus's phrases",
                                                       "full": ": + similar verses and what still needs a search"}[f["pack"]])

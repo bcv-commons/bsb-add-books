@@ -6,7 +6,7 @@ SHA-256; for the BGB .docx, which has no versioned home, `setup.py` only warns i
 
 ## reference/BSB/ and reference/MSB/
 
-- **What:** Berean Standard Bible (whole Bible); Majority Standard Bible (NT; its OT is the BSB).
+- **What:** Berean Standard Bible (whole Bible); Majority Standard Bible (NT; its Tanakh is the BSB's).
 - **From:** github.com/BSB-publishing/bsb2usfm, release **v5.16**, `BSB_usj.zip` and `MSB_usj.zip`.
 - **Licence:** public domain (CC0) since 2023-04-30 (berean.bible/licensing.htm).
 - **Build:** `setup.py --only bsb,msb` (`convert_usj.py BSB`, `convert_usj.py MSB --nt`).
@@ -32,7 +32,7 @@ SHA-256; for the BGB .docx, which has no versioned home, `setup.py` only warns i
   `<verse> NA: <RP words> > <NA words>`. John 7:53–8:11 is included; Acts 24:6-8's other form is in
   `act024_notes.txt`. Same verses as the MSB, except four the MSB adds from the TR: Lk 17:36; Acts 8:37; 15:34; 24:7.
 
-## orig/heb/: Hebrew and Aramaic OT clause layouts
+## orig/heb/: clause layouts of the Tanakh (Hebrew and Aramaic)
 
 `--heb bhsa,bcv-query` builds the layouts side by side in `orig/heb-<layout>/` and copies the drafting layout
 (BHSA by default; `--drafting LAYOUT`) to `orig/heb/`. All share one format: first line `<code> <chapter>`, then one
@@ -114,7 +114,7 @@ Each edition keeps its own licence and credit (`import/README.md`).
 
 The source edition of the second-draft model, `import/CC0/ell/vamvas/` (Vamvas 1850, modern Greek, public domain), is
 read from CrossWire's SWORD module GreVamvas 1.0.3 (zip SHA-256 pinned) by its own `fetch_vamvas.py` (needs `pip
-install pysword==0.2.8` and `orig/`); its OT is renumbered to the Hebrew verses, psalm titles to the title verses.
+install pysword==0.2.8` and `orig/`); its Tanakh books are renumbered to the Hebrew verses, psalm titles to the title verses.
 
 ## Alignment datasets (bcv-commons, Hugging Face)
 
@@ -127,15 +127,15 @@ names; `--write` sets the best as `lexeme_aligner` in `project.yaml`, and `lang.
 **full-alignments-llm**, layer `ell_GreVamvas+llm+jev-v4` (the Vamvas Bible of 1850 aligned to MACULA Hebrew and Greek,
 proposed by eflomal and other methods, every verse checked by a model, TypeSafe Jev 1.13.0; machine alignments, no
 person has checked them; CC0 1.0, as its dataset card says), at commit
-**49f2972c6201f39ccc90f2a9bcf236a8272362d0** (2026-10-21): `manifest.json`, the layer's `_layer.json` and its 39 OT book
+**49f2972c6201f39ccc90f2a9bcf236a8272362d0** (2026-10-21): `manifest.json`, the layer's `_layer.json` and its 39 Tanakh book
 files with their `.meta.json`; the SHA-256 of the files' `SHA256SUMS` lines is pinned in `setup.py`
 (`5ab99b6f…`). Only on request: `setup.py --only vamvas-align`. It is the audit's Vamvas route (`scripts/ot_routes.py`,
-`morphs.py audit --route vamvas`): the modern Greek word(s) of each OT Hebrew word, read on our copy of the text
+`morphs.py audit --route vamvas`): the modern Greek word(s) of each Hebrew word of the Tanakh, read on our copy of the text
 (`import/CC0/ell/vamvas/`, built by its `fetch_vamvas.py`). The layer's file names carry the fingerprint of the SWORD
 module's text in its own (KJV) numbering; our copy is filed in the Hebrew numbering, so `ot_routes.py` puts it back
 (`english_rows`) before comparing. Where it can't be put back (a Hebrew verse holding two English ones), the check uses
 the module's fingerprint that the fetch recorded in `text/_fingerprints.json`, as long as the book file is still the
-one the fetch wrote (its SHA-256). Measured 2026-10-22: all 39 OT books match. Positions count compact-alignments' tokens in our
+one the fetch wrote (its SHA-256). Measured 2026-10-22: all 39 Tanakh books match. Positions count compact-alignments' tokens in our
 Hebrew-numbered verse (checked on Jonah 2:1 = 1:17).
 
 ## download/grambank/: Grambank feature questions

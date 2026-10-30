@@ -302,7 +302,7 @@ def book_review(pname, code, ch, margin=0.2, min_n=5, min_human=10):
             continue
         vs = [ref.split()[-1] for ref, c, _, _ in misses if c == cell]
         out.append(f"cell {cell[0]} {cell[1]} ({show(VA.store_cell(G, *cell)[0])}): the book's drafts so far mark it in "
-                   f"{k}/{n} verses, the human OT in {hk}/{hn} ({hk / hn:.0%})"
+                   f"{k}/{n} verses, the human Tanakh in {hk}/{hn} ({hk / hn:.0%})"
                    + (f"; here without it: {', '.join(vs)}" if vs else ""))
     return out
 

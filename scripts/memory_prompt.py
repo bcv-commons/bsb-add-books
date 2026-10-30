@@ -50,7 +50,7 @@ where it differs from {close_to}, so that a drafting agent never falls back on t
   counts against the standard form if the corpus has it);
 - the project's decisions from the style guides and review overviews (terms, formulas, name forms, divine
   names, numbers), as `project-decision` entries;
-- `gap` entries for what the corpus has no model for (OT concepts in an NT corpus) and how the drafts solved it.""" + MARKS,
+- `gap` entries for what the corpus has no model for (concepts of the Tanakh in an NT corpus) and how the drafts solved it.""" + MARKS,
     "unknown": """You don't know this language. Build the memory from the corpus alone, as the first study of it: a grammar
 sketch (verbs, pronouns, possession, postpositions, connectors, questions, speech framing, word order),
 orthography and name transliteration (`letter` entries), frequent formulas, a term base for the concepts the
@@ -127,7 +127,7 @@ def main():
             "word, clause-initial connectors, affix hypotheses (word endings or affix tokens against the Greek features "
             "they go with, with lift; also person+number, tense+mood, negation and the object's person), tone and other "
             "marks against the same features and against questions, letter correspondences in names, formulas, and the "
-            "OT words the NT hardly has (through the LXX and the BSB English). "
+            "words of the Tanakh the NT hardly has (through the LXX and the BSB English). "
             "Each line is a hypothesis with counts, not a finding: confirm or reject it against the corpus (look at "
             "examples, find the counter-cases) and write what holds as a store entry, `method: corpus-derived` (statistic confirmed by you) where the "
             "statistic carries it, citing the report's figure. Then look for what statistics can't show.\n"
@@ -146,7 +146,7 @@ def main():
             f"- **The occurrence index:** `python3 scripts/lang.py hbo {pname} <Hebrew Strong's, e.g. H2617>` shows how "
             "the NT renders a Hebrew word through the Septuagint (its Greek equivalents, the target words with counts, "
             f"example verses); `python3 scripts/lang.py grc {pname} <Greek Strong's>` the same for one Greek lemma. Use "
-            "them for the term base: the OT concepts the drafts will need.\n"
+            "them for the term base: the concepts of the Tanakh the drafts will need.\n"
             f"- **The priors** `{project_rel(pname)}/profile/priors.yaml` (if the report ends with them): what the model believed "
             "about the language before the corpus was studied, each item checked against the corpus (confirmed, weak, "
             "not found, ABSENT). Correct the file where the corpus contradicts it (change the item, add `source: corpus` "

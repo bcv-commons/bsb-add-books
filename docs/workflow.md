@@ -29,7 +29,7 @@ git push -u origin main
 - **One assisting translation:** the BSB, or the MSB for a majority-text NT. It guides to the original and is never
   the text translated. Where the original allows more than one reading, follow the BSB's.
 - **Editions are style, not source:** vocabulary, idiom, spelling, checked by frequency counts over the corpus. Where
-  the corpus quotes the chapter (an NT quote of an OT verse), take over its wording.
+  the corpus quotes the chapter (an NT quote of a verse of the Tanakh), take over its wording.
 - **The finished chapters are the style:** same tenses, particles, formulas and name forms; repeated phrases verbatim.
 - **Clean text, separate notes:** translator notes in `_notes.md` (notes language), reader footnotes in
   `_footnotes.txt` (target language, one per line: `vN Keyword: text`).
@@ -53,7 +53,7 @@ One agent per book drafts its chapters in order, in every mode. `python3 scripts
 - builds the verse pack and the clause packages just before drafting, so the last chapter's store entries reach them
   (`make_prompt.py` refuses a pack older than the store); the NT's clause packages are on the Greek NT clause layout,
   with the words of the project's Greek text (BGB, or RP for a majority text);
-- drafts with the chapter prompt (`make_prompt.py <project> <code> <chapter>`), tagged, OT and NT: each word carries the
+- drafts with the chapter prompt (`make_prompt.py <project> <code> <chapter>`), tagged, Tanakh and NT: each word carries the
   numbers of the source words it renders, and `full_align.py split` makes the draft and its word alignment (`.align`);
 - runs `python3 scripts/chapter_check.py <project> <code> <chapter>`: it fixes the format, alignment and quotation
   findings, and reviews the rest (negations, names, …), keeping one only with a line in the notes;

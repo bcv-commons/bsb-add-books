@@ -137,7 +137,7 @@ def prepare(a):
     meta = {"case": case, "mode": mode, "project": pname, "code": code, "ch": ch, "ref": f"{BY_CODE[code][1]} {ch}",
             "lang": opts.get("--lang") or (p.get("language_name") or p.get("language") or "the target language").split(" (")[0],
             "orig": os.path.join(ROOT, od, f"{code}{ch:03d}.txt"), "bsb": os.path.join(ROOT, ad, f"{code}{ch:03d}.txt"),
-            "orig_form": ("the Hebrew in clause lines, \"verse:level text\"; OT verse numbers are the Hebrew ones" if ot
+            "orig_form": ("the Hebrew in clause lines, \"verse:level text\"; the Tanakh's verse numbers are the Hebrew ones" if ot
                           else "the Greek, \"chapter:verse text\""),
             "labels": labels, "sources": {n: os.path.relpath(f, ROOT) for n, f in versions}, "verses": counts,
             "note": opts.get("--note", "")}

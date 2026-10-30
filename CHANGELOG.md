@@ -4,9 +4,27 @@ Tags are `vMAJOR.MINOR.PATCH`. A work copy merges a tag; make-tanakh-grammar pin
 Each entry has a **Format changes** section for the stable formats listed in `docs/related-repos.md`, section 4:
 what changed and how existing files move over. Before 1.0 a breaking format change raises the minor version.
 
+## v0.3.1
+
+**"Tanakh", not "OT", in the prose** (the work copy's request of 2026-10-30). "Old" is often heard as derogatory, so
+the docs, skills, prompt templates, `CLAUDE.md` and the editions' descriptions say "Tanakh" (the books), the
+language ("Hebrew") where the source language is the point, and "Septuagint" or "LXX" for its Greek translation.
+"NT" stays.
+
+- Script output that people and agents read says "Tanakh" too: the chapter and memory prompts, the clause
+  packages' `had:` line (`Tanakh:` for the style edition's own renderings), the audit's route names (`Tanakh Hebrew`,
+  `Tanakh LXX`, `Tanakh Vamvas`), and the reports of `onboard.py`, `setup.py`, `project.py`, `lang.py`,
+  `cell_check.py`, `gloss.py`, `judge.py` and `fetch_edition.py`.
+- Identifiers stay: the testament code `ot` (`books.py`), `ot_routes.py`, `--route ot`, the verdict `ot-only`, and
+  field names. Comments and docstrings are left for later.
+- `docs/related-repos.md`: the work copy is larsgson/make-tanakh-work.
+- The Jamaican demo's wiki and store are its own notes, copied from the work copy: they change there.
+
+**Format changes:** none.
+
 ## v0.3.0
 
-**Tagged drafting for the NT** (the work copy's request of 2026-10-29). An NT chapter is now drafted as an OT one is:
+**Tagged drafting for the NT** (the work copy's request of 2026-10-29). An NT chapter is now drafted as a chapter of the Tanakh is:
 clause packages first, a tagged draft, `full_align.py split` into the draft and its `.align`, the checks in the loop.
 
 - `package.py <project> <code> <ch>` builds NT packages: one block per line of the Greek NT clause layout

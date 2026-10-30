@@ -8,7 +8,7 @@ working; this file adds the rules that hold for any task here.
 ## Start here
 
 1. **Sources first.** `reference/BSB/`, `reference/MSB/`, `orig/` and `download/` are not in git. If they are
-   missing, run `python3 scripts/setup.py` (about a minute). For the OT add the Hebrew clause
+   missing, run `python3 scripts/setup.py` (about a minute). For the Tanakh add the Hebrew clause
    layouts, built side by side in `orig/heb-<layout>/`: `--heb bhsa,bcv-query`. `bhsa` (ETCBC
    BHSA 2021, needs `text-fabric`) is the drafting layout, copied to `orig/heb/`; `bcv-query`
    (CC BY-SA 4.0) is for published clause structure; `macula` is an open, slow alternative. The clause packages need
@@ -32,7 +32,7 @@ working; this file adds the rules that hold for any task here.
 ## Decisions (binding)
 
 - **File names:** BSB book codes everywhere (`gen001.txt`, `jhn003.txt`); `books.tsv` lists
-  them. OT files and drafts keep the **Hebrew verse numbering**; `orig/vrs/` maps it to the
+  them. Tanakh files and drafts keep the **Hebrew verse numbering**; `orig/vrs/` maps it to the
   BSB's.
 - **Greek NT:** `orig/grc` is the Berean Greek Bible (the BSB's Greek), `orig/grc-rp` is
   Robinson-Pierpont 2018 (the MSB's). An edition sets `nt_basis` (`critical | majority |
@@ -123,10 +123,10 @@ python3 scripts/probe_language.py <project> run | write|read|tell [--score F] # 
 python3 scripts/priors.py write|check <project>     # what the model believes about the language (profile/priors.yaml), tested against the corpus
 python3 scripts/usage.py <project> add <code><nnn> --tokens N | summary # tokens per chapter, by familiarity
 python3 scripts/memory_prompt.py <project>           # prompt for an agent that builds the store and wiki, by mode
-python3 scripts/make_prompt.py <project> <code> <ch> [--end-align] # chapter prompt (OT: tagged drafting)
+python3 scripts/make_prompt.py <project> <code> <ch> [--end-align] # chapter prompt (tagged drafting; --end-align: the old way)
 python3 scripts/make_prompt.py <project> <code> --book [a-b] [--handoff N] # the book agent's prompt: chapters in order, handover after N
 python3 scripts/chapter_check.py <project> <code> <ch> # the checks inside the loop: to fix (format, alignment, quotes), to review (negations, names, copy)
-python3 scripts/package.py <project> <code> <ch>   # clause packages for an OT chapter (orig/heb.sqlite, the project's .align, store, NT bridge; who: the participant ids)
+python3 scripts/package.py <project> <code> <ch>   # clause packages for a chapter (Tanakh: orig/heb.sqlite; NT: orig/grc.sqlite and the Greek NT clause layout; the project's .align, store, NT bridge; who: the participant ids)
 python3 scripts/check_draft.py <project> [code] [--spell] # verse/format checks of drafts; spelling against the corpus, marks kept
 python3 scripts/notes_hebrew.py <project> <code> <ch> | --all | show <code> <ch>:<v> # the notes' Hebrew/Greek from the WLC/BGB, with the credit line
 python3 scripts/quarantine.py <project> <code> [--release] # quarantine a book (required for non-free editions)
@@ -169,14 +169,14 @@ python3 scripts/clause_lines.py check <project> [<code> <ch>] | show <project> <
 python3 scripts/bridge_align.py <project> <code> <ch> | --all # word alignment (.align) by script, no model
 python3 scripts/full_align.py listing|prompt <project> <code> <ch> | check <project> [<code> [<ch>]] | export <project> # .align (bcv-commons format): the agent's sheet and prompt, checks, the HF layer
 python3 scripts/full_align.py tag|split <project> <code> <ch> # the tagged interim format (word^n) <-> prose + .align
-python3 scripts/participants.py <code> <ch|a-b> ... [--check] [--mentions] # who is who in a chapter (OT orig/heb.sqlite + speakers, NT orig/grc.sqlite; names from STEPBible TIPNR): build/participants/
+python3 scripts/participants.py <code> <ch|a-b> ... [--check] [--mentions] # who is who in a chapter (Tanakh orig/heb.sqlite + speakers, NT orig/grc.sqlite; names from STEPBible TIPNR): build/participants/
 python3 scripts/src.py build [code ...] | layouts [--layout L] | map | speakers | speaker-layer DIR | show <code> <c>:<v> | bridge <lexeme> | export-open DIR # orig/heb.sqlite, orig/grc.sqlite (MACULA + numbering + BSB tables; local)
 python3 scripts/lang.py build|derive|report <project> | hbo <project> <lexeme> | grc <project> <strong> | layers <project> [--write] # the project's language DB: NT occurrences of any Hebrew word via the LXX; derived grammar statistics; the bcv-commons alignment layers built on our text
 python3 scripts/donor.py tree <iso> | shortlist|run <project> [--write] # a language's relatives: by descent (Glottolog) and the nearest one the model writes (write probes) -> donor:
 python3 scripts/seeds.py prompt|status|check|brief [--check] <project> # a related language's grammar as hypotheses (profile/seeds.json): the seed agent's prompt; what is still untested; the family brief's research prompt and its points' test state
 python3 scripts/alternations.py <project> find | study <form> ... | rules [<form> ...] [--write] # forms differing only in marks (tone, length) and what decides them in the NT (the Greek, the neighbours, the speech); rules: store entries whose cues chapter_check.py reviews
-python3 scripts/morphs.py <project> check | show <word> ... | tone [--write] | try [id ...] [--seeds] [--write] | decide [--write] | audit [id ...] [--route nt|ot|lxx|vamvas|agree|all] | rates | review <code> <ch> # the morph view (prefix, stem, grammatical tone, suffix; affix chains by position) from the store; every word rebuilt; how the corpus writes tone; words or parts for the second-draft model, measured; affix entries measured against the Greek; each affix on the words it splits (the words against it: protect, restrict, retire; on the OT by the Hebrew, its LXX and its Vamvas word, a combined verdict); what the loop checks, and the check on an OT draft
-python3 scripts/ot_routes.py <project>              # the audit's OT routes: links per book and route, the Vamvas fingerprints, the Greek ending table
+python3 scripts/morphs.py <project> check | show <word> ... | tone [--write] | try [id ...] [--seeds] [--write] | decide [--write] | audit [id ...] [--route nt|ot|lxx|vamvas|agree|all] | rates | review <code> <ch> # the morph view (prefix, stem, grammatical tone, suffix; affix chains by position) from the store; every word rebuilt; how the corpus writes tone; words or parts for the second-draft model, measured; affix entries measured against the Greek; each affix on the words it splits (the words against it: protect, restrict, retire; on the Tanakh by the Hebrew, its LXX and its Vamvas word, a combined verdict); what the loop checks, and the check on a Tanakh draft
+python3 scripts/ot_routes.py <project>              # the audit's Tanakh routes: links per book and route, the Vamvas fingerprints, the Greek ending table
 python3 scripts/cell_check.py <project> unmarked | try <paradigm> <bundle> <form> ... [--write] # agents' unmarked notes; candidate forms measured on the human text
 python3 scripts/grammar.py retest <project> [--run]  # tests whose store settings changed since they ran (rerun them)
 python3 scripts/gloss.py check|propose|show|words <project> [--write | <id> | "<BOOK C:V>"] # the store's Greek/Hebrew glosses: checked, proposed from the alignment, shown with generated English; a verse's words and lemmas

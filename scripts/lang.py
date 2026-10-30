@@ -344,7 +344,7 @@ def hbo(pname, lex, nverses=1):
     occ = con.execute("select count(*), max(lemma), max(gloss) from h.tokens where lexeme=?", (lex,)).fetchone()
     bridge = con.execute("select greekstrong, greek, n from h.lxx where lexeme=? order by n desc", (lex,)).fetchall()
     with_eq = sum(b[2] for b in bridge)
-    print(f"H{lex} {occ[1] or ''} ({occ[2] or ''}): {occ[0]} OT tokens, {with_eq} with an LXX equivalent")
+    print(f"H{lex} {occ[1] or ''} ({occ[2] or ''}): {occ[0]} tokens in the Tanakh, {with_eq} with an LXX equivalent")
     agg = collections.defaultdict(int)
     for g, w, n in bridge:
         agg[g] += n
@@ -807,9 +807,9 @@ def layers(pname, write=False):
     if not rows:
         print(f"{pname}: no alignment layer for {iso3(P)} in bcv-commons")
         return None
-    print(f"{pname}: alignment layers for {iso3(P)} (NT books on exactly our text / the layer's NT books; OT books)")
+    print(f"{pname}: alignment layers for {iso3(P)} (NT books on exactly our text / the layer's NT books; Tanakh books)")
     for ds, layer, m, n, mo in rows:
-        print(f"  {layer:40} {ds:24} NT {m}/{n}" + (f", OT {mo}" if mo else ""))
+        print(f"  {layer:40} {ds:24} NT {m}/{n}" + (f", Tanakh {mo}" if mo else ""))
     best = rows[0] if rows[0][2] else None
     have = P.p.get("lexeme_aligner")
     if not best:

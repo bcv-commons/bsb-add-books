@@ -38,7 +38,7 @@ fields, evidence; the wiki section at the end) and `scripts/wiki.py` (page forma
    `gloss` in Greek or Hebrew, never English in a `value` (English goes to `note`): the source word it renders as its
    verse writes it, with the lemma and the reference, `[{{"lang": "grc", "form": "Ἄγωμεν", "lemma": "ἄγω", "ref":
    "MRK 1:38"}}]` (Greek from an NT verse, Hebrew from the WLC: `python3 scripts/gloss.py words {project} "<BOOK C:V>"`
-   prints a verse's words with their lemmas; Hebrew first for a decision about our OT drafts); a form built by rule with
+   prints a verse's words with their lemmas; Hebrew first for a decision about our Tanakh drafts); a form built by rule with
    no source word gets an `interlinear` Leipzig line. `python3 scripts/gloss.py propose {project}` proposes glosses
    from the alignment: check them, drop `"proposed": true` from the right ones, correct the rest.
 2. Wiki pages in `{wiki_dir}/` (frontmatter `title`, `entries`: the store ids each page shows),

@@ -109,7 +109,7 @@ def main():
     nnn = f"{chapter:03d}"
     orig_path = f"{orig_dir}/{code}{nnn}.txt"
     if not os.path.exists(os.path.join(ROOT, orig_path)):
-        sys.exit(f"no {orig_path}: OT chapters follow the Hebrew numbering (e.g. BSB Mal 4 = Hebrew Mal 3:19-24); "
+        sys.exit(f"no {orig_path}: chapters of the Tanakh follow the Hebrew numbering (e.g. BSB Mal 4 = Hebrew Mal 3:19-24); "
                  "see python3 scripts/vrs.py <code> <chapter>")
 
     # OT: the BSB chapters the Hebrew verses fall in (Hebrew and BSB numbering differ in places)
@@ -217,7 +217,7 @@ def main():
           + " and a blank line." if fh else "")
     footnotes_rule = (f"- **Footnotes:** {NAMES[assist_dir][1]}-style, in {lang_name}, in a separate "
                       f"`{code}{nnn}_footnotes.txt`, one per line as `vN Keyword: text`.{fh} Only when needed: name meanings, "
-                      "»Or: …« alternatives, important variants, OT references." if footnotes
+                      "»Or: …« alternatives, important variants, references to the Tanakh." if footnotes
                       else f"- **No footnotes** (no `{code}{nnn}_footnotes.txt`).")
     layout = (f"Then `==={book_title}, {p.get('chapter_word', 'chapter')} {chapter}===`, `==headings==`, inline `vN` markers, "
               f"quotes {p.get('quotes', '„…“')}, poetry as `//1` / `//2` lines.")
